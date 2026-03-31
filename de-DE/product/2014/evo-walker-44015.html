@@ -1,22 +1,277 @@
 <!DOCTYPE html>
 <html lang="de-DE">
 <head>
-<title>EVO WALKER - 44015 - LEGO® Hero Factory - Produkte - LEGO.com DE</title>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="https://pages-themes.github.io/cayman/assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVO Walker 44015 | Hero Factory | LEGO.com Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .hero-factory-header {
+            background: linear-gradient(180deg, #1a1a1a 0%, #000 100%);
+            border-bottom: 4px solid #ffcf00;
+        }
+
+        .product-card {
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        .btn-yellow {
+            background-color: #ffcf00;
+            color: #000;
+            transition: all 0.2s;
+        }
+
+        .btn-yellow:hover {
+            background-color: #e6ba00;
+            transform: translateY(-2px);
+        }
+
+        .badge-danger {
+            background-color: #d12229;
+            color: white;
+        }
+
+        .tech-spec-row:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Hero Factory Logo Style */
+        .hf-logo {
+            font-weight: 900;
+            letter-spacing: -1px;
+            color: #ffcf00;
+            text-transform: uppercase;
+            font-style: italic;
+        }
+    </style>
 </head>
-<body style="font-family: sans-serif;">
-<main id="content" class="main-content" role="main">
-<h1>LEGO® Hero Factory</h1>
-<h2>Produkte</h2>
-<h3 style="font-weight: bold;">
-<span id="number">44015</span>
-<span id="title">EVO WALKER</span>
-</h3>
-<p><img src="https://www.lego.com/cdn/product-assets/product.img.pri/44015_prod.jpg" height="350"></p>
-<p class="description">Achtung, EVO! Ein gewaltiges Erdbeben hat riesige Risse in den Straßen von Antropolis City hinterlassen. Riesige Bestien und eine wilde Bande böser Springer strömen aus den Spalten, um anzugreifen. Starte deinen Walker, schließe das Visier und schau nach, was los ist. Rufe mit deinem Kommunikationsgerät die anderen Helden herbei und wehre die bösen Eindringlinge mit deiner Schusswaffe und deiner messerscharfen Säge ab, bis Verstärkung eintrifft.</p>
-<p class="IPA">[ˈaxtʊŋ | ˈiːvoː ‖ aɪ̯n ɡəˈvaltɪɡəs ˈeːɐ̯tˌbeːbn̩ hat ˈriːzɪɡə ˈrɪsə ɪn deːn ˈʃtraːsn̩ fɔn anˈtrɔpolɪs ˈsɪti hɪntɐˈlasn̩ ‖ ˈriːzɪɡə ˈbɛstiən ʊnt aɪ̯nə ˈvɪldə ˈbandə ˈbøːzɐ ˈʃprɪŋɐ ˈʃtrøːmən aʊ̯s deːn ˈʃpaltn̩ | ʊm ˈanˌtsuːɡraɪ̯fn̩ ‖ ˈʃtartə ˈdaɪ̯nən ˈvɔːkɐ | ˈʃliːsə das viˈziːɐ̯ ʊnt ʃaʊ̯ naːx | vas loːs ɪst ‖ ˈruːfə mɪt ˈdaɪ̯nəm kɔmunikaˈtsioːnsɡəˌrɛːt diː ˈandərən ˈhɛldn̩ hɛɐ̯ˈbaɪ̯ ʊnt ˈveːrə diː ˈbøːzn̩ ˈaɪ̯nˌdrɪŋlɪŋə mɪt ˈdaɪ̯nɐ ˈʃʊsˌvafə ʊnt ˈdaɪ̯nɐ ˈmɛsɐˌʃaʁfən ˈzɛːɡə ap | bɪs fɛɐ̯ˈʃtɛrkʊŋ ˈaɪ̯nˌtrɪft]</p>
-<p style="font-size: 12px; text-align: center;">©2014 The LEGO Group. All rights reserved.</p>
-</main>  
+<body class="text-gray-800">
+
+    <!-- Global Header -->
+    <header class="bg-white border-b">
+        <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/LEGO_logo.svg" alt="LEGO Logo" class="h-12 w-12">
+                <nav class="hidden md:flex space-x-6 font-bold text-sm uppercase">
+                    <a href="#" class="hover:text-red-600">Shop</a>
+                    <a href="#" class="hover:text-red-600">Entdecken</a>
+                    <a href="#" class="hover:text-red-600">Hilfe</a>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4 text-sm font-medium">
+                <span class="cursor-pointer">Wunschliste (0)</span>
+                <span class="cursor-pointer font-bold">Warenkorb (0)</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Theme Header -->
+    <div class="hero-factory-header py-4 text-white">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <h1 class="hf-logo text-3xl">Hero Factory</h1>
+            <div class="mt-4 md:mt-0 flex space-x-4">
+                <button class="px-4 py-1 rounded-full border border-white text-xs uppercase hover:bg-white hover:text-black">Spiele</button>
+                <button class="px-4 py-1 rounded-full border border-white text-xs uppercase hover:bg-white hover:text-black">Videos</button>
+                <button class="px-4 py-1 rounded-full border border-white text-xs uppercase hover:bg-white hover:text-black">Produkte</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Breadcrumbs -->
+        <nav class="text-xs text-gray-500 mb-6">
+            Shop > Themen > Hero Factory > <strong>44015 EVO Walker</strong>
+        </nav>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white p-6 rounded-lg shadow-sm">
+            
+            <!-- Image Section -->
+            <div class="flex flex-col space-y-4">
+                <div class="relative bg-gray-100 rounded-lg overflow-hidden border">
+                    <img src="https://www.bricklink.com/SL/44015-1.jpg" alt="LEGO 44015 EVO Walker" class="w-full h-auto object-contain p-8 transition-transform hover:scale-105 duration-500">
+                    <div class="absolute top-4 left-4 bg-yellow-400 text-black px-3 py-1 font-bold text-xs rounded">
+                        NEU
+                    </div>
+                </div>
+                <div class="grid grid-cols-4 gap-2">
+                    <div class="border-2 border-yellow-400 p-2 cursor-pointer rounded"><img src="https://www.bricklink.com/SL/44015-1.jpg" class="w-full grayscale-0"></div>
+                    <div class="border p-2 cursor-pointer rounded hover:border-gray-400 transition bg-gray-50 flex items-center justify-center text-xs text-center font-bold">Action-Modus</div>
+                    <div class="border p-2 cursor-pointer rounded hover:border-gray-400 transition bg-gray-50 flex items-center justify-center text-xs text-center font-bold">Details</div>
+                    <div class="border p-2 cursor-pointer rounded hover:border-gray-400 transition bg-gray-50 flex items-center justify-center text-xs text-center font-bold">Minifigur</div>
+                </div>
+            </div>
+
+            <!-- Product Info Section -->
+            <div class="flex flex-col">
+                <div class="mb-4">
+                    <span class="text-sm font-bold text-gray-500 uppercase tracking-widest">LEGO® Hero Factory</span>
+                    <h2 class="text-4xl font-black text-gray-900 mt-1 uppercase">EVO Walker</h2>
+                    <p class="text-lg text-gray-600 font-medium">Artikel-Nr: 44015</p>
+                </div>
+
+                <div class="flex items-center space-x-2 mb-6">
+                    <div class="flex text-yellow-400">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span class="text-gray-300">★</span>
+                    </div>
+                    <span class="text-sm text-gray-600">(12 Bewertungen)</span>
+                </div>
+
+                <div class="text-3xl font-black text-gray-900 mb-6">
+                    9,99 €
+                </div>
+
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-center space-x-3 text-green-600 font-bold">
+                        <div class="w-3 h-3 bg-green-600 rounded-full"></div>
+                        <span>Jetzt Verfügbar</span>
+                    </div>
+                    
+                    <button class="w-full btn-yellow py-4 rounded font-black text-xl uppercase shadow-md">
+                        In den Warenkorb
+                    </button>
+                    
+                    <button class="w-full border-2 border-gray-200 py-3 rounded font-bold text-gray-700 hover:bg-gray-50 transition">
+                        Auf die Wunschliste
+                    </button>
+                </div>
+
+                <!-- Short Description -->
+                <div class="border-t pt-6">
+                    <p class="text-gray-700 leading-relaxed">
+                        Hilf EVO dabei, Antropolis City gegen die Biester aus dem Erdinneren zu verteidigen! Steuere den kraftvollen EVO Walker und benutze den Shooter, um die Angreifer abzuwehren.
+                    </p>
+                    <ul class="mt-4 space-y-2 text-sm text-gray-600 list-disc pl-5">
+                        <li>Enthält eine EVO Minifigur mit Ausrüstung</li>
+                        <li>Verfügt über bewegliche Gliedmaßen und einen Shooter</li>
+                        <li>Kombiniere das Set mit 44018 FURNO Jet Machine</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Details Tabs -->
+        <section class="mt-12">
+            <div class="flex border-b mb-6 space-x-8">
+                <button class="border-b-4 border-yellow-400 pb-2 font-bold uppercase">Produktdetails</button>
+                <button class="pb-2 font-bold text-gray-400 uppercase hover:text-gray-600">Kundenbewertungen</button>
+                <button class="pb-2 font-bold text-gray-400 uppercase hover:text-gray-600">Bauanleitungen</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <div>
+                    <h3 class="text-2xl font-black mb-4 uppercase italic">Stürze dich mit dem EVO Walker in den Kampf!</h3>
+                    <p class="text-gray-700 mb-4">
+                        Achtung, EVO! In den Straßen von Antropolis City ist das Chaos ausgebrochen. Ein riesiges Biest ist aus dem Boden aufgetaucht und bedroht die Bürger. Dein EVO Walker ist die einzige Verteidigungslinie. Aktiviere die Hydraulik, bringe den Shooter in Position und schlage den Angriff zurück, bevor es zu spät ist!
+                    </p>
+                    <p class="text-gray-700">
+                        Die Hero Factory braucht deine Hilfe, um die Unterwelt-Invasion zu stoppen. Bist du bereit für den Einsatz?
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg border">
+                    <div class="p-4 bg-gray-50 font-bold border-b">Technische Details</div>
+                    <div class="divide-y">
+                        <div class="flex justify-between p-3 tech-spec-row">
+                            <span class="text-gray-500">Alter</span>
+                            <span class="font-bold">6-12</span>
+                        </div>
+                        <div class="flex justify-between p-3 tech-spec-row">
+                            <span class="text-gray-500">Teile</span>
+                            <span class="font-bold">51</span>
+                        </div>
+                        <div class="flex justify-between p-3 tech-spec-row">
+                            <span class="text-gray-500">Minifiguren</span>
+                            <span class="font-bold">1</span>
+                        </div>
+                        <div class="flex justify-between p-3 tech-spec-row">
+                            <span class="text-gray-500">Maße (H)</span>
+                            <span class="font-bold">Über 11 cm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommended Section -->
+        <section class="mt-16">
+            <h3 class="text-2xl font-black mb-6 uppercase italic text-center">Das könnte dir auch gefallen</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="product-card p-4 flex flex-col items-center group cursor-pointer">
+                    <img src="https://www.bricklink.com/SL/44018-1.jpg" alt="44018 FURNO Jet Machine" class="w-32 h-32 object-contain group-hover:scale-110 transition">
+                    <p class="text-xs text-gray-500 mt-2">44018</p>
+                    <h4 class="font-bold text-sm text-center">FURNO Jet Machine</h4>
+                    <p class="text-red-600 font-black mt-2">14,99 €</p>
+                </div>
+                <div class="product-card p-4 flex flex-col items-center group cursor-pointer">
+                    <div class="w-32 h-32 flex items-center justify-center bg-gray-100 rounded">
+                         <span class="text-xs text-gray-400">44016 Bild</span>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2">44016</p>
+                    <h4 class="font-bold text-sm text-center">JAW Beast vs. STORMER</h4>
+                    <p class="text-red-600 font-black mt-2">9,99 €</p>
+                </div>
+                <div class="product-card p-4 flex flex-col items-center group cursor-pointer">
+                     <div class="w-32 h-32 flex items-center justify-center bg-gray-100 rounded">
+                         <span class="text-xs text-gray-400">44017 Bild</span>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2">44017</p>
+                    <h4 class="font-bold text-sm text-center">STORMER Freeze Machine</h4>
+                    <p class="text-red-600 font-black mt-2">14,99 €</p>
+                </div>
+                <div class="product-card p-4 flex flex-col items-center group cursor-pointer">
+                     <div class="w-32 h-32 flex items-center justify-center bg-gray-100 rounded">
+                         <span class="text-xs text-gray-400">44019 Bild</span>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2">44019</p>
+                    <h4 class="font-bold text-sm text-center">ROCKA Stealth Machine</h4>
+                    <p class="text-red-600 font-black mt-2">14,99 €</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 mt-20">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h5 class="text-white font-bold mb-4 uppercase">Kundenservice</h5>
+                <ul class="text-sm space-y-2">
+                    <li><a href="#" class="hover:text-white">Kontakt</a></li>
+                    <li><a href="#" class="hover:text-white">Bauanleitungen</a></li>
+                    <li><a href="#" class="hover:text-white">Fehlende Teile</a></li>
+                    <li><a href="#" class="hover:text-white">Lieferung & Rückgabe</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white font-bold mb-4 uppercase">Über Uns</h5>
+                <ul class="text-sm space-y-2">
+                    <li><a href="#" class="hover:text-white">Die LEGO Gruppe</a></li>
+                    <li><a href="#" class="hover:text-white">Nachhaltigkeit</a></li>
+                    <li><a href="#" class="hover:text-white">Impressum</a></li>
+                </ul>
+            </div>
+            <div class="md:col-span-2">
+                <h5 class="text-white font-bold mb-4 uppercase">Newsletter abonnieren</h5>
+                <div class="flex">
+                    <input type="email" placeholder="E-Mail Adresse" class="bg-gray-800 border-none px-4 py-2 rounded-l w-full focus:ring-2 focus:ring-yellow-400 outline-none">
+                    <button class="bg-yellow-400 text-black px-6 py-2 rounded-r font-bold hover:bg-yellow-500">Absenden</button>
+                </div>
+                <p class="text-xs mt-4">Wir versprechen, deine Daten sicher zu behandeln. Weitere Informationen findest du in unserer Datenschutzrichtlinie.</p>
+            </div>
+        </div>
+        <div class="container mx-auto px-4 mt-12 pt-8 border-t border-gray-800 text-center text-xs">
+            LEGO, das LEGO Logo, die Minifigur und Hero Factory sind Marken der LEGO Gruppe. © 2014 The LEGO Group. Alle Rechte vorbehalten.
+        </div>
+    </footer>
+
 </body>
 </html>
