@@ -1,22 +1,249 @@
 <!DOCTYPE html>
 <html lang="de-DE">
 <head>
-<title>STORMER FREEZE MACHINE - 44017 - LEGO® Hero Factory - Produkte - LEGO.com DE</title>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="https://pages-themes.github.io/cayman/assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STORMER Freeze Machine - 44017 | Hero Factory | LEGO® Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f8f8;
+        }
+
+        .lego-yellow { background-color: #ffcf00; }
+        .hero-blue { background-color: #006cb7; }
+        .hf-orange { color: #f37021; }
+
+        .product-card {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-radius: 8px;
+        }
+
+        .price-tag {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #333;
+        }
+
+        .gallery-thumb:hover {
+            border: 2px solid #006cb7;
+        }
+
+        .btn-add-to-cart {
+            background-color: #e30613;
+            transition: all 0.2s ease;
+        }
+
+        .btn-add-to-cart:hover {
+            background-color: #b0050e;
+            transform: scale(1.02);
+        }
+
+        .badge-retired {
+            background-color: #666;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        /* Mock navigation styling */
+        .lego-nav {
+            border-bottom: 4px solid #ffcf00;
+        }
+    </style>
 </head>
-<body style="font-family: sans-serif;">
-<main id="content" class="main-content" role="main">
-<h1>LEGO® Hero Factory</h1>
-<h2>Produkte</h2>
-<h3 style="font-weight: bold;">
-<span id="number">44017</span>
-<span id="title">STORMER FREEZE MACHINE</span>
-</h3>
-<p><img src="https://www.lego.com/cdn/product-assets/product.img.pri/44017_prod.jpg" height="350"></p>
-<p class="description">Mach dich bereit für den Kampf, STORMER! Im Kampf um die Rückeroberung der Straßen der Stadt von riesigen Bestien und wilden kleinen Springern ist dein neuer Freeze Machine-Anzug ein echter Game-Changer. Schnall dich an und unterstütze die anderen Helden. Feuere Raketen auf die Angreifer ab und friere sie mit dem rotierenden Eisblaster ein. Fange dann die Springer in der Kryokammer ein, um sie in der LEGO® Hero Factory zu analysieren.</p>
-<p class="IPA">[max dɪç bəˈraɪ̯t fyːɐ̯ deːn kampf | ˈstɔːrmɐ ‖ ɪm kampf ʊm diː ˈrʏkʔɛɐ̯ˌoːbərʊŋ deːɐ̯ ˈʃtraːsn̩ deːɐ̯ ʃtat fɔn ˈriːzɪɡn̩ ˈbɛstiən ʊnt ˈvɪldn̩ ˈklaɪ̯nən ˈʃprɪŋɐn ɪst daɪ̯n ˈnɔʏ̯ɐ friːz məˈʃiːn ˈanˌtsuːk aɪ̯n ˈɛçtɐ ˈɡeɪ̯m ˌtʃeɪ̯ndʒɐ ‖ ʃnal dɪç an ʊnt ʊntɐˈʃtʏtsə diː ˈandərən ˈhɛldn̩ ‖ ˈfɔʏ̯ərə raˈkeːtn̩ aʊ̯f diː ˈanˌɡraɪ̯fɐ ap ʊnt ˈfriːrə ziː mɪt deːm roˈtiːrəndn̩ ˈaɪ̯sˌblastɐ aɪ̯n ‖ ˈfaŋə dan diː ˈʃprɪŋɐ ɪn deːɐ̯ ˈkryːoˌkamɐ aɪ̯n | ʊm ziː ɪn deːɐ̯ ˈleːɡoː ˈhiːroː ˈfɛktəri tsuː analyˈziːrən]</p>
-<p style="font-size: 12px; text-align: center;">©2014 The LEGO Group. All rights reserved.</p>
-</main>  
+<body>
+
+    <!-- Header Navigation Mockup -->
+    <header class="bg-white lego-nav sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-8">
+                <div class="w-12 h-12 lego-yellow flex items-center justify-center font-black text-2xl">LEGO</div>
+                <nav class="hidden md:flex space-x-6 font-bold text-sm uppercase tracking-wide">
+                    <a href="#" class="hover:text-blue-600">Shop</a>
+                    <a href="#" class="hover:text-blue-600">Entdecken</a>
+                    <a href="#" class="hover:text-blue-600 text-blue-600 border-b-2 border-blue-600">Hero Factory</a>
+                    <a href="#" class="hover:text-blue-600 text-red-600">Angebote</a>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        
+        <!-- Breadcrumbs -->
+        <nav class="text-xs text-gray-500 mb-6 flex space-x-2">
+            <a href="#" class="hover:underline">Home</a>
+            <span>&gt;</span>
+            <a href="#" class="hover:underline">Sets</a>
+            <span>&gt;</span>
+            <a href="#" class="hover:underline">Hero Factory</a>
+            <span>&gt;</span>
+            <span class="font-bold text-gray-800">44017</span>
+        </nav>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white p-6 product-card">
+            
+            <!-- Image Gallery -->
+            <div class="space-y-4">
+                <div class="relative bg-gray-100 rounded-lg overflow-hidden aspect-square flex items-center justify-center p-8">
+                    <!-- Main Product Image (Placeholder logic) -->
+                    <img id="main-image" src="https://www.bricklink.com/SL/44017-1.jpg" alt="LEGO 44017 STORMER Freeze Machine" class="max-w-full h-auto drop-shadow-2xl" onerror="this.src='https://via.placeholder.com/600x600?text=44017+STORMER+Freeze+Machine'">
+                    
+                    <div class="absolute top-4 left-4">
+                        <span class="badge-retired">Altes Produkt</span>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-4 gap-2">
+                    <button onclick="changeImg(0)" class="gallery-thumb bg-gray-100 p-2 rounded border-2 border-transparent">
+                        <img src="https://www.bricklink.com/SL/44017-1.jpg" alt="Thumb 1" class="w-full h-auto">
+                    </button>
+                    <div class="bg-gray-50 p-2 rounded flex items-center justify-center text-[10px] text-gray-400 border border-dashed">Ansicht 2</div>
+                    <div class="bg-gray-50 p-2 rounded flex items-center justify-center text-[10px] text-gray-400 border border-dashed">Ansicht 3</div>
+                    <div class="bg-gray-50 p-2 rounded flex items-center justify-center text-[10px] text-gray-400 border border-dashed">Video</div>
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="flex flex-col">
+                <div class="border-b pb-4">
+                    <h1 class="text-3xl font-black text-gray-900 leading-tight uppercase">STORMER Freeze Machine</h1>
+                    <div class="flex items-center space-x-4 mt-2">
+                        <span class="text-blue-700 font-bold">44017</span>
+                        <span class="text-gray-400">|</span>
+                        <div class="flex items-center">
+                            <span class="text-yellow-400">★★★★★</span>
+                            <span class="text-xs text-gray-500 ml-2">(12 Bewertungen)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="py-6 space-y-4">
+                    <p class="text-gray-700 leading-relaxed">
+                        Mach dich bereit für den Kampf, STORMER! In der gewaltigen Freeze Machine bist du den Bestien weit überlegen. Benutze den Gefrier-Shooter, um die Angreifer schockzufrieren und bringe Ordnung zurück in die Straßen von Antropolis City!
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 text-sm font-bold">
+                        <div class="bg-blue-50 p-3 rounded">Alter: <span class="block text-lg font-black">7-14</span></div>
+                        <div class="bg-blue-50 p-3 rounded">Teile: <span class="block text-lg font-black">88</span></div>
+                    </div>
+                </div>
+
+                <div class="mt-auto border-t pt-6">
+                    <div class="flex items-baseline space-x-2 mb-4">
+                        <span class="price-tag">14,99 €</span>
+                        <span class="text-sm text-gray-500">inkl. MwSt.</span>
+                    </div>
+
+                    <button disabled class="w-full btn-add-to-cart text-white font-bold py-4 px-6 rounded-lg shadow-lg flex items-center justify-center space-x-2 opacity-50 cursor-not-allowed">
+                        <span>NICHT MEHR LIEFERBAR</span>
+                    </button>
+                    
+                    <p class="text-center text-xs text-gray-500 mt-4 italic">
+                        Dieses Produkt ist ein Klassiker aus dem Jahr 2014.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Details Section -->
+        <section class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg product-card">
+                <h3 class="font-bold text-xl mb-4 border-b pb-2">Highlights</h3>
+                <ul class="space-y-2 text-sm text-gray-600 list-disc pl-4">
+                    <li>Enthält STORMER Mini-Roboter mit Ausrüstung</li>
+                    <li>Verfügt über abnehmbaren Sitz, verstellbares Visier</li>
+                    <li>Gefrier-Shooter und rotierende Eis-Säge</li>
+                    <li>Inklusive 2 „Jumpern“ – lass sie springen!</li>
+                    <li>Kombinierbar mit 44019 ROCKA Stealth Machine</li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg product-card md:col-span-2">
+                <h3 class="font-bold text-xl mb-4 border-b pb-2">Produktbeschreibung</h3>
+                <div class="text-sm text-gray-600 space-y-4">
+                    <p>Hilf STORMER dabei, die Kontrolle zu behalten! Antropolis City wird angegriffen und nur die mächtige Freeze Machine kann die fiesen Jumper stoppen. Klettere in das Cockpit und aktiviere die Eis-Technologie.</p>
+                    <p>Feuere Raketen aus dem Gefrier-Shooter ab, um die mutierten Kreaturen zu stoppen. Wenn sie zu nah kommen, schlage sie mit der rotierenden Eis-Säge in die Flucht. Aber pass auf – die Jumper sind flink und können dich überraschen!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Specs -->
+        <section class="mt-8 bg-gray-200 p-8 rounded-lg">
+            <h2 class="text-2xl font-black mb-6">Produktspezifikationen</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                <div>
+                    <span class="text-xs uppercase text-gray-500 font-bold block">Artikelnummer</span>
+                    <span class="font-bold">44017</span>
+                </div>
+                <div>
+                    <span class="text-xs uppercase text-gray-500 font-bold block">Erscheinungsjahr</span>
+                    <span class="font-bold">2014</span>
+                </div>
+                <div>
+                    <span class="text-xs uppercase text-gray-500 font-bold block">Themenwelt</span>
+                    <span class="font-bold">Hero Factory</span>
+                </div>
+                <div>
+                    <span class="text-xs uppercase text-gray-500 font-bold block">Unterthema</span>
+                    <span class="font-bold">Invasion from Below</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Mockup -->
+    <footer class="bg-neutral-900 text-white mt-16 py-12">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div>
+                <h4 class="font-bold mb-4 uppercase text-sm">Über uns</h4>
+                <ul class="text-xs text-gray-400 space-y-2">
+                    <li>Über die LEGO Gruppe</li>
+                    <li>LEGO News</li>
+                    <li>Nachhaltigkeit</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 uppercase text-sm">Support</h4>
+                <ul class="text-xs text-gray-400 space-y-2">
+                    <li>Kontakt</li>
+                    <li>Bauanleitungen</li>
+                    <li>Ersatzteile</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 uppercase text-sm">Attraktionen</h4>
+                <ul class="text-xs text-gray-400 space-y-2">
+                    <li>LEGOLAND Parks</li>
+                    <li>LEGOLAND Discovery Centers</li>
+                </ul>
+            </div>
+            <div class="flex flex-col items-end justify-center">
+                <div class="w-16 h-16 lego-yellow text-black flex items-center justify-center font-black text-xl mb-2">LEGO</div>
+                <p class="text-[10px] text-gray-500">© 2024 The LEGO Group. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function changeImg(index) {
+            // Simulation of image swapping
+            const main = document.getElementById('main-image');
+            // Normally we'd have an array of URLs
+            console.log("Switching to image index: " + index);
+        }
+    </script>
 </body>
 </html>
