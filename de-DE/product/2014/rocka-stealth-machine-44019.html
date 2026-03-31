@@ -1,22 +1,374 @@
 <!DOCTYPE html>
 <html lang="de-DE">
 <head>
-<title>ROCKA STEALTH MACHINE - 44019 - LEGO® Hero Factory - Produkte - LEGO.com DE</title>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="https://pages-themes.github.io/cayman/assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROCKA Stealth Machine - 44019 | Hero Factory | LEGO.com Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap');
+
+        :root {
+            --lego-yellow: #FFD500;
+            --hf-green: #90C31F;
+            --hf-dark: #1a1a1a;
+            --hf-blue: #0045ad;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .hf-font {
+            font-family: 'Exo 2', sans-serif;
+        }
+
+        .hero-banner {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            border-bottom: 4px solid var(--hf-green);
+        }
+
+        .price-tag {
+            color: #d12229;
+            font-size: 2rem;
+            font-weight: 900;
+        }
+
+        .btn-add-to-bag {
+            background-color: #2c8c2c;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .btn-add-to-bag:hover {
+            background-color: #236e23;
+            transform: scale(1.02);
+        }
+
+        .nav-link:hover {
+            color: var(--lego-yellow);
+        }
+
+        .product-image-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .badge-new {
+            background-color: var(--lego-yellow);
+            color: black;
+            font-weight: bold;
+            padding: 2px 10px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        .age-icon {
+            border: 2px solid #333;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* 2014 LEGO.com Vibe */
+        header {
+            background-color: var(--lego-yellow);
+        }
+        
+        .tab-active {
+            border-bottom: 4px solid var(--lego-yellow);
+            color: black;
+            font-weight: bold;
+        }
+    </style>
 </head>
-<body style="font-family: sans-serif;">
-<main id="content" class="main-content" role="main">
-<h1>LEGO® Hero Factory</h1>
-<h2>Produkte</h2>
-<h3 style="font-weight: bold;">
-<span id="number">44019</span>
-<span id="title">ROCKA STEALTH MACHINE</span>
-</h3>
-<p><img src="https://www.lego.com/cdn/product-assets/product.img.pri/44019_prod.jpg" height="350"></p>
-<p class="description">Schnell, ROCKA, schalte den Tarnmodus ein! Rüste dich in der LEGO® Hero Factory mit der Stealth Machine aus und begib dich in die Straßen der Stadt. Die Mission ist klar: Rette die anderen Helden und fange die bösen Jumper mit dem Greifarm ein. Die Jumper lauern überall und warten nur auf einen Angriff – also lass das Visier unten und halte den Schleim-Shooter sowie den Scan-Behälter jederzeit bereit!</p>
-<p class="IPA">[ʃnɛl | ˈrɔkɐ | ˈʃaltə deːn ˈtarnˌmoːdʊs aɪ̯n ‖ ˈrʏstə dɪç ɪn deːɐ̯ ˈleːɡoː ˈhiːroː ˈfɛktəri mɪt deːɐ̯ stɛlθ məˈʃiːn aʊ̯s ʊnt bəˈɡiːp dɪç ɪn diː ˈʃtraːsn̩ deːɐ̯ ʃtat ‖ diː mɪˈsjoːn ɪst klaːɐ̯ | ˈrɛtə diː ˈandərən ˈhɛldn̩ ʊnt ˈfaŋə diː ˈbøːzn̩ ˈdʒampɐ mɪt deːm ˈɡraɪ̯fˌʔarm aɪ̯n ‖ diː ˈdʒampɐ ˈlaʊ̯ɐn ˈyːbɐˌʔal ʊnt ˈvartn̩ nuːɐ̯ aʊ̯f ˈaɪ̯nən ˈanˌɡrɪf | ˈalzoː las das viˈziːɐ̯ ˈʊntn̩ ʊnt ˈhaltə deːn ˈʃlaɪ̯mˌʃuːtɐ zoˈviː deːn ˈskɛn bəˌhɛltɐ ˈjeːdɐˌtsaɪ̯t bəˈraɪ̯t]</p>
-<p style="font-size: 12px; text-align: center;">©2014 The LEGO Group. All rights reserved.</p>
-</main>  
+<body>
+
+    <!-- Upper Utility Nav -->
+    <div class="bg-black text-white text-xs py-2 px-4 flex justify-between items-center">
+        <div class="flex gap-4">
+            <span>GRATIS VERSAND AB 55 €*</span>
+            <span>FINDEN SIE EINEN STORE</span>
+        </div>
+        <div class="flex gap-4">
+            <span>Anmelden</span>
+            <span>Mein Konto</span>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-8">
+                <!-- LEGO Logo (SVG) -->
+                <div class="w-12 h-12 bg-red-600 flex items-center justify-center font-black text-white text-xl border-2 border-black" style="box-shadow: 2px 2px 0px black;">
+                    LEGO
+                </div>
+                <nav class="hidden md:flex gap-6 font-bold text-sm uppercase">
+                    <a href="#" class="nav-link">Produkte</a>
+                    <a href="#" class="nav-link">Shop</a>
+                    <a href="#" class="nav-link text-red-700">Angebote</a>
+                    <a href="#" class="nav-link">Spiele</a>
+                </nav>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="relative">
+                    <input type="text" placeholder="Suchen" class="pl-3 pr-10 py-1 rounded-full border border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <i class="fas fa-search absolute right-3 top-2 text-gray-500"></i>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-shopping-bag text-2xl"></i>
+                    <span class="font-bold">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <div class="container mx-auto px-4 py-3 text-xs text-gray-500">
+        <a href="#">Startseite</a> > <a href="#">Produkte</a> > <a href="#">Hero Factory</a> > <span class="text-black">ROCKA Stealth Machine</span>
+    </div>
+
+    <!-- Hero Product Section -->
+    <main class="container mx-auto px-4 py-6">
+        <div class="flex flex-col md:flex-row gap-8">
+            
+            <!-- Left Side: Images -->
+            <div class="md:w-3/5">
+                <div class="product-image-container p-4 relative overflow-hidden">
+                    <div class="absolute top-4 left-4">
+                        <div class="badge-new mb-2">NEU</div>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/LEGO_logo.svg/512px-LEGO_logo.svg.png" class="w-12" alt="LEGO">
+                    </div>
+                    
+                    <img id="mainImage" src="https://www.bricklink.com/SL/44019-1.jpg" alt="ROCKA Stealth Machine" class="w-full h-auto object-contain mix-blend-multiply" onerror="this.src='https://via.placeholder.com/600x600?text=ROCKA+Stealth+Machine+44019'">
+                    
+                    <div class="flex mt-4 gap-2 justify-center">
+                        <div class="w-20 h-20 border-2 border-yellow-400 p-1 cursor-pointer bg-white">
+                             <img src="https://www.bricklink.com/SL/44019-1.jpg" class="w-full h-full object-contain">
+                        </div>
+                        <div class="w-20 h-20 border border-gray-200 p-1 cursor-pointer bg-white opacity-50 hover:opacity-100">
+                             <div class="flex items-center justify-center h-full text-gray-400"><i class="fas fa-play"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Details -->
+            <div class="md:w-2/5 flex flex-col">
+                <div class="mb-2">
+                    <h2 class="text-blue-700 font-bold tracking-widest text-sm uppercase hf-font">Hero Factory</h2>
+                    <h1 class="text-4xl font-black hf-font mt-1 uppercase">ROCKA Stealth Machine</h1>
+                    <p class="text-gray-500 mt-1">Artikel: 44019</p>
+                </div>
+
+                <div class="flex gap-4 my-4 items-center">
+                    <div class="flex flex-col items-center">
+                        <div class="age-icon">7-14</div>
+                        <span class="text-[10px] uppercase font-bold text-gray-500">Alter</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="font-bold text-xl">89</div>
+                        <span class="text-[10px] uppercase font-bold text-gray-500">Teile</span>
+                    </div>
+                </div>
+
+                <div class="my-4">
+                    <div class="flex items-center gap-1 text-yellow-500 mb-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span class="text-gray-600 text-sm ml-2">(12 Bewertungen)</span>
+                    </div>
+                    <div class="price-tag">14,99 €</div>
+                    <p class="text-green-600 font-bold text-sm"><i class="fas fa-check-circle"></i> Jetzt verfügbar</p>
+                </div>
+
+                <div class="bg-gray-100 p-6 rounded-lg border border-gray-200">
+                    <button class="btn-add-to-bag w-full py-4 rounded-md font-bold text-xl uppercase shadow-lg flex items-center justify-center gap-3">
+                        <i class="fas fa-shopping-cart"></i>
+                        In den Warenkorb
+                    </button>
+                    <button class="w-full mt-3 py-2 text-blue-700 font-bold hover:underline text-sm">
+                        <i class="far fa-heart"></i> Auf den Wunschzettel
+                    </button>
+                </div>
+
+                <div class="mt-6 space-y-4 text-sm">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-truck text-gray-400 mt-1"></i>
+                        <div>
+                            <p class="font-bold">Kostenlose Lieferung</p>
+                            <p class="text-gray-600 italic">Ab einem Bestellwert von 55 €</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-undo text-gray-400 mt-1"></i>
+                        <div>
+                            <p class="font-bold">Einfache Rückgabe</p>
+                            <p class="text-gray-600">Innerhalb von 90 Tagen</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description Section -->
+        <section class="mt-12">
+            <div class="border-b border-gray-300 flex gap-8">
+                <button class="tab-active py-4 uppercase text-sm tracking-widest">Beschreibung</button>
+                <button class="py-4 text-gray-500 uppercase text-sm tracking-widest hover:text-black">Produktdetails</button>
+                <button class="py-4 text-gray-500 uppercase text-sm tracking-widest hover:text-black">Bewertungen</button>
+            </div>
+            
+            <div class="py-8 grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h3 class="text-3xl font-black hf-font uppercase">Schleiche dich mit der ROCKA Stealth Machine an die Bestien heran!</h3>
+                    <p class="text-lg leading-relaxed text-gray-700">
+                        Eilmeldung, ROCKA! In den Straßen von Antropolis City sind schreckliche Bestien aufgetaucht. Steig in deine hochmoderne Stealth Machine und begib dich auf eine gefährliche Mission. 
+                    </p>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li>Enthält eine <strong>ROCKA Minifigur</strong> mit Ausrüstung.</li>
+                        <li>Verfügt über einen abnehmbaren Sitz, ein verstellbares Visier und <strong>Greif-Shooter</strong>.</li>
+                        <li>Enthält Scan-Ausrüstung und Kanister zum Einfangen der Jumper.</li>
+                        <li>Benutze die Greifhand, um Hindernisse aus dem Weg zu räumen.</li>
+                        <li>Kombiniere das Set mit der 44017 STORMER Freeze Machine für ein noch größeres Modell!</li>
+                    </ul>
+                </div>
+                <div class="bg-hf-dark p-4 rounded-xl shadow-2xl">
+                    <div class="aspect-video bg-gray-800 rounded flex items-center justify-center text-white relative overflow-hidden group cursor-pointer">
+                        <i class="fas fa-play-circle text-6xl opacity-80 group-hover:scale-110 transition-transform"></i>
+                        <img src="https://www.bricklink.com/SL/44019-1.jpg" class="absolute inset-0 w-full h-full object-cover opacity-30 grayscale" alt="Video Placeholder">
+                        <div class="absolute bottom-4 left-4 font-bold text-sm uppercase tracking-widest">Produktvideo ansehen</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommendations (Classic LEGO Carousel vibe) -->
+        <section class="mt-16 bg-white p-8 rounded-lg">
+            <h3 class="text-2xl font-black uppercase mb-8 hf-font">Das könnte dir auch gefallen</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Item 1 -->
+                <div class="group cursor-pointer">
+                    <div class="bg-gray-50 p-4 rounded-md mb-2 overflow-hidden">
+                        <img src="https://via.placeholder.com/200?text=STORMER+44017" class="w-full h-40 object-contain group-hover:scale-105 transition-transform" alt="STORMER Freeze Machine">
+                    </div>
+                    <p class="text-xs text-blue-700 font-bold uppercase">Hero Factory</p>
+                    <p class="font-bold text-sm group-hover:underline">STORMER Freeze Machine</p>
+                    <p class="font-bold mt-1">14,99 €</p>
+                </div>
+                <!-- Item 2 -->
+                <div class="group cursor-pointer">
+                    <div class="bg-gray-50 p-4 rounded-md mb-2 overflow-hidden">
+                        <img src="https://via.placeholder.com/200?text=BREEZ+44027" class="w-full h-40 object-contain group-hover:scale-105 transition-transform" alt="BREEZ Flea Machine">
+                    </div>
+                    <p class="text-xs text-blue-700 font-bold uppercase">Hero Factory</p>
+                    <p class="font-bold text-sm group-hover:underline">BREEZ Flea Machine</p>
+                    <p class="font-bold mt-1">14,99 €</p>
+                </div>
+                <!-- Item 3 -->
+                <div class="group cursor-pointer">
+                    <div class="bg-gray-50 p-4 rounded-md mb-2 overflow-hidden">
+                        <img src="https://via.placeholder.com/200?text=BULK+44025" class="w-full h-40 object-contain group-hover:scale-105 transition-transform" alt="BULK Drill Machine">
+                    </div>
+                    <p class="text-xs text-blue-700 font-bold uppercase">Hero Factory</p>
+                    <p class="font-bold text-sm group-hover:underline">BULK Drill Machine</p>
+                    <p class="font-bold mt-1">14,99 €</p>
+                </div>
+                <!-- Item 4 -->
+                <div class="group cursor-pointer">
+                    <div class="bg-gray-50 p-4 rounded-md mb-2 overflow-hidden">
+                        <img src="https://via.placeholder.com/200?text=BEASTS+44016" class="w-full h-40 object-contain group-hover:scale-105 transition-transform" alt="JAW Beast">
+                    </div>
+                    <p class="text-xs text-blue-700 font-bold uppercase">Hero Factory</p>
+                    <p class="font-bold text-sm group-hover:underline">JAW Beast vs. STORMER</p>
+                    <p class="font-bold mt-1">9,99 €</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t-8 border-lego-yellow mt-20 pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h4 class="font-bold uppercase text-sm mb-4">Über uns</h4>
+                    <ul class="text-sm space-y-2 text-gray-600">
+                        <li><a href="#" class="hover:underline">Über die LEGO Gruppe</a></li>
+                        <li><a href="#" class="hover:underline">LEGO News</a></li>
+                        <li><a href="#" class="hover:underline">Nachhaltigkeit</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold uppercase text-sm mb-4">Support</h4>
+                    <ul class="text-sm space-y-2 text-gray-600">
+                        <li><a href="#" class="hover:underline">Kontakt</a></li>
+                        <li><a href="#" class="hover:underline">Bauanleitungen</a></li>
+                        <li><a href="#" class="hover:underline">Ersatzteile</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold uppercase text-sm mb-4">Attraktionen</h4>
+                    <ul class="text-sm space-y-2 text-gray-600">
+                        <li><a href="#" class="hover:underline">LEGOLAND Parks</a></li>
+                        <li><a href="#" class="hover:underline">LEGOLAND Discovery Centers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold uppercase text-sm mb-4">Mehr von uns</h4>
+                    <ul class="text-sm space-y-2 text-gray-600">
+                        <li><a href="#" class="hover:underline">LEGO LIFE</a></li>
+                        <li><a href="#" class="hover:underline">LEGO Education</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="flex gap-6 text-xl text-gray-400">
+                    <i class="fab fa-facebook hover:text-blue-600 cursor-pointer"></i>
+                    <i class="fab fa-twitter hover:text-blue-400 cursor-pointer"></i>
+                    <i class="fab fa-instagram hover:text-pink-600 cursor-pointer"></i>
+                    <i class="fab fa-youtube hover:text-red-600 cursor-pointer"></i>
+                </div>
+                <p class="text-xs text-gray-400">LEGO, the LEGO logo, the Minifigure, DUPLO, the FRIENDS logo, the MINIFIGURES logo, DREAMZzz, NINJAGO, VIDIYO and MINDSTORMS are trademarks of the LEGO Group. ©2026 The LEGO Group.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple mock interaction for the "In den Warenkorb" button
+        document.querySelector('.btn-add-to-bag').addEventListener('click', function() {
+            const btn = this;
+            const originalContent = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Hinzufügen...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.classList.remove('btn-add-to-bag');
+                btn.classList.add('bg-blue-600');
+                btn.innerHTML = '<i class="fas fa-check"></i> Hinzugefügt!';
+                
+                // Reset after 2 seconds
+                setTimeout(() => {
+                    btn.classList.remove('bg-blue-600');
+                    btn.classList.add('btn-add-to-bag');
+                    btn.innerHTML = originalContent;
+                    btn.disabled = false;
+                }, 2000);
+            }, 800);
+        });
+    </script>
 </body>
 </html>
