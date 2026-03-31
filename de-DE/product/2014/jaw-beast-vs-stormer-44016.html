@@ -1,22 +1,293 @@
 <!DOCTYPE html>
 <html lang="de-DE">
 <head>
-<title>JAW BEAST VS. STORMER - 44016 - LEGO® Hero Factory - Produkte - LEGO.com DE</title>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="https://pages-themes.github.io/cayman/assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAW Beast vs. STORMER 44016 | Hero Factory | LEGO® Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f8f8;
+        }
+
+        .lego-yellow {
+            background-color: #ffcf00;
+        }
+
+        .hero-factory-gradient {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
+        }
+
+        .product-card {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-orange {
+            background-color: #ff8200;
+            transition: all 0.2s;
+        }
+
+        .btn-orange:hover {
+            background-color: #e67600;
+            transform: translateY(-1px);
+        }
+
+        .badge-new {
+            background-color: #0085ca;
+            color: white;
+            padding: 2px 8px;
+            font-weight: bold;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+
+        .spec-label {
+            color: #666;
+            font-size: 0.875rem;
+        }
+
+        .spec-value {
+            font-weight: bold;
+            color: #000;
+        }
+
+        /* Mock Image Gallery styles */
+        .image-container {
+            position: relative;
+            background: #fff;
+            aspect-ratio: 1/1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .image-container img {
+            max-width: 90%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
-<body style="font-family: sans-serif;">
-<main id="content" class="main-content" role="main">
-<h1>LEGO® Hero Factory</h1>
-<h2>Produkte</h2>
-<h3 style="font-weight: bold;">
-<span id="number">44016</span>
-<span id="title">JAW BEAST VS. STORMER</span>
-</h3>
-<p><img src="https://www.lego.com/cdn/product-assets/product.img.pri/44016_prod.jpg" height="350"></p>
-<p class="description">Macht euch bereit für Action, Helden! JAW Beast, eine wilde Kreatur mit scharfen Klauen und vielen Augen, ist aus einer durch das Erdbeben entstandenen Spalte aufgetaucht und bedroht die Einwohner von Antropolis City. Kann STORMER die Helden rechtzeitig über sein Kommunikationsgerät vor der Gefahr warnen? Reicht ein Speer aus, um die mächtige Kreatur zu besiegen, oder wird JAW Beast STORMER mit seinem scharfen Maul packen und unter die Erde zerren?</p>
-<p class="IPA">[maxt ɔʏ̯ç bəˈraɪ̯t fyːɐ̯ ˈɛkʃn̩ | ˈhɛldn̩ ‖ dʒɔː biːst | ˈaɪ̯nə ˈvɪldə kreaˈtuːɐ̯ mɪt ˈʃarfən ˈklaʊ̯ən ʊnt ˈfiːlən ˈaʊ̯ɡən | ɪst aʊ̯s ˈaɪ̯nɐ dʊʁç das ˈeːɐ̯tˌbeːbn̩ ɛntˈʃtandənən ˈʃpaltə ˈaʊ̯fɡəˌtaʊ̯xt ʊnt bəˈdroːt diː ˈaɪ̯nˌvoːnɐ fɔn anˈtrɔpolɪs ˈsɪti ‖ kan ˈstɔːrmɐ diː ˈhɛldn̩ ˈrɛçtˌtsaɪ̯tɪç ˈyːbɐ zaɪ̯n kɔmunikaˈtsioːnsɡəˌrɛːt foːɐ̯ deːɐ̯ ɡəˈfaːɐ̯ ˈvarnən ‖ raɪ̯çt aɪ̯n ʃpeːɐ̯ aʊ̯s | ʊm diː ˈmɛçtɪɡə kreaˈtuːɐ̯ tsuː bəˈziːɡn̩ | ˈoːdɐ vɪrt dʒɔː biːst ˈstɔːrmɐ mɪt ˈzaɪ̯nəm ˈʃarfən maʊ̯l ˈpakn̩ ʊnt ˈʊntɐ diː ˈeːɐ̯də ˈtsɛrən ‖]</p>
-<p style="font-size: 12px; text-align: center;">©2014 The LEGO Group. All rights reserved.</p>
-</main>  
+<body>
+
+    <!-- Header / Navigation Mockup -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="lego-yellow h-12 flex items-center justify-between px-4 md:px-12">
+            <div class="flex items-center space-x-4">
+                <div class="bg-red-600 p-2 font-black text-white text-xl leading-none">LEGO</div>
+                <nav class="hidden md:flex space-x-6 text-sm font-bold uppercase">
+                    <a href="#" class="hover:underline">SPIELSETS</a>
+                    <a href="#" class="hover:underline">EXCLUSIVES</a>
+                    <a href="#" class="hover:underline">ENTDECKEN</a>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4 text-xs font-bold uppercase">
+                <span>WUNSCHLISTE (0)</span>
+                <span>MEIN KONTO</span>
+            </div>
+        </div>
+        <div class="bg-white py-2 px-4 md:px-12 flex items-center text-xs space-x-2 text-gray-500">
+            <a href="#">Startseite</a> <span>&gt;</span>
+            <a href="#">Themenwelten</a> <span>&gt;</span>
+            <a href="#">Hero Factory</a> <span>&gt;</span>
+            <span class="text-black font-semibold">JAW Beast vs. STORMER</span>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            
+            <!-- Image Section -->
+            <div class="space-y-4">
+                <div class="image-container product-card">
+                    <!-- Representing the Set 44016 -->
+                    <img src="https://www.bricklink.com/SL/44016-1.jpg" alt="44016 JAW Beast vs. STORMER Box Art" onerror="this.src='https://via.placeholder.com/600x600?text=44016+JAW+Beast+vs+STORMER'">
+                    <div class="absolute bottom-4 left-4">
+                        <span class="badge-new">Invasion From Below</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-4 gap-4">
+                    <div class="border-2 border-yellow-400 p-1 rounded cursor-pointer bg-white">
+                        <img src="https://www.bricklink.com/SL/44016-1.jpg" class="w-full h-auto" alt="Thumb 1">
+                    </div>
+                    <div class="border border-gray-200 p-1 rounded cursor-pointer bg-white hover:border-yellow-400">
+                        <div class="aspect-square bg-gray-100 flex items-center justify-center text-[10px] text-center p-1">JAW BEAST ACTION</div>
+                    </div>
+                    <div class="border border-gray-200 p-1 rounded cursor-pointer bg-white hover:border-yellow-400">
+                        <div class="aspect-square bg-gray-100 flex items-center justify-center text-[10px] text-center p-1">STORMER HERO</div>
+                    </div>
+                    <div class="border border-gray-200 p-1 rounded cursor-pointer bg-white hover:border-yellow-400">
+                        <div class="aspect-square bg-gray-100 flex items-center justify-center text-[10px] text-center p-1">COMBI MODEL</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Info Section -->
+            <div class="flex flex-col">
+                <div class="mb-2">
+                    <h2 class="text-blue-600 font-bold tracking-widest text-sm uppercase">Hero Factory</h2>
+                    <h1 class="text-4xl font-black mt-1 uppercase">JAW Beast vs. STORMER</h1>
+                    <p class="text-gray-500 font-semibold mt-1">Artikelnr. 44016</p>
+                </div>
+
+                <div class="flex items-center space-x-4 my-6">
+                    <div class="flex text-yellow-400">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span class="text-gray-300">★</span>
+                    </div>
+                    <span class="text-sm font-bold underline cursor-pointer">Rezension schreiben</span>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg product-card border border-gray-100">
+                    <div class="text-3xl font-black mb-4">9,99 €</div>
+                    <div class="text-green-600 font-bold text-sm mb-6 flex items-center">
+                        <span class="w-2 h-2 bg-green-600 rounded-full mr-2"></span> Verfügbar
+                    </div>
+
+                    <button class="w-full btn-orange text-white font-black py-4 rounded text-xl uppercase mb-4" onclick="addToCart()">
+                        In den Warenkorb
+                    </button>
+                    
+                    <button class="w-full border-2 border-gray-200 py-3 rounded font-bold hover:bg-gray-50 transition-colors uppercase text-sm">
+                        Auf den Wunschzettel
+                    </button>
+                </div>
+
+                <div class="mt-8 grid grid-cols-2 gap-y-4">
+                    <div>
+                        <div class="spec-label">Alter</div>
+                        <div class="spec-value">6-12</div>
+                    </div>
+                    <div>
+                        <div class="spec-label">Teile</div>
+                        <div class="spec-value">49</div>
+                    </div>
+                    <div>
+                        <div class="spec-label">VIP-Punkte</div>
+                        <div class="spec-value">65</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description Section -->
+        <section class="mt-16 border-t border-gray-200 pt-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-black mb-6 uppercase">Produktdetails</h3>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        <strong>Bereite dich auf den Kampf vor, STORMER!</strong> In den Straßen von Antropolis City treibt die riesige JAW-Bestie ihr Unwesen. Diese Kreatur mit den gefährlichen Beißwerkzeugen ist aus den Tiefen der Erde emporgestiegen und bedroht die Bürger.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        STORMER, du musst die Bestie aufhalten! Benutze dein Funkgerät, um Verstärkung zu rufen, aber bis sie eintrifft, bist du auf dich allein gestellt. Weiche den schnappenden Kiefern aus und pass auf, dass dich die Bestie nicht mit ihren Krallen erwischt. Hast du das Zeug dazu, diese Bedrohung zu bändigen?
+                    </p>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li>Enthält den <strong>STORMER</strong> Mini-Roboter mit Ausrüstung.</li>
+                        <li><strong>JAW Beast</strong> verfügt über ein bewegliches Maul, Greifklauen und giftige Stacheln.</li>
+                        <li>Enthält ein Funkgerät für STORMER.</li>
+                        <li>Kombiniere das Set mit <strong>44015 EVO Walker</strong>, um ein noch größeres Modell zu bauen!</li>
+                        <li>Die JAW-Bestie ist über 13 cm groß.</li>
+                    </ul>
+                </div>
+                <div class="hero-factory-gradient p-8 text-white rounded-xl flex flex-col justify-center items-center text-center">
+                    <div class="text-3xl font-black mb-4 tracking-tighter italic">HERO FACTORY</div>
+                    <p class="text-sm opacity-80 mb-6">Erlebe die epische Saga von „Invasion From Below“. Baue deine Helden, verstärke sie mit Battle Machines und rette Antropolis City!</p>
+                    <button class="bg-white text-black px-6 py-2 rounded-full font-bold text-xs uppercase hover:bg-yellow-400 transition-colors">
+                        Themenwelt ansehen
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Features Grid -->
+        <section class="mt-20">
+            <h3 class="text-2xl font-black mb-8 uppercase text-center">Highlights</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-4 rounded shadow-sm border border-gray-100">
+                    <div class="aspect-video bg-gray-200 rounded mb-4 flex items-center justify-center font-bold text-gray-400">SNAP-MOUTH ACTION</div>
+                    <h4 class="font-bold mb-2 uppercase">Beweglicher Kiefer</h4>
+                    <p class="text-sm text-gray-600">Die Bestie kann ihr Maul weit aufreißen, um STORMER zu schnappen.</p>
+                </div>
+                <div class="bg-white p-4 rounded shadow-sm border border-gray-100">
+                    <div class="aspect-video bg-gray-200 rounded mb-4 flex items-center justify-center font-bold text-gray-400">MINI-HERO INCLUDED</div>
+                    <h4 class="font-bold mb-2 uppercase">STORMER ist bereit</h4>
+                    <p class="text-sm text-gray-600">Ein detailreicher Mini-Roboter von Stormer führt den Widerstand an.</p>
+                </div>
+                <div class="bg-white p-4 rounded shadow-sm border border-gray-100">
+                    <div class="aspect-video bg-gray-200 rounded mb-4 flex items-center justify-center font-bold text-gray-400">COMBI MODEL</div>
+                    <h4 class="font-bold mb-2 uppercase">Baue mehr!</h4>
+                    <p class="text-sm text-gray-600">Verbinde die Bestie mit anderen Sets für gigantische Kreaturen.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Message Box Container -->
+        <div id="messageBox" class="fixed bottom-8 right-8 bg-black text-white px-6 py-4 rounded-lg shadow-2xl transform translate-y-32 transition-transform duration-300 flex items-center space-x-4 z-[100]">
+            <span class="text-green-400">✔</span>
+            <span>Artikel zum Warenkorb hinzugefügt!</span>
+        </div>
+    </main>
+
+    <footer class="bg-zinc-900 text-white py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div>
+                <h5 class="font-bold mb-4 uppercase text-sm">Über uns</h5>
+                <ul class="text-xs space-y-2 text-gray-400">
+                    <li><a href="#" class="hover:text-white">Die LEGO Gruppe</a></li>
+                    <li><a href="#" class="hover:text-white">LEGO News</a></li>
+                    <li><a href="#" class="hover:text-white">Nachhaltigkeit</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-4 uppercase text-sm">Support</h5>
+                <ul class="text-xs space-y-2 text-gray-400">
+                    <li><a href="#" class="hover:text-white">Kontakt</a></li>
+                    <li><a href="#" class="hover:text-white">Bauanleitungen</a></li>
+                    <li><a href="#" class="hover:text-white">Ersatzteile</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-4 uppercase text-sm">Attraktionen</h5>
+                <ul class="text-xs space-y-2 text-gray-400">
+                    <li><a href="#" class="hover:text-white">LEGOLAND® Parks</a></li>
+                    <li><a href="#" class="hover:text-white">LEGOLAND Discovery Centers</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-4 uppercase text-sm">Mehr von uns</h5>
+                <ul class="text-xs space-y-2 text-gray-400">
+                    <li><a href="#" class="hover:text-white">LEGO® LIFE</a></li>
+                    <li><a href="#" class="hover:text-white">LEGO Education</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 mt-12 pt-8 border-t border-zinc-800 text-[10px] text-gray-500 flex flex-col md:flex-row justify-between items-center">
+            <p>LEGO, das LEGO Logo, die Minifigur, DUPLO, BIONICLE, LEGENDS OF CHIMA, Hero Factory, das FRIENDS Logo, das MINIFIGURES Logo, MINDSTORMS, MIXELS, NINJAGO und NEXO KNIGHTS sind Marken der LEGO Gruppe. ©2014-2026 The LEGO Group.</p>
+            <div class="mt-4 md:mt-0 flex space-x-4">
+                <span>Datenschutz</span>
+                <span>Cookies</span>
+                <span>Impressum</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function addToCart() {
+            const box = document.getElementById('messageBox');
+            box.classList.remove('translate-y-32');
+            
+            setTimeout(() => {
+                box.classList.add('translate-y-32');
+            }, 3000);
+        }
+    </script>
 </body>
 </html>
