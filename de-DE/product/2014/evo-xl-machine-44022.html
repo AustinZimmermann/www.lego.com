@@ -1,22 +1,358 @@
 <!DOCTYPE html>
 <html lang="de-DE">
 <head>
-<title>EVO XL MACHINE - 44022 - LEGO® Hero Factory - Produkte - LEGO.com DE</title>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="https://pages-themes.github.io/cayman/assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVO XL Machine - 44022 | Hero Factory | LEGO.com DE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,700;1,800&display=swap');
+
+        :root {
+            --lego-yellow: #FFD500;
+            --hf-orange: #FF8C00;
+            --hf-blue: #0055A4;
+            --hf-black: #111111;
+        }
+
+        body {
+            font-family: 'Exo 2', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .hf-gradient {
+            background: linear-gradient(135deg, #222 0%, #444 100%);
+        }
+
+        .product-card {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .price-tag {
+            background-color: var(--lego-yellow);
+            clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+
+        .hero-banner {
+            background: radial-gradient(circle at center, #333 0%, #000 100%);
+            border-bottom: 4px solid var(--lego-yellow);
+        }
+
+        .cta-button {
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+
+        /* 2014 Web Style Buttons */
+        .lego-btn-primary {
+            background-color: #e3000b;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 4px;
+            box-shadow: 0 4px 0 #b30009;
+        }
+
+        .tag-badge {
+            background: #eee;
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .spec-icon {
+            width: 40px;
+            height: 40px;
+            background: #ddd;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+        }
+    </style>
 </head>
-<body style="font-family: sans-serif;">
-<main id="content" class="main-content" role="main">
-<h1>LEGO® Hero Factory</h1>
-<h2>Produkte</h2>
-<h3 style="font-weight: bold;">
-<span id="number">44022</span>
-<span id="title">EVO XL MACHINE</span>
-</h3>
-<p><img src="https://www.lego.com/cdn/product-assets/product.img.pri/44022_prod.jpg" height="350"></p>
-<p class="description">EVO, gib Gas! Die Bestien haben deinen Walker zerstört. Aber du hast deinem Heldenstatus alle Ehre gemacht und die ultimative XL Machine entwickelt, um den anderen Helden beizustehen. Mit der neuen Ausrüstung, dem Werfer, den Raketen und dem drehbaren Maschinenaufbau kannst du alle Bestien abwehren, ganz gleich von welcher Seite sie angreifen. Du bist bestens ausgerüstet! Los geht’s, erobere Antropolis City zurück und befreie die Einwohner.</p>
-<p class="IPA">[ˈiːvoː | ɡɪp ˈɡaːs ‖ diː ˈbɛstiən ˈhaːbn̩ ˈdaɪ̯nən ˈvɔːkɐ tsɛɐ̯ˈʃtøːɐ̯t ‖ ˈaːbɐ duː hast ˈdaɪ̯nəm ˈhɛldn̩ˌʃtaːtʊs ˈalə ˈeːrə ɡəˈmaxt ʊnt diː ˈʊltimaˌtiːvə ˈɪksˈʔɛl məˈʃiːn ɛntˈvɪklt̩ | ʊm deːn ˈandərən ˈhɛldn̩ ˈbaɪ̯ˌtsuːˌʃteːn ‖ mɪt deːɐ̯ ˈnɔʏ̯ən ˈaʊ̯sˌrʏstʊŋ | deːm ˈvɛrfɐ | deːn raˈkeːtn̩ ʊnt deːm ˈdreːbaːrən maˈʃiːnənˌʔaʊ̯fˌbaʊ̯ kanst duː ˈalə ˈbɛstiən ˈapˌveːrən | ɡants ɡlaɪ̯ç fɔn ˈvɛlçɐ ˈzaɪ̯tə ziː ˈanˌɡraɪ̯fn̩ ‖ duː bɪst ˈbɛstn̩s ˈaʊ̯sɡəˌrʏstət ‖ loːs ɡeːts | ɛɐ̯ˈʔoːbərə anˈtrɔpolɪs ˈsɪti t͡suˈrʏk ʊnt bəˈfraɪ̯ə diː ˈaɪ̯nˌvoːnɐ]</p>
-<p style="font-size: 12px; text-align: center;">©2014 The LEGO Group. All rights reserved.</p>
-</main>  
+<body>
+
+    <!-- Header Navigation -->
+    <header class="bg-white border-b-2 border-gray-200 sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/LEGO_logo.svg" alt="LEGO Logo" class="h-10 w-10">
+                <nav class="hidden md:flex space-x-4 font-bold text-sm uppercase tracking-wide">
+                    <a href="#" class="hover:text-blue-600">Shop</a>
+                    <a href="#" class="text-blue-600">Themen</a>
+                    <a href="#" class="hover:text-blue-600">Spiele</a>
+                    <a href="#" class="hover:text-blue-600">Entdecken</a>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="hidden sm:block text-right">
+                    <p class="text-xs font-bold">Kostenloser Versand ab 55 €*</p>
+                </div>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded font-bold text-xs uppercase">Anmelden</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <div class="bg-gray-100 py-2">
+        <div class="container mx-auto px-4 text-xs text-gray-500">
+            Startseite > Themen > Hero Factory > Produkte > 44022
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-banner py-12">
+            <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+                
+                <!-- Image Gallery -->
+                <div class="w-full md:w-1/2 relative group">
+                    <div class="bg-white p-4 rounded-xl shadow-2xl relative overflow-hidden">
+                        <img id="main-image" src="https://www.bricklink.com/SL/44022-1.jpg" alt="EVO XL Machine" class="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/600x600/222/FFD500?text=44022+EVO+XL+Machine'">
+                        <div class="absolute top-4 left-4">
+                             <span class="bg-red-600 text-white text-xs font-black px-2 py-1 italic uppercase transform -skew-x-12">Neu</span>
+                        </div>
+                    </div>
+                    <div class="flex mt-4 space-x-2 justify-center">
+                        <div class="w-16 h-16 border-2 border-yellow-400 bg-white p-1 rounded cursor-pointer">
+                            <img src="https://www.bricklink.com/SL/44022-1.jpg" class="w-full h-full object-contain">
+                        </div>
+                        <div class="w-16 h-16 border border-gray-300 bg-white p-1 rounded cursor-pointer hover:border-yellow-400">
+                            <div class="w-full h-full bg-gray-200 flex items-center justify-center text-[8px] text-center">Box Art</div>
+                        </div>
+                        <div class="w-16 h-16 border border-gray-300 bg-white p-1 rounded cursor-pointer hover:border-yellow-400">
+                             <div class="w-full h-full bg-gray-200 flex items-center justify-center text-[8px] text-center">Lifestyle</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="w-full md:w-1/2 md:pl-12 mt-8 md:mt-0 text-white">
+                    <h2 class="text-yellow-400 font-bold uppercase tracking-tighter text-xl">Hero Factory</h2>
+                    <h1 class="text-4xl md:text-6xl font-black italic uppercase leading-none mb-2">EVO XL Machine</h1>
+                    <p class="text-gray-400 text-sm mb-6 uppercase tracking-widest">Artikel: 44022 | Alter: 8-14 | Teile: 193</p>
+                    
+                    <div class="flex items-center mb-6">
+                        <div class="flex text-yellow-400">
+                            ★★★★★
+                        </div>
+                        <span class="ml-2 text-xs font-bold">(14 Bewertungen)</span>
+                    </div>
+
+                    <div class="bg-zinc-800 p-6 rounded-lg border-l-4 border-yellow-400 mb-8">
+                        <div class="flex justify-between items-end">
+                            <div>
+                                <p class="text-gray-400 text-xs line-through">24,99 €</p>
+                                <p class="text-4xl font-black">19,99 €</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-green-400 font-bold text-sm">Auf Lager</p>
+                            </div>
+                        </div>
+                        <button onclick="addToCart()" class="w-full mt-6 lego-btn-primary uppercase font-black text-xl flex items-center justify-center">
+                            In den Warenkorb
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center bg-zinc-900/50 p-3 rounded">
+                            <div class="spec-icon text-black">📦</div>
+                            <span class="text-xs font-bold uppercase">VIP-Punkte: 150</span>
+                        </div>
+                        <div class="flex items-center bg-zinc-900/50 p-3 rounded">
+                            <div class="spec-icon text-black">🛡️</div>
+                            <span class="text-xs font-bold uppercase">Garantie inklusive</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Details -->
+        <section class="py-16 container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-black uppercase mb-6 border-b-2 border-yellow-400 inline-block">Beschreibung</h3>
+                    <p class="text-lg leading-relaxed text-gray-700 mb-6">
+                        Mach dich bereit für den Einsatz, EVO! Die Bestien haben die Stadt angegriffen, und nur die mächtige <strong>EVO XL Machine</strong> kann sie aufhalten. Spring in das Cockpit, aktiviere die Shooter und setze den massiven Greifarm ein, um die fiesen Jumper einzufangen.
+                    </p>
+                    <ul class="space-y-3 list-disc pl-5 text-gray-700 mb-8">
+                        <li>Enthält eine EVO Mini-Figur mit Ausrüstung und Zubehör.</li>
+                        <li>Verfügt über ein abnehmbares Cockpit, einen rotierenden Oberkörper und Shooter.</li>
+                        <li>Enthält 2 Jumper – bring sie zum Springen!</li>
+                        <li>Die Maschine ist über 23 cm groß!</li>
+                        <li>Kombiniere das Set mit 44015 EVO Walker für noch mehr Action.</li>
+                    </ul>
+
+                    <div class="bg-yellow-50 p-6 rounded-xl border border-yellow-200">
+                        <h4 class="font-bold mb-2">Wusstest du schon?</h4>
+                        <p class="text-sm italic">In der "Invasion from Below" Serie müssen die Helden tief unter die Erde von Antropolis City reisen, um die Ursache des Monster-Angriffs zu finden.</p>
+                    </div>
+                </div>
+
+                <!-- Side Specs -->
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                        <h4 class="font-bold uppercase text-xs text-gray-400 mb-4 tracking-widest">Spezifikationen</h4>
+                        <div class="space-y-4">
+                            <div class="flex justify-between border-b pb-2">
+                                <span class="text-sm font-bold">Themenwelt</span>
+                                <span class="text-sm text-blue-600 font-bold">Hero Factory</span>
+                            </div>
+                            <div class="flex justify-between border-b pb-2">
+                                <span class="text-sm font-bold">Erscheinungsjahr</span>
+                                <span class="text-sm">2014</span>
+                            </div>
+                            <div class="flex justify-between border-b pb-2">
+                                <span class="text-sm font-bold">Abmessungen</span>
+                                <span class="text-sm">26x19x7 cm</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-sm font-bold">EAN</span>
+                                <span class="text-sm">5702015114516</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Instruction Promo -->
+                    <div class="hf-gradient p-6 rounded-lg text-white">
+                        <h4 class="font-black italic uppercase mb-2">Bauanleitungen</h4>
+                        <p class="text-xs mb-4">Hast du deine Anleitung verloren? Kein Problem! Lade sie hier digital herunter.</p>
+                        <a href="#" class="text-yellow-400 text-xs font-bold uppercase hover:underline">PDF Herunterladen →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Products -->
+        <section class="bg-gray-200 py-12">
+            <div class="container mx-auto px-4">
+                <h3 class="text-xl font-black uppercase mb-8">Das könnte dir auch gefallen</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <!-- Item 1 -->
+                    <div class="bg-white p-4 rounded shadow-sm hover:shadow-md transition-shadow">
+                        <div class="h-32 bg-gray-100 mb-4 rounded flex items-center justify-center">
+                            <span class="text-xs font-bold text-gray-400">44021 SPLITTER Beast</span>
+                        </div>
+                        <p class="text-xs font-bold mb-1">44021</p>
+                        <p class="text-sm font-black uppercase truncate">SPLITTER Beast vs. FURNO</p>
+                        <p class="text-lg font-bold mt-2">14,99 €</p>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="bg-white p-4 rounded shadow-sm hover:shadow-md transition-shadow">
+                        <div class="h-32 bg-gray-100 mb-4 rounded flex items-center justify-center">
+                            <span class="text-xs font-bold text-gray-400">44019 ROCKA Stealth</span>
+                        </div>
+                        <p class="text-xs font-bold mb-1">44019</p>
+                        <p class="text-sm font-black uppercase truncate">ROCKA Stealth Machine</p>
+                        <p class="text-lg font-bold mt-2">14,99 €</p>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="bg-white p-4 rounded shadow-sm hover:shadow-md transition-shadow border-2 border-yellow-400">
+                        <div class="h-32 bg-gray-100 mb-4 rounded flex items-center justify-center">
+                            <span class="text-xs font-bold text-gray-400">44029 QUEEN Beast</span>
+                        </div>
+                        <p class="text-xs font-bold mb-1">44029</p>
+                        <p class="text-sm font-black uppercase truncate">QUEEN Beast vs. FURNO</p>
+                        <p class="text-lg font-bold mt-2">34,99 €</p>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="bg-white p-4 rounded shadow-sm hover:shadow-md transition-shadow">
+                        <div class="h-32 bg-gray-100 mb-4 rounded flex items-center justify-center">
+                            <span class="text-xs font-bold text-gray-400">44017 STORMER Freezer</span>
+                        </div>
+                        <p class="text-xs font-bold mb-1">44017</p>
+                        <p class="text-sm font-black uppercase truncate">STORMER Freezer Machine</p>
+                        <p class="text-lg font-bold mt-2">14,99 €</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-900 text-gray-400 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8 border-b border-zinc-800 pb-8">
+                <div>
+                    <h5 class="text-white font-bold mb-4 uppercase">Über uns</h5>
+                    <ul class="text-xs space-y-2">
+                        <li><a href="#" class="hover:text-white">Die LEGO Gruppe</a></li>
+                        <li><a href="#" class="hover:text-white">LEGO News</a></li>
+                        <li><a href="#" class="hover:text-white">Nachhaltigkeit</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold mb-4 uppercase">Support</h5>
+                    <ul class="text-xs space-y-2">
+                        <li><a href="#" class="hover:text-white">Kontakt</a></li>
+                        <li><a href="#" class="hover:text-white">Bauanleitungen</a></li>
+                        <li><a href="#" class="hover:text-white">Ersatzteile</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold mb-4 uppercase">Attraktionen</h5>
+                    <ul class="text-xs space-y-2">
+                        <li><a href="#" class="hover:text-white">LEGOLAND Parks</a></li>
+                        <li><a href="#" class="hover:text-white">LEGOLAND Discovery Centers</a></li>
+                    </ul>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/LEGO_logo.svg" class="h-12 w-12 opacity-50 grayscale">
+                    <p class="text-[10px]">LEGO, das LEGO Logo, die Minifigur, DUPLO, BIONICLE, LEGENDS OF CHIMA, HERO FACTORY und die Noppen-Konfiguration sind Marken der LEGO Gruppe. ©2014 The LEGO Group.</p>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between text-[10px] uppercase font-bold tracking-widest">
+                <div class="flex space-x-4 mb-4 md:mb-0">
+                    <a href="#" class="hover:text-white">Datenschutz</a>
+                    <a href="#" class="hover:text-white">Cookies</a>
+                    <a href="#" class="hover:text-white">Impressum</a>
+                </div>
+                <p>Deutschland (Deutsch)</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Notification Box (Instead of Alert) -->
+    <div id="msg-box" class="fixed bottom-10 right-10 bg-black text-white p-4 rounded-lg shadow-2xl transform translate-y-32 transition-transform duration-300 z-[100] border-l-4 border-green-500">
+        <div class="flex items-center space-x-3">
+            <span class="text-2xl">🛒</span>
+            <div>
+                <p class="font-bold text-sm">Erfolgreich hinzugefügt!</p>
+                <p class="text-xs text-gray-400">EVO XL Machine ist jetzt im Warenkorb.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function addToCart() {
+            const box = document.getElementById('msg-box');
+            box.classList.remove('translate-y-32');
+            box.classList.add('translate-y-0');
+            
+            setTimeout(() => {
+                box.classList.add('translate-y-32');
+                box.classList.remove('translate-y-0');
+            }, 3000);
+        }
+
+        // Simple gallery switcher
+        document.querySelectorAll('.cursor-pointer img').forEach(img => {
+            img.parentElement.onclick = function() {
+                if(img.src) {
+                    document.getElementById('main-image').src = img.src;
+                }
+            };
+        });
+    </script>
 </body>
 </html>
