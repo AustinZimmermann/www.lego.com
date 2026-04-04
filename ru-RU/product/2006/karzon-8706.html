@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <title>LEGO.com KNIGHTS’ KINGDOM - 8706 Карзон - Microsoft Internet Explorer</title>
+    <style>
+        /* IE6 Browser Chrome Simulation */
+        body {
+            background-color: #D4D0C8; /* Classic Windows Grey */
+            font-family: Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .ie-window {
+            border: 2px solid #0054E3;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ie-header {
+            background: linear-gradient(90deg, #0054E3 0%, #27C4FF 100%);
+            color: white;
+            padding: 3px 5px;
+            font-weight: bold;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .ie-address-bar {
+            background: #D4D0C8;
+            padding: 5px;
+            border-bottom: 1px solid #808080;
+            font-size: 11px;
+        }
+
+        .ie-address-input {
+            background: white;
+            border: 1px solid #7F9DB9;
+            padding: 2px;
+            width: 80%;
+        }
+
+        /* LEGO Website Content */
+        #web-content {
+            background-color: #FFFFFF;
+            flex-grow: 1;
+            overflow-y: scroll;
+            border: 2px inset #D4D0C8;
+        }
+
+        .lego-header {
+            background-color: #000;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .lego-logo {
+            width: 50px;
+            vertical-align: middle;
+        }
+
+        .knights-banner {
+            background: #232a5e;
+            color: #FFD700;
+            padding: 10px;
+            font-family: "Impact", sans-serif;
+            border-bottom: 3px solid #666;
+            text-transform: uppercase;
+        }
+
+        .product-container {
+            width: 760px;
+            margin: 20px auto;
+            display: table;
+        }
+
+        .product-image {
+            display: table-cell;
+            width: 350px;
+            border: 5px solid #333;
+            background: #eee;
+            padding: 10px;
+            vertical-align: top;
+        }
+
+        .product-info {
+            display: table-cell;
+            padding-left: 20px;
+            vertical-align: top;
+        }
+
+        h1 { color: #cc0000; font-size: 24px; margin-top: 0; }
+        .item-no { color: #666; font-size: 12px; }
+        .description { font-size: 14px; line-height: 1.4; color: #333; }
+        
+        .buy-box {
+            background: #f2f2f2;
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        .price { font-weight: bold; font-size: 18px; color: #000; }
+        
+        .footer {
+            text-align: center;
+            font-size: 10px;
+            color: #999;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<div class="ie-window">
+    <div class="ie-header">
+        <div>Microsoft Internet Explorer - [LEGO.com Shop: 8706 Карзон]</div>
+        <div>[ _ ] [ ▢ ] [ X ]</div>
+    </div>
+
+    <div class="ie-address-bar">
+        Адрес: <input type="text" class="ie-address-input" value="http://www.lego.com/ru-ru/knights-kingdom/products/8706.aspx">
+    </div>
+
+    <div id="web-content">
+        <div class="lego-header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/LEGO_logo.svg" class="lego-logo" alt="LEGO">
+        </div>
+
+        <div class="knights-banner">
+            KNIGHTS’ KINGDOM™ / Королевство Рыцарей
+        </div>
+
+        <div class="product-container">
+            <div class="product-image">
+                <img src="https://www.bricklink.com/SL/8706-1.jpg" alt="8706 Karzon" style="width:100%">
+            </div>
+
+            <div class="product-info">
+                <span class="item-no">Арт: 8706</span>
+                <h1>Карзон</h1>
+                <p class="description">
+                    Карзон — хитрый и опасный противник! Вооруженный своим зазубренным мечом и мощным щитом, этот воин Тени готов сразиться с любым рыцарем Моравии. 
+                    <br><br>
+                    Используйте механизм на спине, чтобы активировать боевое движение! В набор входит карточка героя для настольной игры.
+                </p>
+
+                <div class="buy-box">
+                    <div class="price">499,00 руб.</div>
+                    <button onclick="addToCart()">В КОРЗИНУ</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            ©2006 The LEGO Group. Все права защищены. 
+        </div>
+    </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "LEGO 8706 Карзон (Karzon)",
+  "image": "https://www.bricklink.com/SL/8706-1.jpg",
+  "description": "Злой воин из серии LEGO® KNIGHTS’ KINGDOM™.",
+  "sku": "8706",
+  "brand": {
+    "@type": "Brand",
+    "name": "LEGO"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "RUB",
+    "price": "499.00",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+
+<script>
+    function addToCart() {
+        alert("Товар добавлен в корзину!");
+    }
+</script>
+
+</body>
+</html>
