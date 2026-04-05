@@ -1,169 +1,226 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru-RU">
 <head>
-    <meta charset="windows-1251">
-    <title>LEGO.com KNIGHTS’ KINGDOM - 8701 Король Джейко</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEGO® KNIGHTS’ KINGDOM™ - 8701 Король Джейко</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            background-color: #003366;
             font-family: Helvetica, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #000000;
+            background-color: #001a4d;
+            color: #ffffff;
+            background-image: radial-gradient(circle at center, #003399 0%, #000b26 100%);
         }
 
-        #ie-header {
-            background: linear-gradient(to bottom, #ebe9ed, #d6d3ce);
-            border-bottom: 2px solid #999;
-            padding: 2px;
-            font-size: 12px;
+        .lego-header {
+            background-color: #ff0000;
+            border-bottom: 4px solid #d40000;
         }
 
-        #browser-bar {
-            background: #f0f0f0;
-            border-bottom: 1px solid #808080;
-            padding: 5px;
-            font-size: 11px;
+        .product-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 8px;
         }
 
-        #main-container {
-            width: 760px;
-            margin: 20px auto;
-            background-color: #FFFFFF;
-            border: 1px solid #000;
+        .knights-gradient {
+            background: linear-gradient(135deg, #ffd700 0%, #b8860b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        #lego-header {
-            background-color: #FF0000;
-            height: 60px;
-            padding: 10px;
-            border-bottom: 4px solid #FFD700;
-        }
-
-        #nav-bar {
-            background-color: #FFD700;
-            padding: 5px;
+        .buy-button {
+            background: linear-gradient(to bottom, #ffcc00, #ff9900);
+            color: #000;
             font-weight: bold;
-            font-size: 12px;
-            text-transform: uppercase;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 0 #cc7a00;
         }
 
-        .content-area {
-            padding: 20px;
-            display: flex;
+        .buy-button:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #cc7a00;
         }
 
-        .product-image {
-            width: 350px;
-            border: 1px solid #CCC;
-            padding: 10px;
-            background: #fff;
+        .old-web-border {
+            border: 2px solid #ffd700;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
         }
 
-        .product-info {
-            flex: 1;
-            padding-left: 20px;
-        }
-
-        h1 {
-            color: #003366;
-            font-size: 22px;
-            margin-top: 0;
-        }
-
-        .set-number {
-            color: #666;
-            font-weight: bold;
-            font-size: 14px;
-        }
-
-        .description {
-            font-size: 13px;
-            line-height: 1.4;
-            margin-top: 15px;
-        }
-
-        .buy-box {
-            margin-top: 20px;
-            background-color: #F2F2F2;
-            padding: 15px;
-            border: 1px dashed #999;
-        }
-
-        .price {
-            font-size: 18px;
-            color: #CC0000;
-            font-weight: bold;
-        }
-
-        .footer {
-            background-color: #333;
-            color: #FFF;
-            text-align: center;
-            padding: 10px;
-            font-size: 10px;
-        }
-
-        marquee {
-            background: #000;
-            color: #0F0;
-            font-family: "Courier New";
+        .tab-active {
+            border-bottom: 3px solid #ffd700;
+            color: #ffd700;
         }
     </style>
+    
+    <!-- JSON-LD Metadata -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "LEGO® KNIGHTS’ KINGDOM™ 8701 Король Джейко",
+      "image": "https://www.bricklink.com/SL/8701-1.jpg",
+      "description": "Новый король Морсии, Король Джейко, готов вести своих рыцарей в бой против сил зла Лорда Владека. С новым золотым мечом и щитом, он является символом храбрости.",
+      "brand": {
+        "@type": "Brand",
+        "name": "LEGO"
+      },
+      "sku": "8701",
+      "releaseDate": "2006-01-01",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.lego.com/ru-ru/product/king-jayko-8701",
+        "priceCurrency": "RUB",
+        "price": "399.00",
+        "availability": "https://schema.org/Discontinued"
+      }
+    }
+    </script>
 </head>
-<body>
+<body class="min-h-screen">
 
-<div id="ie-header">
-    <strong>Адрес:</strong> <span style="background:white; border:1px solid #7F9DB9; padding:1px 5px; width: 600px; display:inline-block;">http://www.lego.com/ru-ru/knights-kingdom/products/8701.aspx</span>
-</div>
+    <!-- Navbar -->
+    <header class="lego-header py-2 px-4 flex justify-between items-center sticky top-0 z-50">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/LEGO_logo.svg" alt="LEGO Logo" class="h-10 md:h-12">
+        <nav class="hidden md:flex gap-6 text-sm font-bold uppercase tracking-wider">
+            <a href="#" class="hover:underline">Продукты</a>
+            <a href="#" class="hover:underline text-yellow-400">Knights' Kingdom</a>
+            <a href="#" class="hover:underline">Игры</a>
+            <a href="#" class="hover:underline">Клуб</a>
+        </nav>
+        <div class="flex items-center gap-4">
+            <span class="text-xs hidden sm:inline">Поиск</span>
+            <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-red-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                </svg>
+            </div>
+        </div>
+    </header>
 
-<div id="main-container">
-    <div id="lego-header">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/LEGO_logo.svg" height="60" alt="LEGO Logo" align="left">
-        <div style="float:right; color:white; font-size:24px; font-weight:bold; padding-top:10px;">KNIGHTS’ KINGDOM™</div>
-    </div>
-
-    <div id="nav-bar">
-        Продукты &nbsp; | &nbsp; Игры &nbsp; | &nbsp; Персонажи &nbsp; | &nbsp; Клуб LEGO
-    </div>
-
-    <div class="content-area">
-        <div class="product-image">
-            <img src="https://www.bricklink.com/SL/8701-1.jpg" width="340" alt="Король Джейко">
-            <p style="text-align:center; font-size:10px;">Нажмите для увеличения</p>
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        <!-- Breadcrumbs -->
+        <div class="text-xs mb-6 text-gray-400">
+            LEGO.com > Продукты > KNIGHTS’ KINGDOM™ > <span class="text-white">8701</span>
         </div>
 
-        <div class="product-info">
-            <span class="set-number">Арт. 8701</span>
-            <h1>Король Джейко</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             
-            <div class="description">
-                <strong>Справедливый правитель Морсии!</strong><br><br>
-                Король Джейко готов вести своих рыцарей в бой против армии Владека. Вооруженный своим золотым мечом и королевским щитом, он является символом мужества и чести. 
-                <br><br>
-                <ul>
-                    <li>Высота фигурки более 19 см!</li>
-                    <li>Подвижные доспехи и оружие.</li>
-                    <li>Включает специальную карточку героя.</li>
-                </ul>
+            <!-- Product Image Section -->
+            <div class="relative">
+                <div class="old-web-border bg-white p-4 rounded-sm">
+                    <img id="main-img" src="https://www.bricklink.com/SL/8701-1.jpg" alt="8701 Король Джейко" class="w-full h-auto">
+                </div>
+                <div class="mt-4 flex gap-2">
+                    <button onclick="changeImg(this.src)" class="w-20 h-20 border-2 border-yellow-500 bg-white p-1">
+                        <img src="https://www.bricklink.com/SL/8701-1.jpg" class="w-full h-full object-contain">
+                    </button>
+                    <div class="w-20 h-20 border border-gray-600 bg-black/40 flex items-center justify-center text-[10px] text-center p-1">
+                        БОЛЬШЕ ФОТО
+                    </div>
+                </div>
             </div>
 
-            <div class="buy-box">
-                <span class="price">399,00 руб.</span><br><br>
-                <button style="padding:5px 10px; cursor:pointer; font-weight:bold;">В КОРЗИНУ</button>
+            <!-- Product Details Section -->
+            <div class="flex flex-col gap-6">
+                <div>
+                    <h2 class="text-xl font-bold text-blue-300 tracking-widest uppercase">Knights' Kingdom™</h2>
+                    <h1 class="text-4xl md:text-5xl font-bold knights-gradient uppercase italic">Король Джейко</h1>
+                    <p class="text-gray-400 mt-1 font-bold">Артикул: 8701 | Возраст: 6-12</p>
+                </div>
+
+                <div class="product-card p-6 border-l-4 border-l-yellow-500">
+                    <div class="text-3xl font-bold text-white mb-4">399 руб.</div>
+                    <button class="buy-button w-full py-4 rounded text-xl uppercase tracking-tighter">
+                        Добавить в корзину
+                    </button>
+                    <p class="text-xs mt-3 text-center text-gray-300">Доступно в Январе 2006</p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="flex border-b border-gray-700">
+                        <button class="px-4 py-2 font-bold tab-active">ОПИСАНИЕ</button>
+                        <button class="px-4 py-2 font-bold text-gray-500">ДЕТАЛИ</button>
+                    </div>
+                    
+                    <div class="text-lg leading-relaxed text-blue-50">
+                        <p class="mb-4">
+                            <strong>Да здравствует новый король Морсии!</strong>
+                        </p>
+                        <p>
+                            Джейко стал королем, но битва за Морсию еще не окончена! В своих новых золотых доспехах Король Джейко готов вести своих верных рыцарей против теней прошлого. 
+                        </p>
+                        <ul class="list-disc ml-5 mt-4 space-y-2 text-sm">
+                            <li>В набор входит полностью подвижная фигурка Короля Джейко.</li>
+                            <li>Включает легендарный золотой меч и щит с гербом ястреба.</li>
+                            <li>Поднимите забрало его шлема, чтобы увидеть лицо героя!</li>
+                            <li>Используйте специальное колесо на спине для активации боевого движения «Размашистый удар».</li>
+                            <li>Высота фигурки более 19 см.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Action Call -->
+                <div class="bg-blue-900/50 p-4 rounded border border-blue-700 flex items-center gap-4">
+                    <div class="text-3xl">⚔️</div>
+                    <div>
+                        <h4 class="font-bold">Победи Владека!</h4>
+                        <p class="text-xs text-blue-300">Собери всех рыцарей, чтобы спасти королевство.</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="footer">
-        ©2006 The LEGO Group. Все права защищены. <br>
-        Использование этого сайта означает ваше согласие с условиями использования.
-    </div>
-</div>
+        <!-- Related Sets (Simulated 2006 Footer) -->
+        <section class="mt-20 border-t border-gray-800 pt-10">
+            <h3 class="text-2xl font-bold mb-8 uppercase italic">Другие герои серии:</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-black/30 p-4 text-center rounded border border-transparent hover:border-yellow-500 cursor-pointer transition-colors">
+                    <div class="bg-white p-2 mb-2"><div class="h-32 flex items-center justify-center text-gray-400">8702 Lord Vladek</div></div>
+                    <span class="text-xs font-bold uppercase">8702 Лорд Владек</span>
+                </div>
+                <div class="bg-black/30 p-4 text-center rounded border border-transparent hover:border-yellow-500 cursor-pointer transition-colors">
+                    <div class="bg-white p-2 mb-2"><div class="h-32 flex items-center justify-center text-gray-400">8703 Sir Kentis</div></div>
+                    <span class="text-xs font-bold uppercase">8703 Сэр Кентис</span>
+                </div>
+                <div class="bg-black/30 p-4 text-center rounded border border-transparent hover:border-yellow-500 cursor-pointer transition-colors">
+                    <div class="bg-white p-2 mb-2"><div class="h-32 flex items-center justify-center text-gray-400">8704 Sir Adric</div></div>
+                    <span class="text-xs font-bold uppercase">8704 Сэр Адрик</span>
+                </div>
+                <div class="bg-black/30 p-4 text-center rounded border border-transparent hover:border-yellow-500 cursor-pointer transition-colors">
+                    <div class="bg-white p-2 mb-2"><div class="h-32 flex items-center justify-center text-gray-400">8705 Dracus</div></div>
+                    <span class="text-xs font-bold uppercase">8705 Дракус</span>
+                </div>
+            </div>
+        </section>
+    </main>
 
-<center>
-    <p style="color: white; font-size: 11px;">Лучше всего просматривать при разрешении 1024x768 в Internet Explorer 6.0</p>
-</center>
+    <footer class="bg-black py-10 mt-20 border-t-2 border-yellow-600">
+        <div class="max-w-6xl mx-auto px-4 text-center text-xs text-gray-500">
+            <div class="flex flex-wrap justify-center gap-6 mb-6 text-gray-300 font-bold uppercase">
+                <a href="#">Обслуживание клиентов</a>
+                <a href="#">Запасные детали</a>
+                <a href="#">Инструкции по сборке</a>
+                <a href="#">Политика конфиденциальности</a>
+            </div>
+            <p>LEGO, логотип LEGO и KNIGHTS’ KINGDOM являются товарными знаками LEGO Group. ©2006 The LEGO Group. Все права защищены.</p>
+        </div>
+    </footer>
 
+    <script>
+        function changeImg(src) {
+            document.getElementById('main-img').src = src;
+        }
+
+        // Handle buy button interaction
+        document.querySelector('.buy-button').addEventListener('click', function() {
+            const msg = document.createElement('div');
+            msg.className = 'fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-yellow-500 text-black p-8 border-4 border-white shadow-2xl z-[100] text-center font-bold';
+            msg.innerHTML = '<h2 class="text-2xl mb-4">СПАСИБО!</h2><p>Король Джейко добавлен в вашу корзину.</p><button onclick="this.parentElement.remove()" class="mt-6 bg-black text-white px-4 py-2 uppercase text-sm">Продолжить покупки</button>';
+            document.body.appendChild(msg);
+        });
+    </script>
 </body>
 </html>
