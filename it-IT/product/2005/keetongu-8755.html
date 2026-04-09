@@ -1,21 +1,160 @@
 <!DOCTYPE html>
 <html lang="it-IT">
 <head>
-<title>8755 Keetongu - BIONICLE® - LEGO.com (Italia)</title>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="https://pages-themes.github.io/cayman/assets/css/style.css">
+    <meta charset="UTF-8">
+    <title>LEGO.com BIONICLE® - 8755 Keetongu</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #ccc;
+            font-family: Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Intestazione stile 2005 */
+        header {
+            background: linear-gradient(to bottom, #444, #111);
+            padding: 10px;
+            text-align: center;
+            border-bottom: 2px solid #f2cf07;
+        }
+
+        .logo-bionicle {
+            font-family: "Impact", sans-serif;
+            color: #fff;
+            letter-spacing: 3px;
+            font-size: 2em;
+            text-transform: uppercase;
+        }
+
+        .container {
+            width: 900px;
+            margin: 20px auto;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            padding: 20px;
+            display: flex;
+        }
+
+        .product-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .product-image img {
+            width: 350px;
+            border: 5px solid #333;
+            box-shadow: 0 0 15px rgba(242, 207, 7, 0.3);
+        }
+
+        .product-info {
+            flex: 1;
+            padding-left: 30px;
+        }
+
+        h1 {
+            color: #f2cf07; /* Giallo Keetongu */
+            font-size: 1.8em;
+            margin-top: 0;
+        }
+
+        .price {
+            font-size: 1.4em;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .description {
+            line-height: 1.6;
+            font-size: 0.9em;
+        }
+
+        .buy-button {
+            background-color: #e30613;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            margin-top: 20px;
+        }
+
+        .buy-button:hover {
+            background-color: #ff0000;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7em;
+            padding: 20px;
+            color: #666;
+        }
+    </style>
 </head>
-<body style="font-family: sans-serif;">
-<main id="content" class="main-content" role="main">
-<h1>BIONICLE®</h1>
-<h2>Prodotti</h2>
-<h3 style="font-weight: bold;">
-<span id="number">8755</span>
-<span id="title">Keetongu</span>
-</h3>
-<p><img src="https://www.bricklink.com/OL/8755-1.jpg" height="350"></p>
-<p>Keetongu non è solo un alleato prezioso, ma un guerriero formidabile! Questa imponente figura d’azione è dotata di una forza sovrumana e di strumenti antichi per contrastare le orde di ragni Visorak. Con le sue braccia massicce e il suo scudo rotante, è pronto a guidare i Toa Hordika nella battaglia finale per la liberazione di Metru Nui.</p>
-<p style="font-size: 12px; text-align: center;">©2005 The LEGO Group. All rights reserved.</p>
-</main>  
+<body>
+
+<header>
+    <div class="logo-bionicle">BIONICLE®</div>
+</header>
+
+<div class="container">
+    <div class="product-image">
+        <img src="https://www.bricklink.com/SL/8755-1.jpg" alt="LEGO BIONICLE 8755 Keetongu">
+        <p><em>Immagine del set reale</em></p>
+    </div>
+
+    <div class="product-info">
+        <h1>Keetongu (8755)</h1>
+        <p><strong>Serie:</strong> Toa Hordika</p>
+        <div class="price">€ 19,90</div>
+        
+        <div class="description">
+            <p>Il leggendario Keetongu è arrivato! Guardiano dei misteri della natura, è l’unico in grado di curare i Toa Hordika dal loro veleno Visorak.</p>
+            <ul>
+                <li>Dotato di scudo rotante Rhotuka!</li>
+                <li>Braccia massicce per un’azione di combattimento incredibile.</li>
+                <li>Altezza superiore a 20 cm.</li>
+            </ul>
+        </div>
+
+        <button class="buy-button" onclick="addToCart()">Aggiungi al Carrello</button>
+    </div>
+</div>
+
+<footer>
+    &copy; 2005 The LEGO Group. Tutti i diritti riservati.
+</footer>
+
+<script>
+    function addToCart() {
+        alert("Il set “8755 Keetongu” è stato aggiunto al carrello! (Simulazione Marzo 2005)");
+    }
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "LEGO BIONICLE 8755 Keetongu",
+  "image": "https://www.bricklink.com/SL/8755-1.jpg",
+  "description": "Il mitico Keetongu, alleato dei Toa Hordika, dotato di scudo Rhotuka e braccia articolate.",
+  "sku": "8755",
+  "brand": {
+    "@type": "Brand",
+    "name": "LEGO BIONICLE"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.lego.com/it-it/bionicle/products/8755",
+    "priceCurrency": "EUR",
+    "price": "19.90",
+    "availability": "https://schema.org/InStock",
+    "priceValidUntil": "2005-12-31"
+  }
+}
+</script>
+
 </body>
 </html>
