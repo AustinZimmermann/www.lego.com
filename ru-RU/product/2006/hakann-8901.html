@@ -1,261 +1,307 @@
 <!DOCTYPE html>
-<html lang="ru-RU">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>8901 Hakann (Хаканн) - BIONICLE® - LEGO.com</title>
+    <title>LEGO.com BIONICLE - Пирака: Хаканн (8901)</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --piraka-red: #cc0000;
-            --lava-glow: #ff4d00;
-            --dark-metal: #1a1a1a;
+            --piraka-fire: #d7261e;
+            --piraka-silver: #a1a1a1;
+            --piraka-black: #0f0f0f;
         }
 
         body {
-            font-family: Helvetica, sans-serif;
-            background-color: #0a0a0a;
-            color: #e0e0e0;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Exo 2', sans-serif;
             overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(215, 38, 30, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(215, 38, 30, 0.1) 0%, transparent 50%);
         }
 
-        .lava-gradient {
-            background: linear-gradient(135deg, #cc0000 0%, #660000 100%);
+        .bionicle-header {
+            background: linear-gradient(to bottom, #222, #000);
+            border-bottom: 2px solid #d7261e;
+            box-shadow: 0 4px 15px rgba(215, 38, 30, 0.3);
         }
 
-        .glow-text {
-            text-shadow: 0 0 10px rgba(255, 77, 0, 0.7);
+        .flash-frame {
+            background: #050505;
+            border: 1px solid #333;
+            position: relative;
+            box-shadow: 0 0 40px rgba(0,0,0,1);
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9IiMyMjIiLz48L3N2Zz4=');
         }
 
-        .product-card {
-            background: rgba(30, 30, 30, 0.8);
+        .lava-glow {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 100px;
+            background: radial-gradient(ellipse at center, rgba(215, 38, 30, 0.4) 0%, transparent 70%);
+            filter: blur(20px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .nav-button {
+            background: rgba(40, 40, 40, 0.8);
+            border: 1px solid #444;
+            padding: 10px 15px;
+            font-size: 0.75rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .nav-button:hover, .nav-button.active {
+            background: var(--piraka-fire);
+            border-color: #ff4d4d;
+            color: white;
+            box-shadow: 0 0 15px rgba(215, 38, 30, 0.6);
+        }
+
+        .hakann-img {
+            filter: drop-shadow(0 0 30px rgba(215, 38, 30, 0.2));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1deg); }
+        }
+
+        .info-panel {
+            background: rgba(15, 15, 15, 0.9);
+            border-right: 4px solid var(--piraka-fire);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .piraka-teeth {
-            filter: drop-shadow(0 0 5px #fff);
+        .buy-btn {
+            background: linear-gradient(to bottom, #ff0000, #800000);
+            padding: 15px 40px;
+            font-weight: 900;
+            font-style: italic;
+            border-radius: 2px;
+            border: 1px solid #ff4d4d;
+            box-shadow: 0 4px 0 #400000;
+            transition: transform 0.1s;
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.6; }
+        .buy-btn:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #400000;
         }
 
-        .eyes-glow {
-            animation: pulse 2s infinite;
-            color: #ff0000;
-            text-shadow: 0 0 15px #ff0000;
+        .scanlines {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%);
+            background-size: 100% 4px;
+            z-index: 20;
+            pointer-events: none;
+            opacity: 0.3;
         }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0a0a0a; }
-        ::-webkit-scrollbar-thumb { background: var(--piraka-red); border-radius: 4px; }
+        .sidebar-item {
+            border-left: 2px solid transparent;
+            padding-left: 10px;
+            transition: all 0.3s;
+        }
+
+        .sidebar-item:hover {
+            border-left-color: var(--piraka-fire);
+            color: var(--piraka-fire);
+            background: rgba(215, 38, 30, 0.05);
+        }
+
+        .active-piraka {
+            border-left-color: var(--piraka-fire);
+            background: rgba(215, 38, 30, 0.1);
+            color: #fff;
+            font-weight: bold;
+        }
     </style>
-    
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org/",
-      "@type": "Product",
-      "name": "LEGO® BIONICLE® 8901 Hakann",
-      "image": "https://img.bricklink.com/ItemImage/SN/0/8901-1.png",
-      "description": "Meet Hakann, the most untrustworthy and explosive of the Piraka. This LEGO BIONICLE set features a Zamor Sphere launcher and a double-headed lava launcher.",
-      "brand": {
-        "@type": "Brand",
-        "name": "LEGO BIONICLE"
-      },
-      "sku": "8901",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "RUB",
-        "availability": "https://schema.org/Discontinued"
-      }
-    }
-    </script>
 </head>
-<body class="selection:bg-red-600">
+<body>
 
-    <!-- Navigation -->
-    <nav class="sticky top-0 z-50 bg-black/90 border-b border-red-900/50 p-4">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="flex items-center space-x-4">
-                <div class="w-10 h-10 bg-red-600 flex items-center justify-center font-bold text-white rounded">LEGO</div>
-                <span class="text-xl font-black tracking-tighter uppercase italic">BIONICLE</span>
+    <!-- Global LEGO Header -->
+    <nav class="bg-black text-white py-2 px-6 flex justify-between items-center text-[10px] uppercase font-bold border-b border-zinc-800">
+        <div class="flex items-center space-x-6">
+            <div class="bg-[#ffcf00] p-1 rounded-sm">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/LEGO_logo.svg" alt="LEGO" class="h-6">
             </div>
-            <div class="hidden md:flex space-x-8 text-sm font-bold uppercase tracking-widest">
-                <a href="#" class="hover:text-red-500 transition">Герои</a>
-                <a href="#" class="text-red-500 underline decoration-2 underline-offset-8">Пирака</a>
-                <a href="#" class="hover:text-red-500 transition">Остров Войя Нуи</a>
+            <div class="hidden md:flex space-x-4">
+                <a href="#" class="hover:text-yellow-400">ПРОДУКТЫ</a>
+                <a href="#" class="hover:text-yellow-400">МАГАЗИН</a>
+                <a href="#" class="hover:text-yellow-400">ИГРЫ</a>
+                <a href="#" class="hover:text-yellow-400">КЛУБ</a>
             </div>
-            <button class="bg-red-700 hover:bg-red-600 text-white px-4 py-2 rounded text-xs font-bold uppercase transition">
-                Где купить
-            </button>
+        </div>
+        <div class="flex items-center space-x-4">
+            <span>RU / PОССИЯ</span>
+            <div class="bg-zinc-900 border border-zinc-700 px-2 py-1 flex items-center">
+                <input type="text" placeholder="ПОИСК" class="bg-transparent outline-none w-24">
+                <svg class="w-3 h-3 text-zinc-500" fill="currentColor" viewBox="0 0 20 20"><path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.34-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"/></svg>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center pt-10 overflow-hidden">
-        <!-- Background elements -->
-        <div class="absolute top-1/4 -left-20 w-96 h-96 bg-red-900/20 rounded-full blur-[120px]"></div>
-        <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-orange-900/10 rounded-full blur-[120px]"></div>
+    <!-- BIONICLE Sub-brand Nav -->
+    <div class="bionicle-header py-4 px-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Bionicle_logo.svg" alt="BIONICLE" class="h-8 brightness-150">
+        <div class="flex space-x-1">
+            <button class="nav-button">ГЕРОИ</button>
+            <button class="nav-button active">ПИРАКА</button>
+            <button class="nav-button">ЛЕГЕНДА</button>
+            <button class="nav-button">ГАЛЕРЕЯ</button>
+        </div>
+    </div>
 
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center z-10">
-            <!-- Image Column -->
-            <div class="relative group">
-                <div class="absolute inset-0 bg-red-600/10 rounded-full blur-3xl group-hover:bg-red-600/20 transition duration-700"></div>
-                <img 
-                    src="https://img.bricklink.com/ItemImage/SN/0/8901-1.png" 
-                    alt="Hakann Piraka" 
-                    class="relative w-full h-auto transform transition duration-500 hover:scale-105 drop-shadow-[0_20px_50px_rgba(255,0,0,0.3)]"
-                    onerror="this.src='https://via.placeholder.com/600x600/1a1a1a/e0e0e0?text=8901+Hakann+Image'"
-                >
-                <!-- Interactive Glows -->
-                <div class="absolute top-[18%] left-[48%] w-3 h-2 bg-red-500 blur-sm rounded-full eyes-glow"></div>
-            </div>
+    <main class="max-w-6xl mx-auto mt-8 p-4">
+        <div class="flash-frame rounded-sm overflow-hidden flex flex-col md:flex-row min-h-[600px] relative">
+            <div class="scanlines"></div>
+            <div class="lava-glow"></div>
 
-            <!-- Content Column -->
-            <div class="space-y-6">
-                <div>
-                    <h2 class="text-red-600 font-bold tracking-[0.3em] uppercase text-sm mb-2">BIONICLE® 8901</h2>
-                    <h1 class="text-6xl md:text-8xl font-black uppercase italic tracking-tighter leading-none">
-                        HAKANN<br><span class="text-red-600">ХАКАНН</span>
-                    </h1>
-                </div>
+            <!-- Sidebar -->
+            <aside class="w-full md:w-52 p-6 border-r border-zinc-800 z-30 bg-black/50">
+                <h3 class="text-xs font-black text-zinc-500 mb-6 tracking-widest">БАНДА ПИРАКА</h3>
+                <nav class="space-y-4 text-sm font-bold uppercase tracking-tighter">
+                    <a href="#" class="sidebar-item block">Зактан</a>
+                    <a href="#" class="sidebar-item active-piraka block py-1">Хаканн</a>
+                    <a href="#" class="sidebar-item block">Ток</a>
+                    <a href="#" class="sidebar-item block">Авак</a>
+                    <a href="#" class="sidebar-item block">Рейдак</a>
+                    <a href="#" class="sidebar-item block">Везок</a>
+                </nav>
                 
-                <p class="text-lg text-gray-400 max-w-lg leading-relaxed">
-                    Самый непредсказуемый и опасный из Пирака. Хаканн не доверяет никому, и никто не доверяет ему. Он готов предать любого ради маски Жизни.
-                </p>
+                <div class="mt-20 opacity-20 hidden md:block">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Bionicle_logo.svg" alt="B" class="w-full grayscale">
+                </div>
+            </aside>
 
-                <div class="flex flex-wrap gap-4 pt-4">
-                    <div class="product-card p-4 rounded-xl flex items-center space-x-4 w-40">
-                        <i class="fa-solid fa-cube text-red-500 text-2xl"></i>
-                        <div>
-                            <p class="text-[10px] uppercase text-gray-500 font-bold">Детали</p>
-                            <p class="text-xl font-black">42</p>
+            <!-- Main Product Display -->
+            <div class="flex-1 flex flex-col md:flex-row relative z-10">
+                <!-- Character Image Area -->
+                <div class="flex-1 flex items-center justify-center p-8 relative">
+                    <img src="https://www.bricklink.com/SL/8901-1.jpg" alt="Hakann" class="hakann-img max-w-full max-h-[500px] object-contain">
+                    
+                    <!-- Decorative HUD elements -->
+                    <div class="absolute top-10 right-10 border-r border-t border-red-900 w-12 h-12 opacity-50"></div>
+                    <div class="absolute bottom-10 left-10 border-l border-b border-red-900 w-12 h-12 opacity-50"></div>
+                </div>
+
+                <!-- Content Area -->
+                <div class="w-full md:w-96 info-panel p-8 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <header>
+                            <span class="text-red-500 font-bold text-xs tracking-widest">АРТИКУЛ 8901</span>
+                            <h1 class="text-6xl font-black italic tracking-tighter leading-none mt-1">ХАКАНН</h1>
+                            <p class="text-red-600 font-bold tracking-[0.3em] mt-2 uppercase">ЗАДИРА</p>
+                        </header>
+
+                        <div class="prose prose-invert text-sm text-zinc-400 leading-relaxed">
+                            Хаканн — самый коварный и вспыльчивый из всех Пирака. Известный как «Задира», он не остановится ни перед чем, чтобы получить то, что хочет, даже если для этого придется предать своих союзников. Его тепловое зрение и лавовая пусковая установка делают его смертельно опасным противником.
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-zinc-900/80 p-3 border border-zinc-800">
+                                <span class="block text-[10px] text-zinc-500">ВОЗРАСТ</span>
+                                <span class="text-lg font-bold">7-16</span>
+                            </div>
+                            <div class="bg-zinc-900/80 p-3 border border-zinc-800">
+                                <span class="block text-[10px] text-zinc-500">ДЕТАЛЕЙ</span>
+                                <span class="text-lg font-bold">42</span>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-2 text-xs font-bold text-zinc-300">
+                            <li class="flex items-center"><span class="w-2 h-2 bg-red-600 mr-2"></span> СВЕТЯЩИЕСЯ В ТЕМНОТЕ ЗУБЫ</li>
+                            <li class="flex items-center"><span class="w-2 h-2 bg-red-600 mr-2"></span> ПУСКОВАЯ УСТАНОВКА ЗАМОР</li>
+                            <li class="flex items-center"><span class="w-2 h-2 bg-red-600 mr-2"></span> ОГНЕННОЕ ОРУЖИЕ</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8 space-y-4">
+                        <button class="buy-btn w-full text-xl">КУПИТЬ СЕЙЧАС</button>
+                        <div class="flex space-x-2">
+                            <button class="flex-1 bg-zinc-800 hover:bg-zinc-700 py-2 text-[10px] font-bold">ОБОИ (PC)</button>
+                            <button class="flex-1 bg-zinc-800 hover:bg-zinc-700 py-2 text-[10px] font-bold">ИНСТРУКЦИЯ</button>
                         </div>
                     </div>
-                    <div class="product-card p-4 rounded-xl flex items-center space-x-4 w-40">
-                        <i class="fa-solid fa-cake-candles text-red-500 text-2xl"></i>
-                        <div>
-                            <p class="text-[10px] uppercase text-gray-500 font-bold">Возраст</p>
-                            <p class="text-xl font-black">7-16</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pt-8">
-                    <button id="buyBtn" class="lava-gradient px-12 py-5 rounded-full text-xl font-black uppercase tracking-widest hover:scale-105 transition active:scale-95 shadow-xl shadow-red-900/30">
-                        В корзину
-                    </button>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Abilities Section -->
-    <section class="bg-[#111] py-24 relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <h3 class="text-3xl font-black uppercase italic mb-12 border-l-8 border-red-600 pl-6">Вооружение и способности</h3>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Ability 1 -->
-                <div class="product-card p-8 rounded-2xl border-t-4 border-red-600">
-                    <div class="text-red-500 text-4xl mb-4"><i class="fa-solid fa-fire"></i></div>
-                    <h4 class="text-xl font-bold uppercase mb-3">Лавовая пушка</h4>
-                    <p class="text-gray-400 text-sm">Двуствольный лавовый метатель, способный плавить даже самую прочную броню героев Тоа.</p>
-                </div>
-                <!-- Ability 2 -->
-                <div class="product-card p-8 rounded-2xl border-t-4 border-red-600">
-                    <div class="text-red-500 text-4xl mb-4"><i class="fa-solid fa-bullseye"></i></div>
-                    <h4 class="text-xl font-bold uppercase mb-3">Сферы Замор</h4>
-                    <p class="text-gray-400 text-sm">В комплект входит пусковая установка и сферы Замор, наполненные энергией Антидермиса.</p>
-                </div>
-                <!-- Ability 3 -->
-                <div class="product-card p-8 rounded-2xl border-t-4 border-red-600">
-                    <div class="text-red-500 text-4xl mb-4"><i class="fa-solid fa-bolt"></i></div>
-                    <h4 class="text-xl font-bold uppercase mb-3">Глаза-лазеры</h4>
-                    <p class="text-gray-400 text-sm">Хаканн обладает способностью выпускать разрушительные тепловые лучи прямо из своих глаз.</p>
-                </div>
+        <!-- Featured Section -->
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-zinc-950 p-6 border-l-4 border-yellow-500 group cursor-pointer">
+                <h4 class="font-black text-sm group-hover:text-yellow-500 transition-colors">ИГРА "PIRAKA ATTACK"</h4>
+                <p class="text-xs text-zinc-500 mt-2 leading-relaxed">Пробейтесь через острова Войя Нуи в нашей новой онлайн-игре!</p>
+            </div>
+            <div class="bg-zinc-950 p-6 border-l-4 border-red-600 group cursor-pointer">
+                <h4 class="font-black text-sm group-hover:text-red-500 transition-colors">ВИДЕО: ТРЕЙЛЕР ПИРАКА</h4>
+                <p class="text-xs text-zinc-500 mt-2 leading-relaxed">Посмотрите, как банда Пирака захватывает остров и побеждает Тоа Нува.</p>
+            </div>
+            <div class="bg-zinc-950 p-6 border-l-4 border-zinc-500 group cursor-pointer">
+                <h4 class="font-black text-sm group-hover:text-zinc-300 transition-colors">КЛУБ BIONICLE</h4>
+                <p class="text-xs text-zinc-500 mt-2 leading-relaxed">Подпишитесь на журнал LEGO Magazine и получайте эксклюзивные комиксы.</p>
             </div>
         </div>
-    </section>
+    </main>
 
-    <!-- Video/Feature Placeholder -->
-    <section class="py-24 max-w-5xl mx-auto px-6 text-center">
-        <div class="aspect-video bg-zinc-900 rounded-3xl flex items-center justify-center border-2 border-dashed border-red-900 group cursor-pointer relative overflow-hidden">
-            <div class="absolute inset-0 bg-red-900/10 opacity-0 group-hover:opacity-100 transition"></div>
-            <div class="z-10">
-                <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-red-600/40 group-hover:scale-110 transition">
-                    <i class="fa-solid fa-play text-white text-3xl ml-1"></i>
-                </div>
-                <h4 class="text-2xl font-bold uppercase">Смотреть трейлер Пирака</h4>
+    <footer class="mt-24 bg-zinc-950 border-t border-zinc-900 py-12 px-8 text-center">
+        <div class="max-w-4xl mx-auto space-y-6">
+            <div class="flex justify-center space-x-6 text-[10px] font-bold text-zinc-500">
+                <a href="#" class="hover:text-white">ПОДДЕРЖКА</a>
+                <a href="#" class="hover:text-white">О НАС</a>
+                <a href="#" class="hover:text-white">КАРТА САЙТА</a>
+                <a href="#" class="hover:text-white">КОНТАКТЫ</a>
             </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-black border-t border-zinc-800 py-12 px-6">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8">
-            <div class="col-span-2">
-                <div class="flex items-center space-x-2 mb-6">
-                    <div class="w-8 h-8 bg-red-600 flex items-center justify-center font-bold text-white rounded text-xs">LEGO</div>
-                    <span class="text-lg font-black uppercase italic tracking-tight">BIONICLE</span>
-                </div>
-                <p class="text-zinc-500 text-sm max-w-sm">
-                    LEGO, логотип LEGO, BIONICLE и логотип BIONICLE являются товарными знаками LEGO Group. ©2006-2024 The LEGO Group.
-                </p>
-            </div>
-            <div>
-                <h5 class="font-bold uppercase mb-4 text-zinc-300">Ресурсы</h5>
-                <ul class="text-zinc-500 text-sm space-y-2">
-                    <li><a href="#" class="hover:text-red-500 transition">Инструкции по сборке</a></li>
-                    <li><a href="#" class="hover:text-red-500 transition">Архив наборов</a></li>
-                    <li><a href="#" class="hover:text-red-500 transition">Биомедиа проект</a></li>
-                </ul>
-            </div>
-            <div>
-                <h5 class="font-bold uppercase mb-4 text-zinc-300">Сообщество</h5>
-                <ul class="text-zinc-500 text-sm space-y-2">
-                    <li><a href="#" class="hover:text-red-500 transition">BrickLink</a></li>
-                    <li><a href="#" class="hover:text-red-500 transition">BIONICLE Sector 01</a></li>
-                </ul>
+            <p class="text-[9px] text-zinc-700 uppercase tracking-widest leading-loose">
+                LEGO, логотип LEGO и BIONICLE являются товарными знаками LEGO Group. <br>
+                © 2006 The LEGO Group. Все права защищены.
+            </p>
+            <div class="pt-4 opacity-30 grayscale hover:opacity-100 transition-opacity">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/LEGO_logo.svg" alt="L" class="h-8 mx-auto">
             </div>
         </div>
     </footer>
 
-    <!-- Notification Container -->
-    <div id="notification" class="fixed bottom-10 right-10 bg-red-600 text-white px-6 py-4 rounded-lg shadow-2xl transform translate-y-32 transition duration-500 z-[100] flex items-center space-x-3">
-        <i class="fa-solid fa-check-circle"></i>
-        <span class="font-bold uppercase tracking-tight">Добавлено в коллекцию!</span>
-    </div>
-
     <script>
-        // Simple Interaction logic
-        const buyBtn = document.getElementById('buyBtn');
-        const notification = document.getElementById('notification');
-
-        buyBtn.addEventListener('click', () => {
-            // Show notification
-            notification.classList.remove('translate-y-32');
+        // Interactive "Flash" flavor scripts
+        document.addEventListener('mousemove', (e) => {
+            const glow = document.querySelector('.lava-glow');
+            const x = (e.clientX / window.innerWidth - 0.5) * 40;
+            const y = (e.clientY / window.innerHeight - 0.5) * 20;
             
-            // Hide after 3 seconds
-            setTimeout(() => {
-                notification.classList.add('translate-y-32');
-            }, 3000);
-
-            // Log event (mock)
-            console.log("Item 8901 added to cart");
+            glow.style.transform = `translateX(calc(-50% + ${x}px)) translateY(${y}px)`;
         });
 
-        // Parallax-ish effect on image
-        window.addEventListener('mousemove', (e) => {
-            const img = document.querySelector('img');
-            const moveX = (e.clientX - window.innerWidth / 2) / 50;
-            const moveY = (e.clientY - window.innerHeight / 2) / 50;
-            img.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`;
+        // Add periodic flickering to the Hakann image to simulate "heat"
+        const img = document.querySelector('.hakann-img');
+        setInterval(() => {
+            if (Math.random() > 0.95) {
+                img.style.filter = 'drop-shadow(0 0 50px rgba(255, 100, 0, 0.6)) brightness(1.2)';
+                setTimeout(() => {
+                    img.style.filter = 'drop-shadow(0 0 30px rgba(215, 38, 30, 0.2)) brightness(1)';
+                }, 100);
+            }
+        }, 500);
+
+        // Simple button click log (no actual alerts)
+        document.querySelectorAll('button, a').forEach(el => {
+            el.addEventListener('click', (e) => {
+                if(el.getAttribute('href') === '#') e.preventDefault();
+                console.log('Action triggered on: ' + el.innerText);
+            });
         });
     </script>
 </body>
