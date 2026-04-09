@@ -1,122 +1,303 @@
 <!DOCTYPE html>
-<html lang="ru-RU">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>8900 Reidak (Рейдак) - BIONICLE® - LEGO.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEGO.com BIONICLE - Пирака: Рейдак (8900)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        :root {
+            --piraka-red: #8b0000;
+            --piraka-black: #1a1a1a;
+            --lego-yellow: #ffcf00;
+        }
+
         body {
-            font-family: Helvetica, sans-serif;
             background-color: #000;
             color: #fff;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
+            font-family: Helvetica, sans-serif;
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at center, #222 0%, #000 100%);
         }
-        .product-container {
-            background-color: #1a1a1a;
-            border: 2px solid #333;
-            border-radius: 8px;
-            max-width: 800px;
-            padding: 30px;
-            display: flex;
-            gap: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+
+        .bionicle-header {
+            background: linear-gradient(to bottom, #333, #111);
+            border-bottom: 2px solid #444;
         }
-        .image-section {
-            flex: 1;
-            background: radial-gradient(circle, #444 0%, #1a1a1a 100%);
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px;
+
+        .main-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            min-height: 80vh;
         }
-        .image-section img {
-            max-width: 100%;
-            height: auto;
-            filter: drop-shadow(0 0 15px rgba(0,0,0,0.8));
+
+        .flash-container {
+            background: #0a0a0a;
+            border: 1px solid #333;
+            box-shadow: 0 0 50px rgba(139, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
         }
-        .info-section {
-            flex: 1;
+
+        .piraka-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(139, 0, 0, 0.15) 0%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
         }
-        .lego-logo {
-            background-color: #d0021b;
-            color: white;
-            font-weight: bold;
-            padding: 5px 10px;
-            display: inline-block;
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-        h1 {
-            margin: 0 0 5px 0;
-            font-size: 28px;
+
+        .nav-button {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            transition: all 0.3s;
             text-transform: uppercase;
-            color: #f4d03f;
-        }
-        .sku {
-            color: #888;
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-        .description {
-            line-height: 1.6;
-            color: #ccc;
-            font-size: 15px;
-        }
-        .details-box {
-            margin-top: 25px;
-            border-top: 1px solid #333;
-            padding-top: 15px;
-        }
-        .stat {
-            margin-bottom: 8px;
-            font-size: 14px;
-        }
-        .stat span {
-            color: #f4d03f;
             font-weight: bold;
-        }
-        .buy-button {
-            margin-top: 20px;
-            background-color: #2ecc71;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            font-size: 16px;
-            font-weight: bold;
+            font-size: 0.8rem;
             cursor: pointer;
+        }
+
+        .nav-button:hover {
+            background: var(--piraka-red);
+            border-color: #f00;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        }
+
+        .reidak-image {
+            filter: drop-shadow(0 0 20px rgba(0,0,0,1));
+            transition: transform 0.5s ease;
+        }
+
+        .reidak-image:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .spec-box {
+            background: rgba(0,0,0,0.7);
+            border-left: 4px solid var(--piraka-red);
+            padding: 15px;
+            backdrop-filter: blur(5px);
+        }
+
+        .buy-now-btn {
+            background: #e3000b;
+            color: white;
+            padding: 12px 30px;
+            font-weight: 900;
             border-radius: 4px;
-            width: 100%;
+            display: inline-block;
+            box-shadow: 0 4px 0 #8b0000;
+            transition: all 0.1s;
+        }
+
+        .buy-now-btn:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #8b0000;
+        }
+
+        .floating-eyes {
+            position: absolute;
+            width: 10px;
+            height: 4px;
+            background: #f00;
+            border-radius: 50%;
+            filter: blur(2px) brightness(2);
+            box-shadow: 0 0 10px #f00;
+            opacity: 0.6;
+            animation: flicker 4s infinite;
+        }
+
+        @keyframes flicker {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 0.2; }
+            52% { opacity: 0.8; }
+            54% { opacity: 0.4; }
+        }
+
+        .sidebar {
+            width: 200px;
+            border-right: 1px solid #333;
+        }
+
+        .piraka-skull {
+            font-family: monospace;
+            font-size: 10px;
+            color: #444;
+            line-height: 8px;
+            user-select: none;
         }
     </style>
 </head>
 <body>
 
-<div class="product-container">
-    <div class="image-section">
-        <img src="https://img.bricklink.com/ItemImage/SN/0/8900-1.png" alt="LEGO BIONICLE Reidak">
-    </div>
-    
-    <div class="info-section">
-        <div class="lego-logo">LEGO® BIONICLE®</div>
-        <h1>Reidak (Рейдак)</h1>
-        <div class="sku">Артикул: 8900</div>
-        
-        <p class="description">
-            Рейдак — «Разрушитель» из команды Пирак. Обладая невероятной силой и способностью адаптироваться к любой атаке, он является практически неуязвимым противником на острове Войя Нуи.
-        </p>
+    <!-- Top Global Nav -->
+    <header class="bg-black text-white py-2 px-4 flex justify-between items-center text-xs border-b border-gray-800">
+        <div class="flex items-center space-x-4">
+            <div class="bg-red-600 p-1 rounded">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/LEGO_logo.svg" alt="LEGO" class="h-6 w-6">
+            </div>
+            <nav class="hidden md:flex space-x-4 uppercase font-bold tracking-tighter">
+                <a href="#" class="hover:text-yellow-400">ПРОДУКТЫ</a>
+                <a href="#" class="hover:text-yellow-400">МАГАЗИН</a>
+                <a href="#" class="hover:text-yellow-400">ИГРЫ</a>
+                <a href="#" class="hover:text-yellow-400">КЛУБ</a>
+            </nav>
+        </div>
+        <div class="flex items-center space-x-2">
+            <span>Россия (RU)</span>
+            <input type="text" placeholder="Поиск" class="bg-gray-900 border border-gray-700 px-2 py-1 rounded text-white">
+        </div>
+    </header>
 
-        <div class="details-box">
-            <div class="stat">Серия: <span>Piraka (2006)</span></div>
-            <div class="stat">Элемент: <span>Земля</span></div>
-            <div class="stat">Особенности: <span>Светящиеся глаза и зубы</span></div>
+    <!-- BIONICLE Sub-brand Header -->
+    <div class="bionicle-header py-4 px-6 flex justify-between items-center">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Bionicle_logo.svg" alt="BIONICLE" class="h-10 opacity-80">
+        <div class="flex space-x-2">
+            <button class="nav-button">ГЕРОИ</button>
+            <button class="nav-button bg-red-900 border-red-500">ПИРАКА</button>
+            <button class="nav-button">ИСТОРИЯ</button>
+            <button class="nav-button">МУЛЬТИМЕДИА</button>
+        </div>
+    </div>
+
+    <main class="main-container py-8 px-4">
+        
+        <div class="flash-container rounded-lg p-1 flex flex-col md:flex-row">
+            <div class="piraka-glow"></div>
+            
+            <!-- Sidebar Nav -->
+            <div class="sidebar p-4 z-10 hidden md:block">
+                <h3 class="text-red-600 font-bold mb-4 tracking-widest text-sm">ВЫБЕРИ ПИРАКУ:</h3>
+                <ul class="space-y-2 text-sm">
+                    <li class="hover:text-red-500 cursor-pointer">ЗАКТАН</li>
+                    <li class="hover:text-red-500 cursor-pointer">ХАКАНН</li>
+                    <li class="hover:text-red-500 cursor-pointer">ТОК</li>
+                    <li class="hover:text-red-500 cursor-pointer">АВАК</li>
+                    <li class="text-red-500 font-bold">РЕЙДАК</li>
+                    <li class="hover:text-red-500 cursor-pointer">ВЕЗОК</li>
+                </ul>
+                <div class="mt-12 piraka-skull">
+                    P I R A K A<br>
+                    . . . . . .<br>
+                    8 9 0 0<br>
+                    R E I D A K
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="flex-1 p-6 relative z-10 flex flex-col items-center md:items-start md:flex-row">
+                
+                <!-- Character Image -->
+                <div class="w-full md:w-1/2 relative flex justify-center items-center h-80 md:h-auto">
+                    <img src="https://www.bricklink.com/SL/8900-1.jpg" alt="Reidak" class="reidak-image max-h-full object-contain">
+                    <!-- Glow effects behind him -->
+                    <div class="absolute top-1/4 left-1/4 w-4 h-4 bg-red-600 blur-xl opacity-50"></div>
+                </div>
+
+                <!-- Info Area -->
+                <div class="w-full md:w-1/2 space-y-6 mt-8 md:mt-0">
+                    <div>
+                        <h1 class="text-5xl font-black italic tracking-tighter text-white">Reidak (Рейдак)</h1>
+                        <p class="text-red-600 font-bold text-xl uppercase tracking-widest">Дробитель</p>
+                    </div>
+
+                    <p class="text-gray-300 leading-relaxed text-sm">
+                        Рейдак — самый физически мощный из Пирака. Известный как «Дробитель», он обладает силой превращать всё, к чему прикасается, в пыль. Он никогда не сдается в битве и с каждым разом становится только сильнее.
+                    </p>
+
+                    <div class="spec-box space-y-2 text-xs">
+                        <div class="flex justify-between">
+                            <span class="text-gray-500">АРТИКУЛ:</span>
+                            <span class="text-white font-bold">8900</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-500">ВОЗРАСТ:</span>
+                            <span class="text-white font-bold">7-16</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-500">ДЕТАЛЕЙ:</span>
+                            <span class="text-white font-bold">41</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-500">ОРУЖИЕ:</span>
+                            <span class="text-white font-bold">Дробящий бур, Метатель Замор</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="#" class="buy-now-btn">КУПИТЬ СЕЙЧАС</a>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2">
+                        <div class="bg-gray-900 p-2 text-[10px] text-center border border-gray-800 cursor-pointer hover:bg-gray-800">
+                            СКАЧАТЬ ОБОИ
+                        </div>
+                        <div class="bg-gray-900 p-2 text-[10px] text-center border border-gray-800 cursor-pointer hover:bg-gray-800">
+                            ИНСТРУКЦИЯ (PDF)
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <button class="buy-button">В КОРЗИНУ</button>
-    </div>
-</div>
+        <!-- Secondary Content -->
+        <section class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-zinc-900 p-4 border-t-2 border-yellow-500">
+                <h4 class="font-bold text-yellow-500 mb-2">МИНИ-ИГРА PIRAKA</h4>
+                <p class="text-xs text-gray-400">Сыграй в захватывающий шутер от первого лица прямо в браузере! Победи Тоа Иника.</p>
+            </div>
+            <div class="bg-zinc-900 p-4 border-t-2 border-red-600">
+                <h4 class="font-bold text-red-600 mb-2">PIRAKA.COM</h4>
+                <p class="text-xs text-gray-400">Заходи на официальный промо-сайт и послушай знаменитый рэп Пирака «Yo Yo Piraka!»</p>
+            </div>
+            <div class="bg-zinc-900 p-4 border-t-2 border-blue-600">
+                <h4 class="font-bold text-blue-600 mb-2">НОВЫЕ ТОА</h4>
+                <p class="text-xs text-gray-400">Грядет буря. Кто сможет противостоять банде Пирака на острове Войя Нуи?</p>
+            </div>
+        </section>
+    </main>
 
+    <footer class="mt-20 border-t border-gray-800 py-10 px-6 bg-black text-gray-600 text-[10px] text-center space-y-4">
+        <div class="flex justify-center space-x-4 mb-4">
+            <a href="#" class="hover:underline">Политика конфиденциальности</a>
+            <a href="#" class="hover:underline">Cookies</a>
+            <a href="#" class="hover:underline">Юридическая информация</a>
+        </div>
+        <p>LEGO, the LEGO logo and BIONICLE are trademarks of the LEGO Group. © 2006 The LEGO Group.</p>
+        <p>BIONICLE® Пирака Рейдак (8900) - Доступно в магазинах Вашего города.</p>
+    </footer>
+
+    <script>
+        // Simple interactive elements to mimic the 2006 Flash feel
+        document.addEventListener('mousemove', (e) => {
+            const glow = document.querySelector('.piraka-glow');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            glow.style.transform = `translate(${(x - 0.5) * 50}px, ${(y - 0.5) * 50}px) translate(-50%, -50%)`;
+        });
+
+        // Spawn some "floating eyes" sporadically
+        function spawnEyes() {
+            const container = document.querySelector('.flash-container');
+            const eyes = document.createElement('div');
+            eyes.className = 'floating-eyes';
+            eyes.style.left = Math.random() * 100 + '%';
+            eyes.style.top = Math.random() * 100 + '%';
+            container.appendChild(eyes);
+            
+            setTimeout(() => {
+                eyes.remove();
+            }, 4000);
+        }
+
+        setInterval(spawnEyes, 2000);
+    </script>
 </body>
 </html>
