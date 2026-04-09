@@ -1,342 +1,166 @@
 <!DOCTYPE html>
-<html lang="ru-RU">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>8904 Avak (Авак) - BIONICLE® - LEGO.com Россия</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>LEGO.com BIONICLE - Пирака: Авак (8904)</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
-
         :root {
-            --piraka-gold: #d4af37;
-            --avak-brown: #5d4037;
-            --lego-red: #d11013;
+            --bionicle-black: #0a0a0a;
+            --piraka-brown: #734d26;
+            --highlight-gold: #ffcc00;
         }
 
         body {
-            background-color: #0a0a0a;
-            color: #eeeeee;
-            font-family: 'Roboto', sans-serif;
-            overflow-x: hidden;
+            background-color: var(--bionicle-black);
+            color: #ffffff;
+            font-family: Helvetica, sans-serif;
+            margin: 0;
+            background-image: radial-gradient(circle, #222 0%, #000 100%);
         }
 
-        .bionicle-font {
-            font-family: 'Oswald', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        header {
+            background: #000;
+            padding: 10px;
+            border-bottom: 3px solid var(--piraka-brown);
+            text-align: center;
         }
 
-        .hero-gradient {
-            background: radial-gradient(circle at center, #3e2723 0%, #0a0a0a 70%);
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #333;
         }
 
-        .piraka-border {
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(10px);
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
-        .buy-button {
-            background: linear-gradient(to bottom, #d11013, #a00d0f);
-            transition: all 0.3s ease;
+        .product-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
         }
 
-        .buy-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(209, 16, 19, 0.5);
+        .product-image img {
+            max-width: 100%;
+            border: 2px solid var(--piraka-brown);
+            box-shadow: 0 0 15px rgba(115, 77, 38, 0.5);
         }
 
-        .glow-text {
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+        .product-info {
+            flex: 1;
+            min-width: 300px;
         }
 
-        .stats-bar {
-            height: 8px;
-            background: #333;
-            border-radius: 4px;
-            overflow: hidden;
+        h1 { color: var(--highlight-gold); letter-spacing: 2px; }
+        .set-number { font-size: 1.2em; color: #aaa; }
+        
+        .description {
+            line-height: 1.6;
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-left: 4px solid var(--piraka-brown);
         }
 
-        .stats-fill {
-            height: 100%;
-            background: var(--piraka-gold);
-            box-shadow: 0 0 10px var(--piraka-gold);
+        .buy-box {
+            margin-top: 20px;
+            padding: 20px;
+            background: #1a1a1a;
+            border: 1px solid #444;
         }
 
-        /* Scanline effect for that 2006 tech feel */
-        .scanlines {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
-                        linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
-            background-size: 100% 4px, 3px 100%;
-            pointer-events: none;
-            z-index: 50;
+        .btn-shop {
+            background: #e60000;
+            color: white;
+            padding: 10px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.8em;
+            padding: 40px;
+            color: #666;
         }
     </style>
-    
-    <!-- JSON-LD Structured Data -->
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org/",
       "@type": "Product",
-      "name": "8904 Авак (Avak)",
-      "image": "https://img.bricklink.com/ItemImage/SN/0/8904-1.png",
-      "description": "Авак — конструктор и мастер побегов среди Пирак. С его сейсмическим киркой и способностью создавать тюрьмы из чистого воздуха, он — грозный противник на острове Войя Нуи.",
+      "name": "LEGO® BIONICLE® Авак (8904)",
+      "image": "https://www.bricklink.com/SL/8904-1.jpg",
+      "description": "Авак — конструктор и мастер побегов среди Пирака. Он может создать оружие из чего угодно.",
       "brand": {
         "@type": "Brand",
-        "name": "LEGO BIONICLE"
+        "name": "LEGO"
       },
       "sku": "8904",
-      "mpn": "8904",
       "offers": {
         "@type": "Offer",
-        "url": "https://www.lego.com/ru-ru/product/avak-8904",
         "priceCurrency": "RUB",
-        "price": "499",
-        "availability": "https://schema.org/Discontinued",
-        "itemCondition": "https://schema.org/NewCondition"
+        "price": "399.00",
+        "availability": "https://schema.org/InStock"
       }
     }
     </script>
 </head>
 <body>
 
-    <div class="scanlines"></div>
+<header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/LEGO_logo.svg" alt="LEGO" width="50">
+    <span style="font-size: 1.5em; vertical-align: middle; margin-left: 10px;">BIONICLE®</span>
+</header>
 
-    <!-- Navigation -->
-    <nav class="flex items-center justify-between px-6 py-4 bg-black border-b border-zinc-800 sticky top-0 z-40">
-        <div class="flex items-center gap-8">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/LEGO_logo.svg" alt="LEGO" class="h-10">
-            <span class="bionicle-font text-2xl font-bold tracking-widest text-white">BIONICLE</span>
+<div class="container">
+    <div class="product-grid">
+        <div class="product-image">
+            <img src="https://www.bricklink.com/SL/8904-1.jpg" alt="BIONICLE 8904 Avak">
+            <p><i>«Лица страха» — Скоро в марте 2006!</i></p>
         </div>
-        <div class="hidden md:flex gap-6 text-sm bionicle-font">
-            <a href="#" class="hover:text-yellow-500">ПРОДУКТЫ</a>
-            <a href="#" class="hover:text-yellow-500">ИСТОРИЯ</a>
-            <a href="#" class="hover:text-yellow-500">ИГРЫ</a>
-            <a href="#" class="text-yellow-500 underline underline-offset-8">ПИРАКИ</a>
-        </div>
-        <div class="text-xs text-zinc-500">РОССИЯ (RU)</div>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="hero-gradient min-h-screen pt-12 pb-24 px-4">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            
-            <!-- Visual Section -->
-            <div class="relative flex justify-center items-center">
-                <!-- Glowing Aura -->
-                <div class="absolute w-80 h-80 bg-yellow-900/20 blur-[100px] rounded-full"></div>
-                
-                <div class="relative z-10 group cursor-crosshair">
-                    <img id="main-image" 
-                         src="https://img.bricklink.com/ItemImage/SN/0/8904-1.png" 
-                         alt="Avak 8904" 
-                         class="w-full max-w-md transform transition-transform duration-500 group-hover:scale-110"
-                         onerror="this.src='https://www.lego.com/cdn/cs/set/assets/bltf955b55e3a79d9e2/8904.jpg'">
-                </div>
-
-                <!-- Feature Badges -->
-                <div class="absolute bottom-0 left-0 flex gap-4">
-                    <div class="piraka-border p-3 text-center">
-                        <div class="text-xs text-zinc-400">ДЕТАЛИ</div>
-                        <div class="font-bold text-xl">41</div>
-                    </div>
-                    <div class="piraka-border p-3 text-center">
-                        <div class="text-xs text-zinc-400">ВОЗРАСТ</div>
-                        <div class="font-bold text-xl">7-16</div>
-                    </div>
-                </div>
+        
+        <div class="product-info">
+            <p class="set-number">Арт. 8904</p>
+            <h1>Avak (Авак)</h1>
+            <div class="description">
+                <p><strong>Мастер побегов и Инженер!</strong></p>
+                <p>Авак может собрать из нескольких камней и веток смертоносную ловушку. Этот Пирака обладает способностью создавать рентгеновское зрение и телескопический взгляд, а его сейсмический киркомотыга заставляет землю дрожать!</p>
+                <ul>
+                    <li>Светящиеся в темноте глаза!</li>
+                    <li>Ослепительная улыбка Пирака!</li>
+                    <li>Метатель сфер Замор в комплекте.</li>
+                </ul>
             </div>
 
-            <!-- Info Section -->
-            <div class="space-y-8">
-                <div>
-                    <h2 class="bionicle-font text-zinc-500 text-xl tracking-tighter">8904</h2>
-                    <h1 class="bionicle-font text-6xl md:text-8xl font-bold glow-text text-white">АВАК</h1>
-                    <p class="text-yellow-500 italic text-xl mt-2">«Провокатор»</p>
-                </div>
-
-                <div class="piraka-border p-6 rounded-lg space-y-4">
-                    <p class="text-zinc-300 leading-relaxed">
-                        Авак — мастер ловушек и инженер. Он может собрать оружие из любого мусора и запереть врага в клетку из чистого воздуха. Его сейсмическая кирка вызывает землетрясения, а зубастая улыбка скрывает коварный план.
-                    </p>
-                    
-                    <ul class="space-y-2 text-sm">
-                        <li class="flex items-center gap-2">
-                            <span class="text-yellow-500">▶</span> Световые эффекты: Глаза светятся красным
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-yellow-500">▶</span> Оружие: Сейсмическая кирка и метатель сфер Замор
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="text-yellow-500">▶</span> Особенность: Светящиеся в темноте зубы!
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Stats -->
-                <div class="space-y-4">
-                    <div>
-                        <div class="flex justify-between text-xs mb-1 uppercase tracking-widest">
-                            <span>Сила</span>
-                            <span>9/10</span>
-                        </div>
-                        <div class="stats-bar"><div class="stats-fill w-[90%]"></div></div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between text-xs mb-1 uppercase tracking-widest">
-                            <span>Интеллект</span>
-                            <span>10/10</span>
-                        </div>
-                        <div class="stats-bar"><div class="stats-fill w-[100%]"></div></div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between text-xs mb-1 uppercase tracking-widest">
-                            <span>Скорость</span>
-                            <span>6/10</span>
-                        </div>
-                        <div class="stats-bar"><div class="stats-fill w-[60%]"></div></div>
-                    </div>
-                </div>
-
-                <!-- Action Bar -->
-                <div class="flex flex-wrap gap-4 pt-4">
-                    <button class="buy-button px-10 py-4 bionicle-font text-xl font-bold text-white rounded-sm shadow-lg">
-                        КУПИТЬ СЕЙЧАС
-                    </button>
-                    <button id="play-sound" class="border border-zinc-700 px-6 py-4 hover:bg-zinc-800 transition rounded-sm flex items-center gap-3">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z"></path></svg>
-                        ЗВУК ПИРАКИ
-                    </button>
-                </div>
+            <div class="buy-box">
+                <p>Возраст: 7-16</p>
+                <p>Деталей: 41</p>
+                <button class="btn-shop" onclick="addToCart()">В КОРЗИНУ</button>
             </div>
-        </div>
-
-        <!-- Gang Section -->
-        <section class="mt-32 border-t border-zinc-900 pt-16">
-            <h3 class="bionicle-font text-center text-4xl mb-12">СОБЕРИ ВСЮ БАНДУ</h3>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                <div class="text-center group cursor-pointer">
-                    <div class="bg-zinc-900 aspect-square rounded-full mb-4 border border-transparent group-hover:border-blue-500 transition-all flex items-center justify-center p-4">
-                        <img src="https://img.bricklink.com/ItemImage/SN/0/8900-1.png" alt="Reidak" class="max-h-full opacity-50 group-hover:opacity-100 transition">
-                    </div>
-                    <span class="text-xs bionicle-font">8900 РЕЙДАК</span>
-                </div>
-                <div class="text-center group cursor-pointer">
-                    <div class="bg-zinc-900 aspect-square rounded-full mb-4 border border-transparent group-hover:border-red-500 transition-all flex items-center justify-center p-4">
-                        <img src="https://img.bricklink.com/ItemImage/SN/0/8901-1.png" alt="Hakann" class="max-h-full opacity-50 group-hover:opacity-100 transition">
-                    </div>
-                    <span class="text-xs bionicle-font">8901 ХАКАНН</span>
-                </div>
-                <div class="text-center group cursor-pointer">
-                    <div class="bg-zinc-900 aspect-square rounded-full mb-4 border border-transparent group-hover:border-green-500 transition-all flex items-center justify-center p-4">
-                        <img src="https://img.bricklink.com/ItemImage/SN/0/8902-1.png" alt="Vezok" class="max-h-full opacity-50 group-hover:opacity-100 transition">
-                    </div>
-                    <span class="text-xs bionicle-font">8902 ВЕЗОК</span>
-                </div>
-                <div class="text-center group cursor-pointer">
-                    <div class="bg-zinc-900 aspect-square rounded-full mb-4 border border-transparent group-hover:border-white transition-all flex items-center justify-center p-4">
-                        <img src="https://img.bricklink.com/ItemImage/SN/0/8903-1.png" alt="Zaktan" class="max-h-full opacity-50 group-hover:opacity-100 transition">
-                    </div>
-                    <span class="text-xs bionicle-font">8903 ЗАКТАН</span>
-                </div>
-                <div class="text-center">
-                    <div class="bg-zinc-800 aspect-square rounded-full mb-4 border border-yellow-500 transition-all flex items-center justify-center p-4 scale-110 shadow-[0_0_15px_rgba(212,175,55,0.4)]">
-                        <img src="https://img.bricklink.com/ItemImage/SN/0/8904-1.png" alt="Avak" class="max-h-full">
-                    </div>
-                    <span class="text-xs bionicle-font text-yellow-500">8904 АВАК</span>
-                </div>
-                <div class="text-center group cursor-pointer">
-                    <div class="bg-zinc-900 aspect-square rounded-full mb-4 border border-transparent group-hover:border-purple-500 transition-all flex items-center justify-center p-4">
-                        <img src="https://img.bricklink.com/ItemImage/SN/0/8905-1.png" alt="Thok" class="max-h-full opacity-50 group-hover:opacity-100 transition">
-                    </div>
-                    <span class="text-xs bionicle-font">8905 ТОК</span>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-black border-t border-zinc-800 py-12 px-6 text-zinc-500 text-sm">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-8">
-            <div>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/LEGO_logo.svg" alt="LEGO" class="h-8 grayscale opacity-50 mb-4">
-                <p>© 2006-2026 The LEGO Group. Все права защищены.</p>
-                <p>LEGO, логотип LEGO и BIONICLE являются товарными знаками компании LEGO Group.</p>
-            </div>
-            <div class="flex gap-12">
-                <div class="space-y-2">
-                    <h4 class="text-white font-bold mb-4">ПОДДЕРЖКА</h4>
-                    <a href="#" class="block hover:text-white">Инструкции</a>
-                    <a href="#" class="block hover:text-white">Запасные части</a>
-                    <a href="#" class="block hover:text-white">Связаться с нами</a>
-                </div>
-                <div class="space-y-2">
-                    <h4 class="text-white font-bold mb-4">ЮРИДИЧЕСКАЯ ИНФО</h4>
-                    <a href="#" class="block hover:text-white">Конфиденциальность</a>
-                    <a href="#" class="block hover:text-white">Cookie-файлы</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Interactive Overlay for "Piraka Sound" -->
-    <div id="sound-modal" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-6">
-        <div class="piraka-border p-12 max-w-md w-full text-center space-y-6">
-            <h2 class="bionicle-font text-3xl text-yellow-500">YO YO, PIRAKA!</h2>
-            <div class="flex justify-center">
-                <div class="animate-ping absolute w-20 h-20 bg-yellow-500/30 rounded-full"></div>
-                <div class="relative bg-zinc-900 p-6 rounded-full border-2 border-yellow-500">
-                    <svg class="w-12 h-12 text-yellow-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217z"></path></svg>
-                </div>
-            </div>
-            <p class="text-zinc-400">Внимание: Авак активирует сейсмическую кирку. Приготовьтесь к подземным толчкам!</p>
-            <button id="close-modal" class="w-full py-3 bg-zinc-800 hover:bg-zinc-700 rounded text-white font-bold transition">ЗАКРЫТЬ</button>
         </div>
     </div>
+</div>
 
-    <script>
-        // Interactive Scripting
-        document.addEventListener('DOMContentLoaded', () => {
-            const playBtn = document.getElementById('play-sound');
-            const modal = document.getElementById('sound-modal');
-            const closeBtn = document.getElementById('close-modal');
-            const mainImg = document.getElementById('main-image');
+<footer>
+    &copy; 2006 The LEGO Group. Все права защищены. <br>
+    BIONICLE является торговой маркой LEGO Group.
+</footer>
 
-            // Simulate Piraka Sound Action
-            playBtn.addEventListener('click', () => {
-                modal.classList.remove('hidden');
-                // Optional: In a real environment we'd play the infamous Piraka Rap snippet
-            });
+<script>
+    function addToCart() {
+        alert("Товар «8904 Avak (Авак)» добавлен в вашу корзину! Исследуйте остров Войя Нуи дальше.");
+    }
+    
+    // 2006 Era Console Log
+    console.log("BIONICLE: Piraka online. Welcome to Voya Nui.");
+</script>
 
-            closeBtn.addEventListener('click', () => {
-                modal.classList.add('hidden');
-            });
-
-            // Parallax movement for Avak based on mouse
-            window.addEventListener('mousemove', (e) => {
-                const moveX = (e.clientX - window.innerWidth / 2) / 30;
-                const moveY = (e.clientY - window.innerHeight / 2) / 30;
-                mainImg.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`;
-            });
-
-            // Smooth Reset when mouse leaves
-            window.addEventListener('mouseleave', () => {
-                mainImg.style.transform = `translate(0, 0) scale(1)`;
-            });
-
-            // Custom "Buy" feedback
-            document.querySelector('.buy-button').addEventListener('click', function() {
-                this.innerHTML = "ДОБАВЛЕНО!";
-                this.style.background = "#22c55e";
-                setTimeout(() => {
-                    this.innerHTML = "КУПИТЬ СЕЙЧАС";
-                    this.style.background = "linear-gradient(to bottom, #d11013, #a00d0f)";
-                }, 2000);
-            });
-        });
-    </script>
 </body>
 </html>
