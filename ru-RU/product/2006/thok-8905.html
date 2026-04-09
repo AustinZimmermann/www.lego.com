@@ -1,119 +1,181 @@
 <!DOCTYPE html>
-<html lang="ru-RU">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>8905 Thok (Ток) - BIONICLE® - LEGO.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEGO.com BIONICLE - Пирака: Ток (8905)</title>
     <style>
+        :root {
+            --bionicle-black: #050505;
+            --thok-white: #e0f2f1;
+            --thok-blue: #0077be;
+            --highlight-silver: #c0c0c0;
+        }
+
         body {
+            background-color: var(--bionicle-black);
+            color: #ffffff;
             font-family: Helvetica, sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
-            padding: 0;
+            background-image: linear-gradient(180deg, #1a2a3a 0%, #000 100%);
         }
+
         header {
-            background-color: #000;
-            color: #fff;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-        }
-        .logo {
-            font-weight: bold;
-            font-size: 24px;
-            color: #d0021b;
-            margin-right: 20px;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 20px auto;
-            background: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            display: flex;
-        }
-        .product-image {
-            flex: 1;
+            background: #000;
+            padding: 12px;
+            border-bottom: 3px solid var(--thok-blue);
             text-align: center;
         }
+
+        .container {
+            max-width: 950px;
+            margin: 30px auto;
+            padding: 20px;
+            border: 1px solid #222;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .product-image {
+            flex: 1.2;
+            text-align: center;
+        }
+
         .product-image img {
             max-width: 100%;
-            height: auto;
+            border-radius: 5px;
+            filter: drop-shadow(0 0 20px var(--thok-blue));
         }
-        .product-details {
+
+        .product-info {
             flex: 1;
-            padding-left: 40px;
         }
-        .series-title {
-            color: #666;
-            text-transform: uppercase;
-            font-size: 14px;
+
+        h1 { 
+            color: var(--thok-white); 
+            text-transform: uppercase; 
+            font-size: 2.5em;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px #000;
+        }
+
+        .set-number { font-size: 1.1em; color: var(--thok-blue); font-weight: bold; }
+        
+        .description {
+            line-height: 1.5;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 20px;
+            border-right: 4px solid var(--thok-blue);
+            font-size: 0.95em;
+        }
+
+        .buy-box {
+            margin-top: 25px;
+            padding: 20px;
+            background: #111;
+            border: 1px solid #333;
+            text-align: center;
+        }
+
+        .btn-shop {
+            background: #ce0000;
+            color: white;
+            padding: 12px 40px;
+            text-decoration: none;
+            font-size: 1.1em;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .btn-shop:hover {
+            transform: scale(1.05);
+            background: #ff0000;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.75em;
+            padding: 50px;
+            color: #555;
             letter-spacing: 1px;
         }
-        h1 {
-            font-size: 32px;
-            margin: 10px 0;
-        }
-        .price {
-            font-size: 24px;
-            font-weight: bold;
-            color: #222;
-            margin-bottom: 20px;
-        }
-        .description {
-            line-height: 1.6;
-            color: #444;
-        }
-        .buy-button {
-            background-color: #006cb7;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 18px;
-            cursor: pointer;
-            border-radius: 4px;
-            margin-top: 20px;
-        }
-        .buy-button:hover {
-            background-color: #005691;
-        }
-        .specs {
-            margin-top: 30px;
-            border-top: 1px solid #eee;
-            padding-top: 20px;
-        }
     </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "LEGO® BIONICLE® Thok (8905)",
+      "image": "https://www.bricklink.com/SL/8905-1.jpg",
+      "description": "Ток — самый хладнокровный и одинокий из Пирака. Его ледяной взор замораживает врагов на месте.",
+      "brand": {
+        "@type": "Brand",
+        "name": "LEGO"
+      },
+      "sku": "8905",
+      "mpn": "8905",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "RUB",
+        "price": "399.00",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.lego.com/ru-ru/bionicle/products/8905"
+      }
+    }
+    </script>
 </head>
 <body>
 
 <header>
-    <div class="logo">LEGO®</div>
-    <nav>МАГАЗИН | BIONICLE | НОВИНКИ</nav>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/LEGO_logo.svg" alt="LEGO" width="45">
+    <span style="font-size: 1.4em; vertical-align: middle; margin-left: 15px; letter-spacing: 3px;">BIONICLE®</span>
 </header>
 
 <div class="container">
-    <div class="product-image">
-        <img src="https://img.bricklink.com/ItemImage/SN/0/8905-1.png" alt="LEGO BIONICLE Thok">
-    </div>
-
-    <div class="product-details">
-        <div class="series-title">BIONICLE® Пирака</div>
-        <h1>8905 Thok (Ток)</h1>
-        <p class="price">499 руб.</p>
-        
-        <div class="description">
-            <p><strong>Хладнокровный и одинокий.</strong></p>
-            <p>Ток — настоящий волк-одиночка среди Пирак. Его ледяное оружие и способность превращать живых существ в безжизненный лед делают его одним из самых опасных обитателей острова Войя Нуи.</p>
+    <div class="product-grid">
+        <div class="product-image">
+            <img src="https://www.bricklink.com/SL/8905-1.jpg" alt="BIONICLE 8905 Thok">
+            <p style="color: var(--thok-blue); margin-top: 15px;"><i>Остров Войя Нуи ждет своего завоевателя...</i></p>
         </div>
+        
+        <div class="product-info">
+            <p class="set-number">Артикул: 8905</p>
+            <h1>Thok (Ток)</h1>
+            <div class="description">
+                <p><strong>Хладнокровный и коварный!</strong></p>
+                <p>Ток — одиночка, который предпочитает действовать сам по себе. Обладая способностью оживлять неодушевленные предметы, он создает хаос на своем пути. Его ледяной ледоруб и пусковая установка Замор делают его опасным противником в заснеженных горах.</p>
+                <ul style="padding-left: 20px;">
+                    <li>Светящиеся глаза и зубы, вселяющие ужас!</li>
+                    <li>Оружие: Ледяной ледоруб.</li>
+                    <li>В комплекте 4 сферы Замор.</li>
+                </ul>
+            </div>
 
-        <button class="buy-button">Добавить в корзину</button>
-
-        <div class="specs">
-            <p><strong>Артикул:</strong> 8905</p>
-            <p><strong>Возраст:</strong> 7-16</p>
-            <p><strong>Деталей:</strong> 41</p>
+            <div class="buy-box">
+                <p style="font-size: 1.2em; color: var(--highlight-silver);">Цена: 399 руб.</p>
+                <button class="btn-shop" onclick="orderThok()">КУПИТЬ СЕЙЧАС</button>
+            </div>
         </div>
     </div>
 </div>
+
+<footer>
+    LEGO, логотип LEGO и BIONICLE являются товарными знаками LEGO Group. <br>
+    &copy; 2006 The LEGO Group. Рекомендуемый возраст: 7-16 лет.
+</footer>
+
+<script>
+    function orderThok() {
+        alert("Заказ оформлен! Ток (8905) скоро прибудет для захвата вашей коллекции. Остерегайтесь его ледяного взгляда!");
+    }
+</script>
 
 </body>
 </html>
