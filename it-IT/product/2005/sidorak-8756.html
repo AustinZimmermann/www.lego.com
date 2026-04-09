@@ -1,21 +1,140 @@
 <!DOCTYPE html>
 <html lang="it-IT">
 <head>
-<title>8756 Sidorak - BIONICLE® - LEGO.com (Italia)</title>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="https://pages-themes.github.io/cayman/assets/css/style.css">
+    <meta charset="UTF-8">
+    <title>LEGO.com BIONICLE - Sidorak (8756)</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #ccc;
+            font-family: Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #222;
+            border-bottom: 2px solid #ed1c24;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+        .logo-lego {
+            height: 40px;
+            margin-right: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: #111;
+            border: 1px solid #333;
+            padding: 20px;
+        }
+        .product-grid {
+            display: flex;
+            gap: 30px;
+        }
+        .product-image img {
+            border: 2px solid #444;
+            max-width: 350px;
+        }
+        .product-info h1 {
+            color: #fff;
+            margin-top: 0;
+            font-size: 28px;
+        }
+        .product-id {
+            color: #ed1c24;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .price {
+            font-size: 24px;
+            color: #fff;
+            margin: 15px 0;
+        }
+        .description {
+            line-height: 1.6;
+        }
+        .buy-button {
+            background: #ed1c24;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .buy-button:hover {
+            background: #ff3e45;
+        }
+        footer {
+            text-align: center;
+            font-size: 11px;
+            padding: 20px;
+            color: #666;
+        }
+    </style>
 </head>
-<body style="font-family: sans-serif;">
-<main id="content" class="main-content" role="main">
-<h1>BIONICLE®</h1>
-<h2>Prodotti</h2>
-<h3 style="font-weight: bold;">
-<span id="number">8756</span>
-<span id="title">Sidorak</span>
-</h3>
-<p><img src="https://www.bricklink.com/OL/8756-1.jpg" height="350"></p>
-<p>Sidorak non è solo un comandante, ma un guerriero d’élite dotato di armi devastanti. Grazie alla sua imponente statura e alla sua armatura rossa e nera, incute timore in chiunque osi sfidarlo. Utilizza la sua Spada del Branco per dirigere le sue truppe in battaglia e il suo potente lanciatore Rhotuka per neutralizzare i nemici a distanza.</p>
-<p style="font-size: 12px; text-align: center;">©2005 The LEGO Group. All rights reserved.</p>
-</main>  
+<body>
+
+<header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/LEGO_logo.svg" alt="LEGO Logo" class="logo-lego">
+    <span style="color:white; font-weight:bold; letter-spacing: 2px;">BIONICLE®</span>
+</header>
+
+<div class="container">
+    <div class="product-grid">
+        <div class="product-image">
+            <img src="https://www.bricklink.com/SL/8756-1.jpg" alt="BIONICLE Sidorak 8756">
+        </div>
+        <div class="product-info">
+            <h1>Sidorak</h1>
+            <div class="product-id">Articolo: 8756</div>
+            <p>Età: 8-16 | Pezzi: 211</p>
+            <div class="price">€ 19,90</div>
+            
+            <div class="description">
+                <p><strong>Il Re delle Orde Visorak!</strong></p>
+                <p>Sidorak guida i Visorak alla conquista di Metru Nui. Armato con il suo braccio rotante e la lama d’obbedienza, è un avversario formidabile per qualsiasi Toa Hordika.</p>
+            </div>
+
+            <button class="buy-button" onclick="addToCart()">Aggiungi al Carrello</button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    &copy; 2005 The LEGO Group. Tutti i diritti riservati.
+</footer>
+
+<script>
+    function addToCart() {
+        alert("Sidorak è stato aggiunto al tuo carrello LEGO!");
+    }
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "LEGO BIONICLE Sidorak",
+  "image": "https://www.bricklink.com/SL/8756-1.jpg",
+  "description": "Set LEGO BIONICLE 8756 Sidorak, il Re dei Visorak.",
+  "sku": "8756",
+  "brand": {
+    "@type": "Brand",
+    "name": "LEGO"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "http://www.lego.com/it-it/bionicle/products/8756.aspx",
+    "priceCurrency": "EUR",
+    "price": "19.90",
+    "availability": "https://schema.org/InStock",
+    "itemCondition": "https://schema.org/NewCondition"
+  }
+}
+</script>
+
 </body>
 </html>
