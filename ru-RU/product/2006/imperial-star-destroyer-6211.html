@@ -4,185 +4,211 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LEGO.com Star Wars™ - 6211 Imperial Star Destroyer™ (Имперский Звёздный разрушитель)</title>
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org/",
-      "@type": "Product",
-      "name": "6211 Imperial Star Destroyer™ (Имперский Звёздный разрушитель)",
-      "image": "https://www.bricklink.com/SL/6211-1.jpg",
-      "description": "Классическая модель флагмана Имперского флота из оригинальной трилогии Звёздных Войн.",
-      "brand": {
-        "@type": "Brand",
-        "name": "LEGO"
-      },
-      "sku": "6211",
-      "releaseDate": "2006-01",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "RUB",
-        "availability": "https://schema.org/Discontinued"
-      }
-    }
-    </script>
-
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :root {
-            --lego-yellow: #FFCF00;
-            --sw-blue: #003366;
-            --dark-gray: #333333;
-            --light-gray: #cccccc;
-        }
-
+        @import url('https://fonts.googleapis.com/css2?family=Verdana:wght@400;700&display=swap');
+        
         body {
-            font-family: Helvetica, sans-serif;
-            background-color: #000;
-            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
-            color: white;
-            margin: 0;
-            padding: 0;
+            font-family: 'Verdana', sans-serif;
+            background-color: #f3f3f3;
+            color: #333;
         }
 
-        header {
-            background-color: var(--lego-yellow);
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 3px solid #e3000b;
+        .lego-header {
+            background-color: #ffcf00;
+            border-bottom: 4px solid #d4ac00;
         }
 
-        .lego-logo {
-            background: #e3000b;
-            color: white;
-            padding: 5px 10px;
-            font-weight: bold;
-            font-size: 24px;
-            border: 2px solid white;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 20px auto;
-            background: rgba(0, 0, 0, 0.8);
-            border: 1px solid var(--sw-blue);
-            padding: 20px;
-        }
-
-        .product-grid {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .product-image {
-            flex: 1;
-            min-width: 300px;
-            border: 5px solid var(--light-gray);
+        .product-card {
             background: white;
+            border: 1px solid #ccc;
+            box-shadow: 4px 4px 0px rgba(0,0,0,0.1);
         }
 
-        .product-image img {
-            width: 100%;
-            display: block;
-        }
-
-        .details {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        h1 {
-            color: var(--lego-yellow);
-            margin-top: 0;
-        }
-
-        .meta {
-            font-size: 1.2rem;
-            color: var(--light-gray);
-            margin-bottom: 20px;
-        }
-
-        .description {
-            line-height: 1.6;
-            border-top: 1px solid var(--sw-blue);
-            padding-top: 15px;
-        }
-
-        .button-group {
-            margin-top: 30px;
-        }
-
-        .btn {
-            background: var(--lego-yellow);
-            color: black;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-            display: inline-block;
-            margin-right: 10px;
-        }
-
-        .btn-blue {
-            background: var(--sw-blue);
+        .star-wars-theme {
+            background: #000 url('https://www.transparenttextures.com/patterns/stardust.png');
             color: white;
         }
 
-        footer {
-            text-align: center;
-            padding: 20px;
+        .btn-buy {
+            background: linear-gradient(to bottom, #ff4e00, #d94200);
+            box-shadow: 0 4px 0 #912c00;
+            transition: transform 0.1s;
+        }
+
+        .btn-buy:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #912c00;
+        }
+
+        .tab-active {
+            border-bottom: 4px solid #ffcf00;
+            font-weight: bold;
+        }
+
+        .minifig-badge {
+            background: #e5e7eb;
+            border-radius: 8px;
+            padding: 8px;
             font-size: 0.8rem;
-            color: #666;
+            text-align: center;
         }
     </style>
 </head>
-<body>
+<body class="bg-gray-100">
 
-<header>
-    <div class="lego-logo">LEGO</div>
-    <div style="color: black; font-weight: bold;">STAR WARS™ (2006)</div>
-</header>
+    <!-- Навигация 2006 года -->
+    <header class="lego-header p-4">
+        <div class="max-w-5xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-6">
+                <!-- LEGO Logo (SVG) -->
+                <svg width="60" height="60" viewBox="0 0 100 100">
+                    <rect width="100" height="100" fill="#d0021b"/>
+                    <text x="50%" y="55%" font-family="Arial Black" font-size="30" fill="white" text-anchor="middle" stroke="black" stroke-width="2">LEGO</text>
+                </svg>
+                <nav class="hidden md:flex gap-4 text-sm font-bold uppercase">
+                    <a href="#" class="hover:underline">Продукты</a>
+                    <a href="#" class="hover:underline">Игры</a>
+                    <a href="#" class="hover:underline">Магазин</a>
+                    <a href="#" class="text-red-700 underline">Star Wars™</a>
+                </nav>
+            </div>
+            <div id="cart-counter" class="bg-white px-3 py-1 border-2 border-black font-bold">
+                Корзина: 0
+            </div>
+        </div>
+    </header>
 
-<div class="container">
-    <div class="product-grid">
-        <div class="product-image">
-            <img src="https://www.bricklink.com/SL/6211-1.jpg" alt="6211 Imperial Star Destroyer">
+    <main class="max-w-5xl mx-auto my-8 p-4">
+        <!-- Крошки -->
+        <nav class="text-xs mb-4 text-gray-600">
+            <a href="#" class="underline">LEGO.com</a> &gt; <a href="#" class="underline">Star Wars™</a> &gt; 6211 Imperial Star Destroyer™ (Имперский Звёздный разрушитель)
+        </nav>
+
+        <div class="product-card overflow-hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <!-- Секция изображения -->
+                <div class="star-wars-theme p-8 flex flex-col justify-center items-center relative">
+                    <div class="absolute top-4 left-4 bg-yellow-400 text-black px-2 py-1 font-bold text-xs uppercase">Новинка 2006</div>
+                    <img src="https://www.bricklink.com/SL/6211-1.jpg" alt="6211 Imperial Star Destroyer" class="max-w-full h-auto rounded shadow-2xl transition-transform hover:scale-105 duration-500">
+                    <p class="mt-4 text-xs opacity-70">Нажмите на изображение для увеличения</p>
+                </div>
+
+                <!-- Информация о товаре -->
+                <div class="p-8 flex flex-col justify-between">
+                    <div>
+                        <h1 class="text-3xl font-bold mb-2">Imperial Star Destroyer™</h1>
+                        <h2 class="text-xl text-gray-600 mb-6">Имперский Звёздный разрушитель</h2>
+                        
+                        <div class="space-y-2 mb-8 border-l-4 border-yellow-400 pl-4">
+                            <p><strong>Артикул:</strong> 6211</p>
+                            <p><strong>Возраст:</strong> 9-14</p>
+                            <p><strong>Деталей:</strong> 1366</p>
+                            <p><strong>Минифигурок:</strong> 9</p>
+                        </div>
+
+                        <div class="text-4xl font-bold text-red-600 mb-2">
+                            4 999 руб.
+                        </div>
+                        <p class="text-xs text-green-600 font-bold mb-6 italic">● В наличии</p>
+                    </div>
+
+                    <button onclick="addToCart()" class="btn-buy w-full py-4 text-white font-bold text-xl uppercase tracking-widest">
+                        Добавить в корзину
+                    </button>
+                </div>
+            </div>
+
+            <!-- Табы с описанием -->
+            <div class="border-t border-gray-200">
+                <div class="flex border-b">
+                    <button onclick="showTab('desc')" id="tab-desc-btn" class="px-6 py-4 tab-active">Описание</button>
+                    <button onclick="showTab('figs')" id="tab-figs-btn" class="px-6 py-4">Минифигурки</button>
+                    <button onclick="showTab('specs')" id="tab-specs-btn" class="px-6 py-4">Характеристики</button>
+                </div>
+
+                <div id="tab-desc" class="p-8">
+                    <h3 class="text-xl font-bold mb-4 italic text-blue-800">Управляйте самой мощной мощью Галактической Империи!</h3>
+                    <p class="mb-4 leading-relaxed">
+                        Теперь вы можете командовать самым известным кораблем Имперского флота -- Звёздным разрушителем! 
+                        Этот гигантский серый хищник бороздит просторы космоса, внушая страх повстанцам. 
+                        Впервые этот культовый корабль представлен в таком масштабе с полностью детализированным интерьером.
+                    </p>
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li><strong>Огромный масштаб:</strong> Модель имеет внушительную длину, точно воспроизводя треугольный силуэт оригинала.</li>
+                        <li><strong>Съемные панели:</strong> Крыша корабля открывается, открывая доступ к внутренним отсекам.</li>
+                        <li><strong>Командный мостик:</strong> Оборудован местами для офицеров и голографическим терминалом.</li>
+                        <li><strong>Капсула спасения:</strong> Спрятана в задней части корабля для экстренной эвакуации.</li>
+                    </ul>
+                </div>
+
+                <div id="tab-figs" class="p-8 hidden">
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+                        <div class="minifig-badge">Дарт Вейдер</div>
+                        <div class="minifig-badge">Гранд-мофф Таркин</div>
+                        <div class="minifig-badge">Имперский офицер</div>
+                        <div class="minifig-badge">Штурмовик (x2)</div>
+                        <div class="minifig-badge">Имп. гвардеец (x2)</div>
+                        <div class="minifig-badge">Дроид R2-D5</div>
+                        <div class="minifig-badge">Дроид-мышь</div>
+                    </div>
+                </div>
+
+                <div id="tab-specs" class="p-8 hidden">
+                    <table class="w-full text-left border-collapse">
+                        <tr class="border-b"><th class="py-2">Год выпуска</th><td class="py-2">2006</td></tr>
+                        <tr class="border-b"><th class="py-2">Серия</th><td class="py-2">LEGO® Star Wars™</td></tr>
+                        <tr class="border-b"><th class="py-2">Тема</th><td class="py-2">Эпизод IV-VI</td></tr>
+                        <tr class="border-b"><th class="py-2">Длина модели</th><td class="py-2">Более 58 см</td></tr>
+                    </table>
+                </div>
+            </div>
         </div>
         
-        <div class="details">
-            <h1>Imperial Star Destroyer™ (Имперский Звёздный разрушитель)</h1>
-            <div class="meta">
-                <strong>Артикул:</strong> 6211<br>
-                <strong>Возраст:</strong> 9-14<br>
-                <strong>Деталей:</strong> 1366<br>
-                <strong>Минифигурки:</strong> 9 (включая Дарта Вейдера и Гранд-моффа Таркина)
+        <!-- Подвал -->
+        <footer class="mt-12 text-center text-xs text-gray-500 pb-10">
+            <p>© 2006 The LEGO Group. TM & © Lucasfilm Ltd. All rights reserved.</p>
+            <div class="mt-4 flex justify-center gap-4">
+                <a href="#" class="underline">Политика конфиденциальности</a>
+                <a href="#" class="underline">Свяжитесь с нами</a>
             </div>
+        </footer>
+    </main>
 
-            <div class="description">
-                <p>Возглавьте Имперский флот! Огромный Звёздный разрушитель — это мощь Империи в ваших руках. Модель открывается, открывая доступ к командному мостику, каюте медитации Дарта Вейдера и оружейному отсеку.</p>
-            </div>
-
-            <div class="button-group">
-                <a href="#" class="btn" onclick="addToCart()">В КОРЗИНУ</a>
-                <a href="#" class="btn btn-blue">ИНСТРУКЦИИ</a>
-            </div>
-        </div>
+    <!-- Уведомление -->
+    <div id="toast" class="fixed bottom-4 right-4 bg-green-600 text-white px-6 py-3 rounded shadow-xl transform translate-y-20 transition-transform duration-300">
+        Товар добавлен в корзину!
     </div>
-</div>
 
-<footer>
-    &copy; 2006 The LEGO Group. TM & &copy; Lucasfilm Ltd. Все права защищены.
-</footer>
+    <script>
+        let cartCount = 0;
 
-<script>
-    function addToCart() {
-        alert("Товар добавлен в вашу корзину LEGO Shop-at-Home (сентябрь 2006 г.)!");
-    }
+        function addToCart() {
+            cartCount++;
+            document.getElementById('cart-counter').innerText = `Корзина: ${cartCount}`;
+            
+            const toast = document.getElementById('toast');
+            toast.classList.remove('translate-y-20');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20');
+            }, 3000);
+        }
 
-    // Console easter egg
-    console.log("LEGO Star Wars: Episode II & IV - VI sets currently available!");
-</script>
+        function showTab(tabId) {
+            // Скрыть все табы
+            document.getElementById('tab-desc').classList.add('hidden');
+            document.getElementById('tab-figs').classList.add('hidden');
+            document.getElementById('tab-specs').classList.add('hidden');
+            
+            // Сбросить стили кнопок
+            document.getElementById('tab-desc-btn').classList.remove('tab-active');
+            document.getElementById('tab-figs-btn').classList.remove('tab-active');
+            document.getElementById('tab-specs-btn').classList.remove('tab-active');
 
+            // Показать нужный
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+            document.getElementById('tab-' + tabId + '-btn').classList.add('tab-active');
+        }
+    </script>
 </body>
 </html>
