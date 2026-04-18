@@ -3,154 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>44015 ΟΧΗΜΑ ΤΟΥ EVO | Hero Factory | LEGO.com (Ελλάδα)</title>
-    <link rel="stylesheet" href="https://next.lego.com/_next/static/css/27f8ec8bf6bbfc37.css">
+    <title>ΟΧΗΜΑ ΤΟΥ EVO - 44015 | Hero Factory | LEGO.com (Ελλάδα)</title>
+    <link rel="stylesheet" href="https://www.lego.com/_next/static/css/27f8ec8bf6bbfc37.css">
+    
     <style>
         :root {
             --hf-orange: #ff8200;
-            --hf-dark-grey: #1a1a1a;
+            --hf-blue: #0055a4;
+            --dark-bg: #111;
         }
+
         body {
-            font-family: sans-serif;
-            background-color: #000;
-            color: #fff;
+            font-family: "Cera Pro", sans-serif;
+            background-color: var(--dark-bg);
+            color: white;
             margin: 0;
             padding: 0;
         }
+
         .product-container {
             max-width: 1100px;
             margin: 0 auto;
             padding: 40px 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
+            flex-wrap: wrap;
             gap: 40px;
         }
-        .product-image-gallery {
+
+        .image-gallery {
+            flex: 1;
+            min-width: 300px;
             background: radial-gradient(circle, #333 0%, #000 100%);
             border-radius: 8px;
+            padding: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
         }
-        .product-image-gallery img {
+
+        .product-image {
             max-width: 100%;
             height: auto;
             filter: drop-shadow(0 0 20px rgba(255,130,0,0.3));
         }
-        .product-details h1 {
+
+        .product-details {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-factory-logo {
+            width: 150px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
             font-size: 2.5rem;
+            margin: 10px 0;
             text-transform: uppercase;
             color: var(--hf-orange);
-            margin-bottom: 5px;
         }
-        .product-details h2 {
+
+        .set-number {
+            font-weight: bold;
             font-size: 1.2rem;
             color: #ccc;
             margin-bottom: 20px;
         }
+
         .price-tag {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: bold;
             margin: 20px 0;
         }
-        .buy-button {
+
+        .description {
+            line-height: 1.6;
+            font-size: 1.1rem;
+            color: #ddd;
+        }
+
+        .cta-button {
             background-color: #ffd500;
-            color: #000;
+            color: black;
             border: none;
             padding: 15px 30px;
             font-weight: bold;
             text-transform: uppercase;
-            cursor: pointer;
             border-radius: 4px;
-            width: 100%;
-            font-size: 1.1rem;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 20px;
+            transition: transform 0.2s;
         }
-        .buy-button:hover {
+
+        .cta-button:hover {
+            transform: scale(1.05);
             background-color: #fff;
         }
-        .description-box {
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
             margin-top: 30px;
-            line-height: 1.6;
-            color: #ddd;
             border-top: 1px solid #444;
             padding-top: 20px;
         }
-        .specs-list {
-            list-style: none;
-            padding: 0;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        .specs-list li {
-            font-size: 0.9rem;
-            background: #222;
-            padding: 10px;
-            border-radius: 4px;
+
+        .spec-item span {
+            display: block;
+            font-size: 0.8rem;
+            color: #888;
         }
     </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "44015 ΟΧΗΜΑ ΤΟΥ EVO",
+      "image": "https://www.lego.com/cdn/product-assets/product.img.pri/44015_prod.jpg",
+      "description": "Προετοιμαστείτε για μάχη, EVO! Τα άγρια θηρία επιτίθενται στην Αντρόπολις Σίτυ.",
+      "brand": {
+        "@type": "Brand",
+        "name": "LEGO Hero Factory"
+      },
+      "sku": "44015",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "EUR",
+        "price": "9.99",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+    </script>
 </head>
 <body>
 
-<div id="product-page">
-    </div>
+    <nav style="background: #000; padding: 10px 20px; border-bottom: 3px solid var(--hf-orange);">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/LEGO_logo.svg" alt="LEGO" width="50">
+    </nav>
 
-<script type="application/json" id="product-data">
-{
-    "id": "44015",
-    "name": "ΟΧΗΜΑ ΤΟΥ EVO",
-    "theme": "Hero Factory",
-    "subtheme": "Invasion from Below",
-    "price": "9,99 €",
-    "age": "6-12",
-    "pieces": 51,
-    "description": "Προσοχή, EVO! Ένα γιγάντιο τέρας έχει βγει από το ρήγμα και επιτίθεται στην Αντρόπολις Σίτυ. Πήδα μέσα στο πανίσχυρο όχημα, την τελευταία λέξη της τεχνολογίας, και αντιμετώπισε την απειλή. Χρησιμοποίησε το κανόνι λέιζερ και τα δαγκανωτά χέρια για να αιχμαλωτίσεις το κτήνος πριν είναι αργά!",
-    "features": [
-        "Περιλαμβάνει μίνι φιγούρα EVO με όπλο",
-        "Διαθέτει ανακλινόμενη καμπίνα, κανόνι λέιζερ και κινητές αρθρώσεις",
-        "Περιλαμβάνει ένα Τζαμπέρ που αναπηδά",
-        "Συνδυάζεται με το 44018 ΜΗΧΑΝΗ ΤΖΕΤ ΤΟΥ FURNO"
-    ],
-    "imageUrl": "https://www.lego.com/cdn/product-assets/product.img.pri/44015_prod.jpg"
-}
-</script>
+    <main class="product-container">
+        <section class="image-gallery">
+            <img src="https://www.lego.com/cdn/product-assets/product.img.pri/44015_prod.jpg" alt="44015 ΟΧΗΜΑ ΤΟΥ EVO" class="product-image">
+        </section>
 
-<script>
-    const data = JSON.parse(document.getElementById('product-data').textContent);
-    const container = document.getElementById('product-page');
+        <section class="product-details">
+            <div class="set-number">44015 | HERO FACTORY</div>
+            <h1>ΟΧΗΜΑ ΤΟΥ EVO</h1>
+            
+            <p class="description">
+                Προετοιμαστείτε για μάχη, EVO! Τα άγρια θηρία επιτίθενται στην Αντρόπολις Σίτυ και μόνο η γρήγορη σκέψη σας μπορεί να σώσει την κατάσταση. Χρησιμοποιήστε το Όχημα για να διασχίσετε τους δρόμους, εκτοξεύστε τους πυραύλους και αιχμαλωτίστε τα Τζαμπέρζ στο δοχείο ανάλυσης!
+            </p>
 
-    container.innerHTML = `
-        <div class="product-container">
-            <div class="product-image-gallery">
-                <img src="${data.imageUrl}" alt="${data.name}">
-            </div>
-            <div class="product-details">
-                <h2>LEGO® Hero Factory - ${data.id}</h2>
-                <h1>${data.name}</h1>
-                <div class="price-tag">${data.price}</div>
-                <button class="buy-button" onclick="addToCart()">ΠΡΟΣΘΗΚΗ ΣΤΟ ΚΑΛΑΘΙ</button>
-                
-                <div class="description-box">
-                    <p>${data.description}</p>
-                    <ul class="specs-list">
-                        <li><strong>Ηλικίες:</strong> ${data.age}</li>
-                        <li><strong>Κομμάτια:</strong> ${data.pieces}</li>
-                    </ul>
-                    <h3>Χαρακτηριστικά:</h3>
-                    <ul>
-                        ${data.features.map(f => `<li>${f}</li>`).join('')}
-                    </ul>
+            <div class="price-tag">9,99 €</div>
+
+            <button class="cta-button" onclick="addToBag()">ΠΡΟΣΘΗΚΗ ΣΤΟ ΚΑΛΑΘΙ</button>
+
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <span>ΗΛΙΚΙΕΣ</span>
+                    <strong>6-12</strong>
+                </div>
+                <div class="spec-item">
+                    <span>ΚΟΜΜΑΤΙΑ</span>
+                    <strong>51</strong>
+                </div>
+                <div class="spec-item">
+                    <span>ΠΕΡΙΛΑΜΒΑΝΕΙ</span>
+                    <strong>Mini-figure EVO</strong>
                 </div>
             </div>
-        </div>
-    `;
+        </section>
+    </main>
 
-    function addToCart() {
-        alert('Το προϊόν προστέθηκε στο καλάθι!');
-    }
-</script>
+    <script>
+        function addToBag() {
+            alert('Το προϊόν προστέθηκε στο καλάθι σας!');
+        }
+
+        // Simple interactive effect for the image
+        const img = document.querySelector('.product-image');
+        document.addEventListener('mousemove', (e) => {
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+            img.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+    </script>
 
 </body>
 </html>
