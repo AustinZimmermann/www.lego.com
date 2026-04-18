@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEGO® Hero Factory - 2065 FURNO 2.0 (ФУРНО 2.0) - LEGO.com (Россия)</title>
+    <link rel="stylesheet" href="https://www.lego.com/_next/static/css/27f8ec8bf6bbfc37.css">
+    <style>
+        :root {
+            --hf-orange: #f37021;
+            --hf-red: #e30613;
+            --hf-dark: #1a1a1a;
+        }
+
+        body {
+            background-color: #000;
+            background-image: radial-gradient(circle, #222 0%, #000 70%);
+            color: #fff;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            border-bottom: 3px solid var(--hf-orange);
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-hf {
+            height: 60px;
+            filter: drop-shadow(0 0 5px var(--hf-orange));
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .product-image-wrap {
+            position: relative;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(243, 112, 33, 0.3);
+        }
+
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 0 20px rgba(227, 6, 19, 0.4));
+        }
+
+        .product-info h1 {
+            color: var(--hf-orange);
+            font-size: 2.5em;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .product-id {
+            font-size: 1.2em;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            line-height: 1.6;
+            font-size: 1.1em;
+            border-left: 4px solid var(--hf-red);
+            padding-left: 15px;
+            margin: 20px 0;
+        }
+
+        .details-box {
+            background: #222;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .buy-button {
+            display: block;
+            width: 100%;
+            background: linear-gradient(to bottom, #f37021, #e30613);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.3em;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: transform 0.2s;
+        }
+
+        .buy-button:hover {
+            transform: scale(1.02);
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 100px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div style="color: #f37021; font-weight: 900; font-size: 1.5em;">LEGO® Hero Factory</div>
+        <div style="color: white;">RU - Россия</div>
+    </header>
+
+    <div id="product-root" class="product-grid">
+        </div>
+
+    <footer>
+        &copy; 2011 The LEGO Group. Все права защищены. <br>
+        Использование этого сайта означает ваше согласие с условиями использования.
+    </footer>
+</div>
+
+<script id="product-data" type="application/json">
+{
+    "setId": "2065",
+    "name": "FURNO 2.0",
+    "localizedName": "FURNO 2.0 (ФУРНО 2.0)",
+    "theme": "Hero Factory",
+    "subtheme": "Ordeal of Fire",
+    "releaseYear": 2011,
+    "description": "«Внимание, Фурно! Злодеи атакуют топливную станцию 22, и огонь распространяется повсюду! Ты оснащен новыми инструментами: многофункциональным шлемом с тепловизором и мощным плазменным луком. Используй свои новые способности, чтобы остановить огненных злодеев!»",
+    "specs": {
+        "pieces": 30,
+        "age": "6-16",
+        "height": "18 см"
+    },
+    "imageUrl": "https://www.lego.com/cdn/product-assets/product.img.pri/2065_prod.jpg",
+    "price": "499 руб"
+}
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const data = JSON.parse(document.getElementById('product-data').textContent);
+        const root = document.getElementById('product-root');
+
+        root.innerHTML = `
+            <div class="product-image-wrap">
+                <img src="${data.imageUrl}" alt="${data.name}" class="product-image">
+                <div style="margin-top: 15px; color: #aaa; font-style: italic;">Серия: Ordeal of Fire</div>
+            </div>
+            
+            <div class="product-info">
+                <div class="product-id">Артикул: ${data.setId}</div>
+                <h1>${data.localizedName}</h1>
+                
+                <div class="description">
+                    ${data.description}
+                </div>
+
+                <div class="details-box">
+                    <div class="stat-row">
+                        <span>Возраст:</span>
+                        <span>${data.specs.age}</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>Деталей:</span>
+                        <span>${data.specs.pieces}</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>Высота модели:</span>
+                        <span>${data.specs.height}</span>
+                    </div>
+                </div>
+
+                <div style="margin-top: 20px; font-size: 2em; color: #fff; font-weight: bold;">
+                    ${data.price}
+                </div>
+
+                <a href="#" class="buy-button">В КОРЗИНУ</a>
+            </div>
+        `;
+    });
+</script>
+
+</body>
+</html>
