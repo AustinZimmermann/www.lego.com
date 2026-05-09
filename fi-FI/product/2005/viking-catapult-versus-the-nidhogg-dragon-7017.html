@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7017 Viikingien katapultti vastaan Nidhogg-lohikäärme | LEGO® Vikings</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .lego-yellow { background-color: #ffd500; }
+        .lego-blue { background-color: #006cb7; }
+        .lego-red { background-color: #e3000b; }
+
+        .product-card {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: white;
+            border-bottom: 2px solid #ffd500;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Nav -->
+    <header class="bg-white shadow-sm">
+        <div class="lego-yellow h-2 w-full"></div>
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-8">
+                <!-- Mock LEGO Logo -->
+                <div class="lego-red w-12 h-12 flex items-center justify-center rounded-sm font-bold text-white text-xl">
+                    LEGO
+                </div>
+                <nav class="hidden md:flex gap-6 text-sm font-bold uppercase tracking-wider">
+                    <a href="#" class="hover:text-blue-600 transition">Kauppa</a>
+                    <a href="#" class="hover:text-blue-600 transition">Teemat</a>
+                    <a href="#" class="hover:text-blue-600 transition">Uutuudet</a>
+                    <a href="#" class="text-blue-600">Vikings</a>
+                </nav>
+            </div>
+            <div class="flex gap-4 text-xl">
+                <i class="fa-solid fa-magnifying-glass cursor-pointer"></i>
+                <i class="fa-solid fa-user cursor-pointer"></i>
+                <i class="fa-solid fa-cart-shopping cursor-pointer"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            
+            <!-- Image Gallery Section -->
+            <div class="lg:col-span-7">
+                <div class="bg-white rounded-2xl p-8 product-card relative overflow-hidden">
+                    <div class="absolute top-4 left-4 bg-gray-100 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest text-gray-500">
+                        Lopetettu tuote
+                    </div>
+                    <img id="mainImage" src="https://www.bricklink.com/SL/7017-1.jpg" alt="7017 Viikingien katapultti vastaan Nidhogg-lohikäärme" class="w-full h-auto object-contain rounded-lg">
+                    
+                    <div class="flex gap-4 mt-6 overflow-x-auto pb-2">
+                        <div class="border-2 border-blue-500 p-2 rounded-lg cursor-pointer bg-gray-50 flex-shrink-0 w-24 h-24">
+                             <img src="https://www.bricklink.com/SL/7017-1.jpg" class="w-full h-full object-contain">
+                        </div>
+                        <div class="border-2 border-transparent p-2 rounded-lg cursor-pointer bg-gray-50 flex-shrink-0 w-24 h-24 hover:border-gray-300">
+                             <div class="w-full h-full flex items-center justify-center text-gray-400"><i class="fa-solid fa-video"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Purchase & Quick Stats Section -->
+            <div class="lg:col-span-5">
+                <nav class="flex text-xs text-gray-500 mb-4 font-semibold uppercase">
+                    <a href="#" class="hover:underline">Teemat</a>
+                    <span class="mx-2">></span>
+                    <a href="#" class="hover:underline">Vikings</a>
+                </nav>
+                
+                <h1 class="text-4xl font-extrabold text-gray-900 leading-tight mb-4">
+                    Viikingien katapultti vastaan Nidhogg-lohikäärme
+                </h1>
+
+                <!-- Stats Badges -->
+                <div class="flex flex-wrap gap-4 mb-6">
+                    <div class="flex flex-col border-r pr-6 border-gray-300">
+                        <span class="text-2xl font-bold">7-14</span>
+                        <span class="text-xs text-gray-500 uppercase font-bold">Ikäsuositus</span>
+                    </div>
+                    <div class="flex flex-col border-r pr-6 border-gray-300">
+                        <span class="text-2xl font-bold">215</span>
+                        <span class="text-xs text-gray-500 uppercase font-bold">Palat</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-bold">7017</span>
+                        <span class="text-xs text-gray-500 uppercase font-bold">Tuotenumero</span>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2 mb-6">
+                    <div class="flex text-yellow-400">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <span class="text-sm font-bold text-blue-600 underline cursor-pointer">42 arvostelua</span>
+                </div>
+
+                <div class="text-3xl font-bold mb-8">29,99 €</div>
+
+                <!-- Action Buttons -->
+                <div class="space-y-4">
+                    <button onclick="addToBag()" class="w-full lego-blue hover:bg-blue-700 text-white font-bold py-4 rounded-xl transition shadow-lg transform active:scale-95">
+                        Lisää koriin
+                    </button>
+                    <button class="w-full bg-white border-2 border-gray-200 hover:border-gray-400 text-gray-700 font-bold py-4 rounded-xl transition flex items-center justify-center gap-2">
+                        <i class="fa-regular fa-heart"></i> Lisää toivelistalle
+                    </button>
+                </div>
+
+                <div class="mt-8 p-4 bg-yellow-50 rounded-lg border border-yellow-200 flex gap-4">
+                    <i class="fa-solid fa-truck-fast text-yellow-600 text-xl"></i>
+                    <div>
+                        <h4 class="font-bold text-sm">Tuotetta ei enää valmisteta</h4>
+                        <p class="text-xs text-gray-600">Tämä sarja julkaistiin vuonna 2005 ja se on nyt keräilyharvinaisuus.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description Section -->
+        <section class="mt-20 border-t pt-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Puolusta kylää hirvittävältä Nidhogg-lohikäärmeeltä!</h2>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        Pimeys laskeutuu viikinkien maille, kun legendaarinen Nidhogg-lohikäärme hyökkää! Vain viikinkien taito ja massiivinen katapultti voivat pysäyttää tämän siivekkään pedon.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-green-500"></i>
+                            <span>Sisältää 2 rohkeaa viikinkisoturia aseineen.</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-green-500"></i>
+                            <span>Nidhogg-lohikäärmeellä on liikkuvat siivet ja raajat.</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-green-500"></i>
+                            <span>Toimiva katapultti, joka laukaisee ammuksia.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-blue-600 h-80 rounded-3xl flex items-center justify-center overflow-hidden relative shadow-2xl">
+                    <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+                    <div class="text-white text-center z-10 p-6">
+                        <i class="fa-solid fa-dragon text-6xl mb-4"></i>
+                        <h3 class="text-2xl font-black uppercase italic">Eeppinen Taistelu</h3>
+                        <p class="mt-2 opacity-90">Koe vuoden 2005 klassikkoteema uudelleen!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Specs Accordion -->
+        <section class="mt-20">
+            <div class="border-y border-gray-200">
+                <button class="w-full py-6 flex justify-between items-center text-xl font-bold" onclick="toggleAccordion('specs')">
+                    Tuotetiedot
+                    <i id="specsIcon" class="fa-solid fa-plus text-gray-400"></i>
+                </button>
+                <div id="specsContent" class="hidden pb-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="font-bold text-gray-500 mb-2 uppercase text-xs">Mitat (Katapultti)</h4>
+                        <p>Pituus noin 15 cm</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-500 mb-2 uppercase text-xs">Mitat (Lohikäärme)</h4>
+                        <p>Siipiväli 25 cm</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-500 mb-2 uppercase text-xs">Julkaisuvuosi</h4>
+                        <p>2005</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-b border-gray-200">
+                <button class="w-full py-6 flex justify-between items-center text-xl font-bold" onclick="toggleAccordion('review-section')">
+                    Asiakkaiden arvostelut
+                    <i id="reviewIcon" class="fa-solid fa-plus text-gray-400"></i>
+                </button>
+                <div id="reviewContent" class="hidden pb-8">
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <div class="flex gap-4 items-center mb-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center font-bold text-blue-600">MK</div>
+                            <div>
+                                <h5 class="font-bold text-sm">Matti K.</h5>
+                                <div class="flex text-yellow-400 text-xs">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-700 italic">”Yksi lapsuuteni suosikkiseteistä! Lohikäärmeen design on edelleen yksi LEGO-historian parhaista.”</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white mt-20 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-gray-800 pb-12">
+            <div>
+                 <div class="lego-red w-12 h-12 flex items-center justify-center rounded-sm font-bold text-white text-xl mb-6">
+                    LEGO
+                </div>
+                <p class="text-gray-400 text-sm">Inspiroidu ja rakenna huomista jo tänään.</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 uppercase text-xs tracking-widest text-gray-500">Tietoja meistä</h4>
+                <ul class="text-sm space-y-2 text-gray-300">
+                    <li class="hover:text-white cursor-pointer transition">LEGO Group</li>
+                    <li class="hover:text-white cursor-pointer transition">Vastuullisuus</li>
+                    <li class="hover:text-white cursor-pointer transition">Toimitusketju</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 uppercase text-xs tracking-widest text-gray-500">Tuki</h4>
+                <ul class="text-sm space-y-2 text-gray-300">
+                    <li class="hover:text-white cursor-pointer transition">Ota yhteyttä</li>
+                    <li class="hover:text-white cursor-pointer transition">Rakennusohjeet</li>
+                    <li class="hover:text-white cursor-pointer transition">Varaosat</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 uppercase text-xs tracking-widest text-gray-500">Seuraa meitä</h4>
+                <div class="flex gap-4 text-xl text-gray-400">
+                    <i class="fa-brands fa-facebook hover:text-white transition cursor-pointer"></i>
+                    <i class="fa-brands fa-instagram hover:text-white transition cursor-pointer"></i>
+                    <i class="fa-brands fa-youtube hover:text-white transition cursor-pointer"></i>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 pt-8 text-center text-xs text-gray-600">
+            &copy; 2024 The LEGO Group. Tämä on harjoitustyö klassikkosetille 7017.
+        </div>
+    </footer>
+
+    <!-- Notification system -->
+    <div id="toast" class="fixed bottom-8 right-8 bg-green-600 text-white px-6 py-4 rounded-xl shadow-2xl transform translate-y-24 transition-transform duration-300 flex items-center gap-3">
+        <i class="fa-solid fa-check-circle"></i>
+        <span>Lisätty ostoskoriin!</span>
+    </div>
+
+    <script>
+        function toggleAccordion(id) {
+            const content = document.getElementById(id + 'Content');
+            const icon = document.getElementById(id + 'Icon');
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.replace('fa-plus', 'fa-minus');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.replace('fa-minus', 'fa-plus');
+            }
+        }
+
+        function addToBag() {
+            const toast = document.getElementById('toast');
+            toast.classList.remove('translate-y-24');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-y-24');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
