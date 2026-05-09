@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEGO.com Tuotteet - 8759 Metru Nuin taistelu</title>
+    <style>
+        :root {
+            --bionicle-dark: #0a0a0a;
+            --bionicle-silver: #7a7a7a;
+            --bionicle-gold: #d4af37;
+            --lego-red: #d11013;
+            --accent-lime: #32cd32;
+        }
+
+        body {
+            background-color: var(--bionicle-dark);
+            color: #ffffff;
+            font-family: Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: radial-gradient(circle, #1a1a1a 0%, #000000 100%);
+        }
+
+        header {
+            background-color: var(--lego-red);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 3px solid #fff;
+        }
+
+        .logo-box {
+            background: white;
+            padding: 5px;
+            font-weight: bold;
+            color: var(--lego-red);
+            font-size: 1.5rem;
+            margin-right: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--bionicle-silver);
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .product-image {
+            background: #000;
+            border: 2px solid #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            filter: drop-shadow(0 0 10px var(--accent-lime));
+        }
+
+        h1 {
+            color: var(--accent-lime);
+            text-transform: uppercase;
+            font-size: 2rem;
+            margin-top: 0;
+        }
+
+        .set-info {
+            font-size: 0.9rem;
+            color: var(--bionicle-silver);
+            margin-bottom: 20px;
+        }
+
+        .price-tag {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .buy-button {
+            background: linear-gradient(to bottom, #ffcc00, #ff9900);
+            border: none;
+            color: black;
+            padding: 15px 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            text-transform: uppercase;
+        }
+
+        .buy-button:hover {
+            background: #ffcc00;
+        }
+
+        .description {
+            grid-column: span 2;
+            line-height: 1.6;
+            border-top: 1px solid #444;
+            padding-top: 20px;
+        }
+
+        .features-list {
+            list-style: square;
+            color: #ccc;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #666;
+            padding: 40px;
+        }
+
+        /* simple JS interaction style */
+        .cart-status {
+            display: none;
+            background: #32cd32;
+            color: black;
+            padding: 10px;
+            margin-top: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-box">LEGO</div>
+    <div style="font-weight: bold; letter-spacing: 2px;">BIONICLE®</div>
+</header>
+
+<div class="container">
+    <div class="product-image">
+        <img src="https://www.bricklink.com/SL/8759-1.jpg" alt="8759 Metru Nuin taistelu">
+    </div>
+
+    <div class="product-details">
+        <div class="set-info">Tuotenumero: 8759 | Ikäsuositus: 8-16</div>
+        <h1>Metru Nuin taistelu</h1>
+        <p>Visorakit ovat vallanneet Colosseumin! Toa Hordika -sankarien on kohdattava hämähäkkilaumat ja pelastettava Metru Nui pimeydeltä.</p>
+        
+        <div class="price-tag">94.95 €</div>
+        
+        <button class="buy-button" onclick="addToCart()">Lisää ostoskoriin</button>
+        <div id="cart-msg" class="cart-status">Lisätty ostoskoriin!</div>
+
+        <ul class="features-list">
+            <li>Sisältää 6 Toa Hordika -minihahmoa</li>
+            <li>Mukana 7 Visorak-hahmoa</li>
+            <li>Toimiva portti ja piilotettuja ansoja</li>
+            <li>Korkeus yli 50 cm!</li>
+        </ul>
+    </div>
+
+    <div class="description">
+        <h3>Tuotekuvaus</h3>
+        <p>Valmistaudu vuoden suurimpaan BIONICLE®-kohtaamiseen! Metru Nuin sydämessä sijaitseva suuri Colosseum on joutunut Visorak-hämähäkkien piirittämäksi. Toa Hordikoiden on käytettävä kaikkia taitojaan ja Rhotuka-kiekkojaan murtautuakseen sisään. Varovasti – linnake on täynnä ansoja, laukaisimia ja valtava Kahgarak-hämähäkki odottaa varjoissa!</p>
+    </div>
+</div>
+
+<footer>
+    &copy; 2005 The LEGO Group. Kaikki oikeudet pidätetään. BIONICLE on LEGO Groupin tavaramerkki.
+</footer>
+
+<script>
+    function addToCart() {
+        const msg = document.getElementById('cart-msg');
+        msg.style.display = 'block';
+        setTimeout(() => {
+            msg.style.display = 'none';
+        }, 3000);
+    }
+</script>
+
+</body>
+</html>
