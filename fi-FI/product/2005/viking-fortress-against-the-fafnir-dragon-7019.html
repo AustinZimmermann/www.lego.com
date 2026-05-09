@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEGO® Vikings 7019 - Viikinkien linnoitus</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Verdana&display=swap');
+
+        :root {
+            --lego-red: #d12229;
+            --viking-gold: #c5a059;
+            --viking-dark: #1a1a1a;
+            --viking-blue: #003057;
+        }
+
+        body {
+            font-family: 'Verdana', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .viking-header {
+            background: linear-gradient(to bottom, #003057, #001529);
+            border-bottom: 4px solid var(--viking-gold);
+        }
+
+        .lego-logo {
+            background-color: var(--lego-red);
+            padding: 10px;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+            box-shadow: 2px 2px 0px #000;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .price-tag {
+            font-size: 2rem;
+            color: var(--lego-red);
+            font-weight: bold;
+        }
+
+        .viking-font {
+            font-family: 'Cinzel', serif;
+        }
+
+        .buy-button {
+            background: linear-gradient(to bottom, #ffcc00, #ff9900);
+            border: 2px solid #cc7700;
+            transition: transform 0.1s;
+        }
+
+        .buy-button:active {
+            transform: scale(0.95);
+        }
+
+        .tab-active {
+            border-bottom: 4px solid var(--lego-red);
+            color: var(--lego-red);
+            font-weight: bold;
+        }
+
+        .dragon-bg {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://www.bricklink.com/SL/7019-1.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Ilmoitusviesti tyyli */
+        #notification {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4caf50;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="notification">Tuote lisätty ostoskoriin!</div>
+
+    <!-- Navigaatio -->
+    <header class="viking-header p-4 text-white">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <div class="lego-logo text-2xl">LEGO</div>
+                <nav class="hidden md:flex space-x-4 text-sm font-bold uppercase tracking-wider">
+                    <a href="#" class="hover:text-yellow-400">Tuotteet</a>
+                    <a href="#" class="hover:text-yellow-400">Pelit</a>
+                    <a href="#" class="hover:text-yellow-400">Kauppa</a>
+                    <a href="#" class="text-yellow-500">Vikings</a>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="bg-blue-800 px-3 py-1 rounded text-xs border border-blue-400">Kirjaudu</button>
+                <div class="relative">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Pääsisältö -->
+    <main class="container mx-auto mt-8 px-4 mb-12">
+        <div class="flex flex-wrap -mx-4">
+            
+            <!-- Tuotekuvat -->
+            <div class="w-full lg:w-2/3 px-4 mb-8">
+                <div class="product-card p-4">
+                    <div class="relative overflow-hidden bg-gray-200 rounded-lg h-[400px] md:h-[600px] flex items-center justify-center">
+                        <img id="main-image" src="https://www.bricklink.com/SL/7019-1.jpg" alt="LEGO 7019 Viking Fortress" class="max-h-full object-contain">
+                        <div class="absolute top-4 left-4 bg-yellow-500 text-black px-3 py-1 font-bold rounded shadow italic">
+                            LEGO® VIKINGS - UUTUUS 2005
+                        </div>
+                    </div>
+                    <div class="flex mt-4 space-x-2 overflow-x-auto pb-2">
+                        <img src="https://www.bricklink.com/SL/7019-1.jpg" onclick="changeImage(this.src)" class="w-24 h-24 object-cover border-2 border-red-600 cursor-pointer rounded">
+                        <div class="w-24 h-24 bg-gray-800 rounded flex items-center justify-center text-white text-[10px] text-center p-2 cursor-pointer opacity-80 hover:opacity-100 border-2 border-transparent">
+                            <svg class="w-8 h-8 mb-1" fill="currentColor" viewBox="0 0 20 20"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg>
+                            KATSO VIDEO
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tuotetiedot -->
+            <div class="w-full lg:w-1/3 px-4">
+                <div class="product-card p-6 h-full border-t-8 border-red-600">
+                    <h2 class="text-gray-500 text-sm font-bold mb-1">Tuotenumero 7019</h2>
+                    <h1 class="viking-font text-3xl font-bold mb-4 leading-tight">Viikinkien linnoitus Fafnir-lohikäärmettä vastaan</h1>
+                    
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            ★★★★★
+                        </div>
+                        <span class="text-xs text-gray-500 ml-2">(42 arvostelua)</span>
+                    </div>
+
+                    <p class="text-sm text-gray-600 mb-6">
+                        Puolusta viikinkien valtakuntaa! Jättimäinen Fafnir-lohikäärme hyökkää linnoitukseen. Käytä raskaasti varusteltuja katapultteja ja viikinkisotureiden rohkeutta voittaaksesi tämän muinaisen pedon.
+                    </p>
+
+                    <div class="bg-gray-100 p-4 rounded-lg mb-6">
+                        <div class="price-tag mb-1">99,95 €</div>
+                        <div class="text-green-600 text-xs font-bold flex items-center">
+                            <span class="w-2 h-2 bg-green-600 rounded-full mr-2"></span> Varastossa - Valmis toimitukseen
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <label class="text-sm font-bold">Määrä:</label>
+                            <select class="border p-2 rounded w-20">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                        </div>
+                        <button onclick="addToCart()" class="buy-button w-full py-4 rounded-lg text-black font-bold text-xl shadow-lg hover:brightness-110">
+                            LISÄÄ OSTOSKORIIN
+                        </button>
+                        <button class="w-full py-2 text-blue-600 text-sm font-bold hover:underline">
+                            + Lisää toivelistalle
+                        </button>
+                    </div>
+
+                    <div class="mt-8 border-t pt-4">
+                        <h3 class="font-bold text-sm mb-2 uppercase italic">Setti sisältää:</h3>
+                        <ul class="text-xs space-y-1 text-gray-700">
+                            <li>• 6 Legendaarista Viikinki-minihahmoa</li>
+                            <li>• Valtava, liikuteltava Fafnir-lohikäärme</li>
+                            <li>• Toimivat puolustuskatapultit</li>
+                            <li>• Yksityiskohtainen linnoitus aukeavilla porteilla</li>
+                            <li>• 1019 osaa kovaan leikkiin!</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alaosion välilehdet -->
+        <div class="mt-12">
+            <div class="flex border-b border-gray-300 space-x-8 mb-6 overflow-x-auto whitespace-nowrap">
+                <button onclick="switchTab('desc')" id="tab-desc" class="pb-2 tab-active uppercase text-sm tracking-widest">Kuvaus</button>
+                <button onclick="switchTab('details')" id="tab-details" class="pb-2 text-gray-500 uppercase text-sm tracking-widest">Tuotetiedot</button>
+                <button onclick="switchTab('reviews')" id="tab-reviews" class="pb-2 text-gray-500 uppercase text-sm tracking-widest">Arvostelut</button>
+            </div>
+
+            <div id="content-desc" class="bg-white p-8 rounded shadow-inner min-h-[200px]">
+                <h3 class="viking-font text-2xl mb-4">Suuri taistelu alkaa!</h3>
+                <p class="mb-4 leading-relaxed">
+                    LEGO® Vikings -sarjan kruununjalokivi on täällä. Viikinkien linnoitus on viimeinen puolustuslinja hirvittävää Fafnir-lohikäärmettä vastaan. Linnoitus on varustettu kahdella suurella katapultilla, jotka voivat laukaista ammuksia korkealle ilmaan. 
+                </p>
+                <p class="leading-relaxed">
+                    Lohikäärme on täysin nivelletty ja se voi "puhaltaa tulta" (erikoisefekti-osa). Sarja tarjoaa tuntikausia rakennusiloa ja eeppisiä leikkejä, joissa viikinkien rohkeus testataan.
+                </p>
+            </div>
+
+            <div id="content-details" class="hidden bg-white p-8 rounded shadow-inner min-h-[200px]">
+                <table class="w-full text-sm">
+                    <tr class="border-b"><td class="py-2 font-bold w-1/3">Ikäsuositus:</td><td class="py-2">7-14 vuotta</td></tr>
+                    <tr class="border-b"><td class="py-2 font-bold">Osien määrä:</td><td class="py-2">1019</td></tr>
+                    <tr class="border-b"><td class="py-2 font-bold">Julkaisuvuosi:</td><td class="py-2">2005</td></tr>
+                    <tr class="border-b"><td class="py-2 font-bold">Minihahmot:</td><td class="py-2">6 kpl</td></tr>
+                </table>
+            </div>
+
+            <div id="content-reviews" class="hidden bg-white p-8 rounded shadow-inner min-h-[200px]">
+                <div class="space-y-6">
+                    <div class="border-b pb-4">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-bold">Eerik Punainen</span>
+                            <span class="text-yellow-500">★★★★★</span>
+                        </div>
+                        <p class="text-sm italic">"Paras synttärilahja ikinä! Lohikäärme on tosi iso."</p>
+                    </div>
+                    <div class="border-b pb-4">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-bold">PalikkaFani88</span>
+                            <span class="text-yellow-500">★★★★★</span>
+                        </div>
+                        <p class="text-sm italic">"Todella hieno rakennuskokemus. Vikings-sarja on parasta mitä LEGO on tehnyt pitkään aikaan."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Alatunniste -->
+    <footer class="bg-gray-800 text-gray-400 py-12 px-4 border-t-4 border-yellow-600">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <div class="lego-logo inline-block mb-4">LEGO</div>
+                <p class="text-xs">LEGO, the LEGO logo are trademarks of the LEGO Group. © 2005 The LEGO Group.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-sm">Asiakaspalvelu</h4>
+                <ul class="text-xs space-y-2">
+                    <li><a href="#" class="hover:text-white">Ota yhteyttä</a></li>
+                    <li><a href="#" class="hover:text-white">Rakennusohjeet</a></li>
+                    <li><a href="#" class="hover:text-white">Varaosat</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-sm">Tietoa meistä</h4>
+                <ul class="text-xs space-y-2">
+                    <li><a href="#" class="hover:text-white">LEGO Group</a></li>
+                    <li><a href="#" class="hover:text-white">Uutiset</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-sm">Uutiskirje</h4>
+                <p class="text-xs mb-4">Tilaa uutiset suoraan sähköpostiisi!</p>
+                <div class="flex">
+                    <input type="text" placeholder="Sähköposti" class="p-2 rounded-l w-full text-black">
+                    <button class="bg-blue-600 text-white p-2 rounded-r font-bold px-4">OK</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function changeImage(src) {
+            document.getElementById('main-image').src = src;
+        }
+
+        function switchTab(tab) {
+            // Piilota kaikki sisällöt
+            document.getElementById('content-desc').classList.add('hidden');
+            document.getElementById('content-details').classList.add('hidden');
+            document.getElementById('content-reviews').classList.add('hidden');
+
+            // Poista aktiiviset tyylit napeista
+            document.getElementById('tab-desc').className = 'pb-2 text-gray-500 uppercase text-sm tracking-widest';
+            document.getElementById('tab-details').className = 'pb-2 text-gray-500 uppercase text-sm tracking-widest';
+            document.getElementById('tab-reviews').className = 'pb-2 text-gray-500 uppercase text-sm tracking-widest';
+
+            // Näytä valittu ja aseta tyyli
+            document.getElementById('content-' + tab).classList.remove('hidden');
+            document.getElementById('tab-' + tab).className = 'pb-2 tab-active uppercase text-sm tracking-widest';
+        }
+
+        function addToCart() {
+            const btn = event.target;
+            btn.innerHTML = "LISÄTTY!";
+            btn.classList.add('brightness-75');
+            
+            const notification = document.getElementById('notification');
+            notification.style.display = 'block';
+            
+            setTimeout(() => {
+                btn.innerHTML = "LISÄÄ OSTOSKORIIN";
+                btn.classList.remove('brightness-75');
+                notification.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
