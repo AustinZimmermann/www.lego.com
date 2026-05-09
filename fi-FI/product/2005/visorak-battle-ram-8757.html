@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEGO® BIONICLE® 8757: Visorak-taistelupässi</title>
+    <style>
+        :root {
+            --lego-red: #d00101;
+            --visorak-green: #2ecc71;
+            --dark-gray: #1a1a1a;
+            --metal-texture: #444;
+        }
+
+        body {
+            font-family: Helvetica, sans-serif;
+            background-color: #050505;
+            color: #eee;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(180deg, #d00101 0%, #800000 100%);
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .product-grid { grid-template-columns: 1fr; }
+        }
+
+        .image-container {
+            background: radial-gradient(circle, #333 0%, #000 70%);
+            border: 2px solid var(--lego-red);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .image-container img {
+            max-width: 1000px;
+            height: auto;
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
+        }
+
+        .product-info h1 {
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .set-number {
+            color: var(--lego-red);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .description {
+            margin: 20px 0;
+            border-left: 4px solid var(--lego-red);
+            padding-left: 15px;
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+        }
+
+        .stats-box {
+            background: #222;
+            padding: 15px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .stat-item { text-align: center; }
+        .stat-value { display: block; font-weight: bold; color: var(--lego-red); }
+
+        .buy-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: var(--lego-red);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            border-radius: 5px;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .buy-button:hover {
+            background-color: #ff0000;
+            transform: scale(1.02);
+        }
+
+        .features-list {
+            margin-top: 30px;
+        }
+
+        .feature-tag {
+            background: #333;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 0.9rem;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="https://www.lego.com/cdn/cs/set/assets/blt0372339d6b9d6a3a/lego-logo.png" alt="LEGO" width="50">
+</header>
+
+<div class="container">
+    <div class="product-grid">
+        <div class="image-container">
+            <img src="https://www.bricklink.com/SL/8757-1.jpg" alt="Visorak-taistelupässi">
+        </div>
+
+        <div class="product-info">
+            <span class="set-number">8757</span>
+            <h1>Visorak-taistelupässi</h1>
+            <p><strong>BIONICLE®: Playset</strong></p>
+
+            <div class="description">
+                Murtakaa hämähäkkilegioonan linjat! Visorak-taistelupässi on varustettu raskaalla iskupäällä ja säälimättömällä voimalla. Toa Hordika -sankarit tarvitsevat kaiken apunsa selviytyäkseen tästä mekaanisesta pedosta.
+            </div>
+
+            <div class="stats-box">
+                <div class="stat-item">
+                    <span class="stat-value">2005</span>
+                    <span>Vuosi</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">95</span>
+                    <span>Osat</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">7+</span>
+                    <span>Ikäsuositus</span>
+                </div>
+            </div>
+
+            <a href="#" class="buy-button" id="addToCart">LISÄÄ OSTOSKORIIN</a>
+        </div>
+    </div>
+
+    <div class="features-list">
+        <h3>Tuotteen ominaisuudet:</h3>
+        <ul>
+            <li>Sisältää liikkuvan pässimekanismin porttien murtamiseen.</li>
+            <li>Mukana pienoisfiguureja: Toa Hordika ja Visorak-minihahmoja.</li>
+            <li>Laukaisualusta Kahgarak-hämähäkkien sinkoamiseen.</li>
+            <li>Yhdistettävissä muihin vuoden 2005 BIONICLE-setteihin suurempia taisteluita varten.</li>
+        </ul>
+        <div style="margin-top: 15px;">
+            <span class="feature-tag">#BIONICLE</span>
+            <span class="feature-tag">#Visorak</span>
+            <span class="feature-tag">#MetruNui</span>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('addToCart').addEventListener('click', function(e) {
+        e.preventDefault();
+        const btn = e.target;
+        btn.innerText = "LISÄTTY!";
+        btn.style.backgroundColor = "#2ecc71";
+        
+        setTimeout(() => {
+            btn.innerText = "LISÄÄ OSTOSKORIIN";
+            btn.style.backgroundColor = "#d00101";
+        }, 2000);
+
+        console.log("Tuote 8757 lisätty koriin (simulaatio).");
+    });
+</script>
+
+</body>
+</html>
