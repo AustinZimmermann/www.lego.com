@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="el-GR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEGO® Shop Home | BIONICLE® 71308 Ταχού – Ενωτής της Φωτιάς</title>
+    <!-- Tailwind CSS for modern fluid responsive layouts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for LEGO-like typography and Greek support -->
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;800&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #121212;
+            color: #f3f4f6;
+        }
+        .bionicle-font {
+            font-family: 'Exo 2', sans-serif;
+        }
+        /* Classic LEGO Yellow branding color */
+        .bg-lego-yellow {
+            background-color: #ffcf00;
+        }
+        .text-lego-blue {
+            color: #0055a5;
+        }
+        .bg-lego-red {
+            background-color: #e3000b;
+        }
+        /* Custom scrollbar for premium theme styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e1b18;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ff5500;
+            border-radius: 4px;
+        }
+        /* BIONICLE Lava Flare effects */
+        .lava-glow {
+            box-shadow: 0 0 25px rgba(255, 68, 0, 0.45);
+        }
+        .rune-border {
+            border-image: linear-gradient(to right, #ff3700, #ffaa00, #ff3700) 1;
+        }
+    </style>
+</head>
+<body class="selection:bg-orange-600 selection:text-white">
+
+    <!-- TOP ANNOUNCEMENT BAR (2016 Style) -->
+    <div class="bg-black text-white text-xs py-1.5 px-4 text-center border-b border-orange-600 font-semibold tracking-wide">
+        🚀 ΔΩΡΕΑΝ Αποστολή για παραγγελίες άνω των €55! | Κερδίστε Διπλούς Πόντους VIP αυτόν τον μήνα!
+    </div>
+
+    <!-- MAIN BRAND HEADER (LEGO.com 2016 Layout) -->
+    <header class="bg-lego-yellow shadow-md text-black sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-16 md:h-20">
+            
+            <!-- LEGO Logo and Site Title -->
+            <div class="flex items-center space-x-4">
+                <!-- Red Square LEGO Logo -->
+                <a href="#" class="bg-lego-red p-2.5 flex items-center justify-center shadow-lg transform active:scale-95 transition">
+                    <span class="text-white font-extrabold text-2xl tracking-tighter block" style="font-family: 'Montserrat', sans-serif; line-height: 0.8; padding: 2px 4px;">
+                        LEGO
+                    </span>
+                </a>
+                <div class="hidden md:block">
+                    <span class="text-xs uppercase font-extrabold tracking-widest text-gray-800 block">Official Online Store</span>
+                    <span class="text-lg font-black text-lego-blue uppercase tracking-tight">Shop</span>
+                </div>
+            </div>
+
+            <!-- Navigation Categories -->
+            <nav class="hidden lg:flex space-x-6 font-extrabold uppercase text-sm">
+                <a href="#" class="text-lego-blue hover:text-black transition">Προϊοντα</a>
+                <a href="#" class="text-red-600 hover:text-black transition">Θεματα</a>
+                <a href="#" class="hover:text-lego-blue transition">VIP Club</a>
+                <a href="#" class="hover:text-lego-blue transition">Αποκλειστικα</a>
+                <a href="#" class="hover:text-lego-blue transition">Υποστηριξη</a>
+            </nav>
+
+            <!-- Localization, Cart & Wishlist -->
+            <div class="flex items-center space-x-4">
+                <!-- Regional Selector -->
+                <div class="hidden sm:flex items-center space-x-1.5 text-xs font-bold bg-white/50 px-2.5 py-1.5 rounded-full border border-yellow-400">
+                    <span class="text-sm">🇬🇷</span>
+                    <span class="uppercase">el-GR</span>
+                </div>
+
+                <!-- VIP status indicator -->
+                <div class="hidden md:flex flex-col text-right text-xs">
+                    <span class="font-bold text-[10px] text-gray-600 uppercase">Ο λογαριασμός μου</span>
+                    <span class="font-extrabold text-lego-blue">150 Πόντοι VIP</span>
+                </div>
+
+                <!-- Bag Icon with Counter -->
+                <button onclick="openCartModal()" class="bg-lego-red text-white p-3 rounded shadow hover:bg-red-700 transition flex items-center space-x-2 relative group">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                    <span id="cart-counter" class="bg-white text-lego-red font-black text-xs px-2 py-0.5 rounded-full absolute -top-2 -right-2 border-2 border-lego-red transition-all scale-100">0</span>
+                    <span class="hidden md:inline font-bold uppercase text-xs">Καλαθι</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- BIONICLE Theme Ribbon -->
+        <div class="bg-gradient-to-r from-orange-600 via-red-600 to-amber-600 text-white text-xs font-bold py-1.5 px-4 shadow-inner">
+            <div class="max-w-7xl mx-auto flex justify-between items-center bionicle-font">
+                <span class="tracking-widest uppercase">🔥 LEGO® BIONICLE® // WAVE 2016</span>
+                <a href="#" class="underline hover:text-black transition">Δείτε όλα τα Πλάσματα & Τόα →</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CRATER BACKDROP WRAPPER -->
+    <main class="relative bg-neutral-950 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-neutral-900 via-zinc-950 to-black overflow-hidden pb-16">
+        
+        <!-- Animated magma background accents -->
+        <div class="absolute top-10 left-10 w-72 h-72 bg-red-800/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-40 right-20 w-96 h-96 bg-orange-700/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <!-- Breadcrumbs -->
+        <div class="max-w-7xl mx-auto px-4 py-4 text-xs font-bold text-gray-400">
+            <a href="#" class="hover:text-orange-500 transition">Αρχική</a>
+            <span class="mx-2">/</span>
+            <a href="#" class="hover:text-orange-500 transition">Κατάλογος Προϊόντων</a>
+            <span class="mx-2">/</span>
+            <a href="#" class="hover:text-orange-500 transition">BIONICLE®</a>
+            <span class="mx-2">/</span>
+            <span class="text-orange-500 font-extrabold">71308</span>
+        </div>
+
+        <!-- MAIN LAYOUT GRID -->
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-8 mt-4">
+
+            <!-- LEFT COLUMN: Product Images & Interaction (7 Columns) -->
+            <div class="lg:col-span-7 flex flex-col space-y-4">
+                
+                <!-- Main Visual Container -->
+                <div class="relative bg-neutral-900 rounded-2xl border-2 border-orange-600/30 overflow-hidden lava-glow flex items-center justify-center p-4 min-h-[350px] md:min-h-[500px]">
+                    
+                    <!-- BIONICLE Hologram Overlay -->
+                    <div class="absolute top-4 left-4 bg-black/60 backdrop-blur-md border border-orange-500/50 text-orange-400 text-[10px] md:text-xs px-3 py-1.5 rounded font-mono uppercase tracking-widest bionicle-font">
+                        TOA OF FIRE // UNIT MODEL
+                    </div>
+
+                    <!-- Unity Power Badge -->
+                    <div id="unity-badge" class="absolute top-4 right-4 bg-gradient-to-r from-yellow-500 to-orange-600 border border-yellow-300 text-white text-[10px] md:text-xs font-black px-3 py-1.5 rounded shadow-lg animate-pulse hidden uppercase">
+                        ⚡ ΕΝΩΜΕΝΟΣ ΜΕ ΑΪΚΙΡ ⚡
+                    </div>
+
+                    <!-- Main Set Image -->
+                    <img id="main-product-image" 
+                         src="https://www.bricklink.com/SL/71308-1.jpg" 
+                         alt="LEGO Bionicle 71308 Tahu Uniter of Fire" 
+                         onerror="this.src='https://images.unsplash.com/photo-1585366119957-e5733be3c794?q=80&w=600&auto=format&fit=crop'; console.log('Primary image failed, loaded fallback');"
+                         class="max-h-[450px] w-auto object-contain transition-all duration-500 transform hover:scale-105" />
+
+                    <!-- United Visual State Overlay (Ikir combo simulation helper) -->
+                    <div id="united-overlay-graphics" class="absolute inset-0 pointer-events-none opacity-0 transition-opacity duration-500 flex items-center justify-center">
+                        <!-- Flaming Wings (SVG) drawn over Tahu to simulate Unity action -->
+                        <svg class="w-full h-full absolute p-8" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 20 50 Q 5 25 25 20 Q 35 30 40 45" stroke="#ff3c00" stroke-width="2" stroke-linecap="round" stroke-dasharray="2" class="animate-pulse" />
+                            <path d="M 80 50 Q 95 25 75 20 Q 65 30 60 45" stroke="#ff3c00" stroke-width="2" stroke-linecap="round" stroke-dasharray="2" class="animate-pulse" />
+                            <circle cx="50" cy="50" r="35" stroke="#ffaa00" stroke-width="1" stroke-dasharray="4" class="animate-spin" style="animation-duration: 20s;" />
+                        </svg>
+                    </div>
+
+                    <!-- Image Caption / Interactive State Info -->
+                    <div class="absolute bottom-4 left-4 right-4 bg-black/75 backdrop-blur-md p-3 rounded border border-orange-500/20 text-center">
+                        <p id="image-caption" class="text-xs text-orange-200 font-semibold uppercase tracking-wider">
+                            Κουτί LEGO® BIONICLE 71308 (Όψη Συσκευασίας)
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Thumbnails Gallery -->
+                <div class="grid grid-cols-4 gap-3">
+                    <button onclick="changeGalleryImage('https://www.bricklink.com/SL/71308-1.jpg', 'Κουτί LEGO® BIONICLE 71308 (Όψη Συσκευασίας)', false)" 
+                            class="gallery-thumb border-2 border-orange-500 bg-neutral-900 p-2 rounded-lg flex items-center justify-center h-20 transition hover:border-orange-400">
+                        <img src="https://www.bricklink.com/SL/71308-1.jpg" class="h-16 w-auto object-contain" alt="Box Art">
+                    </button>
+                    
+                    <!-- Fan Pose Mockup Thumbnail -->
+                    <button onclick="changeGalleryImage('https://www.bricklink.com/SL/71308-1.jpg', 'Ταχού: Έτοιμος για Μάχη με τα Πύρινα Σπαθιά!', false)" 
+                            class="gallery-thumb border border-orange-500/20 bg-neutral-900 p-2 rounded-lg flex items-center justify-center h-20 transition hover:border-orange-400">
+                        <div class="relative flex flex-col items-center justify-center">
+                            <span class="text-[10px] text-orange-500 font-bold uppercase tracking-tighter">Action Pose</span>
+                            <span class="text-2xl">🔥</span>
+                        </div>
+                    </button>
+
+                    <!-- Golden Mask Detail Thumbnail -->
+                    <button onclick="changeGalleryImage('https://www.bricklink.com/SL/71308-1.jpg', 'Περιλαμβάνει τη Χρυσή Μάσκα της Ένωσης της Φωτιάς!', false)" 
+                            class="gallery-thumb border border-orange-500/20 bg-neutral-900 p-2 rounded-lg flex items-center justify-center h-20 transition hover:border-orange-400">
+                        <div class="relative flex flex-col items-center justify-center text-center">
+                            <span class="text-[9px] text-yellow-500 font-black uppercase">Gold Mask</span>
+                            <span class="text-2xl">👑</span>
+                        </div>
+                    </button>
+
+                    <!-- Combined with Ikir (71303) Preview -->
+                    <button onclick="toggleUnityState(true)" 
+                            class="gallery-thumb border-2 border-yellow-500/50 bg-gradient-to-b from-amber-950 to-neutral-950 p-2 rounded-lg flex flex-col items-center justify-center h-20 transition hover:scale-105">
+                        <span class="text-[9px] text-yellow-400 font-black uppercase tracking-tight">Ενωση 71303</span>
+                        <span class="text-xs text-orange-500 font-bold">Tahu + Ikir</span>
+                        <span class="text-xs animate-bounce">⚡</span>
+                    </button>
+                </div>
+
+                <!-- SPECIAL FEATURE: INTERACTIVE BIONICLE UNITY MECHANIC -->
+                <div class="bg-gradient-to-r from-neutral-900 to-amber-950 rounded-xl p-5 border border-orange-500/30">
+                    <div class="flex items-center space-x-3 mb-3">
+                        <div class="bg-orange-600 p-1.5 rounded text-white font-bold text-sm">71303</div>
+                        <div>
+                            <h3 class="text-sm font-bold uppercase tracking-wider text-orange-400 bionicle-font">Συνδυάστε τον με τον Αϊκίρ (Πλάσμα της Φωτιάς)</h3>
+                            <p class="text-xs text-gray-300">Κάντε κλικ στο παρακάτω κουμπί για να προσομοιώσετε τη θρυλική <strong>Ένωση των Στοιχείων</strong>!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row items-center gap-4">
+                        <div class="flex items-center space-x-2">
+                            <span class="text-3xl">🔥</span>
+                            <span class="text-xl font-bold">+</span>
+                            <span class="text-3xl">🦅</span>
+                        </div>
+                        <div class="flex-1 text-center sm:text-left">
+                            <p id="unity-desc-text" class="text-xs text-gray-400">Ο Τάχου είναι αυτή τη στιγμή στην <b>Απλή Μορφή</b> του.</p>
+                        </div>
+                        <button id="unity-action-btn" onclick="toggleUnityState()" 
+                                class="w-full sm:w-auto bg-gradient-to-r from-amber-500 to-red-600 hover:from-amber-600 hover:to-red-700 text-white font-extrabold uppercase text-xs px-5 py-3 rounded-lg transition-transform active:scale-95 shadow-md">
+                            ΕΝΕΡΓΟΠΟΙΗΣΗ ΕΝΩΣΗΣ!
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN: Purchase Panel & Highlights (5 Columns) -->
+            <div class="lg:col-span-5 flex flex-col space-y-6">
+
+                <!-- Theme Brand & Set Number Header -->
+                <div class="border-b border-neutral-800 pb-4">
+                    <div class="flex justify-between items-center">
+                        <span class="text-red-500 font-extrabold tracking-widest text-sm bionicle-font uppercase">BIONICLE®</span>
+                        <span class="bg-neutral-800 text-orange-400 text-xs font-bold px-2.5 py-1 rounded border border-neutral-700">2016 Wave 1</span>
+                    </div>
+                    <h1 class="text-3xl md:text-4xl font-black mt-2 tracking-tight text-white">
+                        Τάχου – Ένωτης της Φωτιάς
+                    </h1>
+                    <div class="flex items-center space-x-4 mt-2 text-sm text-gray-400 font-semibold">
+                        <span>Κωδικός: <strong class="text-white">71308</strong></span>
+                        <span>•</span>
+                        <span>Ηλικίες: <strong class="text-white">8-14</strong></span>
+                        <span>•</span>
+                        <span>Κομμάτια: <strong class="text-white">132</strong></span>
+                    </div>
+                </div>
+
+                <!-- Price & VIP Point Card -->
+                <div class="bg-neutral-900 rounded-xl p-5 border border-neutral-800 shadow-inner flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div>
+                        <span class="text-xs text-gray-400 uppercase font-bold tracking-wider">Προτεινόμενη Τιμή Λιανικής</span>
+                        <div class="flex items-baseline space-x-2">
+                            <span class="text-4xl font-black text-white">€21,99</span>
+                            <span class="text-xs text-green-500 font-bold">Περιλαμβάνει Φ.Π.Α.</span>
+                        </div>
+                    </div>
+                    <div class="bg-lego-yellow/10 border border-yellow-500/30 p-3 rounded-lg text-xs flex items-center space-x-2.5">
+                        <div class="bg-lego-yellow text-black font-black p-1.5 rounded">VIP</div>
+                        <div>
+                            <p class="font-extrabold text-yellow-500">Κερδίστε 21 Πόντους VIP</p>
+                            <p class="text-gray-400">Για επόμενες εκπτώσεις</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Purchase Actions Panel -->
+                <div class="bg-neutral-900 rounded-xl p-5 border-2 border-orange-600/30 space-y-4">
+                    
+                    <!-- Availability Status -->
+                    <div class="flex items-center space-x-2">
+                        <span class="h-3 w-3 rounded-full bg-green-500 animate-pulse"></span>
+                        <span class="text-sm font-extrabold text-green-400">Διαθέσιμο Τώρα</span>
+                        <span class="text-xs text-gray-400">-- Αποστέλλεται εντός 24 ωρών</span>
+                    </div>
+
+                    <!-- Quantity Selector & ADD TO CART -->
+                    <div class="flex items-center space-x-3">
+                        <div class="flex items-center bg-neutral-800 border border-neutral-700 rounded-lg overflow-hidden">
+                            <button onclick="adjustQuantity(-1)" class="px-3.5 py-2.5 text-lg font-black hover:bg-neutral-700 transition">-</button>
+                            <span id="product-quantity" class="px-4 py-2 font-bold text-sm text-white">1</span>
+                            <button onclick="adjustQuantity(1)" class="px-3.5 py-2.5 text-lg font-black hover:bg-neutral-700 transition">+</button>
+                        </div>
+                        
+                        <button onclick="addToCartSimulation()" 
+                                class="flex-1 bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-black font-black uppercase text-sm py-4 rounded-lg shadow-lg hover:shadow-orange-500/20 active:scale-95 transition-all text-center">
+                            🛒 ΠΡΟΣΘΗΚΗ ΣΤΟ ΚΑΛΑΘΙ
+                        </button>
+                    </div>
+
+                    <!-- Secondary Fast Actions -->
+                    <div class="grid grid-cols-2 gap-3 pt-2 text-xs font-bold text-gray-300">
+                        <button onclick="toggleWishlist()" id="wishlist-btn" class="border border-neutral-700 hover:bg-neutral-800 p-3 rounded-lg transition flex items-center justify-center space-x-2">
+                            <span id="wishlist-heart">🤍</span>
+                            <span>Στη Λίστα Επιθυμιών</span>
+                        </button>
+                        <button class="border border-neutral-700 hover:bg-neutral-800 p-3 rounded-lg transition flex items-center justify-center space-x-2">
+                            <span>📊</span>
+                            <span>Σύγκριση Σετ</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Rapid Highlights Checklist -->
+                <div class="space-y-3 text-sm text-gray-300 border-t border-neutral-800 pt-5">
+                    <h3 class="font-extrabold uppercase text-xs tracking-wider text-orange-400">Κύρια Χαρακτηριστικά</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start space-x-2">
+                            <span class="text-orange-500">✦</span>
+                            <span><strong>Μάσκα της Ένωσης της Φωτιάς</strong> &amp; <strong>Χρυσή Μάσκα της Ένωσης</strong></span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-orange-500">✦</span>
+                            <span><strong>Περιστρεφόμενος Τροχός Κορμού</strong> για γρήγορες κινήσεις μάχης</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-orange-500">✦</span>
+                            <span><strong>132 Στοιχεία</strong> συμπεριλαμβανομένων κρυσταλλικών λεπίδων &amp; θώρακα με ρούνους</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Call to Action Box -->
+                <div class="bg-gradient-to-b from-orange-950/40 to-black p-4 rounded-lg border border-orange-500/20 text-center">
+                    <p class="text-xs text-orange-300 font-semibold uppercase">Ψάχνετε τις οδηγίες συναρμολόγησης;</p>
+                    <a href="#" class="inline-block mt-2 text-xs text-white underline hover:text-orange-400 font-bold transition">
+                        Κατεβάστε δωρεάν το PDF (71308_BI.pdf) 📄
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- TABS CONTAINER (Description, Specifications, Reviews) -->
+        <div class="max-w-7xl mx-auto px-4 mt-16">
+            
+            <!-- Tabs Header Selection -->
+            <div class="flex border-b border-neutral-800 space-x-1 overflow-x-auto">
+                <button onclick="switchTab('description')" id="tab-btn-description" class="tab-btn py-3 px-6 text-sm font-black uppercase tracking-wider border-b-2 border-orange-500 text-white transition">
+                    Περιγραφη Προϊοντος
+                </button>
+                <button onclick="switchTab('specs')" id="tab-btn-specs" class="tab-btn py-3 px-6 text-sm font-black uppercase tracking-wider text-gray-400 border-b-2 border-transparent transition">
+                    Τεχνικα Χαρακτηριστικα
+                </button>
+                <button onclick="switchTab('reviews')" id="tab-btn-reviews" class="tab-btn py-3 px-6 text-sm font-black uppercase tracking-wider text-gray-400 border-b-2 border-transparent transition">
+                    Αξιολογησεις (4)
+                </button>
+            </div>
+
+            <!-- Tab: Description Content -->
+            <div id="tab-content-description" class="tab-content py-8 space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-4">
+                        <h2 class="text-2xl font-black text-white uppercase tracking-tight">
+                            Πηδηξτε πανω απο τη λαβα και οδηγηστε τους Τοα στη νικη!
+                        </h2>
+                        <p class="text-gray-300 leading-relaxed text-sm">
+                            Πηδήξτε πάνω από ποτάμια ρέουσας λάβας και προσέξτε τα ηφαίστεια που εκρήγνυνται με τον <strong>Τάχου – τον Ενωτή της Φωτιάς</strong>! Αυτός ο πανίσχυρος Τόα είναι έτοιμος να ανακαλύψει τις μυστικές πηγές ενέργειας του Οκότο και να ενώσει τις δυνάμεις του με τα μυθικά πλάσματα για να πολεμήσει τον σκοτεινό Ούμαρακ τον Κυνηγό!
+                        </p>
+                        <p class="text-gray-300 leading-relaxed text-sm">
+                            Φορέστε τη <strong>Χρυσή Μάσκα της Ένωσης της Φωτιάς</strong> για να ξεκλειδώσετε τις απόλυτες δυνάμεις της φωτιάς, εξοπλιστείτε με τις κρυσταλλικές λεπίδες και νικήστε τις Σκιώδεις Παγίδες που παραμονεύουν στα ηφαιστειακά ερείπια του Οκότο.
+                        </p>
+                    </div>
+                    <div class="bg-neutral-900 p-6 rounded-xl border border-neutral-800 space-y-4">
+                        <h4 class="font-extrabold text-orange-400 uppercase tracking-widest text-xs">Η συσκευασία περιέχει:</h4>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li class="flex items-center space-x-2">
+                                <span class="text-green-500">✔</span>
+                                <span>Φιγούρα Tahu Uniter of Fire με πλήρως αρθρωτά μέλη.</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <span class="text-green-500">✔</span>
+                                <span>2 Μάσκες: Μάσκα της Ένωσης της Φωτιάς και τη Χρυσή Μάσκα της Ένωσης.</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <span class="text-green-500">✔</span>
+                                <span>Κρυσταλλικά στοιχεία θωράκισης ώμων και διακοσμημένο θώρακα.</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <span class="text-green-500">✔</span>
+                                <span>Μηχανισμό περιστροφής κορμού για δράση μάχης 360 μοιρών.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Specs Content -->
+            <div id="tab-content-specs" class="tab-content py-8 space-y-4 hidden">
+                <div class="max-w-3xl bg-neutral-900 rounded-xl border border-neutral-800 divide-y divide-neutral-800 text-sm">
+                    <div class="grid grid-cols-3 p-4">
+                        <span class="text-gray-400 font-bold">Κατασκευαστής</span>
+                        <span class="col-span-2 text-white">LEGO® Group</span>
+                    </div>
+                    <div class="grid grid-cols-3 p-4">
+                        <span class="text-gray-400 font-bold">Θέμα</span>
+                        <span class="col-span-2 text-white">LEGO® BIONICLE®</span>
+                    </div>
+                    <div class="grid grid-cols-3 p-4">
+                        <span class="text-gray-400 font-bold">Κωδικός Προϊόντος</span>
+                        <span class="col-span-2 text-white">71308</span>
+                    </div>
+                    <div class="grid grid-cols-3 p-4">
+                        <span class="text-gray-400 font-bold">Έτος Κυκλοφορίας</span>
+                        <span class="col-span-2 text-white">2016 (Απρίλιος)</span>
+                    </div>
+                    <div class="grid grid-cols-3 p-4">
+                        <span class="text-gray-400 font-bold">Διαστάσεις Συσκευασίας</span>
+                        <span class="col-span-2 text-white">22.0 x 26.0 x 5.4 cm</span>
+                    </div>
+                    <div class="grid grid-cols-3 p-4">
+                        <span class="text-gray-400 font-bold">Βάρος</span>
+                        <span class="col-span-2 text-white">0.34 kg</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Reviews Content -->
+            <div id="tab-content-reviews" class="tab-content py-8 space-y-6 hidden">
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <!-- General Rating scorecard -->
+                    <div class="lg:w-1/3 bg-neutral-900 p-6 rounded-xl border border-neutral-800 text-center flex flex-col justify-center items-center">
+                        <span class="text-xs text-gray-400 uppercase font-black tracking-widest">Μέση Βαθμολογία</span>
+                        <span class="text-5xl font-black text-orange-500 my-2">4.8 / 5</span>
+                        <div class="text-yellow-500 text-xl">★★★★★</div>
+                        <p class="text-xs text-gray-400 mt-2">Βασισμένο σε 4 αυθεντικές κριτικές αγοραστών</p>
+                    </div>
+
+                    <!-- Testimonials list -->
+                    <div class="lg:w-2/3 space-y-4">
+                        <div class="bg-neutral-900/60 p-5 rounded-lg border border-neutral-800">
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="font-extrabold text-orange-400">BionicleFan_99</span>
+                                <span class="text-gray-400">12/04/2016</span>
+                            </div>
+                            <div class="text-yellow-500 text-sm my-1">★★★★★</div>
+                            <h4 class="font-bold text-white text-sm">Καλύτερη έκδοση του Tahu στη Generation 2!</h4>
+                            <p class="text-xs text-gray-300 mt-1">Η Χρυσή Μάσκα είναι εκπληκτική και η δυνατότητα ένωσης με τον Ikir δίνει απίστευτες δυνατότητες παιχνιδιού. Πολύ στιβαρό!</p>
+                        </div>
+
+                        <div class="bg-neutral-900/60 p-5 rounded-lg border border-neutral-800">
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="font-extrabold text-orange-400">GeorgeAthens</span>
+                                <span class="text-gray-400">08/04/2016</span>
+                            </div>
+                            <div class="text-yellow-500 text-sm my-1">★★★★★</div>
+                            <h4 class="font-bold text-white text-sm">Εξαιρετικά κομμάτια για MOC</h4>
+                            <p class="text-xs text-gray-300 mt-1">Περιέχει πολλά χρυσά και διάφανα πορτοκαλί κομμάτια. Ο μηχανισμός περιστροφής λειτουργεί πολύ καλύτερα από πέρυσι.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FLOATING CART OVERLAY BANNER (For interactive simulation feedback) -->
+    <div id="cart-notification" class="fixed bottom-6 right-6 bg-green-600 text-white p-4 rounded-xl shadow-2xl border-2 border-green-400 max-w-sm transition-all duration-300 transform translate-y-24 opacity-0 z-50">
+        <div class="flex items-center space-x-3">
+            <span class="text-2xl">🛒</span>
+            <div>
+                <p class="font-extrabold text-sm uppercase">Προστέθηκε στο Καλάθι!</p>
+                <p class="text-xs text-green-100"><span id="notif-qty">1</span>x LEGO® BIONICLE® 71308</p>
+            </div>
+            <button onclick="dismissNotification()" class="text-white hover:text-gray-300 font-bold ml-auto">×</button>
+        </div>
+    </div>
+
+    <!-- CUSTOM MINI MODAL: CART DETAILS -->
+    <div id="cart-modal" class="fixed inset-0 bg-black/85 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-neutral-900 rounded-2xl border-2 border-orange-500/40 p-6 w-full max-w-md shadow-2xl relative">
+            <button onclick="closeCartModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl font-bold">×</button>
+            <h3 class="text-lg font-black text-white uppercase tracking-tight mb-4 border-b border-neutral-800 pb-2">
+                Το Καλάθι μου (Simulation)
+            </h3>
+            
+            <div id="modal-cart-empty-state" class="text-center py-6 text-gray-400 space-y-2">
+                <span class="text-4xl">🛍️</span>
+                <p class="text-sm">Το καλάθι σας είναι άδειο.</p>
+            </div>
+
+            <div id="modal-cart-items" class="space-y-4 hidden">
+                <div class="flex items-center justify-between bg-neutral-950 p-3 rounded-lg border border-neutral-800">
+                    <div class="flex items-center space-x-3">
+                        <span class="text-2xl">🔥</span>
+                        <div>
+                            <p class="text-xs font-bold text-white">71308 Tahu Uniter of Fire</p>
+                            <p class="text-[10px] text-gray-400">Ποσότητα: <span id="modal-cart-qty">0</span></p>
+                        </div>
+                    </div>
+                    <span class="text-sm font-black text-orange-400" id="modal-cart-total-price">€0.00</span>
+                </div>
+
+                <div class="border-t border-neutral-800 pt-3 flex justify-between items-center text-sm">
+                    <span class="text-gray-400 font-bold">Σύνολο:</span>
+                    <span class="text-lg font-black text-white" id="modal-cart-grand-total">€0.00</span>
+                </div>
+
+                <div class="flex space-x-2 pt-2">
+                    <button onclick="alertSimulatedCheckout()" class="flex-1 bg-gradient-to-r from-orange-500 to-yellow-500 text-black font-black uppercase text-xs py-3 rounded-lg text-center transition active:scale-95">
+                        Ολοκληρωση Παραγγελιας
+                    </button>
+                    <button onclick="clearCart()" class="bg-neutral-800 hover:bg-neutral-700 text-xs text-red-400 font-bold px-4 py-3 rounded-lg transition">
+                        Καθαρισμός
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN SYSTEM FOOTER (LEGO.com 2016 Style) -->
+    <footer class="bg-neutral-900 border-t border-orange-500/20 text-gray-400 text-xs py-12">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+            
+            <!-- Corporate Branding info -->
+            <div class="space-y-4">
+                <div class="flex items-center space-x-2">
+                    <div class="bg-lego-red text-white font-black text-xs px-2 py-1">LEGO</div>
+                    <span class="text-white font-extrabold uppercase tracking-widest text-sm">Shop</span>
+                </div>
+                <p class="text-gray-500 leading-relaxed text-[11px]">
+                    LEGO, the LEGO logo, the Minifigure, BIONICLE and the BIONICLE logo are trademarks of the LEGO Group. ©2016 The LEGO Group. All rights reserved.
+                </p>
+            </div>
+
+            <!-- Customer Service Links -->
+            <div>
+                <h4 class="text-white font-black uppercase tracking-wider mb-3 text-xs">Εξυπηρέτηση Πελατών</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-white transition">Επικοινωνήστε μαζί μας</a></li>
+                    <li><a href="#" class="hover:text-white transition">Οδηγίες Συναρμολόγησης</a></li>
+                    <li><a href="#" class="hover:text-white transition">Ανταλλακτικά Τουβλάκια</a></li>
+                    <li><a href="#" class="hover:text-white transition">Αποστολές &amp; Επιστροφές</a></li>
+                </ul>
+            </div>
+
+            <!-- About LEGO Links -->
+            <div>
+                <h4 class="text-white font-black uppercase tracking-wider mb-3 text-xs">Σχετικά με τη LEGO</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-white transition">Σχετικά με το LEGO Group</a></li>
+                    <li><a href="#" class="hover:text-white transition">LEGO Νέα</a></li>
+                    <li><a href="#" class="hover:text-white transition">Πολιτική Απορρήτου</a></li>
+                    <li><a href="#" class="hover:text-white transition">Όροι &amp; Προϋποθέσεις</a></li>
+                </ul>
+            </div>
+
+            <!-- BIONICLE Universe disclaimer -->
+            <div class="bg-black/40 p-4 rounded-lg border border-neutral-800">
+                <h4 class="text-orange-400 font-extrabold uppercase tracking-widest text-[10px] mb-2 bionicle-font">Η ΜΥΘΟΛΟΓΙΑ ΤΟΥ OKOTO</h4>
+                <p class="text-[11px] leading-relaxed text-gray-500">
+                    Εξερευνήστε τον κόσμο του Okoto και ανακαλύψτε τις δυνάμεις των 6 Στοιχείων. Μόνο οι Toa μπορούν να σταματήσουν τις δυνάμεις του σκότους.
+                </p>
+                <a href="#" class="inline-block mt-3 text-[10px] text-white hover:text-orange-400 font-black uppercase tracking-wider transition">
+                    Μπείτε στο BIONICLE.com →
+                </a>
+            </div>
+
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 mt-8 pt-8 border-t border-neutral-800 text-center text-gray-600">
+            Recreated for historical preservation and educational visual demonstration. Simulated in el-GR as of April 2016.
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT STATE ENGINE -->
+    <script>
+        // Shopping cart State
+        let currentQuantity = 1;
+        let cartItemCount = 0;
+        let isUnited = false;
+        let isInWishlist = false;
+
+        // Manage galleries
+        function changeGalleryImage(src, caption, activeUnity = false) {
+            const mainImg = document.getElementById('main-product-image');
+            const captionEl = document.getElementById('image-caption');
+            
+            mainImg.src = src;
+            captionEl.innerText = caption;
+
+            // Manage thumbnails focus highlight
+            const thumbs = document.querySelectorAll('.gallery-thumb');
+            thumbs.forEach(t => t.classList.remove('border-orange-500', 'border-yellow-500'));
+        }
+
+        // Simulating the 2016 combination mechanic
+        function toggleUnityState(forceState = null) {
+            const badge = document.getElementById('unity-badge');
+            const overlay = document.getElementById('united-overlay-graphics');
+            const caption = document.getElementById('image-caption');
+            const desc = document.getElementById('unity-desc-text');
+            const btn = document.getElementById('unity-action-btn');
+
+            if (forceState !== null) {
+                isUnited = forceState;
+            } else {
+                isUnited = !isUnited;
+            }
+
+            if (isUnited) {
+                badge.classList.remove('hidden');
+                overlay.classList.remove('opacity-0');
+                overlay.classList.add('opacity-100');
+                caption.innerText = "ΕΝΩΜΕΝΟΣ ΤΑΧΟΥ: Φέρει το Πλάσμα Ikir στην πλάτη του και πετάει!";
+                desc.innerHTML = "Ο Ταχού είναι αυτή τη στιγμή **Ενωμένος με τον Ikir**. Έχει αποκτήσει φτερά φωτιάς και διπλάσια δύναμη!";
+                btn.innerText = "ΑΠΕΝΕΡΓΟΠΟΙΗΣΗ ΕΝΩΣΗΣ";
+                btn.classList.add('from-red-600', 'to-amber-500');
+                btn.classList.remove('from-amber-500', 'to-red-600');
+            } else {
+                badge.classList.add('hidden');
+                overlay.classList.add('opacity-0');
+                overlay.classList.remove('opacity-100');
+                caption.innerText = "Κουτί LEGO® BIONICLE 71308 (Όψη Συσκευασίας)";
+                desc.innerHTML = "Ο Ταχού είναι αυτή τη στιγμή στην **Απλή Μορφή** του.";
+                btn.innerText = "ΕΝΕΡΓΟΠΟΙΗΣΗ ΕΝΩΣΗΣ!";
+                btn.classList.remove('from-red-600', 'to-amber-500');
+                btn.classList.add('from-amber-500', 'to-red-600');
+            }
+        }
+
+        // Adjust input quantity counter
+        function adjustQuantity(amount) {
+            currentQuantity += amount;
+            if (currentQuantity < 1) currentQuantity = 1;
+            document.getElementById('product-quantity').innerText = currentQuantity;
+        }
+
+        // Add to Cart Simulation trigger
+        function addToCartSimulation() {
+            cartItemCount += currentQuantity;
+            
+            // Update UI elements
+            const counter = document.getElementById('cart-counter');
+            counter.innerText = cartItemCount;
+            counter.classList.add('scale-125');
+            setTimeout(() => counter.classList.remove('scale-125'), 200);
+
+            // Display Toast alert
+            const toast = document.getElementById('cart-notification');
+            document.getElementById('notif-qty').innerText = currentQuantity;
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            // Auto dismiss toast
+            setTimeout(dismissNotification, 4000);
+        }
+
+        function dismissNotification() {
+            const toast = document.getElementById('cart-notification');
+            toast.classList.add('translate-y-24', 'opacity-0');
+            toast.classList.remove('translate-y-0', 'opacity-100');
+        }
+
+        // Switch bottom product tabs
+        function switchTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            // Remove active style from tab buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('border-orange-500', 'text-white');
+                btn.classList.add('text-gray-400', 'border-transparent');
+            });
+
+            // Show active content & style
+            document.getElementById(`tab-content-${tabId}`).classList.remove('hidden');
+            const activeBtn = document.getElementById(`tab-btn-${tabId}`);
+            activeBtn.classList.add('border-orange-500', 'text-white');
+            activeBtn.classList.remove('text-gray-400', 'border-transparent');
+        }
+
+        // Simulated Wishlist state toggle
+        function toggleWishlist() {
+            isInWishlist = !isInWishlist;
+            const btn = document.getElementById('wishlist-btn');
+            const heart = document.getElementById('wishlist-heart');
+            if (isInWishlist) {
+                heart.innerText = "❤️";
+                btn.classList.add('bg-red-950/20', 'border-red-500/50');
+            } else {
+                heart.innerText = "🤍";
+                btn.classList.remove('bg-red-950/20', 'border-red-500/50');
+            }
+        }
+
+        // Cart details Modal managers
+        function openCartModal() {
+            const modal = document.getElementById('cart-modal');
+            const emptyState = document.getElementById('modal-cart-empty-state');
+            const itemsState = document.getElementById('modal-cart-items');
+
+            modal.classList.remove('hidden');
+
+            if (cartItemCount > 0) {
+                emptyState.classList.add('hidden');
+                itemsState.classList.remove('hidden');
+                
+                document.getElementById('modal-cart-qty').innerText = cartItemCount;
+                const totalVal = (cartItemCount * 21.99).toFixed(2);
+                document.getElementById('modal-cart-total-price').innerText = `€${totalVal}`;
+                document.getElementById('modal-cart-grand-total').innerText = `€${totalVal}`;
+            } else {
+                emptyState.classList.remove('hidden');
+                itemsState.classList.add('hidden');
+            }
+        }
+
+        function closeCartModal() {
+            document.getElementById('cart-modal').classList.add('hidden');
+        }
+
+        function clearCart() {
+            cartItemCount = 0;
+            document.getElementById('cart-counter').innerText = 0;
+            closeCartModal();
+        }
+
+        function alertSimulatedCheckout() {
+            // Replaces real checkout with feedback container within the layout
+            const modal = document.getElementById('cart-modal');
+            modal.innerHTML = `
+                <div class="text-center py-8 space-y-4">
+                    <span class="text-5xl">🎉</span>
+                    <h3 class="text-xl font-black text-green-400 uppercase">Η παραγγελια καταχωρηθηκε!</h3>
+                    <p class="text-xs text-gray-300">Συγχαρητήρια, αυτή ήταν μια επιτυχημένη προσομοίωση αγοράς του σετ LEGO® BIONICLE 71308 για την Ελλάδα σε τιμές Απριλίου 2016!</p>
+                    <button onclick="window.location.reload()" class="bg-orange-500 text-black font-extrabold uppercase text-xs px-6 py-2 rounded-full mt-4 hover:bg-orange-400 transition">
+                        Επαναφορα Σελιδας
+                    </button>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
