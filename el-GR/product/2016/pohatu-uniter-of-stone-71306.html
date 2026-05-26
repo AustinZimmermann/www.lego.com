@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="el-GR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ποχάτου - Ενωτής της Πέτρας 71306 | BIONICLE® | LEGO.com GR (Απρίλιος 2016)</title>
+    <!-- Tailwind CSS for modern fluid responsive rendering with 2016 aesthetics -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* 2016 LEGO.com Brand Colors & Gradients */
+        .lego-yellow {
+            background-color: #ffcf00;
+        }
+        .lego-blue {
+            background-color: #006cb7;
+        }
+        .lego-red {
+            background-color: #e3000b;
+        }
+        .bionicle-gradient {
+            background: radial-gradient(circle, #2c251e 0%, #130f0c 100%);
+        }
+        
+        /* Interactive Toggle Styles */
+        .tab-active {
+            border-bottom: 4px solid #006cb7;
+            color: #006cb7;
+            font-weight: bold;
+        }
+        
+        /* 2016 Glossy Button Effect */
+        .btn-glossy {
+            background: linear-gradient(to bottom, #ff9000 0%, #ff6c00 100%);
+            box-shadow: 0 4px 0 #b34a00;
+            transition: all 0.1s ease;
+        }
+        .btn-glossy:active {
+            transform: translateY(3px);
+            box-shadow: 0 1px 0 #b34a00;
+        }
+
+        .btn-blue-glossy {
+            background: linear-gradient(to bottom, #008ee6 0%, #005fa3 100%);
+            box-shadow: 0 4px 0 #003e6b;
+        }
+        .btn-blue-glossy:active {
+            transform: translateY(3px);
+            box-shadow: 0 1px 0 #003e6b;
+        }
+
+        /* Retro subtle animations */
+        @keyframes pulse-gold {
+            0%, 100% { filter: drop-shadow(0 0 5px rgba(255, 207, 0, 0.6)); }
+            50% { filter: drop-shadow(0 0 20px rgba(255, 207, 0, 0.95)); }
+        }
+        .glow-gold {
+            animation: pulse-gold 2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+    <!-- 2016 LEGO TOP NAVIGATION BAR -->
+    <header class="shadow-md z-40">
+        <!-- Utility Bar -->
+        <div class="bg-neutral-800 text-white text-xs py-1.5 px-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <span class="flex items-center space-x-1">
+                    <span class="w-2.5 h-2.5 rounded-full bg-green-500 inline-block"></span>
+                    <span>Σύνδεση Διακομιστή: LEGO Shop Europe</span>
+                </span>
+                <span class="hidden md:inline text-neutral-400">| Δωρεάν αποστολή για παραγγελίες άνω των €55!</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="hover:underline text-yellow-400">LEGO® Club</a>
+                <a href="#" class="hover:underline">VIP Πρόγραμμα</a>
+                <!-- Region selector -->
+                <div class="flex items-center space-x-1 cursor-pointer hover:text-yellow-400">
+                    <span class="text-xs">🇬🇷 Ελλάς (el-GR)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Brand Yellow Header -->
+        <div class="lego-yellow px-4 py-3 flex justify-between items-center relative border-b-2 border-yellow-500">
+            <!-- Left Side: Logo & Main Navigation -->
+            <div class="flex items-center space-x-6">
+                <!-- Red LEGO Logo -->
+                <a href="#" class="flex-shrink-0 transition-transform transform hover:scale-105">
+                    <svg class="w-14 h-14" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100" height="100" fill="#e3000b" rx="8" />
+                        <rect x="3" y="3" width="94" height="94" fill="none" stroke="#ffffff" stroke-width="3" rx="6"/>
+                        <!-- Stylized LEGO text with yellow shadow and black outline -->
+                        <text x="50" y="68" font-family="'Impact', sans-serif" font-size="52" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="1">
+                            <tspan stroke="#000000" stroke-width="5" paint-order="stroke fill">LEGO</tspan>
+                        </text>
+                        <!-- Yellow internal glows -->
+                        <text x="47" y="66" font-family="'Impact', sans-serif" font-size="52" font-weight="900" fill="#ffcf00" text-anchor="middle" opacity="0.3">LEGO</text>
+                    </svg>
+                </a>
+
+                <!-- Nav links -->
+                <nav class="hidden lg:flex space-x-1 text-black font-bold">
+                    <a href="#" class="px-3 py-2 rounded hover:bg-white hover:bg-opacity-25 transition">ΠΡΟΪΟΝΤΑ</a>
+                    <a href="#" class="px-3 py-2 rounded hover:bg-white hover:bg-opacity-25 transition bg-white bg-opacity-20 text-blue-900 border-b-2 border-blue-600">BIONICLE®</a>
+                    <a href="#" class="px-3 py-2 rounded hover:bg-white hover:bg-opacity-25 transition">ΠΑΙΧΝΙΔΙΑ</a>
+                    <a href="#" class="px-3 py-2 rounded hover:bg-white hover:bg-opacity-25 transition">ΒΙΝΤΕΟ</a>
+                    <a href="#" class="px-3 py-2 rounded hover:bg-white hover:bg-opacity-25 transition text-red-600">SHOP</a>
+                </nav>
+            </div>
+
+            <!-- Right Side: Search and Cart -->
+            <div class="flex items-center space-x-4">
+                <!-- Search bar -->
+                <div class="hidden md:flex items-center bg-white rounded-md overflow-hidden shadow-inner border border-gray-300">
+                    <input type="text" placeholder="Αναζήτηση προϊόντος ή κωδικού..." class="px-3 py-2 text-sm w-64 focus:outline-none" value="71306">
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </button>
+                </div>
+
+                <!-- Shopping Bag (Interactive simulation) -->
+                <div class="relative" id="cartContainer">
+                    <button onclick="toggleCartDropdown()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2.5 rounded flex items-center space-x-2 shadow-md">
+                        <!-- Retro Shopping Bag Icon -->
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                        <span class="font-bold text-sm hidden sm:inline">Το Καλάθι μου</span>
+                        <span id="cartCount" class="bg-yellow-400 text-black rounded-full px-2 py-0.5 text-xs font-black">0</span>
+                    </button>
+
+                    <!-- Shopping Cart Dropdown (Simulated) -->
+                    <div id="cartDropdown" class="hidden absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 z-50 overflow-hidden">
+                        <div class="bg-blue-600 text-white px-4 py-3 font-bold text-sm flex justify-between items-center">
+                            <span>🛒 Επιλεγμένα Προϊόντα (2016)</span>
+                            <button onclick="toggleCartDropdown()" class="text-white hover:text-gray-200">&times;</button>
+                        </div>
+                        <div id="cartItemsContainer" class="p-4 max-h-60 overflow-y-auto text-sm">
+                            <p class="text-gray-500 text-center py-4" id="emptyCartMsg">Το καλάθι σας είναι άδειο.</p>
+                            
+                            <!-- Dynamic Cart Item goes here -->
+                            <div id="cartItemRow" class="hidden flex items-center space-x-3 pb-3 border-b border-gray-100">
+                                <div class="w-12 h-12 bg-gray-100 p-1 rounded flex-shrink-0">
+                                    <img src="https://www.bricklink.com/SL/71306-1.jpg" alt="Pohatu thumbnail" class="w-full h-full object-contain">
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-xs">Ποχάτου - Ενωτής της Πέτρας (71306)</h4>
+                                    <div class="flex justify-between items-center mt-1 text-xs">
+                                        <span class="text-gray-500">Ποσότητα: <span id="cartQty">1</span></span>
+                                        <span class="font-bold text-blue-600">€<span id="cartRowPrice">16.99</span></span>
+                                    </div>
+                                </div>
+                                <button onclick="removeFromCart()" class="text-red-500 hover:text-red-700 text-lg font-bold px-1">&times;</button>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 border-t border-gray-100">
+                            <div class="flex justify-between text-sm font-bold mb-3">
+                                <span>Σύνολο:</span>
+                                <span class="text-blue-600" id="cartTotal">€0,00</span>
+                            </div>
+                            <div class="flex justify-between text-xs text-yellow-600 font-medium mb-4">
+                                <span>Συλλεχθέντες Πόντοι VIP:</span>
+                                <span id="cartVIP">0 πόντοι</span>
+                            </div>
+                            <button onclick="checkoutMock()" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded text-center block text-sm shadow btn-glossy">
+                                ΟΛΟΚΛΗΡΩΣΗ ΠΑΡΑΓΓΕΛΙΑΣ
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Secondary Theme Navigation for BIONICLE (2016 style dark elemental bar) -->
+        <div class="bg-neutral-900 text-white px-4 py-2 text-xs md:text-sm border-b border-orange-500/40 shadow-inner flex justify-between items-center overflow-x-auto whitespace-nowrap">
+            <div class="flex space-x-4 items-center">
+                <span class="font-bold text-orange-500 tracking-wider">BIONICLE // OKOTO ADVENTURES</span>
+                <span class="text-neutral-500">|</span>
+                <a href="#" class="hover:text-orange-400 transition">Ήρωες Τόα</a>
+                <a href="#" class="hover:text-orange-400 transition">Στοιχειώδη Πλάσματα</a>
+                <a href="#" class="text-orange-400 border-b border-orange-400 pb-0.5 font-medium">Σετ 71306</a>
+                <a href="#" class="hover:text-orange-400 transition">Online Κόμικς & Videos</a>
+            </div>
+            <div class="hidden lg:flex items-center space-x-2 text-yellow-400">
+                <span class="bg-yellow-400 text-black text-[10px] font-extrabold px-1.5 py-0.5 rounded">NEW G2</span>
+                <span class="text-xs">Ανακαλύψτε τη Μάσκα της Ενοποίησης!</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN PRODUCT CONTAINER -->
+    <main class="flex-grow container mx-auto px-4 py-6 max-w-7xl">
+        <!-- Breadcrumb navigation -->
+        <nav class="text-xs text-gray-500 mb-6 flex items-center space-x-1.5 bg-white p-3 rounded-md shadow-sm">
+            <a href="#" class="hover:text-blue-600 hover:underline">Αρχική</a>
+            <span>&gt;</span>
+            <a href="#" class="hover:text-blue-600 hover:underline">Προϊόντα LEGO®</a>
+            <span>&gt;</span>
+            <a href="#" class="hover:text-blue-600 hover:underline">BIONICLE®</a>
+            <span>&gt;</span>
+            <span class="text-gray-800 font-semibold">Pohatu – Uniter of Stone (71306)</span>
+        </nav>
+
+        <!-- Product Block: Interactive Sandbox Layout -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+            
+            <!-- Special 2016 Header Strip for the Bionicle Set Page -->
+            <div class="bionicle-gradient text-white p-4 md:p-6 flex flex-col md:flex-row justify-between items-start md:items-center border-b border-yellow-600">
+                <div>
+                    <span class="text-xs font-black uppercase text-orange-500 tracking-widest">ΣΕΙΡΑ LEGO® BIONICLE® (2016 - ΚΥΜΑ 1)</span>
+                    <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight text-white mt-1">
+                        <span class="text-yellow-400">Ποχάτου - Ενωτής της Πέτρας</span> <span class="text-sm font-normal text-gray-300">(71306)</span>
+                    </h1>
+                </div>
+                <div class="mt-3 md:mt-0 flex items-center space-x-3 bg-neutral-800/80 px-4 py-2 rounded-lg border border-orange-500/30">
+                    <div class="text-right">
+                        <p class="text-[10px] text-gray-400 uppercase">Στοιχειώδες Πνεύμα</p>
+                        <p class="text-xs font-bold text-yellow-500">Πέτρα & Έρημος (Οκότο)</p>
+                    </div>
+                    <div class="w-8 h-8 rounded-full bg-yellow-600 flex items-center justify-center font-bold text-white text-xs shadow-inner">
+                        🪨
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Interactive Columns -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 p-6">
+                
+                <!-- COLUMN 1: LEFT GALLERY AND UNITY SIMULATOR (7 COLS) -->
+                <div class="lg:col-span-7 flex flex-col space-y-6">
+                    
+                    <!-- Main Image Display Box -->
+                    <div class="bg-neutral-900 rounded-xl p-4 flex flex-col items-center justify-center relative min-h-[420px] shadow-inner overflow-hidden border-2 border-neutral-800">
+                        <!-- Custom Elements of Stone Overlay Graphic -->
+                        <div class="absolute top-4 left-4 text-[10px] bg-yellow-500/20 text-yellow-400 font-mono px-2 py-1 rounded border border-yellow-500/40">
+                            ELEMENT: STONE // ΠΕΤΡΑ
+                        </div>
+
+                        <!-- Unity Transformation active indicator banner -->
+                        <div id="unityBanner" class="absolute top-4 right-4 bg-orange-600 text-white font-black text-xs px-3 py-1.5 rounded shadow-md z-10 uppercase tracking-wider hidden animate-bounce">
+                            ⚡ ΕΝΩΜΕΝΟΣ ΜΕ ΚΕΤΑΡ (71301) ⚡
+                        </div>
+
+                        <!-- Main Set Image Frame -->
+                        <div class="relative w-full max-w-sm aspect-square flex items-center justify-center z-10">
+                            <!-- SVG Skeleton Placeholder shown if image fails to load -->
+                            <div id="imageFallback" class="absolute inset-0 flex flex-col items-center justify-center text-gray-400 p-8 text-center bg-neutral-800 rounded-lg hidden">
+                                <svg class="w-20 h-20 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                <span class="font-bold">Pohatu Uniter of Stone Set (71306)</span>
+                                <span class="text-xs mt-1 text-gray-500">Image Fallback Activated</span>
+                            </div>
+
+                            <!-- Image of Pohatu -->
+                            <img id="setMainImage" 
+                                 src="https://www.bricklink.com/SL/71306-1.jpg" 
+                                 alt="LEGO Bionicle Pohatu Uniter of Stone Set 71306" 
+                                 onerror="showImageFallback()"
+                                 class="max-w-full max-h-full object-contain transition-all duration-500 filter drop-shadow-[0_10px_15px_rgba(255,145,0,0.2)]">
+
+                            <!-- Visual Representation of Masks Overlayed on Pohatu (interactive element) -->
+                            <div id="goldenMaskOverlay" class="absolute w-24 h-24 top-[30%] left-[38%] pointer-events-none hidden">
+                                <!-- Styled Golden Mask glow effect -->
+                                <div class="w-full h-full glow-gold flex items-center justify-center text-3xl">
+                                    👑
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Controls inside the viewer -->
+                        <div class="absolute bottom-4 left-0 right-0 px-4 flex justify-between items-center z-20">
+                            <!-- Image View Toggle Buttons -->
+                            <div class="flex space-x-1.5 bg-black/60 p-1.5 rounded-lg border border-white/10">
+                                <button onclick="changePhoto('main')" id="btnPhotoMain" class="px-2.5 py-1 text-xs rounded font-bold bg-orange-500 text-white transition">Κουτί</button>
+                                <button onclick="changePhoto('action')" id="btnPhotoAction" class="px-2.5 py-1 text-xs rounded font-bold hover:bg-neutral-800 text-neutral-300 transition">Πόζα Δράσης</button>
+                                <button onclick="changePhoto('unity')" id="btnPhotoUnity" class="px-2.5 py-1 text-xs rounded font-bold hover:bg-neutral-800 text-neutral-300 transition">Ενοποίηση</button>
+                            </div>
+                            <span class="text-[10px] text-gray-400 bg-black/60 px-2 py-1 rounded">© 2016 The LEGO Group</span>
+                        </div>
+                    </div>
+
+                    <!-- Sandbox Interactive Control Center (Greek language) -->
+                    <div class="bg-gradient-to-br from-neutral-800 to-neutral-950 text-white rounded-xl p-5 border border-yellow-600/30">
+                        <h3 class="font-extrabold text-sm uppercase text-yellow-500 tracking-wider mb-4 flex items-center space-x-2">
+                            <span>🛠️ ΔΙΑΔΡΑΣΤΙΚΟ ΕΡΓΑΣΤΗΡΙΟ ΟΚΟΤΟ</span>
+                            <span class="bg-red-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded animate-pulse">LIVE PLAY</span>
+                        </h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- Toggle Golden Mask -->
+                            <div class="bg-neutral-900 p-4 rounded-lg border border-neutral-800">
+                                <label class="block text-xs font-bold text-gray-300 mb-2">ΦΟΡΕΣΕ ΤΗ ΧΡΥΣΗ ΜΑΣΚΑ:</label>
+                                <div class="flex items-center justify-between">
+                                    <div class="text-xs text-neutral-400">
+                                        <p class="font-bold text-yellow-400" id="maskName">Μάσκα της Πέτρας (Default)</p>
+                                        <p class="text-[10px]">Δίνει τη βασική δύναμη των βράχων.</p>
+                                    </div>
+                                    <button onclick="toggleMask()" id="maskBtn" class="bg-yellow-500 hover:bg-yellow-400 text-black font-extrabold px-3 py-1.5 rounded text-xs transition">
+                                        ΕΦΑΡΜΟΓΗ
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Combine with Creature Ketar -->
+                            <div class="bg-neutral-900 p-4 rounded-lg border border-neutral-800">
+                                <label class="block text-xs font-bold text-gray-300 mb-2">ΕΝΩΣΗ ΜΕ KETAR (SET 71301):</label>
+                                <div class="flex items-center justify-between">
+                                    <div class="text-xs text-neutral-400">
+                                        <p class="font-bold text-orange-400" id="unityStatusText">Αποσυνδεδεμένος Toa</p>
+                                        <p class="text-[10px]">Ξεκλειδώνει τα πέτρινα φτερά!</p>
+                                    </div>
+                                    <button onclick="toggleUnity()" id="unityBtn" class="bg-orange-600 hover:bg-orange-500 text-white font-extrabold px-3 py-1.5 rounded text-xs transition">
+                                        ΕΝΩΣΗ ΤΩΡΑ!
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Stats readout of simulated build -->
+                        <div class="mt-4 pt-3 border-t border-neutral-800 flex justify-between items-center text-xs text-gray-400">
+                            <div>Ύψος: <span class="font-bold text-white">21cm</span></div>
+                            <div>Συνολικό Βάρος: <span class="font-bold text-white" id="statWeight">204g</span></div>
+                            <div>Κατάσταση Τόα: <span class="font-bold text-green-400" id="statToa">Έτοιμος για Μάχη</span></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- COLUMN 2: SPECS, PRICING AND CART ACTION (5 COLS) -->
+                <div class="lg:col-span-5 flex flex-col justify-between space-y-6">
+                    
+                    <!-- Main Store Purchase Panel -->
+                    <div class="bg-gray-50 rounded-xl p-5 border border-gray-200 shadow-sm flex flex-col space-y-4">
+                        
+                        <!-- Badges and Theme -->
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-xs bg-orange-100 text-orange-800 font-bold px-2 py-1 rounded">BIONICLE</span>
+                                <span class="text-xs bg-gray-200 text-gray-800 font-bold px-2 py-1 rounded ml-1">71306</span>
+                            </div>
+                            <!-- Rating stars -->
+                            <div class="flex items-center space-x-1">
+                                <div class="flex text-yellow-400">
+                                    <span>★</span><span>★</span><span>★</span><span>★</span><span class="text-gray-300">★</span>
+                                </div>
+                                <span class="text-xs text-gray-500 font-bold">(8 Κριτικές)</span>
+                            </div>
+                        </div>
+
+                        <!-- Product Title -->
+                        <div>
+                            <h2 class="text-xl font-bold text-gray-900">Pohatu - Uniter of Stone</h2>
+                            <p class="text-xs text-gray-500 mt-1">Συλλεκτική Φιγούρα Δράσης (Toa Action Figure)</p>
+                        </div>
+
+                        <!-- Spec list in Greek -->
+                        <div class="grid grid-cols-2 gap-3 py-3 border-t border-b border-gray-200 text-xs">
+                            <div>
+                                <p class="text-gray-500">Ηλικίες:</p>
+                                <p class="font-bold text-gray-800 text-sm">7 - 14 Ετών</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-500">Κομμάτια:</p>
+                                <p class="font-bold text-gray-800 text-sm">90 Τεμάχια</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-500">Διαθεσιμότητα:</p>
+                                <p class="font-bold text-green-600 text-sm">Διαθέσιμο Τώρα</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-500">Όριο Αγοράς:</p>
+                                <p class="font-bold text-gray-800 text-sm">Μέγιστο 5 ανά άτομο</p>
+                            </div>
+                        </div>
+
+                        <!-- Price Tag Area -->
+                        <div class="flex items-baseline justify-between py-2">
+                            <div>
+                                <span class="text-sm text-gray-500">Τιμή Καταλόγου:</span>
+                                <div class="text-3xl font-black text-blue-600">€16,99</div>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-xs text-gray-400 block">Περιλαμβάνει Φ.Π.Α. 24%</span>
+                                <span class="text-xs text-yellow-600 font-bold">💎 Κερδίζετε 16 VIP Πόντους</span>
+                            </div>
+                        </div>
+
+                        <!-- Quantity Selector -->
+                        <div class="flex items-center space-x-3">
+                            <span class="text-xs font-bold text-gray-700">Ποσότητα:</span>
+                            <div class="flex items-center border border-gray-300 rounded overflow-hidden bg-white shadow-inner">
+                                <button onclick="updateQty(-1)" class="px-3 py-1 hover:bg-gray-100 font-bold text-gray-600 transition">-</button>
+                                <span id="purchaseQty" class="px-4 font-bold text-sm">1</span>
+                                <button onclick="updateQty(1)" class="px-3 py-1 hover:bg-gray-100 font-bold text-gray-600 transition">+</button>
+                            </div>
+                        </div>
+
+                        <!-- ACTION BUTTONS: Add to Bag & Wishlist -->
+                        <div class="space-y-2 pt-2">
+                            <!-- Main Orange Add to Bag (Simulated click) -->
+                            <button onclick="addToCart()" class="w-full btn-glossy text-white font-bold py-3.5 px-6 rounded-lg text-lg flex items-center justify-center space-x-3 transition">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                                <span>ΠΡΟΣΘΗΚΗ ΣΤΟ ΚΑΛΑΘΙ</span>
+                            </button>
+
+                            <!-- Secondary Find Store / wishlist -->
+                            <div class="grid grid-cols-2 gap-2 text-xs">
+                                <button onclick="toggleWishlist()" id="wishlistBtn" class="py-2.5 px-4 bg-white border border-gray-300 rounded hover:bg-gray-50 font-medium text-gray-700 flex items-center justify-center space-x-1.5 transition">
+                                    <span>🤍 Προσθήκη στα Αγαπημένα</span>
+                                </button>
+                                <button onclick="findStoreMock()" class="py-2.5 px-4 bg-white border border-gray-300 rounded hover:bg-gray-50 font-medium text-gray-700 flex items-center justify-center space-x-1.5 transition">
+                                    <span>📍 Εύρεση σε Κατάστημα</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Safe Checkout 2016 Trust Badge -->
+                        <div class="bg-gray-100 p-3 rounded-lg border border-gray-200/60 text-[10px] text-gray-500 text-center space-y-1">
+                            <p class="font-bold text-gray-600">🔒 Ασφαλείς Αγορές μέσω LEGO.com</p>
+                            <p>Γρήγορη παράδοση στην Ελλάδα με DHL & ΕΛΤΑ Courier. Δικαίωμα επιστροφής εντός 90 ημερών.</p>
+                        </div>
+
+                    </div>
+
+                    <!-- Marketing Promotions Carousel Placeholder -->
+                    <div class="bg-yellow-50 rounded-xl p-4 border border-yellow-200 shadow-sm flex items-start space-x-3">
+                        <span class="text-2xl mt-1">🎁</span>
+                        <div>
+                            <h4 class="font-bold text-xs text-yellow-800">ΠΡΟΣΦΟΡΑ ΑΠΡΙΛΙΟΥ 2016!</h4>
+                            <p class="text-xs text-yellow-700 mt-1">Κάντε αγορές άνω των €50 σε προϊόντα LEGO® BIONICLE® ή LEGO® Elves και λάβετε ΔΩΡΟ το αποκλειστικό σετ <span class="font-bold text-yellow-900">40222 Holiday Countdown</span>!</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Lower Tabs Section: Description, Specs, Building Instructions -->
+            <div class="bg-gray-50 border-t border-gray-200">
+                <!-- Tab Headers -->
+                <div class="flex border-b border-gray-200 overflow-x-auto whitespace-nowrap bg-white">
+                    <button onclick="switchTab('descr')" id="tabBtn-descr" class="px-6 py-4 text-sm font-semibold text-gray-700 tab-active focus:outline-none">Περιγραφή Προϊόντος</button>
+                    <button onclick="switchTab('specs')" id="tabBtn-specs" class="px-6 py-4 text-sm font-semibold text-gray-500 hover:text-gray-800 focus:outline-none">Χαρακτηριστικά (Specs)</button>
+                    <button onclick="switchTab('guide')" id="tabBtn-guide" class="px-6 py-4 text-sm font-semibold text-gray-500 hover:text-gray-800 focus:outline-none">Οδηγίες Κατασκευής</button>
+                </div>
+
+                <!-- Tab Contents -->
+                <div class="p-6 md:p-8 bg-white min-h-[250px]">
+                    <!-- Tab: Description -->
+                    <div id="tabContent-descr" class="space-y-4 text-sm leading-relaxed text-gray-600">
+                        <p class="font-bold text-lg text-gray-900">Απελευθερώστε τη δύναμη της Πέτρας με τον Pohatu!</p>
+                        <p>
+                            Ο Ποχάτου, ο Ενωτής της Πέτρας, είναι ο πιο σκληροτράχηλος από όλους τους Τόα στο νησί του Οκότο. Πρέπει να καθοδηγήσει και να εμπνεύσει τους υπόλοιπους ήρωες στην επικίνδυνη αποστολή τους να ανακαλύψουν και να ενωθούν με τα αρχαία στοιχειώδη πλάσματα. Μόνο με αυτή την ένωση θα αποκτήσουν την απαραίτητη δύναμη για να συντρίψουν τις σκοτεινές δυνάμεις του Ούμαρακ του Κυνηγού!
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 bg-gray-50 p-4 rounded-lg border border-gray-100">
+                            <div>
+                                <h5 class="font-bold text-gray-900 mb-2">Κύρια Χαρακτηριστικά Φιγούρας:</h5>
+                                <ul class="list-disc pl-5 space-y-1.5">
+                                    <li>Πλήρως αρθρωτά μέλη για εντυπωσιακές στάσεις μάχης.</li>
+                                    <li>Μηχανισμός περιστροφής της μέσης για γρήγορο χτύπημα με το όπλο.</li>
+                                    <li>Περιλαμβάνει τη Μάσκα της Πέτρας και τη Χρυσή Μάσκα της Ενοποίησης.</li>
+                                    <li>Στιβαρός σχεδιασμός για έντονο παιχνίδι δράσης!</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-900 mb-2">Δυνατότητα Ενοποίησης:</h5>
+                                <p>
+                                    Συνδυάστε τον εύκολα με ένα μόνο κλικ με το σετ 71301 Κέταρ – Το Πλάσμα της Πέτρας (πωλείται ξεχωριστά). Η ένωση προσδίδει στον Pohatu πέτρινα φτερά-λεπίδες και ανίκητη άμυνα ενάντια στη σκιά!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab: Specs -->
+                    <div id="tabContent-specs" class="hidden space-y-4">
+                        <table class="w-full text-sm text-left text-gray-500 border border-gray-200 rounded-lg overflow-hidden">
+                            <thead class="bg-gray-50 text-xs text-gray-700 uppercase">
+                                <tr>
+                                    <th class="px-6 py-3 border-b">Προδιαγραφή</th>
+                                    <th class="px-6 py-3 border-b">Λεπτομέρειες</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200 text-gray-700">
+                                <tr>
+                                    <td class="px-6 py-3 font-bold bg-gray-50/50 w-1/3">Κωδικός Προϊόντος</td>
+                                    <td class="px-6 py-3">71306</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-3 font-bold bg-gray-50/50">Όνομα Σετ</td>
+                                    <td class="px-6 py-3">Pohatu – Uniter of Stone (Ποχάτου – Ενωτής της Πέτρας)</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-3 font-bold bg-gray-50/50">Σειρά (Theme)</td>
+                                    <td class="px-6 py-3">LEGO® BIONICLE® (Generation 2)</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-3 font-bold bg-gray-50/50">Έτος Κυκλοφορίας</td>
+                                    <td class="px-6 py-3">2016 (Κύμα Ιανουαρίου)</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-3 font-bold bg-gray-50/50">Πλήθος Κομματιών</td>
+                                    <td class="px-6 py-3">90 ανθεκτικά LEGO® Technic/CCBS στοιχεία</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-3 font-bold bg-gray-50/50">Διαστάσεις Συσκευασίας</td>
+                                    <td class="px-6 py-3">18.0 x 22.0 x 5.4 cm</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-3 font-bold bg-gray-50/50">Βάρος Κουτιού</td>
+                                    <td class="px-6 py-3">0.204 kg</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-3 font-bold bg-gray-50/50">EAN Barcode</td>
+                                    <td class="px-6 py-3">5702015594288</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Tab: Instructions -->
+                    <div id="tabContent-guide" class="hidden space-y-4 text-center py-6">
+                        <div class="max-w-md mx-auto bg-gray-50 p-6 rounded-xl border border-gray-200">
+                            <span class="text-5xl block mb-3">📂</span>
+                            <h4 class="font-bold text-gray-900 text-base">Κατεβάστε τις Οδηγίες σε PDF (2016)</h4>
+                            <p class="text-xs text-gray-500 mt-2 mb-4">Χάσατε το φυλλάδιο οδηγιών; Μπορείτε να κατεβάσετε το αυθεντικό ψηφιακό αρχείο για το σετ 71306 σε μορφή PDF υψηλής ανάλυσης.</p>
+                            <button onclick="downloadInstructionsMock()" class="btn-blue-glossy text-white font-bold py-2.5 px-6 rounded text-sm shadow inline-flex items-center space-x-2">
+                                <span>Download PDF (12.4 MB)</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COMMUNITY REVIEWS SECTION (2016 Styled Customer Ratings) -->
+            <section class="border-t border-gray-200 bg-gray-50 p-6 md:p-8">
+                <div class="max-w-4xl mx-auto">
+                    <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center justify-between">
+                        <span>💬 Αξιολογήσεις & Κριτικές Πελατών</span>
+                        <button onclick="openReviewModal()" class="text-xs bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow transition">
+                            Γράψτε μια Κριτική
+                        </button>
+                    </h3>
+
+                    <!-- Review Aggregator Display -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 bg-white p-5 rounded-xl border border-gray-200 shadow-sm mb-6">
+                        <div class="text-center md:border-r border-gray-200 py-3">
+                            <p class="text-5xl font-black text-blue-600">4.3</p>
+                            <p class="text-xs text-gray-500 mt-1">από 5 Αστέρια</p>
+                            <div class="flex justify-center text-yellow-400 mt-2 text-lg">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span class="text-gray-300">★</span>
+                            </div>
+                            <p class="text-xs text-gray-400 mt-2">Σύνολο: 8 κριτικές</p>
+                        </div>
+                        <div class="col-span-2 space-y-2 py-1">
+                            <h4 class="font-bold text-xs text-gray-700 uppercase">Ανάλυση Βαθμολογίας:</h4>
+                            <!-- Progress bars -->
+                            <div class="space-y-1.5 text-xs">
+                                <div class="flex items-center">
+                                    <span class="w-12 text-gray-500 text-right mr-3">5 αστέρια</span>
+                                    <div class="flex-1 bg-gray-200 h-2.5 rounded overflow-hidden">
+                                        <div class="bg-yellow-400 h-full" style="width: 65%"></div>
+                                    </div>
+                                    <span class="w-8 text-gray-500 text-left ml-3">65%</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-12 text-gray-500 text-right mr-3">4 αστέρια</span>
+                                    <div class="flex-1 bg-gray-200 h-2.5 rounded overflow-hidden">
+                                        <div class="bg-yellow-400 h-full" style="width: 20%"></div>
+                                    </div>
+                                    <span class="w-8 text-gray-500 text-left ml-3">20%</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-12 text-gray-500 text-right mr-3">3 αστέρια</span>
+                                    <div class="flex-1 bg-gray-200 h-2.5 rounded overflow-hidden">
+                                        <div class="bg-yellow-400 h-full" style="width: 15%"></div>
+                                    </div>
+                                    <span class="w-8 text-gray-500 text-left ml-3">15%</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-12 text-gray-500 text-right mr-3">2 αστέρια</span>
+                                    <div class="flex-1 bg-gray-200 h-2.5 rounded overflow-hidden">
+                                        <div class="bg-yellow-400 h-full" style="width: 0%"></div>
+                                    </div>
+                                    <span class="w-8 text-gray-500 text-left ml-3">0%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Individual Reviews List -->
+                    <div class="space-y-4" id="reviewsContainer">
+                        <!-- Review 1 -->
+                        <div class="bg-white p-5 rounded-lg border border-gray-200/80 shadow-sm text-sm">
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <span class="font-bold text-gray-900">BionicleFan_99</span>
+                                    <span class="text-xs text-gray-400 ml-2">12 Απριλίου 2016</span>
+                                </div>
+                                <div class="text-yellow-400">★★★★★</div>
+                            </div>
+                            <h5 class="font-bold text-gray-800 mb-1">Απίστευτα στιβαρός Toa!</h5>
+                            <p class="text-gray-600 text-xs">Ο Pohatu είναι εξαιρετικός. Τα νέα Crystal στοιχεία στα πόδια του δίνουν φοβερή εμφάνιση, και ο συνδυασμός με το πλάσμα Ketar (71301) είναι ο καλύτερος από όλο το πρώτο κύμα του 2016. Ο μηχανισμός περιστροφής της μέσης λειτουργεί άψογα!</p>
+                        </div>
+
+                        <!-- Review 2 -->
+                        <div class="bg-white p-5 rounded-lg border border-gray-200/80 shadow-sm text-sm">
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <span class="font-bold text-gray-900">G2_Collector</span>
+                                    <span class="text-xs text-gray-400 ml-2">28 Μαρτίου 2016</span>
+                                </div>
+                                <div class="text-yellow-400">★★★★☆</div>
+                            </div>
+                            <h5 class="font-bold text-gray-800 mb-1">Πολύ καλό, αλλά προτιμούσα τα παλιά όπλα</h5>
+                            <p class="text-gray-600 text-xs">Πολύ καλή φιγούρα με ωραία χρώματα. Το σκούρο καφέ ταιριάζει πολύ με το μπεζ της πέτρας. Το μόνο μου παράπονο είναι ότι το όπλο του είναι λίγο απλό σε σχέση με το όπλο του 2015. Η χρυσή μάσκα όμως είναι φανταστική!</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- 2016-STYLE CUSTOM MODAL FOR ADDING REVIEW -->
+    <div id="reviewModal" class="hidden fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-2xl max-w-md w-full overflow-hidden border border-gray-300">
+            <div class="bg-blue-600 text-white px-5 py-4 font-bold flex justify-between items-center">
+                <span>✍️ Προσθήκη Δικής σας Κριτικής</span>
+                <button onclick="closeReviewModal()" class="text-2xl font-bold hover:text-gray-200">&times;</button>
+            </div>
+            <form onsubmit="submitReview(event)" class="p-5 space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1">Όνομα χρήστη (Nickname):</label>
+                    <input id="revNickname" type="text" required class="w-full px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:border-blue-500" placeholder="π.χ. ToaOkoto2016">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1">Βαθμολογία:</label>
+                    <select id="revRating" class="w-full px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:border-blue-500 bg-white">
+                        <option value="5">★★★★★ (5/5)</option>
+                        <option value="4">★★★★☆ (4/5)</option>
+                        <option value="3">★★★☆☆ (3/5)</option>
+                        <option value="2">★★☆☆☆ (2/5)</option>
+                        <option value="1">★☆☆☆☆ (1/5)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1">Τίτλος Κριτικής:</label>
+                    <input id="revTitle" type="text" required class="w-full px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:border-blue-500" placeholder="π.χ. Φοβερό σετ">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1">Σχόλιο:</label>
+                    <textarea id="revComment" required rows="4" class="w-full px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:border-blue-500" placeholder="Γράψτε εδώ τη γνώμη σας για το προϊόν..."></textarea>
+                </div>
+                <div class="flex justify-end space-x-2 pt-2">
+                    <button type="button" onclick="closeReviewModal()" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded text-xs font-bold">ΑΚΥΡΩΣΗ</button>
+                    <button type="submit" class="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded text-xs font-bold shadow">ΥΠΟΒΟΛΗ</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MOCK NOTIFICATION TOAST -->
+    <div id="toastNotification" class="hidden fixed bottom-6 right-6 bg-neutral-900 text-white text-xs py-3 px-5 rounded-lg shadow-2xl border border-yellow-500/30 flex items-center space-x-3 transition-opacity duration-300 z-50">
+        <span class="text-lg">🧱</span>
+        <span id="toastMsg" class="font-medium">Το προϊόν προστέθηκε στο καλάθι σας!</span>
+    </div>
+
+    <!-- FOOTER OF LEGO.COM GREECE (2016 ERA) -->
+    <footer class="bg-neutral-900 text-gray-400 text-xs py-10 mt-12 border-t-4 border-yellow-500">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+                <!-- Col 1 -->
+                <div>
+                    <h5 class="text-white font-bold text-xs uppercase mb-3 tracking-wider">ΣΧΕΤΙΚΑ ΜΕ ΕΜΑΣ</h5>
+                    <ul class="space-y-2 text-neutral-400">
+                        <li><a href="#" class="hover:text-yellow-400 hover:underline">Ο Όμιλος LEGO Group</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 hover:underline">LEGO® Νέα</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 hover:underline">Βιωσιμότητα & Περιβάλλον</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 hover:underline">Δήλωση διαφάνειας</a></li>
+                    </ul>
+                </div>
+                <!-- Col 2 -->
+                <div>
+                    <h5 class="text-white font-bold text-xs uppercase mb-3 tracking-wider">ΥΠΟΣΤΗΡΙΞΗ</h5>
+                    <ul class="space-y-2 text-neutral-400">
+                        <li><a href="#" class="hover:text-yellow-400 hover:underline">Επικοινωνήστε μαζί μας</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 hover:underline">Οδηγίες Κατασκευής</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 hover:underline">Ανταλλακτικά Τουβλάκια</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 hover:underline">Αποστολή & Επιστροφές</a></li>
+                    </ul>
+                </div>
+                <!-- Col 3 -->
+                <div>
+                    <h5 class="text-white font-bold text-xs uppercase mb-3 tracking-wider">ΑΞΙΟΘΕΑΤΑ</h5>
+                    <ul class="space-y-2 text-neutral-400">
+                        <li><a href="#" class="hover:text-yellow-400 hover:underline">LEGOLAND® Parks</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 hover:underline">LEGOLAND Discovery Centers</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 hover:underline">LEGO® House</a></li>
+                    </ul>
+                </div>
+                <!-- Col 4 -->
+                <div>
+                    <h5 class="text-white font-bold text-xs uppercase mb-3 tracking-wider">ΠΕΡΙΣΣΟΤΕΡΑ ΑΠΟ ΕΜΑΣ</h5>
+                    <ul class="space-y-2 text-neutral-400">
+                        <li><a href="#" class="hover:text-yellow-400 hover:underline">LEGO® VIP Πρόγραμμα</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 hover:underline">LEGO® Life Magazine</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 hover:underline">LEGO® Affiliates</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Disclaimer and bottom info -->
+            <div class="border-t border-neutral-800 pt-6 flex flex-col md:flex-row justify-between items-center text-[10px] text-neutral-500 space-y-4 md:space-y-0">
+                <div class="flex items-center space-x-4">
+                    <img src="https://www.toys-shop.gr/img/m/1-manufacture_default.jpg" alt="LEGO System A/S" class="w-12 h-12 object-contain grayscale opacity-50" onerror="this.style.display='none'">
+                    <div>
+                        <p>© 2016 The LEGO Group. All rights reserved.</p>
+                        <p>LEGO, το λογότυπο LEGO, η Μίνι Φιγούρα, το BIONICLE, το OKOTO είναι εμπορικά σήματα του Ομίλου LEGO.</p>
+                    </div>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:underline">Πολιτική Απορρήτου</a>
+                    <span>|</span>
+                    <a href="#" class="hover:underline">Cookies</a>
+                    <span>|</span>
+                    <a href="#" class="hover:underline">Όροι Χρήσης</a>
+                    <span>|</span>
+                    <a href="#" class="hover:underline">Νομικές Πληροφορίες</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE SCRIPT LOGIC -->
+    <script>
+        // State variables
+        let cartCount = 0;
+        let qty = 1;
+        let isGoldenMask = false;
+        let isUnitedWithKetar = false;
+        let isWishlist = false;
+
+        // Photo Gallery paths
+        // We simulate multiple 2016 package / pose views using different scales/background modifications
+        const mainPhotoUrl = "https://www.bricklink.com/SL/71306-1.jpg";
+
+        function changePhoto(viewType) {
+            const img = document.getElementById('setMainImage');
+            
+            // Remove active style from all gallery buttons
+            document.getElementById('btnPhotoMain').className = "px-2.5 py-1 text-xs rounded font-bold hover:bg-neutral-800 text-neutral-300 transition";
+            document.getElementById('btnPhotoAction').className = "px-2.5 py-1 text-xs rounded font-bold hover:bg-neutral-800 text-neutral-300 transition";
+            document.getElementById('btnPhotoUnity').className = "px-2.5 py-1 text-xs rounded font-bold hover:bg-neutral-800 text-neutral-300 transition";
+
+            if (viewType === 'main') {
+                document.getElementById('btnPhotoMain').className = "px-2.5 py-1 text-xs rounded font-bold bg-orange-500 text-white transition";
+                img.style.transform = "scale(1)";
+                img.style.filter = "drop-shadow(0 10px 15px rgba(255,145,0,0.2))";
+                showToast("Εμφάνιση: Αυθεντικό Κουτί Σετ 71306");
+            } else if (viewType === 'action') {
+                document.getElementById('btnPhotoAction').className = "px-2.5 py-1 text-xs rounded font-bold bg-orange-500 text-white transition";
+                img.style.transform = "scale(1.1) rotate(-3deg)";
+                img.style.filter = "drop-shadow(0 15px 25px rgba(234, 179, 8, 0.45))";
+                showToast("Εμφάνιση: Δυναμική Πόζα Μάχης Pohatu");
+            } else if (viewType === 'unity') {
+                document.getElementById('btnPhotoUnity').className = "px-2.5 py-1 text-xs rounded font-bold bg-orange-500 text-white transition";
+                img.style.transform = "scale(1.15) rotate(5deg)";
+                img.style.filter = "drop-shadow(0 20px 30px rgba(249, 115, 22, 0.6))";
+                showToast("Εμφάνιση: Έτοιμος για Ενοποίηση!");
+            }
+        }
+
+        // Toggle Golden Mask Overlay
+        function toggleMask() {
+            isGoldenMask = !isGoldenMask;
+            const maskOverlay = document.getElementById('goldenMaskOverlay');
+            const maskBtn = document.getElementById('maskBtn');
+            const maskName = document.getElementById('maskName');
+
+            if (isGoldenMask) {
+                maskOverlay.classList.remove('hidden');
+                maskBtn.textContent = 'ΑΦΑΙΡΕΣΗ';
+                maskBtn.className = "bg-neutral-700 hover:bg-neutral-600 text-white font-extrabold px-3 py-1.5 rounded text-xs transition";
+                maskName.textContent = 'Χρυσή Μάσκα της Ενοποίησης';
+                maskName.className = 'font-bold text-yellow-500 glow-gold';
+                showToast("👑 Η Χρυσή Μάσκα της Ενοποίησης εφαρμόστηκε στον Pohatu!");
+            } else {
+                maskOverlay.classList.add('hidden');
+                maskBtn.textContent = 'ΕΦΑΡΜΟΓΗ';
+                maskBtn.className = "bg-yellow-500 hover:bg-yellow-400 text-black font-extrabold px-3 py-1.5 rounded text-xs transition";
+                maskName.textContent = 'Μάσκα της Πέτρας (Default)';
+                maskName.className = 'font-bold text-gray-300';
+                showToast("🪨 Επαναφορά της βασικής Μάσκας της Πέτρας.");
+            }
+        }
+
+        // Toggle Unity Combination Mode
+        function toggleUnity() {
+            isUnitedWithKetar = !isUnitedWithKetar;
+            const unityBtn = document.getElementById('unityBtn');
+            const unityBanner = document.getElementById('unityBanner');
+            const unityStatusText = document.getElementById('unityStatusText');
+            const statWeight = document.getElementById('statWeight');
+            const statToa = document.getElementById('statToa');
+            const img = document.getElementById('setMainImage');
+
+            if (isUnitedWithKetar) {
+                unityBtn.textContent = 'ΔΙΑΧΩΡΙΣΜΟΣ';
+                unityBtn.className = "bg-neutral-700 hover:bg-neutral-600 text-white font-extrabold px-3 py-1.5 rounded text-xs transition";
+                unityBanner.classList.remove('hidden');
+                unityStatusText.textContent = 'Ενωμένος Toa με Ketar!';
+                unityStatusText.className = 'font-bold text-orange-400 animate-pulse';
+                statWeight.textContent = '312g (Με Ketar)';
+                statToa.textContent = 'Toa Stone Unstoppable!';
+                statToa.className = 'font-bold text-orange-500';
+                
+                // Visual effect on the main figure
+                img.style.filter = "hue-rotate(20deg) saturate(1.4) drop-shadow(0 20px 30px rgba(251, 146, 60, 0.8))";
+                showToast("⚡ Ο Pohatu ενώθηκε με τον Ketar, το Πλάσμα της Πέτρας!");
+            } else {
+                unityBtn.textContent = 'ΕΝΩΣΗ ΤΩΡΑ!';
+                unityBtn.className = "bg-orange-600 hover:bg-orange-500 text-white font-extrabold px-3 py-1.5 rounded text-xs transition";
+                unityBanner.classList.add('hidden');
+                unityStatusText.textContent = 'Αποσυνδεδεμένος Toa';
+                unityStatusText.className = 'font-bold text-neutral-400';
+                statWeight.textContent = '204g';
+                statToa.textContent = 'Έτοιμος για Μάχη';
+                statToa.className = 'font-bold text-green-400';
+                
+                img.style.filter = "drop-shadow(0 10px 15px rgba(255,145,0,0.2))";
+                showToast("🔄 Ο Pohatu αποσυνδέθηκε.");
+            }
+        }
+
+        // Quantity Selector Helper
+        function updateQty(change) {
+            qty += change;
+            if (qty < 1) qty = 1;
+            if (qty > 5) {
+                qty = 5;
+                showToast("⚠️ Μέγιστο όριο αγοράς 5 τεμαχίων ανά πελάτη.");
+            }
+            document.getElementById('purchaseQty').textContent = qty;
+        }
+
+        // Cart Actions (Simulated)
+        function toggleCartDropdown() {
+            const dropdown = document.getElementById('cartDropdown');
+            dropdown.classList.toggle('hidden');
+        }
+
+        function addToCart() {
+            cartCount += qty;
+            document.getElementById('cartCount').textContent = cartCount;
+            
+            // Show item in dropdown
+            document.getElementById('emptyCartMsg').classList.add('hidden');
+            const row = document.getElementById('cartItemRow');
+            row.classList.remove('hidden');
+            row.classList.add('flex');
+            
+            // Update qty and pricing inside the dropdown
+            const currentQty = parseInt(document.getElementById('cartQty').textContent) || 0;
+            const newQty = currentQty + qty;
+            document.getElementById('cartQty').textContent = newQty;
+            
+            const itemPrice = 16.99;
+            const totalPrice = (newQty * itemPrice).toFixed(2);
+            document.getElementById('cartRowPrice').textContent = totalPrice;
+            document.getElementById('cartTotal').textContent = "€" + totalPrice.replace('.', ',');
+            
+            // 16 VIP points per item
+            document.getElementById('cartVIP').textContent = (newQty * 16) + " πόντοι";
+
+            showToast(`🛒 Προστέθηκαν ${qty} τεμάχια στο καλάθι σας!`);
+            
+            // Reset page purchase quantity
+            qty = 1;
+            document.getElementById('purchaseQty').textContent = qty;
+        }
+
+        function removeFromCart() {
+            cartCount = 0;
+            document.getElementById('cartCount').textContent = 0;
+            document.getElementById('emptyCartMsg').classList.remove('hidden');
+            
+            const row = document.getElementById('cartItemRow');
+            row.classList.remove('flex');
+            row.classList.add('hidden');
+            
+            document.getElementById('cartQty').textContent = "0";
+            document.getElementById('cartTotal').textContent = "€0,00";
+            document.getElementById('cartVIP').textContent = "0 πόντοι";
+            
+            showToast("🗑️ Το καλάθι σας αδειάστηκε.");
+        }
+
+        // Wishlist Toggle
+        function toggleWishlist() {
+            isWishlist = !isWishlist;
+            const btn = document.getElementById('wishlistBtn');
+            if (isWishlist) {
+                btn.innerHTML = "<span>❤️ Στη Λίστα Επιθυμιών</span>";
+                btn.className = "py-2.5 px-4 bg-red-50 border border-red-300 rounded hover:bg-red-100 font-bold text-red-700 flex items-center justify-center space-x-1.5 transition";
+                showToast("💖 Προστέθηκε στη λίστα επιθυμιών σας.");
+            } else {
+                btn.innerHTML = "<span>🤍 Προσθήκη στα Αγαπημένα</span>";
+                btn.className = "py-2.5 px-4 bg-white border border-gray-300 rounded hover:bg-gray-50 font-medium text-gray-700 flex items-center justify-center space-x-1.5 transition";
+                showToast("🤍 Αφαιρέθηκε από τη λίστα επιθυμιών σας.");
+            }
+        }
+
+        // Tabs switcher
+        function switchTab(tabId) {
+            // Hide all tabs
+            document.getElementById('tabContent-descr').classList.add('hidden');
+            document.getElementById('tabContent-specs').classList.add('hidden');
+            document.getElementById('tabContent-guide').classList.add('hidden');
+
+            // Remove active classes
+            document.getElementById('tabBtn-descr').className = "px-6 py-4 text-sm font-semibold text-gray-500 hover:text-gray-800 focus:outline-none";
+            document.getElementById('tabBtn-specs').className = "px-6 py-4 text-sm font-semibold text-gray-500 hover:text-gray-800 focus:outline-none";
+            document.getElementById('tabBtn-guide').className = "px-6 py-4 text-sm font-semibold text-gray-500 hover:text-gray-800 focus:outline-none";
+
+            // Activate chosen tab
+            document.getElementById('tabContent-' + tabId).classList.remove('hidden');
+            document.getElementById('tabBtn-' + tabId).className = "px-6 py-4 text-sm font-semibold text-gray-700 tab-active focus:outline-none";
+        }
+
+        // Toast notification system
+        function showToast(message) {
+            const toast = document.getElementById('toastNotification');
+            const toastMsg = document.getElementById('toastMsg');
+            toastMsg.textContent = message;
+            toast.classList.remove('hidden');
+            
+            // Simple slide-in out simulation
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3500);
+        }
+
+        // Review Modal Handlers
+        function openReviewModal() {
+            document.getElementById('reviewModal').classList.remove('hidden');
+        }
+
+        function closeReviewModal() {
+            document.getElementById('reviewModal').classList.add('hidden');
+        }
+
+        function submitReview(event) {
+            event.preventDefault();
+            const nickname = document.getElementById('revNickname').value;
+            const ratingStr = "★".repeat(parseInt(document.getElementById('revRating').value)) + "☆".repeat(5 - parseInt(document.getElementById('revRating').value));
+            const title = document.getElementById('revTitle').value;
+            const comment = document.getElementById('revComment').value;
+
+            // Generate new HTML for review list
+            const reviewContainer = document.getElementById('reviewsContainer');
+            const newReview = document.createElement('div');
+            newReview.className = "bg-white p-5 rounded-lg border border-green-200 shadow-sm text-sm border-l-4 border-l-green-500 animate-pulse";
+            newReview.innerHTML = `
+                <div class="flex justify-between items-start mb-2">
+                    <div>
+                        <span class="font-bold text-gray-900">${nickname} (Εσείς)</span>
+                        <span class="text-xs text-gray-400 ml-2">Απρίλιος 2016</span>
+                    </div>
+                    <div class="text-yellow-400">${ratingStr}</div>
+                </div>
+                <h5 class="font-bold text-gray-800 mb-1">${title}</h5>
+                <p class="text-gray-600 text-xs">${comment}</p>
+            `;
+
+            // Prepend new review
+            reviewContainer.insertBefore(newReview, reviewContainer.firstChild);
+            
+            closeReviewModal();
+            showToast("✅ Ευχαριστούμε! Η κριτική σας υποβλήθηκε επιτυχώς και θα εγκριθεί σύντομα.");
+        }
+
+        // Fallback in case of local connection/domain image blocks
+        function showImageFallback() {
+            document.getElementById('imageFallback').classList.remove('hidden');
+        }
+
+        // Interactive simulated buttons for checkout, instructions etc
+        function checkoutMock() {
+            if (cartCount === 0) {
+                showToast("❌ Το καλάθι σας είναι άδειο. Προσθέστε προϊόντα για να συνεχίσετε!");
+                return;
+            }
+            showToast("🛍️ Ανακατεύθυνση στο Ασφαλές Σύστημα Πληρωμών LEGO® Shop 2016...");
+        }
+
+        function findStoreMock() {
+            showToast("📍 Αναζήτηση στα επίσημα καταστήματα LEGO & εξουσιοδοτημένους συνεργάτες στην Ελλάδα...");
+        }
+
+        function downloadInstructionsMock() {
+            showToast("⬇️ Λήψη PDF οδηγιών 71306_Pohatu.pdf ... παρακαλώ περιμένετε.");
+        }
+    </script>
+</body>
+</html>
