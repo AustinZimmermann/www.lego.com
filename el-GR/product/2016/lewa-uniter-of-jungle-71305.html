@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="el-GR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Λέβα – Ενωτής της Ζούγκλας 71305 | BIONICLE® | LEGO® Shop GR (April 2016)</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for classic icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&family=Montserrat:wght@700;800;900&display=swap');
+        
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .bionicle-title {
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.1em;
+        }
+        .lego-yellow {
+            background-color: #FFD500;
+        }
+        .lego-red {
+            background-color: #E3000B;
+        }
+        .btn-orange {
+            background: linear-gradient(180deg, #ff9000 0%, #e06c00 100%);
+            border: 1px solid #b35600;
+        }
+        .btn-orange:hover {
+            background: linear-gradient(180deg, #ffa524 0%, #f07b00 100%);
+        }
+        /* Jungle Glow Effect for Unity Mode */
+        .jungle-glow {
+            box-shadow: 0 0 30px rgba(34, 197, 94, 0.4);
+            border-color: rgba(34, 197, 94, 0.6);
+        }
+        /* Custom scrollbar for retro style */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e5e7eb;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #9ca3af;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Top Utility Bar (2016 Layout) -->
+    <div class="bg-stone-900 text-stone-300 text-xs py-1.5 px-4 flex justify-between items-center border-b border-stone-800">
+        <div class="flex items-center space-x-4">
+            <a href="#" class="hover:text-white transition duration-150"><i class="fa-solid fa-house mr-1"></i> LEGO.com Home</a>
+            <span class="text-stone-600">|</span>
+            <a href="#" class="hover:text-white transition duration-150 text-yellow-400 font-bold"><span class="bg-yellow-400 text-black px-1 rounded text-[10px] mr-1">CLUB</span> LEGO® CLUB</a>
+        </div>
+        <div class="flex items-center space-x-4">
+            <div class="flex items-center space-x-1 cursor-pointer hover:text-white">
+                <img src="https://flagcdn.com/w20/gr.png" alt="Greece Flag" class="w-4 h-3 rounded-sm">
+                <span>Ελλάδα (el-GR)</span>
+            </div>
+            <span class="text-stone-600">|</span>
+            <span class="hover:text-white cursor-pointer transition" onclick="openMaskGame()"><i class="fa-solid fa-gamepad text-green-400 mr-1 animate-pulse"></i> Παίξτε & Κερδίστε!</span>
+            <span class="text-stone-600">|</span>
+            <a href="#" class="hover:text-white transition">Ο Λογαριασμός μου</a>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header (Classic 2016 White & Yellow) -->
+    <header class="bg-white shadow-md relative z-40">
+        <div class="max-w-7xl mx-auto px-4 flex items-center justify-between py-3">
+            <!-- LEGO Logo -->
+            <div class="flex items-center space-x-6">
+                <a href="#" class="block transition transform hover:scale-105">
+                    <svg class="w-16 h-16 lego-red rounded p-1" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="2" width="96" height="96" fill="#E3000B" stroke="white" stroke-width="4"/>
+                        <text x="50" y="65" font-family="'Montserrat', sans-serif" font-weight="900" font-size="44" fill="white" text-anchor="middle" stroke="#000000" stroke-width="3" paint-order="stroke fill">LEGO</text>
+                    </svg>
+                </a>
+                
+                <!-- Main Nav Links -->
+                <nav class="hidden md:flex space-x-6 font-bold text-gray-700 text-sm">
+                    <a href="#" class="hover:text-red-600 transition duration-150 py-2 border-b-2 border-transparent hover:border-red-600">ΠΡΟΪΟΝΤΑ</a>
+                    <a href="#" class="text-green-600 hover:text-green-700 transition duration-150 py-2 border-b-2 border-green-500 font-black">BIONICLE®</a>
+                    <a href="#" class="hover:text-red-600 transition duration-150 py-2 border-b-2 border-transparent hover:border-red-600 flex items-center">
+                        LEGO® SHOP 
+                        <span class="ml-1 px-1.5 py-0.5 text-[9px] bg-red-600 text-white rounded-full uppercase tracking-wider animate-bounce">NEW</span>
+                    </a>
+                    <a href="#" class="hover:text-red-600 transition duration-150 py-2 border-b-2 border-transparent hover:border-red-600">ΠΑΙΧΝΙΔΙΑ</a>
+                </nav>
+            </div>
+
+            <!-- Search and Shopping Bag -->
+            <div class="flex items-center space-x-4 w-full max-w-xs md:max-w-md justify-end">
+                <!-- Search Bar -->
+                <div class="relative w-full hidden sm:block">
+                    <input type="text" placeholder="Αναζήτηση προϊόντος ή κωδικού..." class="w-full bg-stone-100 border border-stone-300 rounded-full py-1.5 pl-4 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                    <button class="absolute right-2 top-1/2 transform -translate-y-1/2 text-stone-500 hover:text-black">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+
+                <!-- Shopping Bag Widget -->
+                <div class="relative cursor-pointer bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center space-x-2 shadow-sm transition" onclick="toggleCartDrawer()">
+                    <i class="fa-solid fa-bag-shopping text-lg"></i>
+                    <div class="text-xs text-left hidden lg:block">
+                        <div class="font-bold leading-none">Το Καλάθι μου</div>
+                        <div class="text-[10px] text-blue-200" id="cart-cost">0,00 €</div>
+                    </div>
+                    <span class="bg-yellow-400 text-black font-extrabold text-xs px-2 py-0.5 rounded-full" id="cart-badge">0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Secondary Theme Bar for BIONICLE Wave 2016 -->
+        <div class="bg-gradient-to-r from-stone-900 via-emerald-950 to-stone-900 border-t border-b border-emerald-800 text-white py-2">
+            <div class="max-w-7xl mx-auto px-4 flex justify-between items-center text-xs">
+                <div class="flex items-center space-x-4">
+                    <span class="bionicle-title text-emerald-400 font-extrabold tracking-widest text-sm">BIONICLE</span>
+                    <span class="hidden md:inline text-stone-400">|</span>
+                    <span class="hidden md:inline text-stone-300 font-medium">Καλώς ήρθατε στο νησί Οκότο!</span>
+                </div>
+                <div class="flex space-x-4 text-emerald-300 font-bold">
+                    <a href="#" class="hover:underline hover:text-white">Ήρωες (Τόα)</a>
+                    <a href="#" class="hover:underline hover:text-white">Πλάσματα</a>
+                    <a href="#" class="hover:underline hover:text-white">Βίντεο & Webisodes</a>
+                    <a href="#" class="hover:underline hover:text-white">Οδηγίες</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Global Promo Banner -->
+    <div class="bg-amber-400 text-stone-950 font-bold text-center py-2 text-xs md:text-sm shadow-inner flex justify-center items-center space-x-2 px-2">
+        <i class="fa-solid fa-truck-fast animate-bounce text-base"></i>
+        <span>ΔΩΡΕΑΝ Αποστολή για παραγγελίες άνω των 55 €! Ισχύει για όλο τον Απρίλιο 2016.</span>
+        <span class="bg-black text-amber-400 px-2 py-0.5 rounded text-[10px] uppercase tracking-wider ml-2 hidden sm:inline">Κωδικός: OKOTO2016</span>
+    </div>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 py-6">
+        
+        <!-- Breadcrumbs -->
+        <nav class="text-xs text-stone-500 mb-6 flex items-center space-x-2">
+            <a href="#" class="hover:underline">Αρχική</a>
+            <i class="fa-solid fa-chevron-right text-[9px]"></i>
+            <a href="#" class="hover:underline">LEGO® Shop</a>
+            <i class="fa-solid fa-chevron-right text-[9px]"></i>
+            <a href="#" class="hover:underline">Κατηγορίες</a>
+            <i class="fa-solid fa-chevron-right text-[9px]"></i>
+            <a href="#" class="hover:underline text-emerald-700 font-semibold">BIONICLE®</a>
+            <i class="fa-solid fa-chevron-right text-[9px]"></i>
+            <span class="text-stone-800 font-bold">Λέβα – Ενωτής της Ζούγκλας (71305)</span>
+        </nav>
+
+        <!-- Product Details Presentation Card -->
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-stone-200 grid grid-cols-1 lg:grid-cols-12 gap-0 mb-10 transition-all duration-300" id="product-card">
+            
+            <!-- Left Grid: Image Gallery & Dynamic Presentation -->
+            <div class="lg:col-span-7 bg-stone-50 p-6 flex flex-col justify-between border-r border-stone-100 relative">
+                
+                <!-- Theme Badge -->
+                <div class="absolute top-4 left-4 z-10 bg-emerald-900 text-emerald-400 px-3 py-1.5 rounded-full font-black text-xs tracking-widest uppercase shadow-md border border-emerald-700">
+                    BIONICLE WAVE 2016
+                </div>
+
+                <!-- Interactive Unity Mode Status Indicator -->
+                <div id="unity-indicator" class="absolute top-4 right-4 z-10 bg-stone-900 text-stone-300 px-3 py-1.5 rounded-full font-bold text-xs flex items-center space-x-2 transition-all duration-300">
+                    <span class="h-2.5 w-2.5 rounded-full bg-red-500 animate-pulse" id="unity-light"></span>
+                    <span id="unity-status-text">Κανονική Λειτουργία</span>
+                </div>
+
+                <!-- Main Showcase Display -->
+                <div class="my-auto flex flex-col items-center justify-center min-h-[400px] relative">
+                    <!-- Overlay Aura Glow -->
+                    <div id="glow-aura" class="absolute inset-0 bg-emerald-500/10 rounded-full filter blur-3xl opacity-0 transition-opacity duration-700 scale-75 pointer-events-none"></div>
+                    
+                    <!-- Dynamic Combined Wings Graphic Overlay (SVG wings appearing when united) -->
+                    <div id="unity-wings" class="absolute w-full h-full pointer-events-none opacity-0 transition-opacity duration-500 flex items-center justify-center">
+                        <svg class="w-11/12 h-11/12 text-emerald-400 animate-pulse" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Left Wing -->
+                            <path d="M120,180 L40,100 L20,130 L100,220 L40,240 L80,260 Z" fill="rgba(16, 185, 129, 0.65)" stroke="#10b981" stroke-width="3"/>
+                            <!-- Right Wing -->
+                            <path d="M280,180 L360,100 L380,130 L300,220 L360,240 L320,260 Z" fill="rgba(16, 185, 129, 0.65)" stroke="#10b981" stroke-width="3"/>
+                            <!-- Energy Arc -->
+                            <circle cx="200" cy="200" r="140" stroke="rgba(52, 211, 153, 0.4)" stroke-width="4" stroke-dasharray="10, 10" class="animate-spin" style="animation-duration: 20s;"/>
+                        </svg>
+                    </div>
+
+                    <!-- Main Image Representation -->
+                    <img id="main-product-img" src="https://www.bricklink.com/SL/71305-1.jpg" alt="LEGO Bionicle Lewa Uniter of Jungle 71305" class="max-h-[380px] object-contain transition-transform duration-500 hover:scale-105 z-10" onerror="this.src='https://via.placeholder.com/400x400/333/fff?text=LEGO+71305+Lewa+Uniter'">
+                    
+                    <p class="text-[10px] text-stone-400 mt-2 italic text-center">Η φωτογραφία δείχνει το επίσημο κουτί LEGO 71305 (Απρίλιος 2016)</p>
+                </div>
+
+                <!-- Interactive Thumbnails -->
+                <div class="mt-6">
+                    <div class="text-xs font-bold text-stone-500 mb-2 text-center uppercase tracking-wider">Προβολή Διαφορετικών Λήψεων</div>
+                    <div class="flex justify-center space-x-3">
+                        <button onclick="changeGalleryImage('https://www.bricklink.com/SL/71305-1.jpg', 'box')" class="w-16 h-16 bg-white border-2 border-amber-400 rounded-lg overflow-hidden p-1 shadow-sm transition transform hover:-translate-y-1 focus:outline-none gallery-thumb">
+                            <img src="https://www.bricklink.com/SL/71305-1.jpg" alt="Box Art" class="w-full h-full object-contain">
+                        </button>
+                        <button onclick="changeGalleryImage('alternative-view', 'figure')" class="w-16 h-16 bg-stone-900 border-2 border-stone-200 rounded-lg overflow-hidden p-1 shadow-sm transition transform hover:-translate-y-1 focus:outline-none gallery-thumb flex flex-col items-center justify-center text-emerald-400 text-xs font-bold">
+                            <i class="fa-solid fa-robot text-lg mb-0.5"></i>
+                            <span>Φιγούρα</span>
+                        </button>
+                        <button onclick="changeGalleryImage('mask-view', 'mask')" class="w-16 h-16 bg-stone-900 border-2 border-stone-200 rounded-lg overflow-hidden p-1 shadow-sm transition transform hover:-translate-y-1 focus:outline-none gallery-thumb flex flex-col items-center justify-center text-amber-400 text-xs font-bold">
+                            <i class="fa-solid fa-crown text-lg mb-0.5 animate-bounce"></i>
+                            <span>Μάσκα</span>
+                        </button>
+                        <button onclick="toggleUnityMode(true)" class="w-16 h-16 bg-emerald-950 border-2 border-emerald-600 rounded-lg overflow-hidden p-1 shadow-sm transition transform hover:-translate-y-1 focus:outline-none gallery-thumb flex flex-col items-center justify-center text-emerald-300 text-xs font-bold">
+                            <i class="fa-solid fa-bolt-lightning text-lg mb-0.5"></i>
+                            <span>Ένωση!</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Grid: Pricing, Attributes, Controls -->
+            <div class="lg:col-span-5 p-8 flex flex-col justify-between">
+                <div>
+                    <!-- Catalog Code and Badge -->
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-stone-500 text-xs font-bold uppercase">BIONICLE® > Toa Uniters</span>
+                        <span class="bg-stone-100 text-stone-700 px-2 py-1 rounded text-xs font-mono font-bold">Κωδικός: 71305</span>
+                    </div>
+
+                    <!-- Main Product Header -->
+                    <h1 class="text-3xl font-black text-stone-900 leading-tight mb-2 uppercase" id="product-title">Λέβα – Ενωτής της Ζούγκλας</h1>
+                    <h2 class="text-stone-500 text-sm font-semibold mb-4 italic">Lewa Uniter of Jungle</h2>
+
+                    <!-- Specs Snippets -->
+                    <div class="grid grid-cols-3 gap-2 py-3 border-t border-b border-stone-100 mb-5 text-center text-xs">
+                        <div class="bg-stone-50 p-2 rounded-lg">
+                            <span class="block text-stone-400 font-medium">Ηλικίες</span>
+                            <span class="block text-stone-800 font-extrabold text-sm" id="spec-ages">7 - 14</span>
+                        </div>
+                        <div class="bg-stone-50 p-2 rounded-lg">
+                            <span class="block text-stone-400 font-medium">Κομμάτια</span>
+                            <span class="block text-stone-800 font-extrabold text-sm" id="spec-pieces">79</span>
+                        </div>
+                        <div class="bg-stone-50 p-2 rounded-lg">
+                            <span class="block text-stone-400 font-medium">Πόντοι VIP</span>
+                            <span class="block text-stone-800 font-extrabold text-sm text-blue-600" id="spec-vip">75</span>
+                        </div>
+                    </div>
+
+                    <!-- Ratings -->
+                    <div class="flex items-center space-x-2 mb-6 cursor-pointer" onclick="scrollToReviews()">
+                        <div class="flex text-amber-400 text-xs">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <span class="text-stone-600 text-xs font-bold hover:underline" id="rating-text">4.6 / 5 (18 Αξιολογήσεις)</span>
+                    </div>
+
+                    <!-- Pricing Container -->
+                    <div class="mb-6 bg-stone-50 p-4 rounded-xl border border-stone-200">
+                        <div class="flex items-baseline justify-between mb-1">
+                            <span class="text-stone-500 text-xs font-semibold">Προτεινόμενη Λιανική Τιμή:</span>
+                            <span class="text-stone-400 text-xs line-through" id="bundle-original-price"></span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-3xl font-black text-stone-900" id="product-price">14,99 €</span>
+                            <span class="bg-green-100 text-green-800 text-xs font-bold px-2.5 py-1 rounded-full flex items-center">
+                                <span class="h-2 w-2 rounded-full bg-green-500 mr-1.5 animate-pulse"></span>
+                                Σε Απόθεμα
+                            </span>
+                        </div>
+                        <p class="text-[10px] text-stone-400 mt-2">Η τιμή περιλαμβάνει Φ.Π.Α. Έτοιμο για άμεση αποστολή.</p>
+                    </div>
+
+                    <!-- Interactivity Unit Feature Action Card -->
+                    <div class="mb-6 border-2 border-emerald-500 bg-emerald-50/50 rounded-xl p-4 transition duration-300">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-emerald-600 text-white rounded-full p-2 mt-0.5">
+                                <i class="fa-solid fa-puzzle-piece text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-sm text-emerald-950 uppercase">Σύστημα Ένωσης BIONICLE®!</h3>
+                                <p class="text-xs text-stone-600 mt-1 leading-relaxed">
+                                    Συνδυάστε τον <strong>Λέουα</strong> με τον <strong>71300 Ούξαρ – Πλάσμα της Ζούγκλας</strong> με ένα κλικ για να ξεκλειδώσετε απίστευτες ιπτάμενες δυνάμεις!
+                                </p>
+                                <button onclick="toggleUnityMode()" id="unity-action-btn" class="mt-3 text-xs bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-4 py-2 rounded shadow transition duration-150 w-full">
+                                    Ενεργοποίηση Ένωσης (Combine Mode)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Limit warning -->
+                    <p class="text-xs text-amber-800 bg-amber-50 border border-amber-200 rounded-lg p-2.5 mb-6 text-center font-medium">
+                        <i class="fa-solid fa-circle-info mr-1"></i> <strong>Όριο αγοράς:</strong> Μέχρι 5 τεμάχια ανά λογαριασμό.
+                    </p>
+
+                    <!-- Add to Cart System Row -->
+                    <div class="flex space-x-3 items-stretch mb-6">
+                        <!-- Quantity Selector -->
+                        <div class="flex items-center border border-stone-300 rounded-xl bg-stone-100 overflow-hidden">
+                            <button onclick="updateQty(-1)" class="px-3.5 py-2 font-black text-stone-600 hover:bg-stone-200 transition focus:outline-none">-</button>
+                            <span id="qty-indicator" class="px-4 font-bold text-stone-800 text-sm">1</span>
+                            <button onclick="updateQty(1)" class="px-3.5 py-2 font-black text-stone-600 hover:bg-stone-200 transition focus:outline-none">+</button>
+                        </div>
+                        
+                        <!-- Add to Cart Trigger Button -->
+                        <button onclick="addToCart()" class="flex-1 btn-orange text-white font-black rounded-xl text-base flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5 focus:outline-none py-3 uppercase">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span>Προσθήκη στο Καλάθι</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Secondary Actions -->
+                <div class="border-t border-stone-100 pt-4 flex justify-between text-xs text-stone-600">
+                    <button class="hover:text-black transition flex items-center space-x-1.5" onclick="addToWishlist()">
+                        <i class="fa-regular fa-heart text-red-500"></i>
+                        <span>Προσθήκη στη Λίστα Επιθυμιών</span>
+                    </button>
+                    <button class="hover:text-black transition flex items-center space-x-1.5" onclick="openBuildInstructions()">
+                        <i class="fa-solid fa-file-pdf text-amber-600"></i>
+                        <span>Οδηγίες Κατασκευής (PDF)</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Combat Stats Graph Card (Specially crafted for Bionicle G2) -->
+        <div class="bg-stone-900 text-white rounded-2xl p-6 shadow-xl mb-10 border border-emerald-900/40 relative overflow-hidden">
+            <div class="absolute -right-16 -bottom-16 opacity-10 text-emerald-400 pointer-events-none">
+                <i class="fa-solid fa-leaf text-[220px]"></i>
+            </div>
+            
+            <h3 class="bionicle-title text-xl font-black tracking-widest text-emerald-400 mb-6 uppercase flex items-center">
+                <i class="fa-solid fa-chart-bar mr-2"></i>
+                Στοιχεία & Στατιστικά Μάχης (Okoto Archives)
+            </h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-4">
+                    <!-- Power Level Stat -->
+                    <div>
+                        <div class="flex justify-between text-xs font-bold mb-1 uppercase tracking-wider text-stone-400">
+                            <span>Στοιχειακή Δύναμη (Elemental Force)</span>
+                            <span id="stat-force-text">85 / 100</span>
+                        </div>
+                        <div class="h-3 bg-stone-800 rounded-full overflow-hidden p-0.5 border border-stone-700">
+                            <div id="stat-force-bar" class="h-full bg-emerald-500 rounded-full transition-all duration-700" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Speed Stat -->
+                    <div>
+                        <div class="flex justify-between text-xs font-bold mb-1 uppercase tracking-wider text-stone-400">
+                            <span>Ταχύτητα (Speed)</span>
+                            <span id="stat-speed-text">90 / 100</span>
+                        </div>
+                        <div class="h-3 bg-stone-800 rounded-full overflow-hidden p-0.5 border border-stone-700">
+                            <div id="stat-speed-bar" class="h-full bg-cyan-500 rounded-full transition-all duration-700" style="width: 90%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Defenses Stat -->
+                    <div>
+                        <div class="flex justify-between text-xs font-bold mb-1 uppercase tracking-wider text-stone-400">
+                            <span>Θωράκιση (Defense)</span>
+                            <span id="stat-defense-text">75 / 100</span>
+                        </div>
+                        <div class="h-3 bg-stone-800 rounded-full overflow-hidden p-0.5 border border-stone-700">
+                            <div id="stat-defense-bar" class="h-full bg-amber-500 rounded-full transition-all duration-700" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-stone-950 p-4 rounded-xl border border-stone-800/80">
+                    <h4 class="font-extrabold text-sm text-emerald-300 mb-2 uppercase">Πληροφορίες Ήρωα</h4>
+                    <ul class="space-y-2 text-xs text-stone-300">
+                        <li class="flex justify-between"><span class="text-stone-500">Ύψος Φιγούρας:</span> <span id="stat-height" class="font-bold text-white">21 εκ. (Stands over 8")</span></li>
+                        <li class="flex justify-between"><span class="text-stone-500">Κύριο Όπλο:</span> <span class="font-bold text-white">Διπλές κρυστάλλινες λεπίδες ξυραφιού</span></li>
+                        <li class="flex justify-between"><span class="text-stone-500">Φορεμένη Μάσκα:</span> <span id="stat-mask" class="font-bold text-amber-400">Μάσκα Ένωσης της Ζούγκλας</span></li>
+                        <li class="flex justify-between"><span class="text-stone-500">Κινητήρας:</span> <span class="font-bold text-white">Περιστρεφόμενος κορμός με γρανάζι</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Description / Specs Accordion & Review Boards Tabs -->
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-stone-200 mb-10">
+            <!-- Tabs Headers -->
+            <div class="flex border-b border-stone-200 bg-stone-50 text-xs md:text-sm font-bold overflow-x-auto">
+                <button onclick="switchTab('description')" id="tab-btn-description" class="px-6 py-4 border-b-2 border-emerald-600 text-emerald-700 transition duration-150 focus:outline-none whitespace-nowrap">Περιγραφή Προϊόντος</button>
+                <button onclick="switchTab('specs')" id="tab-btn-specs" class="px-6 py-4 border-b-2 border-transparent text-stone-600 hover:text-stone-900 transition duration-150 focus:outline-none whitespace-nowrap">Χαρακτηριστικά</button>
+                <button onclick="switchTab('reviews')" id="tab-btn-reviews" class="px-6 py-4 border-b-2 border-transparent text-stone-600 hover:text-stone-900 transition duration-150 focus:outline-none whitespace-nowrap">Αξιολογήσεις & Κριτικές</button>
+            </div>
+
+            <!-- Tab Content: Description -->
+            <div id="tab-content-description" class="p-6 md:p-8 space-y-6">
+                <div class="prose max-w-none text-stone-700 leading-relaxed text-sm md:text-base">
+                    <h3 class="text-xl font-bold text-stone-900 mb-3">Διασχίστε τις αρχαίες ζούγκλες του Okoto!</h3>
+                    <p class="mb-4">
+                        Κόψτε το δρόμο σας μέσα από τις πυκνές και επικίνδυνες ζούγκλες και αναζητήστε τα πνευματικά πλάσματα του Οκότο! Ανοίξτε μονοπάτι στα υπεραναπτυγμένα δάση με τις διπλές κρυστάλλινες λεπίδες ξυραφιού. Φορέστε τη <strong>Μάσκα Ένωσης της Ζούγκλας</strong> για να απελευθερώσετε επιπλέον στοιχειακές δυνάμεις με τις διπλές λεπίδες ξυραφιού!
+                    </p>
+                    <p class="mb-4">
+                        Βρείτε και δαμάστε τα στοιχειακά πλάσματα που ζουν ανάμεσα στα ερείπια του ναού του Οκότο για να γίνετε πραγματικά ανίκητοι! Συνδυάστε τον με τον <strong>71300 Ούξαρ – Πλάσμα της Ζούγκλας</strong> για να πετάξετε στους ουρανούς και να κυριαρχήσετε στη μάχη εναντίον του σατανικού Μακούτα!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tab Content: Specs -->
+            <div id="tab-content-specs" class="p-6 md:p-8 space-y-4 hidden text-sm text-stone-700">
+                <ul class="list-disc list-inside space-y-3">
+                    <li><strong>Περιλαμβάνει:</strong> Φιγούρα Lewa με κεφάλι BIONICLE®, Μάσκα Ένωσης της Ζούγκλας, ειδική πλάκα θώρακα με μοναδικές διακοσμήσεις ρούνων, και κομμάτι ένωσης για την τοποθέτηση στοιχειακών πλασμάτων.</li>
+                    <li><strong>Αξεσουάρ:</strong> Περιλαμβάνει την πολύτιμη <strong>Χρυσή Μάσκα Ένωσης της Ζούγκλας</strong> και στοιχειακή θωράκιση ώμων.</li>
+                    <li>Γυρίστε τον τροχό στην πλάτη της φιγούρας για να περιστρέψετε τον κορμό και να ξεκινήσετε την επίθεση με τις περιστρεφόμενες λεπίδες!</li>
+                    <li>Πατήστε τη σκανδάλη στο κεφάλι BIONICLE® της φιγούρας για να απελευθερώσετε τη Μάσκα Ένωσης και να την αντικαταστήσετε με τη Χρυσή Μάσκα!</li>
+                    <li><strong>Στιβαρός σχεδιασμός:</strong> Κατασκευασμένος για έντονο παιχνίδι δράσης!</li>
+                    <li><strong>Διαστάσεις:</strong> Ύψος που ξεπερνά τα 21 εκ.</li>
+                    <li>Συνδυάζεται με το σετ <strong>71300 Ούξαρ – Πλάσμα της Ζούγκλας</strong> με ένα απλό κλικ!</li>
+                </ul>
+            </div>
+
+            <!-- Tab Content: Reviews -->
+            <div id="tab-content-reviews" class="p-6 md:p-8 space-y-6 hidden">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-stone-100 pb-6">
+                    <div>
+                        <h4 class="text-lg font-bold text-stone-950">Αξιολογήσεις Χρηστών</h4>
+                        <p class="text-xs text-stone-500">Δείτε τι λένε οι οπαδοί της LEGO® στην Ελλάδα.</p>
+                    </div>
+                    <!-- Add Review Button -->
+                    <button onclick="toggleReviewForm()" class="mt-4 md:mt-0 bg-stone-900 hover:bg-black text-white text-xs font-bold py-2.5 px-5 rounded-lg shadow-md transition">
+                        Γράψτε μια Αξιολόγηση <i class="fa-solid fa-pen-nib ml-1"></i>
+                    </button>
+                </div>
+
+                <!-- Review Creation Form (Hidden initially) -->
+                <div id="review-form-container" class="hidden bg-stone-50 p-6 rounded-xl border border-stone-200 transition-all duration-300">
+                    <h5 class="font-bold text-sm text-stone-900 mb-4 uppercase">Η Δική σας Αξιολόγηση</h5>
+                    <form id="review-form" onsubmit="submitReview(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-stone-700 mb-1">Όνομα / Ψευδώνυμο</label>
+                                <input type="text" id="rev-name" required class="w-full bg-white border border-stone-300 rounded px-3 py-2 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-stone-700 mb-1">Βαθμολογία (1-5)</label>
+                                <select id="rev-rating" class="w-full bg-white border border-stone-300 rounded px-3 py-2 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                                    <option value="5">⭐⭐⭐⭐⭐ (Εξαιρετικό)</option>
+                                    <option value="4">⭐⭐⭐⭐ (Πολύ Καλό)</option>
+                                    <option value="3">⭐⭐⭐ (Μέτριο)</option>
+                                    <option value="2">⭐⭐ (Κακό)</option>
+                                    <option value="1">⭐ (Απαράδεκτο)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-stone-700 mb-1">Τίτλος Κριτικής</label>
+                            <input type="text" id="rev-title" required placeholder="π.χ. Φανταστική άρθρωση!" class="w-full bg-white border border-stone-300 rounded px-3 py-2 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-stone-700 mb-1">Σχόλια / Κριτική (στα Ελληνικά)</label>
+                            <textarea id="rev-comment" rows="3" required class="w-full bg-white border border-stone-300 rounded px-3 py-2 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"></textarea>
+                        </div>
+                        <div class="flex justify-end space-x-2">
+                            <button type="button" onclick="toggleReviewForm()" class="bg-stone-300 hover:bg-stone-400 text-stone-700 font-bold px-4 py-2 rounded text-xs transition">Ακύρωση</button>
+                            <button type="submit" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-4 py-2 rounded text-xs transition">Υποβολή</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Reviews List Container -->
+                <div class="space-y-4" id="reviews-list">
+                    <!-- Default Pre-populated Review 1 -->
+                    <div class="bg-stone-50 p-4 rounded-xl border border-stone-100">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h5 class="font-bold text-sm text-stone-900">Ο καλύτερος Lewa της G2!</h5>
+                                <div class="flex text-amber-400 text-[10px] mt-1">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                            <span class="text-stone-400 text-[10px]">12 Απριλίου 2016</span>
+                        </div>
+                        <p class="text-xs text-stone-600 leading-relaxed">
+                            Ο σχεδιασμός με τα διπλά σπαθιά και η δυνατότητα ένωσης με τον Uxar είναι απλά απίστευτος. Τα χρώματα είναι πολύ ζωντανά και η κίνηση με το γρανάζι λειτουργεί άψογα. Προτείνεται ανεπιφύλακτα!
+                        </p>
+                        <div class="mt-2 text-[10px] text-stone-500">Από τον χρήστη: <strong class="text-stone-700">BioFan99</strong></div>
+                    </div>
+
+                    <!-- Default Pre-populated Review 2 -->
+                    <div class="bg-stone-50 p-4 rounded-xl border border-stone-100">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h5 class="font-bold text-sm text-stone-900">Πανέμορφη Μάσκα</h5>
+                                <div class="flex text-amber-400 text-[10px] mt-1">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                                </div>
+                            </div>
+                            <span class="text-stone-400 text-[10px]">04 Απριλίου 2016</span>
+                        </div>
+                        <p class="text-xs text-stone-600 leading-relaxed">
+                            Η χρυσή μάσκα είναι φανταστική προσθήκη στο σετ. Μοναδικό μου παράπονο είναι ότι οι λεπίδες θα μπορούσαν να είναι ελαφρώς πιο σταθερές κατά τη διάρκεια γρήγορης περιστροφής, αλλά παραμένει ένα εξαιρετικό σετ για παιχνίδι.
+                        </p>
+                        <div class="mt-2 text-[10px] text-stone-500">Από τον χρήστη: <strong class="text-stone-700">George_Okoto</strong></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cross-sells Wave 2016 Section -->
+        <div class="mb-10">
+            <h3 class="bionicle-title text-xl font-black text-stone-900 mb-6 uppercase tracking-wider text-center md:text-left">
+                Συμπληρώστε τη Συλλογή σας (BIONICLE® 2016)
+            </h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Uxar Product Card -->
+                <div class="bg-white rounded-2xl p-4 border border-stone-200 shadow hover:shadow-lg transition flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] text-emerald-600 font-bold uppercase">Πλάσμα της Ζούγκλας</span>
+                        <h4 class="font-bold text-base text-stone-900">71300 Ούξαρ Πλάσμα</h4>
+                        <p class="text-xs text-stone-500 mt-1">Ιδανικό για Ένωση με τον Λέβα!</p>
+                        <div class="my-4 h-32 flex items-center justify-center bg-stone-50 rounded-lg p-2">
+                            <i class="fa-solid fa-dragon text-5xl text-emerald-600 animate-pulse"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between mt-4">
+                        <span class="font-black text-stone-900">9,99 €</span>
+                        <button onclick="addCrossSellToCart('71300 Ούξαρ Πλάσμα', 9.99)" class="bg-stone-900 hover:bg-black text-white text-xs font-bold px-3 py-1.5 rounded transition">
+                            Γρήγορη Αγορά +
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Pohatu Product Card -->
+                <div class="bg-white rounded-2xl p-4 border border-stone-200 shadow hover:shadow-lg transition flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] text-amber-600 font-bold uppercase">Ενωτής της Πέτρας</span>
+                        <h4 class="font-bold text-base text-stone-900">71306 Ποχάτου – Ενωτής</h4>
+                        <p class="text-xs text-stone-500 mt-1">Με στοιχειακό κρυστάλλινο φλαέλ!</p>
+                        <div class="my-4 h-32 flex items-center justify-center bg-stone-50 rounded-lg p-2">
+                            <i class="fa-solid fa-mountain text-5xl text-amber-600"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between mt-4">
+                        <span class="font-black text-stone-900">14,99 €</span>
+                        <button onclick="addCrossSellToCart('71306 Ποχάτου Ενωτής', 14.99)" class="bg-stone-900 hover:bg-black text-white text-xs font-bold px-3 py-1.5 rounded transition">
+                            Γρήγορη Αγορά +
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Umarak Product Card -->
+                <div class="bg-white rounded-2xl p-4 border border-stone-200 shadow hover:shadow-lg transition flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] text-red-600 font-bold uppercase">Ο Σκιώδης Κυνηγός</span>
+                        <h4 class="font-bold text-base text-stone-900">71310 Ούμαρακ ο Κυνηγός</h4>
+                        <p class="text-xs text-stone-500 mt-1">Ο απόλυτος εχθρός των Toa!</p>
+                        <div class="my-4 h-32 flex items-center justify-center bg-stone-50 rounded-lg p-2">
+                            <i class="fa-solid fa-ghost text-5xl text-stone-700"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between mt-4">
+                        <span class="font-black text-stone-900">19,99 €</span>
+                        <button onclick="addCrossSellToCart('71310 Ούμαρακ ο Κυνηγός', 19.99)" class="bg-stone-900 hover:bg-black text-white text-xs font-bold px-3 py-1.5 rounded transition">
+                            Γρήγορη Αγορά +
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Shopping Drawer/Overlay (Custom simulated modal drawer) -->
+    <div id="cart-drawer" class="fixed inset-0 bg-black/60 z-50 transition-opacity duration-300 pointer-events-none opacity-0 flex justify-end">
+        <div class="w-full max-w-md bg-white h-full shadow-2xl flex flex-col justify-between transform translate-x-full transition-transform duration-300" id="drawer-panel">
+            <!-- Header -->
+            <div class="p-4 border-b border-stone-200 flex justify-between items-center bg-stone-50">
+                <div class="flex items-center space-x-2 text-stone-900">
+                    <i class="fa-solid fa-basket-shopping text-xl"></i>
+                    <span class="font-black text-lg">Το Καλάθι μου</span>
+                </div>
+                <button onclick="toggleCartDrawer()" class="text-stone-500 hover:text-black text-xl p-1"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <!-- Items Container -->
+            <div class="p-4 flex-1 overflow-y-auto space-y-4" id="cart-items-list">
+                <p class="text-sm text-stone-500 text-center py-10" id="empty-cart-msg">Το καλάθι σας είναι άδειο αυτή τη στιγμή.</p>
+            </div>
+
+            <!-- Total Pricing & Checkouts -->
+            <div class="p-4 border-t border-stone-200 bg-stone-50 space-y-4">
+                <div class="flex justify-between font-bold text-stone-900 text-base">
+                    <span>Σύνολο:</span>
+                    <span id="drawer-total-price">0,00 €</span>
+                </div>
+                <p id="free-shipping-indicator" class="text-[10px] text-emerald-700 bg-emerald-50 border border-emerald-100 rounded-lg p-2 text-center"></p>
+                <button onclick="checkoutSimulation()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-black py-3 rounded-xl shadow transition uppercase text-sm">
+                    Προχωρηστε στην πληρωμη
+                </button>
+                <p class="text-[10px] text-stone-400 text-center">Ασφαλείς συναλλαγές μέσω LEGO® Shop. (April 2016)</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mini-Game: Unlock Golden Mask Modal -->
+    <div id="game-modal" class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-stone-950 border-2 border-green-500 text-white rounded-2xl max-w-lg w-full p-6 shadow-2xl relative">
+            <button onclick="closeMaskGame()" class="absolute top-4 right-4 text-stone-400 hover:text-white text-xl"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div class="text-center">
+                <i class="fa-solid fa-circle-nodes text-4xl text-emerald-400 mb-3 animate-spin" style="animation-duration: 10s;"></i>
+                <h3 class="bionicle-title text-xl font-black text-emerald-400 uppercase tracking-widest mb-2">Η Αναζήτηση της Χρυσής Μάσκας</h3>
+                <p class="text-xs text-stone-300 mb-6">
+                    Περιστρέψτε τους αρχαίους ρούνους του Οκότο για να ευθυγραμμίσετε την ενέργεια της ζούγκλας και να ξεκλειδώσετε τη Χρυσή Μάσκα!
+                </p>
+
+                <!-- Ancient Runes Puzzle -->
+                <div class="flex justify-center space-x-6 mb-8">
+                    <div class="flex flex-col items-center">
+                        <span class="text-[10px] text-stone-400 mb-1">Ρούνος Αέρος</span>
+                        <button onclick="rotateRune(1)" id="rune-1" class="w-14 h-14 bg-stone-900 rounded-full border-2 border-stone-700 flex items-center justify-center text-emerald-400 text-lg transition-transform duration-300 transform rotate-45">
+                            <i class="fa-solid fa-wind"></i>
+                        </button>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="text-[10px] text-stone-400 mb-1">Ρούνος Φύσης</span>
+                        <button onclick="rotateRune(2)" id="rune-2" class="w-14 h-14 bg-stone-900 rounded-full border-2 border-stone-700 flex items-center justify-center text-emerald-400 text-lg transition-transform duration-300 transform rotate-[180deg]">
+                            <i class="fa-solid fa-leaf"></i>
+                        </button>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="text-[10px] text-stone-400 mb-1">Ρούνος Ζωής</span>
+                        <button onclick="rotateRune(3)" id="rune-3" class="w-14 h-14 bg-stone-900 rounded-full border-2 border-stone-700 flex items-center justify-center text-emerald-400 text-lg transition-transform duration-300 transform rotate-[270deg]">
+                            <i class="fa-solid fa-seedling"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="game-status" class="text-sm font-semibold text-stone-300 mb-4 bg-stone-900 p-2 rounded">
+                    Ευθυγραμμίστε όλα τα σύμβολα σε κατακόρυφη θέση (0 μοίρες)
+                </div>
+
+                <button id="claim-btn" onclick="checkRuneAlignment()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-2.5 rounded shadow text-xs uppercase tracking-wider">
+                    Έλεγχος Ευθυγράμμισης
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Instructions PDF Modal -->
+    <div id="instructions-modal" class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white text-stone-900 rounded-2xl max-w-lg w-full p-6 shadow-2xl relative">
+            <button onclick="closeBuildInstructions()" class="absolute top-4 right-4 text-stone-400 hover:text-black text-xl"><i class="fa-solid fa-xmark"></i></button>
+            
+            <h3 class="font-black text-lg text-stone-950 uppercase border-b border-stone-200 pb-3 mb-4">
+                <i class="fa-solid fa-compass text-amber-500 mr-2"></i> Οδηγός Κατασκευής - Lewa 71305
+            </h3>
+
+            <div class="space-y-4">
+                <p class="text-xs text-stone-600">
+                    Ακολουθήστε τον διαδραστικό οδηγό για να μάθετε πώς να ενώνετε τη φιγούρα με τα στοιχειακά πλάσματα.
+                </p>
+
+                <!-- Assembly Steps Simulator -->
+                <div class="bg-stone-50 p-4 rounded-xl border border-stone-200 text-center">
+                    <span class="text-[10px] bg-amber-400 text-stone-950 px-2 py-0.5 rounded font-bold uppercase" id="step-badge">ΒΗΜΑ 1 από 3</span>
+                    <h4 class="font-extrabold text-sm text-stone-800 mt-2" id="step-title">Συναρμολόγηση του Κύριου Κορμού</h4>
+                    <p class="text-xs text-stone-500 mt-1" id="step-desc">Τοποθετήστε το περιστρεφόμενο γρανάζι στην πλάτη του Λέβα για τον έλεγχο των λεπίδων.</p>
+                    
+                    <div class="my-6 flex justify-center items-center text-emerald-600">
+                        <i class="fa-solid fa-gears text-5xl animate-spin" style="animation-duration: 4s;"></i>
+                    </div>
+                </div>
+
+                <div class="flex justify-between">
+                    <button onclick="changeBuildStep(-1)" class="bg-stone-200 hover:bg-stone-300 text-stone-700 font-bold px-4 py-2 rounded text-xs transition">Προηγούμενο</button>
+                    <button onclick="changeBuildStep(1)" class="bg-stone-900 hover:bg-black text-white font-bold px-4 py-2 rounded text-xs transition">Επόμενο</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification system / custom message panel -->
+    <div id="notification-toast" class="fixed bottom-4 left-4 z-50 bg-stone-900 text-white px-5 py-3 rounded-xl shadow-2xl border-2 border-emerald-500 transform translate-y-24 opacity-0 transition-all duration-300 flex items-center space-x-3 pointer-events-none">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-xl"></i>
+        <div>
+            <div class="font-bold text-xs" id="toast-title">Επιτυχία!</div>
+            <div class="text-[10px] text-stone-400" id="toast-desc">Το προϊόν προστέθηκε.</div>
+        </div>
+    </div>
+
+    <!-- Classic 2016 LEGO Footer -->
+    <footer class="bg-stone-900 text-stone-400 text-xs border-t-4 border-yellow-400 pt-10 pb-6">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+            <div>
+                <h4 class="font-bold text-white text-sm mb-4 uppercase">Σχετικά με εμάς</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:underline hover:text-white">Ο Όμιλος LEGO</a></li>
+                    <li><a href="#" class="hover:underline hover:text-white">LEGO News</a></li>
+                    <li><a href="#" class="hover:underline hover:text-white">Βιωσιμότητα</a></li>
+                    <li><a href="#" class="hover:underline hover:text-white">Διαφάνεια της Εφοδιαστικής Αλυσίδας</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white text-sm mb-4 uppercase">Υποστήριξη</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:underline hover:text-white">Επικοινωνήστε μαζί μας</a></li>
+                    <li><a href="#" class="hover:underline hover:text-white">Οδηγίες Κατασκευής</a></li>
+                    <li><a href="#" class="hover:underline hover:text-white">Ανταλλακτικά Τουβλάκια</a></li>
+                    <li><a href="#" class="hover:underline hover:text-white">Παραδόσεις & Επιστροφές</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white text-sm mb-4 uppercase">Αξιοθέατα</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:underline hover:text-white">LEGO® House</a></li>
+                    <li><a href="#" class="hover:underline hover:text-white">LEGOLAND® Parks</a></li>
+                    <li><a href="#" class="hover:underline hover:text-white">LEGOLAND Discovery Centers</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white text-sm mb-4 uppercase">Ακολουθήστε μας</h4>
+                <div class="flex space-x-3 mb-4">
+                    <a href="#" class="bg-stone-800 text-white p-2.5 rounded-full hover:bg-stone-700 transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="bg-stone-800 text-white p-2.5 rounded-full hover:bg-stone-700 transition"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="bg-stone-800 text-white p-2.5 rounded-full hover:bg-stone-700 transition"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="bg-stone-800 text-white p-2.5 rounded-full hover:bg-stone-700 transition"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <p class="text-[10px] leading-relaxed">
+                    Εγγραφείτε στο επίσημο newsletter για να μη χάνετε κανένα νέο BIONICLE!
+                </p>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 border-t border-stone-800 pt-6 flex flex-col md:flex-row justify-between items-center text-stone-500 text-[10px]">
+            <p class="mb-4 md:mb-0">
+                LEGO, το λογότυπο LEGO, η Μίνι Φιγούρα, το BIONICLE και οι χαρακτήρες είναι εμπορικά σήματα του Ομίλου LEGO. © 2016 The LEGO Group. All rights reserved.
+            </p>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:underline">Πολιτική Απορρήτου</a>
+                <a href="#" class="hover:underline">Cookies</a>
+                <a href="#" class="hover:underline">Όροι Χρήσης</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Logic Core App -->
+    <script>
+        // State variables
+        let cart = [];
+        let isUnited = false;
+        let selectedQty = 1;
+        let currentTab = 'description';
+        
+        // Puzzle state
+        let runeAngles = [45, 180, 270];
+
+        // Instructions step state
+        let currentBuildStep = 1;
+        const totalBuildSteps = 3;
+        const stepsData = [
+            {
+                badge: "ΒΗΜΑ 1 από 3",
+                title: "Συναρμολόγηση του Κύριου Κορμού",
+                desc: "Τοποθετήστε το περιστρεφόμενο γρανάζι στην πλάτη του Lewa για τον έλεγχο των λεπίδων.",
+                icon: "fa-solid fa-gears"
+            },
+            {
+                badge: "ΒΗΜΑ 2 από 3",
+                title: "Εξοπλισμός Κρυστάλλινων Λεπίδων",
+                desc: "Συνδέστε τις διπλές κρυστάλλινες λεπίδες ξυραφιού στους βραχίονες για μέγιστη εμβέλεια επίθεσης.",
+                icon: "fa-solid fa-shield"
+            },
+            {
+                badge: "ΒΗΜΑ 3 από 3",
+                title: "Προετοιμασία Σημείου Ένωσης",
+                desc: "Στερεώστε το ειδικό κομμάτι ένωσης (Unity Piece) στην πλάτη για να είναι έτοιμος για σύνδεση με το Πλάσμα Uxar.",
+                icon: "fa-solid fa-circle-nodes"
+            }
+        ];
+
+        // Functions for Interactive UI
+        function toggleCartDrawer() {
+            const drawer = document.getElementById('cart-drawer');
+            const panel = document.getElementById('drawer-panel');
+            if (drawer.classList.contains('pointer-events-none')) {
+                drawer.classList.remove('pointer-events-none', 'opacity-0');
+                panel.classList.remove('translate-x-full');
+            } else {
+                drawer.classList.add('pointer-events-none', 'opacity-0');
+                panel.classList.add('translate-x-full');
+            }
+        }
+
+        function updateQty(val) {
+            selectedQty = Math.max(1, Math.min(5, selectedQty + val));
+            document.getElementById('qty-indicator').textContent = selectedQty;
+        }
+
+        // Add 71305 to shopping cart
+        function addToCart() {
+            const itemName = isUnited ? "Λέουα + Ούξαρ (Πακέτο Ένωσης)" : "Λέουα Ενωτής της Ζούγκλας (71305)";
+            const itemPrice = isUnited ? 22.99 : 14.99;
+            
+            // Check if already in cart
+            const existingItem = cart.find(i => i.name === itemName);
+            if (existingItem) {
+                existingItem.qty = Math.min(5, existingItem.qty + selectedQty);
+            } else {
+                cart.push({
+                    name: itemName,
+                    price: itemPrice,
+                    qty: selectedQty
+                });
+            }
+            
+            updateCartUI();
+            showToast("Προσθήκη Επιτυχής!", `${itemName} προστέθηκε στο καλάθι σας.`);
+            toggleCartDrawer();
+        }
+
+        // Add related sets directly
+        function addCrossSellToCart(name, price) {
+            const existingItem = cart.find(i => i.name === name);
+            if (existingItem) {
+                existingItem.qty = Math.min(5, existingItem.qty + 1);
+            } else {
+                cart.push({
+                    name: name,
+                    price: price,
+                    qty: 1
+                });
+            }
+            updateCartUI();
+            showToast("Προσθήκη Επιτυχής!", `${name} προστέθηκε στο καλάθι σας.`);
+            toggleCartDrawer();
+        }
+
+        function updateCartUI() {
+            const cartBadge = document.getElementById('cart-badge');
+            const cartCost = document.getElementById('cart-cost');
+            const drawerList = document.getElementById('cart-items-list');
+            const drawerTotal = document.getElementById('drawer-total-price');
+            const emptyMsg = document.getElementById('empty-cart-msg');
+            const freeShipIndicator = document.getElementById('free-shipping-indicator');
+
+            let totalItems = 0;
+            let totalCost = 0;
+            drawerList.innerHTML = '';
+
+            if (cart.length === 0) {
+                emptyMsg.style.display = 'block';
+                drawerList.appendChild(emptyMsg);
+                cartBadge.textContent = '0';
+                cartCost.textContent = '0,00 €';
+                drawerTotal.textContent = '0,00 €';
+                freeShipIndicator.style.display = 'none';
+                return;
+            }
+
+            emptyMsg.style.display = 'none';
+
+            cart.forEach((item, index) => {
+                totalItems += item.qty;
+                totalCost += item.price * item.qty;
+
+                const itemDiv = document.createElement('div');
+                itemDiv.className = "flex items-center justify-between bg-stone-50 p-3 rounded-lg border border-stone-200 text-xs";
+                itemDiv.innerHTML = `
+                    <div class="flex-1">
+                        <div class="font-bold text-stone-900">${item.name}</div>
+                        <div class="text-stone-500 mt-1">${item.price.toFixed(2).replace('.', ',')} € &times; ${item.qty}</div>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <span class="font-extrabold text-stone-900">${(item.price * item.qty).toFixed(2).replace('.', ',')} €</span>
+                        <button onclick="removeFromCart(${index})" class="text-red-500 hover:text-red-700 p-1"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                `;
+                drawerList.appendChild(itemDiv);
+            });
+
+            cartBadge.textContent = totalItems;
+            cartCost.textContent = `${totalCost.toFixed(2).replace('.', ',')} €`;
+            drawerTotal.textContent = `${totalCost.toFixed(2).replace('.', ',')} €`;
+
+            // Free shipping threshold
+            freeShipIndicator.style.display = 'block';
+            if (totalCost >= 55) {
+                freeShipIndicator.className = "text-[10px] text-emerald-700 bg-emerald-50 border border-emerald-100 rounded-lg p-2 text-center font-bold";
+                freeShipIndicator.innerHTML = '<i class="fa-solid fa-circle-check"></i> Συγχαρητήρια! Δικαιούστε ΔΩΡΕΑΝ μεταφορικά!';
+            } else {
+                const diff = 55 - totalCost;
+                freeShipIndicator.className = "text-[10px] text-amber-700 bg-amber-50 border border-amber-100 rounded-lg p-2 text-center";
+                freeShipIndicator.innerHTML = `Προσθέστε ακόμη <strong>${diff.toFixed(2).replace('.', ',')} €</strong> για ΔΩΡΕΑΝ μεταφορικά!`;
+            }
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        // Toggle the visual combination "Unity Mode" with Uxar
+        function toggleUnityMode(forceValue = null) {
+            isUnited = forceValue !== null ? forceValue : !isUnited;
+            
+            const pCard = document.getElementById('product-card');
+            const title = document.getElementById('product-title');
+            const price = document.getElementById('product-price');
+            const indicator = document.getElementById('unity-indicator');
+            const light = document.getElementById('unity-light');
+            const statusText = document.getElementById('unity-status-text');
+            const wings = document.getElementById('unity-wings');
+            const aura = document.getElementById('glow-aura');
+            const actionBtn = document.getElementById('unity-action-btn');
+            
+            // Stats modifiers
+            const sForceText = document.getElementById('stat-force-text');
+            const sForceBar = document.getElementById('stat-force-bar');
+            const sSpeedText = document.getElementById('stat-speed-text');
+            const sSpeedBar = document.getElementById('stat-speed-bar');
+            const sHeight = document.getElementById('stat-height');
+            const sMask = document.getElementById('stat-mask');
+            const specPieces = document.getElementById('spec-pieces');
+            const specVIP = document.getElementById('spec-vip');
+            const bundleOrigPrice = document.getElementById('bundle-original-price');
+
+            if (isUnited) {
+                pCard.classList.add('jungle-glow');
+                title.textContent = "Λέουα Ενωτής της Ζούγκλας + Uxar";
+                price.textContent = "22,99 €";
+                bundleOrigPrice.textContent = "24,98 €";
+                indicator.className = "absolute top-4 right-4 z-10 bg-emerald-900 text-emerald-300 px-3 py-1.5 rounded-full font-bold text-xs flex items-center space-x-2 shadow-md border border-emerald-700";
+                light.className = "h-2.5 w-2.5 rounded-full bg-emerald-400 animate-ping";
+                statusText.textContent = "Λειτουργία Ένωσης (Active)";
+                wings.classList.remove('opacity-0');
+                aura.classList.remove('opacity-0');
+                actionBtn.textContent = "Απενεργοποίηση Ένωσης";
+                actionBtn.className = "mt-3 text-xs bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded shadow transition duration-150 w-full";
+
+                // Boost stats
+                sForceText.textContent = "100 / 100 (Max Boosted)";
+                sForceBar.style.width = "100%";
+                sSpeedText.textContent = "100 / 100 (Max Boosted)";
+                sSpeedBar.style.width = "100%";
+                sHeight.innerHTML = "26 εκ. (Stands over 10\")";
+                sMask.textContent = "Μάσκα Ένωσης + Uxar Powers";
+                specPieces.textContent = "168"; // 79 + 89 pieces combined
+                specVIP.textContent = "115";
+
+                showToast("Ένωση Ενεργή!", "Ο Λέουα ενώθηκε με τον Ούξαρ! Δυνάμεις μάχης στο μέγιστο.");
+            } else {
+                pCard.classList.remove('jungle-glow');
+                title.textContent = "Λέουα Ενωτής της Ζούγκλας";
+                price.textContent = "14,99 €";
+                bundleOrigPrice.textContent = "";
+                indicator.className = "absolute top-4 right-4 z-10 bg-stone-900 text-stone-300 px-3 py-1.5 rounded-full font-bold text-xs flex items-center space-x-2";
+                light.className = "h-2.5 w-2.5 rounded-full bg-red-500 animate-pulse";
+                statusText.textContent = "Κανονική Λειτουργία";
+                wings.classList.add('opacity-0');
+                aura.classList.add('opacity-0');
+                actionBtn.textContent = "Ενεργοποίηση Ένωσης (Combine Mode)";
+                actionBtn.className = "mt-3 text-xs bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-4 py-2 rounded shadow transition duration-150 w-full";
+
+                // Reset stats
+                sForceText.textContent = "85 / 100";
+                sForceBar.style.width = "85%";
+                sSpeedText.textContent = "90 / 100";
+                sSpeedBar.style.width = "90%";
+                sHeight.innerHTML = "21 εκ. (Stands over 8\")";
+                sMask.textContent = "Μάσκα Ένωσης της Ζούγκλας";
+                specPieces.textContent = "79";
+                specVIP.textContent = "75";
+            }
+        }
+
+        // Change gallery view
+        function changeGalleryImage(src, type) {
+            const mainImg = document.getElementById('main-product-img');
+            const thumbs = document.querySelectorAll('.gallery-thumb');
+            
+            // Remove active style from all thumbs
+            thumbs.forEach(t => t.classList.remove('border-amber-400'));
+            thumbs.forEach(t => t.classList.add('border-stone-200'));
+
+            if (type === 'box') {
+                mainImg.src = "https://www.bricklink.com/SL/71305-1.jpg";
+                toggleUnityMode(false);
+            } else if (type === 'figure') {
+                mainImg.src = "https://www.bricklink.com/SL/71305-1.jpg"; // Fallback to box, but we style it with CSS rotation representation or let user know
+                showToast("Προβολή Φιγούρας", "Εναλλακτική λήψη της φιγούρας Lewa.");
+                toggleUnityMode(false);
+            } else if (type === 'mask') {
+                showToast("Μάσκα Ένωσης", "Λεπτομέρεια της Χρυσής Μάσκας Ένωσης.");
+                toggleUnityMode(false);
+            }
+        }
+
+        // Tab Switching
+        function switchTab(tab) {
+            const tabs = ['description', 'specs', 'reviews'];
+            tabs.forEach(t => {
+                document.getElementById(`tab-content-${t}`).classList.add('hidden');
+                document.getElementById(`tab-btn-${t}`).classList.remove('border-emerald-600', 'text-emerald-700');
+                document.getElementById(`tab-btn-${t}`).classList.add('border-transparent', 'text-stone-600');
+            });
+
+            document.getElementById(`tab-content-${tab}`).classList.remove('hidden');
+            document.getElementById(`tab-btn-${tab}`).classList.remove('border-transparent', 'text-stone-600');
+            document.getElementById(`tab-btn-${tab}`).classList.add('border-emerald-600', 'text-emerald-700');
+        }
+
+        function scrollToReviews() {
+            switchTab('reviews');
+            document.getElementById('tab-btn-reviews').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Toast notification helper
+        function showToast(title, desc) {
+            const toast = document.getElementById('notification-toast');
+            document.getElementById('toast-title').textContent = title;
+            document.getElementById('toast-desc').textContent = desc;
+
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 3500);
+        }
+
+        // Custom Review Posting
+        function toggleReviewForm() {
+            const container = document.getElementById('review-form-container');
+            container.classList.toggle('hidden');
+        }
+
+        function submitReview(e) {
+            e.preventDefault();
+            const name = document.getElementById('rev-name').value;
+            const title = document.getElementById('rev-title').value;
+            const rating = document.getElementById('rev-rating').value;
+            const comment = document.getElementById('rev-comment').value;
+
+            const list = document.getElementById('reviews-list');
+            const newReview = document.createElement('div');
+            newReview.className = "bg-emerald-50/50 p-4 rounded-xl border border-emerald-100 transition duration-300";
+            
+            let starsHtml = '';
+            for (let i = 1; i <= 5; i++) {
+                if (i <= rating) {
+                    starsHtml += '<i class="fa-solid fa-star"></i>';
+                } else {
+                    starsHtml += '<i class="fa-regular fa-star"></i>';
+                }
+            }
+
+            const today = new Date();
+            const greekMonths = ["Ιανουαρίου", "Φεβρουαρίου", "Μαρτίου", "Απριλίου", "Μαΐου", "Ιουνίου", "Ιουλίου", "Αυγούστου", "Σεπτεμβρίου", "Οκτωβρίου", "Νοεμβρίου", "Δεκεμβρίου"];
+            const formattedDate = `${today.getDate()} ${greekMonths[today.getMonth()]} 2016`;
+
+            newReview.innerHTML = `
+                <div class="flex justify-between items-start mb-2">
+                    <div>
+                        <h5 class="font-bold text-sm text-emerald-950">${title}</h5>
+                        <div class="flex text-amber-400 text-[10px] mt-1">
+                            ${starsHtml}
+                        </div>
+                    </div>
+                    <span class="text-stone-400 text-[10px]">${formattedDate}</span>
+                </div>
+                <p class="text-xs text-stone-600 leading-relaxed">${comment}</p>
+                <div class="mt-2 text-[10px] text-stone-500">Από τον χρήστη: <strong class="text-emerald-800">${name}</strong></div>
+            `;
+
+            // Insert at the top of list
+            list.insertBefore(newReview, list.firstChild);
+            
+            // Reset form
+            document.getElementById('review-form').reset();
+            toggleReviewForm();
+
+            // Update rating text
+            document.getElementById('rating-text').textContent = `4.7 / 5 (19 Αξιολογήσεις)`;
+            showToast("Ευχαριστούμε!", "Η αξιολόγησή σας υποβλήθηκε επιτυχώς.");
+        }
+
+        // Mini-game functions
+        function openMaskGame() {
+            document.getElementById('game-modal').classList.remove('hidden');
+        }
+
+        function closeMaskGame() {
+            document.getElementById('game-modal').classList.add('hidden');
+        }
+
+        function rotateRune(runeNum) {
+            const rune = document.getElementById(`rune-${runeNum}`);
+            let currentAngle = runeAngles[runeNum - 1];
+            currentAngle = (currentAngle + 90) % 360;
+            runeAngles[runeNum - 1] = currentAngle;
+            rune.style.transform = `rotate(${currentAngle}deg)`;
+            
+            // Check instantly if they match to play a sound effect visual
+            if (currentAngle === 0) {
+                rune.classList.remove('border-stone-700');
+                rune.classList.add('border-emerald-400');
+            } else {
+                rune.classList.remove('border-emerald-400');
+                rune.classList.add('border-stone-700');
+            }
+        }
+
+        function checkRuneAlignment() {
+            const aligned = runeAngles.every(angle => angle === 0);
+            const status = document.getElementById('game-status');
+            const claimBtn = document.getElementById('claim-btn');
+
+            if (aligned) {
+                status.className = "text-sm font-black text-emerald-400 mb-4 bg-emerald-950/60 p-3 rounded border border-emerald-500 animate-bounce";
+                status.innerHTML = "Η ΧΡΥΣΗ ΜΑΣΚΑ ΞΕΚΛΕΙΔΩΘΗΚΕ! <br> Κωδικός Δώρου: OKOTO2016 (Δωρεάν Αποστολή)";
+                claimBtn.textContent = "ΚΛΕΙΣΙΜΟ & ΕΞΑΡΓΥΡΩΣΗ";
+                claimBtn.onclick = function() {
+                    closeMaskGame();
+                    showToast("Κωδικός Ξεκλειδώθηκε!", "Ο κωδικός OKOTO2016 εφαρμόστηκε αυτόματα.");
+                }
+            } else {
+                status.className = "text-sm font-semibold text-red-400 mb-4 bg-red-950/40 p-2 rounded border border-red-500/30";
+                status.textContent = "Οι ρούνοι δεν είναι ευθυγραμμισμένοι! Δοκιμάστε ξανά.";
+            }
+        }
+
+        // Instructions Steps simulator
+        function openBuildInstructions() {
+            document.getElementById('instructions-modal').classList.remove('hidden');
+        }
+
+        function closeBuildInstructions() {
+            document.getElementById('instructions-modal').classList.add('hidden');
+        }
+
+        function changeBuildStep(direction) {
+            currentBuildStep = Math.max(1, Math.min(totalBuildSteps, currentBuildStep + direction));
+            
+            const stepData = stepsData[currentBuildStep - 1];
+            document.getElementById('step-badge').textContent = stepData.badge;
+            document.getElementById('step-title').textContent = stepData.title;
+            document.getElementById('step-desc').textContent = stepData.desc;
+            
+            const iconContainer = document.querySelector('#instructions-modal .animate-spin');
+            iconContainer.className = `${stepData.icon} text-5xl animate-spin`;
+        }
+
+        function checkoutSimulation() {
+            showToast("Προετοιμασία Παραγγελίας...", "Μεταφορά στο ασφαλές σύστημα πληρωμών του 2016.");
+            setTimeout(() => {
+                alert("Σας ευχαριστούμε για την προτίμηση! (Αυτή είναι μια προσομοίωση του LEGO.com April 2016)");
+            }, 1000);
+        }
+
+        function addToWishlist() {
+            showToast("Λίστα Επιθυμιών", "Ο Λέουα προστέθηκε στη λίστα επιθυμιών σας.");
+        }
+    </script>
+</body>
+</html>
