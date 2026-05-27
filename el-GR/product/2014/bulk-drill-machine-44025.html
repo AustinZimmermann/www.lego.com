@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="el-GR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>44025 Μηχάνημα Διάτρησης του BULK - LEGO® Shop Κατάστημα - LEGO.com GR</title>
+    <style>
+        /* 2014 LEGO.com Global Reset & Variables */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #1a1d24;
+            color: #ffffff;
+            background-image: radial-gradient(circle at top, #2d3545 0%, #12141a 100%);
+            min-height: 100vh;
+            font-family: Helvetica, sans-serif;
+        }
+
+        /* Top Yellow LEGO Header */
+        header {
+            background-color: #ffcf00;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            position: relative;
+            z-index: 100;
+        }
+
+        .lego-logo {
+            background-color: #ff0000;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 20px;
+            padding: 5px 8px;
+            border: 3px solid #000000;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .shop-brand {
+            color: #000;
+            font-weight: bold;
+            margin-left: 15px;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+
+        /* Hero Factory Theme Banner */
+        .theme-banner {
+            background: linear-gradient(90deg, #ff6a00 0%, #b34a00 100%);
+            padding: 10px 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            border-bottom: 3px solid #ff6a00;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .theme-banner a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Main Product Layout */
+        .product-container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+
+        @media (max-width: 768px) {
+            .product-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Left Column: Images */
+        .image-gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-image {
+            max-width: 100%;
+            height: auto;
+            background-color: #fff;
+            border-radius: 4px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+        }
+
+        .age-badge {
+            margin-top: 15px;
+            background-color: #222;
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: 1px solid #ff6a00;
+            font-size: 13px;
+        }
+
+        /* Right Column: Product Details */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-id {
+            color: #ff6a00;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .product-title {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .price-tag {
+            font-size: 28px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .availability {
+            color: #00cc44;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .availability::before {
+            content: "●";
+            margin-right: 5px;
+        }
+
+        /* Purchase Controls */
+        .purchase-box {
+            background: #252932;
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid #444;
+            margin-bottom: 30px;
+        }
+
+        .quantity-selector {
+            margin-bottom: 15px;
+                }
+
+        .quantity-selector label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #aaa;
+        }
+
+        .quantity-selector select {
+            padding: 8px;
+            background: #111;
+            color: white;
+            border: 1px solid #555;
+            border-radius: 4px;
+            width: 70px;
+        }
+
+        .add-to-cart-btn {
+            background: linear-gradient(180deg, #00cc44 0%, #009933 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            box-shadow: 0 3px 0 #006622;
+            text-transform: uppercase;
+            transition: background 0.2s;
+        }
+
+        .add-to-cart-btn:hover {
+            background: linear-gradient(180deg, #00e64d 0%, #00b33c 100%);
+        }
+
+        .add-to-cart-btn:active {
+            transform: translateY(3px);
+            box-shadow: none;
+        }
+
+        /* Product Description Content */
+        .description-box {
+            border-top: 1px solid #444;
+            padding-top: 20px;
+        }
+
+        .description-box h3 {
+            color: #ff6a00;
+            margin-bottom: 10px;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+        .description-box p {
+            line-height: 1.6;
+            color: #ccc;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .features-list {
+            list-style-type: square;
+            margin-left: 20px;
+            color: #ccc;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #222;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="lego-logo">LEGO</a>
+        <span class="shop-brand">Shop at Home</span>
+    </header>
+
+    <div class="theme-banner">
+        <a href="#">LEGO® HERO FACTORY (INVASION FROM BELOW)</a>
+        <span>Προϊόντα 2014</span>
+    </div>
+
+    <div class="product-container">
+        
+        <div class="image-gallery">
+            <img class="main-image" src="https://www.bricklink.com/SL/44025-1.jpg" alt="44025 Μηχάνημα Διάτρησης του BULK">
+            <div class="age-badge">
+                <strong>Ηλικίες:</strong> 7-14 | <strong>Κομμάτια:</strong> 113
+            </div>
+        </div>
+
+        <div class="product-details">
+            <span class="product-id">Κωδικός: 44025</span>
+            <h1 class="product-title">Μηχάνημα Διάτρησης του BULK</h1>
+            
+            <div class="price-tag">14,99 €</div>
+            
+            <div class="availability">Διαθέσιμο Τώρα</div>
+
+            <div class="purchase-box">
+                <div class="quantity-selector">
+                    <label for="qty">Ποσότητα:</label>
+                    <select id="qty">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <button class="add-to-cart-btn" onclick="addToCart()">Προσθήκη στο Καλάθι</button>
+            </div>
+
+            <div class="description-box">
+                <h3>Περιγραφή</h3>
+                <p><strong>Προχωρήστε βαθιά κάτω από το έδαφος, BULK! Τα άγρια κτήνη και οι μοχθηροί Τζαμπέρζ παραμονεύουν στις σκιές, γι’ αυτό χρησιμοποιήστε το πανίσχυρο Μηχάνημα Διάτρησης για να καθαρίσετε τον δρόμο.</strong></p>
+                <p>Αναπτύξτε την τεράστια περιστρεφόμενη κεφαλή διάτρησης για να ανοίξετε σήραγγες μέσα από τον σκληρό βράχο και χρησιμοποιήστε τους εκτοξευτές πυραύλων για να αποκρούσετε τις επιθέσεις των τεράτων. Κλείστε τη θωρακισμένη οροφή για μέγιστη προστασία και βοηθήστε τους υπόλοιπους Χίροουζ να σώσουν την Αντρόπολις Σίτυ!</p>
+                
+                <h3>Χαρακτηριστικά</h3>
+                <ul class="features-list">
+                    <li>Περιλαμβάνει τη μίνι φιγούρα του BULK με ένα όπλο.</li>
+                    <li>Διαθέτει μια τεράστια, χειροκίνητα περιστρεφόμενη κεφαλή διάτρησης, ανοιγόμενο θωρακισμένο πιλοτήριο, διπλούς εκτοξευτές πυραύλων και κινούμενες αρθρώσεις.</li>
+                    <li>Περιλαμβάνει επίσης ένα Τζαμπέρ που μπορεί να εκτιναχθεί!</li>
+                    <li>Συνδυάζεται με το 44023 Ερπυστής του ROCKA για να δημιουργήσετε ένα ακόμα μεγαλύτερο, συνδυασμένο μοντέλο Χίροου!</li>
+                    <li>Ύψος πάνω από 13 εκατοστά!</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        LEGO, το λογότυπο LEGO και το HERO FACTORY είναι εμπορικά σήματα του Ομίλου LEGO. ©2014 The LEGO Group. All rights reserved.
+    </footer>
+
+    <script>
+        function addToCart() {
+            const quantity = document.getElementById('qty').value;
+            alert('Το προϊόν "44025 Μηχάνημα Διάτρησης του BULK" (Ποσότητα: ' + quantity + ') προστέθηκε επιτυχώς στο καλάθι αγορών σας!');
+        }
+    </script>
+</body>
+</html>
