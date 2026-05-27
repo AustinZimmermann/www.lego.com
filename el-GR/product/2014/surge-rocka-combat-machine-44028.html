@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="el-GR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Μαχητική Μηχανή των SURGE & ROCKA 44028 | Hero Factory | LEGO.com GR</title>
+    <style>
+        /* 2014 LEGO Hero Factory Cyber/Industrial Aesthetic */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica, sans-serif;
+            background-color: #0c0f12;
+            color: #ffffff;
+            background-image: radial-gradient(circle at 50% 30%, #171d26 0%, #0c0f12 80%);
+        }
+
+        /* Top Global Nav Bar (Classic LEGO Yellow) */
+        .lego-nav {
+            background-color: #ffcf00;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+            border-bottom: 2px solid #e5b800;
+        }
+
+        .lego-logo {
+            background-color: #ff0000;
+            color: #fff;
+            font-weight: bold;
+            padding: 5px 12px;
+            font-size: 22px;
+            text-transform: uppercase;
+            border: 2px solid #000;
+            display: inline-block;
+            letter-spacing: -1px;
+        }
+
+        .market-select {
+            color: #222;
+            font-weight: bold;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Hero Factory Theme Header Banner */
+        .hf-header {
+            background: linear-gradient(180deg, #1b052e 0%, #3d1b5c 100%);
+            border-bottom: 3px solid #ffcc00;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(255, 204, 0, 0.2);
+        }
+
+        .hf-logo {
+            font-size: 26px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #fff;
+            text-shadow: 0 0 12px #ffcc00, 2px 2px 0px #000;
+        }
+
+        /* Main Product Layout */
+        .product-container {
+            max-width: 1150px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .product-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        /* Image Display Section */
+        .image-gallery {
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid #2c3545;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            box-shadow: inset 0 0 40px rgba(0,0,0,0.8);
+        }
+
+        .main-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.7));
+        }
+
+        .badge-2014 {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #ff0055;
+            color: white;
+            padding: 6px 14px;
+            font-weight: bold;
+            transform: rotate(-4deg);
+            border-radius: 4px;
+            font-size: 15px;
+            box-shadow: 2px 2px 0px #000;
+            letter-spacing: 1px;
+        }
+
+        /* Product Details / E-commerce Section */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .set-number {
+            color: #ffcc00;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        .product-title {
+            font-size: 38px;
+            margin: 8px 0 25px 0;
+            color: #fff;
+            line-height: 1.2;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.9);
+        }
+
+        .meta-specs {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .spec-tag {
+            background: #1f2532;
+            padding: 8px 16px;
+            border-radius: 6px;
+            border: 1px solid #3b475e;
+        }
+
+        .spec-tag b {
+            color: #ffcc00;
+        }
+
+        .price-tag {
+            font-size: 36px;
+            font-weight: bold;
+            color: #00ffcc;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
+        }
+
+        /* Shop@Home Retro Button */
+        .btn-buy {
+            background: linear-gradient(180deg, #ff9400 0%, #e64d00 100%);
+            color: white;
+            border: 1px solid #b33c00;
+            padding: 16px 35px;
+            font-size: 22px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            box-shadow: 0 5px 15px rgba(230, 77, 0, 0.4);
+            text-transform: uppercase;
+            width: fit-content;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-buy:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 20px rgba(230, 77, 0, 0.6);
+            background: linear-gradient(180deg, #ffaa22 0%, #ff5500 100%);
+        }
+
+        .btn-buy:active {
+            transform: translateY(1px);
+        }
+
+        /* Product Description Box */
+        .description-section {
+            max-width: 1150px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .description-box {
+            background: rgba(25, 31, 41, 0.7);
+            border: 1px solid #333f54;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .description-box h3 {
+            color: #ffcc00;
+            font-size: 22px;
+            margin-top: 0;
+            border-bottom: 2px solid #333f54;
+            padding-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .description-box p {
+            line-height: 1.7;
+            color: #e2e8f0;
+            font-size: 16px;
+        }
+
+        .features-list {
+            margin-top: 20px;
+            padding-left: 20px;
+        }
+
+        .features-list li {
+            margin-bottom: 10px;
+            color: #cbd5e1;
+        }
+
+        /* Cart Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: -100px;
+            right: 30px;
+            background: #ffcc00;
+            color: #000;
+            padding: 18px 30px;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 6px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+            transition: bottom 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 1000;
+            border: 2px solid #000;
+        }
+
+        .toast.show {
+            bottom: 30px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 80px;
+            font-size: 13px;
+            color: #556275;
+            border-top: 1px solid #1f2532;
+            background: #080a0d;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="lego-nav">
+        <div class="lego-logo">LEGO</div>
+        <div class="market-select">Κατάστημα LEGO® — Ελλάδα (el-GR)</div>
+    </nav>
+
+    <header class="hf-header">
+        <div class="hf-logo">Hero Factory — Invasion from Below</div>
+    </header>
+
+    <main class="product-container">
+        
+        <section class="image-gallery">
+            <span class="badge-2014">ΝΕΟ 2014</span>
+            <img src="https://www.bricklink.com/SL/44028-1.jpg" alt="LEGO 44028 Μαχητική Μηχανή των SURGE & ROCKA" class="main-image">
+        </section>
+
+        <section class="product-details">
+            <p class="set-number">Κωδικός: 44028</p>
+            <h1 class="product-title">Μαχητική Μηχανή των SURGE &amp; ROCKA</h1>
+            
+            <div class="meta-specs">
+                <span class="spec-tag">Ηλικίες: <b>8-14</b></span>
+                <span class="spec-tag">Κομμάτια: <b>149</b></span>
+            </div>
+
+            <div class="price-tag">29,99 €</div>
+
+            <button class="btn-buy" id="btnAddToCart">Προσθηκη στο Καλαθι</button>
+        </section>
+
+    </main>
+
+    <section class="description-section">
+        <div class="description-box">
+            <h3>Περιγραφή Προϊόντος</h3>
+            <p>
+                Μπείτε στη μάχη με τη <strong>Μαχητική Μηχανή</strong>! Ανακτήστε τον έλεγχο των δρόμων της Αντρόπολις Σίτυ από τα χέρια των τρομερών πλασμάτων που αναδύθηκαν από τα έγκατα της γης. Οι Χίροουζ SURGE και ROCKA ένωσαν τις δυνάμεις τους για να δημιουργήσουν αυτό το πανίσχυρο όχημα μάχης.
+            </p>
+            <p>
+                Απομακρύνετε τα ιπτάμενα τέρατα με τα ενεργά πυροβόλα όπλα και τη λειτουργία αυτόματης εκτόξευσης πυραύλων. Ανοίξτε το πιλοτήριο, τοποθετήστε τους Χίροουζ στα χειριστήρια και χρησιμοποιήστε τη δαγκάνα της μηχανής για να αιχμαλωτίσετε τα αυγά των τεράτων πριν εκκολαφθούν!
+            </p>
+            <ul class="features-list">
+                <li>Περιλαμβάνει μίνι φιγούρες των Χίροουζ <strong>SURGE</strong> και <strong>ROCKA</strong> με όπλα.</li>
+                <li>Διαθέτει ανοιγόμενο διπλό πιλοτήριο, περιστρεφόμενο εκτοξευτήρα, ελαστικούς πυραύλους και κινούμενες αρθρώσεις.</li>
+                <li>Περιλαμβάνει επίσης ένα αυγό-κουκούλι και ένα ιπτάμενο παράσιτο.</li>
+                <li>Συνδυάζεται με το 44025 Μηχάνημα Διάτρησης του BULK για ακόμα μεγαλύτερες μάχες!</li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="toast" id="cartToast">Το προϊόν προστέθηκε με επιτυχία στο καλάθι σας!</div>
+
+    <footer>
+        <p>&copy;2014 The LEGO Group. All rights reserved. LEGO, το λογότυπο LEGO και το HERO FACTORY είναι εμπορικά σήματα της LEGO Group.</p>
+    </footer>
+
+    <script>
+        const buyButton = document.getElementById('btnAddToCart');
+        const toastNotification = document.getElementById('cartToast');
+
+        buyButton.addEventListener('click', () => {
+            // Show custom 2014-style feedback
+            toastNotification.classList.add('show');
+            buyButton.textContent = 'Προστέθηκε!';
+            buyButton.style.background = 'linear-gradient(180deg, #00e699 0%, #009966 100%)';
+            buyButton.style.borderColor = '#006644';
+            
+            // Hide notification after 3.5 seconds
+            setTimeout(() => {
+                toastNotification.classList.remove('show');
+            }, 3500);
+        });
+    </script>
+</body>
+</html>
