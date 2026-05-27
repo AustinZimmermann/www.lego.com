@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="el-GR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Μηχανή Ψύλλος της BREEZ 44027 | Hero Factory | LEGO.com GR</title>
+    <style>
+        /* 2014 LEGO Hero Factory Aesthetic */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica, sans-serif;
+            background-color: #0b0d11;
+            color: #ffffff;
+            background-image: radial-gradient(circle at 50% 30%, #1a2332 0%, #0b0d11 70%);
+        }
+
+        /* Top Global Nav Bar (Classic LEGO Yellow) */
+        .lego-nav {
+            background-color: #ffcf00;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .lego-logo {
+            background-color: #ff0000;
+            color: #fff;
+            font-weight: bold;
+            padding: 5px 10px;
+            font-size: 20px;
+            text-transform: uppercase;
+            border: 2px solid #000;
+            display: inline-block;
+        }
+
+        .market-select {
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* Hero Factory Theme Header */
+        .hf-header {
+            background: linear-gradient(180deg, #2a0845 0%, #6441a5 100%);
+            border-bottom: 3px solid #00ffcc;
+            padding: 15px 20px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+        }
+
+        .hf-logo {
+            font-size: 28px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #fff;
+            text-shadow: 0 0 10px #00ffcc, 2px 2px 0px #000;
+        }
+
+        /* Main Container */
+        .product-container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .product-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Product Image Gallery Styles */
+        .image-gallery {
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid #333;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .main-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.6);
+        }
+
+        .badge-2014 {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #ff0055;
+            color: white;
+            padding: 5px 10px;
+            font-weight: bold;
+            transform: rotate(-5deg);
+            border-radius: 3px;
+            font-size: 14px;
+            box-shadow: 2px 2px 0px #000;
+        }
+
+        /* Product Info Styles */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .set-number {
+            color: #00ffcc;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .product-title {
+            font-size: 36px;
+            margin: 5px 0 20px 0;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .meta-specs {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .spec-tag {
+            background: #222631;
+            padding: 6px 12px;
+            border-radius: 20px;
+            border: 1px solid #444;
+        }
+
+        .price-tag {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ffcf00;
+            margin-bottom: 20px;
+        }
+
+        /* Buy Button (Classic Shop@Home style with HF twist) */
+        .btn-buy {
+            background: linear-gradient(180deg, #ff9900 0%, #ff5500 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(255, 85, 0, 0.4);
+            text-transform: uppercase;
+            width: fit-content;
+        }
+
+        .btn-buy:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 85, 0, 0.6);
+        }
+
+        .btn-buy:active {
+            transform: translateY(1px);
+        }
+
+        /* Cart Notification Toast */
+        .toast {
+            position: fixed;
+            bottom: -100px;
+            right: 20px;
+            background: #00ffcc;
+            color: #000;
+            padding: 15px 25px;
+            font-weight: bold;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            transition: bottom 0.5s ease-in-out;
+            z-index: 1000;
+        }
+
+        .toast.show {
+            bottom: 20px;
+        }
+
+        /* Product Description Section */
+        .description-section {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .description-box {
+            background: rgba(34, 38, 49, 0.6);
+            border: 1px solid #3d4457;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        .description-box h3 {
+            color: #00ffcc;
+            margin-top: 0;
+            border-bottom: 1px solid #3d4457;
+            padding-bottom: 10px;
+        }
+
+        .description-box p {
+            line-height: 1.6;
+            color: #d1d5db;
+        }
+
+        footer {
+            text-align: center;
+            padding: 4px 0;
+            margin-top: 60px;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #222;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="lego-nav">
+        <div class="lego-logo">LEGO</div>
+        <div class="market-select">Shop @ Home — Ελλάδα (el-GR)</div>
+    </nav>
+
+    <header class="hf-header">
+        <div class="hf-logo">Hero Factory — Invasion from Below</div>
+    </header>
+
+    <main class="product-container">
+        
+        <section class="image-gallery">
+            <span class="badge-2014">ΝΕΟ 2014</span>
+            <img src="https://www.bricklink.com/SL/44027-1.jpg" alt="LEGO 44027 Μηχανή Ψύλλος της BREEZ" class="main-image">
+        </section>
+
+        <section class="product-details">
+            <p class="set-number">Κωδικος: 44027</p>
+            <h1 class="product-title">Μηχανή Ψύλλος της BREEZ</h1>
+            
+            <div class="meta-specs">
+                <span class="spec-tag">Ηλικίες: <b>7-14</b></span>
+                <span class="spec-tag">Κομμάτια: <b>102</b></span>
+            </div>
+
+            <div class="price-tag">9,99 €</div>
+
+            <button class="btn-buy" id="addToCartBtn">Προσθηκη στο Καλαθι</button>
+        </section>
+
+    </main>
+
+    <section class="description-section">
+        <div class="description-box">
+            <h3>Περιγραφή Προϊόντος</h3>
+            <p>
+                Προσοχή, BREEZ! Τα άγρια ιπτάμενα τέρατα με τα τεράστια κουκούλια επιτίθενται στην Αντρόπολις Σίτυ. Ενεργοποίησε την πανίσχυρη <strong>Μηχανή Ψύλλο</strong> και σπεύσε σε βοήθεια. Χρησιμοποίησε τα ελατήρια εκτόξευσης και τα όπλα σου για να απωθήσεις τους εχθρούς που αναδύονται από τα έγκατα της γης!
+            </p>
+            <p>
+                Περιλαμβάνει τη μίνι φιγούρα της <strong>BREEZ</strong> με όπλο και αξεσουάρ, καθώς και ένα αυγό-κουκούλι με ένα μικρό ιπτάμενο παράσιτο. 
+                Συνδύασέ το με το 44023 Ερπυστής ROCKA για να φτιάξεις ένα ακόμα μεγαλύτερο μοντέλο Hero Factory!
+            </p>
+        </div>
+    </section>
+
+    <div class="toast" id="cartToast">Το προϊόν προστέθηκε στο καλάθι αγορών σας!</div>
+
+    <footer>
+        <p>&copy;2014 The LEGO Group. All rights reserved. Hero Factory and the LEGO logo are trademarks of the LEGO Group.</p>
+    </footer>
+
+    <script>
+        const cartBtn = document.getElementById('addToCartBtn');
+        const toast = document.getElementById('cartToast');
+
+        cartBtn.addEventListener('click', () => {
+            toast.classList.add('show');
+            cartBtn.textContent = 'Στο Καλαθι!';
+            cartBtn.style.background = 'linear-gradient(180deg, #00cc88 0%, #008855 100%)';
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
