@@ -3,449 +3,940 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>8621 ツラガ デューム＆ニヴォーク - LEGO.com バイオニクル</title>
-    <meta name="description" content="メトロ・ヌイの指導者、ツラガ デュームと彼の忠実なラヒ、ニヴォークが登場。2004年バイオニクルシリーズ。">
-    
-    <!-- 構造化データ (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org/",
-      "@type": "Product",
-      "name": "8621 ツラガ デューム＆ニヴォーク",
-      "image": "https://www.lego.com/cdn/product-assets/product.img.pri/8621_prod.jpg?format=webply&fit=bounds&quality=70&width=500&height=500&dpr=1.5",
-      "description": "メトロ・ヌイの偉大なる指導者ツラガ デュームと、彼を運ぶ巨鳥ニヴォークのセット。デュームはニヴォークの背中に装着可能。専用のカノカディスクが付属。",
-      "brand": {
-        "@type": "Brand",
-        "name": "LEGO BIONICLE"
-      },
-      "sku": "8621",
-      "releaseDate": "2004-06-01",
-      "offers": {
-        "@type": "Offer",
-        "url": "https://www.lego.com/ja-jp/product/turaga-dume-nivawk-8621",
-        "priceCurrency": "JPY",
-        "price": "3480",
-        "availability": "https://schema.org/InStock",
-        "itemCondition": "https://schema.org/NewCondition"
-      }
-    }
-    </script>
-
+    <title>LEGO.com SHOP: 8621 ツラガ デューム＆ニヴォーク (2004)</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* 2004年当時の雰囲気を再現するためのCSS */
-        :root {
-            --lego-red: #d11013;
-            --lego-yellow: #ffcf00;
-            --bionicle-bg: #0a0a0a;
-            --bionicle-silver: #a0a0a0;
-            --bionicle-panel: #1f1f1f;
-            --bionicle-accent: #b61c1c; /* Metru Red */
-            --text-main: #e0e0e0;
-            --link-color: #ffcc00;
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=DotGothic16&display=swap');
+        
+        /* Retro Web Typography */
+        .bionicle-font {
+            font-family: 'Share Tech Mono', 'Courier New', monospace;
         }
-
-        body {
-            background-color: #000;
-            background-image: repeating-linear-gradient(45deg, #050505 0, #050505 1px, #000 0, #000 50%);
-            background-size: 20px 20px;
-            color: var(--text-main);
-            font-family: "Hiragino Kaku Gothic Pro", sans-serif;
-            margin: 0;
-            padding: 0;
-            font-size: 12px; /* 当時は文字が小さかった */
+        .retro-jp {
+            font-family: 'DotGothic16', 'MS Gothic', sans-serif;
         }
-
-        a {
-            color: var(--link-color);
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* レイアウトコンテナ */
-        .page-container {
-            width: 100%;
-            max-width: 800px; /* 当時の標準的な解像度幅 */
-            margin: 0 auto;
-            background-color: var(--bionicle-bg);
-            border-left: 2px solid #333;
-            border-right: 2px solid #333;
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.1);
-        }
-
-        /* ヘッダー */
-        header {
-            background-color: #d11013;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            padding: 0 20px;
-            border-bottom: 3px solid #ffcf00;
+        
+        /* Scanlines Overlay effect for 2004 CRT/Sci-Fi feel */
+        .scanlines {
             position: relative;
             overflow: hidden;
         }
-
-        .lego-logo {
-            background-color: #d11013;
-            color: white;
-            font-weight: 900;
-            font-size: 24px;
-            font-style: italic;
-            border: 2px solid white;
-            padding: 2px 5px;
-            margin-right: 20px;
-            display: inline-block;
-            box-shadow: 2px 2px 0px rgba(0,0,0,0.3);
-        }
-
-        .bionicle-logo-text {
-            font-family: "Impact", "Arial Black", sans-serif;
-            font-size: 32px;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 0 0 5px #ffcf00, 2px 2px 0 #000;
-            background: linear-gradient(to bottom, #fff 0%, #ccc 50%, #999 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* ナビゲーションバー (トップ) */
-        .top-nav {
-            background-color: #333;
-            padding: 5px 20px;
-            font-size: 11px;
-            border-bottom: 1px solid #555;
-            color: #999;
-        }
-        .breadcrumb {
-            color: #ccc;
-        }
-
-        /* メインコンテンツエリア */
-        .main-content {
-            display: flex;
-            min-height: 600px;
-        }
-
-        /* サイドバー */
-        .sidebar {
-            width: 160px;
-            background-color: #111;
-            border-right: 1px solid #333;
-            padding: 10px;
-            flex-shrink: 0;
-        }
-
-        .nav-button {
+        .scanlines::before {
+            content: " ";
             display: block;
-            background: linear-gradient(to bottom, #444, #222);
-            border: 1px solid #555;
-            color: #fff;
-            padding: 8px 10px;
-            margin-bottom: 5px;
-            font-weight: bold;
-            text-align: center;
-            border-radius: 2px;
-            position: relative;
-        }
-        .nav-button:hover {
-            background: linear-gradient(to bottom, var(--bionicle-accent), #500);
-            border-color: #f00;
-            text-decoration: none;
-            color: #ffcf00;
-        }
-        .nav-button::before {
-            content: '';
             position: absolute;
-            left: 2px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 4px;
-            height: 4px;
-            background-color: #999;
-            border-radius: 50%;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 10;
+            background-size: 100% 4px, 6px 100%;
+            pointer-events: none;
         }
 
-        /* 製品詳細エリア */
-        .product-area {
-            flex-grow: 1;
-            padding: 20px;
-            background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+        /* Metallic textures */
+        .metal-bg {
+            background-color: #12141c;
+            background-image: 
+                radial-gradient(at 50% 0%, rgba(41, 47, 66, 0.5) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(21, 26, 38, 0.8) 0px, transparent 50%);
         }
 
-        .product-header {
-            border-bottom: 2px solid var(--bionicle-accent);
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
+        /* Retro Bevel effect for 2004 buttons */
+        .retro-button {
+            border: 2px solid;
+            border-color: #ffffff #555555 #555555 #ffffff;
+            box-shadow: 1px 1px 0px #000000;
+        }
+        .retro-button:active {
+            border-color: #555555 #ffffff #ffffff #555555;
+            padding-top: 5px;
+            padding-bottom: 3px;
         }
 
-        h1 {
-            font-size: 24px;
-            color: var(--text-main);
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        h1 span {
-            color: var(--bionicle-accent);
-            font-size: 0.8em;
-            display: block;
-            margin-bottom: 5px;
+        .lego-tab-active {
+            border-color: #ffffff #555555 transparent #ffffff;
+            background-color: #0055aa;
         }
 
-        .product-number {
-            font-family: monospace;
-            font-size: 18px;
-            color: #666;
+        /* Custom scrollbar to look like old IE6 */
+        ::-webkit-scrollbar {
+            width: 12px;
         }
-
-        .product-layout {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
+        ::-webkit-scrollbar-track {
+            background: #e0e0e0; 
+            box-shadow: inset 1px 1px 0 #555555;
         }
-
-        .product-image-container {
-            flex: 1 1 300px;
-            border: 1px solid #333;
-            background-color: #000;
-            padding: 10px;
-            text-align: center;
-            position: relative;
+        ::-webkit-scrollbar-thumb {
+            background: #cccccc;
+            border: 2px solid;
+            border-color: #ffffff #555555 #555555 #ffffff;
         }
-        
-        /* 四隅の装飾 (2004年風) */
-        .corner {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            border-color: var(--bionicle-accent);
-            border-style: solid;
-        }
-        .tl { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
-        .tr { top: -1px; right: -1px; border-width: 2px 2px 0 0; }
-        .bl { bottom: -1px; left: -1px; border-width: 0 0 2px 2px; }
-        .br { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
-
-        .product-img {
-            max-width: 100%;
-            height: auto;
-            border: 1px solid #222;
-        }
-
-        .product-info {
-            flex: 1 1 250px;
-        }
-
-        .description-box {
-            background-color: rgba(30, 30, 30, 0.8);
-            border: 1px solid #444;
-            padding: 15px;
-            margin-bottom: 20px;
-            font-size: 13px;
-            line-height: 1.6;
-        }
-
-        .kanoka-disk {
-            float: right;
-            width: 60px;
-            height: 60px;
-            background: radial-gradient(circle, #b61c1c 30%, #333 70%);
-            border-radius: 50%;
-            border: 2px solid #silver;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: 10px;
-            margin-bottom: 10px;
-            box-shadow: 0 0 10px var(--bionicle-accent);
-            color: #fff;
-            font-weight: bold;
-            font-size: 10px;
-            text-align: center;
-        }
-
-        .buy-section {
-            background: #222;
-            border: 1px solid #444;
-            padding: 15px;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .price {
-            font-size: 18px;
-            color: #ffcf00;
-            font-weight: bold;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .btn-add-cart {
-            background-color: #d11013;
-            color: white;
-            border: 2px solid #fff;
-            padding: 10px 20px;
-            font-weight: bold;
-            cursor: pointer;
-            text-transform: uppercase;
-            transition: all 0.2s;
-            font-size: 14px;
-        }
-        .btn-add-cart:hover {
-            background-color: #ffcf00;
-            color: #d11013;
-            border-color: #d11013;
-        }
-
-        .specs {
-            margin-top: 20px;
-            border-top: 1px solid #333;
-            padding-top: 10px;
-            font-size: 11px;
-            color: #888;
-        }
-        .specs dt { float: left; clear: left; width: 100px; font-weight: bold; color: #aaa; }
-        .specs dd { margin-left: 100px; margin-bottom: 5px; }
-
-        /* フッター */
-        footer {
-            background-color: #111;
-            border-top: 3px solid #d11013;
-            padding: 20px;
-            text-align: center;
-            font-size: 10px;
-            color: #666;
-            margin-top: 0;
-        }
-
-        /* メトロ文字の装飾 */
-        .metru-text {
-            font-family: monospace; /* 本来はMatoran文字フォント */
-            color: #333;
-            font-size: 20px;
-            letter-spacing: 5px;
-            opacity: 0.5;
-            text-align: center;
-            margin-top: 10px;
-        }
-
     </style>
 </head>
-<body>
+<body class="bg-[#12141c] text-gray-200 bionicle-font min-h-screen flex flex-col selection:bg-cyan-500 selection:text-black">
 
-<div class="page-container">
-    
-    <!-- トップナビゲーション -->
-    <div class="top-nav">
-        <span class="breadcrumb">LEGO.com / バイオニクル / プロダクト / 8621 ツラガ デューム＆ニヴォーク</span>
-    </div>
+    <!-- TOP LEGO.com HEADER (2004 Classic Yellow & Blue) -->
+    <header class="bg-[#FFCC00] text-black border-b-4 border-[#CC9900] shadow-md z-20">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between p-2">
+            <!-- Logo & Brand -->
+            <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-start">
+                <div class="flex items-center gap-2">
+                    <!-- Red LEGO square -->
+                    <div class="bg-[#E11A22] text-white font-extrabold text-2xl px-2 py-1 tracking-tighter border-2 border-black flex items-center justify-center shadow-md select-none" style="font-family: 'Arial Black', sans-serif;">
+                        LEGO
+                    </div>
+                    <span class="font-bold text-xs tracking-wider retro-jp hidden sm:inline text-gray-800">
+                        | オンライン・ショップ (日本)
+                    </span>
+                </div>
+                <!-- 2004 Top Info Widgets -->
+                <div class="flex gap-2 text-xs font-semibold">
+                    <span class="bg-blue-800 text-white px-2 py-1 rounded text-[10px] uppercase tracking-widest animate-pulse">2004 Summer Catalog</span>
+                </div>
+            </div>
 
-    <!-- ヘッダー -->
-    <header>
-        <div class="lego-logo">LEGO</div>
-        <div class="bionicle-logo-text">BIONICLE</div>
+            <!-- Shop-at-Home Navigation Header -->
+            <div class="flex items-center gap-4 mt-2 md:mt-0 text-xs w-full md:w-auto justify-end">
+                <div class="flex items-center bg-white border border-gray-400 p-1 rounded">
+                    <input type="text" placeholder="キーワード・商品番号" class="bg-transparent text-black px-1 outline-none text-[11px] w-32 retro-jp">
+                    <button class="bg-red-600 hover:bg-red-700 text-white px-2 py-0.5 rounded text-[10px] font-bold retro-jp">検索</button>
+                </div>
+                <div class="flex gap-2">
+                    <button onclick="openCartModal()" class="bg-blue-600 text-white font-bold px-3 py-1 text-xs flex items-center gap-1 hover:bg-blue-700 transition shadow">
+                        🛒 <span class="retro-jp">買い物カゴ</span> (<span id="cart-count">0</span>)
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Classic 2004 Tab System -->
+        <div class="bg-[#002f6c] border-t border-blue-900">
+            <div class="max-w-6xl mx-auto flex text-xs text-white font-semibold">
+                <a href="#" class="px-4 py-2 hover:bg-[#004ca8] border-r border-blue-900 retro-jp">ホーム</a>
+                <a href="#" class="px-4 py-2 hover:bg-[#004ca8] border-r border-blue-900 retro-jp bg-[#0055aa] font-bold">製品カタログ</a>
+                <a href="#" class="px-4 py-2 hover:bg-[#004ca8] border-r border-blue-900 retro-jp">ゲームゾーン</a>
+                <a href="#" class="px-4 py-2 hover:bg-[#004ca8] border-r border-blue-900 retro-jp">バイオニクル特設</a>
+                <a href="#" class="px-4 py-2 hover:bg-[#004ca8] retro-jp">クラブハウス</a>
+            </div>
+        </div>
     </header>
 
-    <div class="main-content">
-        <!-- 左サイドバー -->
-        <aside class="sidebar">
-            <a href="#" class="nav-button">ホーム</a>
-            <a href="#" class="nav-button">プロダクト</a>
-            <a href="#" class="nav-button">ストーリー</a>
-            <a href="#" class="nav-button">ギャラリー</a>
-            <a href="#" class="nav-button">ゲーム</a>
-            <a href="#" class="nav-button">ダウンロード</a>
-            <a href="#" class="nav-button">クラブ</a>
+    <!-- MAIN METRU NUI WRAPPER -->
+    <div class="scanlines flex-grow metal-bg border-t-2 border-cyan-500 py-4 px-2 sm:px-4">
+        <div class="max-w-6xl mx-auto bg-[#1a1f2c] border border-gray-700 rounded shadow-2xl p-4 relative overflow-hidden">
             
-            <div style="margin-top: 30px; text-align: center;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/LEGO_logo.svg" width="50" alt="LEGO" style="opacity:0.5;">
-            </div>
-        </aside>
+            <!-- Atmospheric glow behind header -->
+            <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[300px] h-[150px] bg-cyan-500/10 blur-[80px] rounded-full pointer-events-none"></div>
 
-        <!-- メインコンテンツ -->
-        <main class="product-area">
-            
-            <div class="product-header">
-                <h1>
-                    <span>TITAN (タイタン)</span>
-                    ツラガ デューム＆ニヴォーク
-                </h1>
-                <span class="product-number">8621</span>
-            </div>
-
-            <div class="product-layout">
-                <!-- 商品画像 -->
-                <div class="product-image-container">
-                    <div class="corner tl"></div><div class="corner tr"></div>
-                    <div class="corner bl"></div><div class="corner br"></div>
-                    
-                    <img src="https://www.lego.com/cdn/product-assets/product.img.pri/8621_prod.jpg?format=webply&fit=bounds&quality=70&width=500&height=500&dpr=1.5" 
-                         alt="8621 Turaga Dume & Nivawk" 
-                         class="product-img"
-                         onerror="this.src='https://placehold.co/400x400/111/444?text=Image+Not+Found';">
-                    
-                    <div class="metru-text">METRU NUI</div>
+            <!-- Bionicle Campaign Top Banner -->
+            <div class="border-b-2 border-cyan-800/80 pb-3 mb-6 flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <!-- Retro Bionicle glowing badge -->
+                    <div class="border border-green-500 bg-black/60 px-4 py-2 rounded-md shadow-[0_0_10px_rgba(34,197,94,0.2)]">
+                        <span class="text-xs text-green-400 block tracking-widest font-bold">BIONICLE</span>
+                        <span class="text-xl tracking-tighter text-white font-bold block">METRU NUI</span>
+                    </div>
+                    <div>
+                        <h1 class="text-cyan-400 text-lg sm:text-2xl font-black uppercase tracking-wider">メトロ・ヌイの伝説 (2004)</h1>
+                        <p class="text-xs text-gray-400 retro-jp">伝説の都市 — 影に潜む驚威を解き放て！</p>
+                    </div>
                 </div>
 
-                <!-- 商品情報 -->
-                <div class="product-info">
+                <!-- Web Audio BGM Panel -->
+                <div class="bg-black/80 border border-cyan-900/50 p-2 rounded flex items-center gap-3 text-xs">
+                    <div class="flex flex-col">
+                        <span class="text-[10px] text-gray-500 uppercase tracking-widest">Atmosphere Synthesizer</span>
+                        <span id="music-status" class="text-cyan-400 font-bold retro-jp">サウンド：オフ</span>
+                    </div>
+                    <button onclick="toggleMusic()" class="bg-cyan-950 hover:bg-cyan-900 text-cyan-400 border border-cyan-500/50 px-3 py-1.5 rounded text-[11px] font-bold transition flex items-center gap-1">
+                        🎵 <span>再生/停止</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Two-Column Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                
+                <!-- SIDEBAR: Category navigation & Retro widgets (1 Column) -->
+                <aside class="lg:col-span-1 space-y-6">
                     
-                    <div class="description-box">
-                        <div class="kanoka-disk">
-                            KANOKA<br>DISK
-                        </div>
-                        <p><strong>メトロ・ヌイの影に潜む力...</strong></p>
-                        <p>都市の指導者であるツラガ デュームは、巨大なラヒ「ニヴォーク」と共にメトロ・ヌイの秩序を監視している。しかし、彼の行動には謎が多い。</p>
-                        <p>デュームはニヴォークの背中に装着可能。翼を広げて空を舞い、強力なパワー・カノカディスクを発射して敵を威嚇せよ！</p>
-                        <ul>
-                            <li>限定版カノカディスクが付属。</li>
-                            <li>ニヴォークの翼幅は30cm以上！</li>
-                            <li>他のセットと組み合わせて「究極のデューム」を作ろう。</li>
+                    <!-- Retro navigation tree -->
+                    <div class="bg-black/40 border border-gray-800 p-3 rounded">
+                        <h3 class="text-cyan-400 text-xs font-bold uppercase border-b border-gray-800 pb-1 mb-2 retro-jp">製品カテゴリ</h3>
+                        <ul class="text-xs space-y-2 retro-jp text-gray-300">
+                            <li><a href="#" class="hover:text-cyan-400 flex items-center gap-1">▶ トーアメトロ (Toa Metru)</a></li>
+                            <li><a href="#" class="hover:text-cyan-400 flex items-center gap-1">▶ ヴァキ (Vahki)</a></li>
+                            <li><a href="#" class="hover:text-cyan-400 flex items-center gap-1 text-cyan-400 font-semibold">▶ タイタン (Titans)</a></li>
+                            <li class="pl-4"><a href="#" class="text-gray-400 hover:text-white">・8621 デューム＆ニヴォーク</a></li>
+                            <li class="pl-4"><a href="#" class="text-gray-400 hover:text-white">・8622 ニディーキ</a></li>
+                            <li class="pl-4"><a href="#" class="text-gray-400 hover:text-white">・8623 クレッカ</a></li>
+                            <li><a href="#" class="hover:text-cyan-400 flex items-center gap-1">▶ マトラン (Matoran)</a></li>
                         </ul>
                     </div>
 
-                    <div class="buy-section">
-                        <span class="price">発売中</span>
-                        <button class="btn-add-cart" onclick="addToCart()">カートに入れる</button>
-                        <br><br>
-                        <small style="color: #666;">※2004年当時の再現ページです。実際には購入できません。</small>
+                    <!-- Web Counter - Extremely 2004 -->
+                    <div class="bg-black/50 border border-gray-800 p-3 rounded text-center">
+                        <span class="text-[9px] text-gray-500 uppercase tracking-widest block mb-1">VISITOR COUNTER</span>
+                        <div class="bg-black border border-gray-700 px-3 py-1.5 inline-block text-green-500 font-mono tracking-widest text-lg font-bold rounded" style="background-image: linear-gradient(#111, #222);">
+                            048,621
+                        </div>
+                        <p class="text-[9px] text-gray-500 mt-1 retro-jp">2004年夏よりカウント開始</p>
                     </div>
 
-                    <dl class="specs">
-                        <dt>製品番号</dt>
-                        <dd>8621</dd>
-                        <dt>対象年齢</dt>
-                        <dd>8-16歳</dd>
-                        <dt>ピース数</dt>
-                        <dd>179</dd>
-                        <dt>発売年</dt>
-                        <dd>2004年</dd>
-                    </dl>
-                </div>
+                    <!-- DVD Promo banner -->
+                    <div class="border border-red-900/50 bg-gradient-to-br from-red-950/40 to-black p-3 rounded text-center relative overflow-hidden group">
+                        <span class="absolute top-0 right-0 bg-red-600 text-white font-bold text-[8px] px-2 py-0.5 rounded-bl uppercase">MOVIE</span>
+                        <h4 class="text-white text-xs font-bold tracking-wider uppercase mb-1">BIONICLE®2</h4>
+                        <p class="text-[10px] text-red-400 font-semibold mb-2 retro-jp">メトロ・ヌイの伝説</p>
+                        <div class="bg-black/60 p-1.5 rounded border border-red-950 text-left text-[9px] text-gray-400 leading-normal retro-jp">
+                            トーアメトロとなり、大災害を阻止せよ。今秋、ビデオ＆DVD日本語版が世界同時発売決定！
+                        </div>
+                        <button class="mt-2 text-[9px] text-white underline hover:text-red-400 retro-jp">特別予告編を見る ▶</button>
+                    </div>
+
+                    <!-- LEGO Club Card -->
+                    <div class="border border-blue-900/40 bg-gradient-to-br from-[#002f6c]/40 to-black p-3 rounded text-center">
+                        <span class="text-[9px] text-blue-400 uppercase tracking-widest font-bold block mb-1">JOIN LEGO CLUB</span>
+                        <p class="text-[10px] text-gray-300 mb-2 retro-jp">無料のレゴ®マガジンをご自宅にお届け！最新ゲームやコンテストに挑戦しよう。</p>
+                        <button class="bg-blue-600 text-white font-bold px-3 py-1 text-[10px] rounded hover:bg-blue-500 retro-button retro-jp">クラブへ入会する</button>
+                    </div>
+                </aside>
+
+                <!-- PRODUCT DISPLAY & SIMULATOR (3 Columns) -->
+                <main class="lg:col-span-3 space-y-6">
+                    
+                    <!-- Breadcrumbs -->
+                    <nav class="text-xs text-gray-400 retro-jp flex gap-1 items-center">
+                        <a href="#" class="hover:text-cyan-400">ホーム</a> <span>&gt;</span>
+                        <a href="#" class="hover:text-cyan-400">バイオニクル</a> <span>&gt;</span>
+                        <a href="#" class="hover:text-cyan-400">タイタン</a> <span>&gt;</span>
+                        <span class="text-gray-200">8621 ツラガ デューム＆ニヴォーク</span>
+                    </nav>
+
+                    <!-- Product Main Area -->
+                    <div class="bg-black/30 border border-gray-800 p-4 rounded-lg grid grid-cols-1 md:grid-cols-2 gap-6 relative">
+                        
+                        <!-- Left: Product Images / Gallery -->
+                        <div class="space-y-4">
+                            <!-- Main Frame with glowing bracket corners -->
+                            <div class="relative bg-black border border-cyan-900/40 p-2 rounded overflow-hidden flex items-center justify-center min-h-[280px]">
+                                <!-- Glowing corner brackets -->
+                                <div class="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-cyan-500"></div>
+                                <div class="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-cyan-500"></div>
+                                <div class="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-cyan-500"></div>
+                                <div class="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-cyan-500"></div>
+
+                                <!-- Actual Product Image with Fallback -->
+                                <img id="product-main-img" src="https://www.lego.com/cdn/product-assets/product.img.pri/8621_prod.jpg" 
+                                     alt="LEGO 8621 Turaga Dume & Nivawk" 
+                                     class="max-w-full max-h-[260px] object-contain transition-all duration-300 drop-shadow-[0_0_15px_rgba(0,0,0,0.8)]"
+                                     onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'250\' viewBox=\'0 0 300 250\'><rect width=\'100%\' height=\'100%\' fill=\'%230b0d13\'/><text x=\'50%\' y=\'50%\' text-anchor=\'middle\' fill=\'%2338bdf8\' font-family=\'monospace\' font-size=\'14\'>[8621 Turaga Dume Image]</text></svg>';">
+                                
+                                <span class="absolute bottom-2 right-2 bg-black/75 px-2 py-0.5 rounded text-[9px] text-cyan-400 font-bold tracking-widest">ZOOM</span>
+                            </div>
+
+                            <!-- Thumbnails (Retro styled) -->
+                            <div class="grid grid-cols-4 gap-2">
+                                <button onclick="setProductView('main')" class="border border-cyan-500 bg-cyan-950/20 p-1 rounded hover:border-cyan-400 transition">
+                                    <div class="text-[9px] text-center text-cyan-400 font-bold uppercase py-1">メイン画像</div>
+                                </button>
+                                <button onclick="setProductView('box')" class="border border-gray-800 bg-black/40 p-1 rounded hover:border-cyan-400 transition">
+                                    <div class="text-[9px] text-center text-gray-400 font-bold uppercase py-1">BOX ART</div>
+                                </button>
+                                <button onclick="setProductView('combiner')" class="border border-gray-800 bg-black/40 p-1 rounded hover:border-cyan-400 transition">
+                                    <div class="text-[9px] text-center text-gray-400 font-bold uppercase py-1">合体モデル</div>
+                                </button>
+                                <button onclick="setProductView('schematic')" class="border border-gray-800 bg-black/40 p-1 rounded hover:border-cyan-400 transition">
+                                    <div class="text-[9px] text-center text-gray-400 font-bold uppercase py-1">内部構造</div>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Right: Specs & Cart Purchase -->
+                        <div class="flex flex-col justify-between space-y-4">
+                            <div class="space-y-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="bg-cyan-950 border border-cyan-500/50 text-cyan-400 font-bold text-[10px] px-2 py-0.5 rounded">ITEM: 8621</span>
+                                    <span class="bg-gray-800 text-gray-300 font-semibold text-[10px] px-2 py-0.5 rounded retro-jp">対象年齢: 8才</span>
+                                </div>
+                                <h2 class="text-2xl font-black text-white leading-tight uppercase tracking-wide">
+                                    ツラガ デューム＆ニヴォーク
+                                </h2>
+                                <p class="text-xs text-cyan-400 font-bold tracking-widest">TURAGA DUME &amp; NIVAWK</p>
+                                
+                                <div class="border-t border-b border-gray-800/80 py-2 my-2">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-sm text-gray-400 retro-jp">LEGOカタログ希望小売価格:</span>
+                                        <span class="text-2xl font-bold text-white tracking-wide">¥2,980 <span class="text-xs text-gray-400 font-normal retro-jp">(税込)</span></span>
+                                    </div>
+                                    <div class="text-[10px] text-green-400 text-right font-bold tracking-wider mt-1 retro-jp">● オンラインショップ在庫あり (即納可能)</div>
+                                </div>
+
+                                <p class="text-xs text-gray-300 leading-relaxed retro-jp">
+                                    闇に包まれし伝説の都市、メトロ・ヌイの支配者ツラガ デュームと、その肩にとまる巨大な偵察鳥ニヴォークが登場！ニヴォークの巨大なウイングは、背中のギア・クランクを回転させることでリアルに羽ばたくぞ。鋭いクチバシで獲物を一網打尽にしろ！
+                                </p>
+                            </div>
+
+                            <!-- Buy button section -->
+                            <div class="space-y-2 pt-2">
+                                <div class="flex items-center gap-2 bg-black/50 p-2 rounded border border-gray-800">
+                                    <div class="text-center w-1/2 border-r border-gray-800">
+                                        <span class="text-[9px] text-gray-500 block uppercase">Pieces</span>
+                                        <span class="text-base font-bold text-white">179</span>
+                                    </div>
+                                    <div class="text-center w-1/2">
+                                        <span class="text-[9px] text-gray-500 block uppercase">Product Status</span>
+                                        <span class="text-xs text-green-400 font-bold retro-jp">2004夏新発売</span>
+                                    </div>
+                                </div>
+
+                                <button onclick="addToCart()" class="w-full bg-[#ff0000] hover:bg-red-600 text-white font-black text-sm tracking-wider py-3 rounded uppercase transition duration-150 border-2 border-red-500 shadow-lg flex items-center justify-center gap-2 retro-button retro-jp">
+                                    🛒 ショッピングバッグに入れる
+                                </button>
+                                <div class="flex gap-2">
+                                    <button class="w-1/2 bg-gray-800 hover:bg-gray-700 text-gray-300 font-bold text-[10px] py-1.5 rounded transition retro-jp border border-gray-700">
+                                        ★ ほしい物リストに保存
+                                    </button>
+                                    <button class="w-1/2 bg-gray-800 hover:bg-gray-700 text-gray-300 font-bold text-[10px] py-1.5 rounded transition retro-jp border border-gray-700">
+                                        📋 組立説明書 (PDF)
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- GIMMICK SIMULATOR (INTERACTIVE SVG TOY) -->
+                    <div class="border border-cyan-800/40 bg-gradient-to-b from-[#161a25] to-black rounded-lg p-4 shadow-xl space-y-4">
+                        <div class="flex items-center justify-between border-b border-gray-800 pb-2">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 bg-green-500 rounded-full animate-ping"></span>
+                                <h3 class="text-sm font-bold tracking-wider text-cyan-400 uppercase retro-jp">ギミック・シミュレーター (擬似体験)</h3>
+                            </div>
+                            <span class="text-[9px] text-gray-500 tracking-widest uppercase">Direct interactive gear test</span>
+                        </div>
+
+                        <p class="text-xs text-gray-400 leading-normal retro-jp">
+                            背中のクランクホイールを回したりスライダーを動かして、ニヴォークの<strong>巨大翼の羽ばたきギミック</strong>と<strong>クチバシの捕食アクション</strong>を体験しよう！
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                            
+                            <!-- Left controls -->
+                            <div class="space-y-4 bg-black/40 p-3 rounded border border-gray-800">
+                                <div class="space-y-1">
+                                    <label class="text-xs text-gray-300 flex justify-between items-center retro-jp">
+                                        <span>⚙️ クランク回転 (羽ばたき):</span>
+                                        <span id="flap-val" class="text-cyan-400 font-bold font-mono">0°</span>
+                                    </label>
+                                    <input type="range" id="wing-flap-slider" min="-30" max="30" value="0" class="w-full accent-cyan-500 bg-gray-900 rounded cursor-pointer h-2">
+                                </div>
+
+                                <div class="space-y-1">
+                                    <label class="text-xs text-gray-300 flex justify-between items-center retro-jp">
+                                        <span>🦅 くちばし咬合 (捕食):</span>
+                                        <span id="beak-val" class="text-cyan-400 font-bold font-mono">閉じる</span>
+                                    </label>
+                                    <button id="snap-beak-btn" class="w-full bg-cyan-950 hover:bg-cyan-900 text-cyan-400 font-bold py-1.5 rounded border border-cyan-500/30 text-xs retro-button retro-jp">
+                                        くちばしをカチッと動かす
+                                    </button>
+                                </div>
+
+                                <div class="pt-2 border-t border-gray-800">
+                                    <button id="auto-flap-btn" class="w-full bg-green-950 hover:bg-green-900 text-green-400 font-bold py-1.5 rounded border border-green-500/30 text-xs retro-button retro-jp">
+                                        自動アクション開始
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Center: Vector Schematic Visualizer -->
+                            <div class="md:col-span-2 flex items-center justify-center bg-black/80 rounded-lg p-4 border border-cyan-950 relative min-h-[220px]">
+                                <!-- Calibration grid -->
+                                <div class="absolute inset-0 bg-[radial-gradient(#111827_1px,transparent_1px)] [background-size:16px_16px] opacity-30 pointer-events-none"></div>
+
+                                <!-- SVG Interactive Render of Nivawk and Turaga Dume -->
+                                <svg id="bionicle-svg" class="w-full max-w-[320px] h-[220px] drop-shadow-[0_0_10px_rgba(6,182,212,0.15)]" viewBox="0 0 400 300">
+                                    <!-- Back Shadow -->
+                                    <circle cx="200" cy="150" r="90" fill="url(#radialGlow)" />
+
+                                    <!-- Definitions -->
+                                    <defs>
+                                        <radialGradient id="radialGlow" cx="50%" cy="50%" r="50%">
+                                            <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.15" />
+                                            <stop offset="100%" stop-color="#000" stop-opacity="0" />
+                                        </radialGradient>
+                                    </defs>
+
+                                    <!-- MAIN STAND / DETAILS -->
+                                    <line x1="200" y1="180" x2="200" y2="280" stroke="#374151" stroke-width="6" stroke-linecap="round" />
+                                    <rect x="170" y="275" width="60" height="10" rx="3" fill="#1f2937" />
+
+                                    <!-- NIVAWK BODY -->
+                                    <!-- Torso spine -->
+                                    <rect x="188" y="100" width="24" height="100" rx="8" fill="#1e293b" stroke="#0f172a" stroke-width="2" />
+                                    <circle cx="200" cy="130" r="10" fill="#0f172a" /> <!-- Gear core -->
+
+                                    <!-- Tail -->
+                                    <path d="M 190 200 L 210 200 L 225 250 L 175 250 Z" fill="#334155" stroke="#0f172a" stroke-width="2" />
+                                    <!-- Legs -->
+                                    <path d="M 180 180 L 160 210 L 170 230" fill="none" stroke="#475569" stroke-width="4" stroke-linecap="round" />
+                                    <path d="M 220 180 L 240 210 L 230 230" fill="none" stroke="#475569" stroke-width="4" stroke-linecap="round" />
+
+                                    <!-- LEFT WING GROUP -->
+                                    <g id="svg-wing-left" class="origin-[188px_110px] transition-transform duration-75">
+                                        <!-- Main bone structure -->
+                                        <line x1="188" y1="110" x2="80" y2="90" stroke="#0f172a" stroke-width="8" stroke-linecap="round" />
+                                        <line x1="80" y1="90" x2="20" y2="140" stroke="#334155" stroke-width="6" stroke-linecap="round" />
+                                        <!-- Wing Feathers / Blades -->
+                                        <path d="M 188 110 L 110 160 L 100 130 Z" fill="#475569" opacity="0.8" />
+                                        <path d="M 110 100 L 50 170 L 40 130 Z" fill="#64748b" opacity="0.9" />
+                                        <path d="M 80 90 L 10 180 L 15 130 Z" fill="#94a3b8" />
+                                        <!-- Technic connector glow dots -->
+                                        <circle cx="110" cy="100" r="2.5" fill="#22c55e" />
+                                    </g>
+
+                                    <!-- RIGHT WING GROUP -->
+                                    <g id="svg-wing-right" class="origin-[212px_110px] transition-transform duration-75">
+                                        <!-- Main bone structure -->
+                                        <line x1="212" y1="110" x2="320" y2="90" stroke="#0f172a" stroke-width="8" stroke-linecap="round" />
+                                        <line x1="320" y1="90" x2="380" y2="140" stroke="#334155" stroke-width="6" stroke-linecap="round" />
+                                        <!-- Wing Feathers / Blades -->
+                                        <path d="M 212 110 L 290 160 L 300 130 Z" fill="#475569" opacity="0.8" />
+                                        <path d="M 290 100 L 350 170 L 360 130 Z" fill="#64748b" opacity="0.9" />
+                                        <path d="M 320 90 L 390 180 L 385 130 Z" fill="#94a3b8" />
+                                        <!-- Technic connector glow dots -->
+                                        <circle cx="290" cy="100" r="2.5" fill="#22c55e" />
+                                    </g>
+
+                                    <!-- NIVAWK HEAD & BEAK -->
+                                    <g id="svg-neck" class="origin-[200px_100px]">
+                                        <rect x="194" y="65" width="12" height="40" rx="3" fill="#334155" stroke="#0f172a" />
+                                        <!-- Top Head -->
+                                        <path d="M 185 65 Q 200 45 215 65 Z" fill="#0f172a" />
+                                        <!-- Glowing Orange Eye -->
+                                        <circle cx="203" cy="58" r="3.5" fill="#ea580c" class="animate-pulse" />
+                                        
+                                        <!-- Upper Beak (Stationary) -->
+                                        <path d="M 205 52 L 235 62 L 205 68 Z" fill="#fbbf24" stroke="#d97706" />
+                                        <!-- Lower Beak (Movable) -->
+                                        <g id="svg-beak-lower" class="origin-[205px_68px] transition-transform duration-100">
+                                            <path d="M 205 68 L 228 72 L 202 76 Z" fill="#f59e0b" stroke="#d97706" />
+                                        </g>
+                                    </g>
+
+                                    <!-- TURAGA DUME ON BACK -->
+                                    <g id="turaga-dume" transform="translate(190, 105)">
+                                        <!-- Robe / body -->
+                                        <path d="M 5 15 L 15 15 L 18 40 L 2 40 Z" fill="#7f1d1d" />
+                                        <!-- Black Pauldrons -->
+                                        <rect x="1" y="10" width="18" height="6" rx="2" fill="#111827" />
+                                        <!-- Red Mask (Kiril) -->
+                                        <rect x="5" y="0" width="10" height="12" rx="2" fill="#ef4444" />
+                                        <!-- Dark eyes inside mask -->
+                                        <circle cx="8" cy="4" r="1" fill="#22c55e" />
+                                        <circle cx="12" cy="4" r="1" fill="#22c55e" />
+                                        <!-- Staff of Valour -->
+                                        <line x1="-3" y1="12" x2="-3" y2="48" stroke="#d97706" stroke-width="2" />
+                                        <circle cx="-3" cy="12" r="3.5" fill="#fbbf24" />
+                                    </g>
+                                </svg>
+
+                                <!-- Visual feedback info overlay -->
+                                <div class="absolute bottom-2 left-2 bg-black/95 px-2 py-1 rounded text-[9px] text-gray-500 font-mono">
+                                    MODEL SCALE: 1:1 INTERACTION SCHEMATIC
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- COMBINER & LORE DETAILS -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        
+                        <!-- Ultimate Dume Combiner Section -->
+                        <div class="border border-red-900/50 bg-black/40 rounded-lg p-4 space-y-3">
+                            <h4 class="text-xs font-bold text-red-500 uppercase tracking-widest retro-jp">⚡ トリプル合体：アルティメット デューム</h4>
+                            <p class="text-[11px] text-gray-300 leading-relaxed retro-jp">
+                                単一のモデルにとどまらない！ <strong>「8621 ツラガ デューム＆ニヴォーク」</strong>、<strong>「8622 ニディーキ」</strong>、そして<strong>「8623 クレッカ」</strong>の3つのタイタンセットをすべて集めると、伝説の究極悪の化身<strong>「アルティメット デューム (Ultimate Dume)」</strong>を構築可能！
+                            </p>
+                            <div class="bg-black border border-red-950/80 p-2.5 rounded flex items-center gap-3">
+                                <div class="bg-red-950/40 p-1.5 rounded text-center border border-red-900/40">
+                                    <span class="text-[8px] text-red-400 block font-bold leading-none">TOTAL PIECES</span>
+                                    <span class="text-lg font-mono font-bold text-white">552</span>
+                                </div>
+                                <div class="text-[10px] text-gray-400 leading-normal retro-jp">
+                                    合体説明書は「アルティメット デューム（日本特別パッケージ）」、またはオンライン・ファンゾーンにて今すぐダウンロード可能！
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Kanoka Code decoder (interactive mini-game) -->
+                        <div class="border border-green-950 bg-black/40 rounded-lg p-4 space-y-3">
+                            <h4 class="text-xs font-bold text-green-400 uppercase tracking-widest retro-jp">🔮 秘密のコード解読器 (Kanoka Code Decoder)</h4>
+                            <p class="text-[11px] text-gray-300 leading-normal retro-jp">
+                                2004年度のバイオニクルディスク（カノカ）に刻まれた伝説のコードや、秘密のキーワードをここに入力しろ。メトロ・ヌイの大アーカイブから機密アーカイブファイルを復元する！
+                            </p>
+                            <div class="flex gap-2">
+                                <input type="text" id="kanoka-input" placeholder="例: DUME, 8621, METRU" class="bg-black border border-green-900 text-green-400 px-3 py-1.5 rounded text-xs outline-none focus:border-green-400 w-full bionicle-font font-bold">
+                                <button onclick="decodeKanokaCode()" class="bg-green-950 hover:bg-green-900 text-green-400 border border-green-500/50 px-4 py-1.5 rounded text-xs font-bold transition retro-button retro-jp">解読</button>
+                            </div>
+                            <div id="decoder-result" class="bg-black/80 border border-green-950 p-2.5 rounded min-h-[50px] text-[10px] text-gray-400 leading-relaxed retro-jp">
+                                🔑 暗号待ち受け中... 有効なキーワードを解析してください。
+                            </div>
+                        </div>
+
+                    </div>
+
+                </main>
+
             </div>
 
-        </main>
+        </div>
     </div>
 
-    <!-- フッター -->
-    <footer>
-        <p>&copy; 2004 The LEGO Group. All rights reserved. Use of this site signifies your agreement to the terms of use.</p>
-        <p>LEGO, the LEGO logo, and BIONICLE are trademarks of the LEGO Group.</p>
+    <!-- RETRO 2004 FOOTER -->
+    <footer class="bg-[#111] text-gray-500 text-xs border-t border-gray-800 py-6 px-4">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="bg-[#E11A22] text-white font-black text-sm px-1.5 py-0.5 tracking-tighter border border-black" style="font-family: 'Arial Black', sans-serif;">
+                    LEGO
+                </div>
+                <p class="text-[10px] leading-tight retro-jp">
+                    &copy;2004 The LEGO Group. All rights reserved.<br>
+                    BIONICLE, the BIONICLE logo, and the Kanohi Mask design are trademarks of the LEGO Group.
+                </p>
+            </div>
+            <div class="flex gap-4 text-[10px] retro-jp">
+                <a href="#" class="hover:text-white underline">プライバシー・ポリシー</a>
+                <a href="#" class="hover:text-white underline">ご利用規約</a>
+                <a href="#" class="hover:text-white underline">レゴ・サービス</a>
+                <a href="#" class="hover:text-white underline">お問い合わせ</a>
+            </div>
+        </div>
     </footer>
 
-</div>
+    <!-- RETRO SHOPPING CART MODAL (CUSTOM NOTIFICATION) -->
+    <div id="cart-modal" class="fixed inset-0 bg-black/70 flex items-center justify-center z-50 hidden p-4">
+        <div class="bg-[#f0f0f0] text-black border-4 border-blue-900 rounded-md max-w-sm w-full p-4 shadow-2xl relative">
+            <div class="absolute -top-3 left-4 bg-blue-900 text-white font-bold text-xs px-2 py-0.5 uppercase tracking-wider rounded">
+                LEGO Shop at Home
+            </div>
+            <button onclick="closeCartModal()" class="absolute top-2 right-2 text-gray-500 hover:text-black font-bold">✕</button>
+            
+            <div class="pt-2 text-center space-y-3">
+                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-xl mx-auto border-2 border-green-500 animate-bounce">
+                    ✓
+                </div>
+                <h3 class="text-sm font-bold retro-jp">ショッピングバッグに追加されました！</h3>
+                
+                <div class="bg-white border border-gray-300 p-3 rounded text-left flex gap-3 items-center">
+                    <img src="https://www.lego.com/cdn/product-assets/product.img.pri/8621_prod.jpg" alt="8621 product thumbnail" class="w-12 h-12 object-contain" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'50\' height=\'50\'><rect width=\'100%\' height=\'100%\' fill=\'%23ccc\'/></svg>';">
+                    <div>
+                        <p class="font-bold text-xs retro-jp">8621 ツラガ デューム＆ニヴォーク</p>
+                        <p class="text-[11px] text-gray-500">数量: 1 | 価格: ¥2,980</p>
+                    </div>
+                </div>
 
-<script>
-    function addToCart() {
-        alert("アイテム「8621 ツラガ デューム＆ニヴォーク」がカートに追加されました。\n(これはデモページです)");
-    }
-</script>
+                <div class="flex gap-2 justify-end pt-2">
+                    <button onclick="closeCartModal()" class="bg-gray-300 hover:bg-gray-400 text-black px-4 py-1.5 rounded text-xs font-bold border border-gray-400 retro-jp">買い物に戻る</button>
+                    <button onclick="alertCheckout()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-1.5 rounded text-xs font-bold border-2 border-blue-500 retro-button retro-jp">レジに進む</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- RETRO CART MODAL EMPTY / GENERAL -->
+    <div id="general-cart-modal" class="fixed inset-0 bg-black/70 flex items-center justify-center z-50 hidden p-4">
+        <div class="bg-[#f0f0f0] text-black border-4 border-blue-900 rounded-md max-w-sm w-full p-4 shadow-2xl relative">
+            <div class="absolute -top-3 left-4 bg-blue-900 text-white font-bold text-xs px-2 py-0.5 uppercase tracking-wider rounded">
+                LEGO Shop at Home
+            </div>
+            <button onclick="closeGeneralCart()" class="absolute top-2 right-2 text-gray-500 hover:text-black font-bold">✕</button>
+            
+            <div class="pt-2 text-center space-y-3">
+                <h3 class="text-sm font-bold retro-jp">🛒 あなたのショッピングバッグ</h3>
+                <div id="cart-contents-area" class="bg-white border border-gray-300 p-3 rounded text-left text-xs retro-jp text-gray-500 text-center py-6">
+                    バッグの中身は空です。
+                </div>
+                <div class="flex gap-2 justify-end pt-2">
+                    <button onclick="closeGeneralCart()" class="bg-gray-300 hover:bg-gray-400 text-black px-4 py-1.5 rounded text-xs font-bold border border-gray-400 retro-jp">閉じる</button>
+                    <button id="cart-checkout-btn" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-1.5 rounded text-xs font-bold border-2 border-blue-500 retro-button disabled:opacity-50 retro-jp" disabled>購入手続き</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- Web Audio Synthesizer for Retro Atmos BGM ---
+        let audioCtx = null;
+        let ambientOsc = null;
+        let ambientGain = null;
+        let isPlayingAtmos = false;
+
+        function initSynth() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+
+        function toggleMusic() {
+            initSynth();
+            const statusEl = document.getElementById('music-status');
+            
+            if (isPlayingAtmos) {
+                // Stop Ambient Synthesizer
+                if (ambientOsc) {
+                    ambientOsc.stop();
+                    ambientOsc.disconnect();
+                }
+                statusEl.textContent = "サウンド：オフ";
+                statusEl.className = "text-gray-400 font-bold retro-jp";
+                isPlayingAtmos = false;
+            } else {
+                // Start Ambient Synthesizer (low futuristic drone)
+                try {
+                    ambientOsc = audioCtx.createOscillator();
+                    ambientGain = audioCtx.createGain();
+                    
+                    // Filter to make it warmer/cyberpunk
+                    const lowpass = audioCtx.createBiquadFilter();
+                    lowpass.type = "lowpass";
+                    lowpass.frequency.setValueAtTime(220, audioCtx.currentTime);
+
+                    // Slightly detuned oscillator for sci-fi atmosphere
+                    ambientOsc.type = "sawtooth";
+                    ambientOsc.frequency.setValueAtTime(55, audioCtx.currentTime); // Low A
+
+                    // LFO to sweep lowpass frequency
+                    const lfo = audioCtx.createOscillator();
+                    const lfoGain = audioCtx.createGain();
+                    lfo.frequency.setValueAtTime(0.2, audioCtx.currentTime); // very slow
+                    lfoGain.gain.setValueAtTime(80, audioCtx.currentTime);
+                    lfo.connect(lfoGain);
+                    lfoGain.connect(lowpass.frequency);
+
+                    ambientGain.gain.setValueAtTime(0.04, audioCtx.currentTime); // very quiet background drone
+
+                    ambientOsc.connect(lowpass);
+                    lowpass.connect(ambientGain);
+                    ambientGain.connect(audioCtx.destination);
+
+                    lfo.start();
+                    ambientOsc.start();
+                    
+                    statusEl.textContent = "サウンド：再生中";
+                    statusEl.className = "text-green-400 font-bold retro-jp animate-pulse";
+                    isPlayingAtmos = true;
+                } catch(e) {
+                    console.error("Synthesizer error", e);
+                }
+            }
+        }
+
+        // Synthesizer effect for mechanical gear click
+        function playGearSound() {
+            if (!audioCtx) return;
+            try {
+                const osc = audioCtx.createOscillator();
+                const gainNode = audioCtx.createGain();
+                
+                osc.type = "triangle";
+                osc.frequency.setValueAtTime(320, audioCtx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(80, audioCtx.currentTime + 0.1);
+                
+                gainNode.gain.setValueAtTime(0.1, audioCtx.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.1);
+                
+                osc.connect(gainNode);
+                gainNode.connect(audioCtx.destination);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.1);
+            } catch(e){}
+        }
+
+        // Synthesizer effect for bird beak snapping
+        function playBeakSnapSound() {
+            if (!audioCtx) return;
+            try {
+                // Short metallic click
+                const bufferSize = audioCtx.sampleRate * 0.05; // 50ms buffer
+                const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+                const data = buffer.getChannelData(0);
+                
+                for (let i = 0; i < bufferSize; i++) {
+                    data[i] = Math.random() * 2 - 1;
+                }
+                
+                const noise = audioCtx.createBufferSource();
+                noise.buffer = buffer;
+                
+                const filter = audioCtx.createBiquadFilter();
+                filter.type = "bandpass";
+                filter.frequency.setValueAtTime(1000, audioCtx.currentTime);
+                
+                const gain = audioCtx.createGain();
+                gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.05);
+                
+                noise.connect(filter);
+                filter.connect(gain);
+                gain.connect(audioCtx.destination);
+                
+                noise.start();
+            } catch(e){}
+        }
+
+        // --- Gimmick Simulator Logic ---
+        const wingSlider = document.getElementById('wing-flap-slider');
+        const wingLeft = document.getElementById('svg-wing-left');
+        const wingRight = document.getElementById('svg-wing-right');
+        const snapBeakBtn = document.getElementById('snap-beak-btn');
+        const lowerBeak = document.getElementById('svg-beak-lower');
+        const flapValDisplay = document.getElementById('flap-val');
+        const beakValDisplay = document.getElementById('beak-val');
+        const autoFlapBtn = document.getElementById('auto-flap-btn');
+
+        let isAutoFlapping = false;
+        let flapAngle = 0;
+        let flapDirection = 1;
+        let autoFlapTimer = null;
+
+        function updateWingRotation(val) {
+            // Left Wing rotates clockwise around joint, Right Wing rotates counter-clockwise
+            wingLeft.style.transform = `rotate(${-val}deg)`;
+            wingRight.style.transform = `rotate(${val}deg)`;
+            flapValDisplay.textContent = `${val}°`;
+        }
+
+        // Slider input listener
+        wingSlider.addEventListener('input', (e) => {
+            initSynth();
+            const val = parseInt(e.target.value);
+            updateWingRotation(val);
+            // occasional mechanical clicking sound when moving gear
+            if (val % 3 === 0) {
+                playGearSound();
+            }
+        });
+
+        // Snap Beak function
+        let isBeakOpen = false;
+        function snapBeak() {
+            initSynth();
+            playBeakSnapSound();
+            if (isBeakOpen) {
+                lowerBeak.style.transform = "rotate(0deg)";
+                beakValDisplay.textContent = "閉じる";
+                isBeakOpen = false;
+            } else {
+                lowerBeak.style.transform = "rotate(15deg)";
+                beakValDisplay.textContent = "ガブッ！ (捕食中)";
+                isBeakOpen = true;
+                // auto close after 250ms
+                setTimeout(() => {
+                    lowerBeak.style.transform = "rotate(0deg)";
+                    beakValDisplay.textContent = "閉じる";
+                    isBeakOpen = false;
+                    playBeakSnapSound();
+                }, 250);
+            }
+        }
+        snapBeakBtn.addEventListener('click', snapBeak);
+
+        // Auto action loop
+        function toggleAutoAction() {
+            initSynth();
+            if (isAutoFlapping) {
+                clearInterval(autoFlapTimer);
+                isAutoFlapping = false;
+                autoFlapBtn.textContent = "自動アクション開始";
+                autoFlapBtn.classList.remove('bg-red-950', 'text-red-400', 'border-red-500/30');
+                autoFlapBtn.classList.add('bg-green-950', 'text-green-400', 'border-green-500/30');
+            } else {
+                isAutoFlapping = true;
+                autoFlapBtn.textContent = "自動アクション停止";
+                autoFlapBtn.classList.remove('bg-green-950', 'text-green-400', 'border-green-500/30');
+                autoFlapBtn.classList.add('bg-red-950', 'text-red-400', 'border-red-500/30');
+                
+                let beakCycle = 0;
+                autoFlapTimer = setInterval(() => {
+                    // Update wings
+                    flapAngle += 3 * flapDirection;
+                    if (flapAngle > 25 || flapAngle < -25) {
+                        flapDirection *= -1;
+                        playGearSound(); // click on flap bounds change
+                    }
+                    wingSlider.value = flapAngle;
+                    updateWingRotation(flapAngle);
+
+                    // Random beak snaps
+                    beakCycle++;
+                    if (beakCycle % 15 === 0) {
+                        snapBeak();
+                    }
+                }, 40);
+            }
+        }
+        autoFlapBtn.addEventListener('click', toggleAutoAction);
+
+
+        // --- Kanoka Code Database ---
+        const codesDB = {
+            '8621': '📂 FILE-8621: ツラガ デュームとニヴォークの極秘指令。ニヴォークは高高度からメトロ・ヌイ全土を監視し、反乱分子であるトーアメトロを捕捉するために設計された特殊偵察鳥である。その高い知性と鋭い感覚は支配者の邪悪な目として機能する。',
+            'DUME': '📂 FILE-DUME: ツラガ デュームの正体。かつてメトロ・ヌイの賢明な指導者として信頼されていた彼だが、現在の行動には重大な疑惑がある。彼の正体は本当にトーア リカーンの知るデュームなのだろうか？彼の赤いカノイ「キリル（再生のマスク）」に不気味な光が宿る。',
+            'METRU': '📂 FILE-METRU: メトロ・ヌイ全土でヴァキのパトロールが強化されている。住民はコロニー（メトル）からの移動を厳しく制限されており、反抗する者は大アーカイブへ永久収監される。謎の植物「モルブザーク」の脅威も拡大している。',
+            'LOHRAK': '📂 FILE-LOHRAK: 【合体秘密ログ】 8621と8622（ニディーキ）を組み合わせることで、鋭い毒牙と強靭な翼を持つ怪獣「ローラキ (Lohrak)」が誕生する。非常に攻撃的であり、メトロ・ヌイの暗い地下迷宮に無数に生息している。',
+            'ULTIMATE': '📂 FILE-ULTIMATE: 【禁断の合体】 8621、8622、8623（クレッカ）を全て合体すると「アルティメット デューム」が完成する。これはテリダックス（マクータ）がデュームの肉体と闇の力を統合した姿であり、すべてのマトラン世界を支配するための究極体である。'
+        };
+
+        function decodeKanokaCode() {
+            initSynth();
+            const input = document.getElementById('kanoka-input').value.trim().toUpperCase();
+            const resultArea = document.getElementById('decoder-result');
+            
+            if (codesDB[input]) {
+                resultArea.textContent = codesDB[input];
+                resultArea.classList.remove('text-gray-400', 'text-red-400');
+                resultArea.classList.add('text-green-400');
+                // Play short success code beep
+                if (audioCtx) {
+                    const osc = audioCtx.createOscillator();
+                    const gain = audioCtx.createGain();
+                    osc.frequency.setValueAtTime(600, audioCtx.currentTime);
+                    osc.frequency.exponentialRampToValueAtTime(1200, audioCtx.currentTime + 0.15);
+                    gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.15);
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 0.15);
+                }
+            } else {
+                resultArea.textContent = '❌ エラー: メトル・ヌイのデータベースに該当するデータが存在しません。正しいコードを入力してください。(DUME, 8621, METRU, LOHRAK, ULTIMATE など)';
+                resultArea.classList.remove('text-green-400', 'text-gray-400');
+                resultArea.classList.add('text-red-400');
+            }
+        }
+
+
+        // --- Product View Gallery ---
+        const views = {
+            'main': 'https://www.lego.com/cdn/product-assets/product.img.pri/8621_prod.jpg',
+            'box': 'data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'250\' viewBox=\'0 0 300 250\'><rect width=\'100%\' height=\'100%\' fill=\'%231a0e05\'/><rect x=\'10\' y=\'10\' width=\'280\' height=\'230\' stroke=\'%23d97706\' stroke-width=\'3\' fill=\'none\'/><text x=\'50%\' y=\'35%\' text-anchor=\'middle\' fill=\'%23f59e0b\' font-family=\'monospace\' font-size=\'18\' font-weight=\'bold\'>8621 BOX ART</text><text x=\'50%\' y=\'55%\' text-anchor=\'middle\' fill=\'%23fff\' font-family=\'sans-serif\' font-size=\'11\' retro-jp>【2004 日本限定パッケージ】</text><text x=\'50%\' y=\'75%\' text-anchor=\'middle\' fill=\'%23fbbf24\' font-family=\'sans-serif\' font-size=\'10\'>BIONICLE TITANS : METRU NUI</text></svg>',
+            'combiner': 'data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'250\' viewBox=\'0 0 300 250\'><rect width=\'100%\' height=\'100%\' fill=\'%23111\'/><circle cx=\'150\' cy=\'110\' r=\'60\' fill=\'none\' stroke=\'%23ef4444\' stroke-width=\'2\' stroke-dasharray=\'5,5\'/><text x=\'50%\' y=\'45%\' text-anchor=\'middle\' fill=\'%23ef4444\' font-family=\'sans-serif\' font-weight=\'bold\' font-size=\'14\'>アルティメット・デューム</text><text x=\'50%\' y=\'65%\' text-anchor=\'middle\' fill=\'%23fff\' font-family=\'sans-serif\' font-size=\'10\' retro-jp>8621 + 8622 + 8623 トリプル合体モデル</text></svg>',
+            'schematic': 'data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'250\' viewBox=\'0 0 300 250\'><rect width=\'100%\' height=\'100%\' fill=\'%230b0d13\'/><line x1=\'50\' y1=\'125\' x2=\'250\' y2=\'125\' stroke=\'%230891b2\' stroke-width=\'1\'/><circle cx=\'150\' cy=\'125\' r=\'40\' fill=\'none\' stroke=\'%230891b2\' stroke-width=\'2\'/><text x=\'50%\' y=\'30%\' text-anchor=\'middle\' fill=\'%2306b6d4\' font-family=\'monospace\' font-size=\'12\' font-weight=\'bold\'>TECHNIC GEAR MECHANISM</text><text x=\'50%\' y=\'85%\' text-anchor=\'middle\' fill=\'%23888\' font-family=\'sans-serif\' font-size=\'10\' retro-jp>1:1 ギミック構造設計図</text></svg>'
+        };
+
+        function setProductView(viewKey) {
+            initSynth();
+            const mainImg = document.getElementById('product-main-img');
+            if (views[viewKey]) {
+                mainImg.src = views[viewKey];
+                // subtle sound cue
+                if (audioCtx) {
+                    const osc = audioCtx.createOscillator();
+                    const gain = audioCtx.createGain();
+                    osc.frequency.setValueAtTime(440, audioCtx.currentTime);
+                    gain.gain.setValueAtTime(0.02, audioCtx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.1);
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 0.1);
+                }
+            }
+        }
+
+
+        // --- Retro Shopping Cart Logic ---
+        let itemsInCart = 0;
+        const cartCountEl = document.getElementById('cart-count');
+
+        function addToCart() {
+            initSynth();
+            itemsInCart++;
+            cartCountEl.textContent = itemsInCart;
+            document.getElementById('cart-modal').classList.remove('hidden');
+            // Play retro purchase audio notification
+            if (audioCtx) {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.frequency.setValueAtTime(523.25, audioCtx.currentTime); // C5
+                osc.frequency.setValueAtTime(659.25, audioCtx.currentTime + 0.08); // E5
+                osc.frequency.setValueAtTime(783.99, audioCtx.currentTime + 0.16); // G5
+                gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.3);
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.3);
+            }
+        }
+
+        function closeCartModal() {
+            document.getElementById('cart-modal').classList.add('hidden');
+        }
+
+        function openCartModal() {
+            initSynth();
+            const modal = document.getElementById('general-cart-modal');
+            const contents = document.getElementById('cart-contents-area');
+            const checkoutBtn = document.getElementById('cart-checkout-btn');
+
+            if (itemsInCart > 0) {
+                contents.innerHTML = `
+                    <div class="space-y-2 text-black">
+                        <div class="flex justify-between items-center border-b pb-2">
+                            <span class="font-bold">商品名</span>
+                            <span class="font-bold">合計</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>8621 ツラガ・デューム＆ニヴォーク × ${itemsInCart}</span>
+                            <span>¥${(2980 * itemsInCart).toLocaleString()}</span>
+                        </div>
+                        <div class="border-t pt-2 flex justify-between font-bold text-red-600">
+                            <span>総合計:</span>
+                            <span>¥${(2980 * itemsInCart).toLocaleString()}</span>
+                        </div>
+                    </div>
+                `;
+                checkoutBtn.disabled = false;
+            } else {
+                contents.innerHTML = 'バッグの中身は空です。';
+                checkoutBtn.disabled = true;
+            }
+            modal.classList.remove('hidden');
+        }
+
+        function closeGeneralCart() {
+            document.getElementById('general-cart-modal').classList.add('hidden');
+        }
+
+        function alertCheckout() {
+            closeCartModal();
+            closeGeneralCart();
+            // Custom warning dialog without window.alert
+            const overlay = document.createElement('div');
+            overlay.className = "fixed inset-0 bg-black/80 flex items-center justify-center z-[100] p-4";
+            overlay.innerHTML = `
+                <div class="bg-white text-black border-4 border-red-600 p-6 rounded max-w-sm text-center space-y-4">
+                    <h3 class="font-bold text-lg retro-jp">🚨 レゴ®ショップからのお知らせ</h3>
+                    <p class="text-xs leading-normal retro-jp">
+                        これは2004年の懐かしい体験シミュレーターです！実際の決済処理やレゴの発送は行われません。当時の雰囲気をお楽しみください！
+                    </p>
+                    <button id="ok-close" class="bg-red-600 text-white font-bold px-6 py-2 rounded text-xs hover:bg-red-700 transition">確認しました</button>
+                </div>
+            `;
+            document.body.appendChild(overlay);
+            document.getElementById('ok-close').onclick = () => {
+                overlay.remove();
+            };
+        }
+
+        // Initialize elements
+        window.onload = function() {
+            updateWingRotation(0);
+        }
+    </script>
 </body>
 </html>
