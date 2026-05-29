@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="el-GR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>71302 Ακίντα – Πλάσμα του Νερού | BIONICLE® | LEGO® Shop GR</title>
+    <style>
+        :root {
+            --lego-yellow: #ffd500;
+            --lego-red: #d11013;
+            --bionicle-blue: #005fa9;
+            --dark-gray: #333333;
+            --light-bg: #f4f4f4;
+        }
+
+        body {
+            font-family: Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+            color: var(--dark-gray);
+        }
+
+        header {
+            background-color: var(--lego-yellow);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 4px solid var(--lego-red);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo-container img {
+            height: 45px;
+            background: var(--lego-red);
+            padding: 5px;
+            border-radius: 4px;
+        }
+
+        .nav-crumbs {
+            margin-left: 20px;
+            font-size: 14px;
+            color: #000;
+        }
+
+        .nav-crumbs a {
+            color: #005fa9;
+            text-decoration: none;
+        }
+
+        .main-container {
+            max-width: 1100px;
+            margin: 30px auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .product-gallery {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main-image {
+            max-width: 100%;
+            height: auto;
+            max-height: 450px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        .theme-banner {
+            background: linear-gradient(90deg, #021a32, #0d3d6b);
+            color: #fff;
+            padding: 10px 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 13px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+
+        .product-details h1 {
+            font-size: 28px;
+            margin: 0 0 10px 0;
+            color: #111;
+        }
+
+        .set-number {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+            padding: 15px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .spec-item {
+            text-align: center;
+        }
+
+        .spec-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #777;
+            margin-bottom: 5px;
+        }
+
+        .spec-value {
+            font-size: 16px;
+            font-weight: bold;
+            color: #222;
+        }
+
+        .purchase-box {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 25px;
+        }
+
+        .price-tag {
+            font-size: 32px;
+            font-weight: bold;
+            color: #d11013;
+            margin-bottom: 15px;
+        }
+
+        .status-tag {
+            color: #2e7d32;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .status-tag::before {
+            content: "●";
+            margin-right: 6px;
+            font-size: 18px;
+        }
+
+        .btn-add-to-cart {
+            background-color: #ff8000;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            width: 100%;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-transform: uppercase;
+        }
+
+        .btn-add-to-cart:hover {
+            background-color: #e07000;
+        }
+
+        .description-container {
+            max-width: 1100px;
+            margin: 0 auto 50px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .description-container h2 {
+            border-bottom: 2px solid var(--bionicle-blue);
+            padding-bottom: 10px;
+            color: #111;
+        }
+
+        .features-list {
+            margin-top: 20px;
+            padding-left: 20px;
+        }
+
+        .features-list li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #222;
+            color: #aaa;
+            text-align: center;
+            padding: 30px;
+            font-size: 12px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <script type="application/json" id="product-data">
+    {
+        "setId": "71302",
+        "nameEN": "Akida – Creature of Water",
+        "nameGR": "Ακίντα – Πλάσμα του Νερού",
+        "theme": "BIONICLE",
+        "subtheme": "Elemental Creatures",
+        "year": 2016,
+        "pieces": 120,
+        "ageRange": "6-12",
+        "priceEUR": 9.99,
+        "currency": "EUR",
+        "availability": "InStock",
+        "imageUrl": "https://www.bricklink.com/SL/71302-1.jpg",
+        "descriptionGR": "Διασχίστε ωκεανούς και ποτάμια σε μια υποβρύχια περιπέτεια! Εκτοξεύστε τους εκτοξευτές τορπιλών στην παγίδα σκιών καθώς σας καταδιώκει μέσα στο νερό. Στο μυθικό σύμπαν των LEGO® BIONICLE®, τα αρχαία θηρία της πρωτογενούς στοιχειακής δύναμης δεν πρέπει να πέσουν θύματα του Ούμαρακ του Κυνηγού των Σκιών και του στρατού του από παγίδες σκιών! Βρείτε καταφύγιο και περιμένετε τους ηρωικούς Τόα.",
+        "featuresGR": [
+            "Το Ακίντα – Πλάσμα του Νερού διαθέτει εκτοξευτή τορπιλών, κομμάτι ένωσης για να συνδέεται με Τόα, κινητό πτερύγιο και μάσκα.",
+            "Περιλαμβάνει επίσης μια παγίδα σκιών.",
+            "Στιβαρός σχεδιασμός για έντονο παιχνίδι δράσης!",
+            "Έχει ύψος πάνω από 7 εκ. και μήκος 22 εκ.",
+            "Συνδυάστε το με το 71307 Γκάλι – Ενώτρια του Νερού με ένα κλικ, χρησιμοποιώντας το κομμάτι ένωσης.",
+            "Τα στοιχειακά πλάσματα ενώνονται επίσης και με άλλους Τόα για νέους πανίσχυρους συνδυασμούς!"
+        ]
+    }
+    </script>
+
+    <header>
+        <div class="logo-container">
+            <svg width="45" height="45" viewBox="0 0 100 100" style="background:#d11013; border-radius:5px;">
+                <rect x="10" y="10" width="80" height="80" fill="#d11013"/>
+                <text x="50" y="65" font-family="Impact, sans-serif" font-size="42" fill="#fff" stroke="#000" stroke-width="3" text-anchor="middle">LEGO</text>
+            </svg>
+        </div>
+        <div class="nav-crumbs">
+            <a href="#">Αρχική</a> &gt; <a href="#">Κατάστημα</a> &gt; <a href="#">BIONICLE®</a> &gt; <span id="crumb-name">71302</span>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <section class="product-gallery">
+            <img id="lego-main-img" src="" alt="LEGO Bionicle 71302" class="main-image">
+        </section>
+
+        <section class="product-details">
+            <div class="theme-banner" id="theme-banner-text">BIONICLE®</div>
+            <h1 id="product-title-gr">...</h1>
+            <div class="set-number">Κωδικός: <span id="product-id">71302</span></div>
+
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <div class="spec-label">Ηλικίες</div>
+                    <div class="spec-value" id="spec-ages">-</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Κομμάτια</div>
+                    <div class="spec-value" id="spec-pieces">-</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Έτος</div>
+                    <div class="spec-value" id="spec-year">-</div>
+                </div>
+            </div>
+
+            <div class="purchase-box">
+                <div class="price-tag" id="product-price">€ --</div>
+                <div class="status-tag">Διαθέσιμο Τώρα</div>
+                <button class="btn-add-to-cart">Προσθηκη στο καλαθι</button>
+            </div>
+        </section>
+    </main>
+
+    <article class="description-container">
+        <h2>Περιγραφή Προϊόντος</h2>
+        <p id="product-desc" style="line-height: 1.7; font-size: 16px; color: #444;"></p>
+        
+        <h3>Χαρακτηριστικά</h3>
+        <ul id="product-features" class="features-list"></ul>
+    </article>
+
+    <footer>
+        <p>LEGO, το λογότυπο LEGO, η Μίνι φιγούρα, BIONICLE και τα σήματα BIONICLE είναι εμπορικά σήματα του Ομίλου LEGO. ©2016 The LEGO Group.</p>
+    </footer>
+
+    <script>
+        // DOM dynamic rendering processing JSON data payload
+        document.addEventListener("DOMContentLoaded", function() {
+            const dataSource = JSON.parse(document.getElementById('product-data').textContent);
+            
+            // Text values injection
+            document.getElementById('lego-main-img').src = dataSource.imageUrl;
+            document.getElementById('lego-main-img').alt = dataSource.nameGR;
+            document.getElementById('product-title-gr').textContent = dataSource.nameGR;
+            document.getElementById('crumb-name').textContent = dataSource.nameGR;
+            document.getElementById('product-id').textContent = dataSource.setId;
+            
+            // Meta specs injection
+            document.getElementById('spec-ages').textContent = dataSource.ageRange;
+            document.getElementById('spec-pieces').textContent = dataSource.pieces;
+            document.getElementById('spec-year').textContent = dataSource.year;
+            
+            // Financials parsing
+            document.getElementById('product-price').textContent = `€${dataSource.priceEUR.toFixed(2)}`;
+            
+            // Main Content Localization Strings parsing
+            document.getElementById('product-desc').textContent = dataSource.descriptionGR;
+            
+            const featuresListUl = document.getElementById('product-features');
+            dataSource.featuresGR.forEach(function(featureString) {
+                const li = document.createElement('li');
+                li.textContent = featureString;
+                featuresListUl.appendChild(li);
+            });
+        });
+    </script>
+</body>
+</html>
