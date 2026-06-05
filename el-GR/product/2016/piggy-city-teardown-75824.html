@@ -3,1193 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LEGO® Angry Birds™ 75824: Η Καταστροφή της Πόλης των Γουρουνιών - LEGO.com GR</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        legoYellow: '#FFD500',
-                        legoRed: '#E60012',
-                        legoBlue: '#0055A5',
-                        legoGrey: '#F2F2F2',
-                        abRed: '#EE1C25',
-                        abGreen: '#8CC63F',
-                        abPink: '#EC407A',
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Η Καταστροφή της Πόλης των Γουρουνιών 75824 | Angry Birds™ | LEGO® Shop</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans:wght@400;600;700&display=swap');
-        
-        .lego-font {
-            font-family: 'Open Sans', sans-serif;
+        body {
+            font-family: Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
         }
-        .angry-birds-font {
-            font-family: 'Fredoka One', sans-serif;
+        header {
+            background-color: #ffd400;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 3px solid #e6be00;
         }
-        ::-webkit-scrollbar {
-            width: 8px;
+        .lego-logo {
+            background-color: #ff0000;
+            color: #fff;
+            font-weight: bold;
+            font-size: 24px;
+            padding: 5px 10px;
+            text-transform: uppercase;
+            border: 2px solid #000;
+            display: inline-block;
+            margin-right: 20px;
         }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
+        nav a {
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 14px;
         }
-        ::-webkit-scrollbar-thumb {
-            background: #FFD500;
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .product-gallery {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+            padding: 20px;
+        }
+        .product-gallery img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
             border-radius: 4px;
         }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #E60012;
+        .product-details {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+        .theme-title {
+            color: #e60012;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        h1 {
+            font-size: 28px;
+            margin: 0 0 10px 0;
+            color: #000;
+        }
+        .item-number {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        .specs-badges {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .badge {
+            background-color: #eee;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        .price-tag {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 20px;
+        }
+        .buy-button {
+            background-color: #008210;
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        .buy-button:hover {
+            background-color: #00660c;
+        }
+        .description-box {
+            width: 100%;
+            margin-top: 30px;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+        .description-box h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .bullet-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+        .bullet-list li {
+            margin-bottom: 8px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            margin-top: 40px;
         }
     </style>
 </head>
-<body class="bg-neutral-100 lego-font min-h-screen flex flex-col antialiased">
+<body>
 
-    <!-- TOP ANNOUNCEMENT BANNER -->
-    <div class="bg-legoBlue text-white text-xs py-1.5 px-4 text-center font-bold tracking-wider">
-        <span>📦 ΔΩΡΕΑΝ Αποστολή για όλες τις παραγγελίες άνω των €55! | Μάιος 2016 🥚</span>
-    </div>
-
-    <!-- MAIN LEGO HEADER (2016 Retro Style) -->
-    <header class="bg-legoYellow border-b-4 border-legoRed sticky top-0 z-50 shadow-md">
-        <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
-            <!-- Left Side: Brand Logo & Navigation -->
-            <div class="flex items-center space-x-6">
-                <!-- Classic LEGO Red Box Logo -->
-                <a href="#" class="flex-shrink-0 transition-transform hover:scale-105 duration-150">
-                    <svg class="w-12 h-12 shadow-lg rounded" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="100" height="100" fill="#E60012"/>
-                        <rect x="5" y="5" width="90" height="90" fill="#FFD500"/>
-                        <rect x="8" y="8" width="84" height="84" fill="#E60012"/>
-                        <path d="M18 18H32V68H48V82H18V18Z" fill="white"/>
-                        <path d="M37 18H58V30H49V42H58V54H49V68H60V80H37V18Z" fill="white"/>
-                        <path d="M62 18H82V30H73V42H82V80H62V18Z" fill="white"/>
-                    </svg>
-                </a>
-                
-                <!-- Nav Links -->
-                <nav class="hidden md:flex space-x-4 font-extrabold text-gray-900 text-sm tracking-wide">
-                    <a href="#" class="hover:bg-white hover:text-legoRed px-3 py-2 rounded transition">ΠΡΟΪΟΝΤΑ</a>
-                    <a href="#" class="hover:bg-white hover:text-legoRed px-3 py-2 rounded transition">ΠΑΙΧΝΙΔΙΑ</a>
-                    <a href="#" class="hover:bg-white hover:text-legoRed px-3 py-2 rounded transition">LEGO® LIFE</a>
-                    <a href="#" class="hover:bg-white text-legoBlue px-3 py-2 rounded border-2 border-dashed border-legoBlue transition">LEGO® SHOP</a>
-                </nav>
-            </div>
-
-            <!-- Right Utilities & Cart -->
-            <div class="flex items-center space-x-4">
-                <!-- Search -->
-                <div class="hidden lg:flex items-center bg-white rounded-full border border-gray-300 px-3 py-1.5 w-60 shadow-inner">
-                    <input type="text" placeholder="Αναζήτηση κωδικού ή θέματος..." class="w-full text-xs outline-none bg-transparent text-gray-700">
-                    <i class="fa-solid fa-magnifying-glass text-gray-400 text-sm cursor-pointer hover:text-legoRed"></i>
-                </div>
-
-                <!-- VIP Loyalty Banner Link -->
-                <div class="hidden sm:flex items-center space-x-1.5 bg-neutral-900 text-white px-3 py-1.5 rounded-full text-xs font-bold cursor-pointer hover:bg-neutral-800 transition">
-                    <i class="fa-solid fa-crown text-legoYellow"></i>
-                    <span>LEGO® VIP</span>
-                </div>
-
-                <!-- Interactive Cart Trigger -->
-                <button id="cartBtn" class="relative bg-white hover:bg-gray-50 p-2.5 rounded-full border border-gray-300 shadow-sm transition duration-150">
-                    <i class="fa-solid fa-cart-shopping text-legoBlue text-lg"></i>
-                    <span id="cartCount" class="absolute -top-1 -right-1 bg-legoRed text-white text-[10px] font-black w-5 h-5 flex items-center justify-center rounded-full animate-bounce">0</span>
-                </button>
-            </div>
-        </div>
+    <header>
+        <div class="lego-logo">LEGO</div>
+        <nav>
+            <a href="#">Προϊόντα</a>
+            <a href="#">Παιχνίδια</a>
+            <a href="#">Shop</a>
+        </nav>
     </header>
 
-    <!-- MOVIE CAMPAIGN HERO BANNER (May 2016 Theme Layout) -->
-    <div class="relative bg-cover bg-center text-white py-12 px-6 shadow-md" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?q=80&w=1200&auto=format&fit=crop');">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
-            <div class="mb-6 md:mb-0">
-                <span class="bg-abPink text-white px-3 py-1 rounded text-xs uppercase font-extrabold tracking-widest angry-birds-font">THE ANGRY BIRDS™ MOVIE</span>
-                <h1 class="text-4xl md:text-5xl angry-birds-font mt-2 tracking-wide text-legoYellow drop-shadow">Η Καταστροφή της Πόλης των Γουρουνιών</h1>
-                <p class="text-sm md:text-md mt-2 max-w-xl font-medium text-gray-200">
-                    Ετοιμαστείτε για την απόλυτη αναμέτρηση! Στοχεύστε με τον καταπέλτη, προκαλέστε αλυσιδωτές αντιδράσεις και γκρεμίστε την Πόλη των Γουρουνιών για να σώσετε τα κλεμμένα αυγά!
-                </p>
-            </div>
-            
-            <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 text-center shadow-xl transform rotate-1 hover:rotate-0 transition-transform duration-300 max-w-xs">
-                <span class="block text-[10px] uppercase tracking-widest text-legoYellow font-bold">ΚΥΚΛΟΦΟΡΙΑ: ΜΑΪΟΣ 2016</span>
-                <div class="text-2xl font-extrabold angry-birds-font text-white">PIGGY CITY TEARDOWN</div>
-                <div class="text-xs text-gray-300 mt-1">Κωδικός: 75824</div>
-            </div>
+    <main class="container">
+        <div class="product-gallery">
+            <img src="https://www.bricklink.com/SL/75824-1.jpg" alt="LEGO Angry Birds 75824 Η Καταστροφή της Πόλης των Γουρουνιών">
         </div>
-    </div>
 
-    <!-- BREADCRUMBS -->
-    <div class="bg-gray-200 text-xs py-2 px-4 shadow-sm border-b border-gray-300">
-        <div class="max-w-7xl mx-auto flex items-center space-x-2 text-gray-600 font-semibold">
-            <a href="#" class="hover:text-legoRed">Αρχική</a>
-            <span>/</span>
-            <a href="#" class="hover:text-legoRed">Προϊόντα</a>
-            <span>/</span>
-            <a href="#" class="hover:text-legoRed">LEGO® Angry Birds™</a>
-            <span>/</span>
-            <span class="text-gray-900">75824 Η Καταστροφή της Πόλης</span>
-        </div>
-    </div>
-
-    <!-- MAIN PRODUCT GALLERY & DETAIL BOX -->
-    <main class="flex-grow max-w-7xl mx-auto px-4 py-8 w-full">
-        <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-200 grid grid-cols-1 lg:grid-cols-12 gap-0">
+        <div class="product-details">
+            <div class="theme-title">The Angry Birds™ Movie</div>
+            <h1>Η Καταστροφή της Πόλης των Γουρουνιών</h1>
+            <div class="item-number">Κωδικός: 75824</div>
             
-            <!-- LEFT COLUMN: IMAGE DISPLAY & STATISTICS (7/12) -->
-            <div class="lg:col-span-7 p-6 border-r border-gray-100 flex flex-col justify-between">
-                <div>
-                    <!-- Special Badges & Stars -->
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="bg-abGreen text-white text-xs font-black uppercase px-2.5 py-1 rounded shadow-sm">ΠΡΟΤΕΙΝΟΜΕΝΟ ΣΕΤ</span>
-                        <div class="flex items-center space-x-1 text-legoYellow">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <span class="text-gray-500 text-xs font-semibold ml-1">(22 Αξιολογήσεις)</span>
-                        </div>
-                    </div>
-
-                    <!-- Hero Main Photo Screen -->
-                    <div class="relative bg-neutral-50 border border-gray-200 rounded-2xl p-4 flex items-center justify-center min-h-[350px] md:min-h-[420px] shadow-inner group overflow-hidden">
-                        <span class="absolute top-2 left-3 angry-birds-font text-gray-300/40 text-4xl pointer-events-none select-none">LEGO 75824</span>
-                        
-                        <!-- Main Product Image -->
-                        <img id="mainProductImg" 
-                             src="https://www.bricklink.com/SL/75824-1.jpg" 
-                             alt="LEGO 75824 Piggy City Destruction" 
-                             class="max-h-[360px] w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                             onerror="handleImageError(this)">
-
-                        <!-- Dynamic Image Loader -->
-                        <div id="imageLoader" class="hidden absolute inset-0 flex items-center justify-center bg-white/80">
-                            <div class="animate-spin rounded-full h-10 w-10 border-b-2 border-legoRed"></div>
-                        </div>
-
-                        <!-- Zoom Text Hint -->
-                        <div class="absolute bottom-3 right-3 bg-black/50 text-white text-[10px] px-2 py-1 rounded">
-                            <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> Κάντε κλικ στα εικονίδια για εναλλακτικές όψεις
-                        </div>
-                    </div>
-
-                    <!-- Alternate Thumbnail Gallery -->
-                    <div class="grid grid-cols-4 gap-3 mt-4">
-                        <button onclick="changeGalleryImage('https://www.bricklink.com/SL/75824-1.jpg', 0)" class="thumb-btn border-2 border-legoYellow bg-white rounded-xl p-2 flex items-center justify-center h-20 shadow-sm hover:scale-105 transition">
-                            <img src="https://www.bricklink.com/SL/75824-1.jpg" class="max-h-14 w-auto object-contain" onerror="handleImageError(this)">
-                        </button>
-                        <button onclick="useSvgView('cityBlueprint', 1)" class="thumb-btn border border-gray-200 bg-white rounded-xl p-2 flex flex-col items-center justify-center h-20 shadow-sm hover:scale-105 transition text-center">
-                            <i class="fa-solid fa-hotel text-abGreen text-lg"></i>
-                            <span class="text-[9px] font-bold text-gray-500 mt-1">Πόλη Γουρουνιών</span>
-                        </button>
-                        <button onclick="useSvgView('minifigures', 2)" class="thumb-btn border border-gray-200 bg-white rounded-xl p-2 flex flex-col items-center justify-center h-20 shadow-sm hover:scale-105 transition text-center">
-                            <i class="fa-solid fa-people-group text-legoBlue text-lg"></i>
-                            <span class="text-[9px] font-bold text-gray-500 mt-1">Φιγούρες (4)</span>
-                        </button>
-                        <button onclick="useSvgView('catapultSpecs', 3)" class="thumb-btn border border-gray-200 bg-white rounded-xl p-2 flex flex-col items-center justify-center h-20 shadow-sm hover:scale-105 transition text-center">
-                            <i class="fa-solid fa-bullseye text-abRed text-lg"></i>
-                            <span class="text-[9px] font-bold text-gray-500 mt-1">Λειτουργίες</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Technical Lego Blocks Stats -->
-                <div class="mt-6 pt-4 border-t border-gray-200 grid grid-cols-3 gap-3 text-center text-xs">
-                    <div class="bg-neutral-50 p-2.5 rounded-xl border border-neutral-200">
-                        <div class="text-gray-500 font-bold uppercase text-[9px]">ΗΛΙΚΙΕΣ</div>
-                        <div class="text-base font-black text-gray-800">7-14</div>
-                    </div>
-                    <div class="bg-neutral-50 p-2.5 rounded-xl border border-neutral-200">
-                        <div class="text-gray-500 font-bold uppercase text-[9px]">ΚΟΜΜΑΤΙΑ</div>
-                        <div class="text-base font-black text-gray-800">386</div>
-                    </div>
-                    <div class="bg-neutral-50 p-2.5 rounded-xl border border-neutral-200">
-                        <div class="text-gray-500 font-bold uppercase text-[9px]">ΚΩΔΙΚΟΣ</div>
-                        <div class="text-base font-black text-gray-800">75824</div>
-                    </div>
-                </div>
+            <div class="specs-badges">
+                <div class="badge">Ηλικίες: 7-14</div>
+                <div class="badge">Κομμάτια: 386</div>
             </div>
 
-            <!-- RIGHT COLUMN: PRICE & CHECKOUT CONTROLLER (5/12) -->
-            <div class="lg:col-span-5 p-6 bg-neutral-50 flex flex-col justify-between">
-                <div>
-                    <!-- Main Title block -->
-                    <div class="border-b border-neutral-200 pb-4 mb-4">
-                        <h2 class="text-2xl font-black text-gray-900 leading-tight">Η Καταστροφή της Πόλης των Γουρουνιών</h2>
-                        <h3 class="text-sm font-extrabold text-legoBlue mt-1 uppercase">LEGO® Angry Birds™ Movie Series</h3>
-                        <p class="text-[11px] text-gray-400 mt-1.5">Μοντέλο: 75824 | Διαθεσιμότητα: Μάιος 2016</p>
-                    </div>
+            <div class="price-tag">49,99 €</div>
 
-                    <!-- Pricing card -->
-                    <div class="bg-white border border-neutral-200 rounded-2xl p-4 shadow-sm mb-5">
-                        <div class="flex items-baseline justify-between">
-                            <span class="text-[10px] text-gray-400 font-bold uppercase">Προτεινόμενη Τιμή Λιανικής</span>
-                            <span class="bg-green-100 text-green-800 text-xs font-bold px-2.5 py-0.5 rounded-full">ΣΕ ΑΠΟΘΕΜΑ</span>
-                        </div>
-                        <div class="flex items-center space-x-2 mt-1">
-                            <span class="text-3xl font-black text-gray-900">€49,99</span>
-                            <span class="text-[11px] text-gray-400 font-medium">(συμπ. Φ.Π.Α. 24%)</span>
-                        </div>
-                        <!-- VIP Reward Stats -->
-                        <div class="mt-3 pt-3 border-t border-neutral-100 flex items-center justify-between text-xs text-neutral-600">
-                            <span class="flex items-center">
-                                <i class="fa-solid fa-crown text-legoYellow mr-2 text-sm"></i>
-                                Κέρδος: <strong class="text-gray-900 ml-1">49 πόντους VIP</strong>
-                            </span>
-                            <a href="#" class="text-legoBlue hover:underline text-[10px] font-bold">Πώς λειτουργεί;</a>
-                        </div>
-                    </div>
+            <button class="buy-button">Προσθηκη στο καλαθι</button>
+        </div>
 
-                    <!-- Highlight Bullet Points -->
-                    <ul class="space-y-2 text-xs text-gray-600 font-semibold mb-6">
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-check text-green-500 mt-0.5 mr-2.5"></i>
-                            <span>Περιλαμβάνει 4 φιγούρες: <strong>Ρεντ (Red)</strong>, <strong>Στέλλα (Stella)</strong>, <strong>Γουρουνάκι Πειρατή</strong> και <strong>Γουρουνάκι Μοτοσικλετιστή</strong>.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-check text-green-500 mt-0.5 mr-2.5"></i>
-                            <span>Η Πόλη των Γουρουνιών διαθέτει αναδιπλούμενη γέφυρα, εκτοξευτή hot dog, σχοινί zip line και καταστρεφόμενα κτίρια!</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-check text-green-500 mt-0.5 mr-2.5"></i>
-                            <span>Περιλαμβάνει μεγάλο καταπέλτη για την εκτόξευση των πουλιών!</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- QUANTITY & ADD TO BASKET ACTION -->
-                <div class="space-y-4">
-                    <!-- Qty Picker -->
-                    <div class="flex items-center justify-between bg-white p-2.5 rounded-xl border border-neutral-200 shadow-sm">
-                        <span class="text-xs text-gray-500 font-bold pl-2 uppercase">ΠΟΣΟΤΗΤΑ:</span>
-                        <div class="flex items-center space-x-3">
-                            <button onclick="decrementQty()" class="w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-200 flex items-center justify-center font-bold text-gray-800 transition">-</button>
-                            <span id="qtyVal" class="w-8 text-center font-extrabold text-sm text-gray-900">1</span>
-                            <button onclick="incrementQty()" class="w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-200 flex items-center justify-center font-bold text-gray-800 transition">+</button>
-                        </div>
-                    </div>
-
-                    <!-- Main ADD TO CART Button -->
-                    <button onclick="addToCartTrigger()" class="w-full bg-[#5cb85c] hover:bg-[#4cae4c] text-white py-4 px-6 rounded-2xl font-black text-lg shadow-md transform active:scale-95 transition-all flex items-center justify-center space-x-3 border-b-4 border-green-700">
-                        <i class="fa-solid fa-cart-shopping animate-bounce"></i>
-                        <span>ΠΡΟΣΘΗΚΗ ΣΤΟ ΚΑΛΑΘΙ</span>
-                    </button>
-
-                    <!-- Auxiliary sharing and list commands -->
-                    <div class="grid grid-cols-2 gap-3 text-xs font-bold">
-                        <button onclick="toggleWishlist()" class="bg-white hover:bg-neutral-100 text-neutral-700 py-2.5 px-4 rounded-xl border border-neutral-300 shadow-sm transition flex items-center justify-center space-x-2">
-                            <i id="wishIcon" class="fa-regular fa-heart text-legoRed"></i>
-                            <span>Λίστα Επιθυμιών</span>
-                        </button>
-                        <button onclick="copyProductLink()" class="bg-white hover:bg-neutral-100 text-neutral-700 py-2.5 px-4 rounded-xl border border-neutral-300 shadow-sm transition flex items-center justify-center space-x-2">
-                            <i class="fa-solid fa-share-nodes text-legoBlue"></i>
-                            <span>Κοινοποίηση</span>
-                        </button>
-                    </div>
-
-                    <div class="text-[10px] text-gray-400 text-center flex items-center justify-center space-x-2 pt-2">
-                        <i class="fa-solid fa-truck-fast"></i>
-                        <span>Γρήγορη αποστολή σε όλη την Ελλάδα με Courier</span>
-                    </div>
-                </div>
-
-            </div>
+        <div class="description-box">
+            <h2>Περιγραφή</h2>
+            <p>Χρησιμοποιήστε τον καταπέλτη για να εκτοξεύσετε τον Ρεντ και τη Στέλλα στην Πόλη των Γουρουνιών! Προκαλέστε μια τεράστια αλυσιδωτή αντίδραση στοχεύοντας τα πουλιά πάνω από τους ογκόλιθους και χρησιμοποιήστε το TNT των ίδιων των γουρουνιών εναντίον τους! Κυνηγήστε τα γουρουνάκια σε όλη την περιοχή για να πάρετε πίσω τα κλεμμένα αυγά. Δημιουργήστε το απόλυτο χάος γκρεμίζοντας τη γέφυρα, την καλωδιωτή τροχαλία (zipline) και την πίστα του Hot Dog, αναπαριστώντας τις πιο αστείες στιγμές από την ταινία <i>The Angry Birds™ Movie</i>.</p>
+            
+            <ul class="bullet-list">
+                <li>Περιλαμβάνει 4 φιγούρες: τον Ρεντ, τη Στέλλα, το Γουρουνάκι με Μπαλόνι και τον Μειλόπιγκ (Foreman Pig).</li>
+                <li>Η Πόλη των Γουρουνιών διαθέτει μια καλωδιωτή τροχαλία (zipline), μια κινούμενη γέφυρα, έναν εκτοξευτήρα Hot Dog, μια ανατρεπόμενη πέτρα και ένα εκρηκτικό κουτί TNT.</li>
+                <li>Στοχεύστε με τον καταπέλτη για να χτυπήσετε τις δομές στήριξης και να δείτε τα κτίρια των γουρουνιών να καταρρέουν με θεαματικό τρόπο!</li>
+                <li>Τα αξεσουάρ περιλαμβάνουν έναν μεγάλο καταπέλτη εδάφους, 2 αυγά, ένα Hot Dog, παγωτό, μπαλόνια και διακοσμητικά στοιχεία πόλης.</li>
+                <li>Η Πόλη των Γουρουνιών έχει διαστάσεις πάνω από 21 εκ. ύψος, 24 εκ. πλάτος και 16 εκ. βάθος.</li>
+                <li>Ο καταπέλτης έχει διαστάσεις πάνω από 6 εκ. ύψος, 8 εκ. μήκος και 4 εκ. πλάτος.</li>
+            </ul>
         </div>
     </main>
 
-    <!-- INTERACTIVE MINI-GAME: STELLA'S PIGGY CITY DEMOLITION -->
-    <section class="max-w-7xl mx-auto px-4 py-8">
-        <div class="bg-gradient-to-r from-pink-400 via-rose-500 to-amber-500 rounded-3xl p-6 md:p-8 shadow-2xl relative overflow-hidden">
-            <!-- Grid design elements -->
-            <div class="absolute inset-0 opacity-10 pointer-events-none">
-                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                    <pattern id="gamePattern" width="30" height="30" patternUnits="userSpaceOnUse">
-                        <circle cx="15" cy="15" r="1.5" fill="white"/>
-                    </pattern>
-                    <rect width="100%" height="100%" fill="url(#gamePattern)" />
-                </svg>
-            </div>
-
-            <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <!-- Game Description details -->
-                <div class="lg:col-span-4 text-white">
-                    <span class="bg-legoYellow text-gray-900 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">LEGO® WEB GAME 2016</span>
-                    <h3 class="text-3xl angry-birds-font mt-2 text-legoYellow drop-shadow-md">Η Εκδίκηση της Στέλλα</h3>
-                    <p class="text-xs mt-3 text-rose-50 leading-relaxed">
-                        Η Πόλη των Γουρουνιών έχει γεμίσει κλεμμένα αυγά! Βοηθήστε τη Στέλλα να εκτοξευθεί με τον καταπέλτη, να χτυπήσει τις εύθραυστες ξύλινες κολώνες και να γκρεμίσει το κάστρο των γουρουνιών!
-                    </p>
-
-                    <div class="mt-4 flex space-x-3">
-                        <div class="bg-black/30 backdrop-blur-sm rounded-xl p-3 flex items-center space-x-2.5">
-                            <i class="fa-solid fa-trophy text-legoYellow text-xl"></i>
-                            <div>
-                                <span class="block text-[9px] uppercase tracking-wider text-gray-300">Υψηλό Σκορ</span>
-                                <span id="gameHighScore" class="font-bold text-sm">3800</span>
-                            </div>
-                        </div>
-                        <div class="bg-black/30 backdrop-blur-sm rounded-xl p-3 flex items-center space-x-2.5">
-                            <i class="fa-solid fa-egg text-white text-xl animate-pulse"></i>
-                            <div>
-                                <span class="block text-[9px] uppercase tracking-wider text-gray-300">Καταστροφές</span>
-                                <span id="gameDemolished" class="font-bold text-sm">0</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-5 text-xs bg-white/10 rounded-xl p-3 border border-white/10 text-rose-100">
-                        <i class="fa-solid fa-gamepad mr-1 text-legoYellow"></i>
-                        <strong>Πώς να παίξετε:</strong> Κάντε κλικ και σύρετε πίσω τη Στέλλα (ροζ πουλί) στον καταπέλτη, στοχεύστε προς τις κολώνες και το γουρουνάκι στα δεξιά και αφήστε για εκτόξευση!
-                    </div>
-                </div>
-
-                <!-- Game Canvas -->
-                <div class="lg:col-span-8 flex flex-col items-center">
-                    <div class="relative bg-slate-900 rounded-3xl p-2 w-full max-w-[640px] aspect-[16/9] overflow-hidden border-4 border-white shadow-2xl">
-                        <canvas id="gameCanvas" class="bg-sky-200 rounded-2xl w-full h-full cursor-pointer"></canvas>
-
-                        <!-- Game Over Screen -->
-                        <div id="gameOverlay" class="hidden absolute inset-0 bg-black/85 flex flex-col items-center justify-center text-center text-white p-6 rounded-2xl">
-                            <h4 class="text-3xl angry-birds-font text-legoYellow animate-bounce">ΠΛΗΡΗΣ ΚΑΤΑΣΤΡΟΦΗ!</h4>
-                            <p class="text-xs text-stone-300 mt-2 max-w-xs">Γκρεμίσατε την πόλη και πήρατε πίσω τα αυγά με επιτυχία!</p>
-                            <div class="text-2xl font-black text-white mt-4">Σκορ: <span id="gameScoreVal" class="text-legoYellow">0</span></div>
-                            <button onclick="resetGame()" class="mt-5 bg-abGreen hover:bg-green-600 text-white font-extrabold text-xs py-3 px-6 rounded-full border-b-4 border-green-800 transition active:scale-95">
-                                <i class="fa-solid fa-rotate-left mr-2"></i>ΠΑΙΞΤΕ ΞΑΝΑ
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- DESCRIPTION & SPECS & REVIEWS TAB PANEL -->
-    <section class="max-w-7xl mx-auto px-4 py-8">
-        <div class="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-200">
-            <!-- Headers -->
-            <div class="flex border-b border-gray-200 bg-stone-50 overflow-x-auto">
-                <button onclick="openTab('desc')" id="tabBtn-desc" class="tab-button px-6 py-4 font-black text-sm text-legoRed border-b-4 border-legoRed uppercase tracking-wider flex-shrink-0 transition">
-                    Περιγραφή Προϊόντος
-                </button>
-                <button onclick="openTab('specs')" id="tabBtn-specs" class="tab-button px-6 py-4 font-bold text-sm text-gray-500 border-b-4 border-transparent hover:text-gray-800 hover:bg-gray-100 uppercase tracking-wider flex-shrink-0 transition">
-                    Χαρακτηριστικά (Specs)
-                </button>
-                <button onclick="openTab('reviews')" id="tabBtn-reviews" class="tab-button px-6 py-4 font-bold text-sm text-gray-500 border-b-4 border-transparent hover:text-gray-800 hover:bg-gray-100 uppercase tracking-wider flex-shrink-0 transition">
-                    Αξιολογήσεις (22)
-                </button>
-            </div>
-
-            <!-- Tab Panels Content -->
-            <div class="p-6 md:p-8">
-                <!-- TAB PANEL: Description -->
-                <div id="tabPanel-desc" class="tab-panel space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                        <div class="space-y-4">
-                            <h4 class="text-xl font-bold text-gray-900 angry-birds-font text-abRed">Γκρεμίστε την Πόλη των Γουρουνιών!</h4>
-                            <p class="text-xs text-gray-600 leading-relaxed">
-                                Μπείτε στον κόσμο της επίσημης ταινίας <i>Angry Birds</i> με αυτό το γεμάτο δράση σετ! Τα γουρουνάκια έχουν οχυρώσει τα κλεμμένα αυγά στην Πόλη τους, αλλά ο Ρεντ και η Στέλλα είναι αποφασισμένοι να τα πάρουν πίσω πάση θυσία.
-                            </p>
-                            <p class="text-xs text-gray-600 leading-relaxed">
-                                Χρησιμοποιήστε τον μεγάλο καταπέλτη για να εκτοξεύσετε τα πουλιά πάνω στις εύθραυστες δομές! Προκαλέστε αλυσιδωτές αντιδράσεις: γκρεμίστε τον πύργο, ρίξτε το γουρουνάκι από τη μοτοσικλέτα, ανατρέψτε το σταντ με τα hot dog και στείλτε τα γουρουνάκια να γλιστρήσουν στο σχοινί zip line!
-                            </p>
-                        </div>
-                        <div class="bg-stone-50 p-4 rounded-2xl border border-stone-200">
-                            <!-- Custom SVG Blueprint Design -->
-                            <svg class="mx-auto max-w-[320px] h-auto" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="400" height="300" rx="12" fill="#FEF3C7"/>
-                                <text x="200" y="45" fill="#0055A5" font-family="sans-serif" font-weight="bold" font-size="14" text-anchor="middle">Λεπτομέρειες Σχεδιασμού (75824)</text>
-                                
-                                <!-- Castle / tower representation -->
-                                <rect x="250" y="120" width="80" height="100" fill="#D1D5DB" stroke="#9CA3AF" stroke-width="2"/>
-                                <rect x="230" y="220" width="120" height="15" fill="#78350F"/>
-                                <circle cx="290" cy="95" r="15" fill="#8CC63F"/> <!-- Piggy on top -->
-                                
-                                <!-- Catapult -->
-                                <circle cx="80" cy="220" r="18" fill="#F43F5E"/> <!-- Stella launching -->
-                                <path d="M50 240 L100 210" stroke="#78350F" stroke-width="4"/>
-                                
-                                <path d="M100 210 L250 140" stroke="#E60012" stroke-dasharray="4" stroke-width="2"/>
-                                <text x="200" y="265" fill="#333" font-family="sans-serif" font-size="10" text-anchor="middle">Εκτόξευση και Αλυσιδωτή Καταστροφή Πύργου</text>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- TAB PANEL: Specs -->
-                <div id="tabPanel-specs" class="tab-panel hidden">
-                    <div class="max-w-2xl border border-stone-200 rounded-2xl overflow-hidden shadow-sm">
-                        <table class="w-full text-xs text-left text-gray-700">
-                            <thead class="bg-stone-100 text-gray-900 font-bold border-b border-stone-200">
-                                <tr>
-                                    <th class="px-6 py-3">Προδιαγραφή</th>
-                                    <th class="px-6 py-3">Λεπτομέρειες</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-stone-200">
-                                <tr>
-                                    <td class="px-6 py-4 bg-stone-50/50 font-bold">Κωδικός Προϊόντος</td>
-                                    <td class="px-6 py-4">LEGO® 75824</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-6 py-4 bg-stone-50/50 font-bold">Σειρά</td>
-                                    <td class="px-6 py-4">The Angry Birds™ Movie (2016)</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-6 py-4 bg-stone-50/50 font-bold">Περιεχόμενα</td>
-                                    <td class="px-6 py-4">Πύργος Πόλης, Καταπέλτης, Σταντ Hot Dog, Zip line, 4 Φιγούρες (Red, Stella, Pirate Pig, Biker Pig)</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-6 py-4 bg-stone-50/50 font-bold">Διαστάσεις Πόλης</td>
-                                    <td class="px-6 py-4">Ύψος: 21 εκ. | Μήκος: 16 εκ. | Πλάτος: 10 εκ.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- TAB PANEL: Reviews -->
-                <div id="tabPanel-reviews" class="tab-panel hidden space-y-6">
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-stone-200 pb-4">
-                        <div>
-                            <h5 class="text-sm font-bold text-gray-900">Αξιολογήσεις Πελατών</h5>
-                            <p class="text-xs text-gray-500">Προσθέστε τη δική σας κριτική για το σετ 75824!</p>
-                        </div>
-                        <button onclick="toggleReviewModal(true)" class="mt-4 sm:mt-0 bg-legoBlue hover:bg-blue-800 text-white font-bold text-xs py-2 px-4 rounded-xl shadow transition">
-                            <i class="fa-solid fa-pen"></i> Γράψτε μια κριτική
-                        </button>
-                    </div>
-
-                    <!-- Reviews List -->
-                    <div id="reviewsList" class="space-y-4">
-                        <div class="bg-stone-50 p-4 rounded-xl border border-stone-100">
-                            <div class="flex items-center justify-between text-xs">
-                                <span class="font-bold text-gray-800">LegoMaster_Patra</span>
-                                <span class="text-gray-400">28 Μαΐου 2016</span>
-                            </div>
-                            <div class="flex text-legoYellow text-[10px] my-1">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <h6 class="font-bold text-xs text-gray-900">Το καλύτερο σετ της σειράς!</h6>
-                            <p class="text-xs text-gray-600 mt-1">
-                                Η Στέλλα και ο Ρεντ είναι καταπληκτικές φιγούρες. Η πόλη έχει τόσα πολλά πράγματα να γκρεμίσεις! Ο καταπέλτης δουλεύει τέλεια και τα παιδιά διασκεδάζουν με τις ώρες.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- RELATED ANGRY BIRDS PRODUCTS (2016 Catalog list) -->
-    <section class="max-w-7xl mx-auto px-4 py-8">
-        <h4 class="text-xl angry-birds-font text-gray-900 mb-6 tracking-wide">Συμπληρώστε τη Συλλογή σας</h4>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- 75821 -->
-            <div class="bg-white rounded-2xl p-4 shadow-md border border-stone-200 flex flex-col justify-between hover:shadow-lg transition">
-                <div>
-                    <div class="relative bg-stone-50 rounded-xl p-3 flex items-center justify-center h-48 mb-4 overflow-hidden">
-                        <img src="https://www.bricklink.com/SL/75821-1.jpg" class="max-h-36 object-contain" onerror="handleImageError(this)">
-                        <span class="absolute top-2 left-2 bg-legoRed text-white text-[9px] font-black px-1.5 py-0.5 rounded">75821</span>
-                    </div>
-                    <h5 class="font-bold text-xs text-gray-900">Απόδραση με το Γουρουνόκαρο</h5>
-                    <p class="text-[10px] text-gray-400 mt-0.5">Ηλικίες 6-12 | 74 Κομμάτια</p>
-                </div>
-                <div class="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between">
-                    <span class="text-base font-black text-gray-900">€14,99</span>
-                    <button onclick="simulatedRelatedAdd('75821', 'Απόδραση με το Γουρουνόκαρο', 14.99)" class="bg-legoYellow hover:bg-yellow-500 text-gray-900 font-extrabold text-[11px] px-3 py-1.5 rounded-lg transition">
-                        <i class="fa-solid fa-cart-plus"></i> Αγορά
-                    </button>
-                </div>
-            </div>
-
-            <!-- 75822 -->
-            <div class="bg-white rounded-2xl p-4 shadow-md border border-stone-200 flex flex-col justify-between hover:shadow-lg transition">
-                <div>
-                    <div class="relative bg-stone-50 rounded-xl p-3 flex items-center justify-center h-48 mb-4 overflow-hidden">
-                        <svg class="w-full h-full" viewBox="0 0 160 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="160" height="120" rx="6" fill="#F0F9FF"/>
-                            <circle cx="80" cy="50" r="24" fill="#EE1C25"/>
-                            <text x="80" y="105" fill="#E60012" font-family="sans-serif" font-weight="bold" font-size="10" text-anchor="middle">75822</text>
-                        </svg>
-                        <span class="absolute top-2 left-2 bg-legoRed text-white text-[9px] font-black px-1.5 py-0.5 rounded">75822</span>
-                    </div>
-                    <h5 class="font-bold text-xs text-gray-900">Επίθεση με το Αεροπλάνο του Γουρουνιού</h5>
-                    <p class="text-[10px] text-gray-400 mt-0.5">Ηλικίες 6-12 | 168 Κομμάτια</p>
-                </div>
-                <div class="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between">
-                    <span class="text-base font-black text-gray-900">€24,99</span>
-                    <button onclick="simulatedRelatedAdd('75822', 'Επίθεση με το Αεροπλάνο του Γουρουνιού', 24.99)" class="bg-legoYellow hover:bg-yellow-500 text-gray-900 font-extrabold text-[11px] px-3 py-1.5 rounded-lg transition">
-                        <i class="fa-solid fa-cart-plus"></i> Αγορά
-                    </button>
-                </div>
-            </div>
-
-            <!-- 75823 -->
-            <div class="bg-white rounded-2xl p-4 shadow-md border border-stone-200 flex flex-col justify-between hover:shadow-lg transition">
-                <div>
-                    <div class="relative bg-stone-50 rounded-xl p-3 flex items-center justify-center h-48 mb-4 overflow-hidden">
-                        <svg class="w-full h-full" viewBox="0 0 160 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="160" height="120" rx="6" fill="#ECFDF5"/>
-                            <circle cx="80" cy="50" r="24" fill="#8CC63F"/>
-                            <text x="80" y="105" fill="#E60012" font-family="sans-serif" font-weight="bold" font-size="10" text-anchor="middle">75823</text>
-                        </svg>
-                        <span class="absolute top-2 left-2 bg-legoRed text-white text-[9px] font-black px-1.5 py-0.5 rounded">75823</span>
-                    </div>
-                    <h5 class="font-bold text-xs text-gray-900">Η Αρπαγή των Αυγών από το Νησί των Πουλιών</h5>
-                    <p class="text-[10px] text-gray-400 mt-0.5">Ηλικίες 6-12 | 277 Κομμάτια</p>
-                </div>
-                <div class="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between">
-                    <span class="text-base font-black text-gray-900">€39,99</span>
-                    <button onclick="simulatedRelatedAdd('75823', 'Η Αρπαγή των Αυγών από το Νησί', 39.99)" class="bg-legoYellow hover:bg-yellow-500 text-gray-900 font-extrabold text-[11px] px-3 py-1.5 rounded-lg transition">
-                        <i class="fa-solid fa-cart-plus"></i> Αγορά
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-stone-800 text-gray-400 text-xs py-12 px-6 mt-12 border-t-8 border-legoYellow">
-        <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
-            <div>
-                <h6 class="font-extrabold text-white uppercase tracking-wider mb-3">Σχετικά με Εμάς</h6>
-                <ul class="space-y-2">
-                    <li><a href="#" class="hover:text-white transition">Η Εταιρεία LEGO</a></li>
-                    <li><a href="#" class="hover:text-white transition">LEGO News</a></li>
-                    <li><a href="#" class="hover:text-white transition">Υπευθυνότητα & Βιωσιμότητα</a></li>
-                </ul>
-            </div>
-            <div>
-                <h6 class="font-extrabold text-white uppercase tracking-wider mb-3">Υποστήριξη</h6>
-                <ul class="space-y-2">
-                    <li><a href="#" class="hover:text-white transition">Επικοινωνία / LEGO Hellas</a></li>
-                    <li><a href="#" class="hover:text-white transition">Οδηγίες Συναρμολόγησης</a></li>
-                    <li><a href="#" class="hover:text-white transition">Ανταλλακτικά Τουβλάκια</a></li>
-                </ul>
-            </div>
-            <div>
-                <h6 class="font-extrabold text-white uppercase tracking-wider mb-3">Συνεργάτες</h6>
-                <ul class="space-y-2">
-                    <li><a href="#" class="hover:text-white transition">LEGOLAND® Parks</a></li>
-                    <li><a href="#" class="hover:text-white transition">LEGO Education</a></li>
-                </ul>
-            </div>
-            <div>
-                <h6 class="font-extrabold text-white uppercase tracking-wider mb-3">Ακολουθήστε Μας</h6>
-                <div class="flex space-x-3 text-lg mt-2">
-                    <a href="#" class="hover:text-white transition"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#" class="hover:text-white transition"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="hover:text-white transition"><i class="fa-brands fa-youtube"></i></a>
-                </div>
-                <div class="mt-4">
-                    <span class="block text-gray-500 text-[10px] mb-1">ΓΛΩΣΣΑ/ΠΕΡΙΟΧΗ:</span>
-                    <button class="bg-stone-700 text-white px-3 py-1 rounded border border-stone-600 font-bold hover:bg-stone-600 transition">
-                        🇬🇷 Ελλάδα (el-GR)
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <div class="max-w-7xl mx-auto pt-8 border-t border-stone-700 text-center md:text-left md:flex md:items-center md:justify-between text-[11px] text-gray-500">
-            <p>
-                LEGO, the LEGO logo, the Minifigure, DUPLO, BIONICLE, and NINJAGO are trademarks of the LEGO Group. ©2016 The LEGO Group. All rights reserved. <br>
-                © 2016 Rovio Entertainment Ltd. Angry Birds and all related characters are trademarks of Rovio Entertainment Ltd.
-            </p>
-            <div class="mt-4 md:mt-0 flex justify-center md:justify-end space-x-4">
-                <a href="#" class="hover:underline">Πολιτική Απορρήτου</a>
-                <a href="#" class="hover:underline">Cookies</a>
-                <a href="#" class="hover:underline">Όροι Χρήσης</a>
-            </div>
-        </div>
+    <footer>
+        <p>&copy; 2016 The LEGO Group. All rights reserved. LEGO, το λογότυπο LEGO και η Minifigure είναι εμπορικά σήματα του Ομίλου LEGO.</p>
     </footer>
 
-    <!-- CART SIDE DRAWER PANEL -->
-    <div id="cartDrawer" class="fixed inset-0 bg-black/60 z-50 translate-x-full transition-transform duration-300 flex justify-end">
-        <div onclick="toggleCartDrawer(false)" class="flex-grow"></div>
-        <div class="w-full max-w-md bg-white h-full shadow-2xl flex flex-col justify-between p-6">
-            <div>
-                <div class="flex items-center justify-between pb-4 border-b border-gray-200">
-                    <h5 class="text-base font-black text-gray-900 flex items-center">
-                        <i class="fa-solid fa-basket-shopping text-legoBlue mr-2"></i>
-                        <span>Καλάθι Αγορών (LEGO® GR)</span>
-                    </h5>
-                    <button onclick="toggleCartDrawer(false)" class="p-2 hover:bg-stone-100 rounded-full transition">
-                        <i class="fa-solid fa-times text-gray-500"></i>
-                    </button>
-                </div>
-
-                <div id="cartItemsContainer" class="mt-6 space-y-4 overflow-y-auto max-h-[60vh] pr-2">
-                    <p class="text-xs text-gray-500 text-center py-8">Το καλάθι σας είναι άδειο.</p>
-                </div>
-            </div>
-
-            <div class="border-t border-gray-200 pt-4">
-                <div class="flex items-center justify-between text-sm font-bold text-gray-900 mb-2">
-                    <span>Μερικό Σύνολο:</span>
-                    <span id="cartSubtotal">€0,00</span>
-                </div>
-                <div class="text-[11px] text-gray-400 mb-4">
-                    <span>Δωρεάν έξοδα αποστολής για παραγγελίες άνω των €55!</span>
-                </div>
-                <button onclick="simulatedCheckout()" class="w-full bg-legoYellow hover:bg-yellow-500 text-gray-900 py-3 rounded-xl font-extrabold text-xs border-b-4 border-yellow-600 shadow transition active:scale-[0.98]">
-                    ΟΛΟΚΛΗΡΩΣΗ ΑΓΟΡΑΣ
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- TOAST NOTIFICATIONS -->
-    <div id="toastNotification" class="fixed bottom-5 left-5 bg-stone-900 text-white px-5 py-3 rounded-2xl shadow-2xl z-50 transform translate-y-24 opacity-0 transition-all duration-300 max-w-sm flex items-center space-x-3 border-l-4 border-legoYellow">
-        <div id="toastIcon" class="text-legoYellow"><i class="fa-solid fa-circle-check"></i></div>
-        <div class="flex-grow">
-            <span id="toastMessage" class="text-xs font-bold leading-tight">Το προϊόν προστέθηκε!</span>
-        </div>
-    </div>
-
-    <!-- REVIEW DIALOG FORM -->
-    <div id="reviewModal" class="hidden fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl p-6 w-full max-w-md shadow-2xl">
-            <div class="flex items-center justify-between pb-4 border-b border-gray-200">
-                <h5 class="text-sm font-bold text-gray-900">Γράψτε τη δική σας κριτική</h5>
-                <button onclick="toggleReviewModal(false)" class="p-2 hover:bg-stone-100 rounded-full"><i class="fa-solid fa-times"></i></button>
-            </div>
-            <form onsubmit="submitReview(event)" class="mt-4 space-y-4 text-xs">
-                <div>
-                    <label class="block font-bold text-gray-600 mb-1">Όνομα / Ψευδώνυμο</label>
-                    <input type="text" id="reviewerName" required class="w-full border border-gray-300 rounded-lg p-2 outline-none focus:ring-1 focus:ring-legoBlue">
-                </div>
-                <div>
-                    <label class="block font-bold text-gray-600 mb-1">Αστέρια</label>
-                    <select id="reviewerRating" class="w-full border border-gray-300 rounded-lg p-2 outline-none focus:ring-1 focus:ring-legoBlue bg-white font-bold text-legoYellow">
-                        <option value="5">⭐⭐⭐⭐⭐ (5/5)</option>
-                        <option value="4">⭐⭐⭐⭐ (4/5)</option>
-                        <option value="3">⭐⭐⭐ (3/5)</option>
-                        <option value="2">⭐⭐ (2/5)</option>
-                        <option value="1">⭐ (1/5)</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block font-bold text-gray-600 mb-1">Τίτλος</label>
-                    <input type="text" id="reviewerTitle" required class="w-full border border-gray-300 rounded-lg p-2 outline-none">
-                </div>
-                <div>
-                    <label class="block font-bold text-gray-600 mb-1">Σχόλιο</label>
-                    <textarea id="reviewerText" required rows="3" class="w-full border border-gray-300 rounded-lg p-2 outline-none"></textarea>
-                </div>
-                <button type="submit" class="w-full bg-legoBlue hover:bg-blue-800 text-white font-bold py-2.5 rounded-xl">
-                    Υποβολή Κριτικής
-                </button>
-            </form>
-        </div>
-    </div>
-
-    <!-- CODE CONTROLLERS -->
-    <script>
-        // State Setup
-        let cart = [];
-        let productQty = 1;
-        const mainPrice = 49.99;
-
-        // Custom image fallback logic
-        function handleImageError(img) {
-            img.onerror = null;
-            img.src = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300' fill='none'><rect width='400' height='300' rx='12' fill='%23F1F5F9'/><circle cx='200' cy='150' r='60' fill='%23EE1C25'/><rect x='160' y='140' width='80' height='20' rx='4' fill='%23FFD500'/><text x='200' y='240' fill='%230055A5' font-family='sans-serif' font-weight='bold' font-size='16' text-anchor='middle'>LEGO® 75824</text><text x='200' y='265' fill='%23475569' font-family='sans-serif' font-size='12' text-anchor='middle'>Η Καταστροφή της Πόλης</text></svg>";
-        }
-
-        // Qty adjusters
-        function incrementQty() {
-            productQty++;
-            document.getElementById('qtyVal').textContent = productQty;
-        }
-        function decrementQty() {
-            if (productQty > 1) {
-                productQty--;
-                document.getElementById('qtyVal').textContent = productQty;
-            }
-        }
-
-        // Change Main gallery photo
-        function changeGalleryImage(src, index) {
-            document.getElementById('imageLoader').classList.remove('hidden');
-            const mainImg = document.getElementById('mainProductImg');
-            mainImg.src = src;
-            mainImg.onload = () => {
-                document.getElementById('imageLoader').classList.add('hidden');
-            };
-            highlightThumb(index);
-        }
-
-        const customViews = {
-            cityBlueprint: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300' fill='none'><rect width='400' height='300' rx='10' fill='%23ECFDF5'/><text x='200' y='140' fill='%23047857' font-family='sans-serif' font-weight='bold' font-size='16' text-anchor='middle'>Σχέδιο: Πόλη των Γουρουνιών</text><text x='200' y='170' fill='%23475569' font-family='sans-serif' font-size='11' text-anchor='middle'>Διαθέτει σταντ Hot dog, αναδιπλούμενη γέφυρα %26 σχοινί zip line</text></svg>",
-            minifigures: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300' fill='none'><rect width='400' height='300' rx='10' fill='%23FFF1F2'/><circle cx='80' cy='150' r='25' fill='%23EE1C25'/><circle cx='160' cy='150' r='25' fill='%23EC407A'/><circle cx='240' cy='150' r='25' fill='%2315803d'/><circle cx='320' cy='150' r='25' fill='%23166534'/><text x='80' y='200' fill='%231e293b' font-family='sans-serif' font-weight='bold' font-size='11' text-anchor='middle'>Ρεντ</text><text x='160' y='200' fill='%231e293b' font-family='sans-serif' font-weight='bold' font-size='11' text-anchor='middle'>Στέλλα</text><text x='240' y='200' fill='%231e293b' font-family='sans-serif' font-weight='bold' font-size='11' text-anchor='middle'>Πειρατής</text><text x='320' y='200' fill='%231e293b' font-family='sans-serif' font-weight='bold' font-size='11' text-anchor='middle'>Μοτοσικλετιστής</text></svg>",
-            catapultSpecs: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300' fill='none'><rect width='400' height='300' rx='10' fill='%23FAF5FF'/><circle cx='200' cy='150' r='40' fill='%23EE1C25'/><text x='200' y='220' fill='%231e293b' font-family='sans-serif' font-weight='bold' font-size='12' text-anchor='middle'>Μεγάλος Καταπέλτης Εκτόξευσης</text></svg>"
-        };
-
-        function useSvgView(key, index) {
-            document.getElementById('imageLoader').classList.remove('hidden');
-            const mainImg = document.getElementById('mainProductImg');
-            mainImg.src = customViews[key];
-            mainImg.onload = () => {
-                document.getElementById('imageLoader').classList.add('hidden');
-            };
-            highlightThumb(index);
-        }
-
-        function highlightThumb(index) {
-            const thumbs = document.querySelectorAll('.thumb-btn');
-            thumbs.forEach((thumb, idx) => {
-                if (idx === index) {
-                    thumb.classList.add('border-legoYellow', 'ring-2', 'ring-legoYellow/50');
-                    thumb.classList.remove('border-gray-200');
-                } else {
-                    thumb.classList.remove('border-legoYellow', 'ring-2', 'ring-legoYellow/50');
-                    thumbs[idx].classList.add('border-gray-200');
-                }
-            });
-        }
-
-        // Action controls
-        let inWishlist = false;
-        function toggleWishlist() {
-            inWishlist = !inWishlist;
-            const icon = document.getElementById('wishIcon');
-            if (inWishlist) {
-                icon.classList.replace('fa-regular', 'fa-solid');
-                showToast("Το σετ προστέθηκε στη Λίστα Επιθυμιών σας! ❤️");
-            } else {
-                icon.classList.replace('fa-solid', 'fa-regular');
-                showToast("Αφαιρέθηκε από τη Λίστα Επιθυμιών.");
-            }
-        }
-
-        function copyProductLink() {
-            const input = document.createElement('input');
-            input.value = window.location.href;
-            document.body.appendChild(input);
-            input.select();
-            document.execCommand('copy');
-            document.body.removeChild(input);
-            showToast("🔗 Αντιγράφηκε ο σύνδεσμος προϊόντος!");
-        }
-
-        // Cart Actions
-        function addToCartTrigger() {
-            const item = {
-                id: '75824',
-                name: 'Η Καταστροφή της Πόλης των Γουρουνιών',
-                price: mainPrice,
-                qty: productQty
-            };
-            addToCart(item);
-        }
-
-        function simulatedRelatedAdd(id, name, price) {
-            const item = {
-                id: id,
-                name: name,
-                price: price,
-                qty: 1
-            };
-            addToCart(item);
-        }
-
-        function addToCart(item) {
-            const exists = cart.find(x => x.id === item.id);
-            if (exists) {
-                exists.qty += item.qty;
-            } else {
-                cart.push(item);
-            }
-            updateCartUI();
-            showToast(`🛒 Προστέθηκε στο καλάθι: ${item.name} (${item.qty} τεμ.)`);
-        }
-
-        function updateCartUI() {
-            const countElem = document.getElementById('cartCount');
-            const listContainer = document.getElementById('cartItemsContainer');
-            const subtotalElem = document.getElementById('cartSubtotal');
-            
-            let totalItems = 0;
-            let totalPrice = 0;
-            
-            if (cart.length === 0) {
-                listContainer.innerHTML = '<p class="text-xs text-gray-500 text-center py-8">Το καλάθι σας είναι άδειο.</p>';
-                countElem.textContent = '0';
-                subtotalElem.textContent = '€0,00';
-                return;
-            }
-
-            listContainer.innerHTML = '';
-            cart.forEach((item, index) => {
-                totalItems += item.qty;
-                totalPrice += item.price * item.qty;
-
-                const row = document.createElement('div');
-                row.className = 'flex items-center justify-between p-3 bg-stone-50 rounded-xl border border-stone-100 shadow-sm';
-                row.innerHTML = `
-                    <div class="flex-grow">
-                        <span class="block text-xs font-bold text-gray-900 leading-tight">${item.name}</span>
-                        <span class="block text-[10px] text-gray-400 mt-0.5">Κωδικός: ${item.id}</span>
-                        <div class="flex items-center space-x-2 mt-1">
-                            <span class="text-xs font-black text-gray-800">€${item.price}</span>
-                            <span class="text-[10px] text-gray-400">x${item.qty}</span>
-                        </div>
-                    </div>
-                    <button onclick="removeFromCart(${index})" class="p-1 hover:bg-stone-200 rounded text-legoRed text-xs transition">
-                        <i class="fa-solid fa-trash-can"></i>
-                    </button>
-                `;
-                listContainer.appendChild(row);
-            });
-
-            countElem.textContent = totalItems;
-            subtotalElem.textContent = `€${totalPrice.toFixed(2)}`;
-        }
-
-        function removeFromCart(index) {
-            cart.splice(index, 1);
-            updateCartUI();
-            showToast("Το προϊόν αφαιρέθηκε.");
-        }
-
-        function toggleCartDrawer(show) {
-            const drawer = document.getElementById('cartDrawer');
-            if (show) drawer.classList.remove('translate-x-full');
-            else drawer.classList.add('translate-x-full');
-        }
-
-        document.getElementById('cartBtn').addEventListener('click', () => toggleCartDrawer(true));
-
-        function simulatedCheckout() {
-            if (cart.length === 0) {
-                showToast("⚠️ Προσθέστε προϊόντα για να προχωρήσετε.");
-                return;
-            }
-            showToast("🛍| Σύνδεση με την πύλη πληρωμής LEGO (el-GR)...");
-            setTimeout(() => {
-                cart = [];
-                updateCartUI();
-                toggleCartDrawer(false);
-                showToast("✅ Η εικονική σας παραγγελία ολοκληρώθηκε με επιτυχία!");
-            }, 1800);
-        }
-
-        function showToast(message) {
-            const toast = document.getElementById('toastNotification');
-            const msgSpan = document.getElementById('toastMessage');
-            msgSpan.textContent = message;
-            
-            toast.classList.remove('translate-y-24', 'opacity-0');
-            toast.classList.add('translate-y-0', 'opacity-100');
-            
-            setTimeout(() => {
-                toast.classList.add('translate-y-24', 'opacity-0');
-                toast.classList.remove('translate-y-0', 'opacity-100');
-            }, 3000);
-        }
-
-        // Tab switcher logic
-        function openTab(tabId) {
-            const panels = document.querySelectorAll('.tab-panel');
-            panels.forEach(p => p.classList.add('hidden'));
-
-            const buttons = document.querySelectorAll('.tab-button');
-            buttons.forEach(b => {
-                b.classList.remove('text-legoRed', 'border-legoRed', 'font-black');
-                b.classList.add('text-gray-500', 'border-transparent', 'font-bold');
-            });
-
-            document.getElementById(`tabPanel-${tabId}`).classList.remove('hidden');
-            const targetBtn = document.getElementById(`tabBtn-${tabId}`);
-            targetBtn.classList.add('text-legoRed', 'border-legoRed', 'font-black');
-            targetBtn.classList.remove('text-gray-500', 'border-transparent', 'font-bold');
-        }
-
-        // Submit Reviews
-        function toggleReviewModal(show) {
-            const modal = document.getElementById('reviewModal');
-            if (show) modal.classList.remove('hidden');
-            else modal.classList.add('hidden');
-        }
-
-        function submitReview(e) {
-            e.preventDefault();
-            const name = document.getElementById('reviewerName').value;
-            const rating = parseInt(document.getElementById('reviewerRating').value);
-            const title = document.getElementById('reviewerTitle').value;
-            const text = document.getElementById('reviewerText').value;
-
-            const list = document.getElementById('reviewsList');
-            const row = document.createElement('div');
-            row.className = 'bg-stone-50 p-4 rounded-xl border border-stone-100 animate-fade-in';
-            
-            let stars = '';
-            for (let i = 0; i < 5; i++) {
-                if (i < rating) stars += '<i class="fa-solid fa-star"></i>';
-                else stars += '<i class="fa-regular fa-star"></i>';
-            }
-
-            row.innerHTML = `
-                <div class="flex items-center justify-between text-xs">
-                    <span class="font-bold text-gray-800">${name}</span>
-                    <span class="text-gray-400">Μάιος 2016</span>
-                </div>
-                <div class="flex text-legoYellow text-[10px] my-1">${stars}</div>
-                <h6 class="font-bold text-xs text-gray-900">${title}</h6>
-                <p class="text-xs text-gray-600 mt-1">${text}</p>
-            `;
-
-            list.prepend(row);
-            toggleReviewModal(false);
-            showToast("🌟 Ευχαριστούμε για την κριτική σας!");
-        }
-
-        // ==========================================
-        // ONLINE GAME: STELLA'S PIGGY CITY DEMOLITION
-        // ==========================================
-        const canvas = document.getElementById('gameCanvas');
-        const ctx = canvas.getContext('2d');
-
-        let highscore = parseInt(localStorage.getItem('lego_75824_highscore')) || 3800;
-        document.getElementById('gameHighScore').textContent = highscore;
-
-        let itemsDestroyed = 0;
-        let baseCatapult = { x: 100, y: 190 };
-        let stella = { x: 100, y: 190, radius: 10, isDragged: false, vx: 0, vy: 0, launched: false };
-        
-        // Physics block target array representing collapsible structures in Piggy City
-        let cityBlocks = [
-            { x: 420, y: 120, width: 25, height: 90, color: "#D1D5DB", knocked: false }, // Left wall
-            { x: 495, y: 120, width: 25, height: 90, color: "#D1D5DB", knocked: false }, // Right wall
-            { x: 405, y: 100, width: 130, height: 20, color: "#78350F", knocked: false }, // Roof Beam
-            { x: 455, y: 55, width: 30, height: 45, color: "#8CC63F", isPig: true, knocked: false } // Pirate Pig
-        ];
-
-        function setCanvasDimensions() {
-            canvas.width = 640;
-            canvas.height = 250;
-        }
-
-        // Touch & Mouse Control Hooks
-        canvas.addEventListener('mousedown', startDrag);
-        canvas.addEventListener('mousemove', drag);
-        window.addEventListener('mouseup', releaseDrag);
-
-        canvas.addEventListener('touchstart', startDrag, { passive: false });
-        canvas.addEventListener('touchmove', drag, { passive: false });
-        window.addEventListener('touchend', releaseDrag);
-
-        function getCanvasPosition(e) {
-            const rect = canvas.getBoundingClientRect();
-            const cx = e.touches ? e.touches[0].clientX : e.clientX;
-            const cy = e.touches ? e.touches[0].clientY : e.clientY;
-            return {
-                x: ((cx - rect.left) / rect.width) * canvas.width,
-                y: ((cy - rect.top) / rect.height) * canvas.height
-            };
-        }
-
-        function startDrag(e) {
-            if (stella.launched) return;
-            const pos = getCanvasPosition(e);
-            const dist = Math.hypot(pos.x - stella.x, pos.y - stella.y);
-            if (dist < 25) {
-                e.preventDefault();
-                stella.isDragged = true;
-            }
-        }
-
-        function drag(e) {
-            if (!stella.isDragged) return;
-            e.preventDefault();
-            const pos = getCanvasPosition(e);
-            const dx = pos.x - baseCatapult.x;
-            const dy = pos.y - baseCatapult.y;
-            const dist = Math.hypot(dx, dy);
-            const maxDrag = 50;
-
-            if (dist > maxDrag) {
-                const angle = Math.atan2(dy, dx);
-                stella.x = baseCatapult.x + Math.cos(angle) * maxDrag;
-                stella.y = baseCatapult.y + Math.sin(angle) * maxDrag;
-            } else {
-                stella.x = pos.x;
-                stella.y = pos.y;
-            }
-        }
-
-        function releaseDrag() {
-            if (!stella.isDragged) return;
-            stella.isDragged = false;
-            stella.launched = true;
-            stella.vx = (baseCatapult.x - stella.x) * 0.18;
-            stella.vy = (baseCatapult.y - stella.y) * 0.18;
-        }
-
-        function gameLoop() {
-            // Draw sky
-            ctx.fillStyle = "#BAE6FD";
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            // Ground Grass
-            ctx.fillStyle = "#4ADE80";
-            ctx.fillRect(0, 210, canvas.width, 40);
-
-            // Catapult Base frame
-            ctx.fillStyle = "#78350F";
-            ctx.fillRect(baseCatapult.x - 4, baseCatapult.y, 8, 210 - baseCatapult.y);
-            ctx.fillStyle = "#B45309";
-            ctx.fillRect(baseCatapult.x - 12, baseCatapult.y - 4, 24, 8);
-
-            // Aim rubber line
-            if (stella.isDragged) {
-                ctx.strokeStyle = "#451A03";
-                ctx.lineWidth = 3;
-                ctx.beginPath();
-                ctx.moveTo(baseCatapult.x, baseCatapult.y);
-                ctx.lineTo(stella.x, stella.y);
-                ctx.stroke();
-            }
-
-            // Draw City Blocks
-            cityBlocks.forEach(block => {
-                if (!block.knocked) {
-                    ctx.fillStyle = block.color;
-                    if (block.isPig) {
-                        // Green circle representing Piggy
-                        ctx.beginPath();
-                        ctx.arc(block.x + block.width/2, block.y + block.height/2, block.width/2, 0, Math.PI * 2);
-                        ctx.fill();
-                        // Draw black eyes
-                        ctx.fillStyle = "#000000";
-                        ctx.beginPath();
-                        ctx.arc(block.x + block.width/2 - 4, block.y + block.height/2 - 2, 2, 0, Math.PI * 2);
-                        ctx.arc(block.x + block.width/2 + 4, block.y + block.height/2 - 2, 2, 0, Math.PI * 2);
-                        ctx.fill();
-                    } else {
-                        // Wooden or Stone structures
-                        ctx.fillRect(block.x, block.y, block.width, block.height);
-                    }
-                }
-            });
-
-            // Physics calculation for Stella
-            if (stella.launched) {
-                stella.vy += 0.18; // Apply gravity
-                stella.x += stella.vx;
-                stella.y += stella.vy;
-
-                // Hit ground
-                if (stella.y > 210 - stella.radius) {
-                    resetStella();
-                }
-
-                // Hit detection with target elements
-                cityBlocks.forEach(block => {
-                    if (!block.knocked &&
-                        stella.x + stella.radius > block.x &&
-                        stella.x - stella.radius < block.x + block.width &&
-                        stella.y + stella.radius > block.y &&
-                        stella.y - stella.radius < block.y + block.height) {
-                        
-                        block.knocked = true;
-                        itemsDestroyed++;
-                        document.getElementById('gameDemolished').textContent = itemsDestroyed;
-                        spawnImpactDust(stella.x, stella.y);
-
-                        // Chain collapse effect: if walls are hit, trigger roof collapsing
-                        if (block.color === "#D1D5DB") {
-                            const roof = cityBlocks.find(b => b.color === "#78350F");
-                            const pig = cityBlocks.find(b => b.isPig);
-                            if (roof) roof.knocked = true;
-                            if (pig) pig.knocked = true;
-                        }
-
-                        // Check Victory condition (Pig target destroyed)
-                        const pig = cityBlocks.find(b => b.isPig);
-                        if (pig && pig.knocked) {
-                            setTimeout(handleVictory, 600);
-                        }
-                    }
-                });
-            }
-
-            // Draw Stella (Pink Angry Bird Vector)
-            ctx.fillStyle = "#EC407A"; // Stella Pink body color
-            ctx.beginPath();
-            ctx.arc(stella.x, stella.y, stella.radius, 0, Math.PI * 2);
-            ctx.fill();
-            // Beak
-            ctx.fillStyle = "#F59E0B";
-            ctx.beginPath();
-            ctx.moveTo(stella.x + 3, stella.y - 1);
-            ctx.lineTo(stella.x + 9, stella.y + 1);
-            ctx.lineTo(stella.x + 3, stella.y + 3);
-            ctx.fill();
-            // Eyes
-            ctx.fillStyle = "#FFFFFF";
-            ctx.beginPath();
-            ctx.arc(stella.x + 1, stella.y - 2, 2.5, 0, Math.PI * 2);
-            ctx.fill();
-            ctx.fillStyle = "#000000";
-            ctx.beginPath();
-            ctx.arc(stella.x + 1.5, stella.y - 2, 1, 0, Math.PI * 2);
-            ctx.fill();
-
-            requestAnimationFrame(gameLoop);
-        }
-
-        function resetStella() {
-            stella.x = baseCatapult.x;
-            stella.y = baseCatapult.y;
-            stella.vx = 0;
-            stella.vy = 0;
-            stella.launched = false;
-        }
-
-        function spawnImpactDust(x, y) {
-            ctx.fillStyle = "#F59E0B";
-            ctx.beginPath();
-            ctx.arc(x, y, 28, 0, Math.PI * 2);
-            ctx.fill();
-        }
-
-        function handleVictory() {
-            const currentScore = itemsDestroyed * 800 + Math.floor(Math.random() * 300);
-            if (currentScore > highscore) {
-                highscore = currentScore;
-                localStorage.setItem('lego_75824_highscore', highscore);
-                document.getElementById('gameHighScore').textContent = highscore;
-            }
-
-            document.getElementById('gameScoreVal').textContent = currentScore;
-            document.getElementById('gameOverlay').classList.remove('hidden');
-        }
-
-        function resetGame() {
-            itemsDestroyed = 0;
-            document.getElementById('gameDemolished').textContent = "0";
-            document.getElementById('gameOverlay').classList.add('hidden');
-            
-            // Re-stack structures
-            cityBlocks.forEach(block => block.knocked = false);
-            resetStella();
-        }
-
-        // Init Setup
-        setCanvasDimensions();
-        gameLoop();
-        window.addEventListener('resize', setCanvasDimensions);
-    </script>
 </body>
 </html>
