@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="el-GR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEGO.com Friends - 3065 Το Δεντρόσπιτο της Ολίβια</title>
+    <style>
+        /* Ρετρό Αισθητική LEGO Web 2012 */
+        body {
+            font-family: "Helvetica Neue", Helvetica, sans-serif;
+            background-color: #f7f3f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Πάνω Κίτρινη Μπάρα LEGO */
+        .lego-header {
+            background-color: #ffcf00;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 4px solid #e60012;
+        }
+
+        .logo-placeholder {
+            background-color: #e60012;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            padding: 5px 15px;
+            font-family: 'Arial Black', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            margin-right: 20px;
+        }
+
+        .nav-links {
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .nav-links a {
+            color: #000;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Friends Theme Header Banner */
+        .friends-banner {
+            background: linear-gradient(to bottom, #bd6cb0, #964f89);
+            color: white;
+            padding: 15px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: inset 0 -3px 0 rgba(0,0,0,0.1);
+        }
+
+        /* Κεντρικό Κοντέινερ */
+        .container {
+            max-width: 980px;
+            margin: 20px auto;
+            background: white;
+            border: 1px solid #d3c4db;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Διάταξη Προϊόντος */
+        .product-view {
+            display: flex;
+            padding: 30px;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .product-view {
+                flex-direction: column;
+            }
+        }
+
+        .product-image-container {
+            flex: 1;
+            text-align: center;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            padding: 10px;
+            background: #fff;
+        }
+
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .product-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-meta {
+            font-size: 13px;
+            color: #777;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        h1 {
+            color: #7a3569;
+            font-size: 28px;
+            margin: 0 0 15px 0;
+        }
+
+        .age-pieces {
+            display: inline-block;
+            background-color: #e8d7ea;
+            color: #581d49;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 20px;
+            margin-right: 5px;
+        }
+
+        .description {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #444;
+            margin-bottom: 25px;
+        }
+
+        /* Κουτί Αγοράς στυλ 2012 */
+        .buy-box {
+            background-color: #f6edf8;
+            border: 2px dashed #bd6cb0;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: auto;
+        }
+
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .btn-shop {
+            display: inline-block;
+            background: linear-gradient(to bottom, #ff8400, #e65c00);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .btn-shop:hover {
+            background: linear-gradient(to bottom, #ff941a, #ff6a00);
+        }
+
+        /* Χαρακτηριστικά Προϊόντος */
+        .features-section {
+            padding: 20px 30px 40px 30px;
+            border-top: 1px solid #ebdff2;
+            background-color: #faf6fc;
+        }
+
+        .features-section h3 {
+            color: #7a3569;
+            margin-top: 0;
+        }
+
+        .features-list {
+            padding-left: 20px;
+            line-height: 1.8;
+        }
+
+        /* Υποσέλιδο */
+        .lego-footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 11px;
+            color: #888;
+            border-top: 1px solid #ddd;
+            margin-top: 40px;
+            background-color: #eaeaea;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="lego-header">
+        <div class="logo-placeholder">LEGO</div>
+        <nav class="nav-links">
+            <a href="#">Προϊόντα</a>
+            <a href="#">Παιχνίδια</a>
+            <a href="#">Κατάστημα</a>
+            <a href="#">Θέματα</a>
+        </nav>
+    </header>
+
+    <div class="friends-banner">
+        LEGO® Friends &gt; Heartlake City
+    </div>
+
+    <main class="container">
+        <div class="product-view">
+            
+            <div class="product-image-container">
+                <img src="https://www.bricklink.com/SL/3065-1.jpg" alt="LEGO Friends 3065 Το Δεντρόσπιτο της Ολίβια" class="product-image">
+            </div>
+            
+            <div class="product-details">
+                <div class="product-meta">Κωδικός Προϊόντος: 3065</div>
+                <h1>Το Δεντρόσπιτο της Ολίβια</h1>
+                
+                <div>
+                    <span class="age-pieces">Ηλικίες: 6-12</span>
+                    <span class="age-pieces">Κομμάτια: 191</span>
+                </div>
+
+                <p class="description">
+                    Ανέβα ψηλά και βοήθησε την Ολίβια να απολαύσει τη θέα από το δικό της δεντρόσπιτο! Μεταμόρφωσε το δεντρόσπιτο ανάλογα με την εποχή, παρατήρησε τα αστέρια με το τηλεσκόπιο ή παίξε με τη μικρή γατούλα της. Βοήθησε τις LEGO® Friends να ανέβουν στην πτυσσόμενη σκάλα και να περάσουν ένα υπέροχο απόγευμα κοιτάζοντας τα πουλιά και τις πεταλούδες στον κήπο!
+                </p>
+
+                <div class="buy-box">
+                    <div class="price">€19.99</div>
+                    <button class="btn-shop">Προσθήκη στο Καλάθι</button>
+                </div>
+            </div>
+
+        </div>
+
+        <section class="features-section">
+            <h3>Χαρακτηριστικά Προϊόντος</h3>
+            <ul class="features-list">
+                <li>Περιλαμβάνει τη μίνι κούκλα (mini-doll figure) <strong>Ολίβια</strong>.</li>
+                <li>Διαθέτει το δεντρόσπιτο, αναδιπλούμενη σκάλα, παρατηρητήριο πουλιών με τηλεσκόπιο και μια μικρή γάτα.</li>
+                <li>Τα αξεσουάρ περιλαμβάνουν ένα φλιτζάνι, ένα πιάτο, ψάρι για τη γάτα, πεταλούδες, λουλούδια και ένα πακέτο με τρόφιμα.</li>
+                <li>Το δεντρόσπιτο μπορεί να αναδιαμορφωθεί με διαφορετικούς τρόπους για ατελείωτο παιχνίδι!</li>
+                <li>Τα κομμάτια LEGO® Friends είναι πλήρως συμβατά με όλα τα κλασικά τουβλάκια LEGO.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="lego-footer">
+        LEGO, το λογότυπο LEGO και οι φιγούρες Mini-doll είναι εμπορικά σήματα του Ομίλου LEGO. ©2012 The LEGO Group. Με την επιφύλαξη παντός δικαιώματος.
+    </footer>
+
+</body>
+</html>
