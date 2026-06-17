@@ -3,324 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>44025 Μηχάνημα Διάτρησης του BULK - LEGO® Shop Κατάστημα - LEGO.com GR</title>
+    <title>Μηχάνημα Διάτρησης του BULK 44025 | Hero Factory | LEGO® Shop GR</title>
+    <link rel="shortcut icon" href="https://www.lego.com/favicon.ico" type="image/x-icon">
+    
     <style>
-        /* 2014 LEGO.com Global Reset & Variables */
+        :root {
+            --lego-yellow: #ffcf00;
+            --lego-blue: #006cb7;
+            --text-dark: #2c2c2c;
+            --text-light: #5f5f5f;
+            --bg-light: #f8f8f8;
+            --border-color: #e0e0e0;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #1a1d24;
-            color: #ffffff;
-            background-image: radial-gradient(circle at top, #2d3545 0%, #12141a 100%);
-            min-height: 100vh;
-            font-family: Helvetica, sans-serif;
+            background-color: #ffffff;
+            color: var(--text-dark);
+            line-height: 1.6;
         }
 
-        /* Top Yellow LEGO Header */
+        /* Header Accent */
         header {
-            background-color: #ffcf00;
-            height: 50px;
+            background-color: var(--lego-yellow);
+            padding: 15px 20px;
             display: flex;
             align-items: center;
-            padding: 0 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-            position: relative;
-            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        .lego-logo {
-            background-color: #ff0000;
-            color: #ffffff;
-            font-weight: bold;
-            font-size: 20px;
-            padding: 5px 8px;
-            border: 3px solid #000000;
-            text-transform: uppercase;
-            letter-spacing: -1px;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .shop-brand {
-            color: #000;
-            font-weight: bold;
-            margin-left: 15px;
-            font-size: 16px;
-            text-transform: uppercase;
-        }
-
-        /* Hero Factory Theme Banner */
-        .theme-banner {
-            background: linear-gradient(90deg, #ff6a00 0%, #b34a00 100%);
-            padding: 10px 20px;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 14px;
-            letter-spacing: 1px;
-            border-bottom: 3px solid #ff6a00;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .theme-banner a {
+        .logo-placeholder {
+            background-color: #e60012;
             color: white;
-            text-decoration: none;
+            font-weight: 900;
+            padding: 8px 12px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-right: 20px;
+            border-radius: 4px;
         }
 
-        /* Main Product Layout */
-        .product-container {
-            max-width: 1100px;
-            margin: 30px auto;
-            padding: 20px;
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
-            background: rgba(0, 0, 0, 0.4);
-            border-radius: 8px;
-            border: 1px solid #333;
         }
 
         @media (max-width: 768px) {
-            .product-container {
+            .container {
                 grid-template-columns: 1fr;
+                margin: 20px auto;
             }
         }
 
-        /* Left Column: Images */
-        .image-gallery {
+        /* Product Image */
+        .product-gallery {
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            padding: 20px;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
+            border: 1px solid var(--border-color);
         }
 
-        .main-image {
+        .product-gallery img {
             max-width: 100%;
             height: auto;
-            background-color: #fff;
-            border-radius: 4px;
-            padding: 20px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+            mix-blend-mode: multiply;
+            transition: transform 0.3s ease;
         }
 
-        .age-badge {
-            margin-top: 15px;
-            background-color: #222;
-            padding: 8px 15px;
-            border-radius: 20px;
-            border: 1px solid #ff6a00;
-            font-size: 13px;
+        .product-gallery img:hover {
+            transform: scale(1.03);
         }
 
-        /* Right Column: Product Details */
+        /* Product Details */
         .product-details {
             display: flex;
             flex-direction: column;
         }
 
-        .product-id {
-            color: #ff6a00;
-            font-weight: bold;
-            font-size: 14px;
+        .set-meta {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 600;
             text-transform: uppercase;
-            margin-bottom: 5px;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
         }
 
         .product-title {
-            font-size: 32px;
+            font-size: 2.2rem;
             font-weight: 800;
+            line-height: 1.2;
             margin-bottom: 15px;
-            color: #fff;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
-        .price-tag {
-            font-size: 28px;
-            font-weight: bold;
-            color: #fff;
-            margin-bottom: 20px;
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+            padding: 15px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .availability {
-            color: #00cc44;
-            font-weight: bold;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            font-size: 14px;
+        .spec-item {
+            text-align: center;
         }
 
-        .availability::before {
-            content: "●";
-            margin-right: 5px;
-        }
-
-        /* Purchase Controls */
-        .purchase-box {
-            background: #252932;
-            padding: 20px;
-            border-radius: 6px;
-            border: 1px solid #444;
-            margin-bottom: 30px;
-        }
-
-        .quantity-selector {
-            margin-bottom: 15px;
-                }
-
-        .quantity-selector label {
+        .spec-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            text-transform: uppercase;
             display: block;
-            margin-bottom: 5px;
-            font-size: 12px;
-            text-transform: uppercase;
-            color: #aaa;
         }
 
-        .quantity-selector select {
-            padding: 8px;
-            background: #111;
-            color: white;
-            border: 1px solid #555;
-            border-radius: 4px;
-            width: 70px;
+        .spec-value {
+            font-weight: 700;
+            font-size: 1.1rem;
         }
 
-        .add-to-cart-btn {
-            background: linear-gradient(180deg, #00cc44 0%, #009933 100%);
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-            box-shadow: 0 3px 0 #006622;
-            text-transform: uppercase;
-            transition: background 0.2s;
+        .status-badge {
+            display: inline-block;
+            background-color: #e1f5fe;
+            color: #0288d1;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            align-self: flex-start;
+            margin-bottom: 20px;
         }
 
-        .add-to-cart-btn:hover {
-            background: linear-gradient(180deg, #00e64d 0%, #00b33c 100%);
-        }
-
-        .add-to-cart-btn:active {
-            transform: translateY(3px);
-            box-shadow: none;
-        }
-
-        /* Product Description Content */
         .description-box {
-            border-top: 1px solid #444;
-            padding-top: 20px;
+            margin-top: 20px;
         }
 
         .description-box h3 {
-            color: #ff6a00;
+            font-size: 1.2rem;
             margin-bottom: 10px;
-            font-size: 18px;
-            text-transform: uppercase;
+            font-weight: 700;
         }
 
         .description-box p {
-            line-height: 1.6;
-            color: #ccc;
-            font-size: 14px;
+            color: #4a4a4a;
             margin-bottom: 15px;
         }
 
+        /* Features List */
         .features-list {
-            list-style-type: square;
-            margin-left: 20px;
-            color: #ccc;
-            font-size: 14px;
-            line-height: 1.6;
+            margin-top: 15px;
+            padding-left: 20px;
         }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 12px;
-            color: #666;
-            border-top: 1px solid #222;
-            margin-top: 50px;
+        .features-list li {
+            margin-bottom: 8px;
+            color: #4a4a4a;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="#" class="lego-logo">LEGO</a>
-        <span class="shop-brand">Shop at Home</span>
+        <div class="logo-placeholder">LEGO®</div>
+        <span style="font-weight: bold; color: #2c2c2c;">Shop</span>
     </header>
 
-    <div class="theme-banner">
-        <a href="#">LEGO® HERO FACTORY (INVASION FROM BELOW)</a>
-        <span>Προϊόντα 2014</span>
-    </div>
-
-    <div class="product-container">
-        
-        <div class="image-gallery">
-            <img class="main-image" src="https://www.bricklink.com/SL/44025-1.jpg" alt="44025 Μηχάνημα Διάτρησης του BULK">
-            <div class="age-badge">
-                <strong>Ηλικίες:</strong> 7-14 | <strong>Κομμάτια:</strong> 113
-            </div>
+    <main class="container">
+        <div class="product-gallery">
+            <img id="product-image" src="https://www.lego.com/cdn/product-assets/product.img.pri/44025_prod.jpg" alt="44025">
         </div>
 
         <div class="product-details">
-            <span class="product-id">Κωδικός: 44025</span>
-            <h1 class="product-title">Μηχάνημα Διάτρησης του BULK</h1>
+            <div class="set-meta" id="product-meta"></div>
+            <h1 class="product-title" id="product-title"></h1>
             
-            <div class="price-tag">14,99 €</div>
-            
-            <div class="availability">Διαθέσιμο Τώρα</div>
+            <div class="status-badge" id="product-status"></div>
 
-            <div class="purchase-box">
-                <div class="quantity-selector">
-                    <label for="qty">Ποσότητα:</label>
-                    <select id="qty">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
+            <div class="specs-grid" id="product-specs">
                 </div>
-                <button class="add-to-cart-btn" onclick="addToCart()">Προσθήκη στο Καλάθι</button>
-            </div>
 
             <div class="description-box">
                 <h3>Περιγραφή</h3>
-                <p><strong>Προχωρήστε βαθιά κάτω από το έδαφος, BULK! Τα άγρια κτήνη και οι μοχθηροί Τζαμπέρζ παραμονεύουν στις σκιές, γι’ αυτό χρησιμοποιήστε το πανίσχυρο Μηχάνημα Διάτρησης για να καθαρίσετε τον δρόμο.</strong></p>
-                <p>Αναπτύξτε την τεράστια περιστρεφόμενη κεφαλή διάτρησης για να ανοίξετε σήραγγες μέσα από τον σκληρό βράχο και χρησιμοποιήστε τους εκτοξευτές πυραύλων για να αποκρούσετε τις επιθέσεις των τεράτων. Κλείστε τη θωρακισμένη οροφή για μέγιστη προστασία και βοηθήστε τους υπόλοιπους Χίροουζ να σώσουν την Αντρόπολις Σίτυ!</p>
+                <p id="product-desc"></p>
                 
                 <h3>Χαρακτηριστικά</h3>
-                <ul class="features-list">
-                    <li>Περιλαμβάνει τη μίνι φιγούρα του BULK με ένα όπλο.</li>
-                    <li>Διαθέτει μια τεράστια, χειροκίνητα περιστρεφόμενη κεφαλή διάτρησης, ανοιγόμενο θωρακισμένο πιλοτήριο, διπλούς εκτοξευτές πυραύλων και κινούμενες αρθρώσεις.</li>
-                    <li>Περιλαμβάνει επίσης ένα Τζαμπέρ που μπορεί να εκτιναχθεί!</li>
-                    <li>Συνδυάζεται με το 44023 Ερπυστής του ROCKA για να δημιουργήσετε ένα ακόμα μεγαλύτερο, συνδυασμένο μοντέλο Χίροου!</li>
-                    <li>Ύψος πάνω από 13 εκατοστά!</li>
-                </ul>
+                <ul class="features-list" id="product-features">
+                    </ul>
             </div>
         </div>
+    </main>
 
-    </div>
-
-    <footer>
-        LEGO, το λογότυπο LEGO και το HERO FACTORY είναι εμπορικά σήματα του Ομίλου LEGO. ©2014 The LEGO Group. All rights reserved.
-    </footer>
+    <script id="data-json" type="application/json">
+        {
+            "setNumber": "44025",
+            "name": "Μηχάνημα Διάτρησης του BULK",
+            "englishName": "BULK Drill Machine",
+            "theme": "Hero Factory",
+            "releaseYear": 2014,
+            "ages": "7-14",
+            "pieces": 113,
+            "status": "Αποσυρθέν Προϊόν",
+            "description": "Σκάψε βαθιά, BULK! Τα μοχθηρά τέρατα έχουν παγιδεύσει τους Χίροουζ και πρέπει να χρησιμοποιήσεις το πανίσχυρο Μηχάνημα Διάτρησης για να φτάσεις στον υπόγειο κόσμο της Αντροπολις Σίτυ. Ενεργοποίησε το τεράστιο περιστρεφόμενο τρυπάνι για να περάσεις μέσα από τους βράχους, και χρησιμοποίησε τους εκτοξευτές πυραύλων και τη θωρακισμένη ασπίδα για να αποκρούσεις τις επιθέσεις των εντόμων!",
+            "features": [
+                "Περιλαμβάνει τη μίνι φιγούρα BULK με όπλο και αξεσουάρ.",
+                "Διαθέτει ένα μεγάλο περιστρεφόμενο τρυπάνι, ανοιγόμενο πιλοτήριο, 2 εκτοξευτές πυραύλων και κινούμενες αρθρώσεις.",
+                "Περιλαμβάνει ένα μικρό έντομο-τέρας που πηδάει!",
+                "Συνδυάζεται με το 44023 ROCKA Crawler για να δημιουργήσεις ένα ακόμα μεγαλύτερο μοντέλο Hero Factory.",
+                "Έχει ύψος πάνω από 19 εκατοστά."
+            ]
+        }
+    </script>
 
     <script>
-        function addToCart() {
-            const quantity = document.getElementById('qty').value;
-            alert('Το προϊόν "44025 Μηχάνημα Διάτρησης του BULK" (Ποσότητα: ' + quantity + ') προστέθηκε επιτυχώς στο καλάθι αγορών σας!');
-        }
+        document.addEventListener("DOMContentLoaded", () => {
+            // Fetching and parsing data from the embedded JSON script element
+            const jsonData = document.getElementById('data-json').textContent;
+            const data = JSON.parse(jsonData);
+
+            // Populate DOM Elements
+            document.getElementById('product-meta').textContent = `${data.theme} / ${data.setNumber}`;
+            document.getElementById('product-title').textContent = data.name;
+            document.getElementById('product-status').textContent = data.status;
+            document.getElementById('product-desc').textContent = data.description;
+
+            // Build specs grid
+            const specsGrid = document.getElementById('product-specs');
+            specsGrid.innerHTML = `
+                <div class="spec-item">
+                    <span class="spec-label">Ηλικίες</span>
+                    <span class="spec-value">${data.ages}</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Κομμάτια</span>
+                    <span class="spec-value">${data.pieces}</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Έτος</span>
+                    <span class="spec-value">${data.releaseYear}</span>
+                </div>
+            `;
+
+            // Build features checklist
+            const featuresList = document.getElementById('product-features');
+            data.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                featuresList.appendChild(li);
+            });
+        });
     </script>
 </body>
 </html>
