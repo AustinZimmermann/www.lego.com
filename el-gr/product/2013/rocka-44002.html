@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="el-GR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROCKA - 44002 | Hero Factory | LEGO.com GR</title>
+    <link rel="shortcut icon" href="https://www.lego.com/favicon.ico" type="image/x-icon">
+    <style>
+        /* 2013-era LEGO Hero Factory Inspired Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background: #0a0f18 url('https://www.transparenttextures.com/patterns/dark-matter.png');
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background: #ffe000;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            border-bottom: 3px solid #d4b800;
+        }
+
+        .lego-logo {
+            width: 50px;
+            height: 50px;
+            background: #e60012;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 14px;
+            border-radius: 4px;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+        }
+
+        .hf-logo {
+            font-style: italic;
+            font-weight: 900;
+            color: #111;
+            font-size: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+            background: rgba(16, 24, 39, 0.85);
+            border: 2px solid #00f0ff;
+            border-radius: 12px;
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.2);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Product Image Gallery */
+        .product-gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle, #1a293d 0%, #070b12 100%);
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #23395b;
+            position: relative;
+        }
+
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 0 15px rgba(0, 240, 255, 0.4));
+            transition: transform 0.3s ease;
+        }
+
+        .product-image:hover {
+            transform: scale(1.03);
+        }
+
+        .badge-2013 {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #e60012;
+            color: white;
+            padding: 5px 10px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transform: rotate(-5deg);
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        }
+
+        /* Product Info */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .meta-info {
+            color: #00f0ff;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            color: #fff;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+
+        .item-number {
+            font-size: 1.1rem;
+            color: #8a99ad;
+            margin-bottom: 20px;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+        }
+
+        .spec-item span {
+            display: block;
+            font-size: 0.85rem;
+            color: #8a99ad;
+        }
+
+        .spec-item strong {
+            font-size: 1.1rem;
+            color: #fff;
+        }
+
+        .description {
+            line-height: 1.6;
+            color: #d1dbe5;
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+
+        /* Interactive Action Section */
+        .purchase-zone {
+            background: #172237;
+            padding: 20px;
+            border-radius: 8px;
+            border-top: 4px solid #ffe000;
+        }
+
+        .price-tag {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .btn-add {
+            background: linear-gradient(180deg, #ff4e00 0%, #d43f00 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(212, 63, 0, 0.4);
+            transition: all 0.2s;
+        }
+
+        .btn-add:hover {
+            background: linear-gradient(180deg, #ff621e 0%, #e64500 100%);
+            box-shadow: 0 4px 15px rgba(212, 63, 0, 0.6);
+        }
+
+        .btn-add:active {
+            transform: translateY(2px);
+        }
+
+        .stock-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 12px;
+            font-size: 0.9rem;
+            color: #4ade80;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #4ade80;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        /* Footer Notification */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #52637a;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="lego-logo">LEGO</div>
+        <div class="hf-logo">HERO FACTORY</div>
+        <div style="color: #111; font-weight: bold; font-size: 0.9rem;">el-GR</div>
+    </header>
+
+    <main class="container">
+        <section class="product-gallery">
+            <span class="badge-2013">Νεο 2013</span>
+            <img class="product-image" src="https://www.lego.com/cdn/product-assets/product.img.pri/44002_prod.jpg" alt="LEGO Hero Factory ROCKA 44002">
+        </section>
+
+        <section class="product-details">
+            <div>
+                <div class="meta-info">LEGO® Hero Factory</div>
+                <h1>ROCKA</h1>
+                <div class="item-number">Κωδικός: 44002</div>
+
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <span>Ηλικίες</span>
+                        <strong>6-12</strong>
+                    </div>
+                    <div class="spec-item">
+                        <span>Κομμάτια</span>
+                        <strong>43</strong>
+                    </div>
+                </div>
+
+                <p class="description">
+                    Προσοχή, ROCKA! Οι σατανικοί εγκέφαλοι έχουν κυριεύσει το checklist των αποστολών και έχουν μολύνει τον γαλαξία! Εξοπλίσου με το χρυσό σπαθί plasma, την ασπίδα κοπής, τον ανιχνευτή 360 μοιρών και τις θωρακισμένες λεπίδες. Σταμάτα τους διαστημικούς εισβολείς πριν μολύνουν ολόκληρο τον πλανήτη Makuhero!
+                </p>
+            </div>
+
+            <div class="purchase-zone">
+                <div class="price-tag">€9.99</div>
+                <button class="btn-add" id="addToCartBtn">Προσθηκη στο καλαθι</button>
+                <div class="stock-status">
+                    <span class="status-dot"></span>
+                    <span>Διαθέσιμο Τώρα</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>LEGO, το λογότυπο LEGO και το HERO FACTORY είναι εμπορικά σήματα του Ομίλου LEGO. ©2013 The LEGO Group. Όλα τα δικαιώματα διατηρούνται.</p>
+    </footer>
+
+    <script>
+        // Simple 2013-era UX interactivity
+        document.getElementById('addToCartBtn').addEventListener('click', function() {
+            this.innerText = 'Προστέθηκε!';
+            this.style.background = 'linear-gradient(180deg, #4ade80 0%, #16a34a 100%)';
+            this.style.boxShadow = '0 4px 10px rgba(22, 163, 74, 0.4)';
+            
+            alert('Το προϊόν ROCKA (44002) προστέθηκε στο καλάθι αγορών σας!');
+            
+            setTimeout(() => {
+                this.innerText = 'Προσθηκη στο καλαθι';
+                this.style.background = 'linear-gradient(180deg, #ff4e00 0%, #d43f00 100%)';
+                this.style.boxShadow = '0 4px 10px rgba(212, 63, 0, 0.4)';
+            }, 3000);
+        });
+    </script>
+
+</body>
+</html>
