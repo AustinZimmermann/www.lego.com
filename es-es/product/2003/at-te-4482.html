@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AT-TE™ 4482 | Star Wars™ | Oficial LEGO® Shop ES</title>
+    <link rel="icon" type="image/x-icon" href="https://www.lego.com/favicon.ico">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cera+Pro:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --lego-yellow: #F2CD00;
+            --lego-blue: #002D62;
+            --lego-red: #E60012;
+            --text-dark: #000000;
+            --text-muted: #535353;
+            --bg-light: #F8F8F8;
+            --border-color: #E0E0E0;
+            --font-main: 'Cera Pro', Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-dark);
+            background-color: #ffffff;
+            line-height: 1.5;
+        }
+
+        /* Header / Nav Mock */
+        header {
+            background-color: var(--lego-yellow);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 4px solid var(--text-dark);
+        }
+
+        .logo-container img {
+            height: 45px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 20px 40px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background-color: #ffffff;
+        }
+
+        .breadcrumb a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Product Layout */
+        .product-container {
+            display: max-width;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px 60px 40px;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+        }
+
+        /* Image Gallery */
+        .product-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .main-image-container {
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            position: relative;
+        }
+
+        .main-image-container img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .classic-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: var(--lego-blue);
+            color: white;
+            padding: 6px 12px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        /* Product Details / Buy Column */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-meta-top {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .product-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .product-tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .tag {
+            border: 1px solid var(--border-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            background: var(--bg-light);
+        }
+
+        /* Specs Grid */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .spec-item {
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid var(--border-color);
+        }
+
+        .spec-item:last-child {
+            border-right: none;
+        }
+
+        .spec-value {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .spec-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        /* Price & Stock status */
+        .price-section {
+            margin-bottom: 25px;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #d9381e; /* Retired Product Red */
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #d9381e;
+            border-radius: 50%;
+        }
+
+        /* Action Buttons */
+        .cta-button {
+            background-color: #E0E0E0;
+            color: var(--text-muted);
+            border: none;
+            padding: 16px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: not-allowed;
+            width: 100%;
+            text-align: center;
+            transition: background 0.2s;
+            margin-bottom: 15px;
+        }
+
+        .wishlist-button {
+            background: white;
+            border: 1px solid var(--text-dark);
+            color: var(--text-dark);
+            padding: 12px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .wishlist-button:hover {
+            background-color: var(--bg-light);
+        }
+
+        /* Product Description Section */
+        .product-description-section {
+            grid-column: 1 / -1;
+            border-top: 1px solid var(--border-color);
+            padding-top: 40px;
+            margin-top: 20px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .description-text {
+            color: var(--text-muted);
+            max-width: 800px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .product-container {
+                grid-template-columns: 1fr;
+                padding: 0 20px 40px 20px;
+            }
+            .product-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "AT-TE™ (4482)",
+      "image": [
+        "https://www.lego.com/cdn/product-assets/product.img.pri/4482_prod.JPG"
+      ],
+      "description": "Revive la Batalla de Geonosis con el set clásico LEGO® Star Wars™ 4482 AT-TE™ lanzado originalmente en 2003. Incluye minifiguras de Soldados Clon y un speeder bike oculto.",
+      "sku": "4482",
+      "mpn": "4482",
+      "brand": {
+        "@type": "Brand",
+        "name": "LEGO"
+      },
+      "category": "Toys & Games > Toys > Building Toys",
+      "releaseDate": "2003",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.lego.com/es-es/product/at-te-4482",
+        "priceCurrency": "EUR",
+        "price": "74.99",
+        "availability": "https://schema.org/DiscontinuedProduct",
+        "itemCondition": "https://schema.org/NewCondition"
+      }
+    }
+    </script>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div style="background-color: var(--lego-red); padding: 5px 10px; display: inline-block; border: 2px solid white;">
+                <span style="color: white; font-weight: 900; font-size: 1.5rem; tracking: -1px; font-family: sans-serif;">LEGO</span>
+            </div>
+        </div>
+        <nav class="nav-links">
+            <a href="#">Tienda</a>
+            <a href="#">Descubrir</a>
+            <a href="#">Ayuda</a>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="#">Inicio</a> &gt; <a href="#">Sets por Tema</a> &gt; <a href="#">Star Wars™</a> &gt; <span>AT-TE™ (4482)</span>
+    </div>
+
+    <main class="product-container">
+        
+        <section class="product-gallery">
+            <div class="main-image-container">
+                <span class="classic-badge">Clásico (2003)</span>
+                <img src="https://www.lego.com/cdn/product-assets/product.img.pri/4482_prod.JPG" alt="LEGO Star Wars 4482 AT-TE">
+            </div>
+        </section>
+
+        <section class="product-details">
+            <div class="product-meta-top">Edades 8-12 • Set 4482</div>
+            <h1 class="product-title">AT-TE™</h1>
+            
+            <div class="product-tags">
+                <span class="tag">Star Wars™</span>
+                <span class="tag">Episodio II</span>
+                <span class="tag">Clásicos</span>
+            </div>
+
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <span class="spec-value">443</span>
+                    <span class="spec-label">Piezas</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-value">4</span>
+                    <span class="spec-label">Minifiguras</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-value">2003</span>
+                    <span class="spec-label">Año</span>
+                </div>
+            </div>
+
+            <div class="price-section">
+                <div class="price">74,99 €</div>
+                <div class="status-badge">
+                    <span class="status-dot"></span>
+                    <span>Producto Retirado</span>
+                </div>
+            </div>
+
+            <button class="cta-button" disabled>Agotado</button>
+            <button class="wishlist-button" id="wishlistBtn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="heartIcon">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                <span id="wishlistText">Añadir a la lista de deseos</span>
+            </button>
+        </section>
+
+        <section class="product-description-section">
+            <h2 class="section-title">Descripción del producto</h2>
+            <p class="description-text">
+                ¡Retrocede en el tiempo hasta los inicios de las Guerras Clon con el auténtico transportador acorazado <b>4482 AT-TE™</b>! Lanzado por primera vez en el año <b>2003</b> como parte de la colección clásica de <i>Star Wars: El Ataque de los Clones</i>, este asombroso andador de 6 patas cuenta con cañones láser giratorios, espacio de carga trasero y un speeder bike clon desplegable para misiones de reconocimiento. Una pieza de colección imprescindible que incluye 4 minifiguras de Soldados Clon tradicionales con los detalles clásicos de visera impresa.
+            </p>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('wishlistBtn').addEventListener('click', function() {
+            const heartIcon = document.getElementById('heartIcon');
+            const txt = document.getElementById('wishlistText');
+            
+            if(heartIcon.getAttribute('fill') === 'none') {
+                heartIcon.setAttribute('fill', '#E60012');
+                heartIcon.setAttribute('stroke', '#E60012');
+                txt.textContent = '¡En tu Lista de Deseos!';
+                this.style.backgroundColor = '#FFF0F1';
+            } else {
+                heartIcon.setAttribute('fill', 'none');
+                heartIcon.setAttribute('stroke', 'currentColor');
+                txt.textContent = 'Añadir a la lista de deseos';
+                this.style.backgroundColor = 'transparent';
+            }
+        });
+    </script>
+</body>
+</html>
