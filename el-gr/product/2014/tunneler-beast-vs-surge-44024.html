@@ -3,349 +3,285 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>44024 Θηρίο Διάνοιξης Σήραγγας εναντίον SURGE | LEGO® Shop GR</title>
+    <title>Ερπυστής του ROCKA 44023 | Hero Factory | LEGO® Shop GR</title>
+    <link rel="shortcut icon" href="https://www.lego.com/favicon.ico" type="image/x-icon">
+    
     <style>
-        /* 2014 LEGO Hero Factory / Shop Classic Aesthetics */
+        :root {
+            --lego-yellow: #ffcf00;
+            --lego-blue: #006cb7;
+            --text-dark: #2c2c2c;
+            --text-light: #5f5f5f;
+            --bg-light: #f8f8f8;
+            --border-color: #e0e0e0;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            font-family: Helvetica, Arial, sans-serif;
         }
 
         body {
-            font-family: Helvetica, sans-serif;
-            background-color: #000000;
-            background-image: radial-gradient(circle, #1a2a3a 0%, #000000 100%);
-            color: #ffffff;
+            background-color: #ffffff;
+            color: var(--text-dark);
+            line-height: 1.6;
         }
 
+        /* Header Accent */
         header {
-            background-color: #ffcf00;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 4px solid #e6b800;
-        }
-
-        .logo-container {
+            background-color: var(--lego-yellow);
+            padding: 15px 20px;
             display: flex;
             align-items: center;
-            gap: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        .lego-logo {
-            background-color: #ff0000;
-            color: #ffffff;
-            font-weight: bold;
-            padding: 8px 12px;
-            font-size: 24px;
-            border: 3px solid #000000;
-            text-transform: uppercase;
-            letter-spacing: -1px;
-            box-shadow: 2px 2px 0px #fff;
-        }
-
-        .hf-logo {
-            color: #00f0ff;
-            font-style: italic;
+        .logo-placeholder {
+            background-color: #e60012;
+            color: white;
             font-weight: 900;
-            font-size: 20px;
-            text-shadow: 0 0 10px rgba(0, 240, 255, 0.7);
-        }
-
-        .breadcrumb {
-            padding: 12px 20px;
-            background: rgba(255, 255, 255, 0.05);
-            font-size: 13px;
-            color: #aaa;
-        }
-
-        .breadcrumb a {
-            color: #ffcf00;
-            text-decoration: none;
-        }
-
-        .main-container {
-            max-width: 1100px;
-            margin: 20px auto;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.75);
-            border: 1px solid #333;
+            padding: 8px 12px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-right: 20px;
             border-radius: 4px;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
         }
 
         @media (max-width: 768px) {
-            .main-container {
+            .container {
                 grid-template-columns: 1fr;
+                margin: 20px auto;
             }
         }
 
+        /* Product Image */
         .product-gallery {
-            text-align: center;
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid var(--border-color);
         }
 
-        .main-image {
+        .product-gallery img {
             max-width: 100%;
             height: auto;
-            border-radius: 4px;
-            border: 2px solid #444;
-            background: #111;
-            box-shadow: 0px 0px 25px rgba(0, 240, 255, 0.15);
+            mix-blend-mode: multiply;
+            transition: transform 0.3s ease;
         }
 
-        .product-info {
+        .product-gallery img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Product Details */
+        .product-details {
             display: flex;
             flex-direction: column;
         }
 
-        .theme-tag {
-            color: #00f0ff;
-            font-weight: bold;
+        .set-meta {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 5px;
-            font-size: 14px;
-        }
-
-        h1 {
-            font-size: 28px;
-            margin-bottom: 10px;
-            color: #fff;
-        }
-
-        .item-details {
-            font-size: 14px;
-            color: #bbb;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #333;
-            padding-bottom: 10px;
-        }
-
-        .price-section {
-            margin: 15px 0;
-            background: rgba(255, 255, 255, 0.03);
-            padding: 15px;
-            border-left: 4px solid #ffcf00;
-        }
-
-        .price {
-            font-size: 32px;
-            font-weight: bold;
-            color: #fff;
-        }
-
-        .availability {
-            color: #26b14c;
-            font-size: 14px;
-            font-weight: bold;
-            margin-top: 5px;
-        }
-
-        .buy-actions {
-            margin: 20px 0;
-        }
-
-        .btn-add-to-cart {
-            background: linear-gradient(to bottom, #ffcf00, #ffbc00);
-            border: none;
-            color: #000;
-            padding: 15px 30px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            border-radius: 4px;
-            text-transform: uppercase;
-            box-shadow: 0 4px 0 #b38400;
-            transition: all 0.1s ease;
-        }
-
-        .btn-add-to-cart:active {
-            transform: translateY(4px);
-            box-shadow: none;
-        }
-
-        .tab-container {
-            margin-top: 30px;
-            grid-column: span 2;
-        }
-
-        @media (max-width: 768px) {
-            .tab-container {
-                grid-column: span 1;
-            }
-        }
-
-        .tabs {
-            display: flex;
-            border-bottom: 2px solid #333;
-        }
-
-        .tab {
-            padding: 12px 24px;
-            cursor: pointer;
-            background: #111;
-            border: 1px solid #333;
-            border-bottom: none;
-            margin-right: 5px;
-            font-weight: bold;
-            color: #aaa;
-        }
-
-        .tab.active {
-            background: #222;
-            color: #ffcf00;
-            border-top: 3px solid #ffcf00;
-        }
-
-        .tab-content {
-            background: #222;
-            padding: 20px;
-            border: 1px solid #333;
-            border-top: none;
-            line-height: 1.6;
-            color: #ccc;
-        }
-
-        .bullet-list {
-            margin-left: 20px;
-            margin-top: 10px;
-        }
-
-        .bullet-list li {
+            letter-spacing: 0.5px;
             margin-bottom: 8px;
         }
 
-        footer {
-            text-align: center;
-            padding: 40px;
-            font-size: 12px;
-            color: #666;
-            border-top: 1px solid #222;
-            margin-top: 5px;
+        .product-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 15px;
         }
 
-        /* Mini Cart Notification */
-        .cart-notification {
-            display: none;
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #26b14c;
-            color: white;
-            padding: 15px 25px;
-            border-radius: 4px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            font-weight: bold;
-            z-index: 1000;
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+            padding: 15px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .spec-item {
+            text-align: center;
+        }
+
+        .spec-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            display: block;
+        }
+
+        .spec-value {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background-color: #e1f5fe;
+            color: #0288d1;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            align-self: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .description-box {
+            margin-top: 20px;
+        }
+
+        .description-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .description-box p {
+            color: #4a4a4a;
+            margin-bottom: 15px;
+        }
+
+        /* Features List */
+        .features-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .features-list li {
+            margin-bottom: 8px;
+            color: #4a4a4a;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-container">
-            <div class="lego-logo">LEGO</div>
-            <div class="hf-logo">HERO FACTORY</div>
-        </div>
-        <div style="color: #000; font-weight: bold; font-size: 14px;">
-            Καλάθι Αγορών (<span id="cart-count">0</span>)
-        </div>
+        <div class="logo-placeholder">LEGO®</div>
+        <span style="font-weight: bold; color: #2c2c2c;">Shop</span>
     </header>
 
-    <div class="breadcrumb">
-        <a href="#">Αρχική</a> &gt; <a href="#">Προϊόντα</a> &gt; <a href="#">Hero Factory</a> &gt; 44024
-    </div>
-
-    <div class="main-container">
-        
+    <main class="container">
         <div class="product-gallery">
-            <img class="main-image" src="https://www.bricklink.com/SL/44024-1.jpg" alt="LEGO 44024 Θηρίο Διάνοιξης Σήραγγας εναντίον SURGE">
+            <img id="product-image" src="https://www.lego.com/cdn/product-assets/product.img.pri/44023_prod.jpg" alt="44023 Ερπυστής του ROCKA">
         </div>
 
-        <div class="product-info">
-            <span class="theme-tag">HERO FACTORY: INVASION FROM BELOW</span>
-            <h1>Θηρίο Διάνοιξης Σήραγγας εναντίον SURGE</h1>
+        <div class="product-details">
+            <div class="set-meta" id="product-meta"></div>
+            <h1 class="product-title" id="product-title"></h1>
             
-            <div class="item-details">
-                <strong>Κωδικός Προϊόντος:</strong> 44024<br>
-                <strong>Ηλικίες:</strong> 6-12<br>
-                <strong>Κομμάτια:</strong> 59<br>
-                <strong>Έτος Κυκλοφορίας:</strong> 2014
-            </div>
+            <div class="status-badge" id="product-status"></div>
 
-            <div class="price-section">
-                <div class="price">9,99 €</div>
-                <div class="availability">Διαθέσιμο Τώρα</div>
-            </div>
+            <div class="specs-grid" id="product-specs">
+                </div>
 
-            <div class="buy-actions">
-                <button class="btn-add-to-cart" onclick="addToCart()">Προσθηκη στο Καλαθι</button>
+            <div class="description-box">
+                <h3>Περιγραφή</h3>
+                <p id="product-desc"></p>
+                
+                <h3>Χαρακτηριστικά</h3>
+                <ul class="features-list" id="product-features">
+                    </ul>
             </div>
         </div>
+    </main>
 
-        <div class="tab-container">
-            <div class="tabs">
-                <div class="tab active" onclick="switchTab(event, 'description')">Περιγραφή</div>
-                <div class="tab" onclick="switchTab(event, 'features')">Χαρακτηριστικά</div>
-            </div>
-            
-            <div id="description" class="tab-content">
-                <p>Προετοιμάσου για μάχη, SURGE! Το Θηρίο Διάνοιξης Σήραγγας με τα κοφτερά του νύχια μπορεί να σκάβει μέσα στο έδαφος και να δημιουργεί σήραγγες κάτω από τους δρόμους της Αντρόπολις Σίτυ. Ήρωα SURGE, φόρεσε τον εξοπλισμό σου, ενεργοποίησε τα όπλα σου και σταμάτησε αυτό το τέρας πριν προκαλέσει χάος στους υπόγειους υπονόμους!</p>
-            </div>
-            
-            <div id="features" class="tab-content" style="display:none;">
-                <ul class="bullet-list">
-                    <li>Περιλαμβάνει τη μίνι φιγούρα του ήρωα SURGE με όπλο και εξοπλισμό μάχης.</li>
-                    <li>Διαθέτει κινούμενα σαγόνια, τεράστια νύχια διάνοιξης και φωτεινά στοιχεία που λάμπουν.</li>
-                    <li>Συνδύασέ το με το 44026 CRYSTAL Beast για να δημιουργήσεις ένα ακόμα μεγαλύτερο και πιο τρομακτικό τέρας!</li>
-                    <li>Το Θηρίο έχει ύψος πάνω από 13 εκ.</li>
-                </ul>
-            </div>
-        </div>
-
-    </div>
-
-    <footer>
-        <p>&copy; 2014 The LEGO Group. All rights reserved. Hero Factory and the LEGO logo are trademarks of the LEGO Group.</p>
-    </footer>
-
-    <div class="cart-notification" id="cart-toast">
-        Το προϊόν προστέθηκε στο καλάθι!
-    </div>
+    <script id="data-json" type="application/json">
+        {
+  "setNumber": "44024",
+  "name": "Θηρίο Διάνοιξης Σήραγγας εναντίον SURGE",
+  "englishName": "TUNNELER Beast vs. SURGE",
+  "theme": "Hero Factory",
+  "subTheme": "Invasion from Below",
+  "releaseYear": 2014,
+  "ages": "6-12",
+  "pieces": 59,
+  "minifigures": [
+    {
+      "name": "SURGE",
+      "type": "Hero Mini-Robot",
+      "accessories": ["Combat Staff"]
+    }
+  ],
+  "status": "Αποσυρθέν Προϊόν",
+  "price": {
+    "originalEuro": 9.99,
+    "currency": "EUR"
+  },
+  "urls": {
+    "favicon": "https://www.lego.com/favicon.ico",
+    "primaryImage": "https://www.lego.com/cdn/product-assets/product.img.pri/44024_prod.jpg"
+  },
+  "description": "Προσοχή, SURGE! Ένα μοχθηρό Θηρίο Διάνοιξης Σήραγγας με κοφτερά νύχια έχει ξυπνήσει στα έγκατα της γης και απειλεί την Αντρόπολις Σίτυ. Αυτό το υπόγειο τέρας χρησιμοποιεί τις τεράστιες δαγκάνες του για να σκάβει τούνελ και να παγιδεύει τους Χίροουζ. Μπορείς να αποφύγεις τις επιθέσεις του, να χρησιμοποιήσεις τον εξοπλισμό μάχης σου και να νικήσεις το θηρίο πριν παρασύρει τον SURGE στο σκοτεινό του κρησφύγετο;",
+  "features": [
+    "Περιλαμβάνει τη μίνι φιγούρα SURGE με όπλο και αξεσουάρ.",
+    "Διαθέτει κινούμενες αρθρώσεις, ανοιγόμενο στόμα με κοφτερά δόντια, τεράστιες δαγκάνες εκσκαφής και στοιχεία που λάμπουν στο σκοτάδι.",
+    "Περιλαμβάνει ένα μικρό κάνιστρο παγίδευσης.",
+    "Συνδυάζεται με το 44026 CRYSTAL Beast εναντίον BULK για να δημιουργήσεις ένα ακόμη πιο τρομακτικό τέρας!",
+    "Ύψος πάνω από 13 εκατοστά."
+  ]
+}
+    </script>
 
     <script>
-        let count = 0;
-        function addToCart() {
-            count++;
-            document.getElementById('cart-count').innerText = count;
-            
-            // Show toast notification
-            const toast = document.getElementById('cart-toast');
-            toast.style.display = 'block';
-            setTimeout(() => {
-                toast.style.display = 'none';
-            }, 2500);
-        }
+        document.addEventListener("DOMContentLoaded", () => {
+            // Fetching and parsing data from the embedded JSON script element
+            const jsonData = document.getElementById('data-json').textContent;
+            const data = JSON.parse(jsonData);
 
-        function switchTab(evt, tabId) {
-            const contents = document.getElementsByClassName('tab-content');
-            for (let i = 0; i < contents.length; i++) {
-                contents[i].style.display = 'none';
-            }
+            // Populate DOM Elements
+            document.getElementById('product-meta').textContent = `${data.theme} / ${data.setNumber}`;
+            document.getElementById('product-title').textContent = data.name;
+            document.getElementById('product-status').textContent = data.status;
+            document.getElementById('product-desc').textContent = data.description;
 
-            const tabs = document.getElementsByClassName('tab');
-            for (let i = 0; i < tabs.length; i++) {
-                tabs[i].classList.remove('active');
-            }
+            // Build specs grid
+            const specsGrid = document.getElementById('product-specs');
+            specsGrid.innerHTML = `
+                <div class="spec-item">
+                    <span class="spec-label">Ηλικίες</span>
+                    <span class="spec-value">${data.ages}</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Κομμάτια</span>
+                    <span class="spec-value">${data.pieces}</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Έτος</span>
+                    <span class="spec-value">${data.releaseYear}</span>
+                </div>
+            `;
 
-            document.getElementById(tabId).style.display = 'block';
-            evt.currentTarget.classList.add('active');
-        }
+            // Build features checklist
+            const featuresList = document.getElementById('product-features');
+            data.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                featuresList.appendChild(li);
+            });
+        });
     </script>
 </body>
 </html>
