@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="el-GR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BULK 44004 | HERO FACTORY | LEGO® Shop el-GR</title>
+    <link rel="icon" href="https://www.lego.com/favicon.ico" type="image/x-icon">
+    <style>
+        :root {
+            --lego-yellow: #FFD400;
+            --lego-red: #D11013;
+            --dark-bg: #1a1a1a;
+            --text-light: #ffffff;
+            --text-dark: #333333;
+            --hf-orange: #f57c00;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #0b0c10;
+            color: var(--text-light);
+        }
+
+        /* Header Style 2013 Retro Variant */
+        header {
+            background-color: var(--lego-yellow);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .lego-logo {
+            width: 50px;
+            height: 50px;
+            background-color: var(--lego-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            border: 3px solid black;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .hf-logo {
+            color: #000;
+            font-weight: 900;
+            font-style: italic;
+            border-left: 2px solid #000;
+            padding-left: 15px;
+        }
+
+        .lang-select {
+            background: black;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        /* Main Product Layout */
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Gallery Section */
+        .product-gallery {
+            background: radial-gradient(circle, #2c3e50 0%, #000000 100%);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border: 2px solid #333;
+            overflow: hidden;
+        }
+
+        .product-gallery::before {
+            content: "2013 SERIES";
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--hf-orange);
+            color: black;
+            font-weight: bold;
+            padding: 3px 8px;
+            font-size: 12px;
+            border-radius: 3px;
+        }
+
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .product-image:hover {
+            transform: scale(1.05);
+        }
+
+        /* Info Section */
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .meta-tags {
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 42px;
+            color: #fff;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .item-number {
+            font-size: 18px;
+            color: var(--hf-orange);
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+            background: #15181f;
+            padding: 15px;
+            border-radius: 6px;
+        }
+
+        .spec-item {
+            text-align: center;
+        }
+
+        .spec-label {
+            font-size: 12px;
+            color: #888;
+            text-transform: uppercase;
+        }
+
+        .spec-value {
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            margin-top: 5px;
+        }
+
+        .price-box {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: var(--lego-yellow);
+        }
+
+        .status-tag {
+            display: inline-block;
+            background: #2e7d32;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            align-self: flex-start;
+        }
+
+        .buy-btn {
+            background-color: var(--lego-red);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background 0.2s;
+            text-transform: uppercase;
+            box-shadow: 0 4px 0 #8a0b0d;
+        }
+
+        .buy-btn:hover {
+            background-color: #ff1c22;
+        }
+
+        .buy-btn:active {
+            transform: translateY(4px);
+            box-shadow: none;
+        }
+
+        /* Description Tabs */
+        .description-section {
+            margin-top: 40px;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+        }
+
+        .description-section h3 {
+            color: var(--lego-yellow);
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .description-section p {
+            line-height: 1.6;
+            color: #ccc;
+        }
+
+        /* Cart Notification Modal */
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: -350px;
+            background: #2e7d32;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            transition: right 0.5s ease;
+            z-index: 1000;
+        }
+
+        .notification.show {
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="lego-logo">LEGO</div>
+            <div class="hf-logo">HERO FACTORY</div>
+        </div>
+        <div>
+            <select class="lang-select" disabled>
+                <option>el-GR (Ελλάδα)</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+        <section class="product-gallery">
+            <img src="https://www.lego.com/cdn/product-assets/product.img.pri/44004_prod.jpg" alt="LEGO Hero Factory Bulk 44004" class="product-image" id="mainProductImg">
+        </section>
+
+        <section class="product-info">
+            <div>
+                <div class="meta-tags">LEGO® Hero Factory / Προϊόντα 2013</div>
+                <h1>BULK</h1>
+                <div class="item-number">Κωδικός: 44004</div>
+
+                <div class="status-tag" id="stockStatus">Διαθέσιμο Τώρα</div>
+
+                <div class="spec-grid">
+                    <div class="spec-item">
+                        <div class="spec-label">Ηλικίες</div>
+                        <div class="spec-value">6-12</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Κομμάτια</div>
+                        <div class="spec-value">50</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Πόντοι VIP</div>
+                        <div class="spec-value">9</div>
+                    </div>
+                </div>
+
+                <div class="price-box">9,99 €</div>
+            </div>
+
+            <div>
+                <button class="buy-btn" id="addToCartBtn">Προσθηκη στο Καλαθι</button>
+            </div>
+
+            <div class="description-section">
+                <h3>Πληροφορίες Προϊόντος</h3>
+                <p>Αναφορά στο αρχηγείο των Χίροουζ! Οι σατανικοί εγκέφαλοι έχουν καταλάβει τον πλανήτη και πρέπει να σταματήσουμε την εισβολή. Εξοπλιστείτε με τον BULK! Σας παραδίδουμε την πανίσχυρη θωράκιση υψηλής αντοχής, την περιστρεφόμενη ασπίδα λέιζερ, και τον εκτοξευτή υψηλής πίεσης για να σώσετε την κατάσταση!</p>
+            </div>
+        </section>
+    </main>
+
+    <div class="notification" id="cartNotification">
+        <strong>Επιτυχία!</strong> Το BULK (44004) προστέθηκε στο καλάθι αγορών σας.
+    </div>
+
+    <script>
+        document.getElementById('addToCartBtn').addEventListener('click', function() {
+            const notification = document.getElementById('cartNotification');
+            
+            // Show custom classic 2013 e-shop notification style
+            notification.classList.add('show');
+            
+            // Disable button briefly to prevent double clicks
+            this.textContent = 'Προστιθεται...';
+            this.style.opacity = '0.7';
+            this.disabled = true;
+
+            setTimeout(() => {
+                notification.classList.remove('show');
+                this.textContent = 'Προσθηκη στο Καλαθι';
+                this.style.opacity = '1';
+                this.disabled = false;
+            }, 3000);
+        });
+
+        // Error handling fallback if CDN link ever fails
+        document.getElementById('mainProductImg').addEventListener('error', function() {
+            this.src = 'https://www.lego.com/favicon.ico';
+            this.style.width = '100px';
+        });
+    </script>
+</body>
+</html>
