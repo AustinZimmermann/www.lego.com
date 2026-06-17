@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarduk 8974 | BIONICLE® | Tienda LEGO® Oficial ES</title>
+    <link rel="icon" type="image/x-icon" href="https://www.lego.com/favicon.ico">
+    <style>
+        :root {
+            --lego-yellow: #F2CD37;
+            --lego-red: #E11A22;
+            --lego-blue: #006CB7;
+            --dark-gray: #333333;
+            --light-gray: #F8F8F8;
+            --border-color: #E0E0E0;
+            --text-color: #2C2C2C;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Cera Pro", Helvetica, sans-serif;
+        }
+
+        body {
+            color: var(--text-color);
+            background-color: #ffffff;
+            line-height: 1.5;
+        }
+
+        /* Header / Navbar */
+        header {
+            background-color: var(--lego-yellow);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 4px solid var(--dark-gray);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-box {
+            background-color: var(--lego-red);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            color: white;
+            font-size: 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+        }
+
+        .nav-links a:hover {
+            color: var(--lego-red);
+        }
+
+        /* Main Layout */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Breadcrumbs */
+        .breadcrumbs {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .breadcrumbs a {
+            color: #666;
+            text-decoration: none;
+        }
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+
+        /* Product Section */
+        .product-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .product-container {
+                grid-template-columns: 1.2fr 1fr;
+            }
+        }
+
+        /* Left Column: Images */
+        .product-gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .main-image {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            mix-blend-mode: multiply;
+        }
+
+        .badge-legacy {
+            align-self: flex-start;
+            background-color: var(--dark-gray);
+            color: white;
+            padding: 4px 12px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        /* Right Column: Details */
+        .product-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-theme {
+            font-size: 1rem;
+            font-weight: bold;
+            color: var(--lego-blue);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .product-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: #000;
+        }
+
+        .product-meta-specs {
+            display: flex;
+            gap: 15px;
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        .spec-item strong {
+            color: #000;
+        }
+
+        .product-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: bold;
+            color: #d9534f;
+            background-color: #fdf7f7;
+            border: 1px solid #f5cece;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+        }
+
+        .status-dot {
+            height: 10px;
+            width: 10px;
+            background-color: #d9534f;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        /* Action/Pricing Box */
+        .purchase-box {
+            background-color: var(--light-gray);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .product-price span {
+            font-size: 1rem;
+            color: #666;
+            font-weight: normal;
+            text-decoration: line-through;
+            margin-left: 10px;
+        }
+
+        .btn-primary {
+            width: 100%;
+            background-color: #cccccc;
+            color: #666666;
+            border: none;
+            padding: 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: not-allowed;
+            text-align: center;
+            text-transform: uppercase;
+            transition: background 0.2s;
+        }
+
+        /* Tabs / Description Accordion */
+        .details-accordion {
+            border-top: 1px solid var(--border-color);
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .accordion-header {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 15px 0;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            color: #000;
+        }
+
+        .accordion-content {
+            padding-bottom: 15px;
+            font-size: 0.95rem;
+            color: #444;
+            display: none;
+        }
+
+        .accordion-content.active {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            color: white;
+            padding: 40px 20px;
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <a href="#" class="logo-box" aria-label="LEGO Home">LEGO</a>
+        </div>
+        <nav class="nav-links">
+            <a href="#">Tienda</a>
+            <a href="#">Temas</a>
+            <a href="#">BIONICLE®</a>
+            <a href="#">Ayuda</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="breadcrumbs">
+            <a href="#">Inicio</a> &gt; 
+            <a href="#">Precios descatalogados</a> &gt; 
+            <a href="#">BIONICLE®</a> &gt; 
+            <span>Tarduk (8974)</span>
+        </div>
+
+        <div class="product-container">
+            <div class="product-gallery">
+                <span class="badge-legacy">Producto Antiguo</span>
+                <img src="https://www.lego.com/cdn/product-assets/product.img.pri/8974_prod.jpg" alt="LEGO BIONICLE 8974 Tarduk" class="main-image">
+            </div>
+
+            <div class="product-info">
+                <span class="product-theme">BIONICLE® / Agori</span>
+                <h1 class="product-title">Tarduk</h1>
+                
+                <div class="product-meta-specs">
+                    <div class="spec-item">Ref: <strong>8974</strong></div>
+                    <div class="spec-item">Edades: <strong>6-16</strong></div>
+                    <div class="spec-item">Piezas: <strong>17</strong></div>
+                    <div class="spec-item">Año: <strong>2009</strong></div>
+                </div>
+
+                <div class="product-status">
+                    <span class="status-dot"></span>
+                    <span>Producto retirado / Descatalogado</span>
+                </div>
+
+                <div class="purchase-box">
+                    <div class="product-price">6,99 € <span>Precio Orig.</span></div>
+                    <button class="btn-primary" disabled>No disponible</button>
+                </div>
+
+                <div class="details-accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header" onclick="toggleAccordion('desc')">
+                            Descripción <span>+</span>
+                        </button>
+                        <div id="desc" class="accordion-content active">
+                            <p>¡Explora las arenas del desierto con el astuto recolector de tesoros! Tarduk es un Agori de la Tribu de la Jungla que busca artefactos antiguos y secretos escondidos bajo las dunas de Bara Magna. Armado con garras afiladas y pinchos defensivos, está listo para defenderse de los peligros que acechan en el páramo.</p>
+                            <br>
+                            <ul>
+                                <li>¡Incluye garras de combate y un diseño inspirado en criaturas de la jungla!</li>
+                                <li>Combínalo con otros habitantes de Bara Magna para expandir tus aventuras de BIONICLE.</li>
+                                <li>Mide más de 12 cm de altura.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header" onclick="toggleAccordion('specs')">
+                            Especificaciones <span>+</span>
+                        </button>
+                        <div id="specs" class="accordion-content">
+                            <p><strong>Tema:</strong> LEGO® BIONICLE®<br>
+                            <strong>Subtema:</strong> Agori<br>
+                            <strong>Número de set:</strong> 8974<br>
+                            <strong>Año de lanzamiento:</strong> 2009<br>
+                            <strong>Cantidad de piezas:</strong> 17<br>
+                            <strong>Código de barras / EAN:</strong> 5702014532434</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>LEGO, el logotipo de LEGO, las configuraciones de los bricks y las minifiguras son marcas registradas de The LEGO Group. ©2026 The LEGO Group. Reservados todos los derechos.</p>
+        <p>Esta página es una recreación con fines demostrativos del catálogo histórico de LEGO.com España.</p>
+    </footer>
+
+    <script>
+        function toggleAccordion(id) {
+            const content = document.getElementById(id);
+            const button = content.previousElementSibling;
+            const span = button.querySelector('span');
+
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                span.textContent = '+';
+            } else {
+                content.classList.add('active');
+                span.textContent = '-';
+            }
+        }
+    </script>
+</body>
+</html>
