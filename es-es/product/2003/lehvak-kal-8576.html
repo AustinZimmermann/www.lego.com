@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lehvak-Kal 8576 | BIONICLE® | Tienda LEGO® Oficial ES</title>
+    <link rel="icon" href="https://www.lego.com/favicon.ico" type="image/x-icon">
+    <style>
+        :root {
+            --lego-yellow: #f6db26;
+            --lego-red: #d11013;
+            --text-dark: #2c2c2c;
+            --text-light: #5f5f5f;
+            --bg-gray: #f8f8f8;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Cera Pro", Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+
+        /* Utility Banner */
+        .utility-bar {
+            background-color: var(--bg-gray);
+            border-bottom: 1px solid var(--border-color);
+            padding: 5px 20px;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .utility-bar a {
+            color: var(--text-dark);
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--lego-yellow);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .lego-logo {
+            width: 50px;
+            height: 50px;
+            background-color: var(--lego-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 22px;
+            border-radius: 4px;
+            text-shadow: 2px 2px 0px #000;
+            border: 2px solid #000;
+            cursor: pointer;
+        }
+
+        nav a {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 14px;
+            color: var(--text-dark);
+            text-decoration: none;
+            margin-right: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--lego-red);
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        /* Breadcrumbs */
+        .breadcrumbs {
+            padding: 20px;
+            font-size: 13px;
+            color: var(--text-light);
+            background-color: #fff;
+        }
+
+        .breadcrumbs a {
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+
+        /* Product Container */
+        .product-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 40px 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .product-container {
+                grid-template-columns: 1.2fr 1fr;
+            }
+        }
+
+        /* Left Column: Images */
+        .product-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .main-image-wrapper {
+            background-color: var(--bg-gray);
+            border-radius: 8px;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            min-height: 400px;
+        }
+
+        .main-image-wrapper img {
+            max-width: 100%;
+            max-height: 450px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .main-image-wrapper:hover img {
+            transform: scale(1.03);
+        }
+
+        .vintage-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: #006cb7;
+            color: white;
+            padding: 5px 12px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Right Column: Product Info */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-meta {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .product-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .bionicle-tag {
+            display: inline-block;
+            background-color: #222;
+            color: #fff;
+            padding: 4px 10px;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-radius: 3px;
+            margin-bottom: 15px;
+            width: fit-content;
+        }
+
+        .product-spec-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .spec-item {
+            border-right: 1px solid var(--border-color);
+        }
+
+        .spec-item:last-child {
+            border-right: none;
+        }
+
+        .spec-label {
+            font-size: 12px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .spec-value {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .price-section {
+            margin-bottom: 25px;
+        }
+
+        .price {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--text-dark);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: #d11013;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #d11013;
+            border-radius: 50%;
+        }
+
+        /* Actions */
+        .buy-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            padding: 16px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            transition: background-color 0.2s, transform 0.1s;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background-color: #e60012;
+            color: white;
+            box-shadow: 0 2px 4px rgba(230, 0, 18, 0.2);
+        }
+
+        .btn-primary:hover {
+            background-color: #b8000e;
+        }
+
+        .btn-primary:disabled {
+            background-color: #a0a0a0;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--bg-gray);
+            border-color: #b5b5b5;
+        }
+
+        /* Product Description Tabs/Accordion */
+        .info-accordion {
+            border-top: 1px solid var(--border-color);
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .accordion-header {
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .accordion-content {
+            padding-bottom: 15px;
+            font-size: 14px;
+            color: #444;
+            display: none;
+            line-height: 1.6;
+        }
+
+        .accordion-item.active .accordion-content {
+            display: block;
+        }
+
+        .accordion-header::after {
+            content: '+';
+            font-size: 20px;
+            font-weight: 300;
+        }
+
+        .accordion-item.active .accordion-header::after {
+            content: '−';
+        }
+
+        /* Notification Toast */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #323232;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: none;
+            z-index: 2000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 40px 20px;
+            margin-top: 60px;
+            font-size: 13px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 30px;
+        }
+
+        .footer-section h4 {
+            color: white;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--lego-yellow);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 30px auto 0 auto;
+            text-align: center;
+            color: #aaa;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="utility-bar">
+        <div>¡Envío gratuito en compras superiores a 55 €!</div>
+        <div>
+            <a href="#">Zonas de Juego</a>
+            <a href="#">Ayuda</a>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo-container">
+            <div class="lego-logo">LEGO</div>
+            <nav>
+                <a href="#">Tienda</a>
+                <a href="#">Descubrir</a>
+                <a href="#">Ayuda</a>
+            </nav>
+        </div>
+        <div class="header-actions">
+            <button class="icon-btn" aria-label="Buscar">🔍</button>
+            <button class="icon-btn" aria-label="Favoritos">❤️</button>
+            <button class="icon-btn" id="cart-btn" aria-label="Carrito de compras">
+                🛒<span class="cart-count" id="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="breadcrumbs">
+        <a href="#">Inicio</a> &gt; <a href="#">BIONICLE®</a> &gt; <a href="#">Bohrok-Kal</a> &gt; <span>Lehvak-Kal (8576)</span>
+    </div>
+
+    <main class="product-container">
+        
+        <section class="product-gallery">
+            <div class="main-image-wrapper">
+                <span class="vintage-badge">Clásico (2003)</span>
+                <img src="https://www.lego.com/cdn/product-assets/product.img.pri/8576_prod.jpg" alt="LEGO BIONICLE 8576 Lehvak-Kal">
+            </div>
+        </section>
+
+        <section class="product-details">
+            <div class="product-meta">Artículo: 8576</div>
+            <div class="bionicle-tag">BIONICLE®</div>
+            <h1 class="product-title">Lehvak-Kal</h1>
+            
+            <div class="product-spec-grid">
+                <div class="spec-item">
+                    <div class="spec-label">Edades</div>
+                    <div class="spec-value">7+</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Piezas</div>
+                    <div class="spec-value">40</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Lanzamiento</div>
+                    <div class="spec-value">2003</div>
+                </div>
+            </div>
+
+            <div class="price-section">
+                <div class="price">12,99 €</div>
+                <div class="status-badge">
+                    <span class="status-dot"></span>
+                    Producto Retirado
+                </div>
+            </div>
+
+            <div class="buy-actions">
+                <button class="btn btn-primary" id="add-to-cart-btn" disabled>
+                    Agotado
+                </button>
+                <button class="btn btn-secondary" id="wishlist-btn">
+                    ❤️ Añadir a la lista de deseos
+                </button>
+            </div>
+
+            <div class="info-accordion">
+                <div class="accordion-item active">
+                    <div class="accordion-header">Descripción del Producto</div>
+                    <div class="accordion-content">
+                        ¡Cuidado con el poder del vacío! Lehvak-Kal lidera el ataque subterráneo con una velocidad increíble y escudos de vacío capaces de absorber toda la atmósfera a su alrededor. Los Bohrok-Kal han despertado y su misión es liberar a las Reinas Bahrag. ¿Podrán los Toa Nuva detener esta terrible nueva amenaza antes de que destruyan Mata Nui? Incluye un Krana-Kal de goma y un contenedor original que sirve para guardarlo.
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">Especificaciones y Detalles</div>
+                    <div class="accordion-content">
+                        • Lanzado originalmente en el año 2003 como parte de la saga de BIONICLE®.<br>
+                        • Cuenta con un mecanismo de palanca en la espalda para lanzar un golpe con la cabeza.<br>
+                        • Los escudos de vacío se pueden acoplar a las extremidades del Bohrok.<br>
+                        • Se puede transformar en una forma de esfera compacta para rodar al combate o encajar en su contenedor.
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">Instrucciones de Construcción</div>
+                    <div class="accordion-content">
+                        ¿Has perdido tus instrucciones originales de 2003? Puedes descargar las instrucciones de construcción digitales en formato PDF para este set clásico de forma gratuita desde nuestra sección de Servicio al Consumidor.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="toast" id="toast-notification">¡Añadido a la lista de deseos con éxito!</div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Quiénes somos</h4>
+                <ul>
+                    <li><a href="#">Información sobre el Grupo LEGO</a></li>
+                    <li><a href="#">Sostenibilidad</a></li>
+                    <li><a href="#">Declaración de transparencia</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Atención al cliente</h4>
+                <ul>
+                    <li><a href="#">Ponte en contacto con nosotros</a></li>
+                    <li><a href="#">Instrucciones de construcción</a></li>
+                    <li><a href="#">Piezas de repuesto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Atracciones</h4>
+                <ul>
+                    <li><a href="#">LEGO® House</a></li>
+                    <li><a href="#">LEGOLAND® Parks</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            LEGO, el logotipo de LEGO, las minifiguras, BIONICLE y las configuraciones de los bloques son marcas comerciales de The LEGO Group. ©2026 The LEGO Group. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script>
+        // Accordion functionality
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+        
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // Wishlist button interaction
+        const wishlistBtn = document.getElementById('wishlist-btn');
+        const toast = document.getElementById('toast-notification');
+
+        wishlistBtn.addEventListener('click', () => {
+            toast.style.display = 'block';
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, 3000);
+        });
+
+        // Simulating historic view alert for a retired legacy item
+        console.log("Cargada la ficha histórica del set LEGO BIONICLE 8576 (Lanzamiento: 2003).");
+    </script>
+</body>
+</html>
