@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPANTOX 44003 | Hero Factory | Tienda LEGO® Oficial ES</title>
+    <link rel="icon" type="image/x-icon" href="https://www.lego.com/favicon.ico">
+    <style>
+        :root {
+            --lego-yellow: #ffcf00;
+            --lego-red: #d0011b;
+            --dark-blue: #002d62;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #f8f8f8;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cera Pro', Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--lego-yellow);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .lego-logo {
+            width: 50px;
+            height: 50px;
+            background-color: var(--lego-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 900;
+            font-size: 24px;
+            border: 2px solid black;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            text-transform: uppercase;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 15px 40px;
+            font-size: 12px;
+            color: var(--text-light);
+            background-color: var(--bg-light);
+        }
+
+        .breadcrumb a {
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Product Layout */
+        .product-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .product-container {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+        }
+
+        /* Product Gallery */
+        .product-gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            padding: 20px;
+            position: relative;
+        }
+
+        .badge-retired {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: #707070;
+            color: white;
+            padding: 5px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .main-image {
+            max-width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .main-image:hover {
+            transform: scale(1.03);
+        }
+
+        /* Product Details */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-theme {
+            color: var(--dark-blue);
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .product-title {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .product-meta-specs {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: var(--text-light);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        .spec-item span {
+            font-weight: bold;
+            color: var(--text-dark);
+        }
+
+        .price-section {
+            margin-bottom: 25px;
+        }
+
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--text-dark);
+        }
+
+        .status-tag {
+            display: inline-block;
+            margin-top: 5px;
+            color: var(--lego-red);
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .action-box {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .btn-retired {
+            width: 100%;
+            background-color: #e0e0e0;
+            color: #767676;
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: not-allowed;
+            text-transform: uppercase;
+        }
+
+        .wishlist-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #006cb7;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* Description & Specs Tabs */
+        .tabs {
+            margin-top: 20px;
+        }
+
+        .tab-headers {
+            display: flex;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .tab-button {
+            padding: 10px 20px;
+            background: none;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            color: var(--text-light);
+            position: relative;
+        }
+
+        .tab-button.active {
+            color: var(--text-dark);
+        }
+
+        .tab-button.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: var(--dark-blue);
+        }
+
+        .tab-content {
+            padding: 20px 0;
+            display: none;
+            font-size: 15px;
+            color: #444;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .tab-content ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .tab-content li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="lego-logo">LEGO</div>
+            <nav class="nav-links">
+                <a href="#">Tienda</a>
+                <a href="#">Descubrir</a>
+                <a href="#">Ayuda</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="#">Inicio</a> &gt; <a href="#">Sets</a> &gt; <a href="#">Hero Factory</a> &gt; <span>44003 SPANTOX</span>
+    </div>
+
+    <main class="product-container">
+        
+        <section class="product-gallery">
+            <span class="badge-retired">Producto Retirado</span>
+            <img src="https://www.lego.com/cdn/product-assets/product.img.pri/44003_prod.jpg" alt="LEGO Hero Factory 44003 SCAROX" class="main-image">
+        </section>
+
+        <section class="product-details">
+            <span class="product-theme">Hero Factory</span>
+            <h1 class="product-title">SPANTOX</h1>
+            
+            <div class="product-meta-specs">
+                <div class="spec-item">Edades: <span>6-12</span></div>
+                <div class="spec-item">Piezas: <span>46</span></div>
+                <div class="spec-item">Art. nº: <span>44003</span></div>
+                <div class="spec-item">Año: <span>2013</span></div>
+            </div>
+
+            <div class="price-section">
+                <div class="price">9,99 €</div>
+                <span class="status-tag">Ya no está disponible en LEGO.com</span>
+            </div>
+
+            <div class="action-box">
+                <button class="btn-retired" disabled>Agotado</button>
+                <a href="#" class="wishlist-link" id="wishlistBtn">❤️ Añadir a la lista de deseos</a>
+            </div>
+
+            <div class="tabs">
+                <div class="tab-headers">
+                    <button class="tab-button active" onclick="switchTab(event, 'descripcion')">Descripción</button>
+                    <button class="tab-button" onclick="switchTab(event, 'detalles')">Especificaciones</button>
+                </div>
+                
+                <div id="descripcion" class="tab-content active">
+                    <p>¡Lanza un ataque arácnido contra LEGO® Hero Factory con <strong>SPANTOX</strong>! Los malvados cerebros se han apoderado de un rastreador de dunas, transformándolo en una venenosa bestia de ojos rojos. ¡Mantente alejado de sus mortíferas cuchillas de ataque y sus patas de araña con púas! Ni siquiera la armadura convencional puede protegerte de sus colmillos venenosos capaces de perforarlo todo.</p>
+                    <ul>
+                        <li>Cuenta con un cerebro maligno de color verde oscuro extraíble, cuchillas de ataque frontales, patas de araña con púas y colmillos venenosos.</li>
+                        <li>Diseño articulado de alta resistencia con elementos de armadura dorados.</li>
+                        <li>¡Activa la función de ataque frontal para golpear con sus cuchillas!</li>
+                        <li>Combínalo con el set 44002 ROCKA utilizando las instrucciones online para crear un modelo combinado gigante.</li>
+                        <li>Mide más de 17 cm de altura.</li>
+                    </ul>
+                </div>
+                
+                <div id="detalles" class="tab-content">
+                    <p><strong>Detalles del producto:</strong></p>
+                    <ul>
+                        <li><strong>Referencia:</strong> 44003</li>
+                        <li><strong>Nombre original:</strong> Scarox (Nota: Catalogado oficialmente como Scarox en la base de datos de LEGO).</li>
+                        <li><strong>Lanzamiento original:</strong> Enero de 2013</li>
+                        <li><strong>Línea de producto:</strong> Hero Factory (Oleada Brain Attack)</li>
+                        <li><strong>Dimensiones del empaque:</strong> Aprox. 17 x 23 x 7 cm</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="lego-logo" style="margin: 0 auto 20px; width: 40px; height: 40px; font-size: 18px;">LEGO</div>
+        <p>LEGO, el logotipo de LEGO y Hero Factory son marcas comerciales de The LEGO Group. ©2026 The LEGO Group. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function switchTab(event, tabId) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(button => button.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        document.getElementById('wishlistBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('¡Este villano arácnido clásico de 2013 ha sido recordado en tu lista de deseos simulada!');
+        });
+    </script>
+</body>
+</html>
