@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skrall 8978 | BIONICLE® | Oficial LEGO® Shop ES</title>
+    <link rel="icon" type="image/x-icon" href="https://www.lego.com/favicon.ico">
+    <style>
+        :root {
+            --lego-yellow: #F2CD37;
+            --lego-red: #D11A2A;
+            --dark-grey: #202020;
+            --light-grey: #F4F4F4;
+            --text-color: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--text-color);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--lego-yellow);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .lego-logo {
+            width: 50px;
+            height: 50px;
+            background-color: var(--lego-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            border: 2px solid black;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 15px 20px;
+            font-size: 12px;
+            color: #666;
+            background-color: var(--light-grey);
+        }
+
+        .breadcrumb a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        /* Product Container */
+        .product-container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .product-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Product Images */
+        .product-images {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--light-grey);
+            border-radius: 8px;
+            padding: 20px;
+            position: relative;
+        }
+
+        .product-main-img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            mix-blend-mode: multiply;
+        }
+
+        .vintage-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--dark-grey);
+            color: white;
+            padding: 5px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        /* Product Details */
+        .product-details h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .product-meta {
+            display: flex;
+            gap: 15px;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .price-tag {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background-color: #ffebee;
+            color: var(--lego-red);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        .spec-item .label {
+            font-size: 12px;
+            color: #666;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .spec-item .value {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .btn-add {
+            width: 100%;
+            background-color: #008543;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: not-allowed;
+            opacity: 0.6;
+            margin-bottom: 20px;
+            transition: background 0.2s;
+        }
+
+        /* Description Section */
+        .description-section {
+            grid-column: 1 / -1;
+            margin-top: 20px;
+            border-top: 1px solid #ddd;
+            padding-top: 30px;
+        }
+
+        .description-section h2 {
+            margin-bottom: 15px;
+        }
+
+        .description-section p {
+            line-height: 1.6;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-grey);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 14px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="lego-logo">LEGO</div>
+            <span style="font-weight: bold; letter-spacing: 1px;">BIONICLE®</span>
+        </div>
+        <nav>
+            <a href="#">Tienda</a>
+            <a href="#">Descubrir</a>
+            <a href="#">Ayuda</a>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="#">Inicio</a> / <a href="#">BIONICLE®</a> / <a href="#">Glatorian</a> / Skrall (8978)
+    </div>
+
+    <main class="product-container">
+        
+        <section class="product-images">
+            <span class="vintage-badge">Clásico de 2009</span>
+            <img src="https://www.lego.com/cdn/product-assets/product.img.pri/8978_prod.jpg" alt="LEGO Bionicle Skrall 8978" class="product-main-img">
+        </section>
+
+        <section class="product-details">
+            <h1>Skrall</h1>
+            <div class="product-meta">
+                <span>Ref: <strong>8978</strong></span>
+                <span>Artículos: <strong>BIONICLE® Glatorian</strong></span>
+            </div>
+
+            <div class="price-tag">12,99 €</div>
+            <div class="status-badge" id="status-text">Producto descatalogado</div>
+
+            <div class="spec-grid">
+                <div class="spec-item">
+                    <span class="label">Edades</span>
+                    <span class="value">7-16</span>
+                </div>
+                <div class="spec-item">
+                    <span class="label">Piezas</span>
+                    <span class="value">50</span>
+                </div>
+                <div class="spec-item">
+                    <span class="label">Lanzamiento</span>
+                    <span class="value">2009</span>
+                </div>
+            </div>
+
+            <button class="btn-add" id="buy-btn" disabled>Agotado temporalmente</button>
+            <p style="font-size: 13px; color: #666; text-align: center;">Este producto de 2009 ya no está disponible de forma directa en LEGO.com.</p>
+        </section>
+
+        <section class="description-section">
+            <h2>¡Defiende la roca de Bara Magna con el implacable Skrall!</h2>
+            <p>Perteneciente a la temible tribu de la Roca, Skrall es un guerrero brutal y disciplinado listo para la arena de los Glatorian. Armado con su espada de sierra gigante y un escudo giratorio que lanza contundentes contadores de vida espinosos (Thornaxx), es uno de los rivales más feroces a los que se han enfrentado jamás en el universo desértico.</p>
+            <p>Este set incluye la figura articulada de Skrall, un proyectil Thornaxx funcional y un contador de vidas para poder jugar al clásico juego de combate de BIONICLE® con tus amigos.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 The LEGO Group. Diseñado con fines recreativos e históricos (Set 8978 - Lanzamiento Original: 2009).</p>
+    </footer>
+
+    <script>
+        // Pequeña interactividad para emular la lógica de LEGO.com con sets retirados
+        document.addEventListener("DOMContentLoaded", function() {
+            const buyButton = document.getElementById("buy-btn");
+            const statusText = document.getElementById("status-text");
+
+            // Comportamiento nostálgico al hacer click en un botón deshabilitado
+            buyButton.addEventListener("click", function(e) {
+                e.preventDefault();
+            });
+
+            console.log("Cargada la ficha histórica del set BIONICLE 8978: Skrall (2009).");
+        });
+    </script>
+</body>
+</html>
