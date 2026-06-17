@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="el-GR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRUIZER 44005 | Hero Factory | LEGO.com GR</title>
+    <link rel="icon" type="image/x-icon" href="https://www.lego.com/favicon.ico">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #111;
+            color: #fff;
+            background-image: radial-gradient(circle, #222 0%, #050505 100%);
+        }
+
+        /* LEGO Header */
+        header {
+            background-color: #ffcf00;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 4px solid #d10000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .lego-logo {
+            width: 50px;
+            height: 50px;
+            background-color: #d10000;
+            color: #fff;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hf-logo {
+            color: #0088ff;
+            font-style: italic;
+            font-weight: 900;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .lang-select {
+            background: #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 8px;
+            border: 1px solid #333;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                margin: 10px;
+            }
+        }
+
+        /* Product Image Section */
+        .product-gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #000 url('https://www.lego.com/cdn/product-assets/product.img.pri/44005_prod.jpg') no-repeat center;
+            background-size: contain;
+            min-height: 450px;
+            border-radius: 6px;
+            position: relative;
+            border: 1px solid #222;
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #d10000;
+            color: white;
+            padding: 5px 10px;
+            font-weight: bold;
+            font-size: 12px;
+            text-transform: uppercase;
+            border-radius: 3px;
+        }
+
+        /* Product Details Section */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .breadcrumbs {
+            font-size: 12px;
+            color: #aaa;
+            margin-bottom: 10px;
+        }
+
+        .breadcrumbs a {
+            color: #0088ff;
+            text-decoration: none;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #fff;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .item-number {
+            font-size: 16px;
+            color: #ffcf00;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+        }
+
+        .specs-table td {
+            padding: 8px 0;
+            border-bottom: 1px solid #222;
+            font-size: 14px;
+        }
+
+        .specs-table td:first-child {
+            color: #aaa;
+            width: 40%;
+        }
+
+        .specs-table td:last-child {
+            font-weight: bold;
+            text-align: right;
+        }
+
+        .description {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        /* Price & Action Section */
+        .purchase-zone {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .price {
+            font-size: 28px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .btn-add {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-add:hover {
+            background: #218838;
+        }
+
+        .btn-add:disabled {
+            background: #555;
+            cursor: not-allowed;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 12px;
+            color: #666;
+            margin-top: 40px;
+            border-top: 1px solid #222;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="lego-logo">LEGO</div>
+            <div class="hf-logo">Hero Factory</div>
+        </div>
+        <div class="lang-select">el-GR</div>
+    </header>
+
+    <main class="container">
+        
+        <div class="product-gallery">
+            <span class="badge">Brain Attack</span>
+        </div>
+
+        <div class="product-details">
+            <div>
+                <div class="breadcrumbs">
+                    <a href="#">Αρχική</a> &gt; <a href="#">Προϊόντα</a> &gt; Hero Factory
+                </div>
+                <h1>BRUIZER</h1>
+                <div class="item-number">Κωδικός: 44005</div>
+
+                <table class="specs-table">
+                    <tr>
+                        <td>Ηλικίες</td>
+                        <td>7-14</td>
+                    </tr>
+                    <tr>
+                        <td>Κομμάτια</td>
+                        <td>62</td>
+                    </tr>
+                    <tr>
+                        <td>Έτος Κυκλοφορίας</td>
+                        <td>2013</td>
+                    </tr>
+                    <tr>
+                        <td>Κατάσταση</td>
+                        <td style="color: #28a745;">Διαθέσιμο</td>
+                    </tr>
+                </table>
+
+                <p class="description">
+                    Προετοιμαστείτε για μάχη, Χίροουζ! Οι σατανικοί εγκέφαλοι έχουν μεταμορφώσει ένα πέτρινο πλάσμα στον άγριο βράχο-τέρας BRUIZER! Με μια πέτρινη γροθιά που σπάει τα πάντα, λεπίδες στους ώμους και αδιαπέραστη πανοπλία, αυτό το τέρας θα δυσκολέψει πολύ την ομάδα. Φτάστε στο σημείο μηδέν και χρησιμοποιήστε όλες σας τις δυνάμεις για να τον νικήσετε!
+                </p>
+            </div>
+
+            <div class="purchase-zone">
+                <div class="price">€12.99</div>
+                <button class="btn-add" id="addToCartBtn">Προσθήκη στο Καλάθι</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2013 - 2026 The LEGO Group. All rights reserved. LEGO, το λογότυπο LEGO και το Hero Factory είναι εμπορικά σήματα του Ομίλου LEGO.
+    </footer>
+
+    <script>
+        document.getElementById('addToCartBtn').addEventListener('click', function() {
+            this.innerText = 'Προστέθηκε!';
+            this.style.backgroundColor = '#0088ff';
+            this.disabled = true;
+            
+            alert('Το προϊόν BRUIZER (44005) προστέθηκε επιτυχώς στο καλάθι αγορών σας!');
+            
+            setTimeout(() => {
+                this.innerText = 'Προσθήκη στο Καλάθι';
+                this.style.backgroundColor = '#28a745';
+                this.disabled = false;
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
