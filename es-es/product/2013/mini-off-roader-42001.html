@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minitodoterreno 42001 | Technic | Oficial LEGO® Shop ES</title>
+    <link rel="icon" type="image/x-icon" href="https://www.lego.com/favicon.ico">
+    <style>
+        /* --- LEGO Design System Variables --- */
+        :root {
+            --lego-yellow: #fd0;
+            --lego-blue: #006cb7;
+            --lego-dark-blue: #002d62;
+            --text-dark: #2c2c2c;
+            --text-muted: #656565;
+            --bg-light: #f8f8f8;
+            --border-color: #e0e0e0;
+            --font-stack: 'Cera Pro', Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            color: var(--text-dark);
+            background-color: #ffffff;
+            line-height: 1.5;
+        }
+
+        /* --- Header / Nav --- */
+        header {
+            background-color: var(--lego-yellow);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-container {
+            background-color: #ff0000;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            color: #fff;
+            font-size: 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 0 #b30000;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            margin-left: 32px;
+            display: flex;
+            gap: 24px;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+        /* --- Main Layout --- */
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @media (min-width: 768px) {
+            main {
+                grid-template-columns: 3fr 2fr;
+            }
+        }
+
+        /* --- Product Gallery --- */
+        .product-gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            padding: 24px;
+            position: relative;
+        }
+
+        .tag-retired {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background-color: var(--text-muted);
+            color: white;
+            padding: 4px 12px;
+            font-size: 12px;
+            font-weight: 700;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .main-image {
+            max-width: 100%;
+            height: auto;
+            mix-blend-mode: multiply;
+        }
+
+        /* --- Product Details / Buy Box --- */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .theme-title {
+            color: var(--lego-blue);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .product-name {
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+
+        .product-meta {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        /* --- Specs Grid --- */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 0;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .spec-item .spec-val {
+            font-size: 18px;
+            font-weight: 700;
+            display: block;
+        }
+
+        .spec-item .spec-label {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .price-tag {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        /* --- Interactive Elements --- */
+        .btn {
+            background-color: #00851a;
+            color: white;
+            border: none;
+            padding: 16px 24px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.2s ease;
+            text-align: center;
+            box-shadow: 0 3px 0 #005210;
+            margin-bottom: 12px;
+        }
+
+        .btn:hover {
+            background-color: #009e1f;
+        }
+
+        .btn-secondary {
+            background-color: #ffffff;
+            color: var(--lego-blue);
+            border: 2px solid var(--lego-blue);
+            box-shadow: none;
+        }
+
+        .btn-secondary:hover {
+            background-color: #f0f7fd;
+        }
+
+        .btn-disabled {
+            background-color: #e0e0e0;
+            color: var(--text-muted);
+            box-shadow: none;
+            cursor: not-allowed;
+        }
+        .btn-disabled:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* --- Description Section --- */
+        .description-section {
+            grid-column: 1 / -1;
+            border-top: 1px solid var(--border-color);
+            padding-top: 40px;
+        }
+
+        .description-section h2 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .description-text {
+            color: #444;
+            max-width: 800px;
+            margin-bottom: 24px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--lego-dark-blue);
+            color: white;
+            padding: 40px 24px;
+            margin-top: 60px;
+            text-align: center;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo-container">LEGO</a>
+        <nav class="nav-links">
+            <a href="#">Tienda</a>
+            <a href="#">Descubrir</a>
+            <a href="#">Ayuda</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="product-gallery">
+            <span class="tag-retired">Producto Retirado</span>
+            <img class="main-image" src="https://www.lego.com/cdn/product-assets/product.img.pri/42001_prod.jpg" alt="LEGO Technic 42001 Minitodoterreno">
+        </section>
+
+        <section class="product-details">
+            <span class="theme-title">Technic</span>
+            <h1 class="product-name">Minitodoterreno</h1>
+            <p class="product-meta">Item: 42001 | Edades: 7-14 | Año de lanzamiento: 2013</p>
+
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <span class="spec-val">100</span>
+                    <span class="spec-label">Piezas</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-val">42001</span>
+                    <span class="spec-label">Artículo</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-val">2 en 1</span>
+                    <span class="spec-label">Modelos</span>
+                </div>
+            </div>
+
+            <div class="price-tag" id="price-display">9,99 €</div>
+
+            <button class="btn btn-disabled" disabled>Producto No Disponible</button>
+            <button class="btn btn-secondary" id="wishlist-btn" onclick="toggleWishlist()">Añadir a la lista de deseos</button>
+        </section>
+
+        <section class="description-section">
+            <h2>Características del producto</h2>
+            <p class="description-text">
+                ¡Supera los terrenos más difíciles con el Minitodoterreno de LEGO® Technic! Este modelo “2 en 1” cuenta con detalles geniales y realistas, como una suspensión independiente en las 4 ruedas, grandes neumáticos de tacos y puertas que se abren. ¡Incluso puedes transformarlo en un genial buggy de carreras para dominar las dunas!
+            </p>
+            <ul>
+                <li>Dispone de suspensión independiente en las 4 ruedas y neumáticos de goma realistas.</li>
+                <li>¡Modelo 2 en 1! Se reconstruye en un minitractor para pistas de arena.</li>
+                <li>El minitodoterreno mide más de 7 cm de altura, 10 cm de longitud y 7 cm de ancho.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>LEGO, el logotipo de LEGO y las minifiguras son marcas comerciales de The LEGO Group. ©2026 The LEGO Group. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function toggleWishlist() {
+            const btn = document.getElementById('wishlist-btn');
+            if (btn.innerText === 'Añadir a la lista de deseos') {
+                btn.innerText = '¡Añadido a la lista!';
+                btn.style.backgroundColor = '#f0f7fd';
+            } else {
+                btn.innerText = 'Añadir a la lista de deseos';
+                btn.style.backgroundColor = '#ffffff';
+            }
+        }
+    </script>
+</body>
+</html>
