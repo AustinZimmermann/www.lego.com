@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gresh 8980 | BIONICLE® | Tienda LEGO® Oficial ES</title>
+    <link rel="shortcut icon" href="https://www.lego.com/favicon.ico" type="image/x-icon">
+    <style>
+        :root {
+            --lego-yellow: #f2cd37;
+            --lego-blue: #006cb7;
+            --lego-red: #e60012;
+            --text-dark: #333333;
+            --text-light: #5f5f5f;
+            --bg-light: #f8f8f8;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Cera Pro", Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+
+        /* Header Navigation */
+        header {
+            background-color: var(--lego-yellow);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 4px solid #e2ba16;
+        }
+
+        .logo {
+            height: 50px;
+            width: 50px;
+            background: var(--lego-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            color: white;
+            font-size: 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .nav-links {
+            margin-left: 30px;
+            display: flex;
+            gap: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        .nav-links a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        /* Main Layout */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @media (min-width: 768px) {
+            main {
+                grid-template-columns: 1.2fr 0.8fr;
+            }
+        }
+
+        /* Product Gallery */
+        .product-gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            padding: 20px;
+            position: relative;
+        }
+
+        .tag-classic {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #000;
+            color: #fff;
+            padding: 4px 12px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+        }
+
+        .main-image {
+            max-width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: contain;
+            mix-blend-mode: multiply;
+        }
+
+        /* Product Info */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .theme-title {
+            color: var(--lego-blue);
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .product-name {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .product-meta {
+            display: flex;
+            gap: 15px;
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        .price {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            color: #d11212;
+            background-color: #ffebe6;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            align-self: flex-start;
+            margin-bottom: 25px;
+        }
+
+        /* Purchase Controls */
+        .purchase-controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background: #fff;
+        }
+
+        .quantity-btn {
+            background: none;
+            border: none;
+            width: 45px;
+            height: 45px;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quantity-btn:disabled {
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .quantity-input {
+            width: 40px;
+            text-align: center;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            outline: none;
+        }
+
+        .add-to-bag-btn {
+            flex-grow: 1;
+            background-color: var(--lego-blue);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 0 24px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .add-to-bag-btn:hover {
+            background-color: #00548f;
+        }
+
+        /* Product Specs Table */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 25px;
+            margin-top: auto;
+        }
+
+        .spec-item {
+            font-size: 14px;
+        }
+
+        .spec-label {
+            color: var(--text-light);
+            margin-bottom: 2px;
+        }
+
+        .spec-value {
+            font-weight: bold;
+        }
+
+        /* Description Section */
+        .description-section {
+            grid-column: 1 / -1;
+            border-top: 1px solid var(--border-color);
+            padding-top: 30px;
+        }
+
+        .description-section h2 {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .description-section p {
+            color: var(--text-light);
+            max-width: 800px;
+        }
+
+        /* Toast Alert */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #323232;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: none;
+            font-weight: 500;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">LEGO</a>
+        <nav class="nav-links">
+            <a href="#">Tienda</a>
+            <a href="#">Descubrir</a>
+            <a href="#">BIONICLE®</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="product-gallery">
+            <span class="tag-classic">Clásico</span>
+            <img class="main-image" src="https://www.lego.com/cdn/product-assets/product.img.pri/8980_prod.jpg" alt="LEGO BIONICLE Gresh 8980">
+        </section>
+
+        <section class="product-details">
+            <span class="theme-title">BIONICLE® / Glatorian</span>
+            <h1 class="product-name">Gresh</h1>
+            
+            <div class="product-meta">
+                <span>Ref: <strong>8980</strong></span>
+                <span>•</span>
+                <span>Edades: <strong>7-16</strong></span>
+            </div>
+
+            <div class="price">12,99 €</div>
+
+            <span class="status-badge">Producto Retirado</span>
+
+            <div class="purchase-controls">
+                <div class="quantity-selector">
+                    <button class="quantity-btn" id="minus-btn" disabled>-</button>
+                    <input type="text" class="quantity-input" id="qty-input" value="1" readonly>
+                    <button class="quantity-btn" id="plus-btn">+</button>
+                </div>
+                <button class="add-to-bag-btn" id="add-to-bag">Añadir a la Bolsa</button>
+            </div>
+
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <div class="spec-label">Año de lanzamiento</div>
+                    <div class="spec-value">2009</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Piezas</div>
+                    <div class="spec-value">55</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Elementos de combate</div>
+                    <div class="spec-value">Lanzador Thornax</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Facción</div>
+                    <div class="spec-value">Tribu de la Jungla</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="description-section">
+            <h2>¡Lucha por el honor en la arena con Gresh!</h2>
+            <p>
+                Rápido, ágil y maestro de las espadas de doble filo, Gresh lucha por la Tribu de la Jungla en las arenas de Bara Magna. Equipado con una armadura sólida, un escudo de hojas y un letal lanzador de esferas Thornax funcional, este veterano Glatorian está listo para defender a su pueblo contra cualquier amenaza de los cazadores de huesos.
+            </p>
+        </section>
+    </main>
+
+    <div class="toast" id="toast-message">¡Producto añadido a la bolsa!</div>
+
+    <script>
+        // Quantity Controls
+        const minusBtn = document.getElementById('minus-btn');
+        const plusBtn = document.getElementById('plus-btn');
+        const qtyInput = document.getElementById('qty-input');
+        const addToBagBtn = document.getElementById('add-to-bag');
+        const toast = document.getElementById('toast-message');
+
+        let currentQty = 1;
+
+        plusBtn.addEventListener('click', () => {
+            if (currentQty < 5) {
+                currentQty++;
+                qtyInput.value = currentQty;
+                minusBtn.disabled = false;
+            }
+            if (currentQty === 5) {
+                plusBtn.disabled = true;
+            }
+        });
+
+        minusBtn.addEventListener('click', () => {
+            if (currentQty > 1) {
+                currentQty--;
+                qtyInput.value = currentQty;
+                plusBtn.disabled = false;
+            }
+            if (currentQty === 1) {
+                minusBtn.disabled = true;
+            }
+        });
+
+        // Add to Bag Simulation
+        addToBagBtn.addEventListener('click', () => {
+            toast.innerText = `¡Has añadido ${currentQty} x Gresh a tu bolsa!`;
+            toast.style.display = 'block';
+            
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
