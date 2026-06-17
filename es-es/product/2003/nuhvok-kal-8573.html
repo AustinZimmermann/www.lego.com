@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuhvok-Kal 8573 | BIONICLE® | Tienda LEGO® Oficial ES</title>
+    <link rel="icon" type="image/x-icon" href="https://www.lego.com/favicon.ico">
+    <style>
+        :root {
+            --lego-yellow: #F2CD37;
+            --lego-red: #E11A22;
+            --dark-gray: #333333;
+            --light-gray: #F8F8F8;
+            --border-color: #E0E0E0;
+            --bionicle-bg: #1a1a1a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--dark-gray);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--lego-yellow);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 4px solid var(--lego-red);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .lego-logo {
+            width: 50px;
+            height: 50px;
+            background-color: var(--lego-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .brand-title {
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 20px;
+        }
+
+        /* Breadcrumb */
+        .breadcrumbs {
+            padding: 15px 20px;
+            font-size: 14px;
+            color: #666;
+            background-color: var(--light-gray);
+        }
+
+        .breadcrumbs a {
+            color: #006cb7;
+            text-decoration: none;
+        }
+
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Layout */
+        .product-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .product-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Product Gallery */
+        .product-gallery {
+            background: radial-gradient(circle, #3a3a3a 0%, #111111 100%);
+            border-radius: 8px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            min-height: 400px;
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
+        }
+
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.6));
+            transition: transform 0.3s ease;
+        }
+
+        .product-image:hover {
+            transform: scale(1.05);
+        }
+
+        .badge-vintage {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--lego-red);
+            color: white;
+            padding: 5px 10px;
+            font-weight: bold;
+            font-size: 12px;
+            text-transform: uppercase;
+            border-radius: 4px;
+        }
+
+        /* Product Details */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-meta {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .product-title {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: #111;
+        }
+
+        .product-theme {
+            color: #006cb7;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+            margin-bottom: 25px;
+        }
+
+        .spec-item {
+            text-align: center;
+        }
+
+        .spec-label {
+            font-size: 12px;
+            color: #757575;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .spec-value {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .price-section {
+            margin-bottom: 25px;
+        }
+
+        .price {
+            font-size: 28px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .status-tag {
+            display: inline-block;
+            background-color: #ffebee;
+            color: #c62828;
+            padding: 4px 8px;
+            font-size: 13px;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-top: 5px;
+        }
+
+        /* Buy Button */
+        .btn-add {
+            background-color: #107a3e;
+            color: white;
+            border: none;
+            padding: 16px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn-add:hover {
+            background-color: #0b592c;
+        }
+
+        .btn-add:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        /* Description Section */
+        .description-section {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .description-section h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .description-section p {
+            line-height: 1.6;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="lego-logo">LEGO</div>
+            <div class="brand-title">Shop</div>
+        </div>
+    </header>
+
+    <div class="breadcrumbs">
+        <a href="#">Inicio</a> &gt; <a href="#">Temas</a> &gt; <a href="#">BIONICLE®</a> &gt; 8573 Nuhvok-Kal
+    </div>
+
+    <main class="product-container">
+        
+        <section class="product-gallery">
+            <span class="badge-vintage">Clásico de 2003</span>
+            <img class="product-image" src="https://www.lego.com/cdn/product-assets/product.img.pri/8573_prod.jpg" alt="LEGO BIONICLE 8573 Nuhvok-Kal">
+        </section>
+
+        <section class="product-details">
+            <div class="product-meta">Ref: 8573</div>
+            <h1 class="product-title">Nuhvok-Kal</h1>
+            <div class="product-theme">BIONICLE® Bohrok-Kal</div>
+
+            <div class="spec-grid">
+                <div class="spec-item">
+                    <div class="spec-label">Edades</div>
+                    <div class="spec-value">7+</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Piezas</div>
+                    <div class="spec-value">40</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Lanzamiento</div>
+                    <div class="spec-value">2003</div>
+                </div>
+            </div>
+
+            <div class="price-section">
+                <div class="price">12,99 €</div>
+                <span class="status-tag">Producto descatalogado</span>
+            </div>
+
+            <button class="btn-add" id="buyButton" disabled>Producto agotado</button>
+            
+            <div class="description-section">
+                <h3>Descripción del producto</h3>
+                <p><strong>¡El poder de la gravedad desatado!</strong></p>
+                <p>Rápido, astuto y sumamente subterráneo, Nuhvok-Kal controla las fuerzas de la gravedad. Capaz de aumentar el peso de un oponente hasta hacerlo hundirse en la tierra, o de eliminarlo por completo para hacerlo flotar sin control, es una amenaza impredecible para la isla de Mata Nui.</p>
+                <p>Este set incluye la variante metálica de los Bohrok tradicionales, garras de gravedad, un Krana-Kal único y un contenedor de cápsula que sirve como cámara de letargo.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 The LEGO Group. Todos los derechos reservados. BIONICLE es una marca registrada de The LEGO Group.</p>
+    </footer>
+
+    <script>
+        // Simple interactive feature celebrating the classic set
+        document.addEventListener('DOMContentLoaded', () => {
+            const img = document.querySelector('.product-image');
+            
+            // Console easter egg for classic BIONICLE fans
+            console.log("%c¡BIONICLE: Nuhvok-Kal activado!", "color: #777; font-size: 16px; font-weight: bold; text-shadow: 1px 1px 2px black;");
+            
+            // Subtly wobble the Bohrok image when clicked to mimic its signature gear action
+            img.addEventListener('click', () => {
+                img.style.transform = 'translateY(-10px) rotate(5deg)';
+                setTimeout(() => {
+                    img.style.transform = 'none';
+                }, 150);
+            });
+        });
+    </script>
+</body>
+</html>
