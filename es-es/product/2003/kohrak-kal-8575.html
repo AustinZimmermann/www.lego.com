@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kohrak-Kal 8575 | BIONICLE® | Tienda LEGO® oficial ES</title>
+    <link rel="icon" type="image/x-icon" href="https://www.lego.com/favicon.ico">
+    <style>
+        /* Modern LEGO.com Design Tokens & Core Styles */
+        :root {
+            --lego-yellow: #F2CD37;
+            --lego-blue: #006CB7;
+            --lego-red: #E60012;
+            --dark-gray: #333333;
+            --light-gray: #F8F8F8;
+            --border-color: #E0E0E0;
+            --text-color: #2C2C2C;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Cera Pro", Helvetica, sans-serif;
+        }
+
+        body {
+            color: var(--text-color);
+            background-color: #ffffff;
+            line-height: 1.5;
+        }
+
+        /* Utility classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--lego-yellow);
+            padding: 10px 0;
+            border-bottom: 4px solid var(--dark-gray);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 48px;
+            width: 48px;
+            display: block;
+        }
+
+        .nav-links a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            margin-left: 20px;
+        }
+
+        /* Breadcrumb */
+        .breadcrumbs {
+            padding: 20px 0 10px 0;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .breadcrumbs a {
+            color: var(--lego-blue);
+            text-decoration: none;
+        }
+
+        /* Product Section */
+        .product-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            padding: 20px 0 60px 0;
+        }
+
+        @media (min-width: 768px) {
+            .product-layout {
+                grid-template-columns: 1.2fr 1fr;
+            }
+        }
+
+        /* Gallery */
+        .product-gallery {
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            min-height: 400px;
+        }
+
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            max-height: 450px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .product-image:hover {
+            transform: scale(1.03);
+        }
+
+        .badge-legacy {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--dark-gray);
+            color: #fff;
+            padding: 5px 10px;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+            letter-spacing: 1px;
+        }
+
+        /* Product Details / Shop Panel */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-theme {
+            color: #666;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .product-title {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--dark-gray);
+        }
+
+        .product-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        .meta-item strong {
+            color: #000;
+        }
+
+        .product-price-status {
+            margin-bottom: 25px;
+        }
+
+        .price {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--dark-gray);
+            margin-bottom: 5px;
+        }
+
+        .status-tag {
+            display: inline-block;
+            padding: 4px 8px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 4px;
+            background-color: #FFEBEA;
+            color: var(--lego-red);
+        }
+
+        /* Actions */
+        .cta-box {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 16px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: #FD8024;
+            color: white;
+            border-bottom: 3px solid #D6600A;
+        }
+
+        .btn-primary:disabled {
+            background-color: #E0E0E0;
+            border-bottom: 3px solid #CCCCCC;
+            color: #888;
+            cursor: not-allowed;
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: var(--lego-blue);
+            border: 2px solid var(--lego-blue);
+        }
+
+        .btn-secondary:hover {
+            background-color: #F0F7FD;
+        }
+
+        /* Description Accordion */
+        .accordion {
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 4px;
+        }
+
+        .accordion-header {
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            font-size: 14px;
+            color: #555;
+            padding-bottom: 0;
+        }
+
+        .accordion-content p {
+            margin-bottom: 12px;
+        }
+
+        .accordion.active .accordion-content {
+            max-height: 500px;
+            padding-bottom: 15px;
+        }
+
+        .accordion-icon::before {
+            content: "+";
+            font-size: 20px;
+        }
+
+        .accordion.active .accordion-icon::before {
+            content: "−";
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            color: #fff;
+            padding: 40px 0;
+            font-size: 12px;
+            margin-top: 60px;
+        }
+
+        .footer-text {
+            text-align: center;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="https://www.lego.com/favicon.ico" alt="LEGO® Logo">
+            </div>
+            <nav class="nav-links">
+                <a href="#tienda">Tienda</a>
+                <a href="#temas">Temas</a>
+                <a href="#bionicle">BIONICLE®</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="breadcrumbs">
+            <a href="#">Inicio</a> / <a href="#">BIONICLE®</a> / <a href="#">Bohrok-Kal</a> / 8575 Kohrak-Kal
+        </div>
+
+        <div class="product-layout">
+            
+            <div class="product-gallery">
+                <span class="badge-legacy">Producto descatalogado</span>
+                <img class="product-image" src="https://www.lego.com/cdn/product-assets/product.img.pri/8575_prod.jpg" alt="LEGO BIONICLE 8575 Kohrak-Kal">
+            </div>
+
+            <div class="product-details">
+                <span class="product-theme">BIONICLE®</span>
+                <h1 class="product-title">Kohrak-Kal</h1>
+                
+                <div class="product-meta">
+                    <div class="meta-item">Ref: <strong>8575</strong></div>
+                    <div class="meta-item">Edades: <strong>7+</strong></div>
+                    <div class="meta-item">Piezas: <strong>40</strong></div>
+                    <div class="meta-item">Año: <strong>2003</strong></div>
+                </div>
+
+                <div class="product-price-status">
+                    <div class="price">9,99 €</div>
+                    <span class="status-tag">Ya no está disponible</span>
+                </div>
+
+                <div class="cta-box">
+                    <button class="btn btn-primary" disabled>Agotado</button>
+                    <button class="btn btn-secondary" id="btn-wishlist">Añadir a la lista de deseos</button>
+                </div>
+
+                <div class="accordion active" onclick="toggleAccordion(this)">
+                    <div class="accordion-header">
+                        <span>Descripción del producto</span>
+                        <span class="accordion-icon"></span>
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>¡El poder sónico desatado!</strong></p>
+                        <p>Kohrak-Kal controla el poder del sonido elemental. Capaz de crear ráfagas sónicas intensas que pueden destrozar objetos o derribar a sus enemigos a distancia, es uno de los Bohrok-Kal más peligrosos que amenazan a la isla de Mata Nui.</p>
+                        <p>Equipado con letales escudos sónicos y un cerebro Krana-Kal único, este letal enemigo se une a la misión de despertar al gran espíritu Bahrag. Los Toa Nuva deberán emplear todo su ingenio para detenerlo.</p>
+                    </div>
+                </div>
+
+                <div class="accordion" onclick="toggleAccordion(this)">
+                    <div class="accordion-header">
+                        <span>Especificaciones</span>
+                        <span class="accordion-icon"></span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>• Incluye escudos de sonido y un Krana-Kal aleatorio.</p>
+                        <p>• Cuenta con función de lanzamiento de Krana al presionar sus ojos.</p>
+                        <p>• ¡Se puede transformar en una esfera compacta para rodar al combate!</p>
+                        <p>• Combínalo con los sets 8576 y 8578 para construir al imponente "Bohrok-Kal Kaita Za".</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-text">
+            <p>LEGO, el logotipo de LEGO, las miniguras, BIONICLE y las configuraciones de los ladrillos son marcas comerciales de The LEGO Group. ©2003-2026 The LEGO Group. Reservados todos los derechos.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleAccordion(element) {
+            element.classList.toggle('active');
+        }
+
+        // Wishlist tracking placeholder
+        const wishlistBtn = document.getElementById('btn-wishlist');
+        wishlistBtn.addEventListener('click', function() {
+            if(wishlistBtn.textContent === "Añadir a la lista de deseos") {
+                wishlistBtn.textContent = "¡Añadido a tu lista!";
+                wishlistBtn.style.backgroundColor = "#E6F4EA";
+                wishlistBtn.style.color = "#137333";
+                wishlistBtn.style.borderColor = "#137333";
+            } else {
+                wishlistBtn.textContent = "Añadir a la lista de deseos";
+                wishlistBtn.style.backgroundColor = "white";
+                wishlistBtn.style.color = "var(--lego-blue)";
+                wishlistBtn.style.borderColor = "var(--lego-blue)";
+            }
+        });
+    </script>
+</body>
+</html>
