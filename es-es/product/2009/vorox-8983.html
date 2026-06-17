@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vorox 8983 | BIONICLE® | Tienda LEGO® Oficial ES</title>
+    <link rel="icon" type="image/x-icon" href="https://www.lego.com/favicon.ico">
+    <style>
+        :root {
+            --lego-yellow: #fdb913;
+            --lego-blue: #002d62;
+            --text-dark: #2c2c2c;
+            --text-light: #5f5f5f;
+            --bg-light: #f8f8f8;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Helvetics, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--lego-yellow);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .lego-logo {
+            width: 50px;
+            height: 50px;
+            background-color: #ff0000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 20px;
+            border: 2px solid black;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        /* Main Container */
+        .product-container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .product-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Image Section */
+        .image-gallery {
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            min-height: 400px;
+        }
+
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .product-image:hover {
+            transform: scale(1.03);
+        }
+
+        .tag-classic {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: #008216;
+            color: white;
+            padding: 4px 12px;
+            font-weight: bold;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        /* Info Section */
+        .product-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .breadcrumbs {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .breadcrumbs a {
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+
+        .product-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+            line-height: 1.2;
+        }
+
+        .product-meta {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .spec-item span {
+            display: block;
+        }
+
+        .spec-label {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .spec-value {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .status-badge {
+            display: inline-block;
+            color: #d11a2a;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .btn-add {
+            background-color: #008543;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.2s;
+            margin-bottom: 20px;
+        }
+
+        .btn-add:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        /* Description / Accordion Section */
+        .description-section {
+            margin-top: 40px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .accordion-tab {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .accordion-content.open {
+            max-height: 500px;
+            padding-top: 10px;
+            padding-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--lego-blue);
+            color: white;
+            padding: 30px 20px;
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="lego-logo">LEGO</div>
+            <div class="nav-links">
+                <span>TIENDA</span>
+                <span>TEMAS</span>
+                <span>DESCUBRE</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="product-container">
+        
+        <section class="image-gallery">
+            <span class="tag-classic">Clásico</span>
+            <img class="product-image" src="https://www.lego.com/cdn/product-assets/product.img.pri/8983_prod.jpg" alt="LEGO BIONICLE Vorox 8983">
+        </section>
+
+        <section class="product-info">
+            <nav class="breadcrumbs">
+                <a href="#">Inicio</a> &gt; <a href="#">BIONICLE®</a> &gt; <span>Vorox</span>
+            </nav>
+            
+            <h1 class="product-title">Vorox</h1>
+            <div class="product-meta">Item: 8983</div>
+
+            <div class="spec-grid">
+                <div class="spec-item">
+                    <span class="spec-label">Edades</span>
+                    <span class="spec-value">7-16</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Piezas</span>
+                    <span class="spec-value">51</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Lanzamiento</span>
+                    <span class="spec-value">2009</span>
+                </div>
+            </div>
+
+            <div class="status-badge">Producto descatalogado</div>
+
+            <button class="btn-add" disabled>Producto agotado</button>
+
+            <div class="description-section">
+                <div class="accordion-tab" onclick="toggleAccordion('desc')">
+                    Descripción del producto
+                    <span id="desc-icon">+</span>
+                </div>
+                <div id="desc-content" class="accordion-content">
+                    <p>¡Emboscada en las arenas del desierto! Peligrosos y salvajes, los Vorox acechan bajo los páramos de Bara Magna, listos para atacar a cualquiera que cruce su territorio. Equipados con una cola armada con aguijón venenoso, pinzas afiladas y un lanzador de esferas Thornax, son supervivientes natos de la tribu de la tierra.</p>
+                    <br>
+                    <ul>
+                        <li>Incluye un contador de vida para el nuevo juego de BIONICLE.</li>
+                        <li>Cuenta con una cola articulada con aguijón y pinzas en los brazos.</li>
+                        <li>¡Combínalo con el set 8977 Zesk para crear un modelo más grande!</li>
+                    </ul>
+                </div>
+
+                <div class="accordion-tab" onclick="toggleAccordion('specs')">
+                    Especificaciones detalladas
+                    <span id="specs-icon">+</span>
+                </div>
+                <div id="specs-content" class="accordion-content">
+                    <p><strong>Tema:</strong> LEGO® BIONICLE®<br>
+                    <strong>Subtema:</strong> Glatorian<br>
+                    <strong>Año de lanzamiento:</strong> 2009<br>
+                    <strong>Dimensiones de la caja:</strong> Aprox. 14 x 24 x 6 cm</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>LEGO, el logotipo de LEGO y BIONICLE son marcas registradas de The LEGO Group. &copy; 2026 The LEGO Group. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function toggleAccordion(id) {
+            const content = document.getElementById(id + '-content');
+            const icon = document.getElementById(id + '-icon');
+            
+            if (content.classList.contains('open')) {
+                content.classList.remove('open');
+                icon.textContent = '+';
+            } else {
+                content.classList.add('open');
+                icon.textContent = '-';
+            }
+        }
+    </script>
+</body>
+</html>
