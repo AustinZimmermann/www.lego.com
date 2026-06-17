@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="el-GR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCAROX 44003 | Hero Factory | Βασίλειο του Παιχνιδιού LEGO® Shop</title>
+    <link rel="shortcut icon" href="https://www.lego.com/favicon.ico" type="image/x-icon">
+    <style>
+        /* 2013-era LEGO Website Aesthetic */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            background-image: radial-gradient(circle, #2c3e50 0%, #0f171e 100%);
+        }
+
+        header {
+            background-color: #ffcf00;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .lego-logo {
+            width: 50px;
+            height: 50px;
+            background-color: #ff0000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: bold;
+            font-size: 20px;
+            border: 3px solid #000;
+            box-shadow: 2px 2px 0 #fff;
+            text-decoration: none;
+        }
+
+        .hf-logo {
+            font-size: 24px;
+            font-weight: 900;
+            color: #0054a6;
+            text-transform: uppercase;
+            font-style: italic;
+            letter-spacing: -1px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 8px;
+            border: 1px solid #333;
+            box-shadow: 0 0 20px rgba(0,0,0,0.8);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .product-gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #000;
+            border-radius: 6px;
+            padding: 20px;
+            border: 2px solid #00bcd4; /* Hero Factory Brain Attack Neon Blue Accent */
+            box-shadow: 0 0 15px rgba(0, 188, 212, 0.4);
+        }
+
+        .main-img {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .main-img:hover {
+            transform: scale(1.05);
+        }
+
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-meta {
+            color: #aaa;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin: 10px 0;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .item-number {
+            font-size: 18px;
+            color: #ffcf00;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .price-tag {
+            font-size: 28px;
+            font-weight: bold;
+            color: #fff;
+            margin: 20px 0;
+        }
+
+        .status {
+            color: #4caf50;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .status::before {
+            content: "●";
+            color: #4caf50;
+        }
+
+        .btn-add {
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 4px #990000;
+            transition: all 0.1s ease;
+        }
+
+        .btn-add:hover {
+            background-color: #ff3333;
+        }
+
+        .btn-add:active {
+            box-shadow: 0 0 #990000;
+            transform: translateY(4px);
+        }
+
+        .description {
+            margin-top: 30px;
+            line-height: 1.6;
+            color: #ddd;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+        }
+
+        .specs-table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        .specs-table td {
+            padding: 10px;
+            border-bottom: 1px solid #222;
+            font-size: 14px;
+        }
+
+        .specs-table td:first-child {
+            color: #888;
+            width: 40%;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #222;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="lego-logo">LEGO</a>
+        <div class="hf-logo">Hero Factory</div>
+        <div style="color: #000; font-weight: bold; font-size: 14px;">Shop @ Home</div>
+    </header>
+
+    <div class="container">
+        <div class="product-grid">
+            
+            <div class="product-gallery">
+                <img src="https://www.lego.com/cdn/product-assets/product.img.pri/44003_prod.jpg" alt="LEGO Hero Factory 44003 SCAROX" class="main-img">
+            </div>
+
+            <div class="product-details">
+                <div>
+                    <div class="product-meta">Hero Factory - Brain Attack</div>
+                    <h1>SCAROX</h1>
+                    <div class="item-number">Κωδικός: 44003</div>
+                    
+                    <div class="price-tag">9,99 €</div>
+                    <div class="status">Διαθέσιμο Τώρα</div>
+
+                    <button class="btn-add" id="addToBagBtn">Προσθηκη στο Καλαθι</button>
+                </div>
+
+                <table class="specs-table">
+                    <tr>
+                        <td>Ηλικίες</td>
+                        <td>6-12</td>
+                    </tr>
+                    <tr>
+                        <td>Κομμάτια</td>
+                        <td>46</td>
+                    </tr>
+                    <tr>
+                        <td>Έτος Κυκλοφορίας</td>
+                        <td>2013</td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+        <div class="description">
+            <h2>Περιγραφή</h2>
+            <p><strong>Προετοιμαστείτε για μάχη, Χίροουζ!</strong> Οι σατανικοί εγκέφαλοι έχει μεταμορφώσει ένα ερπετό της ερήμου στον θανατηφόρο εχθρό SCAROX! Με τις κοφτερές του λεπίδες, τα θανατηφόρα νύχια και την πανίσχυρη πανοπλία του, αυτό το τέρας είναι έτοιμο να επιτεθεί στο Hero Factory. Κρατήστε αποστάσεις από τα κινούμενα σαγόνια του και προστατεύστε τον πυρήνα σας!</p>
+            <ul>
+                <li>Διαθέτει αφαιρούμενο σατανικό εγκέφαλο σε ανοιχτό πράσινο χρώμα, θανατηφόρα νύχια, λεπίδες και αρθρωτά σαγόνια.</li>
+                <li>Περιλαμβάνει έναν μοναδικό κωδικό αξίας 400 πόντων για το παιχνίδι LEGO® Hero Factory Brain Attack στο κινητό ή το PC.</li>
+                <li>Συνδυάστε το με το <strong>44002 ROCKA</strong> για να δημιουργήσετε ένα ακόμα μεγαλύτερο μοντέλο!</li>
+                <li>Έχει ύψος πάνω από 17 εκατοστά!</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>LEGO, το λογότυπο LEGO και το HERO FACTORY είναι εμπορικά σήματα της LEGO Group. ©2013 The LEGO Group. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simple 2013 Interactive element
+        document.getElementById('addToBagBtn').addEventListener('click', function() {
+            alert('Το προϊόν SCAROX (44003) προστέθηκε στο καλάθι αγορών σας!');
+        });
+    </script>
+
+</body>
+</html>
