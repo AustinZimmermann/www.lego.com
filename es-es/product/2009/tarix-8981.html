@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarix 8981 | BIONICLE® | Oficial LEGO® Shop ES</title>
+    <link rel="icon" type="image/x-icon" href="https://www.lego.com/favicon.ico">
+    <style>
+        /* --- Reset & Base Styles --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Cera Pro", Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        /* --- Header / Nav --- */
+        header {
+            background-color: #ffd000;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .lego-logo {
+            width: 50px;
+            height: 50px;
+            background-color: #e60012;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 4px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        .cart-status {
+            background: #fff;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* --- Main Layout --- */
+        main {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @media (min-width: 768px) {
+            main {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* --- Product Images --- */
+        .product-gallery {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .product-gallery img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .badge-retired {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #707070;
+            color: white;
+            padding: 5px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+        }
+
+        /* --- Product Info --- */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .breadcrumbs {
+            font-size: 12px;
+            color: #707070;
+        }
+
+        .product-theme {
+            font-size: 14px;
+            font-weight: bold;
+            color: #006cb7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .product-title {
+            font-size: 32px;
+            font-weight: 800;
+        }
+
+        .product-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            color: #555;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 15px;
+        }
+
+        .price-tag {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .status-msg {
+            color: #e60012;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* --- Actions --- */
+        .cta-box {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn-primary {
+            background-color: #00851a;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-transform: uppercase;
+        }
+
+        .btn-primary:hover {
+            background-color: #006614;
+        }
+
+        .btn-disabled {
+            background-color: #e0e0e0;
+            color: #707070;
+            cursor: not-allowed;
+        }
+        .btn-disabled:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* --- Product Specs --- */
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .specs-table td {
+            padding: 10px;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 14px;
+        }
+
+        .specs-table td:first-child {
+            font-weight: bold;
+            color: #555;
+            width: 40%;
+        }
+
+        /* --- Description Section --- */
+        .description-section {
+            grid-column: 1 / -1;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .description-section h2 {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .description-section p {
+            line-height: 1.6;
+            color: #444;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 12px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="lego-logo">LEGO</div>
+            <div class="nav-links">
+                <span>Tienda</span>
+                <span>Descubrir</span>
+                <span>Ayuda</span>
+            </div>
+        </div>
+        <div class="cart-status">
+            🛒 Bolsa: <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <main>
+        
+        <div class="product-gallery">
+            <span class="badge-retired">Producto Retirado</span>
+            <img src="https://www.lego.com/cdn/product-assets/product.img.pri/8981_prod.jpg" alt="LEGO BIONICLE 8981 Tarix">
+        </div>
+
+        <div class="product-details">
+            <div class="breadcrumbs">Inicio > Sets > BIONICLE® > 8981</div>
+            <div class="product-theme">BIONICLE®</div>
+            <h1 class="product-title">Tarix</h1>
+            
+            <div class="product-meta">
+                <span><strong>Ref:</strong> 8981</span>
+                <span><strong>Edades:</strong> 7-16</span>
+                <span><strong>Piezas:</strong> 57</span>
+            </div>
+
+            <div class="price-tag">12,99 €</div>
+            <div class="status-msg">Ya no está disponible en LEGO.com (Sujeto a disponibilidad en tiendas del mercado secundario).</div>
+
+            <div class="cta-box">
+                <button class="btn-primary btn-disabled" id="buy-btn" disabled>Agotado</button>
+                <button class="btn-primary" style="background-color: #006cb7;" id="wishlist-btn" onclick="toggleWishlist()">Añadir a la lista de deseos</button>
+            </div>
+
+            <table class="specs-table">
+                <tr>
+                    <td>Año de lanzamiento</td>
+                    <td>2009</td>
+                </tr>
+                <tr>
+                    <td>Línea de producto</td>
+                    <td>BIONICLE® Glatorian</td>
+                </tr>
+                <tr>
+                    <td>Elemento</td>
+                    <td>Agua (Aqua Magna)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="description-section">
+            <h2>Detalles del producto</h2>
+            <p>
+                ¡Lucha por la supervivencia en las arenas de Bara Magna con el valiente Glatorian Tarix! Como un guerrero veterano de la tribu del Agua, Tarix es respetado por todos debido a su honor y destreza en combate. Equipado con dos letales Hojas de Agua doradas y un lanzador de esferas Thornaxx funcional, está listo para defender las escasas fuentes de agua del planeta contra las amenazas de los Skrall y los Cazadores de Huesos. Este set incluye un contador de vidas para el emocionante juego de mesa BIONICLE&reg;.
+            </p>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 The LEGO Group. Todos los derechos reservados. LEGO, el logotipo de LEGO y BIONICLE son marcas registradas de The LEGO Group.</p>
+    </footer>
+
+    <script>
+        let inWishlist = false;
+
+        function toggleWishlist() {
+            const btn = document.getElementById('wishlist-btn');
+            inWishlist = !inWishlist;
+            
+            if (inWishlist) {
+                btn.innerText = "¡En tu lista de deseos!";
+                btn.style.backgroundColor = "#4d4d4d";
+                alert("¡Tarix ha sido añadido a tu lista de deseos de LEGO!");
+            } else {
+                btn.innerText = "Añadir a la lista de deseos";
+                btn.style.backgroundColor = "#006cb7";
+            }
+        }
+    </script>
+
+</body>
+</html>
