@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raanu 8973 | BIONICLE® | Tienda LEGO® Oficial ES</title>
+    <link rel="icon" type="image/x-icon" href="https://www.lego.com/favicon.ico">
+    <style>
+        :root {
+            --lego-yellow: #fdb100;
+            --lego-red: #d0011b;
+            --text-dark: #2c2c2c;
+            --text-light: #5f5f5f;
+            --bg-light: #f4f4f4;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Cera Pro", Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+
+        /* Header Stub */
+        header {
+            background-color: var(--lego-yellow);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 4px solid var(--lego-red);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            background-color: var(--lego-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            border-radius: 4px;
+            text-shadow: 2px 2px 0px #000;
+        }
+
+        .market-lang {
+            font-size: 0.85rem;
+            font-weight: bold;
+            background: rgba(255,255,255,0.3);
+            padding: 4px 8px;
+            border-radius: 12px;
+        }
+
+        /* Main Layout */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Breadcrumbs */
+        .breadcrumbs {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        .breadcrumbs a {
+            color: var(--text-light);
+            text-decoration: none;
+        }
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+
+        /* Product Section */
+        .product-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .product-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Gallery */
+        .product-gallery {
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            min-height: 400px;
+        }
+
+        .product-image {
+            max-width: 100%;
+            max-height: 450px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .product-image:hover {
+            transform: scale(1.03);
+        }
+
+        .badge-retired {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #707070;
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+        }
+
+        /* Details */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-theme {
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #006cb7;
+            margin-bottom: 5px;
+        }
+
+        .product-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .product-meta-specs {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        .spec-item strong {
+            color: var(--text-dark);
+        }
+
+        /* Purchase / Status Box */
+        .status-box {
+            background-color: #f8f9fa;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .status-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #d0011b;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .status-text {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn-secondary {
+            background-color: #ffffff;
+            color: var(--text-dark);
+            border: 2px solid var(--text-dark);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--bg-light);
+        }
+
+        /* Accordion / Info Tabs */
+        .info-section {
+            border-top: 1px solid var(--border-color);
+            margin-top: 20px;
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .accordion-header {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 15px 0;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        .accordion-header::after {
+            content: '+';
+            font-size: 1.5rem;
+        }
+
+        .accordion-header.active::after {
+            content: '−';
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .accordion-content p {
+            padding-bottom: 15px;
+        }
+
+        /* Footer Stub */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 40px 20px;
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="logo">LEGO</div>
+            <span class="market-lang">ES - España</span>
+        </div>
+    </header>
+
+    <main>
+        <nav class="breadcrumbs">
+            <a href="#">Inicio</a> / <a href="#">Temas</a> / <a href="#">BIONICLE®</a> / <span>Raanu (8973)</span>
+        </nav>
+
+        <div class="product-container">
+            <div class="product-gallery">
+                <span class="badge-retired">Producto Retirado</span>
+                <img src="https://www.lego.com/cdn/product-assets/product.img.pri/8973_prod.jpg" alt="LEGO BIONICLE 8973 Raanu" class="product-image" id="main-product-img">
+            </div>
+
+            <div class="product-details">
+                <span class="product-theme">BIONICLE®</span>
+                <h1 class="product-title">Raanu</h1>
+                
+                <div class="product-meta-specs">
+                    <span class="spec-item">Art.: <strong>8973</strong></span>
+                    <span class="spec-item">Edades: <strong>6-16</strong></span>
+                    <span class="spec-item">Piezas: <strong>14</strong></span>
+                    <span class="spec-item">Año: <strong>2009</strong></span>
+                </div>
+
+                <div class="status-box">
+                    <div class="status-title">
+                        <i>⚠️</i> Viejo conocido
+                    </div>
+                    <p class="status-text">Este set de LEGO® se lanzó en 2009 y actualmente se encuentra descatalogado. Ya no está disponible para su compra directamente en LEGO.com.</p>
+                    <button class="btn btn-secondary" onclick="window.location.reload();">Buscar alternativas en la tienda</button>
+                </div>
+
+                <div class="info-section">
+                    <div class="accordion-item">
+                        <button class="accordion-header">Descripción del producto</button>
+                        <div class="accordion-content">
+                            <p>¡Lidera a la Tribu del Fuego hacia la victoria con Raanu! Como el veterano jefe de Vulcanus, Raanu está dispuesto a hacer lo que sea necesario para proteger a su pueblo de los despiadados cazadores de huesos. Equipado con una espada de fuego y una armadura protectora carmesí, está preparado para luchar en las arenas de Bara Magna.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">Especificaciones e Instrucciones</button>
+                        <div class="accordion-content">
+                            <p>• Incluye la figura articulada de Raanu de la Tribu del Fuego.<br>
+                            • Cuenta con una resistente espada elemental de fuego.<br>
+                            • El set completo contiene 14 piezas diseñadas para una construcción rápida y un juego dinámico.<br>
+                            • Combínalo con otros sets Agori de 2009 para expandir tus batallas de BIONICLE.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 The LEGO Group. Todos los derechos reservados. Página de demostración inspirada en la clásica línea de 2009.</p>
+    </footer>
+
+    <script>
+        // Interactive Accordions
+        document.querySelectorAll('.accordion-header').forEach(button => {
+            button.addEventListener('click', () => {
+                const accordionContent = button.nextElementSibling;
+                
+                button.classList.toggle('active');
+                
+                if (button.classList.contains('active')) {
+                    accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
+                } else {
+                    accordionContent.style.maxHeight = 0;
+                }
+            });
+        });
+
+        // Open the first item by default
+        const firstAccordion = document.querySelector('.accordion-header');
+        if (firstAccordion) {
+            firstAccordion.click();
+        }
+    </script>
+</body>
+</html>
