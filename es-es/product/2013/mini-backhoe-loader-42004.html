@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miniexcavadora 42004 | Technic | Oficial LEGO® Shop ES</title>
+    <link rel="icon" type="image/x-icon" href="https://www.lego.com/favicon.ico">
+    <style>
+        /* LEGO Brand Style Guide Variables */
+        :root {
+            --lego-yellow: #ffcf00;
+            --lego-red: #d0011b;
+            --lego-blue: #006cb7;
+            --text-dark: #202020;
+            --bg-light: #f8f8f8;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Cera Pro", Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+
+        /* Header / Navbar */
+        header {
+            background-color: var(--lego-yellow);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 4px solid var(--text-dark);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-container {
+            background-color: var(--lego-red);
+            padding: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            color: white;
+            font-size: 24px;
+            letter-spacing: -1px;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            text-transform: uppercase;
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Product Container */
+        .product-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .product-container {
+                grid-template-columns: 1.2fr 1fr;
+            }
+        }
+
+        /* Image Gallery */
+        .product-gallery {
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .product-gallery img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            mix-blend-mode: multiply;
+        }
+
+        .tag-year {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--text-dark);
+            color: white;
+            padding: 4px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        /* Product Details */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .theme-title {
+            color: var(--lego-blue);
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 14px;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .product-title {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .product-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #606060;
+        }
+
+        .product-meta span strong {
+            color: var(--text-dark);
+        }
+
+        /* Specs Badges */
+        .specs-badges {
+            display: flex;
+            gap: 20px;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+            margin-bottom: 25px;
+        }
+
+        .badge {
+            text-align: center;
+            flex: 1;
+        }
+
+        .badge-val {
+            font-size: 20px;
+            font-weight: 800;
+            display: block;
+        }
+
+        .badge-lbl {
+            font-size: 12px;
+            color: #606060;
+            text-transform: uppercase;
+        }
+
+        /* Price & Status */
+        .price-section {
+            margin-bottom: 25px;
+        }
+
+        .price {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .status-tag {
+            display: inline-flex;
+            align-items: center;
+            font-size: 14px;
+            font-weight: bold;
+            color: #d0011b;
+        }
+
+        .status-tag::before {
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #d0011b;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        /* Actions */
+        .btn-add {
+            background-color: #ff8200;
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            text-transform: uppercase;
+            transition: background-color 0.2s;
+            box-shadow: 0 2px 0 #b35b00;
+            margin-bottom: 15px;
+        }
+
+        .btn-add:hover {
+            background-color: #e67300;
+        }
+
+        .btn-add:disabled {
+            background-color: #e0e0e0;
+            color: #a0a0a0;
+            box-shadow: none;
+            cursor: not-allowed;
+        }
+
+        /* Description / Accordion */
+        .description-box {
+            margin-top: 20px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+
+        .description-box h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .description-box p {
+            font-size: 15px;
+            color: #404040;
+            margin-bottom: 15px;
+        }
+
+        /* Features List */
+        .features-list {
+            list-style-position: inside;
+            font-size: 14px;
+            color: #404040;
+        }
+
+        .features-list li {
+            margin-bottom: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">LEGO</div>
+        <nav>
+            <a href="#">Technic™</a>
+        </nav>
+    </header>
+
+    <main class="product-container">
+        
+        <section class="product-gallery">
+            <span class="tag-year">Lanzamiento 2013</span>
+            <img src="https://www.lego.com/cdn/product-assets/product.img.pri/42004_prod.jpg" alt="LEGO Technic 42004 Miniexcavadora">
+        </section>
+
+        <section class="product-details">
+            <span class="theme-title">Technic™</span>
+            <h1 class="product-title">Miniexcavadora</h1>
+            
+            <div class="product-meta">
+                <span>Ref: <strong>42004</strong></span>
+            </div>
+
+            <div class="specs-badges">
+                <div class="badge">
+                    <span class="badge-val">8-14</span>
+                    <span class="badge-lbl">Edades</span>
+                </div>
+                <div class="badge">
+                    <span class="badge-val">246</span>
+                    <span class="badge-lbl">Piezas</span>
+                </div>
+                <div class="badge">
+                    <span class="badge-val">2 en 1</span>
+                    <span class="badge-lbl">Modelos</span>
+                </div>
+            </div>
+
+            <div class="price-section">
+                <div class="price">19,99 €</div>
+                <div class="status-tag">Producto retirado</div>
+            </div>
+
+            <button class="btn-add" id="addToBagBtn" disabled>Producto Retirado</button>
+
+            <div class="description-box">
+                <h3>¡Facilita cualquier trabajo con la Miniexcavadora!</h3>
+                <p>Ponte a trabajar con la fantástica Miniexcavadora de LEGO® Technic. Este robusto vehículo 2 en 1 cuenta con infinidad de detalles realistas, como un brazo delantero elevable y basculante, y una pala trasera articulada.</p>
+                
+                <ul class="features-list">
+                    <li>Modelo 2 en 1: se convierte en un potente Tractor Oruga con pala funcional.</li>
+                    <li>Cuenta con dirección delantera, brazo delantero móvil y pala excavadora trasera articulada.</li>
+                    <li>Sube, baja y gira el brazo trasero para excavar con precisión.</li>
+                    <li>El modelo clásico de Technic proporciona una experiencia de construcción desafiante y gratificante.</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>LEGO, el logotipo de LEGO y las minifiguras son marcas comerciales de The LEGO Group. ©2013-2026 The LEGO Group. Reservados todos los derechos.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('addToBagBtn');
+            // Logic to confirm why the button is disabled on modern storefront
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert('Este producto fue lanzado en 2013 y ya no está disponible para su compra directa en LEGO Shop.');
+            });
+        });
+    </script>
+</body>
+</html>
