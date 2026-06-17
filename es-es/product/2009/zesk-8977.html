@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zesk 8977 | BIONICLE® | Tienda LEGO® Oficial ES</title>
+    <link rel="shortcut icon" href="https://www.lego.com/favicon.ico" type="image/x-icon">
+    <style>
+        :root {
+            --lego-yellow: #ffcf00;
+            --lego-red: #e60012;
+            --dark-bg: #101114;
+            --card-bg: #1e2025;
+            --text-main: #ffffff;
+            --text-muted: #a0a5b5;
+            --accent-green: #4ade80;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Header / Navegación */
+        header {
+            background-color: var(--lego-yellow);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .lego-logo {
+            width: 50px;
+            height: 50px;
+            background-color: var(--lego-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 24px;
+            border-radius: 4px;
+            border: 2px solid #000;
+        }
+
+        .bionicle-logo {
+            font-size: 20px;
+            font-weight: 800;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-style: italic;
+        }
+
+        .nav-links a {
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        /* Contenedor Principal */
+        main {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @media (min-width: 768px) {
+            main {
+                grid-template-columns: 1.2fr 1fr;
+            }
+        }
+
+        /* Galería de Producto */
+        .product-gallery {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #2a2d35;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-gallery::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(230,126,34,0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            transform: scale(1);
+            transition: transform 0.3s ease;
+            z-index: 1;
+        }
+
+        .product-image:hover {
+            transform: scale(1.05);
+        }
+
+        .badge-year {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: rgba(0,0,0,0.6);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            color: var(--lego-yellow);
+            border: 1px solid var(--lego-yellow);
+            z-index: 2;
+        }
+
+        /* Detalles de Compra / Info */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .product-meta {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .product-title {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .product-spec-tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .spec-tag {
+            background-color: #2a2d35;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .price-container {
+            margin: 20px 0;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .stock-status {
+            color: var(--accent-green);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 20px;
+        }
+
+        .stock-status::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-green);
+            border-radius: 50%;
+        }
+
+        /* Botón de Añadir a la Cesta */
+        .btn-add {
+            background-color: var(--lego-red);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.2s, transform 0.1s;
+            box-shadow: 0 4px 15px rgba(230, 0, 18, 0.4);
+            text-transform: uppercase;
+        }
+
+        .btn-add:hover {
+            background-color: #ff1a2b;
+        }
+
+        .btn-add:active {
+            transform: scale(0.98);
+        }
+
+        /* Sección de Descripción */
+        .product-description {
+            margin-top: 30px;
+            border-top: 1px solid #2a2d35;
+            padding-top: 20px;
+        }
+
+        .product-description h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: var(--lego-yellow);
+        }
+
+        .product-description p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0b0c0e;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+            font-size: 13px;
+            color: var(--text-muted);
+            border-top: 1px solid #1e2025;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="lego-logo">LEGO</div>
+            <div class="bionicle-logo">Bionicle</div>
+        </div>
+        <nav class="nav-links">
+            <a href="#">Tienda</a>
+            <a href="#">Temas</a>
+            <a href="#">Descubrir</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="product-gallery">
+            <span class="badge-year">Lanzamiento: 2009</span>
+            <img 
+                src="https://www.lego.com/cdn/product-assets/product.img.pri/8977_prod.jpg" 
+                alt="LEGO Bionicle 8977 Zesk" 
+                class="product-image"
+                id="mainProductImg"
+            >
+        </section>
+
+        <section class="product-details">
+            <span class="product-meta">BIONICLE® / Agori</span>
+            <h1 class="product-title">Zesk</h1>
+            
+            <div class="product-spec-tags">
+                <span class="spec-tag">Edades: 6-16</span>
+                <span class="spec-tag">Piezas: 16</span>
+                <span class="spec-tag">Art. Nº: 8977</span>
+            </div>
+
+            <div class="price-container">
+                <span>5,99 €</span>
+            </div>
+
+            <div class="stock-status">
+                Producto Histórico (Catálogo de 2009)
+            </div>
+
+            <button class="btn-add" id="addToCartBtn">
+                Añadir a la Cesta
+            </button>
+
+            <div class="product-description">
+                <h3>Descripción del Producto</h3>
+                <p>
+                    ¡Cuidado con la cola del escorpión! Una criatura traicionera de la Tribu de la Tierra, Zesk acecha bajo las dunas esperando a su presa. Con su cuerpo ágil, sus afiladas garras amarillas y su aguijón de combate, ¡es un peligro constante para cualquiera que cruce el desierto de Bara Magna! Incluye un contador de vida para el nuevo juego de batalla de BIONICLE&reg;.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 The LEGO Group. Todos los derechos reservados. BIONICLE y el logotipo de LEGO son marcas registradas de The LEGO Group.</p>
+    </footer>
+
+    <script>
+        // Interactividad básica simulando el carrito de LEGO.com
+        document.getElementById('addToCartBtn').addEventListener('click', () => {
+            alert('¡Zesk (8977) ha sido añadido simbólicamente a tu cesta de 2009! Nota: Este artículo pertenece al archivo histórico de LEGO.');
+        });
+
+        // Manejo de error por si la URL del CDN tiene restricciones de acceso o carga diferida
+        const img = document.getElementById('mainProductImg');
+        img.onerror = function() {
+            console.warn("No se pudo cargar la imagen del CDN oficial de LEGO. Colocando marcador visual de respaldo.");
+            this.src = "https://via.placeholder.com/400x400/1e2025/ffffff?text=LEGO+8977+Zesk";
+        };
+    </script>
+</body>
+</html>
