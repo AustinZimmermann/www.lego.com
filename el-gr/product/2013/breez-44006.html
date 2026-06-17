@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="el-GR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BREEZ 44006 | Hero Factory | LEGO.com Shop GR</title>
+    <link rel="icon" type="image/x-icon" href="https://www.lego.com/favicon.ico">
+    <style>
+        /* 2013 Retro LEGO Web Aesthetics */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            background-image: radial-gradient(circle, #2a2a2a 0%, #111111 100%);
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        /* Top Utility Bar */
+        .lego-header {
+            background-color: #ffcf00;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .lego-logo {
+            background-color: #e60012;
+            color: #fff;
+            font-weight: bold;
+            padding: 5px 10px;
+            font-size: 20px;
+            text-transform: uppercase;
+            border: 2px solid #000;
+            letter-spacing: -1px;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+
+        .nav-brand {
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 18px;
+            color: #000;
+            letter-spacing: 1px;
+        }
+
+        /* Main Container */
+        .product-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: rgba(0, 0, 0, 0.75);
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            box-shadow: 0 0 20px rgba(0,255,150,0.1); /* Subtle Breez Green glow */
+        }
+
+        @media (max-width: 768px) {
+            .product-container {
+                grid-template-columns: 1fr;
+                margin: 10px;
+                padding: 15px;
+            }
+        }
+
+        /* Left Column: Media */
+        .media-gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-image-container {
+            background: #000 url('https://www.lego.com/cdn/product-assets/product.img.pri/44006_prod.jpg') center center no-repeat;
+            background-size: contain;
+            width: 100%;
+            height: 450px;
+            border-radius: 6px;
+            border: 2px solid #444;
+            transition: border-color 0.3s;
+        }
+
+        .main-image-container:hover {
+            border-color: #00cc66;
+        }
+
+        .thumbnails {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .thumb {
+            width: 70px;
+            height: 70px;
+            border: 2px solid #444;
+            border-radius: 4px;
+            cursor: pointer;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .thumb.active {
+            border-color: #ffcf00;
+        }
+
+        /* Right Column: Details */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .breadcrumbs {
+            font-size: 12px;
+            color: #aaa;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .breadcrumbs a {
+            color: #ffcf00;
+            text-decoration: none;
+        }
+
+        .product-title {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 5px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .product-theme {
+            color: #00cc66;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .meta-info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            background: #222;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            border: 1px solid #333;
+        }
+
+        .meta-item {
+            text-align: center;
+        }
+
+        .meta-label {
+            font-size: 11px;
+            color: #888;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .meta-value {
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .price-section {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+        }
+
+        .price {
+            font-size: 32px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .status {
+            color: #00cc66;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .buy-button {
+            background: linear-gradient(180deg, #ffdb33 0%, #ffb700 100%);
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 4px 0 #b38000;
+            transition: all 0.1s ease;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .buy-button:active {
+            transform: translateY(4px);
+            box-shadow: 0 0px 0 #b38000;
+        }
+
+        /* Tabs System */
+        .tabs-nav {
+            display: flex;
+            border-bottom: 2px solid #333;
+            margin-bottom: 15px;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            color: #aaa;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .tab-btn.active {
+            color: #ffcf00;
+            border-bottom: 2px solid #ffcf00;
+            margin-bottom: -2px;
+        }
+
+        .tab-content {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #ccc;
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .tab-content ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .tab-content li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="lego-header">
+        <div class="lego-logo">LEGO</div>
+        <div class="nav-brand">Hero Factory</div>
+    </header>
+
+    <div class="product-container">
+        
+        <div class="media-gallery">
+            <div class="main-image-container" id="main-image" aria-label="LEGO Hero Factory BREEZ 44006"></div>
+            <div class="thumbnails">
+                <div class="thumb active" style="background-image: url('https://www.lego.com/cdn/product-assets/product.img.pri/44006_prod.jpg');" onclick="changeImage('https://www.lego.com/cdn/product-assets/product.img.pri/44006_prod.jpg', this)"></div>
+            </div>
+        </div>
+
+        <div class="product-details">
+            <div class="breadcrumbs">
+                <a href="#">Αρχική</a> &gt; <a href="#">Προϊόντα</a> &gt; Hero Factory
+            </div>
+            
+            <h1 class="product-title">BREEZ</h1>
+            <div class="product-theme">Κωδικός: 44006</div>
+
+            <div class="meta-info-grid">
+                <div class="meta-item">
+                    <div class="meta-label">Ηλικίες</div>
+                    <div class="meta-value">6-12</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Κομμάτια</div>
+                    <div class="meta-value">49</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Έτος</div>
+                    <div class="meta-value">2013</div>
+                </div>
+            </div>
+
+            <div class="price-section">
+                <div class="price">9,99 €</div>
+                <div class="status">Διαθέσιμο Τώρα</div>
+            </div>
+
+            <button class="buy-button" onclick="addToCart()">Προσθήκη στο Καλάθι</button>
+
+            <div class="tabs-nav">
+                <button class="tab-btn active" onclick="switchTab(event, 'description')">Περιγραφή</button>
+                <button class="tab-btn" onclick="switchTab(event, 'features')">Χαρακτηριστικά</button>
+            </div>
+
+            <div id="description" class="tab-content active">
+                <p>Συναγερμός στο LEGO® Hero Factory! Οι σατανικοί εγκέφαλοι επιτίθενται στον γαλαξία και έχουν μεταμορφώσει ένα ερπετό σε ένα άγριο τέρας! Ήρθε η ώρα να στείλουμε την BREEZ στη μάχη.</p>
+                <br>
+                <p>Εξοπλισμένη με μια περιστρεφόμενη ασπίδα ξυραφιού, ένα τόξο εκτόξευσης και μια ειδική θωράκιση, η BREEZ είναι έτοιμη να σταματήσει την απειλή. Χρησιμοποίησε τα αξεσουάρ της για να προστατεύσεις τους πολίτες!</p>
+            </div>
+
+            <div id="features" class="tab-content">
+                <ul>
+                    <li>Διαθέτει αφαιρούμενο ανοιχτό πράσινο "εξωγήινο εγκέφαλο", περιστρεφόμενη ασπίδα-ξυράφι, τόξο εκτόξευσης προσωπικού και θωρακισμένα στοιχεία.</li>
+                    <li>Σχεδιασμός υψηλής αντοχής για έντονο παιχνίδι δράσης.</li>
+                    <li>Συνδυάστε το με το 44007 OGRUM για να δημιουργήσετε ένα μεγαλύτερο μοντέλο!</li>
+                    <li>Έχει ύψος πάνω από 19 εκ.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Tab switching logic
+        function switchTab(evt, tabId) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+
+        // Image switcher logic
+        function changeImage(imgUrl, thumbElement) {
+            document.getElementById('main-image').style.backgroundImage = `url('${imgUrl}')`;
+            
+            const thumbs = document.querySelectorAll('.thumb');
+            thumbs.forEach(t => t.classList.remove('active'));
+            thumbElement.classList.add('active');
+        }
+
+        // Action confirmation
+        function addToCart() {
+            alert('Το προϊόν BREEZ (44006) προστέθηκε στο καλάθι σας!');
+        }
+    </script>
+</body>
+</html>
