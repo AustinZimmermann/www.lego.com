@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aerodeslizador 42002 | Technic | LEGO® Shop oficial ES</title>
+    <link rel="icon" type="image/x-icon" href="https://www.lego.com/favicon.ico">
+    <style>
+        /* Modernized Classic LEGO Styling */
+        :root {
+            --lego-yellow: #ffcf00;
+            --lego-red: #d0011b;
+            --lego-blue: #006cb7;
+            --dark-gray: #333333;
+            --light-gray: #f8f8f8;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Cera Pro", Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--dark-gray);
+        }
+
+        /* Header / Nav Navigation */
+        header {
+            background-color: var(--lego-yellow);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 3px solid var(--dark-gray);
+        }
+
+        .logo-container {
+            background-color: var(--lego-red);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            color: white;
+            font-size: 1.5rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            margin-left: 30px;
+            display: flex;
+            gap: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        /* Product Container */
+        .product-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .product-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Gallery */
+        .product-gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: var(--light-gray);
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .main-image {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+        }
+
+        .main-image:hover {
+            transform: scale(1.02);
+        }
+
+        /* Details & Purchasing */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .breadcrumb a {
+            color: var(--lego-blue);
+            text-decoration: none;
+        }
+
+        .product-theme {
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 1px;
+            color: var(--lego-blue);
+            margin-bottom: 5px;
+        }
+
+        .product-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .meta-specs {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            font-size: 0.9rem;
+            background: var(--light-gray);
+            padding: 10px 15px;
+            border-radius: 4px;
+            width: fit-content;
+        }
+
+        .meta-item strong {
+            display: block;
+            color: #111;
+        }
+
+        .price-tag {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background-color: #e0e0e0;
+            color: #555;
+            padding: 5px 10px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            width: fit-content;
+        }
+
+        /* Action Buttons */
+        .buy-actions {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+        }
+
+        .btn-primary {
+            background-color: var(--lego-red);
+            color: white;
+            flex-grow: 1;
+            box-shadow: 0 4px 0 #990013;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            background-color: #b00116;
+            transform: translateY(1px);
+            box-shadow: 0 3px 0 #990013;
+        }
+
+        .btn-primary:disabled {
+            background-color: #cccccc;
+            box-shadow: none;
+            cursor: not-allowed;
+        }
+
+        .btn-wishlist {
+            background-color: white;
+            border: 2px solid var(--dark-gray);
+            color: var(--dark-gray);
+        }
+
+        .btn-wishlist:hover {
+            background-color: var(--light-gray);
+        }
+
+        /* Tabs / Description Section */
+        .product-info-tabs {
+            border-top: 1px solid var(--border-color);
+            padding-top: 30px;
+        }
+
+        .tab-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--lego-yellow);
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+
+        .description-text {
+            line-height: 1.6;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        .features-list {
+            margin-left: 20px;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        footer {
+            margin-top: 80px;
+            background-color: var(--dark-gray);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo-container">LEGO</a>
+        <nav class="nav-links">
+            <a href="#">Tienda</a>
+            <a href="#">Temas</a>
+            <a href="#">Descubrir</a>
+        </nav>
+    </header>
+
+    <main class="product-container">
+        <section class="product-gallery">
+            <img src="https://www.lego.com/cdn/product-assets/product.img.pri/42002_prod.jpg" alt="LEGO Technic 42002 Aerodeslizador" class="main-image" id="mainImg">
+        </section>
+
+        <section class="product-details">
+            <div>
+                <div class="breadcrumb">
+                    <a href="#">Inicio</a> &gt; <a href="#">Technic</a> &gt; 42002
+                </div>
+                <div class="product-theme">LEGO® Technic</div>
+                <h1 class="product-title">Aerodeslizador</h1>
+                
+                <div class="meta-specs">
+                    <div class="meta-item">
+                        <strong>Edades</strong> 8-14
+                    </div>
+                    <div class="meta-item">
+                        <strong>Piezas</strong> 187
+                    </div>
+                    <div class="meta-item">
+                        <strong>Artículo</strong> 42002
+                    </div>
+                    <div class="meta-item">
+                        <strong>Año</strong> 2013
+                    </div>
+                </div>
+
+                <div class="price-tag">14,99 €</div>
+                <div class="status-badge">Producto Retirado</div>
+            </div>
+
+            <div>
+                <div class="buy-actions">
+                    <button class="btn btn-primary" id="buyBtn" disabled>Producto Agotado</button>
+                    <button class="btn btn-wishlist" onclick="toggleWishlist(this)">❤ Añadir a Lista</button>
+                </div>
+
+                <div class="product-info-tabs">
+                    <h3 class="tab-title">Descripción</h3>
+                    <p class="description-text">
+                        ¡Desplázate sobre tierra y agua con el Aerodeslizador de LEGO® Technic! Este modelo altamente realista cuenta con características fascinantes como palas de rotor móviles y un motor con pistones que se mueven al compás de la marcha.
+                    </p>
+                    <p class="description-text">
+                        ¡Y cuando estés listo para un nuevo desafío de construcción, conviértelo en una ágil Avioneta bimotor con rotor trasero y pistones de motor funcionales! Un gran set de construcción 2 en 1.
+                    </p>
+                    <ul class="features-list">
+                        <li>Diseño 2 en 1: se reconstruye en una Avioneta bimotor.</li>
+                        <li>Cuenta con hélices giratorias y pistones de motor visibles.</li>
+                        <li>El aerodeslizador mide más de 9 cm de altura, 18 cm de longitud y 8 cm de ancho.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 The LEGO Group. Todos los derechos reservados. Diseñado solo para simulación histórica (Set de 2013).</p>
+    </footer>
+
+    <script>
+        // Simple Interaction logic
+        function toggleWishlist(btn) {
+            if(btn.innerText.includes("Añadir")) {
+                btn.innerText = "❤ En tu Lista";
+                btn.style.backgroundColor = "#fff0f2";
+                btn.style.borderColor = "var(--lego-red)";
+                alert("¡Aerodeslizador 42002 guardado en tu lista de deseos!");
+            } else {
+                btn.innerText = "❤ Añadir a Lista";
+                btn.style.backgroundColor = "white";
+                btn.style.borderColor = "var(--dark-gray)";
+            }
+        }
+
+        // Error fallback logic for missing image resources
+        document.getElementById('mainImg').addEventListener('error', function() {
+            this.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="500" height="400" viewBox="0 0 500 400"><rect width="100%" height="100%" fill="%23eee"/><text x="50%" y="50%" font-family="Arial" font-size="20" fill="%23aaa" dominant-baseline="middle" text-anchor="middle">LEGO 42002 Box Art</text></svg>';
+        });
+    </script>
+</body>
+</html>
