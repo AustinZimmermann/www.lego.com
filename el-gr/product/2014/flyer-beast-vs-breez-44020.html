@@ -1,21 +1,313 @@
 <!DOCTYPE html>
 <html lang="el-GR">
 <head>
-<title>ΙΠΤΑΜΕΝΟ ΘΗΡΙΟ ΕΝΑΝΤΙΟΝ BREEZ - 44020 - LEGO® Hero Factory - Προϊόντα - LEGO.com (Ελλάδα)</title>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="https://pages-themes.github.io/cayman/assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ΙΠΤΑΜΕΝΟ ΘΗΡΙΟ ΕΝΑΝΤΙΟΝ BREEZ 44020 | Hero Factory | LEGO® Shop</title>
+    <link rel="shortcut icon" href="https://www.lego.com/favicon.ico" type="image/x-icon">
+    <style>
+        :root {
+            --lego-yellow: #f2cd37;
+            --lego-blue: #006cb7;
+            --text-dark: #2c2c2c;
+            --text-muted: #6e6e6e;
+            --bg-light: #f8f8f8;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header Accent */
+        .lego-header {
+            background-color: var(--lego-yellow);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 4px solid var(--lego-blue);
+        }
+
+        .lego-logo {
+            width: 50px;
+            height: 50px;
+            background-color: #e60012;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 3fr 2fr;
+            }
+        }
+
+        /* Product Image Gallery */
+        .product-gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .main-image {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            mix-blend-mode: multiply;
+        }
+
+        /* Product Info */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .breadcrumbs {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .breadcrumbs a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+
+        .product-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .product-meta {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .price-tag {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 25px;
+        }
+
+        /* Purchase Section */
+        .purchase-box {
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+            margin-bottom: 25px;
+        }
+
+        .status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #d11919; /* Retired Product color scheme */
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #d11919;
+            border-radius: 50%;
+        }
+
+        .btn-primary {
+            background-color: var(--text-muted);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: not-allowed;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Description Accordion */
+        .info-section {
+            margin-top: 30px;
+        }
+
+        .info-heading {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            border-bottom: 2px solid var(--text-dark);
+            padding-bottom: 5px;
+        }
+
+        .info-content {
+            color: #4a4a4a;
+            font-size: 0.95rem;
+            white-space: pre-line;
+        }
+
+        /* Specs Table */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+            background: var(--bg-light);
+            padding: 15px;
+            border-radius: 6px;
+        }
+
+        .spec-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .spec-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .spec-value {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+    </style>
 </head>
-<body style="font-family: Helvetica, sans-serif;">
-<main id="content" class="main-content" role="main">
-<h1>LEGO® Hero Factory</h1>
-<h2>Προϊόντα</h2>
-<h3 style="font-weight: bold;">
-<span id="number">44020</span>
-<span id="title">ΙΠΤΑΜΕΝΟ ΘΗΡΙΟ ΕΝΑΝΤΙΟΝ BREEZ</span>
-</h3>
-<p><img src="https://www.lego.com/cdn/product-assets/product.img.pri/44020_prod.jpg" height="350"></p>
-<p id="description">Κόκκινος συναγερμός! Το ΙΠΤΑΜΕΝΟ Θηρίο, ένα γιγαντιαίο πλάσμα με φτερά σκελετού, έχει ξεφύγει. Έχει παρατηρηθεί να εισβάλλει σε ουρανοξύστες, να εντοπίζει τους κατοίκους της Αντρόπολις Σίτυ με την κεραία του και να τους αρπάζει με τα τεράστια δηλητηριώδη νύχια και τα σφιχτά σαγόνια του. BREEZ, σκαρφάλωσε στον ουρανό με τις πανίσχυρες μηχανικές μπότες σου και θέσε το θηρίο υπό έλεγχο με την ηλεκτρομαγνητική αλυσίδα σου. Αυτό το επικίνδυνο θηρίο πρέπει να σταματήσει τώρα!</p>
-<p id="footer" style="font-size: 12px; text-align: center;">©2014 The LEGO Group. All rights reserved.</p>
-</main>  
+<body>
+
+    <header class="lego-header">
+        <a href="#" class="lego-logo">LEGO</a>
+    </header>
+
+    <main class="container">
+        <section class="product-gallery">
+            <img id="product-img" src="" alt="" class="main-image">
+        </section>
+
+        <section class="product-details" id="product-details">
+            <nav class="breadcrumbs" id="breadcrumbs"></nav>
+            <h1 class="product-title" id="product-name"></h1>
+            <div class="product-meta" id="product-meta-sub"></div>
+            
+            <div class="price-tag" id="product-price"></div>
+
+            <div class="purchase-box">
+                <div class="status">
+                    <span class="status-dot"></span>
+                    <span id="product-status"></span>
+                </div>
+                <button class="btn-primary" id="buy-btn" disabled></button>
+            </div>
+
+            <div class="info-section">
+                <h2 class="info-heading">Περιγραφή</h2>
+                <p class="info-content" id="product-desc"></p>
+            </div>
+
+            <div class="info-section">
+                <h2 class="info-heading">Χαρακτηριστικά</h2>
+                <div class="specs-grid" id="product-specs"></div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Simulating the data.json payload directly inside the scripts block
+        const dataJson = {
+    "productId": "44020",
+    "name": "ΙΠΤΑΜΕΝΟ ΘΗΡΙΟ ΕΝΑΝΤΙΟΝ BREEZ",
+    "englishName": "FLYER Beast vs. BREEZ",
+    "theme": "Hero Factory",
+    "releaseYear": 2014,
+    "price": "14.99€",
+    "availabilityText": "Παλαιότερο προϊόν - Δεν είναι διαθέσιμο",
+    "ctaText": "Εξαντλήθηκε",
+    "faviconUrl": "https://www.lego.com/favicon.ico",
+    "breadcrumbs": ["Αρχική", "Προϊόντα", "Hero Factory"],
+    "description": "Προσοχή, BREEZ! Ένα τεράστιο Ιπτάμενο Θηρίο με σκελετωμένα φτερά κυκλοφορεί ελεύθερο στην Αντρόπολις Σίτυ. Έχει επιτεθεί στους πολίτες και χρησιμοποιεί τα μεγάλα του νύχια για να τους αρπάξει και να τους φυλακίσει στο δηλητηριώδες κουκούλι του! \n\nΑπογειώσου με τις μπότες πυραύλων σου και χρησιμοποίησε την ενεργειακή αλυσίδα για να θέσεις το θηρίο υπό έλεγχο. Σταμάτησε αυτή την ιπτάμενη απειλή προτού να είναι πολύ αργά!",
+    "specifications": {
+        "Ηλικίες": "7-14",
+        "Κομμάτια": "91",
+        "Αρ. Προϊόντος": "44020",
+        "Φιγούρες": "1 mini-robot (BREEZ)"
+    }
+};
+
+        // DOM Element Populating
+        document.addEventListener("DOMContentLoaded", () => {
+            // Render Image
+            const imgEl = document.getElementById("product-img");
+            imgEl.src = dataJson.imageUrl;
+            imgEl.alt = dataJson.name;
+
+            // Render Breadcrumbs
+            const crumbsEl = document.getElementById("breadcrumbs");
+            crumbsEl.innerHTML = dataJson.breadcrumbs.map((b, i) => 
+                i === dataJson.breadcrumbs.length - 1 ? `<span>${b}</span>` : `<a href="#">${b}</a>`
+            ).join(' > ');
+
+            // Render Headings & Core Metadata
+            document.getElementById("product-name").innerText = dataJson.name;
+            document.getElementById("product-meta-sub").innerText = `${dataJson.theme} | Κωδικός: ${dataJson.productId} | Έτος: ${dataJson.releaseYear}`;
+            document.getElementById("product-price").innerText = dataJson.price;
+            document.getElementById("product-status").innerText = dataJson.availabilityText;
+            document.getElementById("buy-btn").innerText = dataJson.ctaText;
+            document.getElementById("product-desc").innerText = dataJson.description;
+
+            // Render Technical Specs Table
+            const specsEl = document.getElementById("product-specs");
+            let specsHTML = "";
+            for (const [key, value] of Object.entries(dataJson.specifications)) {
+                specsHTML += `
+                    <div class="spec-item">
+                        <span class="spec-label">${key}</span>
+                        <span class="spec-value">${value}</span>
+                    </div>
+                `;
+            }
+            specsEl.innerHTML = specsHTML;
+        });
+    </script>
 </body>
 </html>
