@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berix 8975 | BIONICLE® | Tienda LEGO® oficial ES</title>
+    <link rel="shortcut icon" href="https://www.lego.com/favicon.ico" type="image/x-icon">
+    <style>
+        :root {
+            --lego-yellow: #F2CD37;
+            --lego-blue: #006CB7;
+            --text-dark: #2C2C2C;
+            --text-light: #535353;
+            --bg-light: #F8F8F8;
+            --border-color: #E0E0E0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--lego-yellow);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #E5BA12;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            background-color: #E3000B;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 24px;
+            border-radius: 4px;
+            text-shadow: 2px 2px 0px #000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        .breadcrumb a {
+            color: var(--text-light);
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Product Section */
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1.2fr 0.8fr;
+            }
+        }
+
+        /* Image Gallery */
+        .product-gallery {
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+            position: relative;
+            border: 1px solid var(--border-color);
+        }
+
+        .product-image {
+            max-width: 100%;
+            max-height: 450px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .product-image:hover {
+            transform: scale(1.03);
+        }
+
+        .tag-classic {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: #333;
+            color: white;
+            padding: 4px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        /* Product Details */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .theme-title {
+            color: var(--text-light);
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .product-title {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .product-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        .meta-item strong {
+            color: var(--text-dark);
+        }
+
+        /* Status & Purchase */
+        .status-badge {
+            display: inline-block;
+            background-color: #EAEAEA;
+            color: #555555;
+            padding: 6px 12px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            align-self: flex-start;
+        }
+
+        .price-tag {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .buy-btn {
+            background-color: #008542;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: not-allowed;
+            width: 100%;
+            transition: background-color 0.2s;
+            text-transform: uppercase;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            opacity: 0.7;
+        }
+
+        /* Description Accordion */
+        .info-section {
+            margin-top: 30px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .accordion-header {
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .accordion-content {
+            padding-bottom: 15px;
+            color: var(--text-light);
+            font-size: 14px;
+            display: none;
+        }
+
+        .accordion-content.active {
+            display: block;
+        }
+
+        .accordion-header::after {
+            content: '+';
+            font-size: 20px;
+        }
+
+        .accordion-header.active::after {
+            content: '−';
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1A1A1A;
+            color: white;
+            padding: 40px 20px;
+            margin-top: 60px;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        footer p {
+            color: #A6A6A6;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="logo">LEGO</div>
+            <nav class="nav-links">
+                <a href="#">Tienda</a>
+                <a href="#">Temas</a>
+                <a href="#">Descubrir</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="#">Inicio</a> / <a href="#">Sets</a> / <a href="#">BIONICLE®</a> / 8975 Berix
+        </div>
+
+        <div class="product-grid">
+            
+            <div class="product-gallery">
+                <span class="tag-classic">Producto Antiguo</span>
+                <img src="https://www.lego.com/cdn/product-assets/product.img.pri/8975_prod.jpg" alt="LEGO BIONICLE 8975 Berix" class="product-image">
+            </div>
+
+            <div class="product-details">
+                <span class="theme-title">BIONICLE® / Glatorian Agori</span>
+                <h1 class="product-title">Berix</h1>
+                
+                <div class="product-meta">
+                    <span class="meta-item">Ref: <strong>8975</strong></span>
+                    <span class="meta-item">Edad: <strong>6-16</strong></span>
+                    <span class="meta-item">Piezas: <strong>15</strong></span>
+                    <span class="meta-item">Año: <strong>2009</strong></span>
+                </div>
+
+                <div class="status-badge">Producto descatalogado</div>
+
+                <div class="price-tag">9,99 €</div>
+
+                <button class="buy-btn" disabled>No disponible</button>
+
+                <div class="info-section">
+                    <div class="accordion-item">
+                        <div class="accordion-header active" onclick="toggleAccordion(this)">Descripción del producto</div>
+                        <div class="accordion-content active">
+                            ¡Un astuto recolector del planeta Bara Magna! Berix es un miembro de la Tribu del Agua experto en encontrar objetos valiosos entre las ruinas del desierto. Equipado con una espada de agua y un escudo elemental, está siempre listo para defenderse de las amenazas de las dunas o para unirse a los Glatorian en la arena de combate.
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">Detalles del set</div>
+                        <div class="accordion-content">
+                            * Incluye la figura articulada de Berix con su característica máscara y armadura azul celeste.<br>
+                            * Equipado con una herramienta de recolección/espada y escudo.<br>
+                            * Combínalo con otros sets de Agori y Glatorian de 2009 para expandir tus batallas en el desierto.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div>LEGO® es una marca registrada de The LEGO Group. Este diseño es una recreación con fines demostrativos.</div>
+        <p>&copy; 2026 The LEGO Group. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function toggleAccordion(element) {
+            element.classList.toggle('active');
+            const content = element.nextElementSibling;
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+            } else {
+                content.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
