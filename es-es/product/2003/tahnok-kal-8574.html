@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tahnok-Kal 8574 | BIONICLE® | Tienda LEGO® Oficial ES</title>
+    <link rel="shortcut icon" href="https://www.lego.com/favicon.ico" type="image/x-icon">
+    
+    <style>
+        :root {
+            --lego-yellow: #F2CD37;
+            --lego-red: #D11A2A;
+            --text-dark: #2C2C2C;
+            --text-light: #707070;
+            --bg-gray: #F8F8F8;
+            --border-color: #E0E0E0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--lego-yellow);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 4px solid var(--text-dark);
+        }
+
+        .logo-container img {
+            height: 50px;
+            width: auto;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+        }
+
+        /* Product Gallery */
+        .product-gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-image {
+            background-color: var(--bg-gray);
+            border-radius: 8px;
+            padding: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+        }
+
+        .main-image img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .main-image img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Product Info */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .tag {
+            background-color: var(--text-dark);
+            color: white;
+            padding: 4px 8px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            width: max-content;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .set-meta {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .price-tag {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .status {
+            color: var(--lego-red);
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .status::before {
+            content: "•";
+            font-size: 1.5rem;
+        }
+
+        .btn-add {
+            background-color: var(--lego-red);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
+        }
+
+        .btn-add:hover {
+            background-color: #b01420;
+        }
+
+        .btn-add:disabled {
+            background-color: var(--border-color);
+            color: var(--text-light);
+            cursor: not-allowed;
+        }
+
+        /* Description Section */
+        .product-description {
+            grid-column: 1 / -1;
+            margin-top: 50px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 40px;
+        }
+
+        .product-description h2 {
+            margin-bottom: 20px;
+        }
+
+        .specs-table {
+            width: 100%;
+            max-width: 600px;
+            margin-top: 30px;
+            border-collapse: collapse;
+        }
+
+        .specs-table td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .specs-table td:first-child {
+            font-weight: bold;
+            color: var(--text-light);
+            width: 40%;
+        }
+
+        footer {
+            background-color: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+            font-size: 0.9rem;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "Tahnok-Kal (8574)",
+      "image": "https://www.lego.com/cdn/product-assets/product.img.pri/8574_prod.jpg",
+      "description": "¡Controla el poder del Electricidad con el Tahnok-Kal de LEGO® BIONICLE®!",
+      "brand": {
+        "@type": "Brand",
+        "name": "LEGO"
+      },
+      "sku": "8574",
+      "mpn": "8574",
+      "releaseDate": "2003",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.lego.com/es-es/product/tahnok-kal-8574",
+        "priceCurrency": "EUR",
+        "price": "12.99",
+        "availability": "https://schema.org/Discontinued"
+      }
+    }
+    </script>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <svg width="60" height="60" viewBox="0 0 100 100">
+                <rect width="100" height="100" fill="#D11A2A"/>
+                <rect x="5" y="5" width="90" height="90" fill="#F2CD37"/>
+                <text x="50" y="65" font-family="'Arial Black', Impact, sans-serif" font-size="38" font-weight="900" fill="#FFFFFF" stroke="#000000" stroke-width="4" text-anchor="middle">LEGO</text>
+            </svg>
+        </div>
+        <nav>
+            <a href="#">Tienda</a>
+            <a href="#">BIONICLE®</a>
+            <a href="#">Novedades</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="product-gallery">
+            <div class="main-image">
+                <img id="product-img" src="https://www.lego.com/cdn/product-assets/product.img.pri/8574_prod.jpg" alt="LEGO Bionicle Tahnok-Kal 8574">
+            </div>
+        </section>
+
+        <section class="product-details">
+            <span class="tag">Clásico (2003)</span>
+            <h1>Tahnok-Kal</h1>
+            <p class="set-meta">BIONICLE® | Articulo: 8574 | Edades: 7+</p>
+            
+            <div class="price-tag">12,99 €</div>
+            
+            <div class="status">Producto Retirado</div>
+            
+            <button class="btn-add" id="cart-btn" disabled>Producto Retirado</button>
+        </section>
+
+        <section class="product-description">
+            <h2>Detalles del producto</h2>
+            <p>¡Libera los temibles poderes de los Bohrok-Kal! Tahnok-Kal, el líder de las fuerzas Bohrok-Kal, utiliza sus escudos eléctricos para manipular la energía eléctrica y fundir cualquier obstáculo en su camino hacia el despertar de las reinas Bahrag.</p>
+            
+            <table class="specs-table">
+                <tr>
+                    <td>Referencia</td>
+                    <td>8574</td>
+                </tr>
+                <tr>
+                    <td>Año de lanzamiento</td>
+                    <td>2003</td>
+                </tr>
+                <tr>
+                    <td>Línea</td>
+                    <td>BIONICLE® (Bohrok-Kal)</td>
+                </tr>
+                <tr>
+                    <td>Piezas</td>
+                    <td>40</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>LEGO, el logotipo de LEGO y BIONICLE son marcas comerciales de The LEGO Group. ©2026 The LEGO Group. Este es un diseño web de demostración nostálgica.</p>
+    </footer>
+
+    <script>
+        // Minimal interactive code for modern handling 
+        document.addEventListener('DOMContentLoaded', () => {
+            const img = document.getElementById('product-img');
+            
+            // Just in case checking for broken image falls back cleanly
+            img.onerror = function() {
+                this.src = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 100 100'><text y='50%' x='50%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='10' fill='%23aaa'>Imagen no disponible</text></svg>";
+            };
+        });
+    </script>
+</body>
+</html>
