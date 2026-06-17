@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>44023 Ερπυστής του ROCKA - LEGO® Hero Factory - LEGO.com GR</title>
-    <link rel="icon" type="image/x-icon" href="https://www.lego.com/favicon.ico">
+    <title>Ερπυστής του ROCKA 44023 | Hero Factory | LEGO® Shop GR</title>
+    <link rel="shortcut icon" href="https://www.lego.com/favicon.ico" type="image/x-icon">
+    
     <style>
-        /* CSS Styling */
         :root {
-            --lego-yellow: #F2CD37;
-            --lego-red: #D11A2A;
-            --dark-gray: #333333;
-            --light-bg: #F8F8F8;
-            --text-color: #2C2C2C;
-            --border-color: #E0E0E0;
+            --lego-yellow: #ffcf00;
+            --lego-blue: #006cb7;
+            --text-dark: #2c2c2c;
+            --text-light: #5f5f5f;
+            --bg-light: #f8f8f8;
+            --border-color: #e0e0e0;
         }
 
         * {
@@ -24,107 +24,91 @@
         }
 
         body {
-            background-color: var(--light-bg);
-            color: var(--text-color);
+            background-color: #ffffff;
+            color: var(--text-dark);
             line-height: 1.6;
         }
 
+        /* Header Accent */
         header {
             background-color: var(--lego-yellow);
             padding: 15px 20px;
             display: flex;
             align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        .logo-container img {
-            height: 45px;
-            width: 45px;
-            background: var(--lego-red);
-            padding: 5px;
+        .logo-placeholder {
+            background-color: #e60012;
+            color: white;
+            font-weight: 900;
+            padding: 8px 12px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-right: 20px;
             border-radius: 4px;
         }
 
-        .nav-crumbs {
-            margin-left: 20px;
-            font-size: 0.9rem;
-            font-weight: bold;
-        }
-
-        .nav-crumbs a {
-            color: var(--dark-gray);
-            text-decoration: none;
-        }
-
-        main {
+        /* Main Layout */
+        .container {
             max-width: 1200px;
-            margin: 30px auto;
-            padding: 20px;
-            background: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-
-        .product-container {
+            margin: 40px auto;
+            padding: 0 20px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
         }
 
         @media (max-width: 768px) {
-            .product-container {
+            .container {
                 grid-template-columns: 1fr;
+                margin: 20px auto;
             }
         }
 
-        .image-gallery {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background: #f0f0f0;
+        /* Product Image */
+        .product-gallery {
+            background-color: var(--bg-light);
             border-radius: 8px;
             padding: 20px;
-            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid var(--border-color);
         }
 
-        .hero-factory-badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: #000;
-            color: #fff;
-            padding: 5px 10px;
-            font-weight: bold;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            border: 2px solid #FFD700;
-        }
-
-        .main-img {
+        .product-gallery img {
             max-width: 100%;
             height: auto;
-            max-height: 400px;
-            object-fit: contain;
             mix-blend-mode: multiply;
+            transition: transform 0.3s ease;
         }
 
+        .product-gallery img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Product Details */
         .product-details {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
         }
 
-        .product-meta {
+        .set-meta {
             font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 10px;
+            color: var(--text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
         }
 
-        h1 {
+        .product-title {
             font-size: 2.2rem;
-            color: var(--dark-gray);
-            margin-bottom: 15px;
+            font-weight: 800;
             line-height: 1.2;
+            margin-bottom: 15px;
         }
 
         .specs-grid {
@@ -135,26 +119,34 @@
             padding: 15px 0;
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
+        }
+
+        .spec-item {
             text-align: center;
         }
 
-        .spec-item .label {
+        .spec-label {
             font-size: 0.8rem;
-            color: #777;
+            color: var(--text-light);
             text-transform: uppercase;
+            display: block;
         }
 
-        .spec-item .value {
+        .spec-value {
+            font-weight: 700;
             font-size: 1.1rem;
-            font-weight: bold;
-            color: var(--dark-gray);
         }
 
-        .status-tag {
-            color: #d9534f;
-            font-weight: bold;
-            margin: 15px 0;
-            font-size: 1.1rem;
+        .status-badge {
+            display: inline-block;
+            background-color: #e1f5fe;
+            color: #0288d1;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            align-self: flex-start;
+            margin-bottom: 20px;
         }
 
         .description-box {
@@ -162,10 +154,17 @@
         }
 
         .description-box h3 {
+            font-size: 1.2rem;
             margin-bottom: 10px;
-            color: var(--dark-gray);
+            font-weight: 700;
         }
 
+        .description-box p {
+            color: #4a4a4a;
+            margin-bottom: 15px;
+        }
+
+        /* Features List */
         .features-list {
             margin-top: 15px;
             padding-left: 20px;
@@ -173,119 +172,98 @@
 
         .features-list li {
             margin-bottom: 8px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            margin-top: 50px;
-            font-size: 0.85rem;
-            color: #777;
-            border-top: 1px solid var(--border-color);
+            color: #4a4a4a;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-container">
-            <svg width="45" height="45" viewBox="0 0 100 100" style="background:#D11A2A; padding:5px; border-radius:4px;">
-                <rect x="5" y="5" width="90" height="90" fill="#D11A2A"/>
-                <text x="50" y="65" font-family="'Arial Black', Impact, sans-serif" font-size="32" fill="#F2CD37" text-anchor="middle" stroke="#000" stroke-width="3" font-weight="900">LEGO</text>
-            </svg>
-        </div>
-        <div class="nav-crumbs">
-            <a href="#">Αρχική</a> / <a href="#">Θέματα</a> / <a href="#">Hero Factory</a> / 44023
-        </div>
+        <div class="logo-placeholder">LEGO®</div>
+        <span style="font-weight: bold; color: #2c2c2c;">Shop</span>
     </header>
 
-    <main>
-        <div class="product-container">
-            <div class="image-gallery">
-                <div class="hero-factory-badge">Hero Factory</div>
-                <svg class="main-img" width="350" height="350" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="100" height="100" rx="8" fill="#e4e4e4"/>
-                    <path d="M30 35 H70 V65 H30 Z" stroke="#999" stroke-width="2" fill="#f0f0f0"/>
-                    <circle cx="50" cy="48" r="10" stroke="#999" stroke-width="2"/>
-                    <text x="50" y="80" font-family="sans-serif" font-size="5" fill="#666" text-anchor="middle">44023 ROCKA Crawler</text>
-                </svg>
-            </div>
+    <main class="container">
+        <div class="product-gallery">
+            <img id="product-image" src="https://www.lego.com/cdn/product-assets/product.img.pri/44023_prod.jpg" alt="44023 Ερπυστής του ROCKA">
+        </div>
 
-            <div class="product-details" id="product-content">
-                Φόρτωση δεδομένων προϊόντος...
+        <div class="product-details">
+            <div class="set-meta" id="product-meta"></div>
+            <h1 class="product-title" id="product-title"></h1>
+            
+            <div class="status-badge" id="product-status"></div>
+
+            <div class="specs-grid" id="product-specs">
+                </div>
+
+            <div class="description-box">
+                <h3>Περιγραφή</h3>
+                <p id="product-desc"></p>
+                
+                <h3>Χαρακτηριστικά</h3>
+                <ul class="features-list" id="product-features">
+                    </ul>
             </div>
         </div>
     </main>
 
-    <footer>
-        <p>&copy; 2026 The LEGO Group. Όλα τα δικαιώματα διατηρούνται. LEGO, το λογότυπο LEGO και το HERO FACTORY είναι εμπορικά σήματα του Ομίλου LEGO.</p>
-    </footer>
-
-    <script>
-        // Inline Embedded data.json representing the 2014 LEGO catalog data for el-GR
-        const jsonData = {
-            "productId": "44023",
-            "theme": "Hero Factory",
+    <script id="data-json" type="application/json">
+        {
+            "setNumber": "44023",
             "name": "Ερπυστής του ROCKA",
             "englishName": "ROCKA Crawler",
+            "theme": "Hero Factory",
             "releaseYear": 2014,
-            "ageRange": "6-12",
-            "pieceCount": 49,
+            "ages": "6-12",
+            "pieces": 49,
             "status": "Αποσυρθέν Προϊόν",
-            "description": "Προσοχή, ROCKA, μια γιγαντιαία τρίποδη κάμπια έχει αναδυθεί από το ρήγμα της πόλης, αιχμαλωτίζοντας τους πολίτες! Κατασκεύασε τον πανίσχυρο Ερπυστή για να την αντιμετωπίσεις.",
+            "description": "Προσοχή, ROCKA, ένα τεράστιο έντομο εκκόλαψης έχει δημιουργήσει μια σήραγγα κάτω από την Αντρόπολις Σίτυ! Χρησιμοποίησε τον πανίσχυρο Ερπυστή για να μπεις κάτω από τη γη και να αντιμετωπίσεις την απειλή. Ενεργοποίησε τις ερπύστριες για γρήγορη κίνηση στο ανώμαλο έδαφος και χρησιμοποίησε τις δαγκάνες για να πιάσεις το τέρας!",
             "features": [
-                "Περιλαμβάνει τη μικρή φιγούρα ήρωα ROCKA με όπλο",
-                "Διαθέτει αποσπώμενο κάθισμα, ρυθμιζόμενες ερπύστριες, εκτοξευτήρα σφαιρών και ευλύγιστα στοιχεία",
-                "Περιλαμβάνει ένα κάνιστρο παγίδευσης για τα παράσιτα των υπονόμων",
-                "Συνδυάζεται με το σετ 44027 Μηχανή Ψύλλων της BREEZ για ένα ακόμα μεγαλύτερο μοντέλο ήρωα!",
-                "Έχει ύψος πάνω από 13 εκατοστά"
+                "Περιλαμβάνει τη μίνι φιγούρα ROCKA με όπλο.",
+                "Διαθέτει αποσπώμενο κάθισμα, ερπύστριες, κινούμενες δαγκάνες και θήκη για κάνιστρο.",
+                "Συνδυάζεται με το 44025 BULK Drill Machine για ένα ακόμα μεγαλύτερο μοντέλο Hero Factory!",
+                "Ύψος πάνω από 13 εκατοστά."
             ]
-        };
+        }
+    </script>
 
-        // JavaScript functioning to read JSON object and construct DOM
-        function renderProduct(data) {
-            const container = document.getElementById('product-content');
-            
-            let featuresHTML = '';
-            data.features.forEach(feature => {
-                featuresHTML += `<li>${feature}</li>`;
-            });
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Fetching and parsing data from the embedded JSON script element
+            const jsonData = document.getElementById('data-json').textContent;
+            const data = JSON.parse(jsonData);
 
-            container.innerHTML = `
-                <div>
-                    <div class="product-meta">Κωδικός: <strong>${data.productId}</strong> | Θέμα: ${data.theme}</div>
-                    <h1>${data.name}</h1>
-                    <div class="status-tag">${data.status}</div>
-                    
-                    <div class="specs-grid">
-                        <div class="spec-item">
-                            <div class="label">Ηλικίες</div>
-                            <div class="value">${data.ageRange}</div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="label">Κομμάτια</div>
-                            <div class="value">${data.pieceCount}</div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="label">Έτος</div>
-                            <div class="value">${data.releaseYear}</div>
-                        </div>
-                    </div>
+            // Populate DOM Elements
+            document.getElementById('product-meta').textContent = `${data.theme} / ${data.setNumber}`;
+            document.getElementById('product-title').textContent = data.name;
+            document.getElementById('product-status').textContent = data.status;
+            document.getElementById('product-desc').textContent = data.description;
 
-                    <div class="description-box">
-                        <h3>Περιγραφή</h3>
-                        <p>${data.description}</p>
-                        <ul class="features-list">
-                            ${featuresHTML}
-                        </ul>
-                    </div>
+            // Build specs grid
+            const specsGrid = document.getElementById('product-specs');
+            specsGrid.innerHTML = `
+                <div class="spec-item">
+                    <span class="spec-label">Ηλικίες</span>
+                    <span class="spec-value">${data.ages}</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Κομμάτια</span>
+                    <span class="spec-value">${data.pieces}</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Έτος</span>
+                    <span class="spec-value">${data.releaseYear}</span>
                 </div>
             `;
-        }
 
-        // Execute rendering on page load
-        document.addEventListener("DOMContentLoaded", () => {
-            renderProduct(jsonData);
+            // Build features checklist
+            const featuresList = document.getElementById('product-features');
+            data.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                featuresList.appendChild(li);
+            });
         });
     </script>
 </body>
