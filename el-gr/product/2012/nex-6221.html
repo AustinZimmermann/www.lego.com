@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="el-GR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEX 6221 | Hero Factory | LEGO® Shop GR</title>
+    <link rel="icon" type="image/x-icon" href="https://www.lego.com/favicon.ico">
+    <style>
+        :root {
+            --lego-yellow: #ffcf00;
+            --lego-red: #d0011b;
+            --dark-gray: #202020;
+            --light-gray: #f8f8f8;
+            --border-color: #e0e0e0;
+            --text-color: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--lego-yellow);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 4px solid var(--lego-red);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .lego-logo {
+            width: 50px;
+            height: 50px;
+            background-color: var(--lego-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .nav-links a {
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        /* Product Container */
+        .product-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .product-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Gallery */
+        .product-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .main-image-container {
+            background-color: var(--light-gray);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .main-image {
+            max-width: 100%;
+            height: auto;
+            max-height: 450px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .main-image-container:hover .main-image {
+            transform: scale(1.03);
+        }
+
+        /* Product Details */
+        .product-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .breadcrumbs {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .breadcrumbs a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+
+        .product-title {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 5px;
+            color: #000;
+        }
+
+        .product-theme {
+            font-size: 18px;
+            color: var(--lego-red);
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .meta-tags {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .tag {
+            background-color: var(--light-gray);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+        }
+
+        .price-section {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 25px;
+            color: #000;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background-color: #ffebee;
+            color: var(--lego-red);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 25px;
+            width: fit-content;
+        }
+
+        .buy-button {
+            background-color: #108542;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: not-allowed;
+            opacity: 0.6;
+            width: 100%;
+            transition: background 0.2s;
+            text-align: center;
+        }
+
+        /* Tabs/Description Section */
+        .product-description-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 40px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--lego-yellow);
+        }
+
+        .description-text {
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            color: white;
+            padding: 40px 20px;
+            margin-top: 60px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer p {
+            opacity: 0.7;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 4px;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="lego-logo">LEGO</div>
+            <span style="font-weight: 800; font-size: 18px; tracking-spacing: 1px;">SHOP</span>
+        </div>
+        <nav class="nav-links">
+            <a href="#">Προϊόντα</a>
+            <a href="#">Νέες Κυκλοφορίες</a>
+            <a href="#">Αποκλειστικά</a>
+        </nav>
+    </header>
+
+    <main class="product-container">
+        
+        <section class="product-gallery">
+            <div class="main-image-container" id="galleryTrigger" title="Κάντε κλικ για μεγέθυνση">
+                <img src="https://www.lego.com/cdn/product-assets/product.img.pri/6221_prod.jpg" alt="LEGO Hero Factory 6221 NEX" class="main-image">
+            </div>
+        </section>
+
+        <section class="product-info">
+            <div class="breadcrumbs">
+                <a href="#">Αρχική</a> / <a href="#">Hero Factory</a> / <span>6221</span>
+            </div>
+            
+            <h1 class="product-title">NEX</h1>
+            <div class="product-theme">HERO FACTORY</div>
+
+            <div class="meta-tags">
+                <span class="tag">Κωδικός: <b>6221</b></span>
+                <span class="tag">Ηλικίες: <b>6-12</b></span>
+                <span class="tag">Έτος: <b>2012</b></span>
+            </div>
+
+            <div class="price-section">
+                <span>12,99 €</span>
+            </div>
+
+            <div class="status-badge">
+                Εξαντλήθηκε / Παλαιότερο Προϊόν
+            </div>
+
+            <button class="buy-button" disabled>Μη Διαθέσιμο</button>
+        </section>
+    </main>
+
+    <section class="product-description-section">
+        <h2 class="section-title">Περιγραφή Προϊόντος</h2>
+        <p class="description-text">
+            <strong>Προσοχή, NEX!</strong> Οι κακοποιοί δραπέτευσαν από το Hero Factory και πρέπει να τους πιάσουμε! Σας έχουμε εξοπλίσει με ένα πανίσχυρο όπλο λέιζερ ακριβείας, θωράκιση υψηλής αντοχής και ειδικές υποδοχές για την ασφάλιση των δεσμών ηρώων. 
+        </p>
+        <p class="description-text">
+            Χρησιμοποιήστε τα αναβαθμισμένα συστήματα σκόπευσης για να εντοπίσετε τους δραπέτες και να επαναφέρετε την τάξη στον γαλαξία. Συνδυάστε το με το σετ 6229 XT4 για να δημιουργήσετε ένα ακόμα μεγαλύτερο μοντέλο μάχης!
+        </p>
+    </section>
+
+    <div class="lightbox" id="imageLightbox">
+        <span class="close-lightbox" id="closeLightbox">&times;</span>
+        <img src="https://www.lego.com/cdn/product-assets/product.img.pri/6221_prod.jpg" alt="LEGO 6221 Zoom" class="lightbox-img">
+    </div>
+
+    <footer>
+        <p>&copy; 2026 The LEGO Group. All rights reserved. 2012 Legacy Product Archive.</p>
+    </footer>
+
+    <script>
+        const galleryTrigger = document.getElementById('galleryTrigger');
+        const lightbox = document.getElementById('imageLightbox');
+        const closeLightbox = document.getElementById('closeLightbox');
+
+        // Open Lightbox
+        galleryTrigger.addEventListener('click', () => {
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Stop background scrolling
+        });
+
+        // Close Lightbox
+        closeLightbox.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close Lightbox when clicking outside the image
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+</body>
+</html>
