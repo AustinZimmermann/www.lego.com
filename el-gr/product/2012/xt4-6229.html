@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="el-GR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XT4 6229 | Hero Factory | Επίσημο Κατάστημα LEGO® GR</title>
+    <link rel="icon" type="image/x-icon" href="https://www.lego.com/favicon.ico">
+    <style>
+        :root {
+            --lego-yellow: #f2cd37;
+            --lego-red: #d01012;
+            --text-dark: #2c2c2c;
+            --bg-light: #f8f8f8;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--text-dark);
+        }
+
+        /* Header Navigation */
+        header {
+            background-color: var(--lego-yellow);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 4px solid var(--lego-red);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .lego-logo {
+            width: 50px;
+            height: 50px;
+            background-color: var(--lego-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 900;
+            font-size: 24px;
+            border-radius: 4px;
+            text-shadow: 2px 2px 0px #000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .theme-logo {
+            font-weight: 800;
+            text-transform: uppercase;
+            font-style: italic;
+            letter-spacing: 1px;
+            color: #111;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #000;
+            font-weight: 600;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Product Gallery */
+        .product-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .main-image-container {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+        }
+
+        .main-image {
+            max-width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .main-image:hover {
+            transform: scale(1.03);
+        }
+
+        .thumbnails {
+            display: flex;
+            gap: 10px;
+        }
+
+        .thumb {
+            width: 70px;
+            height: 70px;
+            border: 2px solid var(--border-color);
+            border-radius: 4px;
+            padding: 5px;
+            cursor: pointer;
+            background: white;
+        }
+
+        .thumb.active {
+            border-color: #006cb7;
+        }
+
+        /* Product Info */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .set-number {
+            font-size: 14px;
+            color: #666;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .product-title {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .tag-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            background-color: #eef2f7;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* Specs Bar */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .spec-item .label {
+            font-size: 12px;
+            color: #666;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .spec-item .value {
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        /* Pricing & Action */
+        .price-section {
+            margin-bottom: 25px;
+        }
+
+        .price {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .availability {
+            font-size: 14px;
+            color: #d01012;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        .buy-btn {
+            background-color: #ff8000;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: not-allowed;
+            width: 100%;
+            transition: background 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+            text-transform: uppercase;
+        }
+
+        .buy-btn:hover {
+            background-color: #e67300;
+        }
+
+        /* Description Accordion */
+        .description-box {
+            margin-top: 30px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+
+        .description-box h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .description-box p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="lego-logo">LEGO</div>
+            <div class="theme-logo">Hero Factory</div>
+        </div>
+        <nav>
+            <a href="#">Προϊόντα</a>
+            <a href="#">Νέες Κυκλοφορίες</a>
+            <a href="#">Υποστήριξη</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        
+        <section class="product-gallery">
+            <div class="main-image-container">
+                <img id="mainProductImg" class="main-image" src="https://www.lego.com/cdn/product-assets/product.img.pri/6229_prod.jpg" alt="LEGO Hero Factory XT4 6229">
+            </div>
+            <div class="thumbnails">
+                <img class="thumb active" src="https://www.lego.com/cdn/product-assets/product.img.pri/6229_prod.jpg" alt="XT4 thumbnail 1" onclick="changeImage(this)">
+            </div>
+        </section>
+
+        <section class="product-details">
+            <span class="set-number">6229</span>
+            <h1 class="product-title">XT4</h1>
+            
+            <div class="tag-container">
+                <span class="tag">Hero Factory</span>
+                <span class="tag">Σπάνιο / Vintage</span>
+            </div>
+
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <span class="label">Ηλικίες</span>
+                    <span class="value">6-12</span>
+                </div>
+                <div class="spec-item">
+                    <span class="label">Κομμάτια</span>
+                    <span class="value">39</span>
+                </div>
+                <div class="spec-item">
+                    <span class="label">Έτος Κυκλοφορίας</span>
+                    <span class="value">2012</span>
+                </div>
+            </div>
+
+            <div class="price-section">
+                <div class="price">8,99 €</div>
+                <div class="availability">Εξαντλήθηκε (Παλιό προϊόν)</div>
+            </div>
+
+            <button class="buy-btn" onclick="alert('Αυτό το προϊόν έχει καταργηθεί και δεν είναι πλέον διαθέσιμο για αγορά.')">
+                Εξαντλημενο
+            </button>
+
+            <div class="description-box">
+                <h3>Περιγραφή Προϊόντος</h3>
+                <p>
+                    Προσοχή Ήρωες! Το XT4 δραπέτευσε από το Hero Factory και κατευθύνεται προς τον πλανήτη Mechna. Εξοπλισμένο με 4 φονικά χέρια, λεπίδες λέιζερ και κόφτες, αυτό το ρομπότ-σαμποτέρ είναι εξαιρετικά επικίνδυνο. Πρέπει να το σταματήσετε πριν καταστρέψει τις υποδομές του πλανήτη!
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Interactive Image Switcher (Ready for more image URLs if expanded)
+        function changeImage(element) {
+            // Update main image source
+            document.getElementById('mainProductImg').src = element.src;
+            
+            // Toggle active styling
+            document.querySelectorAll('.thumb').forEach(thumb => {
+                thumb.classList.remove('active');
+            });
+            element.classList.add('active');
+        }
+    </script>
+</body>
+</html>
