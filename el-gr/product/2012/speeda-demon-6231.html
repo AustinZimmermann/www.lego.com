@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="el-GR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPEEDA DEMON 6231 | Hero Factory | LEGO® Shop GR</title>
+    <link rel="icon" type="image/x-icon" href="https://www.lego.com/favicon.ico">
+    <style>
+        :root {
+            --lego-yellow: #ffcf00;
+            --lego-red: #e60012;
+            --lego-blue: #006cb7;
+            --dark-gray: #333333;
+            --light-gray: #f8f8f8;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Cera Pro", Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--dark-gray);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--lego-yellow);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid var(--dark-gray);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .lego-logo {
+            width: 50px;
+            height: 50px;
+            background-color: var(--lego-red);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: white;
+            font-size: 24px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            font-weight: bold;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        .cart-container {
+            position: relative;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .cart-count {
+            background-color: var(--lego-red);
+            color: white;
+            border-radius: 50%;
+            padding: 2px 8px;
+            font-size: 12px;
+        }
+
+        /* Main Content Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+                padding: 40px 20px;
+            }
+        }
+
+        /* Product Image Gallery */
+        .product-gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-image-container {
+            width: 100%;
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-in;
+            position: relative;
+        }
+
+        .main-image {
+            max-width: 100%;
+            height: auto;
+            max-height: 450px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .badge-2012 {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--dark-gray);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        /* Product Info */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .theme-title {
+            color: var(--lego-blue);
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .product-title {
+            font-size: 32px;
+            font-weight: 900;
+        }
+
+        .product-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 14px;
+            color: #666;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        .price-tag {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .status-stock {
+            color: #008543;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 15px 30px;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            border: none;
+            transition: background-color 0.2s;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background-color: var(--lego-red);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #b3000e;
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: var(--dark-gray);
+            border: 1px solid var(--dark-gray);
+            margin-top: 10px;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--light-gray);
+        }
+
+        /* Accordion Description */
+        .accordion {
+            margin-top: 30px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .accordion-header {
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: #555;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* Lightbox Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .modal-img {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 12px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="lego-logo">LEGO</div>
+            <nav class="nav-links">
+                <a href="#">Προϊόντα</a>
+                <a href="#">Νέα</a>
+                <a href="#">Αποκλειστικά</a>
+            </nav>
+        </div>
+        <div class="cart-container" id="cartBtn">
+            <span>🛒 Καλάθι</span>
+            <span class="cart-count" id="cartCount">0</span>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section class="product-gallery">
+            <div class="main-image-container" id="imageContainer" title="Κάντε κλικ για μεγέθυνση">
+                <span class="badge-2012">Κλασικό (2012)</span>
+                <img src="https://www.lego.com/cdn/product-assets/product.img.pri/6231_prod.jpg" alt="LEGO Hero Factory 6231 SPEEDA DEMON" class="main-image" id="productImg">
+            </div>
+        </section>
+
+        <section class="product-details">
+            <span class="theme-title">Hero Factory</span>
+            <h1 class="product-title">SPEEDA DEMON</h1>
+            
+            <div class="product-meta">
+                <span><strong>Κωδικός:</strong> 6231</span>
+                <span><strong>Ηλικίες:</strong> 9-16</span>
+                <span><strong>Κομμάτια:</strong> 90</span>
+            </div>
+
+            <div class="price-tag">34,99 €</div>
+            
+            <div class="status-stock">
+                <span style="height: 10px; width: 10px; background-color: #008543; border-radius: 50%; display: inline-block;"></span>
+                Διαθέσιμο τώρα (Συλλεκτικό)
+            </div>
+
+            <button class="btn btn-primary" id="addToCartBtn">Προσθήκη στο Καλάθι</button>
+            <button class="btn btn-secondary">Προσθήκη στη Λίστα Επιθυμιών</button>
+
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Περιγραφή Προϊόντος</span>
+                        <span>▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p style="padding: 15px 0;">
+                            Σπάστε τα φρένα με τον SPEEDA DEMON! Ο κακός έχει δραπετεύσει από το Hero Factory και τρέχει να κρυφτεί στον πλανήτη της καταστροφής Ice Planet Kollix IV με τη super-fast μοτοσικλέτα του. Με 2 λεπίδες πάγου, τροχούς με καρφιά και διπλούς εξατμιστήρες κομήτη, θα είναι δύσκολο να τον σταματήσετε!
+                        </p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Χαρακτηριστικά</span>
+                        <span>▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <ul style="padding: 15px 20px;">
+                            <li>Περιλαμβάνει τον SPEEDA DEMON με τη διάσημη Ice-Cycle μοτοσικλέτα του.</li>
+                            <li>Διαθέτει τροχούς που γυρίζουν, λεπίδες πάγου και μοναδικό σχεδιασμό Hero Factory.</li>
+                            <li>Συνδυάζεται με το σετ 6230 STORMER XL για ακόμα μεγαλύτερη κατασκευή!</li>
+                            <li>Ύψος μοτοσικλέτας: πάνω από 15 εκ. και μήκος 32 εκ.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal" id="imgModal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <img src="https://www.lego.com/cdn/product-assets/product.img.pri/6231_prod.jpg" alt="SPEEDA DEMON Large View" class="modal-img">
+        </div>
+    </div>
+
+    <footer>
+        <p>LEGO, το λογότυπο LEGO και το Hero Factory είναι εμπορικά σήματα του Ομίλου LEGO. ©2026 The LEGO Group. Όλα τα δικαιώματα διατηρούνται.</p>
+    </footer>
+
+    <script>
+        // Shopping Cart Logic
+        let currentCount = 0;
+        const addToCartBtn = document.getElementById('addToCartBtn');
+        const cartCount = document.getElementById('cartCount');
+
+        addToCartBtn.addEventListener('click', () => {
+            currentCount++;
+            cartCount.textContent = currentCount;
+            
+            // Temporary button state change feedback
+            addToCartBtn.textContent = 'Προστέθηκε! ✓';
+            addToCartBtn.style.backgroundColor = '#008543';
+            
+            setTimeout(() => {
+                addToCartBtn.textContent = 'Προσθήκη στο Καλάθι';
+                addToCartBtn.style.backgroundColor = 'var(--lego-red)';
+            }, 1500);
+        });
+
+        // Accordion functionality
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('span:last-child');
+            
+            if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                content.style.maxHeight = '0px';
+                icon.textContent = '▼';
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                icon.textContent = '▲';
+            }
+        }
+
+        // Lightbox Modal Logic
+        const imageContainer = document.getElementById('imageContainer');
+        const imgModal = document.getElementById('imgModal');
+        const modalClose = document.getElementById('modalClose');
+
+        imageContainer.addEventListener('click', () => {
+            imgModal.style.display = 'flex';
+        });
+
+        modalClose.addEventListener('click', () => {
+            imgModal.style.display = 'none';
+        });
+
+        // Close modal when clicking outside the content
+        imgModal.addEventListener('click', (e) => {
+            if (e.target === imgModal) {
+                imgModal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
