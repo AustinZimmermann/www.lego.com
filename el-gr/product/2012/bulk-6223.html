@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="el-GR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BULK 6223 | Hero Factory | LEGO® Shop GR</title>
+    <style>
+        :root {
+            --lego-yellow: #ffcf00;
+            --lego-red: #d0011b;
+            --dark-blue: #002d62;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #f8f8f8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--lego-yellow);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            background-color: var(--lego-red);
+            color: white;
+            font-weight: bold;
+            padding: 10px 15px;
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            border: 2px solid black;
+        }
+
+        .nav-links {
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        /* Breadcrumbs */
+        .breadcrumbs {
+            padding: 15px 20px;
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        .breadcrumbs a {
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Product Layout */
+        .product-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .product-container {
+                grid-template-columns: 1.2fr 1fr;
+            }
+        }
+
+        /* Product Images */
+        .product-gallery {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #e0e0e0;
+        }
+
+        .main-image {
+            max-width: 100%;
+            height: auto;
+            max-height: 450px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .main-image:hover {
+            transform: scale(1.03);
+        }
+
+        .hero-factory-tag {
+            align-self: flex-start;
+            background: #000;
+            color: #fff;
+            padding: 5px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        /* Product Details */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-year {
+            font-size: 14px;
+            color: var(--text-light);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .product-title {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: #000;
+        }
+
+        .product-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 15px;
+        }
+
+        .meta-item strong {
+            color: var(--text-dark);
+        }
+
+        .price-tag {
+            font-size: 28px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background-color: #e0e0e0;
+            color: var(--text-dark);
+            padding: 5px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            width: fit-content;
+        }
+
+        /* CTA Button */
+        .btn-add-to-cart {
+            background-color: #008542;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.2s;
+            text-transform: uppercase;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .btn-add-to-cart:hover {
+            background-color: #006833;
+        }
+
+        .btn-add-to-cart:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        /* Product Description */
+        .product-description {
+            margin-top: 30px;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 20px;
+        }
+
+        .product-description h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        /* Specifications Table */
+        .specs-table {
+            width: 100%;
+            margin-top: 30px;
+            border-collapse: collapse;
+        }
+
+        .specs-table td {
+            padding: 10px;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 14px;
+        }
+
+        .specs-table td:first-child {
+            font-weight: bold;
+            color: var(--text-light);
+            width: 40%;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="logo">LEGO</div>
+            <div class="nav-links">Shop</div>
+        </div>
+        <div id="cart-status" style="font-size: 14px; font-weight: bold;">🛒 Τσάντα αγορών (0)</div>
+    </header>
+
+    <div class="breadcrumbs">
+        <a href="#">Αρχική</a> &gt; <a href="#">Sets</a> &gt; <a href="#">Hero Factory</a> &gt; BULK (6223)
+    </div>
+
+    <main class="product-container">
+        
+        <section class="product-gallery">
+            <div class="hero-factory-tag">Hero Factory</div>
+            <img src="https://www.lego.com/cdn/product-assets/product.img.pri/6223_prod.jpg" alt="LEGO Hero Factory BULK 6223" class="main-image">
+        </section>
+
+        <section class="product-details">
+            <div class="product-year">Έτος Κυκλοφορίας: 2012</div>
+            <h1 class="product-title">BULK</h1>
+            
+            <div class="product-meta">
+                <div class="meta-item">Κωδικός: <strong>6223</strong></div>
+                <div class="meta-item">Ηλικίες: <strong>7-14</strong></div>
+                <div class="meta-item">Κομμάτια: <strong>61</strong></div>
+            </div>
+
+            <div class="price-tag">9,99 €</div>
+            <div class="status-badge">Παλιό προϊόν / Εξαντλήθηκε</div>
+
+            <button class="btn-add-to-cart" id="cartBtn" disabled>Εξαντλημένο</button>
+
+            <div class="product-description">
+                <h3>Περιγραφή</h3>
+                <p>Ήρωα BULK, τρέξε στο Hero Factory! Οι κακοποιοί δραπέτευσαν από το Hero Factory και πρέπει να τους πιάσουμε! Σας έχουμε εξοπλίσει με ένα πανίσχυρο εκτοξευτή λέιζερ, θωράκιση υψηλής αντοχής και ειδικά βλήματα πρόσκρουσης. Εντόπισε τους δραπέτες και φέρε τους πίσω στη δικαιοσύνη!</p>
+            </div>
+
+            <table class="specs-table">
+                <tr>
+                    <td>Σειρά</td>
+                    <td>Hero Factory (Breakout)</td>
+                </tr>
+                <tr>
+                    <td>Διαστάσεις</td>
+                    <td>Ύψος πάνω από 18 εκ.</td>
+                </tr>
+                <tr>
+                    <td>Χαρακτηριστικά</td>
+                    <td>Περιλαμβάνει τον αποκλειστικό κωδικό για το online παιχνίδι Hero Factory Breakout.</td>
+                </tr>
+            </table>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 The LEGO Group. Όλα τα δικαιώματα διατηρούνται. Η χρήση αυτής της τοποθεσίας συνεπάγεται την αποδοχή των Όρων Χρήσης.</p>
+    </footer>
+
+    <script>
+        // Interactive element showcasing dynamic feedback if the item weren't archived
+        const cartBtn = document.getElementById('cartBtn');
+        const cartStatus = document.getElementById('cart-status');
+        let cartCount = 0;
+
+        // Code to switch the state if it was theoretically active
+        // dynamic handling for demonstration purposes
+        console.log("LEGO Set 6223 Bulk Page Loaded successfully (el-GR Market).");
+    </script>
+</body>
+</html>
