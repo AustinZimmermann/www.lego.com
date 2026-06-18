@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="el-GR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CORE HUNTER 6222 | Hero Factory | LEGO® Shop</title>
+    <style>
+        :root {
+            --lego-yellow: #FFD500;
+            --lego-red: #D11013;
+            --dark-bg: #111116;
+            --panel-bg: #1c1c24;
+            --text-light: #FFFFFF;
+            --text-muted: #A0A0AB;
+            --hf-purple: #8A2BE2;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* LEGO Header */
+        header {
+            background-color: var(--lego-yellow);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .lego-logo {
+            width: 50px;
+            height: 50px;
+            background-color: var(--lego-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 20px;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* Main Product Layout */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-content-width: 768px) {
+            .container {
+                grid-template-columns: 1.2fr 0.8fr;
+                gap: 40px;
+            }
+        }
+        
+        /* Temporary layout fix for side-by-side on desktop */
+        .product-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        @media (min-width: 768px) {
+            .product-grid {
+                flex-direction: row;
+            }
+            .product-gallery { flex: 1.2; }
+            .product-info { flex: 0.8; }
+        }
+
+        /* Product Gallery */
+        .product-gallery {
+            background: radial-gradient(circle, #2a2a35 0%, #111116 100%);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border: 1px solid #333;
+            min-height: 400px;
+        }
+
+        .product-image {
+            max-width: 100%;
+            max-height: 500px;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.6));
+            transition: transform 0.3s ease;
+        }
+
+        .product-image:hover {
+            transform: scale(1.03);
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--hf-purple);
+            color: white;
+            padding: 5px 10px;
+            font-weight: bold;
+            font-size: 12px;
+            border-radius: 3px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Product Info */
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-meta {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .product-title {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: linear-gradient(45deg, #fff, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .spec-tags {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .tag {
+            background-color: var(--panel-bg);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            border: 1px solid #333;
+        }
+
+        .price-section {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: var(--panel-bg);
+            border-radius: 8px;
+            border: 1px solid #2a2a35;
+        }
+
+        .status {
+            color: #ff4d4d;
+            font-weight: bold;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 5px;
+        }
+
+        .status::before {
+            content: "●";
+            color: #ff4d4d;
+        }
+
+        .price {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .btn-buy {
+            background-color: #333;
+            color: #777;
+            border: none;
+            padding: 15px;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: not-allowed;
+            width: 100%;
+            transition: all 0.2s;
+            text-transform: uppercase;
+        }
+
+        /* Tabs Section */
+        .tabs-container {
+            margin-top: 50px;
+            background-color: var(--panel-bg);
+            border-radius: 8px;
+            padding: 25px;
+            border: 1px solid #2a2a35;
+        }
+
+        .tab-buttons {
+            display: flex;
+            border-bottom: 2px solid #333;
+            margin-bottom: 20px;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .tab-btn.active {
+            color: var(--lego-yellow);
+            border-bottom: 2px solid var(--lego-yellow);
+            margin-bottom: -2px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .features-list {
+            list-style-type: square;
+            margin-left: 20px;
+            color: var(--text-muted);
+        }
+
+        .features-list li {
+            margin-bottom: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0b0b0e;
+            padding: 30px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 12px;
+            margin-top: 60px;
+            border-top: 1px solid #222;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="lego-logo">LEGO</a>
+        <nav class="nav-links">
+            <a href="#">Προϊόντα</a>
+            <a href="#">Hero Factory</a>
+            <a href="#">Υποστήριξη</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="product-grid">
+            <div class="product-gallery">
+                <span class="badge">Hero Factory</span>
+                <img src="https://www.lego.com/cdn/product-assets/product.img.pri/6222_prod.jpg" alt="LEGO 6222 Core Hunter" class="product-image">
+            </div>
+
+            <div class="product-info">
+                <div>
+                    <div class="product-meta">Κωδικός: 6222 • Έτος Κυκλοφορίας: 2012</div>
+                    <h1 class="product-title">CORE HUNTER</h1>
+                    
+                    <div class="spec-tags">
+                        <span class="tag">Ηλικίες: 7-14</span>
+                        <span class="tag">Κομμάτια: 51</span>
+                    </div>
+
+                    <p style="color: var(--text-muted);">
+                        Προσοχή, Χίροουζ! Ο CORE HUNTER κυκλοφορεί ελεύθερος στους δρόμους και προσπαθεί να κλέψει τους πυρήνες Χίροουζ για να δημιουργήσει έναν ανίκητο στρατό. Σταματήστε τον προτού να είναι αργά!
+                    </p>
+                </div>
+
+                <div class="price-section">
+                    <div class="status">Εξαντλημένο</div>
+                    <div class="price">12,99 €</div>
+                    <button class="btn-buy" disabled>Μη Διαθέσιμο</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="tabs-container">
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="openTab(event, 'description')">Περιγραφή</button>
+                <button class="tab-btn" onclick="openTab(event, 'details')">Χαρακτηριστικά</button>
+            </div>
+
+            <div id="description" class="tab-content active">
+                <p style="margin-bottom: 15px;">
+                    Ο CORE HUNTER έχει αποδράσει από τα εργαστήρια της Hero Factory και βρίσκεται σε μια μοναδική αποστολή: να αφαιρέσει τους πολύτιμους πυρήνες ενέργειας από κάθε Ήρωα που θα βρεθεί στο δρόμο του. Είναι εξοπλισμένος με ένα φονικό Plasma Shooter, αιχμηρές λεπίδες και ένα εργαλείο αφαίρεσης πυρήνων Χίροουζ.
+                </p>
+                <p>
+                    Χρησιμοποιήστε τα κομμάτια αυτού του σετ για να χτίσετε μια επιβλητική φιγούρα με πλήρη ανατομική κίνηση, έτοιμη για επικές μάχες εναντίον της ομάδας Alpha Team.
+                </p>
+            </div>
+
+            <div id="details" class="tab-content">
+                <ul class="features-list">
+                    <li>Διαθέτει εργαλείο αφαίρεσης Hero Core, εκτοξευτή πλάσματος και θώρακα με αιχμές.</li>
+                    <li>Περιλαμβάνει μοναδικό κωδικό που ξεκλειδώνει 200 πόντους παιχνιδιού για το online παιχνίδι LEGO Hero Factory Breakout.</li>
+                    <li>Σχεδιασμός υψηλής αντοχής για έντονο παιχνίδι δράσης.</li>
+                    <li>Συνδυάζεται με το σετ 6223 BULK για να δημιουργήσετε ένα ακόμα μεγαλύτερο μοντέλο!</li>
+                    <li>Ύψος φιγούρας: πάνω από 20 εκ.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>LEGO, το λογότυπο LEGO και το HERO FACTORY είναι εμπορικά σήματα του Ομίλου LEGO. ©2026 The LEGO Group. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
