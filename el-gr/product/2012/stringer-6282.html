@@ -1,268 +1,319 @@
 <!DOCTYPE html>
-<html lang="el">
+<html lang="el-GR">
 <head>
     <meta charset="UTF-8">
-    <title>LEGO.com Hero Factory - 6282 STRINGER</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STRINGER 6282 | Hero Factory | LEGO® Shop GR</title>
     <style>
-        /* Internet Explorer 9 Browser Chrome Simulation */
-        body {
-            background-color: #385a82; /* Windows 7 Desktop Color */
+        :root {
+            --lego-yellow: #FFD400;
+            --lego-blue: #006CB7;
+            --lego-red: #E60012;
+            --dark-gray: #333333;
+            --light-gray: #F8F8F8;
+            --border-color: #E0E0E0;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
-            font-family: Helvetica, sans-serif;
-            overflow: hidden;
+            padding: 0;
+            font-family: Helvetica, Arial, sans-serif;
         }
 
-        #ie-window {
-            width: 1000px;
-            height: 700px;
-            margin: 20px auto;
-            background: #f0f0f0;
-            border: 1px solid #777;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            display: flex;
-            flex-direction: column;
+        body {
+            background-color: #ffffff;
+            color: var(--dark-gray);
         }
 
-        /* IE9 Header Styling */
-        #ie-header {
-            background: linear-gradient(to bottom, #ebebeb 0%, #dcdcdc 100%);
-            padding: 5px 10px;
-            border-bottom: 1px solid #ababab;
-        }
-
-        .address-bar-container {
-            display: flex;
-            align-items: center;
-            background: white;
-            border: 1px solid #a0a0a0;
-            padding: 4px;
-            margin-top: 5px;
-            border-radius: 2px;
-        }
-
-        .address-bar {
-            flex-grow: 1;
-            font-size: 13px;
-            color: #333;
-            padding-left: 5px;
-        }
-
-        /* LEGO Website Content */
-        #web-content {
-            flex-grow: 1;
-            background: #000 url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
-            overflow-y: scroll;
-            color: white;
-            position: relative;
-        }
-
-        /* LEGO Header */
+        /* Header Navigation Minimal */
         header {
-            background: #000;
-            height: 60px;
-            border-bottom: 3px solid #ffcf00;
+            background-color: var(--lego-yellow);
+            padding: 10px 20px;
             display: flex;
             align-items: center;
-            padding: 0 20px;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        .lego-logo {
-            background: #d11013;
+        .logo {
+            background-color: var(--lego-red);
             color: white;
             font-weight: bold;
-            padding: 5px 10px;
-            border: 2px solid white;
+            padding: 8px 12px;
             font-size: 20px;
             text-transform: uppercase;
-            margin-right: 20px;
+            letter-spacing: 1px;
+            display: inline-block;
         }
 
-        .hf-logo {
-            height: 40px;
+        .nav-links {
+            font-size: 14px;
+            font-weight: 600;
         }
 
-        nav {
-            margin-left: auto;
-            font-size: 12px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        nav span {
-            margin: 0 10px;
+        .nav-links span {
+            margin-left: 15px;
             cursor: pointer;
-            color: #ccc;
         }
 
-        /* Product Section */
-        .product-container {
-            display: flex;
-            padding: 40px;
-            max-width: 900px;
+        /* Breadcrumbs */
+        .breadcrumbs {
+            padding: 15px 20px;
+            font-size: 12px;
+            color: #666;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        .product-images {
-            flex: 1;
-            text-align: center;
+        /* Main Container */
+        .product-container {
+            display: flex;
+            flex-direction: column;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            gap: 40px;
         }
 
-        .main-img {
-            width: 350px;
-            filter: drop-shadow(0 0 15px rgba(255,100,0,0.5));
-            margin-bottom: 20px;
+        @media (min-width: 768px) {
+            .product-container {
+                flex-direction: row;
+            }
         }
 
-        .thumb-gallery {
+        /* Product Image Section */
+        .product-media {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-image-box {
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            padding: 20px;
+            width: 100%;
             display: flex;
             justify-content: center;
+            align-items: center;
+            min-height: 400px;
+        }
+
+        .main-image-box img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .main-image-box img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Product Details Section */
+        .product-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .theme-title {
+            color: var(--lego-blue);
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .product-name {
+            font-size: 32px;
+            font-weight: 800;
+            color: #111;
+        }
+
+        .product-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 13px;
+            color: #555;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        .meta-item strong {
+            color: #000;
+        }
+
+        .price-tag {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #111;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background-color: #EAEAEA;
+            color: #555;
+            padding: 4px 8px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 4px;
+            width: fit-content;
+        }
+
+        /* Action Buttons */
+        .purchase-actions {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
             gap: 10px;
         }
 
-        .thumb {
-            width: 70px;
-            border: 2px solid #555;
-            background: #222;
-            cursor: pointer;
-        }
-
-        .thumb.active {
-            border-color: #ffcf00;
-        }
-
-        .product-info {
-            flex: 1;
-            padding-left: 40px;
-        }
-
-        h1 {
-            font-size: 42px;
-            margin: 0;
-            color: #fff;
-            text-transform: uppercase;
-            font-style: italic;
-            border-bottom: 1px solid #444;
-        }
-
-        .set-number {
-            color: #ffcf00;
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        .description {
-            font-size: 14px;
-            line-height: 1.6;
-            color: #ddd;
-            margin-bottom: 30px;
-        }
-
-        .buy-box {
-            background: #222;
-            padding: 20px;
-            border-radius: 5px;
-            border: 1px solid #444;
-        }
-
-        .price {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .add-btn {
-            background: linear-gradient(to bottom, #ffea00 0%, #ff9500 100%);
-            border: none;
-            padding: 10px 20px;
-            font-weight: bold;
-            width: 100%;
-            cursor: pointer;
-            border-radius: 3px;
+        .btn {
+            padding: 15px;
             font-size: 16px;
-        }
-
-        .age-badge {
-            display: inline-block;
-            background: #444;
-            padding: 5px 10px;
-            margin-top: 20px;
-            font-size: 12px;
-        }
-
-        /* Footer Promo */
-        .breakout-banner {
-            background: #ff6a00;
-            color: black;
-            text-align: center;
-            padding: 10px;
             font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            transition: background 0.2s;
+        }
+
+        .btn-primary {
+            background-color: #FF8200;
+            color: white;
+            box-shadow: 0 4px #D66D00;
+        }
+
+        .btn-primary:hover {
+            background-color: #E67300;
+        }
+
+        .btn-primary:active {
+            box-shadow: 0 1px #D66D00;
+            transform: translateY(3px);
+        }
+
+        /* Product Specifications & Description */
+        .product-description {
+            margin-top: 20px;
+            line-height: 1.6;
+            color: #444;
+            font-size: 15px;
+        }
+
+        .spec-table {
+            width: 100%;
+            margin-top: 25px;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .spec-table th, .spec-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .spec-table th {
+            background-color: var(--light-gray);
+            font-weight: 600;
+            width: 35%;
+        }
+
+        /* Footer Mini */
+        footer {
+            background-color: var(--dark-gray);
+            color: white;
+            text-align: center;
+            padding: 30px;
             margin-top: 50px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            font-size: 12px;
         }
     </style>
 </head>
 <body>
 
-<div id="ie-window">
-    <div id="ie-header">
-        <div style="font-size: 11px; color: #555; display: flex; justify-content: space-between;">
-            <div>Internet Explorer</div>
-            <div style="font-weight: bold;">[ - ] [ □ ] [ X ]</div>
+    <header>
+        <div class="logo">LEGO</div>
+        <div class="nav-links">
+            <span>ΚΑΤΑΣΤΗΜΑ</span>
+            <span>ΑΝΑΚΑΛΥΨΤΕ</span>
+            <span>ΒΟΗΘΕΙΑ</span>
         </div>
-        <div class="address-bar-container">
-            <div style="color: #008000; margin-right: 5px;">🔒</div>
-            <div class="address-bar">http://herofactory.lego.com/el-gr/products/6282-stringer</div>
-        </div>
-        <div style="margin-top: 5px; font-size: 12px; color: #444;">
-            Αρχείο &nbsp; Επεξεργασία &nbsp; Προβολή &nbsp; Αγαπημένα &nbsp; Εργαλεία &nbsp; Βοήθεια
-        </div>
+    </header>
+
+    <div class="breadcrumbs">
+        Αρχική &gt; Προϊόντα &gt; Hero Factory &gt; STRINGER (6282)
     </div>
 
-    <div id="web-content">
-        <header>
-            <div class="lego-logo">LEGO</div>
-            Hero Factory
-            <nav>
-                <span>ΠΡΟΪΟΝΤΑ</span>
-                <span>ΠΑΙΧΝΙΔΙΑ</span>
-                <span>ΗΡΩΕΣ</span>
-                <span>ΚΑΚΟΠΟΙΟΙ</span>
-            </nav>
-        </header>
+    <main class="product-container">
+        
+        <section class="product-media">
+            <div class="main-image-box">
+                <img id="product-img" src="https://www.lego.com/cdn/product-assets/product.img.pri/6282_prod.jpg" alt="LEGO Hero Factory STRINGER 6282">
+            </div>
+        </section>
 
-        <div class="product-container">
-            <div class="product-images">
-                <img src="https://www.lego.com/cdn/product-assets/product.img.pri/6282_prod.jpg" class="main-img" alt="Stringer">
-                <div class="thumb-gallery">
-                    <img src="https://www.lego.com/cdn/product-assets/product.img.pri/6282_prod.jpg" class="thumb active">
-                    <img src="https://www.bricklink.com/OL/6282-1.jpg" class="thumb">
-                </div>
+        <section class="product-info">
+            <span class="theme-title">Hero Factory</span>
+            <h1 class="product-name">STRINGER</h1>
+            
+            <div class="product-meta">
+                <span class="meta-item">Κωδικός: <strong>6282</strong></span>
+                <span class="meta-item">Ηλικίες: <strong>6-12</strong></span>
+                <span class="meta-item">Έτος Κυκλοφορίας: <strong>2012</strong></span>
             </div>
 
-            <div class="product-info">
-                <div class="set-number">6282</div>
-                <h1>STRINGER</h1>
-                <p class="description">
-                    Επείγον! Ο STRINGER έχει εντοπιστεί στον πλανήτη Tansari VI. Οι κακοποιοί έχουν δραπετεύσει και πρέπει να τους συλλάβετε! Είναι εξοπλισμένος με ηχητικά όπλα και ειδικές χειροπέδες Πυρήνας Χίροουζ για να επιβάλει την τάξη.
-                </p>
-                
-                <div class="buy-box">
-                    <div class="price">12,99 €</div>
-                    <button class="add-btn">ΠΡΟΣΘΗΚΗ ΣΤΟ ΚΑΛΑΘΙ</button>
-                </div>
+            <div class="price-tag">Παλιά Προϊόντα</div>
+            <span class="status-badge">Εξαντλήθηκε</span>
 
-                <div class="age-badge">
-                    ΗΛΙΚΙΕΣ: 6 - 12
-                </div>
+            <div class="purchase-actions">
+                <button class="btn btn-primary" id="bag-btn" onclick="addToBag()">Προσθήκη στο καλάθι</button>
             </div>
-        </div>
 
-        <div class="breakout-banner">
-            BREAKOUT: ΣΥΛΛΕΞΤΕ ΤΟΥΣ ΚΩΔΙΚΟΥΣ ΚΑΙ ΠΑΙΞΤΕ ONLINE!
-        </div>
-    </div>
-</div>
+            <div class="product-description">
+                <h3>Περιγραφή</h3>
+                <p>Προσοχή, STRINGER! Οι κακοποιοί έχουν δραπετεύσει από το Hero Factory και πρέπει να τους πιάσουμε! Σας έχουμε εξοπλίσει με προηγμένα όπλα ήχου, σκληρή θωράκιση και ειδικές μπότες μαγνητισμού. Ώρα να εντοπίσεις τον VOLTIX και να τον φέρεις πίσω στη δικαιοσύνη!</p>
+            </div>
 
+            <table class="spec-table">
+                <tr>
+                    <th>Θέμα</th>
+                    <td>LEGO® Hero Factory</td>
+                </tr>
+                <tr>
+                    <th>Έτος</th>
+                    <td>2012</td>
+                </tr>
+                <tr>
+                    <th>Κομμάτια</th>
+                    <td>42</td>
+                </tr>
+                <tr>
+                    <th>Διαστάσεις</th>
+                    <td>Ύψος πάνω από 16 εκ.</td>
+                </tr>
+            </table>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 The LEGO Group. All rights reserved. <span>Κατασκευάστηκε για εκπαιδευτικούς σκοπούς (el-GR).</span></p>
+    </footer>
+
+    <script>
+        function addToBag() {
+            const btn = document.getElementById('bag-btn');
+            // Check if product is available or out of stock
+            alert('Αυτό το προϊόν κυκλοφόρησε το 2012 και δεν είναι πλέον διαθέσιμο για αγορά.');
+        }
+    </script>
 </body>
 </html>
