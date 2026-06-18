@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="el-GR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6230 STORMER XL | Hero Factory | LEGO® Shop GR</title>
+    <link rel="icon" href="https://www.lego.com/favicon.ico" type="image/x-icon">
+    <style>
+        :root {
+            --lego-yellow: #ffcf00;
+            --lego-blue: #006cb7;
+            --text-dark: #2c2c2c;
+            --text-light: #5f5f5f;
+            --bg-light: #f8f8f8;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--lego-yellow);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .lego-logo {
+            width: 50px;
+            height: 50px;
+            background-color: #ff0000;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            border: 3px solid black;
+        }
+
+        .cart-status {
+            background: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1.2fr 0.8fr;
+            }
+        }
+
+        /* Product Images */
+        .product-images {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .main-image-container {
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .main-image {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            mix-blend-mode: multiply;
+        }
+
+        /* Product Info */
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .tag-retired {
+            background-color: #fce8e6;
+            color: #c5221f;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            width: fit-content;
+        }
+
+        .product-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+        }
+
+        .product-meta {
+            display: flex;
+            gap: 20px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        .price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .btn-add-to-cart {
+            background-color: #008543;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn-add-to-cart:hover {
+            background-color: #006834;
+        }
+
+        .btn-disabled {
+            background-color: #e0e0e0 !important;
+            color: #757575 !important;
+            cursor: not-allowed;
+        }
+
+        /* Tabs & Product Details */
+        .product-details-tabs {
+            margin-top: 40px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+
+        .tab-buttons {
+            display: flex;
+            gap: 20px;
+            border-bottom: 2px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 10px 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: var(--text-light);
+            position: relative;
+        }
+
+        .tab-btn.active {
+            color: var(--text-dark);
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--lego-blue);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Specs Table */
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .specs-table td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .specs-table td:first-child {
+            font-weight: bold;
+            width: 30%;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="lego-logo">LEGO</div>
+            <span style="font-weight: bold; letter-spacing: 1px;">HERO FACTORY</span>
+        </div>
+        <div class="cart-status" id="cart-btn">
+            🛒 Τσάντα αγορών (<span id="cart-count">0</span>)
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="breadcrumb">
+            Αρχική / Προϊόντα / Hero Factory / 6230
+        </div>
+
+        <div class="product-grid">
+            
+            <div class="product-images">
+                <div class="main-image-container">
+                    <img id="main-product-img" src="https://www.lego.com/cdn/product-assets/product.img.pri/6230_prod.jpg" alt="LEGO 6230 STORMER XL" class="main-image">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <span class="tag-retired">Παλαιότερο προϊόν</span>
+                <h1 class="product-title">STORMER XL</h1>
+                
+                <div class="product-meta">
+                    <span>Κωδικός: <strong>6230</strong></span>
+                    <span>Ηλικίες: <strong>8-16</strong></span>
+                    <span>Κομμάτια: <strong>89</strong></span>
+                </div>
+
+                <div class="price">24,99 €</div>
+
+                <p style="color: var(--text-light);">
+                    Προσοχή, STORMER! Οι κακοποιοί δραπέτευσαν από το Hero Factory και έχουν σκορπιστεί σε όλο τον γαλαξία! Έχεις εξοπλιστεί με κορυφαία τεχνολογία, αλλά χρειάζεσαι όλες τις ικανότητές σου για να τους οδηγήσεις πίσω στη δικαιοσύνη.
+                </p>
+
+                <button class="btn-add-to-cart btn-disabled" id="add-to-cart-btn" disabled>
+                    Εξαντλήθηκε
+                </button>
+                <p style="font-size: 0.85rem; color: #c5221f; text-align: center; margin-top: -5px;">
+                    Αυτό το προϊόν έχει καταργηθεί. Δεν είναι πλέον διαθέσιμο για αγορά στο LEGO.com.
+                </p>
+            </div>
+        </div>
+
+        <div class="product-details-tabs">
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="switchTab(event, 'description')">Περιγραφή</button>
+                <button class="tab-btn" onclick="switchTab(event, 'specs')">Χαρακτηριστικά</button>
+            </div>
+
+            <div id="description" class="tab-content active">
+                <h3>Αντιμετωπίστε τους Κακοποιούς με τον STORMER XL!</h3>
+                <br>
+                <p>Ετοιμαστείτε για μάχη, STORMER! Στη μεγαλύτερη κρίση που αντιμετώπισε ποτέ το Hero Factory, οι κακοποιοί απέδρασαν. Διαθέτετε πλέον μεγαλύτερο μέγεθος, ενεργειακό σπαθί πλάσματος, ηρωικό ανακλαστήρα και συσκευές ανίχνευσης για να εντοπίσετε και να συλλάβετε τους δραπέτες. Ώρα να τους δείξετε τη δύναμη της δικαιοσύνης!</p>
+                <br>
+                <ul>
+                    <li>Διαθέτει XL μέγεθος, σπαθί πλάσματος και ειδική θωράκιση Hero Factory.</li>
+                    <li>Συνδυάζεται με το σετ 6231 SPEEDA DEMON για ένα ακόμα μεγαλύτερο μοντέλο!</li>
+                    <li>Έχει ύψος πάνω από 26 εκ.</li>
+                </ul>
+            </div>
+
+            <div id="specs" class="tab-content">
+                <table class="specs-table">
+                    <tr>
+                        <td>Κωδικός Προϊόντος</td>
+                        <td>6230</td>
+                    </tr>
+                    <tr>
+                        <td>Έτος Κυκλοφορίας</td>
+                        <td>2012</td>
+                    </tr>
+                    <tr>
+                        <td>Θέμα</td>
+                        <td>LEGO® Hero Factory</td>
+                    </tr>
+                    <tr>
+                        <td>Ηλικιακή Ζώνη</td>
+                        <td>8-16 ετών</td>
+                    </tr>
+                    <tr>
+                        <td>Πλήθος Κομματιών</td>
+                        <td>89</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 The LEGO Group. Όλα τα δικαιώματα διατηρούνται. Η χρήση αυτής της τοποθεσίας Web συνεπάγεται την αποδοχή των Όρων Χρήσης.</p>
+    </footer>
+
+    <script>
+        // Tab Switching Logic
+        function switchTab(event, tabId) {
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Remove active class from all content sections
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Add active class to current button and content
+            event.currentTarget.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        // Educational/Interactive Component 
+        // Showing custom message if user interacts with the retired item
+        document.getElementById('cart-btn').addEventListener('click', () => {
+            alert('Η τσάντα αγορών σας είναι άδεια. Αυτό το προϊόν (6230) έχει καταργηθεί από το 2012.');
+        });
+    </script>
+</body>
+</html>
