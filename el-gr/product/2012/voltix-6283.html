@@ -1,233 +1,302 @@
 <!DOCTYPE html>
-<html lang="el">
+<html lang="el-GR">
 <head>
     <meta charset="UTF-8">
-    <title>6283 VOLTIX - Προϊόντα - Hero Factory - LEGO.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6283 VOLTIX | Hero Factory | LEGO® Shop GR</title>
     <style>
-        /* Internet Explorer 9 Browser UI Simulation */
-        body {
+        * {
             margin: 0;
             padding: 0;
-            background-color: #385e8a; /* IE9 Blue-ish frame */
-            font-family: "Segoe UI", Tahoma, sans-serif;
-            overflow-x: hidden;
+            box-sizing: border-box;
+            font-family: Helvetica, Arial, sans-serif;
         }
 
-        #ie-header {
-            background: linear-gradient(to bottom, #ebf2f9 0%, #d6e4f4 100%);
-            height: 60px;
-            border-bottom: 1px solid #718597;
-            display: flex;
-            align-items: center;
-            padding: 0 10px;
+        body {
+            background-color: #111;
+            color: #fff;
+            background-image: radial-gradient(circle at top, #1a2a3a 0%, #0a0a0f 100%);
         }
 
-        #address-bar {
-            background: white;
-            border: 1px solid #a0a0a0;
-            height: 24px;
-            flex-grow: 1;
-            margin: 0 10px;
-            padding: 2px 10px;
-            font-size: 13px;
-            display: flex;
-            align-items: center;
-            color: #333;
-        }
-
-        /* Hero Factory Website Styles (circa 2012) */
-        #website-viewport {
-            width: 1000px;
-            margin: 0 auto;
-            background: #000 url('https://www.lego.com/cdn/product-assets/product.img.pri/6283_prod.jpg') no-repeat center center;
-            background-size: cover;
-            min-height: 800px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.5);
-            position: relative;
-            color: white;
-            border-left: 1px solid #222;
-            border-right: 1px solid #222;
-        }
-
-        /* Overlay to darken background for readability */
-        #content-overlay {
-            background: rgba(0, 0, 0, 0.7);
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-        }
-
+        /* LEGO Header Navigation */
         header {
-            height: 120px;
-            background: rgba(0,0,0,0.8);
-            border-bottom: 3px solid #f29400; /* Hero Factory Yellow/Orange */
-            position: relative;
-            z-index: 10;
+            background-color: #ffcf00;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
 
-        #lego-logo {
-            float: left;
-            margin: 20px;
+        .lego-logo {
             width: 50px;
             height: 50px;
-            background: #ff0000;
-            color: white;
-            font-weight: bold;
-            text-align: center;
-            line-height: 50px;
-            border: 2px solid white;
-            font-family: "Arial Black", sans-serif;
-        }
-
-        nav {
-            float: right;
-            margin-top: 45px;
-            margin-right: 20px;
-        }
-
-        nav a {
-            color: #ccc;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 14px;
-        }
-
-        nav a.active { color: #f29400; }
-
-        .product-container {
-            position: relative;
-            z-index: 5;
-            padding: 40px;
+            background-color: #e60012;
             display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 1.2rem;
+            border-radius: 4px;
+            border: 2px solid #000;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            color: #000;
+            font-weight: bold;
+            list-style: none;
+        }
+
+        .lang-selector {
+            background: #000;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        /* Product Container */
+        .product-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .product-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Image Section */
+        .image-gallery {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 150, 255, 0.2);
+        }
+
+        .image-gallery::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(148,0,211,0.15) 0%, transparent 60%);
+            pointer-events: none;
         }
 
         .product-image {
-            width: 500px;
-            filter: drop-shadow(0 0 20px #00f2ff); /* Electric glow for Voltix */
+            max-width: 100%;
+            height: auto;
+            transform: scale(1);
+            transition: transform 0.3s ease;
         }
 
-        .product-info {
-            width: 400px;
-            padding-left: 40px;
+        .product-image:hover {
+            transform: scale(1.05);
         }
 
-        .product-info h1 {
-            font-size: 48px;
-            margin: 0;
+        /* Info Section */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .theme-tag {
+            color: #9400d3;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .product-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
             color: #fff;
-            text-transform: uppercase;
-            font-style: italic;
-            border-bottom: 2px solid #f29400;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
-        .product-id {
-            color: #f29400;
-            font-size: 24px;
+        .meta-info {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        .meta-item {
+            background: #222;
+            padding: 5px 10px;
+            border-radius: 4px;
+            border: 1px solid #444;
+        }
+
+        .price-tag {
+            font-size: 2rem;
             font-weight: bold;
+            color: #ffcf00;
+            margin-bottom: 20px;
         }
 
-        .description {
-            font-size: 16px;
-            line-height: 1.5;
-            color: #ddd;
-            margin-top: 20px;
+        .status-badge {
+            color: #ff4500;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
-        .cta-button {
-            background: #f29400;
-            color: black;
+        /* Buttons */
+        .cta-btn {
+            background-color: #ffcf00;
+            color: #000;
+            border: none;
             padding: 15px 30px;
-            text-decoration: none;
+            font-size: 1.2rem;
             font-weight: bold;
-            display: inline-block;
-            margin-top: 30px;
-            border-radius: 3px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 4px 15px rgba(255, 207, 0, 0.3);
             text-transform: uppercase;
+            margin-bottom: 15px;
         }
 
-        .breakout-badge {
-            position: absolute;
-            top: 140px;
-            right: 40px;
-            background: #e60000;
-            padding: 10px;
-            font-weight: bold;
-            transform: rotate(5deg);
-            border: 2px solid white;
+        .cta-btn:hover {
+            background-color: #ffe055;
+            transform: translateY(-2px);
         }
 
-        footer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 60px;
-            background: rgba(0,0,0,0.9);
-            text-align: center;
-            font-size: 11px;
-            color: #666;
+        .cta-btn:disabled {
+            background-color: #555;
+            color: #aaa;
+            box-shadow: none;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Description Tab */
+        .description-box {
+            margin-top: 30px;
+            border-top: 1px solid #333;
             padding-top: 20px;
+        }
+
+        .description-box h3 {
+            margin-bottom: 10px;
+            color: #ffcf00;
+        }
+
+        .description-box p {
+            line-height: 1.6;
+            color: #ccc;
+        }
+
+        /* Footer Notification */
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #e60012;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            display: none;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
     </style>
 </head>
 <body>
 
-<div id="ie-header">
-    <div style="font-size: 24px; color: #4c6091; margin-right: 10px;">&larr; &rarr;</div>
-    <div id="address-bar">
-        <span style="color: #008000; margin-right: 5px;">&#128274;</span> 
-        http://herofactory.lego.com/el-gr/products/6283.aspx
-    </div>
-    <div style="color: #4c6091; margin-left: 10px;">&#8981; &#9881;</div>
-</div>
-
-<div id="website-viewport">
-    <div id="content-overlay"></div>
-    
     <header>
-        <div id="lego-logo">LEGO</div>
-        <div style="float: left; padding-top: 35px; margin-left: 20px;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Lego_Hero_Factory_logo.svg/320px-Lego_Hero_Factory_logo.svg.png" alt="Hero Factory" height="50">
+        <div style="display: flex; align-items: center; gap: 20px;">
+            <div class="lego-logo">LEGO</div>
+            <ul class="nav-links">
+                <li>Παιχνίδια</li>
+                <li>Θέματα</li>
+                <li>Hero Factory</li>
+            </ul>
         </div>
-        <nav>
-            <a href="#">ΠΡΟΪΟΝΤΑ</a>
-            <a href="#">ΠΑΙΧΝΙΔΙΑ</a>
-            <a href="#">ΗΡΩΕΣ</a>
-            <a href="#" class="active">ΚΑΚΟΠΟΙΟΙ</a>
-            <a href="#">ΒΙΝΤΕΟ</a>
-        </nav>
+        <div class="lang-selector">el-GR</div>
     </header>
 
-    <div class="breakout-badge">ΑΠΌΔΡΑΣΗ!</div>
-
     <div class="product-container">
-        <div class="product-image">
-            <img src="https://www.lego.com/cdn/product-assets/product.img.pri/6283_prod.jpg" alt="Voltix" height="480">
-        </div>
         
-        <div class="product-info">
-            <div class="product-id">6283</div>
-            <h1>VOLTIX</h1>
-            <div class="description">
-                <strong>Προσοχή! Ο VOLTIX έχει δραπετεύσει!</strong><br><br>
-                Ο VOLTIX είναι ένας από τους πιο επικίνδυνους κακοποιούς που έχουν αποδράσει από το Hero Factory. Είναι οπλισμένος με εκτοξευτή ηλεκτρικής ενέργειας και είναι έτοιμος να προκαλέσει βραχυκύκλωμα σε ολόκληρη την Makuhero City! 
-                <br><br>
-                Πρέπει να τον σταματήσετε πριν υπερφορτώσει το δίκτυο!
+        <div class="image-gallery">
+            <img src="https://www.lego.com/cdn/product-assets/product.img.pri/6283_prod.jpg" alt="LEGO 6283 Voltix" class="product-image">
+        </div>
+
+        <div class="product-details">
+            <div class="theme-tag">Hero Factory</div>
+            <h1 class="product-title">VOLTIX</h1>
+            
+            <div class="meta-info">
+                <div class="meta-item">Κωδικός: <strong>6283</strong></div>
+                <div class="meta-item">Ηλικίες: <strong>7-14</strong></div>
+                <div class="meta-item">Έτος Κυκλοφορίας: <strong>2012</strong></div>
             </div>
+
+            <div class="price-tag">12,99 €</div>
             
-            <a href="http://shop.lego.com" class="cta-button">ΑΓΟΡΑΣΕ ΤΩΡΑ</a>
-            
-            <div style="margin-top: 40px; font-size: 14px;">
-                <p><strong>Ηλικίες:</strong> 9-16</p>
-                <p><strong>Κομμάτια:</strong> 61</p>
+            <div class="status-badge">
+                <i>⚠️</i> Εξαντλήθηκε (Παλιό προϊόν)
+            </div>
+
+            <button class="cta-btn" id="cartBtn" disabled>Προσθηκη στο καλαθι</button>
+            <button class="cta-btn" id="wishlistBtn" style="background: #222; color: #fff; border: 1px solid #444; font-size: 1rem; padding: 10px;">Προσθήκη στη Λίστα Επιθυμιών</button>
+
+            <div class="description-box">
+                <h3>Περιγραφή Προϊόντος</h3>
+                <p>Προσοχή, Χίροουζ! Ο VOLTIX έχει δραπετεύσει από το Hero Factory και προσπαθεί να καταστρέψει τον σταθμό παραγωγής ενέργειας Von Nebula! Εξοπλισμένος με εκτοξευτή ηλεκτρικών βολίδων, αλυσίδα κεραυνού και ενεργειακά στοιχεία υπερφόρτωσης, είναι εξαιρετικά επικίνδυνος. Στείλτε τους Χίροουζ να τον σταματήσουν πριν να είναι πολύ αργά!</p>
             </div>
         </div>
     </div>
 
-    <footer>
-        LEGO, the LEGO logo and HERO FACTORY are trademarks of the LEGO Group. &copy; 2012 The LEGO Group. All rights reserved.
-    </footer>
-</div>
+    <div class="notification" id="toast">
+        Το προϊόν προστέθηκε στη Λίστα Επιθυμιών σας!
+    </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const wishlistBtn = document.getElementById('wishlistBtn');
+            const toast = document.getElementById('toast');
+
+            wishlistBtn.addEventListener('click', () => {
+                // Show notification toast
+                toast.style.display = 'block';
+                
+                // Hide after 3 seconds
+                setTimeout(() => {
+                    toast.style.display = 'none';
+                }, 3000);
+            });
+        });
+    </script>
 </body>
 </html>
