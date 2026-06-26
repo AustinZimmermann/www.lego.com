@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOUTOR BRUXO 2283 | Hero Factory | Oficial LEGO® Shop BR</title>
-    <link rel="shortcut icon" href="https://www.lego.com/favicon.ico" type="image/x-icon">
+    <title>DOUTOR BRUXO 2283 | Hero Factory | Loja LEGO® oficial BR</title>
+    <link rel="icon" type="image/x-icon" href="https://www.lego.com/favicon.ico">
     <style>
         :root {
-            --lego-yellow: #ffcf00;
+            --lego-yellow: #f6d014;
             --lego-red: #d0011b;
-            --dark-blue: #002d62;
+            --lego-blue: #006cb7;
             --text-dark: #2c2c2c;
+            --text-light: #535353;
             --bg-light: #f8f8f8;
             --border-color: #e0e0e0;
         }
@@ -19,26 +20,25 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Cera Pro', Helvetica, Arial, sans-serif;
+            font-family: "Cera Pro", Helvetica, Arial, sans-serif;
         }
 
         body {
             background-color: #fff;
             color: var(--text-dark);
-            line-height: 1.5;
         }
 
-        /* Header Navigation */
+        /* Header */
         header {
             background-color: var(--lego-yellow);
             padding: 10px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 4px solid var(--lego-red);
+            border-bottom: 4px solid var(--text-dark);
             position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 100;
         }
 
         .logo-container {
@@ -54,24 +54,22 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-weight: 900;
-            font-size: 1.5rem;
-            border-radius: 4px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-            list-style: none;
             font-weight: bold;
+            color: white;
+            font-size: 22px;
+            border-radius: 4px;
+            border: 2px solid #000;
+            text-transform: uppercase;
+            letter-spacing: -1px;
         }
 
-        .nav-links a {
+        nav a {
+            color: var(--text-dark);
             text-decoration: none;
-            color: #000;
-            font-size: 0.9rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            margin-left: 20px;
         }
 
         /* Main Layout */
@@ -86,198 +84,165 @@
 
         @media (min-width: 768px) {
             .container {
-                grid-template-columns: 1.2fr 0.8fr;
+                grid-template-columns: 3fr 2fr;
             }
         }
 
-        /* Product Gallery */
+        /* Product Image Gallery */
         .product-gallery {
             display: flex;
             flex-direction: column;
-            gap: 15px;
-        }
-
-        .main-image-container {
+            align-items: center;
             background-color: var(--bg-light);
             border-radius: 8px;
             padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
         }
 
         .main-image {
             max-width: 100%;
             height: auto;
+            mix-blend-mode: multiply;
             transition: transform 0.3s ease;
-            cursor: zoom-in;
         }
 
         .main-image:hover {
-            transform: scale(1.05);
+            transform: scale(1.03);
         }
 
-        .hero-factory-badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: linear-gradient(45deg, #000, #333);
-            color: #fff;
-            padding: 5px 12px;
-            font-size: 0.75rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-radius: 3px;
-            border-left: 3px solid #ffcc00;
-        }
-
-        /* Product Details Panel */
+        /* Product Details */
         .product-details {
             display: flex;
             flex-direction: column;
             gap: 15px;
         }
 
-        .item-number {
-            color: #666;
-            font-size: 0.85rem;
-            font-weight: 600;
+        .tag {
+            background-color: var(--text-dark);
+            color: white;
+            padding: 4px 8px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            width: fit-content;
+            border-radius: 4px;
         }
 
         .product-title {
-            font-size: 2.2rem;
-            font-weight: 800;
+            font-size: 32px;
+            font-weight: 900;
             text-transform: uppercase;
-            line-height: 1.1;
         }
 
-        .product-meta-specs {
+        .product-meta {
             display: flex;
-            gap: 15px;
-            margin: 10px 0;
-        }
-
-        .spec-tag {
-            background-color: var(--bg-light);
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            border: 1px solid var(--border-color);
-        }
-
-        .price-tag {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--text-dark);
-            margin: 15px 0;
-        }
-
-        .stock-status {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #008a00;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .stock-dot {
-            width: 10px;
-            height: 10px;
-            background-color: #008a00;
-            border-radius: 50%;
-        }
-
-        /* Action Buttons */
-        .btn-add-to-bag {
-            background-color: var(--lego-red);
-            color: white;
-            border: none;
-            padding: 16px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background 0.2s ease, transform 0.1s ease;
-            width: 100%;
-            box-shadow: 0 4px 6px rgba(208, 1, 27, 0.2);
-        }
-
-        .btn-add-to-bag:hover {
-            background-color: #b00116;
-        }
-
-        .btn-add-to-bag:active {
-            transform: scale(0.98);
-        }
-
-        /* Accordion Description */
-        .accordion {
-            margin-top: 25px;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .accordion-item {
+            gap: 20px;
+            font-size: 14px;
+            color: var(--text-light);
             border-bottom: 1px solid var(--border-color);
-        }
-
-        .accordion-header {
-            padding: 15px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            font-weight: 700;
-            font-size: 1rem;
-        }
-
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            color: #555;
-            font-size: 0.95rem;
-            padding-bottom: 0;
-        }
-
-        .accordion-content.active {
-            max-height: 500px;
             padding-bottom: 15px;
         }
 
-        .accordion-icon {
-            transition: transform 0.3s ease;
+        .price-tag {
+            font-size: 28px;
             font-weight: bold;
+            color: var(--text-dark);
+            margin: 10px 0;
         }
 
-        .accordion-item.open .accordion-icon {
-            transform: rotate(45deg);
-        }
-
-        /* Toast Notification */
-        .toast {
-            position: fixed;
-            bottom: 20px;
-            right: -350px;
-            background-color: #323232;
-            color: white;
-            padding: 16px 24px;
-            border-radius: 4px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            z-index: 2000;
+        .status {
+            color: #008543;
+            font-weight: bold;
+            font-size: 14px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 5px;
         }
 
-        .toast.show {
-            right: 20px;
+        /* Action Buttons */
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--lego-blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #005691;
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: var(--text-dark);
+            border: 1px solid var(--text-dark);
+            margin-top: 10px;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--bg-light);
+        }
+
+        /* Specifications Table */
+        .specs-section {
+            margin-top: 30px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .specs-table td {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 14px;
+        }
+
+        .specs-table td:first-child {
+            font-weight: bold;
+            color: var(--text-light);
+            width: 40%;
+        }
+
+        /* Description Product Section */
+        .description-section {
+            grid-column: 1 / -1;
+            border-top: 1px solid var(--border-color);
+            padding-top: 30px;
+        }
+
+        .description-section h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .description-section p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+            font-size: 12px;
         }
     </style>
 </head>
@@ -286,99 +251,95 @@
     <header>
         <div class="logo-container">
             <div class="lego-logo">LEGO</div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#">LOJA</a></li>
-                    <li><a href="#">TEMAS</a></li>
-                    <li><a href="#">NOVIDADES</a></li>
-                </ul>
-            </nav>
+            <span style="font-weight: 900; letter-spacing: 1px;">HERO FACTORY</span>
         </div>
+        <nav>
+            <a href="#">Loja</a>
+            <a href="#">Produtos</a>
+            <a href="#">Novidades</a>
+        </nav>
     </header>
 
     <main class="container">
-        
         <section class="product-gallery">
-            <div class="main-image-container">
-                <span class="hero-factory-badge">Hero Factory</span>
-                <img src="https://www.lego.com/cdn/product-assets/product.img.pri/2283_prod.jpg" alt="LEGO Hero Factory Witch Doctor 2283" class="main-image" id="productImg">
-            </div>
+            <img id="product-img" src="https://www.lego.com/cdn/product-assets/product.img.pri/2283_prod.jpg" alt="LEGO Hero Factory 2283 Doutor Bruxo" class="main-image">
         </section>
 
         <section class="product-details">
-            <div>
-                <span class="item-number">Item: 2283</span>
-                <h1 class="product-title">DOUTOR BRUXO</h1>
+            <span class="tag">Item Clássico</span>
+            <h1 class="product-title">DOUTOR BRUXO</h1>
+            
+            <div class="product-meta">
+                <span><strong>Ref:</strong> 2283</span>
+                <span><strong>Idades:</strong> 10-16</span>
+                <span><strong>Peças:</strong> 331</span>
             </div>
 
-            <div class="product-meta-specs">
-                <span class="spec-tag">Idades: 10-16</span>
-                <span class="spec-tag">Peças: 331</span>
-                <span class="spec-tag">Pontos VIP: 260</span>
+            <div class="price-tag" id="price">R$ 299,99</div>
+            
+            <div class="status">
+                <span style="height: 10px; width: 10px; background-color: #008543; border-radius: 50%; display: inline-block;"></span>
+                Disponível em legacy match
             </div>
 
-            <div class="stock-status">
-                <span class="stock-dot"></span>
-                <span>Disponível agora</span>
+            <button class="btn btn-primary" id="add-to-cart">Adicionar à Sacola</button>
+            <button class="btn btn-secondary">Adicionar à Lista de Desejos</button>
+
+            <div class="specs-section">
+                <h3>Especificações</h3>
+                <table class="specs-table">
+                    <tr>
+                        <td>Dimensões</td>
+                        <td>Mais de 36 cm de altura</td>
+                    </tr>
+                    <tr>
+                        <td>Lançamento</td>
+                        <td>2011 (Série Quatros)</td>
+                    </tr>
+                    <tr>
+                        <td>Recursos</td>
+                        <td>Inclui crânio corrompido, cajado de poder Quatros e garras de combate.</td>
+                    </tr>
+                </table>
             </div>
+        </section>
 
-            <div class="price-tag">R$ 349,99</div>
-
-            <button class="btn-add-to-bag" id="addToBagBtn">Adicionar à Sacola</button>
-
-            <div class="accordion">
-                <div class="accordion-item" id="desc-item">
-                    <div class="accordion-header" onclick="toggleAccordion()">
-                        <span>Descrição do Produto</span>
-                        <span class="accordion-icon">+</span>
-                    </div>
-                    <div class="accordion-content" id="desc-content">
-                        <p>Prepare-se para enfrentar o derradeiro vilão de Quatros! O Doutor Bruxo se refugiou no coração do planeta selva e está drenando o núcleo de energia do planeta. Equipado com uma enorme foice de caveira, garras venenosas e armadura impenetrável alimentada por Quaza corrompido, ele é o maior desafio que a equipe Hero Factory já enfrentou!</p>
-                        <br>
-                        <ul>
-                            <li>Inclui foice de caveira gigante e espinhos de Quaza corrompidos.</li>
-                            <li>Medidas gigantescas: Mais de 36 cm de altura!</li>
-                            <li>Combine com os heróis para a batalha final na selva.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        <section class="description-section">
+            <h2>Derrote o Doutor Bruxo antes que ele destrua Quatros!</h2>
+            <p>
+                O ex-instrutor da Hero Factory, Aldous Witch, transformou-se no poderoso e maligno Doutor Bruxo! Ele fugiu para o planeta selva de Quatros para extrair todo o seu núcleo de energia de Quaza. Se ele conseguir, o planeta será destruído. Os heróis Rocka, Bulk, Stringer, Stormer, Nex e Furno devem detê-lo antes que ele controle os animais selvagens do planeta e cause uma catástrofe total!
+            </p>
         </section>
     </main>
 
-    <div class="toast" id="cartToast">
-        ✅ <strong>WITCH DOCTOR</strong> adicionado à sua sacola!
-    </div>
+    <footer>
+        <p>LEGO, o logotipo LEGO e Hero Factory são marcas registradas do LEGO Group. ©2026 The LEGO Group. Todos os direitos reservados.</p>
+    </footer>
 
     <script>
-        // Sistema do Accordion
-        function toggleAccordion() {
-            const item = document.getElementById('desc-item');
-            const content = document.getElementById('desc-content');
-            const icon = item.querySelector('.accordion-icon');
+        // Interatividade Simples no estilo LEGO.com
+        document.getElementById('add-to-cart').addEventListener('click', function() {
+            this.innerText = '✓ Adicionado!';
+            this.style.backgroundColor = '#008543';
             
-            if (content.classList.contains('active')) {
-                content.classList.remove('active');
-                icon.textContent = '+';
-            } else {
-                content.classList.add('active');
-                icon.textContent = '−';
-            }
-        }
-
-        // Simulação de Adicionar ao Carrinho
-        const toast = document.getElementById('cartToast');
-        document.getElementById('addToBagBtn').addEventListener('click', () => {
-            toast.classList.add('show');
             setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
+                this.innerText = 'Adicionar à Sacola';
+                this.style.backgroundColor = 'var(--lego-blue)';
+            }, 2000);
         });
 
-        // Abrir a descrição por padrão ao carregar
-        window.addEventListener('DOMContentLoaded', () => {
-            toggleAccordion();
+        // Efeito de clique na imagem para simular zoom
+        const img = document.getElementById('product-img');
+        img.addEventListener('click', () => {
+            if(img.style.transform === 'scale(1.2)') {
+                img.style.transform = 'scale(1)';
+                img.style.cursor = 'zoom-in';
+            } else {
+                img.style.transform = 'scale(1.2)';
+                img.style.cursor = 'zoom-out';
+            }
         });
+        img.style.cursor = 'zoom-in';
     </script>
 </body>
 </html>
