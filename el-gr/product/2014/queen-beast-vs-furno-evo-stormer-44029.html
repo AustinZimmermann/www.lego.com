@@ -1,302 +1,333 @@
 <!DOCTYPE html>
-<html lang="el-GR">
+<html lang="el">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Θηρίο Βασίλισσα εναντίον FURNO, EVO & STORMER 44029 | Hero Factory | LEGO® Shop GR</title>
+    <title>44029 Θηρίο Βασίλισσα εναντίον FURNO, EVO & STORMER - Hero Factory - LEGO.com</title>
     <link rel="icon" type="image/x-icon" href="https://www.lego.com/favicon.ico">
     <style>
+        /* 2014 LEGO Hero Factory Aesthetic */
         :root {
-            --lego-yellow: #FFD500;
-            --lego-red: #D11A2A;
-            --hero-blue: #005A9C;
-            --text-dark: #2C2C2C;
-            --text-light: #666666;
-            --bg-light: #F5F5F5;
-            --border-color: #E5E5E5;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --hf-blue: #005fae;
+            --hf-dark-blue: #002d62;
+            --hf-orange: #ff6f00;
+            --hf-black: #111111;
+            --hf-gray: #2a2a2a;
+            --text-light: #e0e0e0;
         }
 
         body {
-            background-color: #ffffff;
-            color: var(--text-dark);
-            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica, Arial, sans-serif;
+            background-color: var(--hf-black);
+            background-image: radial-gradient(circle, #1a3753 0%, #050b11 100%);
+            color: var(--text-light);
         }
 
-        /* LEGO Header Navigation Bar */
+        /* Archive Banner */
+        .archive-banner {
+            background-color: #ffe135;
+            color: #000;
+            text-align: center;
+            padding: 5px 0;
+            font-size: 12px;
+            font-weight: bold;
+            border-bottom: 2px solid var(--hf-orange);
+        }
+
+        /* Header */
         header {
-            background-color: var(--lego-yellow);
-            padding: 12px 20px;
+            background-color: rgba(0, 0, 0, 0.85);
+            border-bottom: 3px solid var(--hf-blue);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
             display: flex;
             align-items: center;
-            border-bottom: 3px solid #E6BF00;
+            gap: 15px;
         }
 
         .lego-logo {
-            background-color: var(--lego-red);
-            color: white;
-            font-weight: 900;
-            padding: 6px 14px;
-            font-size: 22px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border-radius: 2px;
-            margin-right: 25px;
-            user-select: none;
-        }
-
-        .breadcrumbs {
-            font-size: 13px;
-            color: #1A1A1A;
-            font-weight: 500;
-        }
-
-        /* Main Container Layout */
-        .product-container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 24px;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 50px;
-        }
-
-        @media (max-width: 850px) {
-            .product-container {
-                grid-template-columns: 1fr;
-                gap: 30px;
-                margin: 20px auto;
-            }
-        }
-
-        /* Product Gallery (Left Side) */
-        .product-gallery {
-            background-color: var(--bg-light);
-            border-radius: 12px;
+            width: 45px;
+            height: 45px;
+            background-color: #ff0000;
             display: flex;
-            justify-content: center;
             align-items: center;
-            padding: 30px;
-            border: 1px solid var(--border-color);
-            min-height: 450px;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 14px;
+            border-radius: 4px;
+            box-shadow: 0 0 5px rgba(255,255,255,0.3);
         }
 
-        .product-gallery img {
+        .hf-logo {
+            font-size: 24px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #fff;
+            text-shadow: 0 0 8px var(--hf-blue);
+        }
+
+        .nav-links a {
+            color: #aaa;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--hf-orange);
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        /* Product Image Gallery */
+        .product-gallery {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+        }
+
+        .main-img {
             max-width: 100%;
             height: auto;
-            object-fit: contain;
-            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .product-gallery img:hover {
-            transform: scale(1.04);
-        }
-
-        /* Product Info (Right Side) */
-        .theme-badge {
-            display: inline-block;
-            background-color: var(--hero-blue);
-            color: white;
-            padding: 5px 12px;
-            font-weight: bold;
-            font-size: 11px;
-            text-transform: uppercase;
-            border-radius: 3px;
-            margin-bottom: 12px;
-            letter-spacing: 1px;
-        }
-
-        .product-title {
-            font-size: 34px;
-            font-weight: 800;
-            color: #000000;
-            margin-bottom: 8px;
-            line-height: 1.2;
-        }
-
-        .set-specifications {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px 25px;
-            margin-bottom: 25px;
-            font-size: 14px;
-            color: var(--text-light);
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 20px;
-        }
-
-        .spec-item strong {
-            color: #000000;
-        }
-
-        .pricing-block {
-            margin-bottom: 25px;
-        }
-
-        .price-tag {
-            font-size: 32px;
-            font-weight: 700;
-            color: #000000;
-        }
-
-        .availability-status {
-            color: var(--lego-red);
-            font-weight: 700;
-            font-size: 14px;
-            margin-top: 4px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        /* Retired Product Alert Box */
-        .retired-notice {
-            background-color: #FFF9E6;
-            border-left: 4px solid #FFB800;
-            padding: 16px;
-            margin-bottom: 30px;
             border-radius: 4px;
-            font-size: 14px;
-            color: #555555;
+            transition: transform 0.3s ease;
         }
 
-        .product-description {
-            margin-bottom: 30px;
-            color: #333333;
-            font-size: 16px;
-            line-height: 1.7;
+        .main-img:hover {
+            transform: scale(1.02);
         }
 
-        .features-heading {
+        /* Product Info */
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .set-number {
             font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: #000000;
+            color: var(--hf-orange);
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
         }
 
-        .features-bullet-list {
-            margin-bottom: 35px;
+        h1 {
+            font-size: 32px;
+            margin: 0 0 20px 0;
+            color: #fff;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .spec-tags {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .tag {
+            background-color: var(--hf-gray);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: bold;
+            border: 1px solid #444;
+        }
+
+        .description {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        /* Interactive Action Box */
+        .action-box {
+            background: linear-gradient(135deg, var(--hf-dark-blue) 0%, #001530 100%);
+            border-left: 5px solid var(--hf-orange);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 25px;
+        }
+
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background-color: #2e7d32;
+            color: white;
+            padding: 4px 8px;
+            font-size: 12px;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            background-color: var(--hf-orange);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .btn:hover {
+            background-color: #e65100;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Features Section */
+        .features-section {
+            grid-column: 1 / -1;
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            border-radius: 8px;
+            border-top: 2px solid var(--hf-blue);
+        }
+
+        .features-section h2 {
+            color: #fff;
+            margin-top: 0;
+            font-size: 22px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+
+        .features-list {
+            margin: 0;
             padding-left: 20px;
         }
 
-        .features-bullet-list li {
+        .features-list li {
             margin-bottom: 10px;
-            color: #444444;
-            font-size: 15px;
+            line-height: 1.5;
         }
 
-        /* Disabled CTA Button */
-        .cta-button-disabled {
-            display: block;
-            background-color: #EBEBEB;
-            color: #999999;
-            padding: 16px 32px;
-            font-size: 16px;
-            font-weight: 700;
-            border: 1px solid #D8D8D8;
-            border-radius: 4px;
-            cursor: not-allowed;
-            text-transform: uppercase;
-            width: 100%;
+        /* Footer */
+        footer {
+            background-color: #050505;
             text-align: center;
-            letter-spacing: 0.5px;
-            transition: background-color 0.2s ease;
+            padding: 30px;
+            font-size: 12px;
+            color: #666;
+            margin-top: 60px;
+            border-top: 1px solid #222;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
 
+    <div class="archive-banner">
+        Αυτό είναι ένα ψηφιοποιημένο αντίγραφο αρχείου του LEGO.com/HeroFactory από τις 14 Αυγούστου 2014.
+    </div>
+
     <header>
-        <div class="lego-logo">LEGO</div>
-        <div class="breadcrumbs">Αρχική σελίδα &gt; Θέματα &gt; Hero Factory &gt; Προϊόντα &gt; 44029</div>
+        <div class="logo-container">
+            <div class="lego-logo">LEGO</div>
+            <div class="hf-logo">Hero Factory</div>
+        </div>
+        <nav class="nav-links">
+            <a href="#" class="active">Προϊόντα</a>
+            <a href="#">Παιχνίδια</a>
+            <a href="#">Ήρωες</a>
+            <a href="#">Βίντεο</a>
+        </nav>
     </header>
 
-    <main class="product-container">
+    <div class="container">
         
-        <section class="product-gallery">
-            <img id="set-image" src="https://www.lego.com/cdn/product-assets/product.img.pri/44029_prod.jpg" alt="44029 LEGO Hero Factory">
-        </section>
+        <div class="product-gallery">
+            <img src="https://www.lego.com/cdn/product-assets/product.img.pri/44029_prod.jpg" alt="44029 Θηρίο Βασίλισσα εναντίον FURNO, EVO & STORMER" class="main-img">
+        </div>
 
-        <section class="product-details-panel">
-            <span class="theme-badge" id="set-theme">...</span>
-            <h1 class="product-title" id="set-title">...</h1>
+        <div class="product-info">
+            <div class="set-number">44029</div>
+            <h1>Θηρίο Βασίλισσα εναντίον FURNO, EVO & STORMER</h1>
             
-            <div class="set-specifications">
-                <div class="spec-item">Κωδικός: <strong id="set-id">...</strong></div>
-                <div class="spec-item">Ηλικίες: <strong id="set-ages">...</strong></div>
-                <div class="spec-item">Κομμάτια: <strong id="set-pieces">...</strong></div>
-                <div class="spec-item">Έτος Κυκλοφορίας: <strong id="set-year">...</strong></div>
+            <div class="spec-tags">
+                <div class="tag">Ηλικίες: 8-14</div>
+                <div class="tag">Κομμάτια: 217</div>
             </div>
 
-            <div class="pricing-block">
-                <div class="price-tag" id="set-price">...</div>
-                <div class="availability-status">
-                    <span id="set-status">...</span>
-                </div>
+            <div class="description">
+                EVO, ενεργοποίησε το εξαπλό shooter και απώθησε το απόλυτο τέρας, τη Θηρίο Βασίλισσα! Οι STORMER, FURNO και EVO πρέπει να συνεργαστούν για να νικήσουν αυτό το γιγάντιο ον που απειλεί την Αντρόπολις Σίτυ. Πρόσεξε τα τεράστια μάτια της, τις κινούμενες δαγκάνες και την ικανότητά της να παγιδεύει τους ήρωες στους κλωβούς της! 
             </div>
 
-            <div class="retired-notice">
-                <strong>Σημείωση συλλεκτών:</strong> Αυτό το κλασικό προϊόν Hero Factory κυκλοφόρησε το 2014 και έχει πλέον αποσυρθεί επίσημα από τη LEGO. Δεν είναι πλέον διαθέσιμο για αγορά από το ηλεκτρονικό κατάστημα.
+            <div class="action-box">
+                <div class="price">€34.99</div>
+                <div class="status-badge">ΔΙΑΘΕΣΙΜΟ ΤΩΡΑ</div>
+                <button class="btn" onclick="addToCart()">Προσθηκη στο καλαθι</button>
             </div>
+        </div>
 
-            <p class="product-description" id="set-description">...</p>
-            
-            <h2 class="features-heading">Χαρακτηριστικά Προϊόντος</h2>
-            <ul class="features-bullet-list" id="set-features"></ul>
+        <div class="features-section">
+            <h2>Χαρακτηριστικά Προϊόντος</h2>
+            <ul class="features-list">
+                <li>Περιλαμβάνει τις μίνι φιγούρες ρομπότ των <strong>FURNO, EVO και STORMER</strong> με όπλα.</li>
+                <li>Η <strong>Θηρίο Βασίλισσα (Queen Beast)</strong> διαθέτει κινούμενα σαγόνια, τεράστια φτερά, δαγκάνες αρπαγής και ειδικούς κλωβούς μεταφοράς στην πλάτη της για να αιχμαλωτίζει τους Ήρωες.</li>
+                <li>Περιλαμβάνει το πανίσχυρο όχημα-περιπατητή (Walker) του EVO με λειτουργικό εξαπλό εκτοξευτή (stud shooter).</li>
+                <li>Συνδύασέ το με το 44024 (Θηρίο Σκάφος) και το 44026 (CRYSTAL Beast) για να δημιουργήσεις ένα ακόμα μεγαλύτερο τέρας!</li>
+                <li>Η Θηρίο Βασίλισσα έχει ύψος πάνω από 26 εκατοστά!</li>
+            </ul>
+        </div>
 
-            <button class="cta-button-disabled" disabled>Το προϊόν έχει αποσυρθεί</button>
-        </section>
-    </main>
+    </div>
+
+    <footer>
+        <p>LEGO, το λογότυπο LEGO και το HERO FACTORY είναι εμπορικά σήματα του Ομίλου LEGO. ©2014 The LEGO Group. Με επιφύλαξη παντός δικαιώματος.</p>
+    </footer>
 
     <script>
-        // Πλήρη δεδομένα του προϊόντος σε μορφή JSON (Αντιστοιχία αρχείου data.json)
-        const legoProductData = {
-            "set_id": "44029",
-            "title": "Θηρίο Βασίλισσα εναντίον FURNO, EVO & STORMER",
-            "theme": "Hero Factory",
-            "release_year": 2014,
-            "ages": "8-14",
-            "pieces": 218,
-            "price_gr": "34.99€",
-            "status_gr": "Αποσυρθέν Προϊόν",
-            "description": "EVO, STORMER και FURNO, στην επίθεση! Η τρομερή Θηρίο Βασίλισσα έχει αιχμαλωτίσει τους απίθανους Ήρωες και τους κρατά φυλακισμένους σε ένα σκοτεινό κουκούλι βαθιά κάτω από τους δρόμους της Αντρόπολις Σίτυ. Κάντε χρήση των τρομερών όπλων και των Walker οχημάτων σας για να διαπεράσετε την άμυνα των Τζαμπέρ, να νικήσετε τη Βασίλισσα με τις τεράστιες δαγκάνες της και να απελευθερώσετε την ομάδα σας πριν να είναι πολύ αργά!",
-            "features": [
-                "Περιλαμβάνει 3 μίνι ρομπότ-ήρωες με όπλα: FURNO, EVO και STORMER.",
-                "Το Θηρίο Βασίλισσα διαθέτει κινούμενα σαγόνια, τεράστια χέρια με δαγκάνες, φτερά, 6 μάτια και ένα ανοιγόμενο κουκούλι για την αιχμαλωσία των Χίροουζ.",
-                "Περιλαμβάνει το Walker όχημα με ανοιγόμενο πιλοτήριο, εκτοξευτή πυραύλων και λειτουργικά εξαρτήματα.",
-                "Περιλαμβάνει 1 Τζαμπέρ που ενεργοποιείται με ένα κλικ.",
-                "Όπλα που περιλαμβάνονται: κανόνι πλάσματος, λέιζερ εκτοξευτές και ενεργειακές ράβδοι.",
-                "Το Θηρίο Βασίλισσα έχει ύψος πάνω από 26 εκατοστά!"
-            ]
-        };
-
-        // Λειτουργία απόδοσης (Render) δεδομένων στην ιστοσελίδα
-        document.addEventListener("DOMContentLoaded", () => {
-            // Αντιστοίχιση των πεδίων JSON στα στοιχεία του DOM
-            document.getElementById("set-title").innerText = legoProductData.title;
-            document.getElementById("set-theme").innerText = legoProductData.theme;
-            document.getElementById("set-id").innerText = legoProductData.set_id;
-            document.getElementById("set-ages").innerText = legoProductData.ages;
-            document.getElementById("set-pieces").innerText = legoProductData.pieces;
-            document.getElementById("set-year").innerText = legoProductData.release_year;
-            document.getElementById("set-price").innerText = legoProductData.price_gr;
-            document.getElementById("set-status").innerText = legoProductData.status_gr;
-            document.getElementById("set-description").innerText = legoProductData.description;
-
-            // Δυναμική δημιουργία της λίστας χαρακτηριστικών
-            const featuresListContainer = document.getElementById("set-features");
-            legoProductData.features.forEach(featureText => {
-                const listItem = document.createElement("li");
-                listItem.innerText = featureText;
-                featuresListContainer.appendChild(listItem);
-            });
-        });
+        function addToCart() {
+            alert("Το προϊόν '44029 Θηρίο Βασίλισσα εναντίον FURNO, EVO & STORMER' προστέθηκε με επιτυχία στο καλάθι αγορών σας!");
+        }
     </script>
 </body>
 </html>
