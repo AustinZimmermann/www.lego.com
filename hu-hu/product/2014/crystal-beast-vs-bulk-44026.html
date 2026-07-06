@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRYSTAL Beast vs. BULK - 44026 - LEGO® Hero Factory</title>
+    <style>
+        /* 2014 Hero Factory Global Theme Variables */
+        :root {
+            --bg-dark: #070b12;
+            --panel-bg: rgba(16, 23, 38, 0.85);
+            --hf-blue: #0099ff;
+            --crystal-purple: #9d00ff;
+            --neon-green: #39ff14;
+            --text-light: #e2e8f0;
+            --accent-orange: #ff6a00;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial Black', 'Impact', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(circle at 50% 20%, rgba(0, 153, 255, 0.2), transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(157, 0, 255, 0.15), transparent 40%);
+            color: var(--text-light);
+            overflow-x: hidden;
+        }
+
+        /* Hero Factory Navigation Bar Wrap */
+        header {
+            background: linear-gradient(180deg, #000 60%, #111 100%);
+            border-bottom: 3px solid var(--hf-blue);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0, 153, 255, 0.4);
+        }
+
+        .lego-logo {
+            background-color: #ff0000;
+            color: #fff;
+            padding: 8px 12px;
+            font-weight: bold;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            border: 2px solid #fff;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .hf-logo-text {
+            color: #fff;
+            font-size: 20px;
+            text-transform: uppercase;
+            font-style: italic;
+            text-shadow: 0 0 10px var(--hf-blue);
+        }
+
+        .lang-select {
+            background: #222;
+            color: #fff;
+            border: 1px solid #555;
+            padding: 3px 8px;
+            font-size: 12px;
+            font-family: sans-serif;
+        }
+
+        /* Main Container */
+        .wrapper {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* Breadcrumb tracking */
+        .breadcrumb {
+            font-family: sans-serif;
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .breadcrumb a {
+            color: var(--hf-blue);
+            text-decoration: none;
+        }
+
+        /* Product Showcase Grid Layout */
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1.2fr 1fr;
+            }
+        }
+
+        /* Visual Media Window */
+        .media-window {
+            background: var(--panel-bg);
+            border: 2px solid #1e293b;
+            border-radius: 8px;
+            padding: 20px;
+            position: relative;
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.8), 0 8px 16px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .media-window::before {
+            content: "INVASION FROM BELOW";
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-size: 11px;
+            color: var(--accent-orange);
+            letter-spacing: 2px;
+        }
+
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.7));
+            transition: transform 0.3s ease;
+        }
+
+        .product-image:hover {
+            transform: scale(1.03);
+        }
+
+        /* Product Info panel */
+        .info-panel {
+            background: var(--panel-bg);
+            border-left: 5px solid var(--crystal-purple);
+            border-radius: 4px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .set-number {
+            color: var(--hf-blue);
+            font-size: 16px;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        h1 {
+            font-size: 32px;
+            line-height: 1.1;
+            text-transform: uppercase;
+            color: #fff;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 0px #000;
+        }
+
+        .age-pieces {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-family: sans-serif;
+            font-size: 14px;
+            background: rgba(0,0,0,0.4);
+            padding: 8px 12px;
+            border-radius: 4px;
+            width: fit-content;
+        }
+
+        .age-pieces span {
+            color: #aaa;
+        }
+        .age-pieces strong {
+            color: #fff;
+        }
+
+        /* Hungarian Translation Story Text */
+        .description-box {
+            font-family: sans-serif;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #cbd5e1;
+            margin-bottom: 25px;
+            background: rgba(255,255,255,0.03);
+            padding: 15px;
+            border-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .action-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* Interface Buttons */
+        .btn {
+            display: block;
+            text-align: center;
+            padding: 15px 25px;
+            font-size: 16px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+        }
+
+        .btn-orange {
+            background: linear-gradient(135deg, #ff8c00 0%, #ff5500 100%);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(255, 85, 0, 0.4);
+            border-bottom: 4px solid #b33c00;
+        }
+
+        .btn-orange:hover {
+            background: linear-gradient(135deg, #ff9d24 0%, #ff6613 100%);
+            transform: translateY(-2px);
+        }
+
+        .btn-blue {
+            background: linear-gradient(135deg, #0077cc 0%, #0055aa 100%);
+            color: #fff;
+            font-size: 14px;
+            padding: 10px 20px;
+            border-bottom: 4px solid #003366;
+        }
+
+        .btn-blue:hover {
+            background: linear-gradient(135deg, #0088ee 0%, #0066cc 100%);
+        }
+
+        /* Interactive Tabs Structure */
+        .tabs-section {
+            margin-top: 40px;
+            background: var(--panel-bg);
+            border-radius: 8px;
+            border: 1px solid #1e293b;
+            overflow: hidden;
+        }
+
+        .tab-headers {
+            display: flex;
+            background: #0d1527;
+            border-bottom: 2px solid #1e293b;
+        }
+
+        .tab-link {
+            padding: 15px 20px;
+            background: none;
+            border: none;
+            color: #888;
+            cursor: pointer;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .tab-link:hover {
+            background: rgba(255,255,255,0.02);
+            color: #fff;
+        }
+
+        .tab-link.active {
+            color: var(--neon-green);
+            background: var(--panel-bg);
+            border-bottom: 2px solid var(--neon-green);
+            margin-bottom: -2px;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 25px;
+            font-family: sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #94a3b8;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .tab-content ul {
+            list-style-type: square;
+            margin-left: 20px;
+            color: #cbd5e1;
+        }
+
+        .tab-content li {
+            margin-bottom: 8px;
+        }
+
+        /* Footer Copyright Block */
+        footer {
+            margin-top: 60px;
+            background: #000;
+            padding: 30px 20px;
+            text-align: center;
+            font-family: sans-serif;
+            font-size: 12px;
+            color: #555;
+            border-top: 1px solid #222;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <div class="lego-logo">LEGO</div>
+            <div class="hf-logo-text">Hero Factory</div>
+        </div>
+        <div>
+            <select class="lang-select">
+                <option value="hu-HU" selected>Magyar (hu-HU)</option>
+            </select>
+        </div>
+    </header>
+
+    <div class="wrapper">
+        
+        <div class="breadcrumb">
+            <a href="#">Kezdőlap</a> &raquo; <a href="#">Termékek</a> &raquo; CRYSTAL Beast vs. BULK
+        </div>
+
+        <div class="product-grid">
+            
+            <div class="media-window">
+                <img class="product-image" src="https://www.lego.com/cdn/product-assets/product.img.pri/44026_prod.jpg" alt="LEGO Hero Factory 44026 CRYSTAL Beast vs. BULK">
+            </div>
+
+            <div class="info-panel">
+                <div class="set-number">44026</div>
+                <h1>CRYSTAL Beast vs. BULK</h1>
+                
+                <div class="age-pieces">
+                    <div>Életkor: <strong>7-14</strong></div>
+                    <div>|</div>
+                    <div>Elemek száma: <strong>83</strong></div>
+                </div>
+
+                <div class="description-box">
+                    Vigyázz, BULK! Egy veszélyes, új fenevad faj garázdálkodik az alvilágban – a félelmetes KRISTÁLY Fenevad. Öltsd fel a sugárhajtású bakancsodat, merészkedj a város utcái alá, és mentsd meg a fogságba esett hősöket! Kerüld el a szörnyeteg mérgező kristálytüskéit és markoló karmait. Lőj pontosan a klikk-kilövővel, mielőtt a fenevad elkapna a hatalmas kristályfogó botjával, és gubóba zárna!
+                </div>
+
+                <div class="action-container">
+                    <button class="btn btn-orange" onclick="alert('Kosárba helyezve! (Szimuláció - Archívum dátuma: 2014. augusztus 7.)')">Vásárlás</button>
+                    <a href="https://www.lego.com/en-us/service/buildinginstructions/44026" target="_blank" class="btn btn-blue">Építési útmutató letöltése (PDF)</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="tabs-section">
+            <div class="tab-headers">
+                <button class="tab-link active" onclick="openTab(event, 'jellemzok')">Jellemzők</button>
+                <button class="tab-link" onclick="openTab(event, 'doboz')">Részletek</button>
+                <button class="tab-link" onclick="openTab(event, 'kombinalas')">Kombinációs Modell</button>
+            </div>
+
+            <div id="jellemzok" class="tab-content active">
+                <ul>
+                    <li>A készlet tartalmaz egy <strong>BULK mini robotot</strong> fegyverrel és kiegészítőkkel.</li>
+                    <li>A fenevad jellemzői: mozgatható állkapocs, markoló karmok, mérgező kristálytüskék, kristályfogó bot, pozicionálható ízületek és áttetsző elemek.</li>
+                    <li>Tartalmaz egy klikk-kilövőt és sugárhajtású bakancsot BULK számára.</li>
+                    <li>Egy átlátszó, mérgező zöld gubót (cocoon) is találsz a csomagban.</li>
+                    <li>Támadj a KRISTÁLY Fenevad markoló karmaival!</li>
+                    <li>Ragadd meg BULK-ot a kristályfogó bottal és zárd be a hőst a gubóba!</li>
+                    <li>A szörny magassága álló helyzetben meghaladja a <strong>23 cm-t</strong>.</li>
+                </ul>
+            </div>
+
+            <div id="doboz" class="tab-content">
+                <p style="margin-bottom: 10px;"><strong>Gyártási év:</strong> 2014</p>
+                <p style="margin-bottom: 10px;"><strong>Téma:</strong> Hero Factory - Invasion From Below (Támadás a mélyből)</p>
+                <p><strong>Csomagolás méretei:</strong> 19.5 cm x 28 cm x 7.5 cm (Fóliatasakos kiadás)</p>
+            </div>
+
+            <div id="kombinalas" class="tab-content">
+                <p>Kombináld a <strong>44024 TUNNELER Beast</strong> és a <strong>44029 QUEEN Beast</strong> készletekkel egy még félelmetesebb, gigantikus szörnyeteg megépítéséhez!</p>
+                <p style="margin-top: 10px; color: var(--hf-blue);">Az extra építési útmutatók elérhetők a LEGO.com/herofactory weboldalon.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>LEGO, a LEGO logó és a Hero Factory a LEGO Csoport védjegyei. ©2014-2026 A LEGO Csoport. Minden jog fenntartva.</p>
+        <p style="color: #333; font-size: 10px;">Ez a felület egy történeti HTML/CSS/JS rekonstrukció a LEGO.com/HeroFactory 2014. augusztus 7-i magyar nyelvű állapotának emlékére.</p>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
