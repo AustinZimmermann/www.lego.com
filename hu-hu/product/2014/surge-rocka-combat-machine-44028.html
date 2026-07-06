@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEGO.com/HeroFactory - SURGE & ROCKA Harci Gép (44028)</title>
+    <style>
+        /* Retro 2014 LEGO Hero Factory Aesthetic */
+        :root {
+            --bg-dark: #060b11;
+            --hf-blue: #0072bc;
+            --hf-cyan: #00d2ff;
+            --hf-orange: #ff6a00;
+            --hf-yellow: #ffcc00;
+            --text-light: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            background-image: radial-gradient(circle at 50% 30%, #112233 0%, #060b11 70%);
+            color: var(--text-light);
+            overflow-x: hidden;
+        }
+
+        /* Top Bar & Header */
+        header {
+            background: linear-gradient(180deg, #111 0%, #222 100%);
+            border-bottom: 3px solid var(--hf-blue);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0, 114, 188, 0.4);
+        }
+
+        .lego-logo {
+            background-color: #ff0000;
+            color: #fff;
+            font-weight: bold;
+            padding: 5px 10px;
+            font-size: 20px;
+            border-radius: 4px;
+            text-shadow: 2px 2px #000;
+            display: inline-block;
+        }
+
+        .hf-logo-text {
+            color: var(--hf-cyan);
+            font-weight: 900;
+            letter-spacing: 2px;
+            font-style: italic;
+            font-size: 22px;
+            text-transform: uppercase;
+        }
+
+        .archive-tag {
+            background: rgba(255, 106, 0, 0.2);
+            border: 1px solid var(--hf-orange);
+            color: var(--hf-orange);
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+
+        /* Main Showcase Area */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .container { grid-template-columns: 1fr; }
+        }
+
+        /* Interactive Visual Gallery */
+        .product-gallery {
+            background: rgba(10, 20, 30, 0.6);
+            border: 2px solid #1a3a5a;
+            border-radius: 12px;
+            padding: 20px;
+            position: relative;
+            box-shadow: inset 0 0 30px rgba(0, 210, 255, 0.1);
+        }
+
+        .main-img-wrap {
+            width: 100%;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #000;
+            border: 1px solid var(--hf-blue);
+            position: relative;
+        }
+
+        .main-img-wrap img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .hud-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            pointer-events: none;
+            box-shadow: inset 0 0 40px rgba(0,212,255,0.2);
+        }
+
+        .hud-corner {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 2px solid var(--hf-cyan);
+        }
+        .tl { top: 10px; left: 10px; border-right: 0; border-bottom: 0; }
+        .tr { top: 10px; right: 10px; border-left: 0; border-bottom: 0; }
+        .bl { bottom: 10px; left: 10px; border-right: 0; border-top: 0; }
+        .br { bottom: 10px; right: 10px; border-left: 0; border-top: 0; }
+
+        /* Product Specifications Text */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .set-meta {
+            color: var(--hf-cyan);
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #fff;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            line-height: 1.1;
+            text-shadow: 0 0 10px rgba(0, 114, 188, 0.6);
+        }
+
+        .description-hu {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #bdc3c7;
+            margin-bottom: 25px;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .features-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #e2e8f0;
+        }
+
+        .features-list li::before {
+            content: "➔";
+            position: absolute;
+            left: 0;
+            color: var(--hf-orange);
+            font-weight: bold;
+        }
+
+        /* Action HUD Simulator Terminal */
+        .hud-terminal {
+            background: #02060c;
+            border: 1px solid var(--hf-cyan);
+            border-radius: 6px;
+            padding: 15px;
+            font-family: monospace;
+            color: #00ffcc;
+            margin-top: 15px;
+        }
+
+        .hud-terminal-header {
+            border-bottom: 1px solid rgba(0, 255, 204, 0.3);
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn-action {
+            background: linear-gradient(180deg, var(--hf-orange) 0%, #cc5500 100%);
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 106, 0, 0.4);
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .btn-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 106, 0, 0.6);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            margin-top: 60px;
+            font-size: 12px;
+            color: #555;
+            border-top: 1px solid #112233;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div>
+            <span class="lego-logo">LEGO</span>
+            <span class="hf-logo-text"> / HERO FACTORY</span>
+        </div>
+        <div class="archive-tag">Archívum: 2014. augusztus 7.</div>
+    </header>
+
+    <div class="container">
+        <div class="product-gallery">
+            <div class="main-img-wrap">
+                <img id="product-image" src="https://www.lego.com/cdn/product-assets/product.img.pri/44028_prod.jpg" alt="44028 SURGE & ROCKA Combat Machine">
+                <div class="hud-overlay">
+                    <div class="hud-corner tl"></div>
+                    <div class="hud-corner tr"></div>
+                    <div class="hud-corner bl"></div>
+                    <div class="hud-corner br"></div>
+                </div>
+            </div>
+
+            <div class="hud-terminal">
+                <div class="hud-terminal-header">
+                    <span>RENDSZERÁLLAPOT: ONLINE</span>
+                    <span id="weapon-energy">ENERGIA: 100%</span>
+                </div>
+                <div id="terminal-log">Készen áll az indításra. Válassz harci üzemmódot...</div>
+            </div>
+        </div>
+
+        <div class="product-details">
+            <div class="set-meta">Készlet: 44028 • Korosztály: 8-14 • Elemek száma: 188</div>
+            <h1>SURGE & ROCKA<br>Harci Gép</h1>
+            
+            <div class="description-hu">
+                Munkára fel, SURGE és ROCKA! Támadjátok meg a kikelő ugrókat, és tisztítsátok meg az utat a többi hős előtt, hogy megtalálhassák a Királynő fészkét ezzel a lenyűgöző Harci Géppel. SURGE pilóta – engedd szabadjára a hatos pöccintős rakétasort, és tüzelj a nagy erejű kilövővel, hogy visszaverd a gonosz fenevadak raját!
+            </div>
+
+            <ul class="features-list">
+                <li><strong>Repülő üzemmód:</strong> Válaszd le a felső részt, kapcsold be a repülést ROCKA co-pilótával!</li>
+                <li><strong>Fegyverzet:</strong> 6-os pöccintős rakétasor, forgó kilövők és áttetsző elemek.</li>
+                <li><strong>Kiegészítők:</strong> Tartalmaz SURGE és ROCKA mini robotokat fegyverekkel, egy gubót és 2 ugrót (jumpers).</li>
+                <li><strong>Kombinálható:</strong> Cseréld fel a felső részt a 44025 BULK fúrópörgővel vagy a 44027 BREEZ bolhagépével!</li>
+                <li><strong>Méretek:</strong> A harci gép álló helyzetben több mint 24 cm magas!</li>
+            </ul>
+
+            <button class="btn-action" onclick="activateCombatHUD()">TÁMADÁS INDÍTÁSA!</button>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2014-2026 The LEGO Group. Minden jog fenntartva. Az oldal a LEGO.com/herofactory 2014. augusztusi verziójának hű másolata szórakoztató és nosztalgia célból.
+    </footer>
+
+    <script>
+        // Interactive HUD Experience Simulation
+        const logs = [
+            "SURGE bejelentkezett. Elsődleges hajtóművek aktívak.",
+            "ROCKA levált repülő üzemmódba! A helikopter készen áll.",
+            "VIGYÁZAT! Gubó észlelve a közelben. Ugrók kelnek ki!",
+            "Tűz parancs kiadva! 6-os pöccintős rakétasor kilőve.",
+            "A fenevadak megfutamodtak. Út megtisztítva a Királynő fészkéhez!"
+        ];
+        let currentLogIndex = 0;
+        let energy = 100;
+
+        function activateCombatHUD() {
+            const logBox = document.getElementById('terminal-log');
+            const energyBox = document.getElementById('weapon-energy');
+            const img = document.getElementById('product-image');
+
+            // Soundless Visual effect on click
+            img.style.transform = 'scale(1.05)';
+            setTimeout(() => img.style.transform = 'scale(1)', 150);
+
+            // Cycle through story-driven combat updates
+            logBox.innerText = logs[currentLogIndex];
+            currentLogIndex = (currentLogIndex + 1) % logs.length;
+
+            // Reduce energy dynamically
+            energy -= 15;
+            if (energy < 10) energy = 100; // Auto reload
+            energyBox.innerText = `ENERGIA: ${energy}%`;
+            energyBox.style.color = energy < 40 ? '#ff6a00' : '#00ffcc';
+        }
+    </script>
+</body>
+</html>
