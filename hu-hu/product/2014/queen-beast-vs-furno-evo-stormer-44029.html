@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEGO® Hero Factory - QUEEN Beast vs. FURNO, EVO & STORMER (44029)</title>
+    <style>
+        /* Korabeli LEGO Hero Factory sötét, sci-fi / neon-zöld és fémhangulatú stílusa */
+        body {
+            background-color: #0d1117;
+            color: #e6edf3;
+            font-family: 'Arial Black', 'Impact', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: radial-gradient(circle, #1a2333 0%, #080b10 100%);
+        }
+
+        header {
+            background: linear-gradient(180deg, #1f293d 0%, #0d1117 100%);
+            border-bottom: 3px solid #00ffcc;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .lego-logo {
+            background-color: #ff0000;
+            color: #ffffff;
+            font-weight: bold;
+            padding: 10px 15px;
+            font-family: 'Arial', sans-serif;
+            border: 2px solid #ffffff;
+            font-size: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hf-logo {
+            color: #ffcc00;
+            font-size: 24px;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px #ff9900;
+        }
+
+        .archive-tag {
+            font-size: 11px;
+            color: #8b949e;
+            font-family: monospace;
+        }
+
+        .main-container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 20px;
+            background: rgba(13, 17, 23, 0.85);
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            box-shadow: 0 0 25px rgba(0, 255, 204, 0.1);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .product-image-container {
+            text-align: center;
+            background: #161b22;
+            padding: 20px;
+            border-radius: 6px;
+            border: 2px solid #21262d;
+            position: relative;
+        }
+
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+        }
+
+        .age-pieces {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 14px;
+        }
+
+        .badge {
+            background-color: #21262d;
+            border: 1px solid #00ffcc;
+            padding: 5px 15px;
+            border-radius: 20px;
+            color: #00ffcc;
+        }
+
+        .product-details h1 {
+            color: #ffffff;
+            font-size: 28px;
+            margin-top: 0;
+            text-transform: uppercase;
+            border-bottom: 2px solid #30363d;
+            padding-bottom: 10px;
+        }
+
+        .set-number {
+            color: #ff9900;
+            font-size: 20px;
+        }
+
+        .story-box {
+            background: linear-gradient(90deg, #1f242c 0%, #0d1117 100%);
+            border-left: 4px solid #ff0055;
+            padding: 15px;
+            margin: 20px 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        .features-list {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            padding-left: 20px;
+        }
+
+        .features-list li {
+            margin-bottom: 8px;
+        }
+
+        /* Interaktív Játékos Zóna */
+        .battle-zone {
+            margin-top: 40px;
+            background: #161b22;
+            border: 2px dashed #00ffcc;
+            padding: 20px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .battle-zone h3 {
+            color: #00ffcc;
+            margin-top: 0;
+            text-transform: uppercase;
+        }
+
+        .game-canvas {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            width: 100%;
+            height: 150px;
+            margin-top: 15px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .game-btn {
+            background-color: #ff9900;
+            color: #000;
+            border: none;
+            padding: 10px 25px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+            border-radius: 4px;
+            transition: 0.2s;
+        }
+
+        .game-btn:hover {
+            background-color: #00ffcc;
+            box-shadow: 0 0 10px #00ffcc;
+        }
+
+        .jumper {
+            width: 25px;
+            height: 25px;
+            background-color: #ff5500;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+            box-shadow: 0 0 8px #ff5500;
+        }
+
+        .missile {
+            width: 15px;
+            height: 6px;
+            background-color: #00ffcc;
+            position: absolute;
+            bottom: 20px;
+            right: 50px;
+            display: none;
+            box-shadow: 0 0 8px #00ffcc;
+        }
+
+        .score-board {
+            font-size: 14px;
+            color: #8b949e;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 12px;
+            color: #8b949e;
+            border-top: 1px solid #30363d;
+            margin-top: 50px;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-area">
+            <div class="lego-logo">LEGO</div>
+            <div class="hf-logo">HERO FACTORY</div>
+        </div>
+        <div class="archive-tag">LEGO.com/herofactory (hu-HU) - Archiválva: 2014. augusztus 7.</div>
+    </header>
+
+    <div class="main-container">
+        <div class="product-grid">
+            
+            <div class="product-image-container">
+                <img src="https://www.lego.com/cdn/product-assets/product.img.pri/44029_prod.jpg" alt="LEGO Hero Factory 44029 QUEEN Beast vs. FURNO, EVO & STORMER" class="product-image">
+                
+                <div class="age-pieces">
+                    <span class="badge">Életkor: 8-14</span>
+                    <span class="badge">Elemszám: 218 db</span>
+                </div>
+            </div>
+
+            <div class="product-details">
+                <h1>QUEEN Beast vs. FURNO, EVO & STORMER <span class="set-number">#44029</span></h1>
+                
+                <div class="story-box">
+                    <strong>Mentsd meg a Hősöket a Queen Beast szörnyetegtől!</strong><br><br>
+                    Evo épp a 6 lábú lépegetőjén siet mentőakcióba! A Királynő fenevad elfogta Stormer-t és megpróbálja rettenetes fenevaddá változtatni őt a gubóban, amelyet a hátán visel. Most pedig ez a sokszemű, rémes fenevad azzal fenyeget, hogy mérgező karmaival és hatalmas markoló botjával elkapja Furno-t is és őt is gubóba zárja.<br><br>
+                    Hárítsd el a szöcske (jumper) támadását a lépegető kilövőjével és pöccintésre induló rakétáival, győzd le a hatalmas KIRÁLYNŐ-t és a menekülő gondolában szállítsd el a többi hőst biztonságos helyre!
+                </div>
+
+                <h3>Főbb jellemzők:</h3>
+                <ul class="features-list">
+                    <li>Tartalmazza <strong>FURNO, EVO és STORMER</strong> mini robotokat fegyverekkel.</li>
+                    <li><strong>QUEEN Beast jellemzői:</strong> mozgatható száj, korona, szárnyak, mérgező karmok, gubó a hátán, 4 láb, mozgatható ízületek és átlátszó elemek.</li>
+                    <li><strong>Lépegető (Walker) jellemzői:</strong> leválasztható ülés nyitható páncélozott vizorral, működő kilövő, mentőkabin (rescue pod canister), pöccintős rakéták és 6 láb.</li>
+                    <li>Ejtsd csapdába STORMER-t a Királynő bábjában!</li>
+                    <li>A Királynő fenevad magassága több mint 26 cm, a Lépegető magassága pedig több mint 10 cm!</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="battle-zone">
+            <h3>★ Hős Harci Zóna ★</h3>
+            <p>Lődd le a közeledő Jumper-t EVO lépegetőjének pöccintős rakétájával!</p>
+            
+            <div class="game-canvas" id="gameCanvas">
+                <div class="jumper" id="jumper"></div>
+                <div class="missile" id="missile"></div>
+            </div>
+
+            <button class="game-btn" onclick="fireMissile()">TŰZ! (Kilövés)</button>
+            <div class="score-board" id="scoreBoard">Találatok: 0 | Elhibázott: 0</div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2014 The LEGO Group. Minden jog fenntartva. LEGO, a LEGO logó és a HERO FACTORY a LEGO Csoport védjegyei.</p>
+        <p>Ez az oldal egy hűen reprodukált 2014-es archív termékoldal-demó rajongói és fejlesztői célokra.</p>
+    </footer>
+
+    <script>
+        // Egyszerű animációs minijáték a 2014-es LEGO weboldalak hangulatában
+        let score = 0;
+        let misses = 0;
+        let jumper = document.getElementById('jumper');
+        let missile = document.getElementById('missile');
+        let gameCanvas = document.getElementById('gameCanvas');
+        let scoreBoard = document.getElementById('scoreBoard');
+
+        let jumperX = 20;
+        let jumperSpeed = 3;
+        let isMissileFlying = false;
+        let missileX = 0;
+
+        // Jumper oldalirányú mozgása
+        setInterval(() => {
+            jumperX += jumperSpeed;
+            if (jumperX > gameCanvas.offsetWidth - 40 || jumperX < 10) {
+                jumperSpeed = -jumperSpeed; // Visszafordul
+            }
+            jumper.style.left = jumperX + 'px';
+
+            // Ütközésvizsgálat, ha repül a rakéta
+            if (isMissileFlying) {
+                let mRect = missile.getBoundingClientRect();
+                let jRect = jumper.getBoundingClientRect();
+
+                if (mRect.left < jRect.right && mRect.right > jRect.left) {
+                    // Találat!
+                    score++;
+                    resetMissile();
+                    flashJumper();
+                    updateScore();
+                }
+            }
+        }, 30);
+
+        function fireMissile() {
+            if (isMissileFlying) return; // Egyszerre csak egy rakéta
+            isMissileFlying = true;
+            missile.style.display = 'block';
+            missileX = gameCanvas.offsetWidth - 60;
+            missile.style.left = missileX + 'px';
+
+            let flightInterval = setInterval(() => {
+                missileX -= 12; // Rakéta sebessége balra
+                missile.style.left = missileX + 'px';
+
+                if (missileX < 0) {
+                    clearInterval(flightInterval);
+                    resetMissile();
+                    misses++;
+                    updateScore();
+                }
+                if (!isMissileFlying) {
+                    clearInterval(flightInterval);
+                }
+            }, 20);
+        }
+
+        function resetMissile() {
+            isMissileFlying = false;
+            missile.style.display = 'none';
+        }
+
+        function flashJumper() {
+            jumper.style.backgroundColor = '#ffff00';
+            setTimeout(() => {
+                jumper.style.backgroundColor = '#ff5500';
+            }, 150);
+        }
+
+        function updateScore() {
+            scoreBoard.innerHTML = `Találatok: ${score} | Elhibázott: ${misses}`;
+        }
+    </script>
+</body>
+</html>
