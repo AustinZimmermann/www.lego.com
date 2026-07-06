@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>44027 BREEZ Horgonyos Masinája - LEGO® Hero Factory - LEGO.com</title>
+    <style>
+        /* Reset and Base Styles matching 2014 LEGO.com layout */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background: #0b0f19 url('https://www.lego.com/images/v2/backgrounds/dark-blue-space-mesh.jpg') repeat;
+            background-color: #0d1220;
+            color: #ffffff;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Top Utility Bar */
+        .lego-global-header {
+            background-color: #ffcf00;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            border-bottom: 3px solid #e3b000;
+        }
+        .lego-logo {
+            background-color: #ff0000;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 4px 8px;
+            text-transform: uppercase;
+            border: 2px solid #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        /* Hero Factory Theme Banner */
+        .hf-banner {
+            background: linear-gradient(to bottom, #102040, #050a15);
+            border-bottom: 4px solid #00aeef;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 174, 239, 0.2);
+        }
+        .hf-logo-text {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: #ffffff;
+            text-shadow: 0 0 10px #00aeef, 0 0 20px #00aeef;
+            text-transform: uppercase;
+        }
+        .hf-nav-links {
+            display: flex;
+            gap: 15px;
+        }
+        .hf-nav-links a {
+            color: #a0c0f0;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 12px;
+            padding: 5px 10px;
+            border: 1px solid transparent;
+            transition: all 0.2s;
+        }
+        .hf-nav-links a:hover, .hf-nav-links a.active {
+            color: #ffffff;
+            border-color: #00aeef;
+            background-color: rgba(0, 174, 239, 0.2);
+            border-radius: 4px;
+        }
+
+        /* Main Container Layout */
+        .main-container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Product Gallery Box */
+        .product-gallery {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.6);
+        }
+        .product-gallery::before {
+            content: "INVASION FROM BELOW";
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-size: 11px;
+            font-weight: bold;
+            color: #ff6a00;
+            letter-spacing: 1.5px;
+        }
+        .main-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-top: 15px;
+            transition: transform 0.3s;
+        }
+        .main-image:hover {
+            transform: scale(1.02);
+        }
+
+        /* Product Info and Metadata Styles */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .item-number {
+            color: #00aeef;
+            font-weight: bold;
+            font-size: 16px;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        .product-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .spec-badges {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        .badge {
+            background-color: #1a2438;
+            border: 1px solid #314363;
+            border-radius: 4px;
+            padding: 6px 12px;
+            font-size: 13px;
+        }
+        .badge span {
+            color: #a0c0f0;
+            display: block;
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+        .badge strong {
+            font-size: 15px;
+            color: #fff;
+        }
+
+        /* Hungarian Story Description Block */
+        .story-description {
+            background-color: rgba(0, 0, 0, 0.4);
+            border-left: 4px solid #ff6a00;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 0 6px 6px 0;
+            font-size: 15px;
+            color: #e0e6f0;
+        }
+
+        /* Buy / Action Buttons Container */
+        .action-box {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            border: 1px solid #334155;
+            padding: 20px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .price-tag {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .price-tag span {
+            font-size: 12px;
+            color: #94a3b8;
+            display: block;
+            text-transform: uppercase;
+        }
+        .btn-buy {
+            background-color: #ff6a00;
+            color: #ffffff;
+            border: none;
+            padding: 12px 28px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 4px 0 #c45200;
+            transition: all 0.1s ease;
+        }
+        .btn-buy:hover {
+            background-color: #ff7c1f;
+        }
+        .btn-buy:active {
+            transform: translateY(3px);
+            box-shadow: 0 1px 0 #c45200;
+        }
+
+        /* Interactive Feature Elements (JS integration tabs) */
+        .features-section {
+            max-width: 1000px;
+            margin: 20px auto 60px auto;
+            padding: 0 20px;
+        }
+        .tab-headers {
+            display: flex;
+            border-bottom: 2px solid #1e293b;
+        }
+        .tab-btn {
+            background: none;
+            border: none;
+            color: #94a3b8;
+            padding: 12px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+        .tab-btn.active {
+            color: #00aeef;
+            border-bottom: 3px solid #00aeef;
+            margin-bottom: -2px;
+        }
+        .tab-content {
+            background: rgba(15, 23, 42, 0.6);
+            padding: 20px;
+            border-radius: 0 0 6px 6px;
+            border: 1px solid #1e293b;
+            border-top: none;
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .tab-content ul {
+            list-style-type: square;
+            padding-left: 20px;
+            color: #cbd5e1;
+        }
+        .tab-content li {
+            margin-bottom: 8px;
+        }
+
+        /* Global Footer */
+        .lego-footer {
+            background-color: #000000;
+            color: #64748b;
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            border-top: 1px solid #1e293b;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="lego-global-header">
+        <a href="#" class="lego-logo">LEGO</a>
+    </div>
+
+    <div class="hf-banner">
+        <div class="hf-logo-text">HERO FACTORY</div>
+        <div class="hf-nav-links">
+            <a href="#">Kezdőlap</a>
+            <a href="#" class="active">Termékek</a>
+            <a href="#">Játékok</a>
+            <a href="#">Hősök</a>
+        </div>
+    </div>
+
+    <div class="main-container">
+        
+        <div class="product-gallery">
+            <img src="https://www.lego.com/cdn/product-assets/product.img.pri/44027_prod.jpg" alt="44027 BREEZ Flea Machine" class="main-image" id="productView">
+        </div>
+
+        <div class="product-details">
+            <div class="item-number">44027</div>
+            <h1 class="product-title">BREEZ Horgonyos Masinája</h1>
+            
+            <div class="spec-badges">
+                <div class="badge">
+                    <span>Életkor</span>
+                    <strong>7 - 14</strong>
+                </div>
+                <div class="badge">
+                    <span>Alkatrészek</span>
+                    <strong>102 db</strong>
+                </div>
+            </div>
+
+            <div class="story-description">
+                Ugorj neki, BREEZ! A savas gubók kezdik mérgezővé tenni a földalatti üreg levegőjét. Szereld fel a hatalmas Bolha masinát, és vizsgáld meg a helyzetet. A kötél és a csáklya felhasználásával csússz át biztonságosan a mérgező terület fölött. Lődd ki a pöccintésre induló, kettős rakétákat és tüzelj a kattintós kilövővel, hogy távol tudd tartani a kikelő szöcskét. Át kell vizsgáld meg és meg kell semmisítened azt a gubót, hogy tisztuljon a mérgező köd.
+            </div>
+
+            <div class="action-box">
+                <div class="price-tag">
+                    <span>Ajánlott Fogyasztói Ár</span>
+                    4 489 Ft
+                </div>
+                <button class="btn-buy" onclick="addToCartAlert()">Kosárba</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="features-section">
+        <div class="tab-headers">
+            <button class="tab-btn active" onclick="switchTab(event, 'jellemzok')">Jellemzők</button>
+            <button class="tab-btn" onclick="switchTab(event, 'doboz')">A Doboz Tartalma</button>
+        </div>
+        
+        <div id="jellemzok" class="tab-content active">
+            <ul>
+                <li>Tartalmazza a fegyverekkel és kiegészítőkkel felszerelt BREEZ mini robotot.</li>
+                <li>Tartalmaz egy kivehető pilótafülkét, kihajtható tetőt, horgonykilövőt mozgatható kötéllel és csáklyával, pöccintős kettős rakétákat, valamint rugalmas ízületeket.</li>
+                <li>Tartalmaz egy kattintós kilövőt és egy adatpadot BREEZ számára.</li>
+                <li>Szállj szembe a kikelő, veszélyes szöcskékkel!</li>
+                <li>Robbantsd fel a gubót, hogy megállítsd a mutáns szörnyek terjedését!</li>
+            </ul>
+        </div>
+        
+        <div id="doboz" class="tab-content">
+            <ul>
+                <li>102 db kiváló minőségű LEGO Hero Factory építőelem.</li>
+                <li>1 db BREEZ mini robot figura páncéllal.</li>
+                <li>1 db narancssárga/piros szétnyitható gubó elem és egy kék-narancssárga Jumpers (szöcske) figura.</li>
+                <li>Színes, illusztrált építési útmutató füzet.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="lego-footer">
+        ©2014 The LEGO Group. Minden jog fenntartva. Az oldal egy korabeli LEGO Hero Factory terméklap rekonstrukciója (2014. augusztus).
+    </div>
+
+    <script>
+        function switchTab(event, tabId) {
+            const tabs = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove('active');
+            }
+            
+            const buttons = document.getElementsByClassName('tab-btn');
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove('active');
+            }
+            
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        function addToCartAlert() {
+            alert('A termék sikeresen hozzáadva a virtuális kosárhoz! (2014 Archív szimuláció)');
+        }
+    </script>
+</body>
+</html>
