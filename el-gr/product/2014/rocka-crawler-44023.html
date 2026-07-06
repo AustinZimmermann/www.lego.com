@@ -1,60 +1,98 @@
 <!DOCTYPE html>
-<html lang="el-GR">
+<html lang="el">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ερπυστής του ROCKA 44023 | Hero Factory | LEGO® Shop GR</title>
-    <link rel="shortcut icon" href="https://www.lego.com/favicon.ico" type="image/x-icon">
-    
+    <title>44023 Ερπυστής του ROCKA | LEGO® Hero Factory</title>
     <style>
-        :root {
-            --lego-yellow: #ffcf00;
-            --lego-blue: #006cb7;
-            --text-dark: #2c2c2c;
-            --text-light: #5f5f5f;
-            --bg-light: #f8f8f8;
-            --border-color: #e0e0e0;
-        }
-
+        /* CSS RESET & CORE VARIABLES */
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: Helvetica, Arial, sans-serif;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        :root {
+            --hf-blue: #0046ad;
+            --hf-dark-blue: #002868;
+            --rocka-yellow: #f3bc00;
+            --rocka-gold: #d4af37;
+            --dark-bg: #111116;
+            --panel-bg: #1a1a24;
+            --text-light: #ffffff;
+            --text-gray: #aaaaaa;
+            --accent-green: #39ff14; /* Translucent green elements */
         }
 
         body {
-            background-color: #ffffff;
-            color: var(--text-dark);
-            line-height: 1.6;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            background-image: radial-gradient(circle at 50% 30%, #1e2942 0%, var(--dark-bg) 70%);
+            overflow-x: hidden;
         }
 
-        /* Header Accent */
+        /* HEADER */
         header {
-            background-color: var(--lego-yellow);
-            padding: 15px 20px;
+            background: linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 100%);
+            border-bottom: 3px solid var(--hf-blue);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(5px);
+        }
+
+        .lego-logo {
+            background-color: #ff0000;
+            color: #fff;
+            font-weight: bold;
+            padding: 8px 12px;
+            font-size: 20px;
+            text-transform: uppercase;
+            border: 2px solid #fff;
+            box-shadow: 0 0 5px rgba(0,0,0,0.5);
+            letter-spacing: -1px;
+        }
+
+        .hf-logo-zone {
             display: flex;
             align-items: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            gap: 15px;
         }
 
-        .logo-placeholder {
-            background-color: #e60012;
-            color: white;
+        .hf-brand {
+            font-size: 22px;
             font-weight: 900;
-            padding: 8px 12px;
-            font-size: 1.2rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-right: 20px;
-            border-radius: 4px;
+            background: linear-gradient(135deg, #fff 0%, var(--hf-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        /* Main Layout */
+        .nav-back {
+            color: var(--rocka-yellow);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .nav-back:hover {
+            color: #fff;
+            text-shadow: 0 0 8px var(--rocka-yellow);
+        }
+
+        /* MAIN PRODUCT CONTAINER */
         .container {
             max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
+            margin: 30px auto;
+            padding: 20px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
@@ -63,208 +101,368 @@
         @media (max-width: 768px) {
             .container {
                 grid-template-columns: 1fr;
-                margin: 20px auto;
             }
         }
 
-        /* Product Image */
+        /* IMAGE GALLERY AREA */
         .product-gallery {
-            background-color: var(--bg-light);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .main-image-box {
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid #2a2a3a;
             border-radius: 8px;
             padding: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 1px solid var(--border-color);
+            position: relative;
+            min-height: 400px;
+            box-shadow: inset 0 0 30px rgba(0, 70, 173, 0.2);
         }
 
-        .product-gallery img {
+        .main-image-box img {
             max-width: 100%;
-            height: auto;
-            mix-blend-mode: multiply;
+            max-height: 450px;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.7));
             transition: transform 0.3s ease;
         }
 
-        .product-gallery img:hover {
+        .main-image-box:hover img {
             transform: scale(1.03);
         }
 
-        /* Product Details */
-        .product-details {
-            display: flex;
-            flex-direction: column;
+        .badge-2014 {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--hf-blue);
+            padding: 5px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 3px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255,255,255,0.3);
         }
 
-        .set-meta {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
+        .thumbnail-list {
+            display: flex;
+            gap: 10px;
+        }
+
+        .thumb {
+            width: 80px;
+            height: 80px;
+            background: var(--panel-bg);
+            border: 2px solid #333;
+            border-radius: 4px;
+            cursor: pointer;
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.2s;
+        }
+
+        .thumb.active, .thumb:hover {
+            border-color: var(--rocka-yellow);
+            background: #252535;
+        }
+
+        .thumb img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        /* PRODUCT INFO AREA */
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .sku-label {
+            color: var(--rocka-yellow);
+            font-weight: bold;
+            font-size: 18px;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
         }
 
         .product-title {
-            font-size: 2.2rem;
-            font-weight: 800;
-            line-height: 1.2;
+            font-size: 38px;
+            font-weight: 900;
+            text-transform: uppercase;
             margin-bottom: 15px;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
-        .specs-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin: 20px 0;
-            padding: 15px 0;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
+        .product-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            font-size: 14px;
+            background: rgba(255,255,255,0.05);
+            padding: 10px 15px;
+            border-left: 4px solid var(--rocka-yellow);
+            border-radius: 0 4px 4px 0;
         }
 
-        .spec-item {
+        .meta-item strong {
+            color: var(--text-gray);
+            display: block;
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+
+        .story-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #dddddd;
+            margin-bottom: 25px;
+            padding-right: 10px;
+        }
+
+        /* BUTTONS & ACTIONS */
+        .action-zone {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            text-decoration: none;
             text-align: center;
         }
 
-        .spec-label {
-            font-size: 0.8rem;
-            color: var(--text-light);
-            text-transform: uppercase;
-            display: block;
+        .btn-primary {
+            background: linear-gradient(135deg, #ffd000 0%, #c49600 100%);
+            color: #000;
+            box-shadow: 0 4px 15px rgba(243, 188, 0, 0.3);
         }
 
-        .spec-value {
-            font-weight: 700;
-            font-size: 1.1rem;
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #ffe042 0%, #e0ab00 100%);
+            box-shadow: 0 6px 20px rgba(243, 188, 0, 0.5);
+            transform: translateY(-2px);
         }
 
-        .status-badge {
-            display: inline-block;
-            background-color: #e1f5fe;
-            color: #0288d1;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            align-self: flex-start;
-            margin-bottom: 20px;
+        .btn-secondary {
+            background: #222230;
+            color: #fff;
+            border: 1px solid #444;
         }
 
-        .description-box {
+        .btn-secondary:hover {
+            background: #313144;
+            border-color: var(--hf-blue);
+        }
+
+        /* FEATURES / SPECIFICATIONS */
+        .features-section {
+            background: var(--panel-bg);
+            border: 1px solid #2a2a3a;
+            border-radius: 8px;
+            padding: 25px;
             margin-top: 20px;
         }
 
-        .description-box h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .description-box p {
-            color: #4a4a4a;
+        .features-section h3 {
+            font-size: 20px;
+            text-transform: uppercase;
             margin-bottom: 15px;
+            color: var(--rocka-yellow);
+            border-bottom: 1px solid #333;
+            padding-bottom: 8px;
         }
 
-        /* Features List */
         .features-list {
-            margin-top: 15px;
-            padding-left: 20px;
+            list-style: none;
         }
 
         .features-list li {
-            margin-bottom: 8px;
-            color: #4a4a4a;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+            color: #ccc;
+        }
+
+        .features-list li::before {
+            content: "•";
+            color: var(--hf-blue);
+            font-size: 20px;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        /* COMBINATION PROMO */
+        .combo-box {
+            background: linear-gradient(90deg, #0d1321 0%, #002868 100%);
+            border: 1px solid var(--hf-blue);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .combo-info h4 {
+            color: #fff;
+            font-size: 16px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .combo-info p {
+            font-size: 13px;
+            color: #bbb;
+            line-height: 1.4;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #09090d;
+            padding: 40px 5%;
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-gray);
+            border-top: 1px solid #222;
+            margin-top: 6px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        .archive-tag {
+            color: var(--hf-blue);
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-placeholder">LEGO®</div>
-        <span style="font-weight: bold; color: #2c2c2c;">Shop</span>
+        <div class="hf-logo-zone">
+            <div class="lego-logo">LEGO</div>
+            <div class="hf-brand">HERO FACTORY</div>
+        </div>
+        <a href="#back" class="nav-back" onclick="alert('Επιστροφή στη λίστα προϊόντων Hero Factory (Αρχείο 2014)')">← Πίσω στα Προϊόντα</a>
     </header>
 
-    <main class="container">
+    <div class="container">
+        
         <div class="product-gallery">
-            <img id="product-image" src="https://www.lego.com/cdn/product-assets/product.img.pri/44023_prod.jpg" alt="44023 Ερπυστής του ROCKA">
-        </div>
-
-        <div class="product-details">
-            <div class="set-meta" id="product-meta"></div>
-            <h1 class="product-title" id="product-title"></h1>
+            <div class="main-image-box">
+                <span class="badge-2014">Invasion From Below</span>
+                <img id="product-main-target" src="https://www.lego.com/cdn/product-assets/product.img.pri/44023_prod.jpg" alt="44023 Ερπυστής του ROCKA">
+            </div>
             
-            <div class="status-badge" id="product-status"></div>
-
-            <div class="specs-grid" id="product-specs">
+            <div class="thumbnail-list">
+                <div class="thumb active" onclick="changeImage('https://www.lego.com/cdn/product-assets/product.img.pri/44023_prod.jpg', this)">
+                    <img src="https://www.lego.com/cdn/product-assets/product.img.pri/44023_prod.jpg" alt="Προβολή 1">
                 </div>
-
-            <div class="description-box">
-                <h3>Περιγραφή</h3>
-                <p id="product-desc"></p>
-                
-                <h3>Χαρακτηριστικά</h3>
-                <ul class="features-list" id="product-features">
-                    </ul>
+                <div class="thumb" onclick="alert('Προβολή Λειτουργιών: Άνοιγμα κοκκονιού και εκτόξευση Jumper!')">
+                    <span style="font-size: 10px; text-align: center; font-weight: bold; color: var(--rocka-yellow);">ΛΕΙΤΟΥΡΓΙΕΣ</span>
+                </div>
+                <div class="thumb" onclick="alert('Προβολή Μίνι Ρομπότ: Περιλαμβάνει τον Rocka με το όπλο του.')">
+                    <span style="font-size: 10px; text-align: center; font-weight: bold; color: #fff;">MINI ROCKA</span>
+                </div>
             </div>
         </div>
-    </main>
 
-    <script id="data-json" type="application/json">
-        {
-            "setNumber": "44023",
-            "name": "Ερπυστής του ROCKA",
-            "englishName": "ROCKA Crawler",
-            "theme": "Hero Factory",
-            "releaseYear": 2014,
-            "ages": "6-12",
-            "pieces": 49,
-            "status": "Αποσυρθέν Προϊόν",
-            "description": "Προσοχή, ROCKA, ένα τεράστιο έντομο εκκόλαψης έχει δημιουργήσει μια σήραγγα κάτω από την Αντρόπολις Σίτυ! Χρησιμοποίησε τον πανίσχυρο Ερπυστή για να μπεις κάτω από τη γη και να αντιμετωπίσεις την απειλή. Ενεργοποίησε τις ερπύστριες για γρήγορη κίνηση στο ανώμαλο έδαφος και χρησιμοποίησε τις δαγκάνες για να πιάσεις το τέρας!",
-            "features": [
-                "Περιλαμβάνει τη μίνι φιγούρα ROCKA με όπλο.",
-                "Διαθέτει αποσπώμενο κάθισμα, ερπύστριες, κινούμενες δαγκάνες και θήκη για κάνιστρο.",
-                "Συνδυάζεται με το 44025 BULK Drill Machine για ένα ακόμα μεγαλύτερο μοντέλο Hero Factory!",
-                "Ύψος πάνω από 13 εκατοστά."
-            ]
-        }
-    </script>
+        <div class="product-info">
+            <div class="sku-label">44023</div>
+            <h1 class="product-title">Ερπυστής του ROCKA</h1>
+            
+            <div class="product-meta">
+                <div class="meta-item">
+                    <strong>Ηλικίες</strong>
+                    6-12 ετών
+                </div>
+                <div class="meta-item">
+                    <strong>Κομμάτια</strong>
+                    49
+                </div>
+                <div class="meta-item">
+                    <strong>Έτος Κυκλοφορίας</strong>
+                    2014
+                </div>
+            </div>
+
+            <p class="story-text">
+                Βιάσου, ROCKA! Οι Ήρωες και οι πολίτες έχουν αιχμαλωτιστεί από τα θηρία και κρατούνται βαθιά κάτω από τους δρόμους της Antropolis City. Ενεργοποίησε τον φοβερό Ερπυστή σου και γλίστρησε στον κάτω κόσμο για να ερευνήσεις. Σκαρφάλωσε σε οποιοδήποτε εμπόδιο βρεθεί στο δρόμο σου με τους γιγαντιαίους μηχανικούς βραχίονες και κόψε τους βράχους με τα χέρια-αλυσοπρίονα. 
+                <br><br>
+                Εξέτασε το κουκούλι (cocoon) για να συλλέξεις ζωτικά δεδομένα. Ένα κακό Jumper μπορεί να εκκολαφθεί ανά πάσα στιγμή, γι' αυτό κράτα το click shooter έτοιμο για να απωθήσεις αυτά τα απειλητικά πλάσματα!
+            </p>
+
+            <div class="action-zone">
+                <button class="btn btn-primary" onclick="alert('Το προϊόν προστέθηκε στο καλάθι! (Προσομοίωση Καταστήματος LEGO 2014)')">Αγορα Online</button>
+                <button class="btn btn-secondary" onclick="window.open('https://www.lego.com/el-gr/service/building-instructions/44023', '_blank')">Λήψη Οδηγιών Συναρμολόγησης (PDF)</button>
+            </div>
+
+            <div class="features-section">
+                <h3>Χαρακτηριστικά Προϊόντος</h3>
+                <ul class="features-list">
+                    <li>Περιλαμβάνει μίνι ρομπότ ROCKA με όπλο.</li>
+                    <li>Διαθέτει αποσπώμενο κάθισμα, τεράστιους ρυθμιζόμενους μηχανικούς βραχίονες, χέρια με αλυσοπρίονα, αρθρωτά μέλη, καθώς και χρυσά και διαφανή στοιχεία.</li>
+                    <li>Περιλαμβάνει click shooter για τον ROCKA, ένα κουκούλι και ένα Jumper.</li>
+                    <li>Κόψτε το έδαφος του κάτω κόσμου με τα χέρια-αλυσοπρίονα του Ερπυστή!</li>
+                    <li>Κάντε το Jumper να πηδήξει με ένα τίναγμα του δαχτύλου σας!</li>
+                    <li>Έχει ύψος πάνω από 13 εκατοστά.</li>
+                </ul>
+            </div>
+
+            <div class="combo-box">
+                <div class="combo-info">
+                    <h4>Συνδύασε και Φτιάξε Μεγαλύτερο Μοντέλο!</h4>
+                    <p>Συνδύασε το 44023 με το <b>44025 BULK Drill Machine</b> και το <b>44027 BREEZ Flea Machine</b> για να δημιουργήσεις ένα ακόμα μεγαλύτερο μοντέλο ήρωα χρησιμοποιώντας τις οδηγίες που είναι διαθέσιμες στο LEGO.com/herofactory.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2014 The LEGO Group. All rights reserved. Hero Factory, το λογότυπο LEGO και η Minifigure είναι εμπορικά σήματα του Ομίλου LEGO.</p>
+        <p class="archive-tag">[ LEGO.com/HeroFactory | el-GR Archive Date: August 14, 2014 ]</p>
+    </footer>
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            // Fetching and parsing data from the embedded JSON script element
-            const jsonData = document.getElementById('data-json').textContent;
-            const data = JSON.parse(jsonData);
-
-            // Populate DOM Elements
-            document.getElementById('product-meta').textContent = `${data.theme} / ${data.setNumber}`;
-            document.getElementById('product-title').textContent = data.name;
-            document.getElementById('product-status').textContent = data.status;
-            document.getElementById('product-desc').textContent = data.description;
-
-            // Build specs grid
-            const specsGrid = document.getElementById('product-specs');
-            specsGrid.innerHTML = `
-                <div class="spec-item">
-                    <span class="spec-label">Ηλικίες</span>
-                    <span class="spec-value">${data.ages}</span>
-                </div>
-                <div class="spec-item">
-                    <span class="spec-label">Κομμάτια</span>
-                    <span class="spec-value">${data.pieces}</span>
-                </div>
-                <div class="spec-item">
-                    <span class="spec-label">Έτος</span>
-                    <span class="spec-value">${data.releaseYear}</span>
-                </div>
-            `;
-
-            // Build features checklist
-            const featuresList = document.getElementById('product-features');
-            data.features.forEach(feature => {
-                const li = document.createElement('li');
-                li.textContent = feature;
-                featuresList.appendChild(li);
-            });
-        });
+        function changeImage(imgUrl, thumbnailElement) {
+            // Change main picture
+            document.getElementById('product-main-target').src = imgUrl;
+            
+            // Toggle active class on thumbnails
+            const thumbnails = document.querySelectorAll('.thumb');
+            thumbnails.forEach(thumb => thumb.classList.remove('active'));
+            thumbnailElement.classList.add('active');
+        }
     </script>
 </body>
 </html>
