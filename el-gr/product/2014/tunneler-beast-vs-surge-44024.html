@@ -1,58 +1,78 @@
 <!DOCTYPE html>
-<html lang="el-GR">
+<html lang="el">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Θηρίο Διάνοιξης Σήραγγας εναντίον SURGE 44024 | Hero Factory | LEGO® Shop GR</title>
-    <link rel="shortcut icon" href="https://www.lego.com/favicon.ico" type="image/x-icon">
-    
+    <title>44024 Θηρίο Διάνοιξης Σήραγγας εναντίον SURGE - LEGO® Hero Factory - LEGO.com GR</title>
+    <link rel="icon" type="image/x-icon" href="https://www.lego.com/favicon.ico">
     <style>
-        :root {
-            --lego-yellow: #ffcf00;
-            --lego-blue: #006cb7;
-            --text-dark: #2c2c2c;
-            --text-light: #5f5f5f;
-            --bg-light: #f8f8f8;
-            --border-color: #e0e0e0;
-        }
-
+        /* Reset and Base Styles */
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
             font-family: Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: #ffffff;
-            color: var(--text-dark);
-            line-height: 1.6;
+            background-color: #0b0d11;
+            color: #e0e6ed;
+            background-image: radial-gradient(circle at 50% 30%, #1a233a 0%, #0b0d11 70%);
+            min-height: 100vh;
         }
 
-        /* Header Accent */
+        /* Hero Factory Styled Header */
         header {
-            background-color: var(--lego-yellow);
+            background-color: rgba(0, 0, 0, 0.85);
+            border-bottom: 3px solid #00ffcc;
             padding: 15px 20px;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0, 255, 204, 0.15);
         }
 
-        .logo-placeholder {
-            background-color: #e60012;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .lego-logo {
+            width: 45px;
+            height: 45px;
+            background: #ff0000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
             color: white;
-            font-weight: 900;
-            padding: 8px 12px;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-right: 20px;
+            font-size: 14px;
             border-radius: 4px;
+            border: 2px solid #fff;
+        }
+
+        .hf-logo {
+            color: #00ffcc;
+            font-size: 20px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(0, 255, 204, 0.6);
+        }
+
+        .archive-badge {
+            background: #333;
+            color: #aaa;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 11px;
+            border: 1px solid #444;
         }
 
         /* Main Layout */
-        .container {
-            max-width: 1200px;
+        main {
+            max-width: 1100px;
             margin: 40px auto;
             padding: 0 20px;
             display: grid;
@@ -61,226 +81,259 @@
         }
 
         @media (max-width: 768px) {
-            .container {
+            main {
                 grid-template-columns: 1fr;
-                margin: 20px auto;
             }
         }
 
-        /* Product Image */
+        /* Product Image Section */
         .product-gallery {
-            background-color: var(--bg-light);
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid #222;
             border-radius: 8px;
             padding: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.8);
         }
 
-        .product-gallery img {
+        .product-gallery::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(0, 255, 204, 0.03);
+            transform: rotate(45deg);
+            pointer-events: none;
+        }
+
+        .product-image {
             max-width: 100%;
             height: auto;
-            mix-blend-mode: multiply;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.7));
             transition: transform 0.3s ease;
         }
 
-        .product-gallery img:hover {
+        .product-image:hover {
             transform: scale(1.03);
         }
 
-        /* Product Details */
+        /* Product Info Section */
         .product-details {
             display: flex;
             flex-direction: column;
+            justify-content: center;
         }
 
-        .set-meta {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            font-weight: 600;
+        .item-number {
+            color: #00ffcc;
+            font-weight: bold;
+            font-size: 14px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
         }
 
-        .product-title {
-            font-size: 2.2rem;
-            font-weight: 800;
-            line-height: 1.2;
+        h1 {
+            font-size: 32px;
+            color: #ffffff;
             margin-bottom: 15px;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
-        .specs-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin: 20px 0;
-            padding: 15px 0;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .spec-item {
-            text-align: center;
-        }
-
-        .spec-label {
-            font-size: 0.8rem;
-            color: var(--text-light);
-            text-transform: uppercase;
-            display: block;
-        }
-
-        .spec-value {
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-
-        .status-badge {
+        .age-range {
             display: inline-block;
-            background-color: #e1f5fe;
-            color: #0288d1;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            align-self: flex-start;
+            background: #1a2536;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 13px;
+            border-left: 3px solid #ffcc00;
             margin-bottom: 20px;
         }
 
-        .description-box {
-            margin-top: 20px;
+        .description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #b0c0d0;
+            margin-bottom: 25px;
         }
 
-        .description-box h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            font-weight: 700;
+        /* Specs Table */
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 4px;
+            overflow: hidden;
         }
 
-        .description-box p {
-            color: #4a4a4a;
-            margin-bottom: 15px;
+        .specs-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #222;
+            font-size: 14px;
         }
 
-        /* Features List */
-        .features-list {
-            margin-top: 15px;
-            padding-left: 20px;
+        .specs-table tr:last-child td {
+            border-bottom: none;
         }
 
-        .features-list li {
-            margin-bottom: 8px;
-            color: #4a4a4a;
+        .specs-label {
+            color: #8899a6;
+            width: 40%;
+        }
+
+        .specs-value {
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        /* Purchase Box */
+        .action-box {
+            background: #161920;
+            border: 1px solid #2a3142;
+            padding: 20px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .price {
+            font-size: 28px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .buy-btn {
+            background: #ffcc00;
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            box-shadow: 0 4px 12px rgba(255, 204, 0, 0.3);
+        }
+
+        .buy-btn:hover {
+            background: #ffe066;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(255, 204, 0, 0.4);
+        }
+
+        .buy-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Notification Toast */
+        .toast {
+            position: fixed;
+            bottom: -100px;
+            right: 20px;
+            background: #00ffcc;
+            color: #000;
+            padding: 15px 25px;
+            border-radius: 4px;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: bottom 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 1000;
+        }
+
+        .toast.show {
+            bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #556677;
+            font-size: 12px;
+            border-top: 1px solid #1a2233;
+            margin-top: 60px;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-placeholder">LEGO®</div>
-        <span style="font-weight: bold; color: #2c2c2c;">Shop</span>
+        <div class="logo-container">
+            <div class="lego-logo">LEGO</div>
+            <div class="hf-logo">Hero Factory</div>
+        </div>
+        <div class="archive-badge">Αρχείο: 14 Αυγούστου 2014</div>
     </header>
 
-    <main class="container">
-        <div class="product-gallery">
-            <img id="product-image" src="https://www.lego.com/cdn/product-assets/product.img.pri/44023_prod.jpg" alt="44023 Ερπυστής του ROCKA">
-        </div>
+    <main>
+        <section class="product-gallery">
+            <img src="https://www.lego.com/cdn/product-assets/product.img.pri/44024_prod.jpg" alt="LEGO 44024 Θηρίο Διάνοιξης Σήραγγας εναντίον SURGE" class="product-image">
+        </section>
 
-        <div class="product-details">
-            <div class="set-meta" id="product-meta"></div>
-            <h1 class="product-title" id="product-title"></h1>
+        <section class="product-details">
+            <div class="item-number">Κωδικός: 44024</div>
+            <h1>Θηρίο Διάνοιξης Σήραγγας εναντίον SURGE</h1>
             
-            <div class="status-badge" id="product-status"></div>
+            <div class="age-range">Ηλικίες: 6-12</div>
 
-            <div class="specs-grid" id="product-specs">
-                </div>
+            <p class="description">
+                Προσοχή, SURGE! Ένα τρομερό τέρας με τεράστια νύχια, το Θηρίο Διάνοιξης Σήραγγας, έχει σκάψει μέσα από τους δρόμους της Αντρόπολις Σίτυ. Φόρεσε τον πανίσχυρο εξοπλισμό σου, κατέβασε τη μάσκα και ετοιμάσου για μάχη. Χρησιμοποίησε τα όπλα σου για να απωθήσεις το θηρίο προτού αρπάξει τους συμμάχους σου με τα τεράστια σαγόνια του!
+            </p>
 
-            <div class="description-box">
-                <h3>Περιγραφή</h3>
-                <p id="product-desc"></p>
-                
-                <h3>Χαρακτηριστικά</h3>
-                <ul class="features-list" id="product-features">
-                    </ul>
+            <table class="specs-table">
+                <tr>
+                    <td class="specs-label">Σειρά</td>
+                    <td class="specs-value">Invasion from Below (2014)</td>
+                </tr>
+                <tr>
+                    <td class="specs-label">Κομμάτια</td>
+                    <td class="specs-value">59</td>
+                </tr>
+                <tr>
+                    <td class="specs-label">Φιγούρες</td>
+                    <td class="specs-value">SURGE (μίνι φιγούρα)</td>
+                </tr>
+            </table>
+
+            <div class="action-box">
+                <div class="price">9,99 €</div>
+                <button class="buy-btn" id="addToCartBtn">Προσθήκη στο καλάθι</button>
             </div>
-        </div>
+        </section>
     </main>
 
-    <script id="data-json" type="application/json">
-        {
-  "setNumber": "44024",
-  "name": "Θηρίο Διάνοιξης Σήραγγας εναντίον SURGE",
-  "englishName": "TUNNELER Beast vs. SURGE",
-  "theme": "Hero Factory",
-  "subTheme": "Invasion from Below",
-  "releaseYear": 2014,
-  "ages": "6-12",
-  "pieces": 59,
-  "minifigures": [
-    {
-      "name": "SURGE",
-      "type": "Hero Mini-Robot",
-      "accessories": ["Combat Staff"]
-    }
-  ],
-  "status": "Αποσυρθέν Προϊόν",
-  "price": {
-    "originalEuro": 9.99,
-    "currency": "EUR"
-  },
-  "urls": {
-    "favicon": "https://www.lego.com/favicon.ico",
-    "primaryImage": "https://www.lego.com/cdn/product-assets/product.img.pri/44024_prod.jpg"
-  },
-  "description": "Προσοχή, SURGE! Ένα μοχθηρό Θηρίο Διάνοιξης Σήραγγας με κοφτερά νύχια έχει ξυπνήσει στα έγκατα της γης και απειλεί την Αντρόπολις Σίτυ. Αυτό το υπόγειο τέρας χρησιμοποιεί τις τεράστιες δαγκάνες του για να σκάβει τούνελ και να παγιδεύει τους Χίροουζ. Μπορείς να αποφύγεις τις επιθέσεις του, να χρησιμοποιήσεις τον εξοπλισμό μάχης σου και να νικήσεις το θηρίο πριν παρασύρει τον SURGE στο σκοτεινό του κρησφύγετο;",
-  "features": [
-    "Περιλαμβάνει τη μίνι φιγούρα SURGE με όπλο και αξεσουάρ.",
-    "Διαθέτει κινούμενες αρθρώσεις, ανοιγόμενο στόμα με κοφτερά δόντια, τεράστιες δαγκάνες εκσκαφής και στοιχεία που λάμπουν στο σκοτάδι.",
-    "Περιλαμβάνει ένα μικρό κάνιστρο παγίδευσης.",
-    "Συνδυάζεται με το 44026 CRYSTAL Beast εναντίον BULK για να δημιουργήσεις ένα ακόμη πιο τρομακτικό τέρας!",
-    "Ύψος πάνω από 13 εκατοστά."
-  ]
-}
-    </script>
+    <footer>
+        <p>LEGO, το λογότυπο LEGO και το HERO FACTORY είναι εμπορικά σήματα του Ομίλου LEGO. ©2014-2026 The LEGO Group. All rights reserved.</p>
+    </footer>
+
+    <div class="toast" id="cartToast">Το προϊόν προστέθηκε στο καλάθι αγορών!</div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            // Fetching and parsing data from the embedded JSON script element
-            const jsonData = document.getElementById('data-json').textContent;
-            const data = JSON.parse(jsonData);
+        const cartBtn = document.getElementById('addToCartBtn');
+        const toast = document.getElementById('cartToast');
 
-            // Populate DOM Elements
-            document.getElementById('product-meta').textContent = `${data.theme} / ${data.setNumber}`;
-            document.getElementById('product-title').textContent = data.name;
-            document.getElementById('product-status').textContent = data.status;
-            document.getElementById('product-desc').textContent = data.description;
-
-            // Build specs grid
-            const specsGrid = document.getElementById('product-specs');
-            specsGrid.innerHTML = `
-                <div class="spec-item">
-                    <span class="spec-label">Ηλικίες</span>
-                    <span class="spec-value">${data.ages}</span>
-                </div>
-                <div class="spec-item">
-                    <span class="spec-label">Κομμάτια</span>
-                    <span class="spec-value">${data.pieces}</span>
-                </div>
-                <div class="spec-item">
-                    <span class="spec-label">Έτος</span>
-                    <span class="spec-value">${data.releaseYear}</span>
-                </div>
-            `;
-
-            // Build features checklist
-            const featuresList = document.getElementById('product-features');
-            data.features.forEach(feature => {
-                const li = document.createElement('li');
-                li.textContent = feature;
-                featuresList.appendChild(li);
-            });
+        cartBtn.addEventListener('click', () => {
+            toast.classList.add('show');
+            cartBtn.disabled = true;
+            cartBtn.innerText = "Στο καλάθι";
+            cartBtn.style.opacity = "0.7";
+            cartBtn.style.cursor = "default";
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
         });
     </script>
 </body>
