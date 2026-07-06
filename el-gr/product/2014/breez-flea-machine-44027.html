@@ -1,68 +1,76 @@
 <!DOCTYPE html>
-<html lang="el-GR">
+<html lang="el">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Μηχανή Ψύλλων της BREEZ 44027 | Hero Factory | LEGO® Shop GR</title>
+    <title>44027 Μηχανή Ψύλλων της BREEZ - LEGO® Hero Factory - Προϊόντα</title>
     <link rel="icon" type="image/x-icon" href="https://www.lego.com/favicon.ico">
     <style>
-        :root {
-            --lego-yellow: #FFD500;
-            --lego-red: #D11A2A;
-            --dark-purple: #4A148C;
-            --text-dark: #333333;
-            --text-light: #666666;
-            --bg-light: #F8F8F8;
-            --border-color: #E0E0E0;
-        }
-
+        /* Reset & Base Styles */
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: Helvetica, Arial, sans-serif;
+            box-sizing: border-box;
         }
-
         body {
-            background-color: #ffffff;
-            color: var(--text-dark);
-            line-height: 1.6;
+            font-family: Helvetica, Arial, sans-serif;
+            background-color: #0b0c10;
+            color: #fff;
+            background-image: radial-gradient(circle at center, #1f2833 0%, #0b0c10 100%);
+            overflow-x: hidden;
         }
 
-        /* Header */
+        /* Hero Factory Style Header */
         header {
-            background-color: var(--lego-yellow);
-            padding: 15px 20px;
+            background: linear-gradient(180deg, #111 0%, #222 100%);
+            border-bottom: 3px solid #ffcc00;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+        .logo-container {
             display: flex;
             align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            gap: 20px;
         }
-
-        .logo {
-            background-color: var(--lego-red);
-            color: white;
-            font-weight: 900;
+        .lego-logo {
+            background-color: #ff0000;
+            color: #fff;
+            font-weight: bold;
             padding: 8px 12px;
-            font-size: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 1.2rem;
             border-radius: 4px;
-            margin-right: 20px;
+            text-shadow: 1px 1px 0 #000;
+            border: 2px solid #000;
         }
-
-        .breadcrumbs {
-            font-size: 14px;
-            color: #000;
+        .hf-logo {
+            color: #ffcc00;
+            font-style: italic;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1.5rem;
+            text-shadow: 0 0 10px rgba(255,204,0,0.6);
+        }
+        .archive-badge {
+            background: #333;
+            color: #888;
+            padding: 5px 10px;
+            font-size: 0.75rem;
+            border-radius: 3px;
+            font-family: monospace;
         }
 
         /* Main Layout */
         .container {
             max-width: 1200px;
-            margin: 30px auto;
+            margin: 40px auto;
             padding: 0 20px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
+            align-items: center;
         }
 
         @media (max-width: 768px) {
@@ -71,200 +79,260 @@
             }
         }
 
-        /* Product Image */
+        /* Product Image Showcase */
         .product-gallery {
-            background-color: var(--bg-light);
+            position: relative;
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid #333;
             border-radius: 8px;
+            padding: 20px;
+            box-shadow: inset 0 0 30px rgba(0,255,255,0.05);
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
-            border: 1px solid var(--border-color);
+            min-height: 400px;
         }
-
-        .product-gallery img {
+        .product-image {
             max-width: 100%;
             height: auto;
             object-fit: contain;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.7));
             transition: transform 0.3s ease;
         }
-
-        .product-gallery img:hover {
+        .product-image:hover {
             transform: scale(1.03);
         }
-
-        /* Product Details */
-        .product-info h1 {
-            font-size: 32px;
-            margin-bottom: 5px;
+        .set-number-overlay {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(255, 204, 0, 0.9);
             color: #000;
-        }
-
-        .theme-tag {
-            display: inline-block;
-            background-color: var(--dark-purple);
-            color: white;
-            padding: 4px 10px;
+            padding: 5px 12px;
             font-weight: bold;
-            font-size: 12px;
-            text-transform: uppercase;
             border-radius: 4px;
-            margin-bottom: 15px;
+            transform: rotate(-2deg);
+            box-shadow: 3px 3px 0px #000;
         }
 
-        .set-meta {
+        /* Product Info Styling */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .line-tag {
+            color: #00ffcc;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            text-transform: uppercase;
+            line-height: 1.1;
+            text-shadow: 2px 2px 0px #000;
+        }
+        .greek-title {
+            color: #ffcc00;
+            font-size: 1.8rem;
+            margin-top: -5px;
+        }
+        .age-pieces {
             display: flex;
             gap: 20px;
-            margin-bottom: 20px;
-            font-size: 14px;
-            color: var(--text-light);
-            border-bottom: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            color: #aaa;
+            border-bottom: 1px solid #333;
             padding-bottom: 15px;
         }
-
-        .set-meta span strong {
-            color: var(--text-dark);
-        }
-
-        .price-section {
-            margin-bottom: 25px;
-        }
-
-        .price {
-            font-size: 28px;
+        .stat span {
+            color: #fff;
             font-weight: bold;
-            color: #000;
         }
-
-        .status {
-            color: var(--lego-red);
-            font-weight: bold;
-            font-size: 14px;
-            margin-top: 5px;
-        }
-
         .description {
-            margin-bottom: 30px;
-            color: #444;
-            font-size: 16px;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #ccc;
+            font-size: 1.05rem;
         }
 
-        /* Features Bullet Points */
-        .features-list {
-            margin-bottom: 30px;
-            padding-left: 20px;
+        /* Interactive Action Section */
+        .action-box {
+            background: #151922;
+            border-left: 4px solid #ffcc00;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 10px;
         }
-
-        .features-list li {
-            margin-bottom: 8px;
+        .status {
+            color: #ff4444;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
-
-        /* Legacy Warning Box */
-        .legacy-notice {
-            background-color: #FFF3CD;
-            border-left: 4px solid #FFC107;
-            padding: 15px;
-            margin-bottom: 25px;
-            border-radius: 4px;
-            font-size: 14px;
-        }
-
-        .btn-retired {
+        .status::before {
+            content: '';
             display: inline-block;
-            background-color: #E0E0E0;
-            color: #757575;
-            padding: 15px 30px;
-            font-size: 16px;
-            font-weight: bold;
+            width: 8px;
+            height: 8px;
+            background: #ff4444;
+            border-radius: 50%;
+        }
+        .button-group {
+            display: flex;
+            gap: 15px;
+        }
+        .btn {
+            padding: 12px 25px;
             border: none;
             border-radius: 4px;
-            cursor: not-allowed;
+            font-weight: bold;
+            cursor: pointer;
             text-transform: uppercase;
-            width: 100%;
+            transition: all 0.2s ease;
+            font-family: sans-serif;
+        }
+        .btn-primary {
+            background: #ffcc00;
+            color: #000;
+            box-shadow: 0 4px 0 #b38f00;
+        }
+        .btn-primary:hover {
+            background: #ffe066;
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background: #333;
+            color: #fff;
+            border: 1px solid #444;
+        }
+        .btn-secondary:hover {
+            background: #444;
+        }
+
+        /* Sound Effect Trigger Indicator */
+        .audio-hint {
+            font-size: 0.8rem;
+            color: #666;
+            font-family: sans-serif;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        /* Footer Retro elements */
+        footer {
+            margin-top: 80px;
+            background: #07080a;
+            padding: 30px;
             text-align: center;
+            font-family: sans-serif;
+            font-size: 0.8rem;
+            color: #555;
+            border-top: 1px solid #222;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">LEGO</div>
-        <div class="breadcrumbs">Αρχική σελίδα > Hero Factory > Προϊόντα > 44027</div>
+        <div class="logo-container">
+            <div class="lego-logo">LEGO</div>
+            <div class="hf-logo">Hero Factory</div>
+        </div>
+        <div class="archive-badge">ARCHIVE: 14 AUG 2014</div>
     </header>
 
     <main class="container">
         <section class="product-gallery">
-            <img id="product-image" src="https://www.lego.com/cdn/product-assets/product.img.pri/44027_prod.jpg" alt="44027 Μηχανή Ψύλλων της BREEZ">
+            <div class="set-number-overlay">44027</div>
+            <img 
+                src="https://www.lego.com/cdn/product-assets/product.img.pri/44027_prod.jpg" 
+                alt="LEGO Hero Factory 44027 BREEZ Flea Machine" 
+                class="product-image"
+                id="productImg"
+            >
         </section>
 
-        <section class="product-info">
-            <span class="theme-tag" id="product-theme">...</span>
-            <h1 id="product-title">...</h1>
-            
-            <div class="set-meta">
-                <span>Κωδικός: <strong id="product-id">...</strong></span>
-                <span>Ηλικίες: <strong id="product-ages">...</strong></span>
-                <span>Κομμάτια: <strong id="product-pieces">...</strong></span>
-                <span>Έτος: <strong id="product-year">...</strong></span>
+        <section class="product-details">
+            <span class="line-tag">Invasion From Below</span>
+            <div>
+                <h1>BREEZ Flea Machine</h1>
+                <div class="greek-title">Μηχανή Ψύλλων της BREEZ</div>
             </div>
 
-            <div class="price-section">
-                <div class="price" id="product-price">...</div>
-                <div class="status" id="product-status">...</div>
+            <div class="age-pieces">
+                <div class="stat">Ηλικίες: <span>7-14</span></div>
+                <div class="stat">Κομμάτια: <span>102</span></div>
             </div>
 
-            <div class="legacy-notice">
-                <strong>Πληροφορίες Προϊόντος:</strong> Αυτό το σετ κυκλοφόρησε το 2014 και έχει πλέον αποσυρθεί. Δεν είναι πλέον διαθέσιμο για αγορά από το LEGO.com.
+            <p class="description">
+                Προσοχή, BREEZ! Τα άγρια τέρατα με τα πολλά μάτια επιτίθενται στην Αντρόπολις Σίτυ, και αυτός ο ιπτάμενος, γρήγορος «ψύλλος» είναι η μόνη σου διέξοδος για να ελέγξεις την κατάσταση από ψηλά. Χρησιμοποίησε τον εκτοξευτήρα για να απωθήσεις τα κτήνη των υπονόμων και σώσε την πόλη πριν είναι πολύ αργά!
+            </p>
+
+            <div class="action-box">
+                <div class="status">Εξαντλημένο Προϊόν</div>
+                <div class="button-group">
+                    <button class="btn btn-primary" id="actionBtn">Οδηγίες Κατασκευής</button>
+                    <button class="btn btn-secondary" id="soundBtn">🔊 Ήχος Μηχανής</button>
+                </div>
+                <div class="audio-hint">* Κάντε κλικ για να ενεργοποιήσετε τα συστήματα της BREEZ.</div>
             </div>
-
-            <div class="description" id="product-desc">...</div>
-            
-            <h3>Χαρακτηριστικά:</h3>
-            <ul class="features-list" id="product-features"></ul>
-
-            <button class="btn-retired" disabled>Αποσύρθηκε το προϊόν</button>
         </section>
     </main>
 
+    <footer>
+        <p>LEGO, το λογότυπο LEGO και το HERO FACTORY είναι εμπορικά σήματα του Ομίλου LEGO. ©2014-2026 The LEGO Group. All rights reserved.</p>
+    </footer>
+
     <script>
-        // Η δομή δεδομένων data.json για το σετ 44027
-        const dataJson = {
-            "set_id": "44027",
-            "title": "Μηχανή Ψύλλων της BREEZ",
-            "theme": "Hero Factory",
-            "release_year": 2014,
-            "ages": "6-12",
-            "pieces": 102,
-            "price_gr": "14.99€",
-            "status_gr": "Αποσυρθέν Προϊόν",
-            "description": "Προσοχή, BREEZ! Τα ιπτάμενα παράσιτα επιτίθενται στην Αντρόπολις Σίτυ. Χρησιμοποίησε τη Μηχανή Ψύλλων για να πηδήξεις πάνω από τα κτίρια και να αναχαιτίσεις την απειλή. Ενεργοποίησε τις πτυσσόμενες αρθρώσεις και τα μακριά πόδια για να αποφύγεις τις επιθέσεις των Τζαμπέρζ, και χρησιμοποίησε το κανόνι λέιζερ και τους πυραύλους για να τους νικήσεις. Αιχμαλώτισε τα πλάσματα στο ειδικό κάνιστρο για να τα μεταφέρεις με ασφάλεια στο αρχηγείο!",
-            "features": [
-                "Περιλαμβάνει τη μίνι φιγούρα-ρομπότ BREEZ με όπλα και αξεσουάρ.",
-                "Διαθέτει ανοιγόμενο πιλοτήριο, λειτουργία άλματος, 2 εκτοξευτές πυραύλων και ένα διαφανές κάνιστρο φυλάκισης.",
-                "Περιλαμβάνει 2 Jumpers (άλτες) που ανοίγουν με ένα κλικ!",
-                "Συνδυάζεται με το 44023 ROCKA Crawler για να δημιουργήσεις ένα ακόμα μεγαλύτερο μοντέλο Hero Factory.",
-                "Ύψος πάνω από 22 εκατοστά."
-            ]
-        };
+        // Simple interactive features mimicking old 2014 site flavor
+        const actionBtn = document.getElementById('actionBtn');
+        const soundBtn = document.getElementById('soundBtn');
+        const productImg = document.getElementById('productImg');
 
-        // Δυναμική φόρτωση των δεδομένων στο DOM
-        document.addEventListener("DOMContentLoaded", () => {
-            document.getElementById("product-title").innerText = dataJson.title;
-            document.getElementById("product-theme").innerText = dataJson.theme;
-            document.getElementById("product-id").innerText = dataJson.set_id;
-            document.getElementById("product-ages").innerText = dataJson.ages;
-            document.getElementById("product-pieces").innerText = dataJson.pieces;
-            document.getElementById("product-year").innerText = dataJson.release_year;
-            document.getElementById("product-price").innerText = dataJson.price_gr;
-            document.getElementById("product-status").innerText = dataJson.status_gr;
-            document.getElementById("product-desc").innerText = dataJson.description;
+        actionBtn.addEventListener('click', () => {
+            alert('Μεταφορά στο διακομιστή αρχείων οδηγιών της LEGO για το set 44027...');
+        });
 
-            const featuresContainer = document.getElementById("product-features");
-            dataJson.features.forEach(feature => {
-                const li = document.createElement("li");
-                li.innerText = feature;
-                featuresContainer.appendChild(li);
-            });
+        // Synthetic Audio effect using Web Audio API to create a sci-fi "mech sound" without external assets
+        soundBtn.addEventListener('click', () => {
+            try {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                if (!AudioContext) return;
+                
+                const ctx = new AudioContext();
+                
+                // Oscillator for mech hum
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(80, ctx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(350, ctx.currentTime + 0.4);
+                
+                gain.gain.setValueAtTime(0.3, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.5);
+                
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                
+                osc.start();
+                osc.stop(ctx.currentTime + 0.5);
+                
+                // Visual feedback pop effect
+                productImg.style.transform = 'scale(1.08) rotate(1deg)';
+                setTimeout(() => {
+                    productImg.style.transform = 'none';
+                }, 150);
+
+            } catch (e) {
+                console.log('Audio fallback');
+            }
         });
     </script>
 </body>
