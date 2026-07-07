@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>70789 Ονούα – Κυρίαρχος της Γης | LEGO® BIONICLE®</title>
+    <link rel="shortcut icon" href="https://www.lego.com/favicon.ico" type="image/x-icon">
+    <style>
+        /* CSS Reset & Καθολικά Στυλ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #0b0c10;
+            color: #e5e5e5;
+            background-image: radial-gradient(circle at center, #1f1433 0%, #0b0c10 70%);
+            background-attachment: fixed;
+        }
+
+        /* Επικεφαλίδα (Navigation) */
+        header {
+            background-color: rgba(0, 0, 0, 0.85);
+            border-bottom: 3px solid #7b2cbf;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .lego-logo {
+            background-color: #ff0000;
+            color: #ffffff;
+            font-weight: bold;
+            padding: 5px 10px;
+            font-size: 20px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            border: 2px solid #ffffff;
+        }
+
+        .bionicle-logo {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 4px;
+            color: #fff;
+            text-shadow: 0 0 10px #7b2cbf;
+        }
+
+        .archive-badge {
+            background-color: #ffd166;
+            color: #000;
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        /* Κύριο Περιεχόμενο (Hero Section) */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .product-hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(123, 44, 191, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        @media (max-width: 768px) {
+            .product-hero {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .product-image-container {
+            position: relative;
+            text-align: center;
+            background: radial-gradient(circle, rgba(123, 44, 191, 0.2) 0%, transparent 70%);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            transform: scale(1);
+            transition: transform 0.5s ease;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.7));
+        }
+
+        .product-image:hover {
+            transform: scale(1.03);
+        }
+
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .product-id {
+            color: #ffd166;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .product-title {
+            font-size: 38px;
+            font-weight: 800;
+            color: #ffffff;
+            text-transform: uppercase;
+            line-height: 1.2;
+            border-bottom: 2px solid #7b2cbf;
+            padding-bottom: 10px;
+        }
+
+        .product-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 14px;
+            color: #a0a0a0;
+        }
+
+        .meta-item {
+            background: rgba(255,255,255,0.1);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .product-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #cccccc;
+        }
+
+        /* Διαδραστικά Χαρακτηριστικά (Tabs / Features) */
+        .features-section {
+            margin-top: 40px;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+        }
+
+        .tab-button {
+            background: none;
+            border: none;
+            color: #a0a0a0;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 5px;
+        }
+
+        .tab-button.active {
+            color: #fff;
+            background-color: #7b2cbf;
+            box-shadow: 0 0 10px #7b2cbf;
+        }
+
+        .tab-content {
+            display: none;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #7b2cbf;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .feature-list {
+            list-style-type: square;
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+
+        .feature-list li {
+            margin-bottom: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #050508;
+            padding: 30px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            margin-top: 60px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="lego-logo">LEGO</div>
+            <div class="bionicle-logo">BIONICLE</div>
+        </div>
+        <div class="archive-badge">Αρχείο: 05 Μαρ 2015</div>
+    </header>
+
+    <main class="container">
+        
+        <div class="product-hero">
+            <div class="product-image-container">
+                <img src="https://www.lego.com/cdn/product-assets/product.img.pri/70789_Prod.jpg" alt="70789 Ονούα – Κυρίαρχος της Γης" class="product-image">
+            </div>
+
+            <div class="product-details">
+                <div class="product-id">SET 70789</div>
+                <h1 class="product-title">Ονούα – Κυρίαρχος της Γης</h1>
+                
+                <div class="product-meta">
+                    <span class="meta-item">Ηλικίες: 8-14</span>
+                    <span class="meta-item">Κομμάτια: 109</span>
+                    <span class="meta-item">Έτος: 2015</span>
+                </div>
+
+                <p class="product-description">
+                    Σκάψε βαθιά κάτω από τη γη με τον Ονούα, τον Κυρίαρχο της Γης, για να ανακτήσεις τη μυστική Χρυσή Μάσκα! Αυτή η ανθεκτική, εξαιρετικά αρθρωτή φιγούρα BIONICLE® διαθέτει 4 χρυσά κελύφη πανοπλίας, βαριά χέρια μάχης και το πανίσχυρο Σφυρί Σεισμών που μετατρέπεται σε Turbo Φτυάρια για να ανοίγεις δρόμο μέσα από τους βράχους. Προσοχή όμως στο Πράσινο Αράχνη-Νεκροκεφαλή που προσπαθεί να του βγάλει τη μάσκα!
+                </p>
+            </div>
+        </div>
+
+        <section class="features-section">
+            <div class="tabs">
+                <button class="tab-button active" onclick="openTab(event, 'features')">Χαρακτηριστικά</button>
+                <button class="tab-button" onclick="openTab(event, 'contents')">Περιεχόμενα</button>
+                <button class="tab-button" onclick="openTab(event, 'story')">Ιστορία</button>
+            </div>
+
+            <div id="features" class="tab-content active">
+                <ul class="feature-list">
+                    <li>Διαθέτει κεφάλι BIONICLE® με μάσκα και λειτουργία αποκόλλησης μάσκας.</li>
+                    <li>Περιλαμβάνει 2 βαριά χέρια, 4 χρυσά κελύφη πανοπλίας και μοναδικά tribal σχέδια στο στήθος.</li>
+                    <li>Συμπεριλαμβάνει το Σφυρί Σεισμών 2-σε-1 που μετατρέπεται σε 2 τεράστια Turbo Φτυάρια.</li>
+                    <li>Περιστρέψτε τον τροχό στην πλάτη για να ενεργοποιήσετε το πανίσχυρο χέρι μάχης για χτυπήματα!</li>
+                    <li>Εξαιρετικά ανθεκτικός σχεδιασμός για έντονο παιχνίδι δράσης.</li>
+                </ul>
+            </div>
+
+            <div id="contents" class="tab-content">
+                <ul class="feature-list">
+                    <li>Φιγούρα Onua – Master of Earth (Ύψος πάνω από 19 εκ.).</li>
+                    <li>Η Μάσκα της Γης και η πολύτιμη <strong>Χρυσή Μάσκα της Γης</strong>.</li>
+                    <li>Ένα ανοιχτό πράσινο Skull Spider (Αράχνη Κρανίο).</li>
+                    <li>Συνδυάζεται με το σετ 70781 “Προστάτης της Γης” (Protector of Earth) για επικές μάχες (τροφοδοτημένη λειτουργία)!</li>
+                </ul>
+            </div>
+
+            <div id="story" class="tab-content">
+                <p style="line-height: 1.6; color: #ccc;">
+                    Στο μυστηριώδες νησί της Okoto, ο Ονούα, ο σοφός και ήσυχος γίγαντας, καθοδηγεί τους υπόλοιπους Toa. Αν και προτιμά τη μοναξιά και την ηρεμία των υπόγειων σπηλαίων, η απειλή των Skull Spiders τον αναγκάζει να βγει στην επιφάνεια. Με τη δύναμη της Γης και το Σφυρί του, είναι έτοιμος να συντρίψει το κακό και να προστατεύσει τους κατοίκους του νησιού.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>LEGO, το λογότυπο LEGO και το BIONICLE είναι εμπορικά σήματα του Ομίλου LEGO. ©2015 The LEGO Group.</p>
+        <p>Αυτή η σελίδα αποτελεί μια ιστορική αναπαράσταση αρχείου για εκπαιδευτικούς και ενημερωτικούς σκοπούς.</p>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            // Κρύψε όλα τα tab contents
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+
+            // Αφαίρεσε την κλάση 'active' από όλα τα κουμπιά
+            const tabButtons = document.getElementsByClassName("tab-button");
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+
+            // Εμφάνισε το τρέχον tab και πρόσθεσε την κλάση 'active' στο κουμπί που πατήθηκε
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
