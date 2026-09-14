@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-vidth, initial-scale=1.0">
+    <title>44009 드래곤 볼트 - 히어로 팩토리 | 레고® 숍 대한민국</title>
+    <link rel="icon" href="https://www.lego.com/favicon.ico" type="image/x-icon">
+    <style>
+        /* LEGO.com 2013 Classic Retro-Modern Aesthetic Styling */
+        :root {
+            --lego-red: #D90000;
+            --lego-dark-red: #B50000;
+            --lego-yellow: #FFCC00;
+            --lego-dark: #1F1F1F;
+            --lego-gray: #F2F2F2;
+            --lego-border: #CCCCCC;
+            --lego-blue: #0055BF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Malgun Gothic", "Dotum", "Apple SD Gothic Neo", sans-serif;
+        }
+
+        body {
+            background-color: #EAEAEA;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        /* Top Utility Bar */
+        .top-bar {
+            background-color: var(--lego-dark);
+            color: #fff;
+            font-size: 11px;
+            padding: 6px 0;
+            border-bottom: 3px solid var(--lego-red);
+        }
+
+        .container {
+            width: 980px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar-left, .top-bar-right {
+            display: flex;
+            gap: 15px;
+        }
+
+        .top-bar a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .top-bar a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /* Main Header */
+        header {
+            background-color: #FFFFFF;
+            border-bottom: 1px solid #D0D0D0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .header-main {
+            width: 980px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .lego-logo {
+            background-color: var(--lego-red);
+            color: white;
+            font-weight: 900;
+            font-size: 28px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            letter-spacing: -1px;
+            box-shadow: inset 0 -3px 0 rgba(0,0,0,0.3);
+            text-decoration: none;
+        }
+
+        .sub-brand-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--lego-blue);
+            text-transform: uppercase;
+        }
+
+        .search-cart-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .search-box {
+            display: flex;
+            border: 1px solid #B5B5B5;
+            background: #fff;
+            border-radius: 3px;
+        }
+
+        .search-box input {
+            border: none;
+            padding: 6px 10px;
+            font-size: 12px;
+            outline: none;
+            width: 180px;
+        }
+
+        .search-box button {
+            background: #E0E0E0;
+            border: none;
+            padding: 6px 12px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .cart-btn {
+            background-color: var(--lego-yellow);
+            color: #111;
+            padding: 6px 14px;
+            font-weight: bold;
+            font-size: 12px;
+            border: 1px solid #D1A600;
+            border-radius: 3px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .cart-btn:hover {
+            background-color: #FFD633;
+        }
+
+        /* Navigation Menu Bar */
+        nav {
+            background-color: var(--lego-red);
+            border-bottom: 4px solid var(--lego-dark-red);
+        }
+
+        .nav-menu {
+            width: 980px;
+            margin: 0 auto;
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            position: relative;
+        }
+
+        .nav-menu li a {
+            display: block;
+            color: white;
+            padding: 10px 18px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            border-right: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .nav-menu li a:hover, .nav-menu li.active a {
+            background-color: rgba(0,0,0,0.15);
+        }
+
+        /* Breadcrumb Navigation */
+        .breadcrumb-container {
+            width: 980px;
+            margin: 10px auto;
+            font-size: 11px;
+            color: #666;
+        }
+
+        .breadcrumb-container a {
+            color: #0044CC;
+            text-decoration: none;
+        }
+
+        .breadcrumb-container a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Content Wrapper */
+        .main-wrapper {
+            width: 980px;
+            margin: 0 auto 30px auto;
+            background: #FFFFFF;
+            border: 1px solid #D0D0D0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            display: grid;
+            grid-template-columns: 500px 1fr;
+            padding: 25px;
+            gap: 30px;
+        }
+
+        /* Product Gallery Section */
+        .gallery-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-image-container {
+            width: 100%;
+            height: 380px;
+            border: 1px solid #E0E0E0;
+            background: #FAFAFA;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .main-image-container img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .main-image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        .badge-2013 {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: var(--lego-yellow);
+            color: #000;
+            font-size: 10px;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 2px;
+            border: 1px solid #CCA300;
+        }
+
+        .thumbnail-list {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .thumb {
+            width: 70px;
+            height: 70px;
+            border: 2px solid #D0D0D0;
+            background: #F9F9F9;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 3px;
+        }
+
+        .thumb.active, .thumb:hover {
+            border-color: var(--lego-red);
+        }
+
+        .thumb img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        /* Product Details Info Section */
+        .product-info-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .set-number-tag {
+            font-size: 12px;
+            font-weight: bold;
+            color: #777;
+            text-transform: uppercase;
+        }
+
+        .product-title {
+            font-size: 26px;
+            font-weight: 900;
+            color: #111;
+            margin: 5px 0 10px 0;
+            line-height: 1.2;
+        }
+
+        .ratings-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 12px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .stars {
+            color: #FF9900;
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+
+        .price-box {
+            background-color: #F8F8F8;
+            border: 1px solid #E5E5E5;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--lego-red);
+        }
+
+        .price-disclaimer {
+            font-size: 11px;
+            color: #666;
+            margin-top: 3px;
+        }
+
+        .availability {
+            font-size: 12px;
+            font-weight: bold;
+            color: #008800;
+            margin-top: 5px;
+        }
+
+        .stock-status {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #00AA00;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn-add-cart {
+            background-color: #FF6600;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 3px;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: inset 0 -2px 0 rgba(0,0,0,0.2);
+            transition: background 0.2s;
+        }
+
+        .btn-add-cart:hover {
+            background-color: #E55C00;
+        }
+
+        .btn-wishlist {
+            background-color: #EAEAEA;
+            color: #333;
+            border: 1px solid #CCC;
+            padding: 10px 20px;
+            font-size: 13px;
+            font-weight: bold;
+            border-radius: 3px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-wishlist:hover {
+            background-color: #DFDFDF;
+        }
+
+        /* Set Attributes Grid */
+        .attributes-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            font-size: 12px;
+            border-top: 1px solid #E0E0E0;
+            padding-top: 15px;
+        }
+
+        .attribute-item {
+            display: flex;
+            gap: 5px;
+        }
+
+        .attribute-label {
+            color: #777;
+        }
+
+        .attribute-value {
+            font-weight: bold;
+            color: #222;
+        }
+
+        /* Description Tabs Section */
+        .tabs-container {
+            width: 980px;
+            margin: 0 auto 40px auto;
+        }
+
+        .tab-headers {
+            display: flex;
+            border-bottom: 2px solid var(--lego-red);
+        }
+
+        .tab-btn {
+            background: #E0E0E0;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            font-size: 13px;
+            cursor: pointer;
+            color: #44111;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            margin-right: 2px;
+        }
+
+        .tab-btn.active {
+            background: var(--lego-red);
+            color: white;
+        }
+
+        .tab-content {
+            background: white;
+            border: 1px solid #D0D0D0;
+            border-top: none;
+            padding: 25px;
+            font-size: 13px;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .tab-pane {
+            display: none;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        .tab-pane h3 {
+            font-size: 16px;
+            color: #111;
+            margin-bottom: 10px;
+        }
+
+        .tab-pane p {
+            margin-bottom: 12px;
+        }
+
+        .features-list {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .features-list li {
+            margin-bottom: 6px;
+        }
+
+        /* Footer Style */
+        footer {
+            background-color: var(--lego-dark);
+            color: #AAA;
+            font-size: 11px;
+            padding: 30px 0;
+            border-top: 4px solid var(--lego-yellow);
+        }
+
+        .footer-content {
+            width: 980px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: #CCC;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #FFF;
+            text-decoration: underline;
+        }
+
+        .copyright {
+            color: #777;
+        }
+
+        /* Modal Popup System */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-box {
+            background: white;
+            width: 400px;
+            padding: 25px;
+            border-radius: 5px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .modal-box h3 {
+            color: var(--lego-red);
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .modal-box p {
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .modal-close-btn {
+            background: var(--lego-dark);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            font-weight: bold;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .modal-close-btn:hover {
+            background: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Utility Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <span>대한민국 (한국어)</span>
+                <a href="#">레고® 숍 홈</a>
+            </div>
+            <div class="top-bar-right">
+                <a href="#">고객 서비스</a>
+                <a href="#">위시리스트 (0)</a>
+                <a href="#">로그인 / 회원가입</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header>
+        <div class="header-main">
+            <div class="logo-area">
+                <a href="#" class="lego-logo">LEGO</a>
+                <span class="sub-brand-title">HERO FACTORY</span>
+            </div>
+            <div class="search-cart-area">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="제품 번호 또는 키워드 검색">
+                    <button onclick="handleSearch()">검색</button>
+                </div>
+                <a href="#" class="cart-btn" onclick="openCartModal(event)">장바구니 (0)</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <ul class="nav-menu">
+            <li><a href="#">조립 세트</a></li>
+            <li class="active"><a href="#">히어로 팩토리</a></li>
+            <li><a href="#">테마 제품</a></li>
+            <li><a href="#">브랜드 기획전</a></li>
+            <li><a href="#">고객 지원</a></li>
+        </ul>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-container">
+        <a href="#">레고 홈</a> &gt; <a href="#">제품</a> &gt; <a href="#">히어로 팩토리</a> &gt; <span>44009 드래곤 볼트</span>
+    </div>
+
+    <!-- Product Detail Container -->
+    <div class="main-wrapper">
+        <!-- Gallery Side -->
+        <div class="gallery-section">
+            <div class="main-image-container">
+                <span class="badge-2013">2013 신제품</span>
+                <img id="mainProductImg" src="https://www.lego.com/cdn/product-assets/product.img.pri/44009_prod.jpg" alt="44009 드래곤 볼트">
+            </div>
+            <div class="thumbnail-list">
+                <div class="thumb active" onclick="changeImage(this, 'https://www.lego.com/cdn/product-assets/product.img.pri/44009_prod.jpg')">
+                    <img src="https://www.lego.com/cdn/product-assets/product.img.pri/44009_prod.jpg" alt="Thumbnail 1">
+                </div>
+                <div class="thumb" onclick="changeImage(this, 'https://images.brickset.com/sets/AdditionalImages/44009-1/44009_alt1.jpg')">
+                    <img src="https://images.brickset.com/sets/AdditionalImages/44009-1/44009_alt1.jpg" alt="Thumbnail 2" onerror="this.src='https://www.lego.com/cdn/product-assets/product.img.pri/44009_prod.jpg'">
+                </div>
+                <div class="thumb" onclick="changeImage(this, 'https://images.brickset.com/sets/AdditionalImages/44009-1/44009_alt2.jpg')">
+                    <img src="https://images.brickset.com/sets/AdditionalImages/44009-1/44009_alt2.jpg" alt="Thumbnail 3" onerror="this.src='https://www.lego.com/cdn/product-assets/product.img.pri/44009_prod.jpg'">
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Side -->
+        <div class="product-info-section">
+            <span class="set-number-tag">레고® 히어로 팩토리 브레인 어택 — 세트 44009</span>
+            <h1 class="product-title">드래곤 볼트</h1>
+            
+            <div class="ratings-row">
+                <div class="stars">★★★★★</div>
+                <span>(사용자 평가 14개)</span>
+            </div>
+
+            <div class="price-box">
+                <div class="price">29,900 원</div>
+                <div class="price-disclaimer">부가세 포함 가격 / 레고숍 온라인 독점 및 공식 매장 판매</div>
+                <div class="availability">
+                    <span class="stock-status"></span>주문 가능 (구매 즉시 발송 준비)
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn-add-cart" onclick="addToCart()">장바구니에 담기</button>
+                <button class="btn-wishlist" onclick="addToWishlist()">위시리스트에 추가</button>
+            </div>
+
+            <div class="attributes-grid">
+                <div class="attribute-item">
+                    <span class="attribute-label">연령:</span>
+                    <span class="attribute-value">8–16세</span>
+                </div>
+                <div class="attribute-item">
+                    <span class="attribute-label">부품 수:</span>
+                    <span class="attribute-value">149개</span>
+                </div>
+                <div class="attribute-item">
+                    <span class="attribute-label">출시 연도:</span>
+                    <span class="attribute-value">2013년</span>
+                </div>
+                <div class="attribute-item">
+                    <span class="attribute-label">테마:</span>
+                    <span class="attribute-value">히어로 팩토리 (Hero Factory)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Description & Details Tabs -->
+    <div class="tabs-container">
+        <div class="tab-headers">
+            <button class="tab-btn active" onclick="switchTab(event, 'descTab')">제품 상세 정보</button>
+            <button class="tab-btn" onclick="switchTab(text, 'specTab')">상세 사양 및 특징</button>
+            <button class="tab-btn" onclick="switchTab(text, 'reviewTab')">고객 리뷰 (14)</button>
+        </div>
+        <div class="tab-content">
+            <div id="descTab" class="tab-pane active">
+                <h3>사악한 두뇌 조종에 걸린 드래곤 볼트를 저지하세요!</h3>
+                <p>히어로, 이륙 준비하세요! 외계 브레인들이 용을 닮은 생물을 으르렁거리며 사나운 ‘드래곤 볼트’로 변신시켰습니다! 커다란 머리와 위험하게 물어뜯는 턱, 힘차게 퍼덕이는 폭풍의 날개, 그리고 면도날처럼 날카로운 꼬리 가시를 가진 이 날아다니는 악몽을 물리치려면 여러분의 모든 실력을 총동원해야 할 것입니다!</p>
+            </div>
+            <div id="specTab" class="tab-pane">
+                <h3>주요 특징 및 구성 요소</h3>
+                <ul class="features-list">
+                    <li>분리가 가능한 야광(Glow-in-the-Dark) 브레인 슬러그와 감염된 투명 네온 그린 마스크 헤드 포함.</li>
+                    <li>휘어지는 유연한 대형 날개와 사방으로 움직이는 튼튼한 공룡 스타일의 꼬리.</li>
+                    <li>펄 다크 그레이 컬러의 번개 무기 부품과 다양한 테크닉 관절 조인트 탑재.</li>
+                    <li>다른 히어로 팩토리 세트(예: 44008 서지 등)와 결합하여 확장 플레이 가능.</li>
+                    <li>총 149개의 견고한 브릭 및 테크닉 부품으로 구성.</li>
+                </ul>
+            </div>
+            <div id="reviewTab" class="tab-pane">
+                <h3>구매자 평가</h3>
+                <p><strong>"역대급 빌런 디자인! 대만족입니다."</strong> — 레고마니아 (2013-05-12)<br>드래곤 형태의 디자인과 부품 색감이 정말 멋지게 나왔습니다. 브레인 슬러그 디테일이 압권이네요.</p>
+                <hr style="border:0; border-top:1px solid #eee; margin:10px 0;">
+                <p><strong>"관절 가동성이 아주 훌륭해요"</strong> — 브릭러버 (2013-06-01)<br>튼튼한 관절 덕분에 다양한 포즈를 잡기 좋습니다. 조립하는 재미도 뛰어납니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">회사 소개</a>
+                <a href="#">채용 정보</a>
+                <a href="#">지원 및 고객센터</a>
+                <a href="#">이용약관</a>
+                <a href="#">개인정보처리방침</a>
+            </div>
+            <p class="copyright">LEGO, the LEGO logo, the Minifigure, and HERO FACTORY are trademarks of the LEGO Group. © 2013 The LEGO Group.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Modal System -->
+    <div class="modal-overlay" id="popupModal">
+        <div class="modal-box">
+            <h3 id="modalTitle">알림</h3>
+            <p id="modalDesc">작업이 완료되었습니다.</p>
+            <button class="modal-close-btn" onclick="closeModal()">확인</button>
+        </div>
+    </div>
+
+    <script>
+        // Gallery Thumbnail Switching Logic
+        function changeImage(element, src) {
+            document.getElementById('mainProductImg').src = src;
+            let thumbs = document.querySelectorAll('.thumbnail-list .thumb');
+            thumbs.forEach(t => t.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        // Tab Switching Logic
+        function switchTab(evt, tabId) {
+            let panes = document.querySelectorAll('.tab-pane');
+            panes.forEach(p => p.classList.remove('active'));
+
+            let buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(b => b.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+            if(evt && evt.currentTarget) {
+                evt.currentTarget.classList.add('active');
+            }
+        }
+
+        // Action Modal Triggers
+        function addToCart() {
+            showModal("장바구니 추가 완료", "44009 드래곤 볼트 세트가 장바구니에 성공적으로 담겼습니다.");
+        }
+
+        function addToWishlist() {
+            showModal("위시리스트 등록", "해당 제품이 고객님의 위시리스트에 저장되었습니다.");
+        }
+
+        function openCartModal(e) {
+            e.preventDefault();
+            showModal("장바구니 확인", "현재 장바구니에 1개의 상품(44009 드래곤 볼트)이 들어 있습니다.");
+        }
+
+        function handleSearch() {
+            let keyword = document.getElementById('searchInput').value;
+            if(keyword.trim() !== "") {
+                showModal("검색 결과", "'" + keyword + "'에 대한 검색 결과가 없습니다. (2013년 아카이브 모드)");
+            } else {
+                showModal("검색 안내", "검색어를 입력해 주세요.");
+            }
+        }
+
+        function showModal(title, desc) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('popupModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('popupModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
