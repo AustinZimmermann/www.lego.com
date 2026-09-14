@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>79106 기병 조립 세트 - 레고® 론 레인저 | LEGO.com 대한민국</title>
+    <link rel="icon" href="https://www.lego.com/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --lego-red: #D90012;
+            --lego-yellow: #FFD500;
+            --lego-dark: #111111;
+            --lego-gray: #757575;
+            --lego-light-gray: #F5F5F5;
+            --lego-blue: #006CB7;
+            --border-radius: 4px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--lego-dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Top Notification Bar */
+        .top-banner {
+            background-color: var(--lego-dark);
+            color: #ffffff;
+            text-align: center;
+            font-size: 13px;
+            padding: 8px 15px;
+            font-weight: 500;
+        }
+
+        .top-banner span {
+            color: var(--lego-yellow);
+            font-weight: 700;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e5e5e5;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 24px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-box {
+            background-color: var(--lego-red);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .logo-box span {
+            color: var(--lego-yellow);
+            font-weight: 900;
+            font-size: 26px;
+            letter-spacing: -1px;
+            text-shadow: 1px 1px 0px #000;
+        }
+
+        .brand-text {
+            font-weight: 800;
+            font-size: 20px;
+            color: var(--lego-dark);
+            letter-spacing: 0.5px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--lego-dark);
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--lego-red);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-bar {
+            position: relative;
+            background: var(--lego-light-gray);
+            border-radius: 20px;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            width: 240px;
+        }
+
+        .search-bar input {
+            border: none;
+            background: transparent;
+            outline: none;
+            width: 100%;
+            font-size: 14px;
+            padding-left: 8px;
+        }
+
+        .search-bar i {
+            color: var(--lego-gray);
+        }
+
+        .user-actions {
+            display: flex;
+            gap: 15px;
+            font-size: 20px;
+            color: var(--lego-dark);
+            cursor: pointer;
+        }
+
+        /* Breadcrumb Navigation */
+        .breadcrumb-container {
+            background-color: var(--lego-light-gray);
+            border-bottom: 1px solid #e5e5e5;
+            padding: 10px 0;
+        }
+
+        .breadcrumb {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            list-style: none;
+            font-size: 13px;
+            color: var(--lego-gray);
+            gap: 8px;
+            align-items: center;
+        }
+
+        .breadcrumb a {
+            text-decoration: none;
+            color: var(--lego-gray);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--lego-dark);
+            text-decoration: underline;
+        }
+
+        .breadcrumb li + li::before {
+            content: ">";
+            margin-right: 8px;
+            color: #b5b5b5;
+        }
+
+        /* Main Product Section */
+        .main-container {
+            max-width: 1280px;
+            margin: 40px auto;
+            padding: 0 24px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: flex-start;
+        }
+
+        /* Image Gallery Styles */
+        .gallery-section {
+            position: sticky;
+            top: 100px;
+        }
+
+        .main-image-wrapper {
+            background: radial-gradient(circle, #fcfcfc 0%, #eeeeee 100%);
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .main-image-wrapper img {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .main-image-wrapper:hover img {
+            transform: scale(1.03);
+        }
+
+        .badge-archive {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: var(--lego-dark);
+            color: white;
+            padding: 6px 12px;
+            font-size: 12px;
+            font-weight: 700;
+            border-radius: var(--border-radius);
+            letter-spacing: 0.5px;
+        }
+
+        .thumbnail-list {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .thumb {
+            width: 80px;
+            height: 80px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            overflow: hidden;
+            cursor: pointer;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: border-color 0.2s;
+        }
+
+        .thumb.active, .thumb:hover {
+            border-color: var(--lego-red);
+        }
+
+        .thumb img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        /* Product Info Section */
+        .info-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .set-number {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--lego-gray);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .product-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--lego-dark);
+            line-height: 1.2;
+        }
+
+        .theme-badge {
+            display: inline-block;
+            background-color: #3b2219;
+            color: #ffcc00;
+            padding: 4px 10px;
+            font-size: 13px;
+            font-weight: 700;
+            border-radius: 4px;
+            width: fit-content;
+        }
+
+        .rating-price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e5e5e5;
+            padding-bottom: 20px;
+        }
+
+        .stars {
+            color: #f39c12;
+            font-size: 14px;
+        }
+
+        .rating-count {
+            color: var(--lego-gray);
+            font-size: 14px;
+            margin-left: 6px;
+        }
+
+        .price-box {
+            text-align: right;
+        }
+
+        .price {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--lego-dark);
+        }
+
+        .retired-notice {
+            background-color: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
+            padding: 12px 16px;
+            border-radius: var(--border-radius);
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            background-color: var(--lego-light-gray);
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .spec-item .spec-label {
+            font-size: 12px;
+            color: var(--lego-gray);
+            margin-bottom: 4px;
+        }
+
+        .spec-item .spec-value {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--lego-dark);
+        }
+
+        .description {
+            font-size: 15px;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 16px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-primary {
+            background-color: #cccccc;
+            color: #666666;
+            cursor: not-allowed;
+        }
+
+        .btn-secondary {
+            background-color: #ffffff;
+            color: var(--lego-dark);
+            border: 2px solid var(--lego-dark);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--lego-light-gray);
+            cursor: pointer;
+        }
+
+        /* Detailed Tabs / Specifications Section */
+        .details-section {
+            margin-top: 80px;
+            border-top: 1px solid #e5e5e5;
+            padding-top: 40px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 24px;
+        }
+
+        .minifigs-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .minifig-card {
+            background: var(--lego-light-gray);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+        }
+
+        .minifig-card i {
+            font-size: 48px;
+            color: var(--lego-gray);
+            margin-bottom: 12px;
+        }
+
+        .minifig-card h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .minifig-card p {
+            font-size: 13px;
+            color: var(--lego-gray);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--lego-dark);
+            color: #ffffff;
+            margin-top: 100px;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h5 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--lego-yellow);
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-col ul a {
+            color: #b5b5b5;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-col ul a:hover {
+            color: #ffffff;
+        }
+
+        .footer-bottom {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 20px 24px 0;
+            border-top: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #888;
+        }
+
+        .footer-bottom .region {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .gallery-section {
+                position: static;
+            }
+            .minifigs-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .nav-menu {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <span>2013 아카이브 클래식 세트</span> — 레고® 론 레이저(The Lone Ranger)의 추억 속 제품을 다시 만나보세요!
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="header-left">
+                <a href="#" class="logo-area">
+                    <div class="logo-box">
+                        <span>LEGO</span>
+                    </div>
+                    <span class="brand-text">LEGO.com</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="#" class="active">제품</a></li>
+                    <li><a href="#">조립 설명서</a></li>
+                    <li><a href="#">고객센터</a></li>
+                    <li><a href="#">레고® 커뮤니티</a></li>
+                </ul>
+            </div>
+            <div class="header-right">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="세트 번호 또는 키워드 검색">
+                </div>
+                <div class="user-actions">
+                    <i class="fa-regular fa-heart" title="위시리스트"></i>
+                    <i class="fa-solid fa-bag-shopping" title="장바구니"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-container">
+        <ul class="breadcrumb">
+            <li><a href="#">홈</a></li>
+            <li><a href="#">제품</a></li>
+            <li><a href="#">론 레이저 (The Lone Ranger)</a></li>
+            <li>79106 기병 조립 세트</li>
+        </ul>
+    </div>
+
+    <!-- Main Section -->
+    <main class="main-container">
+        <div class="product-grid">
+            <!-- Left: Gallery -->
+            <div class="gallery-section">
+                <div class="main-image-wrapper">
+                    <span class="badge-archive">2013 RETIRED ARCHIVE</span>
+                    <img id="mainImage" src="https://www.lego.com/cdn/product-assets/product.img.pri/79106_prod.jpg" alt="79106 기병 조립 세트">
+                </div>
+                <div class="thumbnail-list">
+                    <div class="thumb active" onclick="changeImage('https://www.lego.com/cdn/product-assets/product.img.pri/79106_prod.jpg')">
+                        <img src="https://www.lego.com/cdn/product-assets/product.img.pri/79106_prod.jpg" alt="썸네일 1">
+                    </div>
+                    <div class="thumb" onclick="changeImage('https://images.brickset.com/sets/images/79106-1.jpg?rand=123')">
+                        <img src="https://images.brickset.com/sets/images/79106-1.jpg?rand=123" alt="썸네일 2" onerror="this.src='https://www.lego.com/cdn/product-assets/product.img.pri/79106_prod.jpg'">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Info -->
+            <div class="info-section">
+                <div>
+                    <span class="set-number">세트 번호: 79106</span>
+                    <h1 class="product-title">기병 조립 세트</h1>
+                    <div style="margin-top: 8px;">
+                        <span class="theme-badge">The Lone Ranger</span>
+                    </div>
+                </div>
+
+                <div class="rating-price-row">
+                    <div>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                            <span class="rating-count">(4.8 / 32 리뷰)</span>
+                        </div>
+                    </div>
+                    <div class="price-box">
+                        <div class="price">₩ 24,900 <span style="font-size:12px; font-weight:normal; color:#757575;">(출시 당시 정가)</span></div>
+                    </div>
+                </div>
+
+                <div class="retired-notice">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <span>이 제품은 단종(Retired)되어 현재 LEGO.com에서 구매하실 수 없습니다.</span>
+                </div>
+
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <div class="spec-label">연령</div>
+                        <div class="spec-value">6-12세</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">부품 수</div>
+                        <div class="spec-value">69개</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">출시 연도</div>
+                        <div class="spec-value">2013년</div>
+                    </div>
+                </div>
+
+                <div class="description">
+                    <p>‘하이요, 실버!’라고 외치며 기병대 조립 세트로 전투에 돌입하세요! 론 레인저와 그의 믿음직한 말 실버를 이끌고 전투 현장으로 향하세요! 방어벽을 몰래 빠져나와 모닥불 옆에서 저녁을 준비 중인 기병대 병사들을 기습하세요. 그들이 대포에 포탄을 장전하고 조준하기 전에 3명 모두의 무기를 빼앗으세요! 그런 다음 석양을 향해 달려가 또 다른 론 레인저의 모험을 시작하세요! 병사 3명을 더 모아 론 레인저의 모든 전투를 위해 기병대를 강화하세요! 무기와 액세서리가 포함된 미니피규어 4개(론 레인저 1명과 기병대원 3명)가 들어 있습니다.</p>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-primary" disabled>
+                        <i class="fa-solid fa-ban"></i> 절판됨 (구매 불가)
+                    </button>
+                    <button class="btn btn-secondary" onclick="alert('위시리스트에 저장되었습니다! (데모 기능)')">
+                        <i class="fa-regular fa-heart"></i> 위시리스트 추가
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Section: Included Minifigures -->
+        <div class="details-section">
+            <h2 class="section-title">포함된 미니피겨</h2>
+            <div class="minifigs-grid">
+                <div class="minifig-card">
+                    <i class="fa-solid fa-user-shield"></i>
+                    <h4>기병 장교</h4>
+                    <p>지휘관 모자와 클래식 칼 소품 장착</p>
+                </div>
+                <div class="minifig-card">
+                    <i class="fa-solid fa-user"></i>
+                    <h4>기병 병사 A</h4>
+                    <p>푸른색 유니폼 및 소총 무기 포함</p>
+                </div>
+                <div class="minifig-card">
+                    <i class="fa-solid fa-user"></i>
+                    <h4>기병 병사 B</h4>
+                    <p>정교한 프린팅의 서부 시대 병사</p>
+                </div>
+                <div class="minifig-card">
+                    <i class="fa-solid fa-user"></i>
+                    <h4>기병 병사 C</h4>
+                    <p>개틀링 건 운용 및 전투 사격 지원</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h5>쇼핑하기</h5>
+                <ul>
+                    <li><a href="#">브릭 세트 찾기</a></li>
+                    <li><a href="#">연령별 레고</a></li>
+                    <li><a href="#">론 레이저 시리즈</a></li>
+                    <li><a href="#">온라인 단독 상품</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>지원</h5>
+                <ul>
+                    <li><a href="#">조립 설명서 다운로드</a></li>
+                    <li><a href="#">누락된 브릭 찾기</a></li>
+                    <li><a href="#">배송 및 반품</a></li>
+                    <li><a href="#">연락처 문의</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>레고 소개</h5>
+                <ul>
+                    <li><a href="#">레고 그룹 뉴스</a></li>
+                    <li><a href="#">지속 가능성</a></li>
+                    <li><a href="#">법적 고지</a></li>
+                    <li><a href="#">구인 정보</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>소셜 및 커뮤니티</h5>
+                <ul>
+                    <li><a href="#">공식 블로그</a></li>
+                    <li><a href="#">레고 아이디어즈</a></li>
+                    <li><a href="#">유튜브 채널</a></li>
+                    <li><a href="#">인스타그램</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>&copy; 2013-2026 The LEGO Group. 모든 권리 보유. LEGO, 레고 로고 및 미니피겨는 레고 그룹의 상표입니다.</div>
+            <div>대한민국 <span class="region"><i class="fa-solid fa-globe"></i> 한국어</span></div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Thumbnail Switching -->
+    <script>
+        function changeImage(src) {
+            const mainImg = document.getElementById('mainImage');
+            mainImg.src = src;
+            
+            // Update active thumbnail borders
+            const thumbs = document.querySelectorAll('.thumbnail-list .thumb');
+            thumbs.forEach(t => t.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
