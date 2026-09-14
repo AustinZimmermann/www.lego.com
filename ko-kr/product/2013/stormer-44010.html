@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스토머 - 44010 - 레고® 히어로 팩토리 제품 - LEGO.com 대한민국</title>
+    <link rel="icon" href="https://www.lego.com/favicon.ico" type="image/x-icon">
+    <style>
+        :root {
+            --lego-red: #D61C1A;
+            --lego-yellow: #FFCF00;
+            --lego-blue: #006CB7;
+            --lego-dark: #1F1F1F;
+            --lego-light: #F4F4F4;
+            --stormer-ice: #8CD3FF;
+            --stormer-dark: #0A1C2A;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Malgun Gothic", "맑은 고딕", AppleSDGothicNeo, sans-serif;
+        }
+
+        body {
+            background-color: #FFFFFF;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        /* LEGO Header Style (2013 Era Inspired) */
+        header {
+            background-color: var(--lego-dark);
+            color: #FFFFFF;
+            border-bottom: 4px solid var(--lego-red);
+        }
+
+        .top-nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .lego-logo-box {
+            background-color: var(--lego-red);
+            color: #FFFFFF;
+            font-weight: 900;
+            font-size: 24px;
+            padding: 8px 16px;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .site-title-sub {
+            font-size: 14px;
+            color: #CCCCCC;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--lego-yellow);
+        }
+
+        /* Breadcrumb Bar */
+        .breadcrumb-bar {
+            background-color: var(--lego-light);
+            border-bottom: 1px solid #DDDDDD;
+            padding: 10px 0;
+        }
+
+        .breadcrumb-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            font-size: 13px;
+            color: #666666;
+        }
+
+        .breadcrumb-container a {
+            color: #0055BF;
+            text-decoration: none;
+        }
+
+        .breadcrumb-container a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Product Section */
+        main {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* Gallery Column */
+        .gallery-section {
+            background: radial-gradient(circle, #E6F3FF 0%, #C2E0FF 100%);
+            border: 1px solid #B0D4F1;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            box-shadow: inset 0 0 20px rgba(0,108,183,0.1);
+        }
+
+        .main-image-wrapper {
+            position: relative;
+            min-height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main-image-wrapper img {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 15px 25px rgba(0,0,0,0.3));
+            transition: transform 0.3s ease;
+        }
+
+        .main-image-wrapper img:hover {
+            transform: scale(1.03);
+        }
+
+        .badge-2013 {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--lego-red);
+            color: #FFFFFF;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 3px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        /* Details Column */
+        .details-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .product-meta {
+            font-size: 14px;
+            color: #777777;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .product-title {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--lego-dark);
+            line-height: 1.2;
+        }
+
+        .theme-tag {
+            display: inline-block;
+            background-color: var(--lego-blue);
+            color: #FFFFFF;
+            padding: 4px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 3px;
+            margin-bottom: 5px;
+        }
+
+        .price-rating-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #EEEEEE;
+            border-bottom: 1px solid #EEEEEE;
+            padding: 15px 0;
+        }
+
+        .price {
+            font-size: 26px;
+            font-weight: bold;
+            color: var(--lego-red);
+        }
+
+        .rating-stars {
+            color: #FF8C00;
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            background-color: var(--lego-light);
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .spec-item .spec-label {
+            font-size: 11px;
+            color: #666666;
+            text-transform: uppercase;
+        }
+
+        .spec-item .spec-value {
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--lego-dark);
+            margin-top: 3px;
+        }
+
+        .description-text {
+            font-size: 15px;
+            color: #444444;
+            line-height: 1.8;
+        }
+
+        /* Action Buttons */
+        .action-box {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-primary {
+            background-color: var(--lego-red);
+            color: #FFFFFF;
+            box-shadow: 0 4px 0 #9E1311;
+        }
+
+        .btn-primary:hover {
+            background-color: #E22321;
+        }
+
+        .btn-secondary {
+            background-color: #E5E5E5;
+            color: #333333;
+            box-shadow: 0 4px 0 #CCCCCC;
+        }
+
+        .btn-secondary:hover {
+            background-color: #D6D6D6;
+        }
+
+        /* Interactive Tabs Section */
+        .tabs-section {
+            margin-top: 60px;
+            border-top: 2px solid #DDDDDD;
+            padding-top: 30px;
+        }
+
+        .tab-headers {
+            display: flex;
+            gap: 10px;
+            border-bottom: 2px solid var(--lego-blue);
+            margin-bottom: 20px;
+        }
+
+        .tab-btn {
+            background: #EAEAEA;
+            border: none;
+            padding: 12px 25px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            color: #555555;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .tab-btn.active {
+            background: var(--lego-blue);
+            color: #FFFFFF;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px 0;
+            font-size: 15px;
+            color: #444444;
+            line-height: 1.7;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .feature-list {
+            list-style-type: square;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .feature-list li {
+            margin-bottom: 8px;
+        }
+
+        /* Footer Style */
+        footer {
+            background-color: var(--lego-dark);
+            color: #999999;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 80px;
+            font-size: 13px;
+            border-top: 4px solid var(--lego-yellow);
+        }
+
+        footer p {
+            margin-bottom: 8px;
+        }
+
+        footer .legal {
+            font-size: 11px;
+            color: #777777;
+        }
+
+        /* Modal Popup for Buy Action */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: #FFFFFF;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            box-align: center;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border-top: 6px solid var(--lego-red);
+        }
+
+        .modal-content h3 {
+            margin-bottom: 15px;
+            color: var(--lego-dark);
+            font-size: 22px;
+        }
+
+        .modal-content p {
+            margin-bottom: 20px;
+            color: #666666;
+            font-size: 14px;
+        }
+
+        .close-modal {
+            background: var(--lego-dark);
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .close-modal:hover {
+            background: #333333;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- LEGO Header -->
+    <header>
+        <div class="top-nav">
+            <div class="logo-area">
+                <div class="lego-logo-box">LEGO</div>
+                <span class="site-title-sub">히어로 팩토리 (Hero Factory)</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">제품</a></li>
+                <li><a href="#">조립 설명서</a></li>
+                <li><a href="#">게임</a></li>
+                <li><a href="#">고객센터</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-bar">
+        <div class="breadcrumb-container">
+            <a href="#">LEGO.com 홈</a> &gt; <a href="#">제품</a> &gt; <a href="#">히어로 팩토리</a> &gt; <span>44010 스토머</span>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main>
+        <div class="product-container">
+            
+            <!-- Left: Gallery Section -->
+            <div class="gallery-section">
+                <div class="badge-2013">2013 신제품</div>
+                <div class="main-image-wrapper">
+                    <img src="https://www.lego.com/cdn/product-assets/product.img.pri/44010_prod.jpg" alt="레고 히어로팩토리 44010 스토머">
+                </div>
+                <p style="margin-top: 15px; font-size: 13px; color: #0055BF; font-weight: bold;">🔍 이미지를 클릭하여 확대하세요</p>
+            </div>
+
+            <!-- Right: Details Section -->
+            <div class="details-section">
+                <div>
+                    <span class="theme-tag">HERO FACTORY</span>
+                    <div class="product-meta">제품 번호: 44010</div>
+                    <h1 class="product-title">스토머</h1>
+                </div>
+
+                <div class="price-rating-box">
+                    <div class="price">19,900 원</div>
+                    <div class="rating-stars" title="평점 4.8 / 5">★★★★★</div>
+                </div>
+
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <div class="spec-label">연령</div>
+                        <div class="spec-value">7–14세</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">부품 수</div>
+                        <div class="spec-value">69개</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">출시 연도</div>
+                        <div class="spec-value">2013년</div>
+                    </div>
+                </div>
+
+                <div class="description-text">
+                    출동 준비, 스토머! 레고® 히어로 팩토리가 사악한 브레인들의 공격을 받고 있으니, 모든 히어로들이 전열에 나서야 합니다! 우리는 당신에게 얼음 송곳니가 달린 나노 합금 검, 얼음 히어로 방패, 얼음 미사일 발사기, 열 수 있는 장갑 바이저, 그리고 히어로 코어 고정 클램프를 갖춰 드렸습니다. 당장 현장에 나가서 그 사악한 브레인들에게 얼음처럼 차가운 환영을 선사해 주세요!
+                </div>
+
+                <div class="action-box">
+                    <button class="btn btn-primary" id="buyBtn">장바구니 담기</button>
+                    <button class="btn btn-secondary" id="wishBtn">위시리스트 추가</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Interactive Tabs Section -->
+        <div class="tabs-section">
+            <div class="tab-headers">
+                <button class="tab-btn active" onclick="switchTab(event, 'tab-details')">상세 정보</button>
+                <button class="tab-btn" onclick="switchTab(event, 'tab-features')">주요 특징</button>
+                <button class="tab-btn" onclick="switchTab(event, 'tab-shipping')">배송 및 반품</button>
+            </div>
+
+            <div id="tab-details" class="tab-content active">
+                <p><strong>브레인 아택(Brain Attack) 시리즈의 리더, 프레스턴 스토머가 강력한 업그레이드 버전으로 돌아왔습니다!</strong></p>
+                <p>투명한 얼음빛 장갑과 헤드기어, 그리고 혹독한 전투 환경을 견뎌낼 수 있는 단단한 프레임 구조로 이루어져 있습니다. 다양한 히어로 팩토리 세트와 부품을 결합하여 나만의 커스텀 히어로를 창조해 보세요.</p>
+            </div>
+
+            <div id="tab-features" class="tab-content">
+                <ul class="feature-list">
+                    <li>탈부착 가능한 브레인 마인드 컨트롤 브레인(적) 포함</li>
+                    <li>고속 사격이 가능한 얼음 블래스터 장착</li>
+                    <li>적의 공격을 방어하는 회전식 블레이드 실드 탑재</li>
+                    <li>고유의 아이콘과 관절 가동성이 뛰어난 견고한 액션 피이어 프레임</li>
+                    <li>다른 레고 히어로 팩토리 세트(예: 44008, 44009 등)와 부품 교환 및 조합 가능</li>
+                </ul>
+            </div>
+
+            <div id="tab-shipping" class="tab-content">
+                <p><strong>배송 안내:</strong> LEGO.com 공식 온라인 스토어를 통해 주문하신 상품은 안전하게 포장되어 우체국 택배를 통해 배송됩니다. 평일 오후 2시 이전 주문 시 당일 출고를 원칙으로 합니다.</p>
+                <p><strong>반품 안내:</strong> 제품 개봉 전 상태에 한하여 수령일로부터 30일 이내에 교환 및 반품이 가능합니다.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>LEGO, the LEGO logo, the Minifigure, and HERO FACTORY are trademarks of the LEGO Group. ©2013 The LEGO Group.</p>
+        <p class="legal">본 웹사이트는 2013년 당시의 대한민국 LEGO.com 디자인을 기반으로 제작된 가상의 페이지입니다.</p>
+    </footer>
+
+    <!-- Modal Popup Script Component -->
+    <div class="modal" id="actionModal">
+        <div class="modal-content">
+            <h3 id="modalTitle">알림</h3>
+            <p id="modalText">선택하신 상품이 장바구니에 담겼습니다.</p>
+            <button class="close-modal" id="closeModalBtn">확인</button>
+        </div>
+    </div>
+
+    <script>
+        // Tab switching functionality
+        function switchTab(evt, tabId) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+
+        // Modal popup interaction logic
+        const modal = document.getElementById('actionModal');
+        const buyBtn = document.getElementById('buyBtn');
+        const wishBtn = document.getElementById('wishBtn');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalText = document.getElementById('modalText');
+
+        buyBtn.addEventListener('click', () => {
+            modalTitle.innerText = "장바구니 확인";
+            modalText.innerText = "[44010] 스토머 제품이 성공적으로 장바구니에 담겼습니다. (2013 LEGO 에디션)";
+            modal.style.display = 'flex';
+        });
+
+        wishBtn.addEventListener('click', () => {
+            modalTitle.innerText = "위시리스트 확인";
+            modalText.innerText = "회원님의 위시리스트에 '스토머' 제품이 추가되었습니다.";
+            modal.style.display = 'flex';
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
