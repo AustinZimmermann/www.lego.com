@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>44013 아쿠아곤 - 레고® 히어로 팩토리 - LEGO.com 대한민국</title>
+    <link rel="icon" href="https://www.lego.com/favicon.ico" type="image/x-icon">
+    <style>
+        :root {
+            --lego-red: #D90012;
+            --lego-yellow: #FFD500;
+            --lego-blue: #0055BF;
+            --lego-dark: #121212;
+            --lego-gray: #F2F2F2;
+            --lego-border: #E5E5E5;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #FFFFFF;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        /* Top Notification Bar */
+        .top-banner {
+            background-color: var(--lego-dark);
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 12px;
+            padding: 8px 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .top-banner span {
+            color: var(--lego-yellow);
+            font-weight: bold;
+        }
+
+        /* Header Styles */
+        header {
+            border-bottom: 1px solid var(--lego-border);
+            background-color: #FFFFFF;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+        }
+
+        .logo-nav {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .lego-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .lego-logo img {
+            height: 45px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #121212;
+            font-weight: 700;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            color: var(--lego-red);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-bar {
+            position: relative;
+        }
+
+        .search-bar input {
+            padding: 8px 15px 8px 35px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            outline: none;
+            font-size: 14px;
+            width: 220px;
+            transition: all 0.3s;
+        }
+
+        .search-bar input:focus {
+            border-color: var(--lego-blue);
+            box-shadow: 0 0 5px rgba(0, 85, 191, 0.2);
+        }
+
+        .search-bar svg {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            fill: #777;
+            width: 14px;
+            height: 14px;
+        }
+
+        .cart-btn {
+            background-color: var(--lego-red);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.2s;
+        }
+
+        .cart-btn:hover {
+            background-color: #B5000F;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb-container {
+            background-color: var(--lego-gray);
+            border-bottom: 1px solid var(--lego-border);
+            padding: 10px 0;
+        }
+
+        .breadcrumb {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            font-size: 12px;
+            color: #666;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .breadcrumb a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Product Section */
+        .main-content {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        /* Product Gallery */
+        .product-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .main-image-container {
+            background-color: #F8F8F8;
+            border: 1px solid var(--lego-border);
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .main-image-container img {
+            max-width: 100%;
+            height: auto;
+            max-height: 450px;
+            transition: transform 0.3s ease;
+        }
+
+        .main-image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        .badge-theme {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: var(--lego-dark);
+            color: var(--lego-yellow);
+            padding: 5px 12px;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 3px;
+        }
+
+        .thumbnail-list {
+            display: flex;
+            gap: 15px;
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            border: 2px solid var(--lego-border);
+            border-radius: 6px;
+            background-color: #F8F8F8;
+            cursor: pointer;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: border-color 0.2s;
+        }
+
+        .thumbnail.active, .thumbnail:hover {
+            border-color: var(--lego-blue);
+        }
+
+        .thumbnail img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        /* Product Info */
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .product-header h1 {
+            font-size: 32px;
+            color: #121212;
+            margin-bottom: 5px;
+            font-weight: 800;
+        }
+
+        .product-set-number {
+            font-size: 14px;
+            color: #777;
+            font-weight: 600;
+        }
+
+        .rating-stars {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 5px;
+        }
+
+        .stars {
+            color: #FF9800;
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+
+        .rating-count {
+            font-size: 13px;
+            color: #666;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .product-price-box {
+            background-color: #FAFAFA;
+            border: 1px solid var(--lego-border);
+            padding: 20px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .price {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--lego-red);
+        }
+
+        .stock-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #2E7D32;
+        }
+
+        .stock-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #2E7D32;
+            border-radius: 50%;
+        }
+
+        .purchase-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .qty-selector {
+            display: flex;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            overflow: hidden;
+            background: white;
+        }
+
+        .qty-selector button {
+            background: #f1f1f1;
+            border: none;
+            padding: 0 15px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .qty-selector input {
+            width: 45px;
+            text-align: center;
+            border: none;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .add-to-cart-main {
+            flex-grow: 1;
+            background-color: var(--lego-yellow);
+            color: #121212;
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: 800;
+            border-radius: 4px;
+            cursor: pointer;
+外-transition: background-color 0.2s;
+            text-transform: uppercase;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .add-to-cart-main:hover {
+            background-color: #E6BF00;
+        }
+
+        .product-specs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--lego-border);
+        }
+
+        .spec-item {
+            text-align: center;
+            background: #Fcfcfc;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #eee;
+        }
+
+        .spec-label {
+            font-size: 11px;
+            color: #777;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .spec-value {
+            font-size: 16px;
+            font-weight: 700;
+            color: #121212;
+        }
+
+        /* Description Tabs Section */
+        .details-section {
+            margin-top: 60px;
+            border-top: 1px solid var(--lego-border);
+            padding-top: 40px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #121212;
+        }
+
+        .description-content {
+            font-size: 15px;
+            color: #444;
+            line-height: 1.8;
+            max-width: 900px;
+        }
+
+        .description-content p {
+            margin-bottom: 15px;
+        }
+
+        .features-list {
+            margin-top: 20px;
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .features-list li {
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--lego-dark);
+            color: white;
+            margin-top: 80px;
+            padding: 50px 0 30px 0;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #333;
+            padding-bottom: 30px;
+        }
+
+        .footer-logo img {
+            height: 35px;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #888;
+        }
+
+        /* Responsive */
+        @media(max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .logo-nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Notice -->
+    <div class="top-banner">
+        레고® 히어로 팩토리™ 클래식 컬렉션 오픈! <span>지금 바로 아쿠아곤(44013)을 만나보세요!</span>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo-nav">
+                <a href="#" class="lego-logo">
+                    <img src="https://www.lego.com/r/www/components/logos/lego-logo.svg" alt="LEGO">
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="#" class="active">제품</a></li>
+                        <li><a href="#">조립 설명서</a></li>
+                        <li><a href="#">고객 센터</a></li>
+                        <li><a href="#">히어로 팩토리</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header-actions">
+                <div class="search-bar">
+                    <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                    <input type="text" placeholder="세트 검색 (예: 44013)">
+                </div>
+                <button class="cart-btn">
+                    장바구니 (<span id="cart-count">0</span>)
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-container">
+        <div class="breadcrumb">
+            <a href="#">홈</a> &gt; 
+            <a href="#">제품</a> &gt; 
+            <a href="#">히어로 팩토리</a> &gt; 
+            <span>44013 아쿠아곤</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="product-grid">
+            <!-- Gallery Section -->
+            <div class="product-gallery">
+                <div class="main-image-container">
+                    <div class="badge-theme">HERO FACTORY 2013</div>
+                    <img id="main-product-img" src="https://www.lego.com/cdn/product-assets/product.img.pri/44013_prod.jpg" alt="44013 아쿠아곤">
+                </div>
+                <div class="thumbnail-list">
+                    <div class="thumbnail active" onclick="changeImage('https://www.lego.com/cdn/product-assets/product.img.pri/44013_prod.jpg', this)">
+                        <img src="https://www.lego.com/cdn/product-assets/product.img.pri/44013_prod.jpg" alt="썸네일 1">
+                    </div>
+                    <div class="thumbnail" onclick="changeImage('https://www.lego.com/cdn/product-assets/product.img.pri/44013_alt1.jpg', this)">
+                        <img src="https://www.lego.com/cdn/product-assets/product.img.pri/44013_prod.jpg" alt="썸네일 2" style="filter: brightness(0.9);">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Details Section -->
+            <div class="product-info">
+                <div class="product-header">
+                    <span class="product-set-number">세트 번호: 44013</span>
+                    <h1>아쿠아곤 (AQUAGON)</h1>
+                    <div class="rating-stars">
+                        <div class="stars">★★★★★</div>
+                        <span class="rating-count" onclick="alert('평점: 4.8 / 5.0 (총 42개 리뷰)')">리뷰 42개 보기</span>
+                    </div>
+                </div>
+
+                <div class="product-price-box">
+                    <div class="price">₩ 14,900</div>
+                    <div class="stock-status">
+                        <div class="stock-dot"></div>
+                        구매 가능 (절찬 판매 중)
+                    </div>
+                    <div class="purchase-actions">
+                        <div class="qty-selector">
+                            <button onclick="decreaseQty()">-</button>
+                            <input type="text" id="qty-input" value="1" readonly>
+                            <button onclick="increaseQty()">+</button>
+                        </div>
+                        <button class="add-to-cart-main" onclick="addToCart()">장바구니 담기</button>
+                    </div>
+                </div>
+
+                <div class="product-specs">
+                    <div class="spec-item">
+                        <div class="spec-label">연령</div>
+                        <div class="spec-value">6-12세</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">부품 수</div>
+                        <div class="spec-value"41개</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">출시일</div>
+                        <div class="spec-value">2013년</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description Section -->
+        <div class="details-section">
+            <h2 class="section-title">제품 상세 정보</h2>
+            <div class="description-content">
+                <p>히어로, 바다의 공격에 대비하라! 외계 브레인들이 수줍은 바다 생물을 사나운 ‘아쿠아곤’으로 변신시켰다! 가시가 돋친 어깨, 쏘는 촉수 발, 그리고 두 개의 날카로운 검으로 갈라지는 쌍검 지팡이를 조심하라. 그 끈적끈적한 뱀을 다시 심해로 돌려보내되, 너희까지 함께 끌려가지 않도록 주의하라!</p>
+                
+                <ul class="features-list">
+                    <li>관절이 자유롭게 움직이는 튼튼한 디자인과 수중 괴물 컨셉의 하이브리드 갑옷 장착</li>
+                    <li>날카로운 얼음 발톱 및 독성 수중 집게발 부품 포함</li>
+                    <li>다른 레고® 히어로 팩토리 세트와 결합하여 더욱 거대한 궁극의 모델 구성 가능</li>
+                    <li>조립식 히어로 팩토리 세계관 속 액션 플레이의 재미 극대화</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="https://www.lego.com/r/www/components/logos/lego-logo.svg" alt="LEGO">
+                </div>
+                <ul class="footer-links">
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">채용정보</a></li>
+                    <li><a href="#">지원</a></li>
+                    <li><a href="#">지속가능성</a></li>
+                    <li><a href="#">법적 고지</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2013 - 2026 The LEGO Group. 모든 권리 보유. LEGO, 레고, 히어로 팩토리 및 레고 로고는 레고 그룹의 상표입니다.</p>
+                <p>대한민국 LEGO.com (ko-KR)</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        function changeImage(src, element) {
+            document.getElementById('main-product-img').src = src;
+            document.querySelectorAll('.thumbnail').forEach(el => el.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        let quantity = 1;
+        function increaseQty() {
+            if(quantity < 10) {
+                quantity++;
+                document.getElementById('qty-input').value = quantity;
+            }
+        }
+
+        function decreaseQty() {
+            if(quantity > 1) {
+                quantity--;
+                document.getElementById('qty-input').value = quantity;
+            }
+        }
+
+        function addToCart() {
+            const cartCountElement = document.getElementById('cart-count');
+            let currentCount = parseInt(cartCountElement.innerText);
+            currentCount += quantity;
+            cartCountElement.innerText = currentCount;
+            alert(`[44013 아쿠아곤] ${quantity}개가 장바구니에 성공적으로 담겼습니다!`);
+        }
+    </script>
+</body>
+</html>
