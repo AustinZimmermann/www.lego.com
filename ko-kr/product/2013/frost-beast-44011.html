@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>44011 프로스트 비스트 - 레고® 히어로 팩토리 - LEGO.com 대한민국</title>
+    <link rel="icon" href="https://www.lego.com/favicon.ico" type="image/x-icon">
+    <style>
+        :root {
+            --lego-red: #D90012;
+            --lego-yellow: #FFD500;
+            --lego-dark: #111111;
+            --lego-gray: #747474;
+            --lego-light-gray: #F2F2F2;
+            --frost-blue: #00A3E0;
+            --frost-dark-blue: #004B87;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #FFFFFF;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        /* LEGO Top Global Header Simulation */
+        .lego-top-bar {
+            background-color: var(--lego-dark);
+            color: #FFFFFF;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 40px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .lego-top-bar .brand-indicators span {
+            margin-right: 20px;
+            color: #999;
+            cursor: pointer;
+        }
+
+        .lego-top-bar .brand-indicators span.active {
+            color: #FFFFFF;
+            border-bottom: 2px solid var(--lego-red);
+            padding-bottom: 2px;
+        }
+
+        /* Main Navigation Bar */
+        .lego-nav {
+            background-color: #FFFFFF;
+            border-bottom: 1px solid #E5E5E5;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .lego-logo-container {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .lego-square-logo {
+            background-color: var(--lego-red);
+            color: white;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 900;
+            font-size: 24px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #111;
+            font-weight: 700;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--lego-red);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-bar {
+            background-color: var(--lego-light-gray);
+            border-radius: 20px;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            width: 250px;
+        }
+
+        .search-bar input {
+            border: none;
+            background: transparent;
+            outline: none;
+            width: 100%;
+            font-size: 13px;
+        }
+
+        .user-actions {
+            display: flex;
+            gap: 15px;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb-container {
+            background-color: var(--lego-light-gray);
+            padding: 12px 40px;
+            font-size: 12px;
+            color: var(--lego-gray);
+        }
+
+        .breadcrumb-container a {
+            color: var(--lego-gray);
+            text-decoration: none;
+        }
+
+        .breadcrumb-container a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Product Section */
+        .product-main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        /* Gallery Column */
+        .product-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .main-image-viewport {
+            background: radial-gradient(circle, #e0f7ff 0%, #b9e3fb 100%);
+            border-radius: 8px;
+            border: 1px solid #E5E5E5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 0 20px rgba(0, 163, 224, 0.1);
+        }
+
+        .main-image-viewport img {
+            max-width: 100%;
+            height: 400px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .main-image-viewport img:hover {
+            transform: scale(1.05);
+        }
+
+        .badge-exclusive {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: var(--frost-dark-blue);
+            color: white;
+            padding: 6px 12px;
+            font-size: 11px;
+            font-weight: bold;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .thumbnail-strip {
+            display: flex;
+            gap: 15px;
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            border: 2px solid #E5E5E5;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #F9F9F9;
+            transition: border-color 0.2s;
+        }
+
+        .thumbnail.active, .thumbnail:hover {
+            border-color: var(--frost-blue);
+        }
+
+        .thumbnail img {
+            max-width: 70px;
+            max-height: 70px;
+            object-fit: contain;
+        }
+
+        /* Product Details Column */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .product-header .item-number {
+            color: var(--lego-gray);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .product-header h1 {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--lego-dark);
+            margin: 5px 0 10px 0;
+        }
+
+        .theme-tag {
+            display: inline-block;
+            background-color: var(--lego-dark);
+            color: #FFFFFF;
+            padding: 4px 10px;
+            font-size: 11px;
+            font-weight: bold;
+            border-radius: 3px;
+            letter-spacing: 1px;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            color: var(--lego-gray);
+        }
+
+        .stars {
+            color: #FF8500;
+            letter-spacing: 2px;
+        }
+
+        .product-price-box {
+            background-color: #F8F9FA;
+            border: 1px solid #E5E5E5;
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .price {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--lego-dark);
+        }
+
+        .availability {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .availability.retired {
+            color: #dc3545;
+        }
+
+        .availability-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #dc3545;
+            border-type: solid;
+            border-radius: 50%;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-primary {
+            background-color: var(--lego-red);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #B5000F;
+        }
+
+        .btn-secondary {
+            background-color: #E5E5E5;
+            color: var(--lego-dark);
+        }
+
+        .btn-secondary:hover {
+            background-color: #D0D0D0;
+        }
+
+        .product-specs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            border-top: 1px solid #E5E5E5;
+            border-bottom: 1px solid #E5E5E5;
+            padding: 20px 0;
+        }
+
+        .spec-item {
+            text-align: center;
+        }
+
+        .spec-item .label {
+            font-size: 11px;
+            color: var(--lego-gray);
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .spec-item .value {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--lego-dark);
+            margin-top: 4px;
+        }
+
+        .product-description-text {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Lore / Feature Section */
+        .feature-banner {
+            background: linear-gradient(135deg, var(--frost-dark-blue), var(--frost-blue));
+            color: white;
+            padding: 60px 40px;
+            margin-top: 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-banner h2 {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .feature-banner p {
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            font-size: 15px;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .feature-grid {
+            max-width: 1000px;
+            margin: 40px auto 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 25px;
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+            text-align: left;
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--lego-yellow);
+        }
+
+        .feature-card p {
+            font-size: 13px;
+            margin: 0;
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--lego-dark);
+            color: #999;
+            padding: 50px 40px 20px 40px;
+            margin-top: 60px;
+            font-size: 12px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #333;
+        }
+
+        .footer-logo {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-column a {
+            color: #999;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 20px auto 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Modal Popup */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            width: 400px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .modal-content h3 {
+            margin-bottom: 15px;
+            color: var(--lego-dark);
+        }
+
+        .modal-content p {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .modal-close {
+            background: var(--lego-dark);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .product-main {
+                grid-template-columns: 1fr;
+            }
+            .feature-grid {
+                grid-external: 1fr;
+                grid-template-columns: 1fr;
+            }
+            .lego-top-bar, .lego-nav {
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Simulation Bar -->
+    <div class="lego-top-bar">
+        <div class="brand-indicators">
+            <span class="active">레고® 세트</span>
+            <span>디지털 체험</span>
+            <span>히어로 팩토리 아카이브</span>
+        </div>
+        <div>대한민국 (한국어)</div>
+    </div>
+
+    <!-- Main Nav -->
+    <nav class="lego-nav">
+        <div class="nav-left">
+            <div class="lego-logo-container">
+                <div class="lego-square-logo">LEGO</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">제품</a></li>
+                <li><a href="#">고객 서비스</a></li>
+                <li><a href="#">커뮤니티</a></li>
+                <li><a href="#">히어로 팩토리 (2013)</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <div class="search-bar">
+                <input type="text" placeholder="세트 번호 또는 이름 검색 (예: 44011)">
+            </div>
+            <div class="user-actions">
+                <span>로그인</span>
+                <span>장바구니 (0)</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-container">
+        <a href="#">홈</a> &gt; <a href="#">제품</a> &gt; <a href="#">히어로 팩토리</a> &gt; <span>44011 프로스트 비스트</span>
+    </div>
+
+    <!-- Product Main Content -->
+    <main class="product-main">
+        <!-- Gallery Section -->
+        <div class="product-gallery">
+            <div class="main-image-viewport">
+                <div class="badge-exclusive">2013 제품</div>
+                <img id="mainImage" src="https://www.lego.com/cdn/product-assets/product.img.pri/44011_prod.jpg" alt="44011 프로스트 비스트">
+            </div>
+            <div class="thumbnail-strip">
+                <div class="thumbnail active" onclick="changeImage('https://www.lego.com/cdn/product-assets/product.img.pri/44011_prod.jpg', this)">
+                    <img src="https://www.lego.com/cdn/product-assets/product.img.pri/44011_prod.jpg" alt="썸네일 1">
+                </div>
+                <div class="thumbnail" onclick="changeImage('https://images.brickset.com/sets/Large/44011-1.jpg?201309170327', this)">
+                    <img src="https://images.brickset.com/sets/Large/44011-1.jpg?201309170327" alt="썸네일 2">
+                </div>
+            </div>
+        </div>
+
+        <!-- Details Section -->
+        <div class="product-details">
+            <div class="product-header">
+                <span class="item-number">제품 번호: 44011</span>
+                <h1>프로스트 비스트</h1>
+                <span class="theme-tag">HERO FACTORY</span>
+            </div>
+
+            <div class="product-rating">
+                <span class="stars">★★★★★</span>
+                <span>(평점 4.9 / 5점 - 128개 리뷰)</span>
+            </div>
+
+            <div class="product-price-box">
+                <div class="price">₩19,900</div>
+                <div class="availability retired">
+                    <span class="availability-dot"></span> 단종된 제품 (2013 에디션)
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="openModal()">구매 불가 안내</button>
+                    <button class="btn btn-secondary" onclick="alert('조립 설명서 PDF 다운로드 시뮬레이션')">조립 설명서 다운로드</button>
+                </div>
+            </div>
+
+            <div class="product-specs">
+                <div class="spec-item">
+                    <div class="label">연령</div>
+                    <div class="value">7–14세</div>
+                </div>
+                <div class="spec-item">
+                    <div class="label">부품 수</div>
+                    <div class="value">60개</div>
+                </div>
+                <div class="spec-item">
+                    <div class="label">출시 연도</div>
+                    <div class="value">2013년</div>
+                </div>
+            </div>
+
+            <div class="product-description-text">
+                히어로, 모여주세요! 외계 브레인들이 거대한 얼음 생물을 사나운 ‘프로스트 비스트’로 변신시켰습니다! 먼저, 위험한 가시 달린 얼음 이빨, 날카로운 서리 발톱, 거대한 송곳니가 달린 서리 검, 그리고 튼튼한 얼음 갑옷을 피하세요. 그런 다음 이 괴물을 붙잡아 사악한 뇌를 제거하고, 괴물을 원래 있던 곳으로 돌려보내세요!
+            </div>
+        </div>
+    </main>
+
+    <!-- Feature Showcase / Lore Banner -->
+    <section class="feature-banner">
+        <h2>은하계의 얼어붙은 위협</h2>
+        <p>2013년 하반기 브레이크아웃 및 뇌파 생물들의 침공 시기를 장식한 프로스트 비스트는 히어로 팩토리 유니버스의 전설적인 빌런 세트 중 하나입니다.</p>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>얼음 발사기 장착</h3>
+                <p>돌출된 스터드 슈터 액션 기능을 통해 강력한 투사체를 발사하여 히어로들을 공격합니다.</p>
+            </div>
+            <div class="feature-card">
+                <h3>역동적인 관절 구조</h3>
+                <p>히어로 팩토리 고유의 볼 조인트 시스템으로 다양한 포즈와 격렬한 액션 포징이 가능합니다.</p>
+            </div>
+            <div class="feature-card">
+                <h3>코어 마스크 & 턱</h3>
+                <p>야수 특유의 위협적인 턱 구조와 보호대상 코어 패턴이 정교하게 디자인되었습니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <div class="footer-logo">LEGO.com</div>
+                <p>© 2026 The LEGO Group. 레고, 레고 로고, 미니피겨, 듀플고, BIONICLE, HERO FACTORY는 레고 그룹의 상표입니다.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <ul>
+                        <li><a href="#">회사 소개</a></li>
+                        <li><a href="#">레고 뉴스</a></li>
+                        <li><a href="#">지속 가능성</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <ul>
+                        <li><a href="#">고객 지원 센터</a></li>
+                        <li><a href="#">배송 및 반품</a></li>
+                        <li><a href="#">조립 설명서 찾기</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>대한민국 (한국어)</span>
+            <span>개인정보 처리방침 | 이용 약관</span>
+        </div>
+    </footer>
+
+    <!-- Modal Popup Component -->
+    <div class="modal-overlay" id="purchaseModal">
+        <div class="modal-content">
+            <h3>안내</h3>
+            <p>본 제품(44011 프로스트 비스트)은 2013년에 출시되어 현재 공식 LEGO.com 및 매장에서 단종된 제품입니다. 중고 장터 또는 레고 브릭링크(BrickLink)를 이용해 주세요.</p>
+            <button class="modal-close" onclick="closeModal()">확인</button>
+        </div>
+    </div>
+
+    <!-- JavaScript Functionality -->
+    <script>
+        function changeImage(src, element) {
+            document.getElementById('mainImage').src = src;
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            thumbnails.forEach(thumb => thumb.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        function openModal() {
+            document.getElementById('purchaseModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('purchaseModal').classList.remove('active');
+        }
+    </script>
+</body>
+</html>
