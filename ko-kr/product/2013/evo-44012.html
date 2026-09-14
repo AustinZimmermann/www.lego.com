@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>44012 에보 - 레고® 히어로 팩토리 제품 상세 정보 | 레고코리아 공식 사이트</title>
+    <link rel="icon" type="image/x-icon" href="https://www.lego.com/favicon.ico">
+    <style>
+        :root {
+            --lego-red: #D90011;
+            --lego-yellow: #FFD200;
+            --lego-black: #111111;
+            --lego-gray: #F5F5F5;
+            --lego-border: #CCCCCC;
+            --evo-orange: #FF6600;
+            --evo-dark: #222222;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Noto Sans KR", Arial, sans-serif;
+        }
+
+        body {
+            background-color: #FFFFFF;
+            color: var(--lego-black);
+            line-height: 1.6;
+        }
+
+        /* LEGO 2013-era Top Header Banner Simulation */
+        .lego-header {
+            background-color: var(--lego-black);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            border-bottom: 4px solid var(--lego-red);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+        }
+
+        .lego-logo-box {
+            background-color: var(--lego-red);
+            color: white;
+            font-weight: 900;
+            font-size: 24px;
+            padding: 8px 14px;
+            border-radius: 2px;
+            letter-spacing: -1px;
+            box-shadow: inset 0 -3px 0 rgba(0,0,0,0.3);
+        }
+
+        .brand-subtitle {
+            font-size: 14px;
+            font-weight: 700;
+            color: #E0E0E0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--lego-yellow);
+        }
+
+        /* Sub-Header / Breadcrumb */
+        .breadcrumb-bar {
+            background-color: var(--lego-gray);
+            padding: 10px 40px;
+            font-size: 13px;
+            color: #666;
+            border-bottom: 1px solid var(--lego-border);
+        }
+
+        .breadcrumb-bar a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .breadcrumb-bar a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Product Container */
+        .main-container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Gallery Section */
+        .product-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .main-image-wrapper {
+            background: radial-gradient(circle, #ffffff 40%, #e6e6e6 100%);
+            border: 1px solid var(--lego-border);
+            border-radius: 4px;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .main-image-wrapper img {
+            max-width: 100%;
+            height: auto;
+            max-height: 450px;
+            transition: transform 0.3s ease;
+        }
+
+        .main-image-wrapper img:hover {
+            transform: scale(1.03);
+        }
+
+        .badge-2013 {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--lego-red);
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 6px 12px;
+            border-radius: 3px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .thumbnail-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .thumbnail {
+            width: 70px;
+            height: 70px;
+            border: 2px solid var(--lego-border);
+            border-radius: 4px;
+            background: #fff;
+            padding: 5px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: all 0.2s;
+        }
+
+        .thumbnail.active, .thumbnail:hover {
+            border-color: var(--lego-red);
+            opacity: 1;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Product Details Info Section */
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .theme-tag {
+            color: var(--lego-red);
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-title {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--lego-black);
+            line-height: 1.2;
+        }
+
+        .product-meta-row {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            color: #555;
+            border-bottom: 1px solid var(--lego-border);
+            padding-bottom: 15px;
+        }
+
+        .product-meta-row span {
+            font-weight: 700;
+            color: #111;
+        }
+
+        .price-box {
+            background-color: var(--lego-gray);
+            padding: 20px;
+            border-radius: 4px;
+            border-left: 5px solid var(--lego-red);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--lego-red);
+        }
+
+        .stock-status {
+            font-size: 13px;
+            font-weight: 700;
+            color: #008800;
+            background: #e6f4ea;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+
+        .product-description {
+            font-size: 15px;
+            color: #444;
+            line-height: 1.8;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .btn-cart {
+            flex: 2;
+            background-color: var(--lego-red);
+            color: white;
+            border: none;
+            padding: 16px 20px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+            box-shadow: 0 4px 6px rgba(217, 0, 17, 0.2);
+        }
+
+        .btn-cart:hover {
+            background-color: #b5000e;
+        }
+
+        .btn-cart:active {
+            transform: scale(0.98);
+        }
+
+        .btn-wishlist {
+            flex: 1;
+            background-color: white;
+            color: var(--lego-black);
+            border: 2px solid var(--lego-border);
+            padding: 16px 20px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-wishlist:hover {
+            border-color: var(--lego-black);
+            background-color: #fafafa;
+        }
+
+        /* Specifications Grid */
+        .specs-section {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--lego-black);
+            padding-bottom: 10px;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .spec-card {
+            background: var(--lego-gray);
+            border: 1px solid var(--lego-border);
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .spec-card h4 {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .spec-card p {
+            font-size: 18px;
+            font-weight: 700;
+            color: #111;
+        }
+
+        /* Interactive Modal Popup Simulation */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 35px;
+            border-radius: 6px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .modal-content h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--lego-red);
+        }
+
+        .modal-content p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .modal-close-btn {
+            background-color: var(--lego-black);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            font-size: 14px;
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .modal-close-btn:hover {
+            background-color: #333;
+        }
+
+        /* Footer */
+        .lego-footer {
+            background-color: var(--lego-black);
+            color: #888;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 13px;
+            margin-top: 60px;
+            border-top: 4px solid var(--lego-yellow);
+        }
+
+        .lego-footer p {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="lego-header">
+        <div class="logo-area">
+            <div class="lego-logo-box">LEGO</div>
+            <span class="brand-subtitle">HERO FACTORY</span>
+        </div>
+        <nav class="nav-links">
+            <a href="#">제품</a>
+            <a href="#">조립 설명서</a>
+            <a href="#">고객센터</a>
+            <a href="#">게임 & 비디오</a>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-bar">
+        <a href="#">홈</a> &gt; <a href="#">제품</a> &gt; <a href="#">히어로 팩토리</a> &gt; <span>44012 에보</span>
+    </div>
+
+    <!-- Main Section -->
+    <main class="main-container">
+        <!-- Gallery -->
+        <div class="product-gallery">
+            <div class="main-image-wrapper">
+                <div class="badge-2013">2013 Classic</div>
+                <img id="mainImage" src="https://www.lego.com/cdn/product-assets/product.img.pri/44012_prod.jpg" alt="레고 44012 에보">
+            </div>
+            <div class="thumbnail-row">
+                <div class="thumbnail active" onclick="changeImage('https://www.lego.com/cdn/product-assets/product.img.pri/44012_prod.jpg')">
+                    <img src="https://www.lego.com/cdn/product-assets/product.img.pri/44012_prod.jpg" alt="썸네일 1">
+                </div>
+                <!-- Extra stylistic placeholder views built dynamically or referencing the core asset -->
+                <div class="thumbnail" onclick="changeImage('https://www.lego.com/cdn/product-assets/product.img.pri/44012_prod.jpg')">
+                    <img src="https://www.lego.com/cdn/product-assets/product.img.pri/44012_prod.jpg" alt="썸네일 2">
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="product-info">
+            <span class="theme-tag">LEGO® Hero Factory (히어로 팩토리)</span>
+            <h1 class="product-title">에보 (EVO)</h1>
+            
+            <div class="product-meta-row">
+                <div>제품 번호: <span>44012</span></div>
+                <div>연령: <span>6-12</span></div>
+                <div>부품 수: <span>51개</span></div>
+            </div>
+
+            <div class="price-box">
+                <div>
+                    <div style="font-size: 11px; color: #666; font-weight: 700;">소비자가격 (2013 기준)</div>
+                    <div class="price">₩12,900</div>
+                </div>
+                <div class="stock-status">온라인 단종 상품</div>
+            </div>
+
+            <div class="product-description">
+                출동하라, 에보! 외계 브레인들이 마쿠히어로 시티를 향해 수중 공격을 감행하고 있으며, 이를 저지하는 것이 바로 네 임무다. 우리는 너에게 백열 소용돌이 지팡이, 등 뒤 장착형 칼집, 가시 갑옷, 개폐식 수중 호흡 마스크, 그리고 히어로 코어 고정 클램프를 장비해 주었다. 지체할 시간이 없다! 소용돌이 지팡이로 거센 소용돌이를 일으켜 그 외계인들을 휩쓸어버려라!
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn-cart" onclick="openModal('장바구니 추가', '2013년 출시된 단종 제품이므로 현재 장바구니에 담을 수 없습니다.')">장바구니 담기</button>
+                <button class="btn-wishlist" onclick="openModal('위시리스트', '나만의 위시리스트에 44012 에보 제품이 등록되었습니다!')">위시리스트</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Specifications Details Section -->
+    <section class="specs-section">
+        <h2 class="section-title">제품 상세 사양</h2>
+        <div class="specs-grid">
+            <div class="spec-card">
+                <h4>출시 년도</h4>
+                <p>2013년</p>
+            </div>
+            <div class="spec-card">
+                <h4>테마 서브라인</h4>
+                <p>브레인 브레이크아웃 (Brain Attack)</p>
+            </div>
+            <div class="spec-card">
+                <h4>포함된 미니피규어/캐릭터</h4>
+                <p>에보 (EVO) 개조 버전</p>
+            </div>
+            <div class="spec-card">
+                <h4>조립 난이도</h4>
+                <p>간편함 / 빌딩 토이</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Modal Popup Box -->
+    <div id="legoModal" class="modal">
+        <div class="modal-content">
+            <h3 id="modalTitle">알림</h3>
+            <p id="modalMessage">메시지 내용입니다.</p>
+            <button class="modal-close-btn" onclick="closeModal()">확인</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="lego-footer">
+        <p>LEGO, the LEGO logo, the Minifigure, and HERO FACTORY are trademarks of the LEGO Group. ©2013 The LEGO Group.</p>
+        <p>본 페이지는 2013년 당시 LEGO.com(ko-KR)의 감성을 재현한 시뮬레이션 웹사이트입니다.</p>
+    </footer>
+
+    <script>
+        // Image gallery switcher logic
+        function changeImage(src) {
+            const mainImg = document.getElementById('mainImage');
+            mainImg.src = src;
+            
+            // Highlight active thumbnail styling
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            thumbnails.forEach(thumb => thumb.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+        }
+
+        // Modal interactions
+        const modal = document.getElementById('legoModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalMessage = document.getElementById('modalMessage');
+
+        function openModal(title, message) {
+            modalTitle.innerText = title;
+            modalMessage.innerText = message;
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        // Close modal when clicking outside of the content card
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
