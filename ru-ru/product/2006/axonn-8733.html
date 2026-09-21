@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LEGO.com Shop : 8733 Axonn - BIONICLE® (2006)</title>
+  <link rel="icon" href="https://www.lego.com/favicon.ico" type="image/x-icon">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tone.js for retro sound synthesis without external audio files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.min.js"></script>
+
+  <!-- Google Fonts: Inter and Orbitron/Rajdhani for 2006 Bionicle aesthetic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Inter:wght@400;600;700;800&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'lego-red': '#D01012',
+            'lego-yellow': '#FFD500',
+            'lego-blue': '#0055BF',
+            'lego-dark': '#0B0D12',
+            'voya-slate': '#161922',
+            'voya-red': '#B22222',
+            'voya-gold': '#DAA520',
+            'voya-metal': '#2F3542'
+          },
+          fontFamily: {
+            bionicle: ['"Orbitron"', '"Chakra Petch"', 'sans-serif'],
+            body: ['"Inter"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Vintage mid-2000s glassy bevel and stone texture effect */
+    body {
+      background-color: #0b0d13;
+      background-image: 
+        radial-gradient(circle at 50% 10%, rgba(178, 34, 34, 0.25), transparent 45%),
+        radial-gradient(circle at 85% 60%, rgba(218, 165, 32, 0.12), transparent 40%),
+        repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 2px);
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* 2006 Retro 3D Bevel Button */
+    .btn-lego-retro {
+      background: linear-gradient(180deg, #ffea47 0%, #ffc400 45%, #e6a100 100%);
+      border-top: 2px solid #fff59d;
+      border-left: 2px solid #ffe082;
+      border-right: 2px solid #b26a00;
+      border-bottom: 2px solid #8c5300;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.7);
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+      transition: all 0.1s ease-in-out;
+    }
+    .btn-lego-retro:hover {
+      background: linear-gradient(180deg, #fff066 0%, #ffd026 45%, #f5ac0a 100%);
+      transform: translateY(-1px);
+    }
+    .btn-lego-retro:active {
+      transform: translateY(1px);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.6), inset 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    /* Vintage metallic panel styling */
+    .titan-panel {
+      background: linear-gradient(135deg, #1f242d 0%, #12151c 100%);
+      border: 1px solid #3d4556;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+
+    /* Kanohi Rode "Mask of Truth" visual filter */
+    .truth-vision-active {
+      filter: contrast(140%) brightness(110%) hue-rotate(185deg) saturate(180%);
+      transition: filter 0.4s ease-in-out;
+    }
+
+    /* 2006 animated glowing borders */
+    @keyframes pulseGlow {
+      0%, 100% { border-color: rgba(218, 165, 32, 0.4); box-shadow: 0 0 15px rgba(218, 165, 32, 0.2); }
+      50% { border-color: rgba(255, 69, 0, 0.7); box-shadow: 0 0 25px rgba(255, 69, 0, 0.4); }
+    }
+    .glow-voya {
+      animation: pulseGlow 4s infinite ease-in-out;
+    }
+  </style>
+</head>
+<body class="text-gray-200 antialiased min-h-screen flex flex-col justify-between selection:bg-yellow-400 selection:text-black">
+
+  <!-- 2006 LEGO Top Utility Bar -->
+  <header class="w-full bg-[#101217] border-b border-gray-800 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-14">
+        
+        <!-- Left: Classic LEGO 2006 Style Logo & Shop Tag -->
+        <div class="flex items-center space-x-3">
+          <div class="bg-lego-red px-2.5 py-1 rounded shadow-md border border-white/20 flex items-center justify-center">
+            <span class="font-black text-lego-yellow text-2xl tracking-tighter drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]" style="font-family: Arial, Helvetica, sans-serif;">LEGO</span>
+          </div>
+          <div class="hidden sm:flex flex-col leading-tight">
+            <span class="text-xs font-bold uppercase tracking-wider text-yellow-400" data-i18n="shopAtHome">Shop at Home</span>
+            <span class="text-[10px] text-gray-400 font-semibold" data-i18n="officialCatalog">Official 2006 Collector's Catalog</span>
+          </div>
+        </div>
+
+        <!-- Center: March 2006 Era Navigation -->
+        <nav class="hidden md:flex items-center space-x-6 text-xs font-bold uppercase tracking-wider text-gray-300">
+          <a href="#" class="hover:text-yellow-400 transition" data-i18n="navProducts">Products</a>
+          <a href="#" class="text-yellow-400 font-extrabold border-b-2 border-yellow-400 pb-1" data-i18n="navBionicle">BIONICLE®</a>
+          <a href="#" class="hover:text-yellow-400 transition" data-i18n="navClub">LEGO Club</a>
+          <a href="#" class="hover:text-yellow-400 transition" data-i18n="navSupport">Customer Service</a>
+        </nav>
+
+        <!-- Right: Language Switcher (en-US <-> ru-RU) and Mini-Cart -->
+        <div class="flex items-center space-x-4">
+          <!-- Language Toggle Switch -->
+          <div class="flex items-center bg-gray-900 border border-gray-700 rounded-lg p-1 text-xs">
+            <button id="lang-en" onclick="setLanguage('en_US')" class="px-2 py-1 rounded font-bold transition text-black bg-yellow-400">
+              🇺🇸 EN
+            </button>
+            <button id="lang-ru" onclick="setLanguage('ru_RU')" class="px-2 py-1 rounded font-bold transition text-gray-400 hover:text-white">
+              🇷🇺 RU
+            </button>
+          </div>
+
+          <!-- 2006 Cart Button -->
+          <button onclick="openCartModal()" class="relative flex items-center space-x-1.5 bg-gray-800 hover:bg-gray-700 px-3 py-1.5 rounded border border-gray-600 text-xs font-bold text-yellow-300 shadow">
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.24-1a1 1 0 00-.97-.757H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/>
+            </svg>
+            <span data-i18n="cartLabel">Cart</span>
+            <span id="cart-counter" class="bg-lego-red text-white text-[10px] px-1.5 py-0.2 rounded-full font-black ml-1">0</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 2006 Sub-banner: Voya Nui Story Announcement -->
+    <div class="bg-gradient-to-r from-red-950 via-neutral-900 to-amber-950 border-t border-b border-red-800/40 px-4 py-1.5 text-center text-xs tracking-wide">
+      <span class="text-red-400 font-bold uppercase tracking-wider mr-2" data-i18n="bannerTag">MARCH 2006 RELEASE:</span>
+      <span class="text-gray-200" data-i18n="bannerText">Explore the Island of Doom! Can Axonn defend the Mask of Life against the Piraka?</span>
+    </div>
+  </header>
+
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 py-6 w-full">
+    
+    <!-- Retro Breadcrumbs -->
+    <nav class="flex text-xs font-semibold text-gray-400 space-x-2 mb-6">
+      <a href="#" class="hover:text-yellow-400 transition" data-i18n="bcHome">Home</a>
+      <span>&gt;</span>
+      <a href="#" class="hover:text-yellow-400 transition" data-i18n="bcProducts">Products</a>
+      <span>&gt;</span>
+      <a href="#" class="hover:text-yellow-400 transition">BIONICLE®</a>
+      <span>&gt;</span>
+      <a href="#" class="hover:text-yellow-400 transition" data-i18n="bcTitans">Titans</a>
+      <span>&gt;</span>
+      <span class="text-yellow-400" data-i18n="bcItem">8733 Axonn</span>
+    </nav>
+
+    <!-- Main Showcase Grid (2 columns on large displays) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+      <!-- LEFT COLUMN: Product Gallery & Interactive Kanohi Filter (7 cols) -->
+      <div class="lg:col-span-7 space-x-0 space-y-4">
+        
+        <!-- Main Product Card Frame -->
+        <div class="titan-panel rounded-2xl p-6 glow-voya relative overflow-hidden">
+          
+          <!-- Era Watermark Badge -->
+          <div class="absolute top-4 left-4 z-20 flex items-center space-x-2">
+            <span class="bg-red-900/80 border border-red-500/50 text-red-200 text-[11px] font-extrabold uppercase px-2.5 py-1 rounded tracking-wider shadow">
+              BIONICLE® 2006
+            </span>
+            <span class="bg-black/60 border border-gray-700 text-yellow-400 text-[11px] font-bold px-2 py-1 rounded">
+              VOYA NUI TITAN
+            </span>
+          </div>
+
+          <!-- Interactive Kanohi Rode "Truth Vision" Toggle (Easter Egg) -->
+          <div class="absolute top-4 right-4 z-20">
+            <button id="rode-toggle-btn" onclick="toggleTruthVision()" class="bg-blue-950/80 hover:bg-blue-900 border border-blue-400 text-blue-200 text-xs px-2.5 py-1.5 rounded-lg flex items-center space-x-1.5 shadow-lg transition">
+              <span class="inline-block w-2.5 h-2.5 rounded-full bg-blue-400 animate-ping"></span>
+              <span data-i18n="maskButton">Kanohi Rode View</span>
+            </button>
+          </div>
+
+          <!-- Primary Interactive Image Display -->
+          <div class="w-full flex items-center justify-center p-4 min-h-[380px] sm:min-h-[440px] relative">
+            
+            <!-- Image with fallback -->
+            <img 
+              id="main-product-img"
+              src="https://www.lego.com/cdn/product-assets/product.img.pri/8733_prod.jpg" 
+              alt="LEGO BIONICLE 8733 Axonn" 
+              onerror="this.onerror=null; this.src='https://placehold.co/600x600/12151c/ffd500?text=8733+Axonn+Titan+2006';"
+              class="max-h-[400px] w-auto object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.9)] transition duration-500 ease-in-out transform hover:scale-105"
+            >
+
+            <!-- Holographic Truth Overlay (revealed with Kanohi Rode) -->
+            <div id="truth-overlay" class="hidden absolute inset-0 bg-blue-950/20 border-2 border-blue-400/40 rounded-xl pointer-events-none flex flex-col justify-between p-6">
+              <div class="text-blue-300 font-mono text-xs uppercase tracking-widest bg-black/80 p-2 rounded max-w-fit border border-blue-500/40">
+                <span class="text-green-400 font-bold">● SCANNING:</span> <span data-i18n="rodeScan">CANNOT BE DECEIVED BY PIRAKA ILLUSIONS</span>
+              </div>
+              <div class="text-right text-yellow-300 font-mono text-xs bg-black/80 p-2 rounded max-w-fit ml-auto border border-yellow-500/40">
+                <span data-i18n="rodePower">POWER LEVEL: TITAN GUARDIAN OF IGNIKA</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Image Stage Action Controls -->
+          <div class="flex flex-wrap items-center justify-between border-t border-gray-800 pt-4 mt-2 text-xs text-gray-400 gap-2">
+            <div class="flex items-center space-x-2">
+              <span class="text-yellow-400 font-bold" data-i18n="viewLabel">View:</span>
+              <span id="current-view-name" class="text-gray-200">Official Box Art & Model</span>
+            </div>
+            
+            <!-- Interactive Sound Trigger: Zamor Sphere Launcher -->
+            <button onclick="fireZamorSound()" class="flex items-center space-x-1.5 text-red-300 bg-red-950/60 hover:bg-red-900/80 px-2.5 py-1 rounded border border-red-700/60 transition">
+              <svg class="w-3.5 h-3.5 fill-current text-red-400" viewBox="0 0 20 20">
+                <path d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"/>
+              </svg>
+              <span data-i18n="fireZamor">⚡ Fire Zamor Launcher (Sound)</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Thumbnail Gallery Strip -->
+        <div class="grid grid-cols-4 gap-3">
+          
+          <button onclick="changeGalleryImage('primary', 'Official Box Art & Model')" class="thumb-btn active-thumb p-2 rounded-lg bg-gray-900 border-2 border-yellow-400 hover:border-yellow-300 transition flex flex-col items-center justify-center">
+            <img src="https://www.lego.com/cdn/product-assets/product.img.pri/8733_prod.jpg" onerror="this.src='https://placehold.co/100x100/12151c/ffd500?text=8733';" alt="Axonn Primary" class="h-14 w-auto object-contain">
+            <span class="text-[10px] text-gray-300 mt-1 font-semibold" data-i18n="thumbPrimary">Full Model</span>
+          </button>
+
+          <button onclick="changeGalleryImage('axe', 'Giant Proto-Steel Axe')" class="thumb-btn p-2 rounded-lg bg-gray-900 border border-gray-700 hover:border-yellow-400 transition flex flex-col items-center justify-center">
+            <div class="h-14 w-full flex items-center justify-center text-red-400 font-black text-xs font-mono">
+              [ 🪓 AXE ]
+            </div>
+            <span class="text-[10px] text-gray-300 mt-1 font-semibold" data-i18n="thumbAxe">Battle Axe</span>
+          </button>
+
+          <button onclick="changeGalleryImage('mask', 'Kanohi Rode Mask of Truth')" class="thumb-btn p-2 rounded-lg bg-gray-900 border border-gray-700 hover:border-yellow-400 transition flex flex-col items-center justify-center">
+            <div class="h-14 w-full flex items-center justify-center text-blue-400 font-black text-xs font-mono">
+              [ 👁️ RODE ]
+            </div>
+            <span class="text-[10px] text-gray-300 mt-1 font-semibold" data-i18n="thumbMask">Mask of Truth</span>
+          </button>
+
+          <button onclick="changeGalleryImage('combiner', 'Combiner: Kardas Dragon')" class="thumb-btn p-2 rounded-lg bg-gray-900 border border-gray-700 hover:border-yellow-400 transition flex flex-col items-center justify-center">
+            <div class="h-14 w-full flex items-center justify-center text-amber-500 font-black text-xs font-mono">
+              [ 🐉 KARDAS ]
+            </div>
+            <span class="text-[10px] text-gray-300 mt-1 font-semibold" data-i18n="thumbCombiner">Dragon Comb.</span>
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN: Pricing, Specifications, Cart CTA & Lore (5 cols) -->
+      <div class="lg:col-span-5 flex flex-col space-y-4">
+        
+        <div class="titan-panel rounded-2xl p-6 relative">
+          
+          <!-- Product Title and Catalog Number -->
+          <div class="border-b border-gray-800 pb-4">
+            <div class="flex items-baseline justify-between">
+              <span class="text-sm font-bold text-yellow-400 uppercase tracking-widest font-bionicle">Item #8733</span>
+              <span class="text-xs text-green-400 bg-green-950/80 border border-green-800 px-2 py-0.5 rounded font-bold" data-i18n="inStock">In Stock</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-1 font-bionicle" data-i18n="productTitle">
+              Axonn
+            </h1>
+            <p class="text-xs text-gray-400 font-medium mt-0.5" data-i18n="productSubtitle">
+              Guardian of the Kanohi Ignika • Island of Voya Nui
+            </p>
+          </div>
+
+          <!-- 2006 Key Spec Badges Grid -->
+          <div class="grid grid-cols-3 gap-2 my-4 text-center">
+            <div class="bg-gray-900/90 border border-gray-700 p-2 rounded-lg">
+              <span class="block text-[10px] uppercase text-gray-400 font-bold" data-i18n="labelAges">Ages</span>
+              <span class="text-sm font-extrabold text-yellow-300">9 - 16</span>
+            </div>
+            <div class="bg-gray-900/90 border border-gray-700 p-2 rounded-lg">
+              <span class="block text-[10px] uppercase text-gray-400 font-bold" data-i18n="labelPieces">Pieces</span>
+              <span class="text-sm font-extrabold text-yellow-300">196</span>
+            </div>
+            <div class="bg-gray-900/90 border border-gray-700 p-2 rounded-lg">
+              <span class="block text-[10px] uppercase text-gray-400 font-bold" data-i18n="labelYear">Year</span>
+              <span class="text-sm font-extrabold text-yellow-300">2006</span>
+            </div>
+          </div>
+
+          <!-- Price & Ratings Block -->
+          <div class="bg-neutral-900/80 rounded-xl p-4 border border-gray-800 my-4 flex items-center justify-between">
+            <div>
+              <span class="block text-[11px] text-gray-400 uppercase font-semibold" data-i18n="priceLabel">MSRP Price</span>
+              <div class="text-3xl font-black text-white" id="product-price">$19.99</div>
+              <span class="text-[10px] text-gray-400" data-i18n="priceTax">plus shipping & handling</span>
+            </div>
+            
+            <div class="text-right">
+              <div class="flex text-yellow-400 text-sm">
+                ★★★★★
+              </div>
+              <span class="text-[11px] text-gray-300 font-bold block mt-1" data-i18n="ratingScore">4.9 / 5.0 (2006)</span>
+              <span class="text-[10px] text-gray-400" data-i18n="reviewCount">142 Fan Reviews</span>
+            </div>
+          </div>
+
+          <!-- Quantity Selector and Retro Buy Button -->
+          <div class="space-y-3 pt-2">
+            <div class="flex items-center space-x-3">
+              <label for="order-qty" class="text-xs font-bold text-gray-300" data-i18n="qtyLabel">Qty:</label>
+              <select id="order-qty" class="bg-gray-800 text-white font-bold text-sm rounded border border-gray-600 px-3 py-1.5 focus:outline-none focus:border-yellow-400">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4 (Max)</option>
+              </select>
+              <div class="text-[11px] text-amber-400/90 flex items-center space-x-1">
+                <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                </svg>
+                <span data-i18n="limitNotice">Limit 4 per customer</span>
+              </div>
+            </div>
+
+            <!-- Big 2006 "Add to Bag" Action Button -->
+            <button onclick="addToCart()" class="w-full btn-lego-retro text-black font-black uppercase text-base tracking-wider py-3 px-6 rounded-xl flex items-center justify-center space-x-2">
+              <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.24-1a1 1 0 00-.97-.757H3z"/>
+              </svg>
+              <span data-i18n="addToBagBtn">Add to Bag</span>
+            </button>
+          </div>
+
+          <!-- Feature Bullet Highlights -->
+          <div class="mt-6 border-t border-gray-800 pt-4 space-y-2 text-xs text-gray-300">
+            <div class="flex items-start space-x-2">
+              <span class="text-yellow-400 font-bold">✔</span>
+              <span data-i18n="bullet1">Features the Kanohi Rode, the Great Mask of Truth.</span>
+            </div>
+            <div class="flex items-start space-x-2">
+              <span class="text-yellow-400 font-bold">✔</span>
+              <span data-i18n="bullet2">Armed with a giant double-bladed proto-steel battle axe.</span>
+            </div>
+            <div class="flex items-start space-x-2">
+              <span class="text-yellow-400 font-bold">✔</span>
+              <span data-i18n="bullet3">Equipped with functioning Zamor sphere launcher with 4 spheres.</span>
+            </div>
+            <div class="flex items-start space-x-2">
+              <span class="text-yellow-400 font-bold">✔</span>
+              <span data-i18n="bullet4">Combine with 8734 Brutaka & 8764 Vezok to build the Kardas Dragon!</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Kanohi Rode Lore Card -->
+        <div class="bg-gradient-to-br from-blue-950/40 via-gray-900 to-black p-4 rounded-xl border border-blue-900/50 flex items-start space-x-3">
+          <div class="p-2.5 bg-blue-900/40 rounded-lg text-blue-400 border border-blue-700/50">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-blue-300 uppercase tracking-wider" data-i18n="maskTitle">Mask of Truth: Kanohi Rode</h4>
+            <p class="text-[11px] text-gray-300 mt-0.5 leading-relaxed" data-i18n="maskDesc">
+              Allows Axonn to see through any illusion, deception, or shape-shifting disguise utilized by the Piraka on Voya Nui.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Tabbed Detailed Information Section -->
+    <div class="mt-12 titan-panel rounded-2xl p-6 sm:p-8">
+      
+      <!-- Tab Selection Headers -->
+      <div class="flex border-b border-gray-700 overflow-x-auto space-x-4 sm:space-x-8 pb-3">
+        <button onclick="switchTab('desc')" id="tab-btn-desc" class="tab-btn text-yellow-400 border-b-2 border-yellow-400 pb-2 text-xs sm:text-sm font-bold uppercase tracking-wider transition whitespace-nowrap">
+          <span data-i18n="tabBio">Story & Description</span>
+        </button>
+        <button onclick="switchTab('specs')" id="tab-btn-specs" class="tab-btn text-gray-400 hover:text-gray-200 pb-2 text-xs sm:text-sm font-bold uppercase tracking-wider transition whitespace-nowrap">
+          <span data-i18n="tabSpecs">Titan Stats & Abilities</span>
+        </button>
+        <button onclick="switchTab('combiner')" id="tab-btn-combiner" class="tab-btn text-gray-400 hover:text-gray-200 pb-2 text-xs sm:text-sm font-bold uppercase tracking-wider transition whitespace-nowrap">
+          <span data-i18n="tabCombiner">Combiner: Kardas Dragon</span>
+        </button>
+        <button onclick="switchTab('reviews')" id="tab-btn-reviews" class="tab-btn text-gray-400 hover:text-gray-200 pb-2 text-xs sm:text-sm font-bold uppercase tracking-wider transition whitespace-nowrap">
+          <span data-i18n="tabReviews">Fan Reviews (2006)</span>
+        </button>
+      </div>
+
+      <!-- Tab Content Area -->
+      <div class="mt-6 text-sm text-gray-300 leading-relaxed">
+        
+        <!-- Tab 1: Story & Description -->
+        <div id="tab-desc" class="space-y-4">
+          <h3 class="text-xl font-bold text-white font-bionicle" data-i18n="storyHeading">
+            The Mighty Guardian of Voya Nui!
+          </h3>
+          <p data-i18n="storyP1">
+            Axonn is a powerful, ancient warrior sworn to protect the legendary Mask of Life from those who would use it for evil. Endowed with incredible raw physical strength, his hands can shatter solid bedrock, while his giant double-bladed battle axe channels searing energy blasts capable of stopping an entire Piraka horde in their tracks.
+          </p>
+          <p data-i18n="storyP2">
+            Standing alongside his former comrade Brutaka, Axonn has guarded the secrets of the island of Voya Nui for millennia. But with Brutaka corrupted by the lure of the Ignika, Axonn must now stand alone as the champion of the Matoran and the last barrier against total destruction.
+          </p>
+          <div class="bg-red-950/40 border border-red-800/40 p-4 rounded-xl mt-4">
+            <h4 class="text-red-300 font-bold text-xs uppercase" data-i18n="warningTitle">BIONICLE Lore Note:</h4>
+            <p class="text-xs text-red-200/90 mt-1" data-i18n="warningDesc">
+              Axonn’s battle with Brutaka in the 2006 Ignition comic series “Inferno” remains one of the most legendary conflicts in the BIONICLE® universe!
+            </p>
+          </div>
+        </div>
+
+        <!-- Tab 2: Stats & Abilities -->
+        <div id="tab-specs" class="hidden space-y-6">
+          <h3 class="text-xl font-bold text-white font-bionicle" data-i18n="statsHeading">
+            Axonn Titan Attribute Matrix
+          </h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Stat Bar 1: Strength -->
+            <div class="bg-gray-900/70 p-3 rounded-lg border border-gray-800">
+              <div class="flex justify-between text-xs font-bold mb-1">
+                <span data-i18n="statStrength">Physical Strength</span>
+                <span class="text-yellow-400">10 / 10 (Titan Class)</span>
+              </div>
+              <div class="w-full bg-gray-800 rounded-full h-2.5">
+                <div class="bg-yellow-400 h-2.5 rounded-full" style="width: 100%"></div>
+              </div>
+            </div>
+
+            <!-- Stat Bar 2: Armor & Resilience -->
+            <div class="bg-gray-900/70 p-3 rounded-lg border border-gray-800">
+              <div class="flex justify-between text-xs font-bold mb-1">
+                <span data-i18n="statArmor">Armor & Resilience</span>
+                <span class="text-red-400">9.5 / 10</span>
+              </div>
+              <div class="w-full bg-gray-800 rounded-full h-2.5">
+                <div class="bg-red-500 h-2.5 rounded-full" style="width: 95%"></div>
+              </div>
+            </div>
+
+            <!-- Stat Bar 3: Mask Power (Rode) -->
+            <div class="bg-gray-900/70 p-3 rounded-lg border border-gray-800">
+              <div class="flex justify-between text-xs font-bold mb-1">
+                <span data-i18n="statTruth">Truth Perception (Kanohi Rode)</span>
+                <span class="text-blue-400">10 / 10 (Unpierceable)</span>
+              </div>
+              <div class="w-full bg-gray-800 rounded-full h-2.5">
+                <div class="bg-blue-500 h-2.5 rounded-full" style="width: 100%"></div>
+              </div>
+            </div>
+
+            <!-- Stat Bar 4: Agility -->
+            <div class="bg-gray-900/70 p-3 rounded-lg border border-gray-800">
+              <div class="flex justify-between text-xs font-bold mb-1">
+                <span data-i18n="statAgility">Agility & Speed</span>
+                <span class="text-emerald-400">6.5 / 10 (Heavy Bruiser)</span>
+              </div>
+              <div class="w-full bg-gray-800 rounded-full h-2.5">
+                <div class="bg-emerald-500 h-2.5 rounded-full" style="width: 65%"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Weaponry Breakdown -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+            <div class="border border-gray-700 bg-neutral-900 p-4 rounded-xl">
+              <h4 class="font-bold text-yellow-300 text-sm" data-i18n="wpnAxeTitle">Double-Bladed Battle Axe</h4>
+              <p class="text-xs text-gray-400 mt-1" data-i18n="wpnAxeDesc">
+                Forged from indestructible proto-steel. Axonn can throw it like a boomerang or fire searing electrical blasts from either edge.
+              </p>
+            </div>
+            <div class="border border-gray-700 bg-neutral-900 p-4 rounded-xl">
+              <h4 class="font-bold text-red-400 text-sm" data-i18n="wpnZamorTitle">Zamor Sphere Launcher</h4>
+              <p class="text-xs text-gray-400 mt-1" data-i18n="wpnZamorDesc">
+                Shoots solid Zamor spheres capable of carrying purifying antidote or debilitating stasis energy against the rogue Piraka.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Combiner Model: Kardas Dragon -->
+        <div id="tab-combiner" class="hidden space-y-4">
+          <div class="flex flex-col sm:flex-row items-center gap-6">
+            <div class="bg-neutral-950 p-6 rounded-xl border border-amber-500/40 text-center sm:w-1/3">
+              <span class="text-4xl">🐉</span>
+              <h4 class="text-amber-400 font-extrabold text-base mt-2 font-bionicle">KARDAS DRAGON</h4>
+              <p class="text-[11px] text-gray-400 mt-1" data-i18n="kardasParts">Requires 3 Titan Sets</p>
+            </div>
+            <div class="sm:w-2/3 space-y-2">
+              <h3 class="text-lg font-bold text-white" data-i18n="combinerHeading">Build the Ultimate 2006 Titan Behemoth!</h3>
+              <p class="text-xs text-gray-300" data-i18n="combinerDesc">
+                Combine parts from set <strong class="text-yellow-400">8733 Axonn</strong>, <strong class="text-yellow-400">8734 Brutaka</strong>, and <strong class="text-yellow-400">8764 Vezok & Fenrakk</strong> to construct the massive winged Kardas Dragon! Featuring a monstrous wingspan and firing mechanism.
+              </p>
+              <div class="pt-2">
+                <a href="#8734" class="text-xs text-yellow-400 hover:underline font-bold" data-i18n="linkBrutaka">» View 8734 Brutaka set page</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 4: Vintage 2006 Fan Reviews -->
+        <div id="tab-reviews" class="hidden space-y-4">
+          
+          <div class="border-b border-gray-800 pb-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-yellow-400">ToaMaster06 (March 18, 2006)</span>
+              <span class="text-yellow-400 text-xs">★★★★★</span>
+            </div>
+            <h5 class="text-sm font-bold text-white mt-1" data-i18n="rev1Title">The greatest BIONICLE Titan yet!</h5>
+            <p class="text-xs text-gray-400 mt-1" data-i18n="rev1Body">
+              Axonn is completely solid! His articulated hands can grip the giant axe easily, and the silver Kanohi Rode looks awesome. Best set of 2006 so far.
+            </p>
+          </div>
+
+          <div class="border-b border-gray-800 pb-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-yellow-400">VoyaNuiHunter (March 24, 2006)</span>
+              <span class="text-yellow-400 text-xs">★★★★★</span>
+            </div>
+            <h5 class="text-sm font-bold text-white mt-1" data-i18n="rev2Title">Heavy armor and incredible build</h5>
+            <p class="text-xs text-gray-400 mt-1" data-i18n="rev2Body">
+              Took me about 45 minutes to build. His shoulders are built like a tank. Zamor launcher works flawlessly. Can't wait to combine him with Brutaka.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- 2006 Retro Shop@Home Footer -->
+  <footer class="w-full bg-[#0d0f14] border-t border-gray-800 mt-12 py-8 text-xs text-gray-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      
+      <!-- Footer Nav Columns -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+        <div>
+          <h5 class="font-bold text-gray-200 uppercase tracking-wider mb-2" data-i18n="ftProducts">BIONICLE® 2006</h5>
+          <ul class="space-y-1 text-gray-400">
+            <li><a href="#" class="hover:text-yellow-400">8733 Axonn</a></li>
+            <li><a href="#" class="hover:text-yellow-400">8734 Brutaka</a></li>
+            <li><a href="#" class="hover:text-yellow-400">8764 Vezon & Fenrakk</a></li>
+            <li><a href="#" class="hover:text-yellow-400">Toa Inika Collection</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="font-bold text-gray-200 uppercase tracking-wider mb-2" data-i18n="ftSupport">Customer Support</h5>
+          <ul class="space-y-1 text-gray-400">
+            <li><a href="#" class="hover:text-yellow-400" data-i18n="ftOrderTracker">Order Status</a></li>
+            <li><a href="#" class="hover:text-yellow-400" data-i18n="ftBuildingInst">Building Instructions</a></li>
+            <li><a href="#" class="hover:text-yellow-400" data-i18n="ftMissingBricks">Missing Bricks</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="font-bold text-gray-200 uppercase tracking-wider mb-2" data-i18n="ftExplore">Explore LEGO</h5>
+          <ul class="space-y-1 text-gray-400">
+            <li><a href="#" class="hover:text-yellow-400">LEGO Club Magazine</a></li>
+            <li><a href="#" class="hover:text-yellow-400">LEGO Shop at Home</a></li>
+            <li><a href="#" class="hover:text-yellow-400">BIONICLE.com Story Portal</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="font-bold text-gray-200 uppercase tracking-wider mb-2" data-i18n="ftCatalog">Direct Mail Order</h5>
+          <p class="text-[11px] text-gray-400" data-i18n="ftPhone">
+            Call 1-800-453-4652 (USA) or order through our 2006 spring print catalog.
+          </p>
+        </div>
+      </div>
+
+      <!-- Legal & Copyright 2006 notice -->
+      <div class="border-t border-gray-800/80 pt-6 flex flex-col md:flex-row items-center justify-between text-[11px] text-gray-400">
+        <p data-i18n="ftCopyright">
+          LEGO, the LEGO logo, and BIONICLE are registered trademarks of the LEGO Group. ©2006 The LEGO Group. All rights reserved.
+        </p>
+        <div class="flex space-x-4 mt-2 md:mt-0">
+          <a href="#" class="hover:underline" data-i18n="ftPrivacy">Privacy Policy</a>
+          <a href="#" class="hover:underline" data-i18n="ftTerms">Terms of Use</a>
+          <a href="#" class="hover:underline" data-i18n="ftLegal">Legal Notice</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Interactive Cart / Order Modal (No alert() used) -->
+  <div id="cart-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-gray-900 border-2 border-yellow-400 rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
+      <button onclick="closeCartModal()" class="absolute top-3 right-3 text-gray-400 hover:text-white text-xl font-bold">✕</button>
+      
+      <div class="flex items-center space-x-3 mb-4">
+        <div class="bg-yellow-400 p-2 rounded text-black font-black">LEGO</div>
+        <h3 class="text-lg font-bold text-white font-bionicle" data-i18n="modalCartTitle">Your 2006 LEGO Shopping Bag</h3>
+      </div>
+
+      <div class="border-t border-b border-gray-800 py-3 space-y-2">
+        <div class="flex justify-between items-center text-sm">
+          <div>
+            <span class="font-bold text-yellow-300">8733 Axonn</span>
+            <span class="text-xs text-gray-400 block" id="modal-qty-text">Qty: 1</span>
+          </div>
+          <span class="font-bold text-white" id="modal-total-price">$19.99</span>
+        </div>
+        <div class="text-xs text-emerald-400 flex items-center space-x-1">
+          <span>✔</span>
+          <span data-i18n="modalPromo">2006 Collector Comic #1 Included Free!</span>
+        </div>
+      </div>
+
+      <div class="mt-4 flex space-x-3">
+        <button onclick="closeCartModal()" class="w-1/2 py-2 text-xs font-bold text-gray-300 bg-gray-800 hover:bg-gray-700 rounded-lg border border-gray-600" data-i18n="modalContinue">
+          Keep Browsing
+        </button>
+        <button onclick="checkoutNotification()" class="w-1/2 btn-lego-retro py-2 text-xs font-bold text-black uppercase tracking-wider rounded-lg" data-i18n="modalCheckout">
+          Checkout Now
+        </button>
+      </div>
+
+      <!-- Live confirmation banner inside modal -->
+      <div id="checkout-status" class="hidden mt-3 text-center text-xs text-yellow-300 bg-black/60 p-2 rounded border border-yellow-500/50">
+        Simulated 2006 Order placed! Connecting to LEGO Direct...
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* BILINGUAL LOCALIZATION DICTIONARY (en-US <-> ru-RU) */
+    const translations = {
+      en_US: {
+        shopAtHome: "Shop at Home",
+        officialCatalog: "Official 2006 Collector's Catalog",
+        navProducts: "Products",
+        navBionicle: "BIONICLE®",
+        navClub: "LEGO Club",
+        navSupport: "Customer Service",
+        cartLabel: "Cart",
+        bannerTag: "MARCH 2006 RELEASE:",
+        bannerText: "Explore the Island of Doom! Can Axonn defend the Mask of Life against the Piraka?",
+        bcHome: "Home",
+        bcProducts: "Products",
+        bcTitans: "Titans",
+        bcItem: "8733 Axonn",
+        maskButton: "Kanohi Rode View",
+        viewLabel: "View:",
+        fireZamor: "⚡ Fire Zamor Launcher (Sound)",
+        thumbPrimary: "Full Model",
+        thumbAxe: "Battle Axe",
+        thumbMask: "Mask of Truth",
+        thumbCombiner: "Dragon Comb.",
+        inStock: "In Stock",
+        productTitle: "Axonn",
+        productSubtitle: "Guardian of the Kanohi Ignika • Island of Voya Nui",
+        labelAges: "Ages",
+        labelPieces: "Pieces",
+        labelYear: "Year",
+        priceLabel: "MSRP Price",
+        priceValue: "$19.99",
+        priceTax: "plus shipping & handling",
+        ratingScore: "4.9 / 5.0 (2006)",
+        reviewCount: "142 Fan Reviews",
+        qtyLabel: "Qty:",
+        limitNotice: "Limit 4 per customer",
+        addToBagBtn: "Add to Bag",
+        bullet1: "Features the Kanohi Rode, the Great Mask of Truth.",
+        bullet2: "Armed with a giant double-bladed proto-steel battle axe.",
+        bullet3: "Equipped with functioning Zamor sphere launcher with 4 spheres.",
+        bullet4: "Combine with 8734 Brutaka & 8764 Vezok to build the Kardas Dragon!",
+        maskTitle: "Mask of Truth: Kanohi Rode",
+        maskDesc: "Allows Axonn to see through any illusion, deception, or shape-shifting disguise utilized by the Piraka on Voya Nui.",
+        tabBio: "Story & Description",
+        tabSpecs: "Titan Stats & Abilities",
+        tabCombiner: "Combiner: Kardas Dragon",
+        tabReviews: "Fan Reviews (2006)",
+        storyHeading: "The Mighty Guardian of Voya Nui!",
+        storyP1: "Axonn is a powerful, ancient warrior sworn to protect the legendary Mask of Life from those who would use it for evil. Endowed with incredible raw physical strength, his hands can shatter solid bedrock, while his giant double-bladed battle axe channels searing energy blasts capable of stopping an entire Piraka horde in their tracks.",
+        storyP2: "Standing alongside his former comrade Brutaka, Axonn has guarded the secrets of the island of Voya Nui for millennia. But with Brutaka corrupted by the lure of the Ignika, Axonn must now stand alone as the champion of the Matoran and the last barrier against total destruction.",
+        warningTitle: "BIONICLE Lore Note:",
+        warningDesc: "Axonn’s battle with Brutaka in the 2006 Ignition comic series ‘Inferno’ remains one of the most legendary conflicts in the BIONICLE® universe!",
+        statsHeading: "Axonn Titan Attribute Matrix",
+        statStrength: "Physical Strength",
+        statArmor: "Armor & Resilience",
+        statTruth: "Truth Perception (Kanohi Rode)",
+        statAgility: "Agility & Speed",
+        wpnAxeTitle: "Double-Bladed Battle Axe",
+        wpnAxeDesc: "Forged from indestructible proto-steel. Axonn can throw it like a boomerang or fire searing electrical blasts from either edge.",
+        wpnZamorTitle: "Zamor Sphere Launcher",
+        wpnZamorDesc: "Shoots solid Zamor spheres capable of carrying purifying antidote or debilitating stasis energy against the rogue Piraka.",
+        kardasParts: "Requires 3 Titan Sets",
+        combinerHeading: "Build the Ultimate 2006 Titan Behemoth!",
+        combinerDesc: "Combine parts from set 8733 Axonn, 8734 Brutaka, and 8764 Vezon & Fenrakk to construct the massive winged Kardas Dragon! Featuring a monstrous wingspan and firing mechanism.",
+        linkBrutaka: "» View 8734 Brutaka set page",
+        rev1Title: "The greatest BIONICLE Titan yet!",
+        rev1Body: "Axonn is completely solid! His articulated hands can grip the giant axe easily, and the silver Kanohi Rode looks awesome. Best set of 2006 so far.",
+        rev2Title: "Heavy armor and incredible build",
+        rev2Body: "Took me about 45 minutes to build. His shoulders are built like a tank. Zamor launcher works flawlessly. Can't wait to combine him with Brutaka.",
+        ftProducts: "BIONICLE® 2006",
+        ftSupport: "Customer Support",
+        ftOrderTracker: "Order Status",
+        ftBuildingInst: "Building Instructions",
+        ftMissingBricks: "Missing Bricks",
+        ftExplore: "Explore LEGO",
+        ftCatalog: "Direct Mail Order",
+        ftPhone: "Call 1-800-453-4652 (USA) or order through our 2006 spring print catalog.",
+        ftCopyright: "LEGO, the LEGO logo, and BIONICLE are registered trademarks of the LEGO Group. ©2006 The LEGO Group. All rights reserved.",
+        ftPrivacy: "Privacy Policy",
+        ftTerms: "Terms of Use",
+        ftLegal: "Legal Notice",
+        modalCartTitle: "Your 2006 LEGO Shopping Bag",
+        modalPromo: "2006 Collector Comic #1 Included Free!",
+        modalContinue: "Keep Browsing",
+        modalCheckout: "Checkout Now",
+        rodeScan: "CANNOT BE DECEIVED BY PIRAKA ILLUSIONS",
+        rodePower: "POWER LEVEL: TITAN GUARDIAN OF IGNIKA"
+      },
+      ru_RU: {
+        shopAtHome: "Заказ по каталогу (Shop at Home)",
+        officialCatalog: "Официальный каталог LEGO 2006 года",
+        navProducts: "Продукция",
+        navBionicle: "BIONICLE®",
+        navClub: "Клуб LEGO",
+        navSupport: "Служба поддержки",
+        cartLabel: "Корзина",
+        bannerTag: "НОВИНКА МАРТА 2006:",
+        bannerText: "Исследуй Остров Погибели! Сможет ли Аксонн защитить Маску Жизни от Пирака?",
+        bcHome: "Главная",
+        bcProducts: "Каталог",
+        bcTitans: "Титаны",
+        bcItem: "8733 Axonn (Аксонн)",
+        maskButton: "Взгляд Канохи Роде",
+        viewLabel: "Режим:",
+        fireZamor: "⚡ Выстрел Замор (Звук)",
+        thumbPrimary: "Фигура",
+        thumbAxe: "Секира",
+        thumbMask: "Маска Истины",
+        thumbCombiner: "Дракон Кардас",
+        inStock: "В наличии",
+        productTitle: "Аксонн",
+        productSubtitle: "Хранитель Канохи Игника • Остров Войя Нуи",
+        labelAges: "Возраст",
+        labelPieces: "Детали",
+        labelYear: "Год",
+        priceLabel: "Цена по каталогу",
+        priceValue: "749 руб.",
+        priceTax: "плюс доставка по России",
+        ratingScore: "4.9 / 5.0 (2006)",
+        reviewCount: "142 отзыва фанатов",
+        qtyLabel: "Кол-во:",
+        limitNotice: "Не более 4 шт. в одни руки",
+        addToBagBtn: "Добавить в корзину",
+        bullet1: "Оснащён Канохи Роде — Великой Маской Истины.",
+        bullet2: "Вооружён гигантским двусторонним секировидным топором из протостали.",
+        bullet3: "Действующий пускатель сфер Замор с комплектом из 4 сфер.",
+        bullet4: "Объединяется с 8734 Брутакой и 8764 Везоном в исполинского Дракона Кардаса!",
+        maskTitle: "Маска Истины: Канохи Роде",
+        maskDesc: "Позволяет Аксонну видеть сквозь любые иллюзии, обман и способность менять форму, используемые злодеями Пирака.",
+        tabBio: "История и описание",
+        tabSpecs: "Характеристики Титана",
+        tabCombiner: "Комбайнер: Дракон Кардас",
+        tabReviews: "Отзывы фанатов (2006)",
+        storyHeading: "Могучий Защитник Острова Войя Нуи!",
+        storyP1: "Аксонн — древний и невероятно могущественный воин, давший клятву защищать легендарную Маску Жизни (Игнику) от тех, кто жаждет использовать её во зло. Наделенный чудовищной физической силой, он способен дробить скалы голыми руками, а его огромный топор выпускает сокрушительные энергетические разряды.",
+        storyP2: "Плечом к плечу со своим старым соратником Брутакой Аксонн тысячелетиями оберегал тайны Войя Нуи. Но когда Брутака пал жертвой соблазна силы Маски, Аксонн остался единственным оплотом Маторанов перед лицом неминуемой гибели острова.",
+        warningTitle: "Летопись BIONICLE:",
+        warningDesc: "Битва Аксонна против предателя Брутаки в серии комиксов «Inferno» 2006 года стала одной из самых эпических дуэлей в истории вселенной!",
+        statsHeading: "Матрица способностей Титана Аксонна",
+        statStrength: "Физическая мощь",
+        statArmor: "Броня и стойкость",
+        statTruth: "Видение правды (Канохи Роде)",
+        statAgility: "Ловкость и скорость",
+        wpnAxeTitle: "Секира из протостали",
+        wpnAxeDesc: "Выкована из неразрушимого сплава протостали. Аксонн способен метать её как бумеранг или испускать молнии из обоих лезвий.",
+        wpnZamorTitle: "Метатель сфер Замор",
+        wpnZamorDesc: "Стреляет сферами Замор, несущими очищающий антидот либо сковывающую энергию стазиса против банд Пирака.",
+        kardasParts: "Требуется 3 набора Титанов",
+        combinerHeading: "Собери величайшего Титана 2006 года!",
+        combinerDesc: "Объедините детали наборов 8733 Аксонн, 8734 Брутака и 8764 Везон и Фенракк, чтобы построить колоссального крылатого Дракона Кардаса с действующим метателем!",
+        linkBrutaka: "» Перейти к набору 8734 Брутака",
+        rev1Title: "Лучший Титан Бионикл за все время!",
+        rev1Body: "Аксонн сделан потрясающе крепко! Пальцы на руках подвижны и держат топор без провисаний, а серебряная маска Роде выглядит грандиозно.",
+        rev2Title: "Мощная броня и отличная сборка",
+        rev2Body: "Собрал примерно за 40 минут. Плечи массивные, как у танка. Метатель Замор бьет далеко. Жду возможности объединить с Брутакой.",
+        ftProducts: "BIONICLE® 2006",
+        ftSupport: "Служба поддержки",
+        ftOrderTracker: "Статус заказа",
+        ftBuildingInst: "Инструкции по сборке",
+        ftMissingBricks: "Недостающие детали",
+        ftExplore: "Мир LEGO",
+        ftCatalog: "Заказ по почте",
+        ftPhone: "Контактный центр в РФ (Москва): (495) 785-0000 или через фирменный печатный каталог.",
+        ftCopyright: "LEGO, логотип LEGO и BIONICLE являются зарегистрированными товарными знаками LEGO Group. ©2006 The LEGO Group. Все права защищены.",
+        ftPrivacy: "Конфиденциальность",
+        ftTerms: "Условия использования",
+        ftLegal: "Правовая информация",
+        modalCartTitle: "Ваша корзина LEGO (Март 2006)",
+        modalPromo: "Коллекционный комикс BIONICLE #1 в подарок!",
+        modalContinue: "Продолжить выбор",
+        modalCheckout: "Оформить заказ",
+        rodeScan: "ИЛЛЮЗИИ И ОБМАН ПИРАКА БЕССИЛЬНЫ",
+        rodePower: "УРОВЕНЬ: ТИТАН-СТРАЖ МАСКИ ЖИЗНИ"
+      }
+    };
+
+    /* STATE TRACKING */
+    let currentLang = 'en';
+    let cartCount = 0;
+    let isTruthVisionActive = false;
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      
+      // Update toggle buttons styling
+      const enBtn = document.getElementById('lang-en');
+      const ruBtn = document.getElementById('lang-ru');
+      if (lang === 'ru') {
+        ruBtn.className = 'px-2 py-1 rounded font-bold transition text-black bg-yellow-400';
+        enBtn.className = 'px-2 py-1 rounded font-bold transition text-gray-400 hover:text-white';
+      } else {
+        enBtn.className = 'px-2 py-1 rounded font-bold transition text-black bg-yellow-400';
+        ruBtn.className = 'px-2 py-1 rounded font-bold transition text-gray-400 hover:text-white';
+      }
+
+      // Update price text
+      const priceElem = document.getElementById('product-price');
+      if (priceElem) {
+        priceElem.innerText = translations[lang].priceValue;
+      }
+
+      // Translate all DOM elements with data-i18n
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          element.innerText = translations[lang][key];
+        }
+      });
+    }
+
+    let synth = null;
+    let noiseSynth = null;
+
+    function initAudio() {
+      if (!synth && window.Tone) {
+        try {
+          Tone.start();
+          synth = new Tone.PolySynth(Tone.Synth, {
+            oscillator: { type: "sawtooth" },
+            envelope: { attack: 0.01, decay: 0.2, sustain: 0.1, release: 0.4 }
+          }).toDestination();
+          synth.volume.value = -6;
+
+          noiseSynth = new Tone.NoiseSynth({
+            noise: { type: "white" },
+            envelope: { attack: 0.005, decay: 0.15, sustain: 0 }
+          }).toDestination();
+          noiseSynth.volume.value = -4;
+        } catch (e) {
+          console.warn("Audio initialization deferred", e);
+        }
+      }
+    }
+
+    function fireZamorSound() {
+      initAudio();
+      if (window.Tone && synth && noiseSynth) {
+        // High frequency energetic blast mimicking 2006 Zamor Launcher
+        synth.triggerAttackRelease(["C5", "G5"], "16n");
+        noiseSynth.triggerAttackRelease("16n", "+0.02");
+      }
+    }
+
+    function playRodeHum() {
+      initAudio();
+      if (window.Tone && synth) {
+        synth.triggerAttackRelease(["E3", "B3", "E4"], "8n");
+      }
+    }
+
+    function toggleTruthVision() {
+      isTruthVisionActive = !isTruthVisionActive;
+      const img = document.getElementById('main-product-img');
+      const overlay = document.getElementById('truth-overlay');
+      const btn = document.getElementById('rode-toggle-btn');
+
+      playRodeHum();
+
+      if (isTruthVisionActive) {
+        img.classList.add('truth-vision-active');
+        overlay.classList.remove('hidden');
+        btn.classList.add('bg-yellow-500', 'text-black');
+        btn.classList.remove('bg-blue-950/80', 'text-blue-200');
+      } else {
+        img.classList.remove('truth-vision-active');
+        overlay.classList.add('hidden');
+        btn.classList.remove('bg-yellow-500', 'text-black');
+        btn.classList.add('bg-blue-950/80', 'text-blue-200');
+      }
+    }
+
+    function changeGalleryImage(type, label) {
+      const mainImg = document.getElementById('main-product-img');
+      const viewLabel = document.getElementById('current-view-name');
+      
+      // Update view description
+      if (viewLabel) viewLabel.innerText = label;
+
+      // Update thumbnail borders
+      document.querySelectorAll('.thumb-btn').forEach(btn => {
+        btn.classList.remove('border-yellow-400');
+        btn.classList.add('border-gray-700');
+      });
+      event.currentTarget.classList.remove('border-gray-700');
+      event.currentTarget.classList.add('border-yellow-400');
+
+      // Swap images with reliable fallbacks
+      if (type === 'primary') {
+        mainImg.src = "https://www.lego.com/cdn/product-assets/product.img.pri/8733_prod.jpg";
+      } else if (type === 'axe') {
+        mainImg.src = "https://placehold.co/600x600/12151c/ffd500?text=8733+Proto-Steel+Axe";
+      } else if (type === 'mask') {
+        mainImg.src = "https://placehold.co/600x600/12151c/3b82f6?text=Kanohi+Rode+Mask+of+Truth";
+      } else if (type === 'combiner') {
+        mainImg.src = "https://placehold.co/600x600/12151c/f59e0b?text=Kardas+Dragon+Combiner+Model";
+      }
+    }
+
+    /* Tab Switching Logic */
+    function switchTab(tabName) {
+      const tabs = ['desc', 'specs', 'combiner', 'reviews'];
+      tabs.forEach(t => {
+        const content = document.getElementById('tab-' + t);
+        const btn = document.getElementById('tab-btn-' + t);
+        if (t === tabName) {
+          content.classList.remove('hidden');
+          btn.classList.add('text-yellow-400', 'border-b-2', 'border-yellow-400');
+          btn.classList.remove('text-gray-400');
+        } else {
+          content.classList.add('hidden');
+          btn.classList.remove('text-yellow-400', 'border-b-2', 'border-yellow-400');
+          btn.classList.add('text-gray-400');
+        }
+      });
+    }
+
+    function addToCart() {
+      const qty = parseInt(document.getElementById('order-qty').value, 10) || 1;
+      cartCount += qty;
+      document.getElementById('cart-counter').innerText = cartCount;
+      
+      initAudio();
+      if (window.Tone && synth) {
+        synth.triggerAttackRelease(["C4", "E4", "G4"], "16n");
+      }
+
+      openCartModal();
+    }
+
+    function openCartModal() {
+      const qty = parseInt(document.getElementById('order-qty').value, 10) || 1;
+      const modal = document.getElementById('cart-modal');
+      const qtyLabel = document.getElementById('modal-qty-text');
+      const priceLabel = document.getElementById('modal-total-price');
+
+      qtyLabel.innerText = `${translations[currentLang].qtyLabel} ${qty}`;
+      if (currentLang === 'ru') {
+        priceLabel.innerText = `${749 * qty} руб.`;
+      } else {
+        priceLabel.innerText = `$${(19.99 * qty).toFixed(2)}`;
+      }
+
+      modal.classList.remove('hidden');
+    }
+
+    function closeCartModal() {
+      document.getElementById('cart-modal').classList.add('hidden');
+      document.getElementById('checkout-status').classList.add('hidden');
+    }
+
+    function checkoutNotification() {
+      const status = document.getElementById('checkout-status');
+      status.classList.remove('hidden');
+      if (currentLang === 'ru') {
+        status.innerText = "Имитация заказа 2006 года! Отправка в службу доставки LEGO...";
+      } else {
+        status.innerText = "Simulated 2006 Order placed! Connecting to LEGO Direct...";
+      }
+      setTimeout(() => {
+        closeCartModal();
+      }, 2500);
+    }
+
+    // Default initialization
+    window.addEventListener('DOMContentLoaded', () => {
+      setLanguage('en');
+    });
+  </script>
+</body>
+</html>
