@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LEGO.com Shop : 8734 Brutaka - BIONICLE® (2006)</title>
+  <link rel="icon" href="https://www.lego.com/favicon.ico" type="image/x-icon">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tone.js for retro sound synthesis without external audio files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.min.js"></script>
+
+  <!-- Google Fonts: Inter and Orbitron/Rajdhani for 2006 Bionicle aesthetic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Inter:wght@400;600;700;800&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'lego-red': '#D01012',
+            'lego-yellow': '#FFD500',
+            'lego-blue': '#0055BF',
+            'brutaka-gold': '#D4AF37',
+            'brutaka-darkgold': '#996515',
+            'brutaka-blue': '#0A2540',
+            'brutaka-teal': '#00F0FF',
+            'voya-slate': '#10141d',
+            'dimension-purple': '#8A2BE2'
+          },
+          fontFamily: {
+            bionicle: ['"Orbitron"', '"Chakra Petch"', 'sans-serif'],
+            body: ['"Inter"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* 2006 deep oceanic/eldritch dark gold background for Brutaka */
+    body {
+      background-color: #07090e;
+      background-image: 
+        radial-gradient(circle at 50% 12%, rgba(10, 37, 64, 0.45), transparent 50%),
+        radial-gradient(circle at 80% 55%, rgba(212, 175, 55, 0.15), transparent 45%),
+        repeating-linear-gradient(0deg, rgba(0,0,0,0.18) 0px, rgba(0,0,0,0.18) 1px, transparent 1px, transparent 2px);
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* 2006 Retro 3D Bevel Button */
+    .btn-lego-retro {
+      background: linear-gradient(180deg, #ffea47 0%, #ffc400 45%, #e6a100 100%);
+      border-top: 2px solid #fff59d;
+      border-left: 2px solid #ffe082;
+      border-right: 2px solid #b26a00;
+      border-bottom: 2px solid #8c5300;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.7);
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+      transition: all 0.1s ease-in-out;
+    }
+    .btn-lego-retro:hover {
+      background: linear-gradient(180deg, #fff066 0%, #ffd026 45%, #f5ac0a 100%);
+      transform: translateY(-1px);
+    }
+    .btn-lego-retro:active {
+      transform: translateY(1px);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.6), inset 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    /* Brutaka Titan metallic frame styling */
+    .titan-panel {
+      background: linear-gradient(145deg, #131924 0%, #0c1017 100%);
+      border: 1px solid #2d3748;
+      box-shadow: 0 12px 30px -5px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+
+    /* Kanohi Olmak Dimensional Warp visual filter */
+    .olmak-rift-active {
+      filter: contrast(160%) hue-rotate(240deg) saturate(220%) drop-shadow(0 0 25px #00F0FF);
+      animation: riftVibration 0.15s infinite alternate;
+    }
+    @keyframes riftVibration {
+      0% { transform: scale(1.02) translate(-1px, 1px); }
+      100% { transform: scale(1.02) translate(1px, -1px); }
+    }
+
+    /* Golden Titan glowing border */
+    @keyframes pulseGold {
+      0%, 100% { border-color: rgba(212, 175, 55, 0.4); box-shadow: 0 0 18px rgba(212, 175, 55, 0.25); }
+      50% { border-color: rgba(0, 240, 255, 0.7); box-shadow: 0 0 25px rgba(0, 240, 255, 0.35); }
+    }
+    .glow-brutaka {
+      animation: pulseGold 4s infinite ease-in-out;
+    }
+  </style>
+</head>
+<body class="text-gray-200 antialiased min-h-screen flex flex-col justify-between selection:bg-yellow-400 selection:text-black">
+
+  <!-- 2006 LEGO Top Utility Bar -->
+  <header class="w-full bg-[#0d1017] border-b border-gray-800 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-14">
+        
+        <!-- Left: Classic LEGO 2006 Style Logo & Shop Tag -->
+        <div class="flex items-center space-x-3">
+          <div class="bg-lego-red px-2.5 py-1 rounded shadow-md border border-white/20 flex items-center justify-center">
+            <span class="font-black text-lego-yellow text-2xl tracking-tighter drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]" style="font-family: Helvetica, sans-serif;">LEGO</span>
+          </div>
+          <div class="hidden sm:flex flex-col leading-tight">
+            <span class="text-xs font-bold uppercase tracking-wider text-yellow-400" data-i18n="shopAtHome">Shop at Home</span>
+            <span class="text-[10px] text-gray-400 font-semibold" data-i18n="officialCatalog">Official 2006 Collector's Catalog</span>
+          </div>
+        </div>
+
+        <!-- Center: March 2006 Era Navigation -->
+        <nav class="hidden md:flex items-center space-x-6 text-xs font-bold uppercase tracking-wider text-gray-300">
+          <a href="#" class="hover:text-yellow-400 transition" data-i18n="navProducts">Products</a>
+          <a href="#" class="text-yellow-400 font-extrabold border-b-2 border-yellow-400 pb-1" data-i18n="navBionicle">BIONICLE®</a>
+          <a href="#" class="hover:text-yellow-400 transition" data-i18n="navClub">LEGO Club</a>
+          <a href="#" class="hover:text-yellow-400 transition" data-i18n="navSupport">Customer Service</a>
+        </nav>
+
+        <!-- Right: Language Switcher (en-US <-> ru-RU) and Mini-Cart -->
+        <div class="flex items-center space-x-4">
+          <!-- Language Toggle Switch -->
+          <div class="flex items-center bg-gray-900 border border-gray-700 rounded-lg p-1 text-xs">
+            <button id="lang-en" onclick="setLanguage('en_US')" class="px-2 py-1 rounded font-bold transition text-black bg-yellow-400">
+              🇺🇸 EN
+            </button>
+            <button id="lang-ru" onclick="setLanguage('ru_RU')" class="px-2 py-1 rounded font-bold transition text-gray-400 hover:text-white">
+              🇷🇺 RU
+            </button>
+          </div>
+
+          <!-- 2006 Cart Button -->
+          <button onclick="openCartModal()" class="relative flex items-center space-x-1.5 bg-gray-800 hover:bg-gray-700 px-3 py-1.5 rounded border border-gray-600 text-xs font-bold text-yellow-300 shadow">
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.24-1a1 1 0 00-.97-.757H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/>
+            </svg>
+            <span data-i18n="cartLabel">Cart</span>
+            <span id="cart-counter" class="bg-lego-red text-white text-[10px] px-1.5 py-0.2 rounded-full font-black ml-1">0</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 2006 Sub-banner: Voya Nui Story Announcement -->
+    <div class="bg-gradient-to-r from-blue-950 via-slate-900 to-amber-950 border-t border-b border-amber-500/30 px-4 py-1.5 text-center text-xs tracking-wide">
+      <span class="text-amber-400 font-bold uppercase tracking-wider mr-2" data-i18n="bannerTag">MARCH 2006 TITAN RELEASE:</span>
+      <span class="text-gray-200" data-i18n="bannerText">The fallen guardian strikes! Will Brutaka seize the Kanohi Ignika for the Piraka?</span>
+    </div>
+  </header>
+
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 py-6 w-full">
+    
+    <!-- Retro Breadcrumbs -->
+    <nav class="flex text-xs font-semibold text-gray-400 space-x-2 mb-6">
+      <a href="#" class="hover:text-yellow-400 transition" data-i18n="bcHome">Home</a>
+      <span>&gt;</span>
+      <a href="#" class="hover:text-yellow-400 transition" data-i18n="bcProducts">Products</a>
+      <span>&gt;</span>
+      <a href="#" class="hover:text-yellow-400 transition">BIONICLE®</a>
+      <span>&gt;</span>
+      <a href="#" class="hover:text-yellow-400 transition" data-i18n="bcTitans">Titans</a>
+      <span>&gt;</span>
+      <span class="text-yellow-400" data-i18n="bcItem">8734 Brutaka</span>
+    </nav>
+
+    <!-- Main Showcase Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+      <!-- LEFT COLUMN: Product Gallery & Interactive Kanohi Filter (7 cols) -->
+      <div class="lg:col-span-7 space-y-4">
+        
+        <!-- Main Product Card Frame -->
+        <div class="titan-panel rounded-2xl p-6 glow-brutaka relative overflow-hidden">
+          
+          <!-- Era Watermark Badge -->
+          <div class="absolute top-4 left-4 z-20 flex items-center space-x-2">
+            <span class="bg-amber-900/80 border border-amber-500/50 text-amber-200 text-[11px] font-extrabold uppercase px-2.5 py-1 rounded tracking-wider shadow">
+              BIONICLE® 2006
+            </span>
+            <span class="bg-black/70 border border-blue-600/50 text-cyan-300 text-[11px] font-bold px-2 py-1 rounded">
+              VOYA NUI TITAN
+            </span>
+          </div>
+
+          <!-- Interactive Kanohi Olmak "Dimensional Rift" Toggle -->
+          <div class="absolute top-4 right-4 z-20">
+            <button id="olmak-toggle-btn" onclick="toggleDimensionalRift()" class="bg-teal-950/80 hover:bg-teal-900 border border-cyan-400 text-cyan-200 text-xs px-2.5 py-1.5 rounded-lg flex items-center space-x-1.5 shadow-lg transition">
+              <span class="inline-block w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping"></span>
+              <span data-i18n="maskButton">Kanohi Olmak Rift</span>
+            </button>
+          </div>
+
+          <!-- Primary Interactive Image Display -->
+          <div class="w-full flex items-center justify-center p-4 min-h-[380px] sm:min-h-[440px] relative">
+            
+            <!-- Brutaka Image with fallback -->
+            <img 
+              id="main-product-img"
+              src="https://www.lego.com/cdn/product-assets/product.img.pri/8734_prod.jpg" 
+              alt="LEGO BIONICLE 8734 Brutaka" 
+              onerror="this.onerror=null; this.src='https://placehold.co/600x600/0c1017/ffd500?text=8734+Brutaka+Titan+2006';"
+              class="max-h-[400px] w-auto object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.9)] transition duration-500 ease-in-out transform hover:scale-105"
+            >
+
+            <!-- Holographic Dimensional Rift Overlay (revealed with Kanohi Olmak) -->
+            <div id="rift-overlay" class="hidden absolute inset-0 bg-cyan-950/25 border-2 border-cyan-400/50 rounded-xl pointer-events-none flex flex-col justify-between p-6">
+              <div class="text-cyan-300 font-mono text-xs uppercase tracking-widest bg-black/85 p-2 rounded max-w-fit border border-cyan-500/50">
+                <span class="text-yellow-400 font-bold">● DIMENSIONAL GATE:</span> <span data-i18n="olmakGate">OPENING PORTAL TO THE ZONE OF DARKNESS</span>
+              </div>
+              <div class="text-right text-amber-300 font-mono text-xs bg-black/85 p-2 rounded max-w-fit ml-auto border border-amber-500/40">
+                <span data-i18n="olmakPower">FOUR-ARMED CORRUPTED TITAN • RAW POWER: 10/10</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Image Stage Action Controls -->
+          <div class="flex flex-wrap items-center justify-between border-t border-gray-800 pt-4 mt-2 text-xs text-gray-400 gap-2">
+            <div class="flex items-center space-x-2">
+              <span class="text-yellow-400 font-bold" data-i18n="viewLabel">View:</span>
+              <span id="current-view-name" class="text-gray-200">Official Box Art & Model</span>
+            </div>
+            
+            <div class="flex items-center space-x-2">
+              <!-- Sound 1: Twin Blade Scythe Swing -->
+              <button onclick="playSwordSlashSound()" class="flex items-center space-x-1.5 text-cyan-300 bg-cyan-950/60 hover:bg-cyan-900/80 px-2.5 py-1 rounded border border-cyan-700/60 transition">
+                <span>⚔️</span>
+                <span data-i18n="slashScythe">Double-Blade Slash</span>
+              </button>
+              
+              <!-- Sound 2: Zamor Sphere Launcher -->
+              <button onclick="fireZamorSound()" class="flex items-center space-x-1.5 text-amber-300 bg-amber-950/60 hover:bg-amber-900/80 px-2.5 py-1 rounded border border-amber-700/60 transition">
+                <svg class="w-3.5 h-3.5 fill-current text-amber-400" viewBox="0 0 20 20">
+                  <path d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"/>
+                </svg>
+                <span data-i18n="fireZamor">⚡ Zamor Launcher</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Thumbnail Gallery Strip -->
+        <div class="grid grid-cols-4 gap-3">
+          
+          <button onclick="changeGalleryImage('primary', 'Official Box Art & Model')" class="thumb-btn active-thumb p-2 rounded-lg bg-gray-900 border-2 border-yellow-400 hover:border-yellow-300 transition flex flex-col items-center justify-center">
+            <img src="https://www.lego.com/cdn/product-assets/product.img.pri/8734_prod.jpg" onerror="this.src='https://placehold.co/100x100/0c1017/ffd500?text=8734';" alt="Brutaka Primary" class="h-14 w-auto object-contain">
+            <span class="text-[10px] text-gray-300 mt-1 font-semibold" data-i18n="thumbPrimary">Full Model</span>
+          </button>
+
+          <button onclick="changeGalleryImage('blade', 'Twin-Bladed Rotating Scythe')" class="thumb-btn p-2 rounded-lg bg-gray-900 border border-gray-700 hover:border-yellow-400 transition flex flex-col items-center justify-center">
+            <div class="h-14 w-full flex items-center justify-center text-cyan-400 font-black text-xs font-mono">
+              [ ⚔️ SCYTHE ]
+            </div>
+            <span class="text-[10px] text-gray-300 mt-1 font-semibold" data-i18n="thumbBlade">Twin Blade</span>
+          </button>
+
+          <button onclick="changeGalleryImage('mask', 'Kanohi Olmak Mask of Dimensional Gates')" class="thumb-btn p-2 rounded-lg bg-gray-900 border border-gray-700 hover:border-yellow-400 transition flex flex-col items-center justify-center">
+            <div class="h-14 w-full flex items-center justify-center text-yellow-400 font-black text-xs font-mono">
+              [ 🌀 OLMAK ]
+            </div>
+            <span class="text-[10px] text-gray-300 mt-1 font-semibold" data-i18n="thumbMask">Mask of Gates</span>
+          </button>
+
+          <button onclick="changeGalleryImage('botar', 'Combiner: Order of Mata Nui Botar')" class="thumb-btn p-2 rounded-lg bg-gray-900 border border-gray-700 hover:border-yellow-400 transition flex flex-col items-center justify-center">
+            <div class="h-14 w-full flex items-center justify-center text-amber-500 font-black text-xs font-mono">
+              [ 👹 BOTAR ]
+            </div>
+            <span class="text-[10px] text-gray-300 mt-1 font-semibold" data-i18n="thumbBotar">Botar Comb.</span>
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN: Pricing, Specifications, Cart CTA & Lore (5 cols) -->
+      <div class="lg:col-span-5 flex flex-col space-y-4">
+        
+        <div class="titan-panel rounded-2xl p-6 relative">
+          
+          <!-- Product Title and Catalog Number -->
+          <div class="border-b border-gray-800 pb-4">
+            <div class="flex items-baseline justify-between">
+              <span class="text-sm font-bold text-yellow-400 uppercase tracking-widest font-bionicle">Item #8734</span>
+              <span class="text-xs text-green-400 bg-green-950/80 border border-green-800 px-2 py-0.5 rounded font-bold" data-i18n="inStock">In Stock</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-1 font-bionicle" data-i18n="productTitle">
+              Brutaka
+            </h1>
+            <p class="text-xs text-gray-400 font-medium mt-0.5" data-i18n="productSubtitle">
+              Fallen Guardian of the Kanohi Ignika • Island of Voya Nui
+            </p>
+          </div>
+
+          <!-- 2006 Key Spec Badges Grid -->
+          <div class="grid grid-cols-3 gap-2 my-4 text-center">
+            <div class="bg-gray-900/90 border border-gray-700 p-2 rounded-lg">
+              <span class="block text-[10px] uppercase text-gray-400 font-bold" data-i18n="labelAges">Ages</span>
+              <span class="text-sm font-extrabold text-yellow-300">9 - 16</span>
+            </div>
+            <div class="bg-gray-900/90 border border-gray-700 p-2 rounded-lg">
+              <span class="block text-[10px] uppercase text-gray-400 font-bold" data-i18n="labelPieces">Pieces</span>
+              <span class="text-sm font-extrabold text-yellow-300">193</span>
+            </div>
+            <div class="bg-gray-900/90 border border-gray-700 p-2 rounded-lg">
+              <span class="block text-[10px] uppercase text-gray-400 font-bold" data-i18n="labelYear">Year</span>
+              <span class="text-sm font-extrabold text-yellow-300">2006</span>
+            </div>
+          </div>
+
+          <!-- Price & Ratings Block -->
+          <div class="bg-neutral-900/80 rounded-xl p-4 border border-gray-800 my-4 flex items-center justify-between">
+            <div>
+              <span class="block text-[11px] text-gray-400 uppercase font-semibold" data-i18n="priceLabel">MSRP Price</span>
+              <div class="text-3xl font-black text-white" id="product-price">$19.99</div>
+              <span class="text-[10px] text-gray-400" data-i18n="priceTax">plus shipping & handling</span>
+            </div>
+            
+            <div class="text-right">
+              <div class="flex text-yellow-400 text-sm justify-end">
+                ★★★★★
+              </div>
+              <span class="text-[11px] text-gray-300 font-bold block mt-1" data-i18n="ratingScore">4.9 / 5.0 (2006)</span>
+              <span class="text-[10px] text-gray-400" data-i18n="reviewCount">158 Fan Reviews</span>
+            </div>
+          </div>
+
+          <!-- Quantity Selector and Retro Buy Button -->
+          <div class="space-y-3 pt-2">
+            <div class="flex items-center space-x-3">
+              <label for="order-qty" class="text-xs font-bold text-gray-300" data-i18n="qtyLabel">Qty:</label>
+              <select id="order-qty" class="bg-gray-800 text-white font-bold text-sm rounded border border-gray-600 px-3 py-1.5 focus:outline-none focus:border-yellow-400">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4 (Max)</option>
+              </select>
+              <div class="text-[11px] text-amber-400/90 flex items-center space-x-1">
+                <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                </svg>
+                <span data-i18n="limitNotice">Limit 4 per customer</span>
+              </div>
+            </div>
+
+            <!-- Big 2006 "Add to Bag" Action Button -->
+            <button onclick="addToCart()" class="w-full btn-lego-retro text-black font-black uppercase text-base tracking-wider py-3 px-6 rounded-xl flex items-center justify-center space-x-2">
+              <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.24-1a1 1 0 00-.97-.757H3z"/>
+              </svg>
+              <span data-i18n="addToBagBtn">Add to Bag</span>
+            </button>
+          </div>
+
+          <!-- Feature Bullet Highlights -->
+          <div class="mt-6 border-t border-gray-800 pt-4 space-y-2 text-xs text-gray-300">
+            <div class="flex items-start space-x-2">
+              <span class="text-yellow-400 font-bold">✔</span>
+              <span data-i18n="bullet1">Wields the gold Kanohi Olmak, the Great Mask of Dimensional Gates.</span>
+            </div>
+            <div class="flex items-start space-x-2">
+              <span class="text-yellow-400 font-bold">✔</span>
+              <span data-i18n="bullet2">Towering titan featuring four arms and back-mounted dual scythe blades.</span>
+            </div>
+            <div class="flex items-start space-x-2">
+              <span class="text-yellow-400 font-bold">✔</span>
+              <span data-i18n="bullet3">Equipped with a Zamor sphere launcher and articulated claw hands.</span>
+            </div>
+            <div class="flex items-start space-x-2">
+              <span class="text-yellow-400 font-bold">✔</span>
+              <span data-i18n="bullet4">Combine with 8733 Axonn and 8764 Vezon to build the Kardas Dragon!</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Kanohi Olmak Lore Card -->
+        <div class="bg-gradient-to-br from-teal-950/40 via-gray-900 to-black p-4 rounded-xl border border-cyan-800/50 flex items-start space-x-3">
+          <div class="p-2.5 bg-cyan-900/40 rounded-lg text-cyan-400 border border-cyan-700/50">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-cyan-300 uppercase tracking-wider" data-i18n="maskTitle">Mask of Dimensional Gates: Kanohi Olmak</h4>
+            <p class="text-[11px] text-gray-300 mt-0.5 leading-relaxed" data-i18n="maskDesc">
+              Allows Brutaka to rip open interdimensional rifts in space, banishing enemies to alternate realities or summoning creatures from across the cosmos.
+            </p>
+          </div>
+        </div>
+
+        <!-- Axonn Connection Callout -->
+        <div class="bg-gradient-to-r from-red-950/30 via-gray-900 to-amber-950/30 p-3.5 rounded-xl border border-amber-600/40 flex items-center justify-between text-xs">
+          <div>
+            <span class="text-amber-400 font-bold block" data-i18n="duelNoticeTitle">The Legendary Voya Nui Duel</span>
+            <span class="text-gray-400 text-[11px]" data-i18n="duelNoticeSub">Pair with 8733 Axonn to reenact their tragic confrontation!</span>
+          </div>
+          <a href="#8733" class="bg-amber-500/20 hover:bg-amber-500/40 border border-amber-500/60 text-yellow-300 px-2.5 py-1 rounded font-bold transition whitespace-nowrap text-[11px]" data-i18n="viewAxonnLink">
+            8733 Axonn »
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Tabbed Detailed Information Section -->
+    <div class="mt-12 titan-panel rounded-2xl p-6 sm:p-8">
+      
+      <!-- Tab Selection Headers -->
+      <div class="flex border-b border-gray-700 overflow-x-auto space-x-4 sm:space-x-8 pb-3">
+        <button onclick="switchTab('desc')" id="tab-btn-desc" class="tab-btn text-yellow-400 border-b-2 border-yellow-400 pb-2 text-xs sm:text-sm font-bold uppercase tracking-wider transition whitespace-nowrap">
+          <span data-i18n="tabBio">Story & Betrayal</span>
+        </button>
+        <button onclick="switchTab('specs')" id="tab-btn-specs" class="tab-btn text-gray-400 hover:text-gray-200 pb-2 text-xs sm:text-sm font-bold uppercase tracking-wider transition whitespace-nowrap">
+          <span data-i18n="tabSpecs">Titan Stats & Abilities</span>
+        </button>
+        <button onclick="switchTab('combiner')" id="tab-btn-combiner" class="tab-btn text-gray-400 hover:text-gray-200 pb-2 text-xs sm:text-sm font-bold uppercase tracking-wider transition whitespace-nowrap">
+          <span data-i18n="tabCombiner">Combiners (Kardas & Botar)</span>
+        </button>
+        <button onclick="switchTab('reviews')" id="tab-btn-reviews" class="tab-btn text-gray-400 hover:text-gray-200 pb-2 text-xs sm:text-sm font-bold uppercase tracking-wider transition whitespace-nowrap">
+          <span data-i18n="tabReviews">Fan Reviews (2006)</span>
+        </button>
+      </div>
+
+      <!-- Tab Content Area -->
+      <div class="mt-6 text-sm text-gray-300 leading-relaxed">
+        
+        <!-- Tab 1: Story & Description -->
+        <div id="tab-desc" class="space-y-4">
+          <h3 class="text-xl font-bold text-white font-bionicle" data-i18n="storyHeading">
+            The Corrupted Titan of the Order of Mata Nui!
+          </h3>
+          <p data-i18n="storyP1">
+            Once an honorable guardian and brother-in-arms to Axonn, Brutaka stood watch over the Kanohi Ignika on Voya Nui for millennia. But observing the Great Spirit Mata Nui fall into deep slumber while evil spread across the universe broke his faith. Convinced that the Great Spirit had abandoned creation, Brutaka turned his back on the Order and made a secret pact with the Piraka to seize the Mask of Life for himself.
+          </p>
+          <p data-i18n="storyP2">
+            Brutaka’s towering four-armed form makes him an unstoppable warrior on the battlefield. Equipped with his dual-bladed rotating sword and back-mounted scythes, he easily defeated all six Toa Nuva and six Toa Inika in direct combat! Only his closest comrade, Axonn, possesses the power and determination to stand against him.
+          </p>
+          <div class="bg-amber-950/40 border border-amber-600/40 p-4 rounded-xl mt-4">
+            <h4 class="text-amber-300 font-bold text-xs uppercase" data-i18n="loreNoteTitle">BIONICLE 2006 Ignition Canon:</h4>
+            <p class="text-xs text-amber-200/90 mt-1" data-i18n="loreNoteDesc">
+              “We were brothers, Axonn. But the Great Spirit is asleep, and only the strong will rule the new age!” — Brutaka to Axonn before their climactic showdown atop the Chamber of Life.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tab 2: Stats & Abilities -->
+        <div id="tab-specs" class="hidden space-y-6">
+          <h3 class="text-xl font-bold text-white font-bionicle" data-i18n="statsHeading">
+            Brutaka Titan Attribute Matrix
+          </h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Stat Bar 1: Strength -->
+            <div class="bg-gray-900/70 p-3 rounded-lg border border-gray-800">
+              <div class="flex justify-between text-xs font-bold mb-1">
+                <span data-i18n="statStrength">Raw Physical Might</span>
+                <span class="text-yellow-400">9.8 / 10 (Titan Class)</span>
+              </div>
+              <div class="w-full bg-gray-800 rounded-full h-2.5">
+                <div class="bg-yellow-400 h-2.5 rounded-full" style="width: 98%"></div>
+              </div>
+            </div>
+
+            <!-- Stat Bar 2: Dimensional Warping (Olmak) -->
+            <div class="bg-gray-900/70 p-3 rounded-lg border border-gray-800">
+              <div class="flex justify-between text-xs font-bold mb-1">
+                <span data-i18n="statOlmak">Dimensional Mastery (Kanohi Olmak)</span>
+                <span class="text-cyan-400">10 / 10 (Reality Rifting)</span>
+              </div>
+              <div class="w-full bg-gray-800 rounded-full h-2.5">
+                <div class="bg-cyan-400 h-2.5 rounded-full" style="width: 100%"></div>
+              </div>
+            </div>
+
+            <!-- Stat Bar 3: Combat Skill & Weaponry -->
+            <div class="bg-gray-900/70 p-3 rounded-lg border border-gray-800">
+              <div class="flex justify-between text-xs font-bold mb-1">
+                <span data-i18n="statCombat">Combat Technique (Four Arms)</span>
+                <span class="text-red-400">10 / 10 (Toa Team Crusher)</span>
+              </div>
+              <div class="w-full bg-gray-800 rounded-full h-2.5">
+                <div class="bg-red-500 h-2.5 rounded-full" style="width: 100%"></div>
+              </div>
+            </div>
+
+            <!-- Stat Bar 4: Armor & Height -->
+            <div class="bg-gray-900/70 p-3 rounded-lg border border-gray-800">
+              <div class="flex justify-between text-xs font-bold mb-1">
+                <span data-i18n="statArmor">Armor & Height Profile</span>
+                <span class="text-emerald-400">9.5 / 10 (Over 11 inches tall)</span>
+              </div>
+              <div class="w-full bg-gray-800 rounded-full h-2.5">
+                <div class="bg-emerald-500 h-2.5 rounded-full" style="width: 95%"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Weaponry Breakdown -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+            <div class="border border-gray-700 bg-neutral-900 p-4 rounded-xl">
+              <h4 class="font-bold text-yellow-300 text-sm" data-i18n="wpnBladeTitle">Twin-Bladed Rotating Scythe</h4>
+              <p class="text-xs text-gray-400 mt-1" data-i18n="wpnBladeDesc">
+                Brutaka's signature golden blade can be split into two separate swords, wielded two-handed, or spun rapidly to create an impenetrable defensive shield.
+              </p>
+            </div>
+            <div class="border border-gray-700 bg-neutral-900 p-4 rounded-xl">
+              <h4 class="font-bold text-cyan-400 text-sm" data-i18n="wpnZamorTitle">Auxiliary Arms & Zamor Launcher</h4>
+              <p class="text-xs text-gray-400 mt-1" data-i18n="wpnZamorDesc">
+                Possesses two extra back-mounted articulated limbs and a Zamor sphere launcher to catch opponents off-guard from any angle.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Combiner Models -->
+        <div id="tab-combiner" class="hidden space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- Combiner 1: Kardas Dragon -->
+            <div class="bg-neutral-950 p-6 rounded-xl border border-amber-500/40 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center space-x-3 mb-3">
+                  <span class="text-3xl">🐉</span>
+                  <div>
+                    <h4 class="text-amber-400 font-extrabold text-base font-bionicle">KARDAS DRAGON</h4>
+                    <p class="text-[11px] text-gray-400" data-i18n="kardasParts">Requires 8734 Brutaka + 8733 Axonn + 8764 Vezon &amp; Fenrakk</p>
+                  </div>
+                </div>
+                <p class="text-xs text-gray-300" data-i18n="kardasDesc">
+                  Combine all three titans to assemble the colossal winged dragon with kinetic breath and a massive wingspan!
+                </p>
+              </div>
+              <div class="pt-4 border-t border-gray-800 mt-4 text-[11px] text-yellow-400 font-bold">
+                ★ 2006 Special Edition Box Set #10204
+              </div>
+            </div>
+
+            <!-- Combiner 2: Botar -->
+            <div class="bg-neutral-950 p-6 rounded-xl border border-cyan-500/40 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center space-x-3 mb-3">
+                  <span class="text-3xl">👹</span>
+                  <div>
+                    <h4 class="text-cyan-400 font-extrabold text-base font-bionicle">BOTAR</h4>
+                    <p class="text-[11px] text-gray-400" data-i18n="botarParts">Requires 8734 Brutaka + 8733 Axonn</p>
+                  </div>
+                </div>
+                <p class="text-xs text-gray-300" data-i18n="botarDesc">
+                  Combine parts from Brutaka and Axonn to build Botar, the terrifying teleporting enforcer of the Order of Mata Nui who banishes traitors to the Pit!
+                </p>
+              </div>
+              <div class="pt-4 border-t border-gray-800 mt-4 text-[11px] text-cyan-300 font-bold">
+                ★ Instructions available on LEGO.com/bionicle
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Tab 4: Vintage 2006 Fan Reviews -->
+        <div id="tab-reviews" class="hidden space-y-4">
+          
+          <div class="border-b border-gray-800 pb-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-yellow-400">KanohiKnight_06 (March 19, 2006)</span>
+              <span class="text-yellow-400 text-xs">★★★★★</span>
+            </div>
+            <h5 class="text-sm font-bold text-white mt-1" data-i18n="rev1Title">Brutaka is the undisputed king of 2006!</h5>
+            <p class="text-xs text-gray-400 mt-1" data-i18n="rev1Body">
+              The gold color scheme mixed with dark blue is stunning in person. He's way taller than Axonn, and having four arms is super menacing. The Kanohi Olmak mold is perfection.
+            </p>
+          </div>
+
+          <div class="border-b border-gray-800 pb-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-yellow-400">VoyaNuiMatoran (March 27, 2006)</span>
+              <span class="text-yellow-400 text-xs">★★★★★</span>
+            </div>
+            <h5 class="text-sm font-bold text-white mt-1" data-i18n="rev2Title">Massive weapon and incredible poseability</h5>
+            <p class="text-xs text-gray-400 mt-1" data-i18n="rev2Body">
+              His twin scythe sword is gigantic, nearly the length of the entire figure. He took about 50 minutes to assemble. If you can only buy one titan this spring, make it Brutaka!
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- 2006 Retro Shop@Home Footer -->
+  <footer class="w-full bg-[#090b10] border-t border-gray-800 mt-12 py-8 text-xs text-gray-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      
+      <!-- Footer Nav Columns -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+        <div>
+          <h5 class="font-bold text-gray-200 uppercase tracking-wider mb-2" data-i18n="ftProducts">BIONICLE® 2006</h5>
+          <ul class="space-y-1 text-gray-400">
+            <li><a href="#" class="hover:text-yellow-400">8734 Brutaka</a></li>
+            <li><a href="#" class="hover:text-yellow-400">8733 Axonn</a></li>
+            <li><a href="#" class="hover:text-yellow-400">8764 Vezon & Fenrakk</a></li>
+            <li><a href="#" class="hover:text-yellow-400">Toa Inika Collection</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="font-bold text-gray-200 uppercase tracking-wider mb-2" data-i18n="ftSupport">Customer Support</h5>
+          <ul class="space-y-1 text-gray-400">
+            <li><a href="#" class="hover:text-yellow-400" data-i18n="ftOrderTracker">Order Status</a></li>
+            <li><a href="#" class="hover:text-yellow-400" data-i18n="ftBuildingInst">Building Instructions</a></li>
+            <li><a href="#" class="hover:text-yellow-400" data-i18n="ftMissingBricks">Missing Bricks</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="font-bold text-gray-200 uppercase tracking-wider mb-2" data-i18n="ftExplore">Explore LEGO</h5>
+          <ul class="space-y-1 text-gray-400">
+            <li><a href="#" class="hover:text-yellow-400">LEGO Club Magazine</a></li>
+            <li><a href="#" class="hover:text-yellow-400">LEGO Shop at Home</a></li>
+            <li><a href="#" class="hover:text-yellow-400">BIONICLE.com Story Portal</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="font-bold text-gray-200 uppercase tracking-wider mb-2" data-i18n="ftCatalog">Direct Mail Order</h5>
+          <p class="text-[11px] text-gray-400" data-i18n="ftPhone">
+            Call 1-800-453-4652 (USA) or order through our 2006 spring print catalog.
+          </p>
+        </div>
+      </div>
+
+      <!-- Legal & Copyright 2006 notice -->
+      <div class="border-t border-gray-800/80 pt-6 flex flex-col md:flex-row items-center justify-between text-[11px] text-gray-400">
+        <p data-i18n="ftCopyright">
+          LEGO, the LEGO logo, and BIONICLE are registered trademarks of the LEGO Group. ©2006 The LEGO Group. All rights reserved.
+        </p>
+        <div class="flex space-x-4 mt-2 md:mt-0">
+          <a href="#" class="hover:underline" data-i18n="ftPrivacy">Privacy Policy</a>
+          <a href="#" class="hover:underline" data-i18n="ftTerms">Terms of Use</a>
+          <a href="#" class="hover:underline" data-i18n="ftLegal">Legal Notice</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Interactive Cart / Order Modal (No alert() used) -->
+  <div id="cart-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-gray-900 border-2 border-yellow-400 rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
+      <button onclick="closeCartModal()" class="absolute top-3 right-3 text-gray-400 hover:text-white text-xl font-bold">✕</button>
+      
+      <div class="flex items-center space-x-3 mb-4">
+        <div class="bg-yellow-400 p-2 rounded text-black font-black">LEGO</div>
+        <h3 class="text-lg font-bold text-white font-bionicle" data-i18n="modalCartTitle">Your 2006 LEGO Shopping Bag</h3>
+      </div>
+
+      <div class="border-t border-b border-gray-800 py-3 space-y-2">
+        <div class="flex justify-between items-center text-sm">
+          <div>
+            <span class="font-bold text-yellow-300">8734 Brutaka</span>
+            <span class="text-xs text-gray-400 block" id="modal-qty-text">Qty: 1</span>
+          </div>
+          <span class="font-bold text-white" id="modal-total-price">$19.99</span>
+        </div>
+        <div class="text-xs text-emerald-400 flex items-center space-x-1">
+          <span>✔</span>
+          <span data-i18n="modalPromo">2006 Collector Comic #2 Included Free!</span>
+        </div>
+      </div>
+
+      <div class="mt-4 flex space-x-3">
+        <button onclick="closeCartModal()" class="w-1/2 py-2 text-xs font-bold text-gray-300 bg-gray-800 hover:bg-gray-700 rounded-lg border border-gray-600" data-i18n="modalContinue">
+          Keep Browsing
+        </button>
+        <button onclick="checkoutNotification()" class="w-1/2 btn-lego-retro py-2 text-xs font-bold text-black uppercase tracking-wider rounded-lg" data-i18n="modalCheckout">
+          Checkout Now
+        </button>
+      </div>
+
+      <!-- Live confirmation banner inside modal -->
+      <div id="checkout-status" class="hidden mt-3 text-center text-xs text-yellow-300 bg-black/60 p-2 rounded border border-yellow-500/50">
+        Simulated 2006 Order placed! Connecting to LEGO Direct...
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* BILINGUAL LOCALIZATION DICTIONARY (en-US <-> ru-RU) */
+    const translations = {
+      en_US: {
+        shopAtHome: "Shop at Home",
+        officialCatalog: "Official 2006 Collector's Catalog",
+        navProducts: "Products",
+        navBionicle: "BIONICLE®",
+        navClub: "LEGO Club",
+        navSupport: "Customer Service",
+        cartLabel: "Cart",
+        bannerTag: "MARCH 2006 TITAN RELEASE:",
+        bannerText: "The fallen guardian strikes! Will Brutaka seize the Kanohi Ignika for the Piraka?",
+        bcHome: "Home",
+        bcProducts: "Products",
+        bcTitans: "Titans",
+        bcItem: "8734 Brutaka",
+        maskButton: "Kanohi Olmak Rift",
+        viewLabel: "View:",
+        slashScythe: "Double-Blade Slash",
+        fireZamor: "⚡ Zamor Launcher",
+        thumbPrimary: "Full Model",
+        thumbBlade: "Twin Blade",
+        thumbMask: "Mask of Gates",
+        thumbBotar: "Botar Comb.",
+        inStock: "In Stock",
+        productTitle: "Brutaka",
+        productSubtitle: "Fallen Guardian of the Kanohi Ignika • Island of Voya Nui",
+        labelAges: "Ages",
+        labelPieces: "Pieces",
+        labelYear: "Year",
+        priceLabel: "MSRP Price",
+        priceValue: "$19.99",
+        priceTax: "plus shipping & handling",
+        ratingScore: "4.9 / 5.0 (2006)",
+        reviewCount: "158 Fan Reviews",
+        qtyLabel: "Qty:",
+        limitNotice: "Limit 4 per customer",
+        addToBagBtn: "Add to Bag",
+        bullet1: "Wields the gold Kanohi Olmak, the Great Mask of Dimensional Gates.",
+        bullet2: "Towering titan featuring four arms and back-mounted dual scythe blades.",
+        bullet3: "Equipped with a Zamor sphere launcher and articulated claw hands.",
+        bullet4: "Combine with 8733 Axonn and 8764 Vezon to build the Kardas Dragon!",
+        maskTitle: "Mask of Dimensional Gates: Kanohi Olmak",
+        maskDesc: "Allows Brutaka to rip open interdimensional rifts in space, banishing enemies to alternate realities or summoning creatures from across the cosmos.",
+        duelNoticeTitle: "The Legendary Voya Nui Duel",
+        duelNoticeSub: "Pair with 8733 Axonn to reenact their tragic confrontation!",
+        viewAxonnLink: "8733 Axonn »",
+        tabBio: "Story & Betrayal",
+        tabSpecs: "Titan Stats & Abilities",
+        tabCombiner: "Combiners (Kardas & Botar)",
+        tabReviews: "Fan Reviews (2006)",
+        storyHeading: "The Corrupted Titan of the Order of Mata Nui!",
+        storyP1: "Once an honorable guardian and brother-in-arms to Axonn, Brutaka stood watch over the Kanohi Ignika on Voya Nui for millennia. But observing the Great Spirit Mata Nui fall into deep slumber while evil spread across the universe broke his faith. Convinced that the Great Spirit had abandoned creation, Brutaka turned his back on the Order and made a secret pact with the Piraka to seize the Mask of Life for himself.",
+        storyP2: "Brutaka’s towering four-armed form makes him an unstoppable warrior on the battlefield. Equipped with his dual-bladed rotating sword and back-mounted scythes, he easily defeated all six Toa Nuva and six Toa Inika in direct combat! Only his closest comrade, Axonn, possesses the power and determination to stand against him.",
+        loreNoteTitle: "BIONICLE 2006 Ignition Canon:",
+        loreNoteDesc: "“We were brothers, Axonn. But the Great Spirit is asleep, and only the strong will rule the new age!” — Brutaka to Axonn before their climactic showdown atop the Chamber of Life.",
+        statsHeading: "Brutaka Titan Attribute Matrix",
+        statStrength: "Raw Physical Might",
+        statOlmak: "Dimensional Mastery (Kanohi Olmak)",
+        statCombat: "Combat Technique (Four Arms)",
+        statArmor: "Armor & Height Profile",
+        wpnBladeTitle: "Twin-Bladed Rotating Scythe",
+        wpnBladeDesc: "Brutaka's signature golden blade can be split into two separate swords, wielded two-handed, or spun rapidly to create an impenetrable defensive shield.",
+        wpnZamorTitle: "Auxiliary Arms & Zamor Launcher",
+        wpnZamorDesc: "Possesses two extra back-mounted articulated limbs and a Zamor sphere launcher to catch opponents off-guard from any angle.",
+        kardasParts: "Requires 8734 Brutaka + 8733 Axonn + 8764 Vezon",
+        kardasDesc: "Combine all three titans to assemble the colossal winged dragon with kinetic breath and a massive wingspan!",
+        botarParts: "Requires 8734 Brutaka + 8733 Axonn",
+        botarDesc: "Combine parts from Brutaka and Axonn to build Botar, the terrifying teleporting enforcer of the Order of Mata Nui who banishes traitors to the Pit!",
+        rev1Title: "Brutaka is the undisputed king of 2006!",
+        rev1Body: "The gold color scheme mixed with dark blue is stunning in person. He's way taller than Axonn, and having four arms is super menacing. The Kanohi Olmak mold is perfection.",
+        rev2Title: "Massive weapon and incredible poseability",
+        rev2Body: "His twin scythe sword is gigantic, nearly the length of the entire figure. He took about 50 minutes to assemble. If you can only buy one titan this spring, make it Brutaka!",
+        ftProducts: "BIONICLE® 2006",
+        ftSupport: "Customer Support",
+        ftOrderTracker: "Order Status",
+        ftBuildingInst: "Building Instructions",
+        ftMissingBricks: "Missing Bricks",
+        ftExplore: "Explore LEGO",
+        ftCatalog: "Direct Mail Order",
+        ftPhone: "Call 1-800-453-4652 (USA) or order through our 2006 spring print catalog.",
+        ftCopyright: "LEGO, the LEGO logo, and BIONICLE are registered trademarks of the LEGO Group. ©2006 The LEGO Group. All rights reserved.",
+        ftPrivacy: "Privacy Policy",
+        ftTerms: "Terms of Use",
+        ftLegal: "Legal Notice",
+        modalCartTitle: "Your 2006 LEGO Shopping Bag",
+        modalPromo: "2006 Collector Comic #2 Included Free!",
+        modalContinue: "Keep Browsing",
+        modalCheckout: "Checkout Now",
+        olmakGate: "OPENING PORTAL TO THE ZONE OF DARKNESS",
+        olmakPower: "FOUR-ARMED CORRUPTED TITAN • RAW POWER: 10/10"
+      },
+      ru_RU: {
+        shopAtHome: "Заказ по каталогу (Shop at Home)",
+        officialCatalog: "Официальный каталог LEGO 2006 года",
+        navProducts: "Продукция",
+        navBionicle: "BIONICLE®",
+        navClub: "Клуб LEGO",
+        navSupport: "Служба поддержки",
+        cartLabel: "Корзина",
+        bannerTag: "НОВИНКА МАРТА 2006 (ТИТАН):",
+        bannerText: "Падший страж наносит удар! Захватит ли Брутака Маску Жизни для банды Пирака?",
+        bcHome: "Главная",
+        bcProducts: "Каталог",
+        bcTitans: "Титаны",
+        bcItem: "8734 Brutaka (Брутака)",
+        maskButton: "Врата Канохи Олмак",
+        viewLabel: "Режим:",
+        slashScythe: "Взмах Секиры-Меча",
+        fireZamor: "⚡ Метатель Замор",
+        thumbPrimary: "Фигура",
+        thumbBlade: "Клинок-Секира",
+        thumbMask: "Маска Врат",
+        thumbBotar: "Ботар (Комб.)",
+        inStock: "В наличии",
+        productTitle: "Брутака",
+        productSubtitle: "Падший хранитель Канохи Игника • Остров Войя Нуи",
+        labelAges: "Возраст",
+        labelPieces: "Детали",
+        labelYear: "Год",
+        priceLabel: "Цена по каталогу",
+        priceValue: "749 руб.",
+        priceTax: "плюс доставка по России",
+        ratingScore: "4.9 / 5.0 (2006)",
+        reviewCount: "158 отзывов фанатов",
+        qtyLabel: "Кол-во:",
+        limitNotice: "Не более 4 шт. в одни руки",
+        addToBagBtn: "Добавить в корзину",
+        bullet1: "Носит золотую Канохи Олмак — Великую Маску Пространственных Врат.",
+        bullet2: "Исполинский четырехрукий титан с огромным двойным мечом-секирой.",
+        bullet3: "Оборудован метателем сфер Замор и мощными суставчатыми руками-клешнями.",
+        bullet4: "Объединяется с 8733 Аксонном и 8764 Везоном в колоссального Дракона Кардаса!",
+        maskTitle: "Маска Пространственных Врат: Канохи Олмак",
+        maskDesc: "Позволяет Брутаке разрывать ткань реальности, изгоняя врагов в чужие измерения или призывая чудовищ из глубин космоса.",
+        duelNoticeTitle: "Легендарная Дуэль на Войя Нуи",
+        duelNoticeSub: "Соберите вместе с 8733 Аксонном, чтобы воссоздать драматическую битву друзей!",
+        viewAxonnLink: "8733 Аксонн »",
+        tabBio: "История и предательство",
+        tabSpecs: "Характеристики Титана",
+        tabCombiner: "Комбайнеры (Кардас и Ботар)",
+        tabReviews: "Отзывы фанатов (2006)",
+        storyHeading: "Падший Титан Ордена Мата Нуи!",
+        storyP1: "Когда-то благородный страж и верный побратим Аксонна, Брутака тысячелетиями охранял Канохи Игнику на Войя Нуи. Однако вид уснувшего Великого Духа Мата Нуи сломил его веру. Решив, что создатели покинули вселенную, Брутака отрекся от Ордена и заключил тайный союз с бандой Пирака, чтобы забрать Маску Жизни в личное пользование.",
+        storyP2: "Грандиозный четырехрукий облик Брутаки делает его сокрушительным бойцом. Вооружившись двойным лезвием и дополнительными руками за спиной, он в одиночку поверг в прах шесть Тоа Нува и шесть Тоа Иника! Лишь его давний друг Аксонн способен бросить ему вызов.",
+        loreNoteTitle: "Летопись BIONICLE 2006 (Ignition):",
+        loreNoteDesc: "«Мы были братьями, Аксонн. Но Великий Дух спит, и новым миром будут править сильные!» — Брутака Аксонну перед их решающей битвой на пороге Палаты Жизни.",
+        statsHeading: "Матрица способностей Титана Брутаки",
+        statStrength: "Физическая мощь",
+        statOlmak: "Контроль пространства (Канохи Олмак)",
+        statCombat: "Боевое мастерство (4 руки)",
+        statArmor: "Броня и рост (более 28 см)",
+        wpnBladeTitle: "Вращающийся меч-секира",
+        wpnBladeDesc: "Золотой двусторонний меч Брутаки можно разделить на два раздельных клинка или раскрутить для создания непробиваемого силового купола.",
+        wpnZamorTitle: "Дополнительные руки и пускатель Замор",
+        wpnZamorDesc: "Вторая пара суставчатых рук за спиной и метатель сфер Замор позволяют внезапно разить противников с любых ракурсов.",
+        kardasParts: "Требуются 8734 Брутака + 8733 Аксонн + 8764 Везок",
+        kardasDesc: "Объедините трех титанов, чтобы собрать огнедышащего крылатого гиганта с невероятным размахом крыльев!",
+        botarParts: "Требуются 8734 Брутака + 8733 Аксонн",
+        botarDesc: "Постройте Ботара — безжалостного телепортирующегося судью Ордена Мата Нуи, изгоняющего предателей в бездну Ямы!",
+        rev1Title: "Брутака — безусловный флагман 2006 года!",
+        rev1Body: "Сочетание темно-синего и благородного золота выглядит роскошно. Он заметно выше Аксонна, а четыре руки производят невероятное впечатление. Форма маски Олмак — шедевр.",
+        rev2Title: "Громадный клинок и отличная артикуляция",
+        rev2Body: "Его составной меч почти в длину всей коробки. Сборка заняла около 50 минут. Если выбирать одного титана весной 2006 — берите Брутаку!",
+        ftProducts: "BIONICLE® 2006",
+        ftSupport: "Служба поддержки",
+        ftOrderTracker: "Статус заказа",
+        ftBuildingInst: "Инструкции по сборке",
+        ftMissingBricks: "Недостающие детали",
+        ftExplore: "Мир LEGO",
+        ftCatalog: "Заказ по почте",
+        ftPhone: "Контактный центр в РФ (Москва): (495) 785-0000 или через фирменный печатный каталог.",
+        ftCopyright: "LEGO, логотип LEGO и BIONICLE являются зарегистрированными товарными знаками LEGO Group. ©2006 The LEGO Group. Все права защищены.",
+        ftPrivacy: "Конфиденциальность",
+        ftTerms: "Условия использования",
+        ftLegal: "Правовая информация",
+        modalCartTitle: "Ваша корзина LEGO (Март 2006)",
+        modalPromo: "Коллекционный комикс BIONICLE #2 в подарок!",
+        modalContinue: "Продолжить выбор",
+        modalCheckout: "Оформить заказ",
+        olmakGate: "ОТКРЫТИЕ ПОРТАЛА В ЗОНУ ТЬМЫ",
+        olmakPower: "ЧЕТЫРЕХРУКИЙ ПАДШИЙ ТИТАН • СИЛА: 10/10"
+      }
+    };
+
+    let currentLang = 'en';
+    let cartCount = 0;
+    let isRiftActive = false;
+    let synth = null;
+    let noiseSynth = null;
+    let riftSynth = null;
+
+    function initAudio() {
+      if (!synth && window.Tone) {
+        try {
+          Tone.start();
+          // Blade / weapon polyphonic synthesizer
+          synth = new Tone.PolySynth(Tone.Synth, {
+            oscillator: { type: "triangle" },
+            envelope: { attack: 0.008, decay: 0.25, sustain: 0.05, release: 0.3 }
+          }).toDestination();
+          synth.volume.value = -5;
+
+          // Zamor / kinetic impact noise synth
+          noiseSynth = new Tone.NoiseSynth({
+            noise: { type: "pink" },
+            envelope: { attack: 0.005, decay: 0.2, sustain: 0 }
+          }).toDestination();
+          noiseSynth.volume.value = -3;
+
+          // Kanohi Olmak Dimensional Rift synth (rich chorus/resonance)
+          riftSynth = new Tone.FMSynth({
+            harmonicity: 3,
+            modulationIndex: 10,
+            oscillator: { type: "sine" },
+            envelope: { attack: 0.1, decay: 0.4, sustain: 0.2, release: 0.6 }
+          }).toDestination();
+          riftSynth.volume.value = -6;
+        } catch (e) {
+          console.warn("Audio deferred or blocked by browser policy", e);
+        }
+      }
+    }
+
+    function fireZamorSound() {
+      initAudio();
+      if (window.Tone && synth && noiseSynth) {
+        synth.triggerAttackRelease(["D5", "A5"], "16n");
+        noiseSynth.triggerAttackRelease("16n", "+0.02");
+      }
+    }
+
+    function playSwordSlashSound() {
+      initAudio();
+      if (window.Tone && synth && noiseSynth) {
+        // Dynamic swoosh sound effect
+        noiseSynth.triggerAttackRelease("32n");
+        synth.triggerAttackRelease(["E4", "B4", "E5"], "16n", "+0.01");
+      }
+    }
+
+    function playOlmakRiftSound() {
+      initAudio();
+      if (window.Tone && riftSynth) {
+        riftSynth.triggerAttackRelease("A2", "4n");
+        riftSynth.triggerAttackRelease("C#3", "4n", "+0.1");
+      }
+    }
+
+    function toggleDimensionalRift() {
+      isRiftActive = !isRiftActive;
+      const img = document.getElementById('main-product-img');
+      const overlay = document.getElementById('rift-overlay');
+      const btn = document.getElementById('olmak-toggle-btn');
+
+      playOlmakRiftSound();
+
+      if (isRiftActive) {
+        img.classList.add('olmak-rift-active');
+        overlay.classList.remove('hidden');
+        btn.classList.add('bg-cyan-500', 'text-black', 'font-black');
+        btn.classList.remove('bg-teal-950/80', 'text-cyan-200');
+      } else {
+        img.classList.remove('olmak-rift-active');
+        overlay.classList.add('hidden');
+        btn.classList.remove('bg-cyan-500', 'text-black', 'font-black');
+        btn.classList.add('bg-teal-950/80', 'text-cyan-200');
+      }
+    }
+
+    function changeGalleryImage(type, label) {
+      const mainImg = document.getElementById('main-product-img');
+      const viewLabel = document.getElementById('current-view-name');
+      
+      if (viewLabel) viewLabel.innerText = label;
+
+      document.querySelectorAll('.thumb-btn').forEach(btn => {
+        btn.classList.remove('border-yellow-400');
+        btn.classList.add('border-gray-700');
+      });
+      event.currentTarget.classList.remove('border-gray-700');
+      event.currentTarget.classList.add('border-yellow-400');
+
+      if (type === 'primary') {
+        mainImg.src = "https://www.lego.com/cdn/product-assets/product.img.pri/8734_prod.jpg";
+      } else if (type === 'blade') {
+        mainImg.src = "https://placehold.co/600x600/0c1017/d4af37?text=8734+Twin-Bladed+Scythe";
+      } else if (type === 'mask') {
+        mainImg.src = "https://placehold.co/600x600/0c1017/00f0ff?text=Kanohi+Olmak+Mask+of+Gates";
+      } else if (type === 'botar') {
+        mainImg.src = "https://placehold.co/600x600/0c1017/eab308?text=Botar+Combiner+Model";
+      }
+    }
+
+    function switchTab(tabName) {
+      const tabs = ['desc', 'specs', 'combiner', 'reviews'];
+      tabs.forEach(t => {
+        const content = document.getElementById('tab-' + t);
+        const btn = document.getElementById('tab-btn-' + t);
+        if (t === tabName) {
+          content.classList.remove('hidden');
+          btn.classList.add('text-yellow-400', 'border-b-2', 'border-yellow-400');
+          btn.classList.remove('text-gray-400');
+        } else {
+          content.classList.add('hidden');
+          btn.classList.remove('text-yellow-400', 'border-b-2', 'border-yellow-400');
+          btn.classList.add('text-gray-400');
+        }
+      });
+    }
+
+    function addToCart() {
+      const qty = parseInt(document.getElementById('order-qty').value, 10) || 1;
+      cartCount += qty;
+      document.getElementById('cart-counter').innerText = cartCount;
+      
+      initAudio();
+      if (window.Tone && synth) {
+        synth.triggerAttackRelease(["E4", "G#4", "B4"], "16n");
+      }
+
+      openCartModal();
+    }
+
+    function openCartModal() {
+      const qty = parseInt(document.getElementById('order-qty').value, 10) || 1;
+      const modal = document.getElementById('cart-modal');
+      const qtyLabel = document.getElementById('modal-qty-text');
+      const priceLabel = document.getElementById('modal-total-price');
+
+      qtyLabel.innerText = `${translations[currentLang].qtyLabel} ${qty}`;
+      if (currentLang === 'ru') {
+        priceLabel.innerText = `${749 * qty} руб.`;
+      } else {
+        priceLabel.innerText = `$${(19.99 * qty).toFixed(2)}`;
+      }
+
+      modal.classList.remove('hidden');
+    }
+
+    function closeCartModal() {
+      document.getElementById('cart-modal').classList.add('hidden');
+      document.getElementById('checkout-status').classList.add('hidden');
+    }
+
+    function checkoutNotification() {
+      const status = document.getElementById('checkout-status');
+      status.classList.remove('hidden');
+      if (currentLang === 'ru') {
+        status.innerText = "Имитация заказа 2006 года! Отправка в службу доставки LEGO...";
+      } else {
+        status.innerText = "Simulated 2006 Order placed! Connecting to LEGO Direct...";
+      }
+      setTimeout(() => {
+        closeCartModal();
+      }, 2500);
+    }
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      
+      const enBtn = document.getElementById('lang-en');
+      const ruBtn = document.getElementById('lang-ru');
+      if (lang === 'ru') {
+        ruBtn.className = 'px-2 py-1 rounded font-bold transition text-black bg-yellow-400';
+        enBtn.className = 'px-2 py-1 rounded font-bold transition text-gray-400 hover:text-white';
+      } else {
+        enBtn.className = 'px-2 py-1 rounded font-bold transition text-black bg-yellow-400';
+        ruBtn.className = 'px-2 py-1 rounded font-bold transition text-gray-400 hover:text-white';
+      }
+
+      const priceElem = document.getElementById('product-price');
+      if (priceElem) {
+        priceElem.innerText = translations[lang].priceValue;
+      }
+
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          element.innerText = translations[lang][key];
+        }
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      setLanguage('en');
+    });
+  </script>
+</body>
+</html>
