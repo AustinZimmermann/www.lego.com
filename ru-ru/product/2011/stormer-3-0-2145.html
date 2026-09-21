@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LEGO.com Shop - 2145 STORMER 3.0</title>
+  <link rel="shortcut icon" href="https://www.lego.com/favicon.ico" type="image/x-icon">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts: Bebas Neue for Hero Factory sci-fi headers, Inter for standard UI -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            hf: ['Bebas Neue', 'sans-serif']
+          },
+          colors: {
+            legoYellow: '#FFD500',
+            legoRed: '#D11013',
+            legoDarkRed: '#A30006',
+            legoBlue: '#0055BF',
+            hfIceBlue: '#00D4FF',
+            hfRhinoSilver: '#B0BEC5',
+            hfJungleGreen: '#4CAF50'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Classic 2011 LEGO Shop@Home gloss and bevel styling */
+    body {
+      background: #ECEFF1 url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d8dde1' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .lego-gloss {
+      background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 50%, rgba(0,0,0,0.15) 100%);
+    }
+
+    .lego-btn-red {
+      background: linear-gradient(180deg, #FF4B4B 0%, #D11013 50%, #990003 100%);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.4);
+    }
+    .lego-btn-red:hover {
+      background: linear-gradient(180deg, #FF6565 0%, #E31316 50%, #B20004 100%);
+    }
+
+    .lego-btn-orange {
+      background: linear-gradient(180deg, #FFA726 0%, #FB8C00 50%, #E65100 100%);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.4);
+    }
+    .lego-btn-orange:hover {
+      background: linear-gradient(180deg, #FFB74D 0%, #FFA726 50%, #EF6C00 100%);
+    }
+
+    .hf-terminal {
+      background: radial-gradient(circle at center, #0d2838 0%, #030e15 100%);
+      border: 2px solid #00D4FF;
+      box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+    }
+
+    /* Scanline effect for Hero Factory terminal */
+    .scanlines {
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.04), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.04));
+      background-size: 100% 3px, 6px 100%;
+    }
+
+    /* Modal transition */
+    .modal-backdrop {
+      background-color: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(2px);
+    }
+  </style>
+</head>
+<body class="text-gray-800 antialiased min-h-screen flex flex-col font-sans">
+
+  <!-- 2011 LEGO.com Top Utility Bar -->
+  <header class="bg-[#1C1C1C] text-white text-xs border-b border-gray-700">
+    <div class="max-w-6xl mx-auto px-4 py-1.5 flex flex-wrap items-center justify-between">
+      <div class="flex items-center space-x-4">
+        <span class="text-gray-400"><i class="fa-solid fa-globe text-legoYellow mr-1"></i> <span id="lbl-lego-network">LEGO.com Network</span></span>
+        <a href="#" class="text-gray-300 hover:text-white transition">Club</a>
+        <a href="#" class="text-gray-300 hover:text-white transition">Games</a>
+        <a href="#" class="text-gray-300 hover:text-white transition font-bold text-yellow-400">Hero Factory 3.0</a>
+      </div>
+      
+      <!-- Language Switcher & Account -->
+      <div class="flex items-center space-x-4 mt-1 sm:mt-0">
+        <div class="flex items-center space-x-1 bg-gray-800 px-2 py-0.5 rounded border border-gray-600">
+          <label for="langSelector" class="text-gray-400 font-semibold uppercase text-[11px]"><i class="fa-solid fa-language mr-1 text-hfIceBlue"></i></label>
+          <select id="langSelector" class="bg-transparent text-white font-bold cursor-pointer text-xs focus:outline-none" onchange="switchLanguage(this.value)">
+            <option value="en" class="bg-gray-900 text-white">United States (EN)</option>
+            <option value="ru" class="bg-gray-900 text-white">Россия (RU)</option>
+          </select>
+        </div>
+
+        <button onclick="toggleCartModal()" class="flex items-center space-x-1 bg-legoYellow text-black px-2.5 py-0.5 rounded font-black hover:bg-yellow-400 transition cursor-pointer">
+          <i class="fa-solid fa-cart-shopping text-xs"></i>
+          <span id="lbl-cart-count">Bag (0)</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Classic Yellow & Red 2011 LEGO Shop Header -->
+  <div class="bg-gradient-to-b from-[#F2F2F2] to-[#E0E0E0] border-b-4 border-legoRed shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center space-x-4">
+        <!-- Vintage 2011 LEGO Square Logo -->
+        <a href="#home" class="block w-16 h-16 bg-legoRed p-1 rounded-sm shadow-md border-2 border-white flex-shrink-0 flex items-center justify-center">
+          <span class="font-black text-white text-2xl tracking-tighter italic drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]" style="font-family: Arial, sans-serif;">LEGO</span>
+        </a>
+        <div>
+          <div class="text-2xl sm:text-3xl font-black text-[#D11013] italic tracking-tight flex items-center gap-2">
+            <span>Shop</span><span class="text-gray-700 font-normal">at</span><span>Home</span>
+          </div>
+          <p class="text-xs text-gray-500 font-medium hidden sm:block" id="lbl-header-sub">The Official LEGO® Online Store (2011 Edition)</p>
+        </div>
+      </div>
+
+      <!-- Quick Search Form -->
+      <div class="flex items-center">
+        <div class="relative w-44 sm:w-64">
+          <input type="text" id="quickSearch" value="2145" class="w-full bg-white border border-gray-400 rounded-l-md px-3 py-1.5 text-xs focus:outline-none focus:ring-1 focus:ring-legoBlue" placeholder="Search sets, items...">
+          <button class="absolute right-0 top-0 bottom-0 bg-gray-200 border-t border-b border-r border-gray-400 px-3 rounded-r-md text-gray-600 hover:bg-gray-300">
+            <i class="fa-solid fa-magnifying-glass text-xs"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2011 Nav Bar -->
+    <nav class="bg-legoRed text-white font-bold text-sm tracking-wide">
+      <div class="max-w-6xl mx-auto px-4 flex space-x-1 sm:space-x-6 overflow-x-auto py-2">
+        <a href="#" class="px-2 py-1 rounded hover:bg-legoDarkRed transition" id="nav-products">Products</a>
+        <a href="#" class="px-2 py-1 rounded hover:bg-legoDarkRed transition text-yellow-300 underline font-black" id="nav-themes">Themes: Hero Factory</a>
+        <a href="#" class="px-2 py-1 rounded hover:bg-legoDarkRed transition" id="nav-exclusives">Exclusives</a>
+        <a href="#" class="px-2 py-1 rounded hover:bg-legoDarkRed transition" id="nav-sales">Sale</a>
+        <a href="#" class="px-2 py-1 rounded hover:bg-legoDarkRed transition" id="nav-customer-service">Customer Service</a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Hero Factory 2011 Savage Planet Hero Banner -->
+  <div class="bg-gradient-to-r from-cyan-900 via-slate-900 to-green-950 text-white border-b-2 border-hfIceBlue">
+    <div class="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <span class="bg-black/60 border border-hfIceBlue text-hfIceBlue text-[11px] px-2 py-0.5 rounded font-mono font-bold uppercase tracking-wider">Makuhero City Dispatch</span>
+        <span class="text-xs sm:text-sm font-hf tracking-wider text-gray-200" id="hf-banner-subtitle">MISSION: QUATROS // SAVAGE PLANET EXPEDITION</span>
+      </div>
+      <div class="text-xs text-hfIceBlue flex items-center space-x-1">
+        <i class="fa-solid fa-shield-halved animate-pulse"></i>
+        <span class="font-mono">QUAZA SPIKE DETECTED</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Breadcrumbs -->
+  <div class="max-w-6xl mx-auto px-4 py-2 text-xs text-gray-500 flex items-center space-x-1">
+    <a href="#" class="hover:underline" id="bc-home">Home</a>
+    <span>&gt;</span>
+    <a href="#" class="hover:underline" id="bc-themes">Themes</a>
+    <span>&gt;</span>
+    <a href="#" class="hover:underline text-cyan-800 font-bold" id="bc-herofactory">Hero Factory</a>
+    <span>&gt;</span>
+    <span class="text-gray-800 font-bold">2145 STORMER 3.0</span>
+  </div>
+
+  <!-- Main Product Detail Container -->
+  <main class="max-w-6xl mx-auto px-4 py-4 flex-grow w-full">
+    <div class="bg-white rounded-lg border border-gray-300 shadow-md p-4 sm:p-6 mb-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- Left: Product Photography & Interactive Viewer -->
+        <div class="lg:col-span-6 flex flex-col items-center">
+          <!-- Main Frame Container -->
+          <div class="relative w-full bg-gradient-to-b from-slate-100 to-slate-200 border-2 border-slate-300 rounded-lg p-4 flex flex-col items-center justify-center min-h-[360px] overflow-hidden group">
+            
+            <!-- 2011 Hero Factory Badge in Corner -->
+            <div class="absolute top-3 left-3 bg-black/80 border border-cyan-400 text-cyan-300 px-2 py-1 rounded text-[11px] font-mono font-bold tracking-wider z-10 flex items-center gap-1.5 shadow">
+              <span class="inline-block w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+              HERO FACTORY 3.0
+            </div>
+
+            <!-- Canister Age / Pieces Badge -->
+            <div class="absolute top-3 right-3 bg-legoYellow text-black border border-yellow-600 px-2.5 py-1 rounded-sm text-xs font-black shadow-md z-10">
+              6 - 12 <span class="text-[10px] font-medium block text-center" id="lbl-badge-ages">Ages</span>
+            </div>
+
+            <!-- Main Product Image with zoom trigger -->
+            <div class="relative cursor-pointer overflow-hidden p-2 flex items-center justify-center" onclick="openLightbox()">
+              <img id="main-product-image" 
+                   src="https://www.lego.com/cdn/product-assets/product.img.pri/2145_prod.jpg" 
+                   alt="2145 LEGO Hero Factory Stormer 3.0" 
+                   class="max-h-[350px] w-auto object-contain transition-transform duration-300 hover:scale-105 drop-shadow-2xl">
+            </div>
+
+            <div class="absolute bottom-3 right-3">
+              <button onclick="openLightbox()" class="bg-white/90 hover:bg-white text-gray-800 border border-gray-300 text-xs px-2.5 py-1 rounded shadow flex items-center space-x-1 transition font-bold">
+                <i class="fa-solid fa-magnifying-glass-plus text-legoBlue"></i>
+                <span id="btn-zoom-text">Click to Enlarge</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Thumbnail Gallery & Alternate Views -->
+          <div class="flex items-center space-x-3 mt-3 w-full justify-center">
+            <button onclick="setPreviewImage('main')" class="w-16 h-16 border-2 border-cyan-500 rounded p-1 bg-white hover:opacity-90 transition shadow-sm focus:ring-2 focus:ring-cyan-400">
+              <img src="https://www.lego.com/cdn/product-assets/product.img.pri/2145_prod.jpg" alt="Primary Set" class="w-full h-full object-contain">
+            </button>
+            <button onclick="showFeature('rhino')" class="w-16 h-16 border border-gray-300 rounded p-1 bg-slate-50 hover:border-cyan-500 transition shadow-sm flex flex-col items-center justify-center text-center">
+              <i class="fa-solid fa-shield-cat text-gray-600 text-lg"></i>
+              <span class="text-[10px] font-bold text-gray-700 leading-tight mt-1" id="thumb-power">Rhino Power</span>
+            </button>
+            <button onclick="showFeature('blaster')" class="w-16 h-16 border border-gray-300 rounded p-1 bg-slate-50 hover:border-cyan-500 transition shadow-sm flex flex-col items-center justify-center text-center">
+              <i class="fa-solid fa-crosshairs text-cyan-600 text-lg"></i>
+              <span class="text-[10px] font-bold text-gray-700 leading-tight mt-1" id="thumb-weapon">Dual Blades</span>
+            </button>
+            <button onclick="showFeature('core')" class="w-16 h-16 border border-gray-300 rounded p-1 bg-slate-50 hover:border-cyan-500 transition shadow-sm flex flex-col items-center justify-center text-center">
+              <i class="fa-solid fa-atom text-yellow-500 text-lg"></i>
+              <span class="text-[10px] font-bold text-gray-700 leading-tight mt-1" id="thumb-core">Quaza Core</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: Purchase Block, Metadata & Price -->
+        <div class="lg:col-span-6 flex flex-col justify-between">
+          <div>
+            <!-- Item Number & Set Title -->
+            <div class="border-b border-gray-200 pb-3">
+              <div class="flex items-center justify-between text-xs text-gray-500 uppercase tracking-widest font-bold">
+                <span>LEGO® Hero Factory</span>
+                <span class="text-cyan-700 bg-cyan-50 px-2 py-0.5 rounded border border-cyan-200">Set #2145</span>
+              </div>
+              <h1 class="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight mt-1" id="prod-title">
+                STORMER 3.0
+              </h1>
+              <p class="text-sm font-semibold text-gray-600" id="prod-tagline">Leader of the Alpha 1 Team equipped with Rhino Animal Power!</p>
+            </div>
+
+            <!-- Price and Availability -->
+            <div class="my-4 bg-gray-50 border border-gray-200 rounded-lg p-3 flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <span class="text-xs text-gray-500 font-bold uppercase block" id="lbl-our-price">Our Price:</span>
+                <span class="text-3xl font-black text-legoDarkRed" id="prod-price">$8.99 USD</span>
+              </div>
+
+              <div>
+                <span class="inline-flex items-center px-2.5 py-1 rounded text-xs font-black bg-green-100 text-green-800 border border-green-300">
+                  <i class="fa-solid fa-circle-check mr-1.5 text-green-600"></i>
+                  <span id="lbl-in-stock">Available Now (In Stock)</span>
+                </span>
+                <span class="block text-[11px] text-gray-500 mt-1" id="lbl-vip-points">VIP Points: Earn 8 Points</span>
+              </div>
+            </div>
+
+            <!-- Set Specifications List (2011 Shop style) -->
+            <div class="grid grid-cols-2 gap-2 text-xs py-2 bg-slate-100 rounded p-3 text-gray-700 mb-4">
+              <div><strong id="lbl-spec-item">Item:</strong> 2145</div>
+              <div><strong id="lbl-spec-pieces">Pieces:</strong> 31</div>
+              <div><strong id="lbl-spec-ages">Ages:</strong> 6-12</div>
+              <div><strong id="lbl-spec-release">Year:</strong> 2011 (Summer)</div>
+            </div>
+
+            <!-- Add to Cart Widget -->
+            <div class="border-t border-b border-gray-200 py-4 my-2">
+              <div class="flex items-center space-x-3">
+                <div class="flex items-center border border-gray-300 rounded shadow-inner bg-white">
+                  <button onclick="updateQty(-1)" class="px-3 py-2 text-gray-600 hover:bg-gray-100 font-bold">-</button>
+                  <input type="number" id="purchaseQty" value="1" min="1" max="10" class="w-12 text-center text-sm font-black focus:outline-none border-x border-gray-200" readonly>
+                  <button onclick="updateQty(1)" class="px-3 py-2 text-gray-600 hover:bg-gray-100 font-bold">+</button>
+                </div>
+
+                <button onclick="addToCart()" class="flex-1 lego-btn-orange text-white font-black py-3 px-6 rounded-md uppercase tracking-wider text-sm flex items-center justify-center space-x-2 transition cursor-pointer">
+                  <i class="fa-solid fa-cart-plus"></i>
+                  <span id="btn-add-to-bag">Add to Bag</span>
+                </button>
+              </div>
+
+              <!-- Wishlist and Comparison -->
+              <div class="flex items-center justify-between text-xs mt-3 text-gray-500">
+                <button onclick="handleWishlist()" class="hover:text-legoRed flex items-center space-x-1">
+                  <i class="fa-regular fa-heart"></i>
+                  <span id="lbl-add-wishlist">Add to Wishlist</span>
+                </button>
+                <span class="text-green-700 font-semibold" id="lbl-shipping-perk"><i class="fa-solid fa-truck-fast mr-1"></i>Free shipping on orders over $75</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Canister Secret Code Teaser Banner -->
+          <div class="mt-2 bg-slate-900 text-cyan-300 border-2 border-cyan-500 rounded p-3 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+              <i class="fa-solid fa-gamepad text-2xl text-hfIceBlue"></i>
+              <div>
+                <p class="font-bold text-xs uppercase text-white" id="banner-code-title">Canister Code Included!</p>
+                <p class="text-[11px] text-gray-300" id="banner-code-sub">Unlocks 300 Game Points in the Online HERO FACTORY Game!</p>
+              </div>
+            </div>
+            <button onclick="scrollToTerminal()" class="bg-cyan-500 hover:bg-cyan-400 text-black text-xs font-black px-2.5 py-1.5 rounded uppercase tracking-wider transition">
+              <span id="btn-redeem-jump">Redeem Code</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 2011 Tabbed Specifications, Quaza Terminal & Combiner Instructions -->
+    <div class="bg-white rounded-lg border border-gray-300 shadow-md overflow-hidden mb-6">
+      <!-- Tab Headers -->
+      <div class="flex border-b border-gray-200 bg-gray-100 text-xs sm:text-sm font-bold">
+        <button onclick="switchTab('overview')" id="tab-btn-overview" class="py-3 px-5 border-b-2 border-legoRed bg-white text-legoDarkRed flex items-center space-x-2">
+          <i class="fa-solid fa-file-lines"></i>
+          <span id="tab-title-overview">Product Description</span>
+        </button>
+        <button onclick="switchTab('combiner')" id="tab-btn-combiner" class="py-3 px-5 border-b-2 border-transparent text-gray-600 hover:text-gray-900 flex items-center space-x-2">
+          <i class="fa-solid fa-cubes"></i>
+          <span id="tab-title-combiner">Combiner Model</span>
+        </button>
+        <button onclick="switchTab('terminal')" id="tab-btn-terminal" class="py-3 px-5 border-b-2 border-transparent text-gray-600 hover:text-gray-900 flex items-center space-x-2">
+          <i class="fa-solid fa-terminal text-cyan-600"></i>
+          <span id="tab-title-terminal">Hero Pad Terminal</span>
+        </button>
+        <button onclick="switchTab('specs')" id="tab-btn-specs" class="py-3 px-5 border-b-2 border-transparent text-gray-600 hover:text-gray-900 flex items-center space-x-2">
+          <i class="fa-solid fa-list-check"></i>
+          <span id="tab-title-specs">Features & Stats</span>
+        </button>
+      </div>
+
+      <!-- Tab Content Area -->
+      <div class="p-5 sm:p-6 text-sm">
+        
+        <!-- Tab 1: Product Overview -->
+        <div id="tab-content-overview" class="block space-y-4">
+          <div class="max-w-3xl">
+            <h3 class="text-xl font-bold text-gray-900 mb-2" id="desc-header">Lead the expedition on jungle planet Quatros!</h3>
+            <p class="text-gray-700 leading-relaxed mb-3" id="desc-p1">
+              “Calling Stormer! The evil Witch Doctor has stripped the planet Quatros of its natural Quaza mineral supply, threatening its very collapse! You must lead Bulk, Stringer, Nex, Furno and Rocka to stop him before it is too late.”
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-3" id="desc-p2">
+              Armed with new rhino animal power armor, dual ice ice-blades, and an armored rhinoceros helmet visor, STORMER 3.0 is built to power through dense jungle foliage and withstand any vicious beast under Witch Doctor’s mind control.
+            </p>
+
+            <h4 class="font-bold text-gray-800 text-sm mt-4 uppercase tracking-wider" id="desc-bullets-header">Features:</h4>
+            <ul class="list-disc list-inside space-y-1 text-gray-700 mt-2" id="desc-bullets">
+              <li>Features rhino animal armor plates, white armor pieces, and dual wrist-mounted ice blades.</li>
+              <li>Includes authentic Hero Factory chest core with animal power print.</li>
+              <li>Stands over 6” (17cm) tall in combat readiness!</li>
+              <li>Can be combined with #2143 ROCKA 3.0 to create an ultimate heavy jungle hero!</li>
+              <li>Contains unique code inside canister lid to unlock 300 game points in LEGO Hero Factory online game.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Tab 2: Combiner Model Preview -->
+        <div id="tab-content-combiner" class="hidden">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+            <div class="md:col-span-5 bg-gradient-to-tr from-slate-900 to-slate-800 p-4 rounded-lg text-center border-2 border-yellow-500 shadow">
+              <div class="text-yellow-400 font-hf text-2xl tracking-wider mb-2">COMBINATION PROTOCOL</div>
+              <div class="p-3 bg-black/40 rounded flex items-center justify-center space-x-2 text-white text-xs mb-3 font-mono">
+                <span class="text-cyan-400 font-bold">2145 STORMER 3.0</span>
+                <span>+</span>
+                <span class="text-yellow-400 font-bold">2143 ROCKA 3.0</span>
+              </div>
+              <!-- Combiner Visual Graphic representation -->
+              <div class="h-48 border border-gray-700 rounded bg-slate-950 flex flex-col items-center justify-center p-4">
+                <i class="fa-solid fa-robot text-5xl text-yellow-400 mb-2"></i>
+                <div class="text-xs text-gray-300 font-mono font-bold" id="combiner-preview-title">HEAVY RHINO-LION HYBRID MODEL</div>
+                <div class="text-[11px] text-gray-400 mt-1" id="combiner-preview-desc">Combines Stormer's Rhino Visor & Ice Blades with Rocka's Lion Claws!</div>
+              </div>
+            </div>
+
+            <div class="md:col-span-7 space-y-3">
+              <h3 class="text-lg font-bold text-gray-900" id="combiner-headline">Double the Animal Power!</h3>
+              <p class="text-gray-700 leading-relaxed text-xs sm:text-sm" id="combiner-text">
+                By combining the agility of set 2145 STORMER 3.0 with the raw strength of set 2143 ROCKA 3.0, you can build a massive combiner hero equipped with dual heavy shoulder armor, quadrupled energy capacity, and dual-wielding weapon configurations to battle Witch Doctor's corrupted beast army.
+              </p>
+              
+              <div class="bg-yellow-50 border border-yellow-300 p-3 rounded text-xs text-yellow-900">
+                <strong id="combiner-note-title">Building Instructions Notice:</strong> 
+                <span id="combiner-note-body">Combiner instructions were officially made available as downloadable digital PDF building manuals on LEGO.com/herofactory during the 2011 Savage Planet campaign!</span>
+              </div>
+
+              <button onclick="downloadMockManual()" class="bg-gray-800 hover:bg-black text-white text-xs font-bold py-2 px-4 rounded flex items-center space-x-2 transition">
+                <i class="fa-solid fa-file-pdf text-red-400"></i>
+                <span id="btn-download-instructions">View Combiner Instructions (PDF)</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Hero Pad Secret Code Terminal -->
+        <div id="tab-content-terminal" class="hidden">
+          <div class="hf-terminal rounded-lg p-5 scanlines text-white relative">
+            <div class="flex items-center justify-between border-b border-cyan-500/40 pb-3 mb-4">
+              <div class="flex items-center space-x-2">
+                <span class="inline-block w-3 h-3 rounded-full bg-red-500 animate-pulse"></span>
+                <span class="font-hf text-xl tracking-wider text-cyan-300" id="term-title">MAKUHERO ASSEMBLY TERMINAL v3.0</span>
+              </div>
+              <span class="font-mono text-xs text-cyan-400">STATUS: ONLINE</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+              <div class="md:col-span-7 space-y-4">
+                <p class="text-xs sm:text-sm text-cyan-100 font-mono" id="term-instr">
+                  Enter the 8-character secret alphanumeric code located underneath your 2145 canister lid to recharge Stormer's Quaza reserves and unlock 300 Hero Game Points!
+                </p>
+
+                <!-- Code Input -->
+                <div class="flex items-center space-x-2">
+                  <input type="text" id="terminalCodeInput" placeholder="EX: ST30-9945" maxlength="9" class="bg-black/80 border-2 border-cyan-400 text-cyan-300 font-mono font-black text-center text-lg uppercase px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-cyan-300 tracking-widest w-48">
+                  <button onclick="verifyCanisterCode()" class="bg-cyan-500 hover:bg-cyan-400 text-black font-black text-xs uppercase px-4 py-3 rounded tracking-wider transition">
+                    <span id="btn-submit-code">Verify Code</span>
+                  </button>
+                  <button onclick="fillSampleCode()" class="text-xs text-cyan-400 underline hover:text-white font-mono">
+                    <span id="btn-sample-code">[Use Canister Code]</span>
+                  </button>
+                </div>
+
+                <div id="terminalResult" class="p-3 rounded bg-black/60 border border-cyan-500/30 text-xs font-mono hidden">
+                  <!-- Output message rendered by JS -->
+                </div>
+              </div>
+
+              <!-- Quaza Core Power Gauge -->
+              <div class="md:col-span-5 bg-black/70 border border-cyan-500/50 p-4 rounded flex flex-col justify-between">
+                <div>
+                  <div class="flex justify-between items-center text-xs font-mono mb-1">
+                    <span class="text-cyan-300 font-bold" id="lbl-quaza-core">HERO CORE ENERGY:</span>
+                    <span id="coreEnergyPercent" class="text-yellow-400 font-bold">100%</span>
+                  </div>
+                  <div class="w-full bg-gray-800 rounded-full h-4 p-0.5 border border-cyan-400 overflow-hidden">
+                    <div id="coreEnergyBar" class="bg-gradient-to-r from-cyan-400 to-yellow-400 h-full rounded-full transition-all duration-500" style="width: 100%;"></div>
+                  </div>
+                </div>
+
+                <div class="mt-4 pt-3 border-t border-cyan-900/60 flex items-center justify-between text-[11px] font-mono text-cyan-200">
+                  <span>UNLOCKED HERO CREDITS:</span>
+                  <span id="userCredits" class="text-yellow-300 font-bold text-sm">0 pts</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 4: Features & Stats -->
+        <div id="tab-content-specs" class="hidden">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-bold text-gray-900 mb-3" id="specs-title-profile">Hero Profile</h4>
+              <table class="w-full text-xs text-left border-collapse">
+                <tbody>
+                  <tr class="border-b border-gray-200"><td class="py-2 text-gray-500 font-medium" id="spec-key-name">Hero Name</td><td class="py-2 font-bold text-gray-800">Preston Stormer</td></tr>
+                  <tr class="border-b border-gray-200"><td class="py-2 text-gray-500 font-medium" id="spec-key-rank">Rank</td><td class="py-2 font-bold text-gray-800">Alpha 1 Team Leader</td></tr>
+                  <tr class="border-b border-gray-200"><td class="py-2 text-gray-500 font-medium" id="spec-key-planet">Deployment</td><td class="py-2 font-bold text-gray-800">Planet Quatros</td></tr>
+                  <tr class="border-b border-gray-200"><td class="py-2 text-gray-500 font-medium" id="spec-key-armor">Animal Armor</td><td class="py-2 font-bold text-gray-800">Rhino Power Visor & Spikes</td></tr>
+                  <tr class="border-b border-gray-200"><td class="py-2 text-gray-500 font-medium" id="spec-key-weapon">Primary Weaponry</td><td class="py-2 font-bold text-gray-800">Dual Glacial Blades</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-gray-900 mb-3" id="specs-title-power">Combat Attributes</h4>
+              <div class="space-y-3 text-xs">
+                <div>
+                  <div class="flex justify-between font-semibold mb-1">
+                    <span id="attr-strength">Strength</span>
+                    <span>90 / 100</span>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-blue-600 h-2 rounded-full" style="width: 90%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between font-semibold mb-1">
+                    <span id="attr-agility">Agility</span>
+                    <span>75 / 100</span>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-cyan-500 h-2 rounded-full" style="width: 75%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between font-semibold mb-1">
+                    <span id="attr-leadership">Tactics & Leadership</span>
+                    <span>100 / 100</span>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-yellow-500 h-2 rounded-full" style="width: 100%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between font-semibold mb-1">
+                    <span id="attr-durability">Armor Durability</span>
+                    <span>95 / 100</span>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-green-600 h-2 rounded-full" style="width: 95%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Authentic 2011 LEGO.com Customer Reviews Section -->
+    <div class="bg-white rounded-lg border border-gray-300 shadow-md p-5 mb-8">
+      <div class="flex flex-wrap items-center justify-between border-b border-gray-200 pb-3 mb-4">
+        <div>
+          <h3 class="text-lg font-bold text-gray-900" id="rev-title">Customer Ratings & Reviews</h3>
+          <div class="flex items-center space-x-2 mt-1">
+            <div class="text-yellow-400 text-sm">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <span class="text-xs font-bold text-gray-700">4.7 / 5.0</span>
+            <span class="text-xs text-gray-500" id="rev-count">(18 reviews)</span>
+          </div>
+        </div>
+        <button onclick="writeReviewNotice()" class="mt-2 sm:mt-0 text-xs font-bold border border-gray-400 bg-gray-100 hover:bg-gray-200 text-gray-800 px-3 py-1.5 rounded transition">
+          <span id="btn-write-review">Write a Review</span>
+        </button>
+      </div>
+
+      <!-- Sample 2011 Reviews -->
+      <div class="space-y-4">
+        <div class="border-b border-gray-100 pb-3">
+          <div class="flex items-center justify-between text-xs">
+            <span class="font-bold text-gray-800">QuatrosExplorer99</span>
+            <span class="text-gray-400">August 14, 2011</span>
+          </div>
+          <div class="text-yellow-400 text-xs my-1">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-xs font-bold text-gray-800" id="rev-1-headline">Best Stormer figure yet!</p>
+          <p class="text-xs text-gray-600 mt-1" id="rev-1-body">The new ball-joint armor system introduced this year is a massive improvement over 1.0! The dual blades and the rhinoceros mask look fantastic in person. Well worth the $9!</p>
+        </div>
+
+        <div class="border-b border-gray-100 pb-3">
+          <div class="flex items-center justify-between text-xs">
+            <span class="font-bold text-gray-800">BionicleVeteran</span>
+            <span class="text-gray-400">September 2, 2011</span>
+          </div>
+          <div class="text-yellow-400 text-xs my-1">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+          </div>
+          <p class="text-xs font-bold text-gray-800" id="rev-2-headline">Great combiner with Rocka 3.0</p>
+          <p class="text-xs text-gray-600 mt-1" id="rev-2-body">Built the combo model with Rocka right away. Very sturdy joints and cool Savage Planet storyline. Highly recommend getting both sets!</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- 2011 Cart Drawer Modal -->
+  <div id="cartModal" class="fixed inset-0 z-50 modal-backdrop hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-lg max-w-md w-full shadow-2xl overflow-hidden border-4 border-legoYellow">
+      <div class="bg-legoYellow p-3 flex justify-between items-center text-black">
+        <h4 class="font-black text-sm flex items-center space-x-2">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span id="modal-cart-title">Your LEGO® Shopping Bag</span>
+        </h4>
+        <button onclick="toggleCartModal()" class="text-black hover:text-red-700 font-bold text-lg">&times;</button>
+      </div>
+
+      <div class="p-4">
+        <div id="cartEmptyMsg" class="text-center py-6 text-gray-500 text-sm hidden">
+          <i class="fa-solid fa-box-open text-4xl mb-2 text-gray-300"></i>
+          <p id="lbl-empty-cart">Your shopping bag is currently empty.</p>
+        </div>
+
+        <div id="cartFilledArea" class="space-y-3">
+          <div class="flex items-center space-x-3 border-b border-gray-200 pb-3">
+            <img src="https://www.lego.com/cdn/product-assets/product.img.pri/2145_prod.jpg" alt="Stormer 3.0" class="w-14 h-14 object-contain border border-gray-200 rounded p-1">
+            <div class="flex-1 text-xs">
+              <h5 class="font-bold text-gray-800">2145 STORMER 3.0</h5>
+              <div class="text-gray-500 flex justify-between mt-1">
+                <span>Qty: <span id="cartItemQty" class="font-bold">1</span></span>
+                <span id="cartItemPrice" class="font-bold text-legoRed">$8.99</span>
+              </div>
+            </div>
+            <button onclick="removeCartItem()" class="text-red-500 hover:text-red-700 text-xs p-1" title="Remove">
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+          </div>
+
+          <div class="pt-2 flex justify-between font-bold text-sm">
+            <span id="lbl-cart-subtotal">Subtotal:</span>
+            <span id="cartSubtotal" class="text-legoRed">$8.99 USD</span>
+          </div>
+
+          <p class="text-[11px] text-gray-500 italic" id="lbl-cart-tax">Taxes and shipping calculated at checkout.</p>
+        </div>
+
+        <div class="mt-4 pt-3 border-t border-gray-200 flex space-x-2">
+          <button onclick="toggleCartModal()" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold text-xs py-2 rounded uppercase" id="btn-continue-shopping">
+            Continue Shopping
+          </button>
+          <button onclick="checkoutNotice()" class="flex-1 lego-btn-red text-white font-black text-xs py-2 rounded uppercase tracking-wider" id="btn-checkout">
+            Checkout
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Image Zoom / Lightbox Modal -->
+  <div id="lightboxModal" class="fixed inset-0 z-50 modal-backdrop hidden flex items-center justify-center p-4" onclick="closeLightbox()">
+    <div class="relative bg-white p-2 rounded-lg max-w-3xl max-h-[90vh] overflow-hidden flex flex-col items-center" onclick="event.stopPropagation()">
+      <div class="w-full flex justify-between items-center px-2 py-1 text-xs font-bold text-gray-600 border-b border-gray-200 mb-2">
+        <span>2145 STORMER 3.0 - High Resolution View</span>
+        <button onclick="closeLightbox()" class="text-gray-500 hover:text-black text-base font-black">&times;</button>
+      </div>
+      <img src="https://www.lego.com/cdn/product-assets/product.img.pri/2145_prod.jpg" alt="2145 Stormer 3.0 Enlarged" class="max-h-[75vh] w-auto object-contain">
+    </div>
+  </div>
+
+  <!-- Notification Toast -->
+  <div id="actionToast" class="fixed bottom-4 right-4 bg-gray-900 border-2 border-legoYellow text-white text-xs px-4 py-3 rounded shadow-2xl flex items-center space-x-3 transition-opacity duration-300 opacity-0 pointer-events-none z-50">
+    <i class="fa-solid fa-circle-info text-legoYellow text-lg" id="toastIcon"></i>
+    <span id="toastMessage">Item added to your shopping bag!</span>
+  </div>
+
+  <!-- Vintage 2011 LEGO.com Footer -->
+  <footer class="bg-[#2D2D2D] text-gray-300 text-xs border-t-4 border-legoYellow mt-12">
+    <div class="max-w-6xl mx-auto px-4 py-8">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-8">
+        <div>
+          <h5 class="font-bold text-white uppercase mb-2" id="ft-col1-title">About Us</h5>
+          <ul class="space-y-1 text-gray-400">
+            <li><a href="#" class="hover:underline">The LEGO Group</a></li>
+            <li><a href="#" class="hover:underline">LEGO News</a></li>
+            <li><a href="#" class="hover:underline">Sustainability</a></li>
+            <li><a href="#" class="hover:underline">Supply Chain</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="font-bold text-white uppercase mb-2" id="ft-col2-title">Customer Service</h5>
+          <ul class="space-y-1 text-gray-400">
+            <li><a href="#" class="hover:underline">Contact Us</a></li>
+            <li><a href="#" class="hover:underline">Building Instructions</a></li>
+            <li><a href="#" class="hover:underline">Replacement Parts</a></li>
+            <li><a href="#" class="hover:underline">Shipping & Returns</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="font-bold text-white uppercase mb-2" id="ft-col3-title">Hero Factory</h5>
+          <ul class="space-y-1 text-gray-400">
+            <li><a href="#" class="hover:underline">Hero Pad Online</a></li>
+            <li><a href="#" class="hover:underline">Recon Team</a></li>
+            <li><a href="#" class="hover:underline">Villains Database</a></li>
+            <li><a href="#" class="hover:underline">Comic Books</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="font-bold text-white uppercase mb-2" id="ft-col4-title">LEGO Privacy & Legal</h5>
+          <p class="text-[11px] text-gray-400 leading-tight" id="ft-legal">
+            LEGO, the LEGO logo, the Minifigure, and HERO FACTORY are trademarks of the LEGO Group. ©2011 The LEGO Group. All rights reserved.
+          </p>
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-gray-700 flex flex-wrap justify-between items-center text-[11px] text-gray-500">
+        <div>2011 LEGO.com Shop at Home Archive Recreation</div>
+        <div class="flex space-x-3 mt-2 sm:mt-0">
+          <a href="#" class="hover:underline">Privacy Policy</a>
+          <span>•</span>
+          <a href="#" class="hover:underline">Cookies</a>
+          <span>•</span>
+          <a href="#" class="hover:underline">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* Complete bilingual text catalog (en-US / ru-RU) for 2011 LEGO Hero Factory */
+    const translations = {
+      en: {
+        network: "LEGO.com Network",
+        headerSub: "The Official LEGO® Online Store (2011 Edition)",
+        navProducts: "Products",
+        navThemes: "Themes: Hero Factory",
+        navExclusives: "Exclusives",
+        navSales: "Sale",
+        navCustomerService: "Customer Service",
+        missionSubtitle: "MISSION: QUATROS // SAVAGE PLANET EXPEDITION",
+        bcHome: "Home",
+        bcThemes: "Themes",
+        bcHeroFactory: "Hero Factory",
+        badgeAges: "Ages",
+        btnZoom: "Click to Enlarge",
+        thumbPower: "Rhino Power",
+        thumbWeapon: "Dual Blades",
+        thumbCore: "Quaza Core",
+        prodTitle: "STORMER 3.0",
+        prodTagline: "Leader of the Alpha 1 Team equipped with Rhino Animal Power!",
+        ourPrice: "Our Price:",
+        priceVal: "$8.99 USD",
+        inStock: "Available Now (In Stock)",
+        vipPoints: "VIP Points: Earn 8 Points",
+        specItem: "Item:",
+        specPieces: "Pieces:",
+        specAges: "Ages:",
+        specYear: "Year:",
+        addToBag: "Add to Bag",
+        addWishlist: "Add to Wishlist",
+        shippingPerk: "Free shipping on orders over $75",
+        bannerCodeTitle: "Canister Code Included!",
+        bannerCodeSub: "Unlocks 300 Game Points in the Online HERO FACTORY Game!",
+        btnRedeemJump: "Redeem Code",
+        tabOverview: "Product Description",
+        tabCombiner: "Combiner Model",
+        tabTerminal: "Hero Pad Terminal",
+        tabSpecs: "Features & Stats",
+        descHeader: "Lead the expedition on jungle planet Quatros!",
+        descP1: "“Calling Stormer! The rogue witch doctor Witch Doctor has stripped the planet Quatros of its natural Quaza mineral supply, threatening its very collapse! You must lead Bulk, Stringer, Nex, Furno and Rocka to stop him before it is too late.”",
+        descP2: "Armed with new rhino animal power armor, dual ice blades, and an armored rhinoceros helmet visor, Stormer 3.0 is built to power through dense jungle foliage and withstand any vicious beast under Witch Doctor’s mind control.",
+        descBulletsHeader: "Features:",
+        descBullets: [
+          "Features rhino animal armor plates, white armor pieces, and dual wrist-mounted ice blades.",
+          "Includes authentic Hero Factory chest core with animal power print.",
+          "Stands over 6” (17cm) tall in combat readiness!",
+          "Can be combined with #2143 ROCKA 3.0 to create an ultimate heavy jungle hero!",
+          "Contains unique code inside canister lid to unlock 300 game points in LEGO® Hero Factory online game."
+        ],
+        combinerHeadline: "Double the Animal Power!",
+        combinerText: "By combining the agility of set 2145 STORMER 3.0 with the raw strength of set 2143 ROCKA 3.0, you can build a massive combiner hero equipped with dual heavy shoulder armor, quadrupled energy capacity, and dual-wielding weapon configurations to battle Witch Doctor's corrupted beast army.",
+        combinerNoteTitle: "Building Instructions Notice:",
+        combinerNoteBody: "Combiner instructions were officially made available as downloadable digital PDF building manuals on LEGO.com/herofactory during the 2011 Savage Planet campaign!",
+        btnDownloadInstructions: "View Combiner Instructions (PDF)",
+        termTitle: "MAKUHERO ASSEMBLY TERMINAL v3.0",
+        termInstr: "Enter the 8-character secret alphanumeric code located underneath your 2145 canister lid to recharge Stormer's Quaza reserves and unlock 300 Hero Game Points!",
+        btnSubmitCode: "Verify Code",
+        btnSampleCode: "[Use Canister Code]",
+        lblQuazaCore: "HERO CORE ENERGY:",
+        profileTitle: "Hero Profile",
+        powerTitle: "Combat Attributes",
+        keyName: "Hero Name",
+        keyRank: "Rank",
+        keyPlanet: "Deployment",
+        keyArmor: "Animal Armor",
+        keyWeapon: "Primary Weaponry",
+        attrStrength: "Strength",
+        attrAgility: "Agility",
+        attrLeadership: "Tactics & Leadership",
+        attrDurability: "Armor Durability",
+        revTitle: "Customer Ratings & Reviews",
+        revCount: "(18 reviews)",
+        btnWriteReview: "Write a Review",
+        rev1Headline: "Best Stormer figure yet!",
+        rev1Body: "The new ball-joint armor system introduced this year is a massive improvement over 1.0! The dual blades and the rhinoceros mask look fantastic in person. Well worth the $9!",
+        rev2Headline: "Great combiner with Rocka 3.0",
+        rev2Body: "Built the combo model with Rocka right away. Very sturdy joints and cool Savage Planet storyline. Highly recommend getting both sets!",
+        modalCartTitle: "Your LEGO® Shopping Bag",
+        emptyCart: "Your shopping bag is currently empty.",
+        subtotal: "Subtotal:",
+        cartTax: "Taxes and shipping calculated at checkout.",
+        continueShopping: "Continue Shopping",
+        checkout: "Checkout",
+        toastAdded: "Added 2145 STORMER 3.0 to your LEGO bag!",
+        col1: "About Us",
+        col2: "Customer Service",
+        col3: "Hero Factory",
+        legal: "LEGO, the LEGO logo, the Minifigure, and HERO FACTORY are trademarks of the LEGO Group. ©2011 The LEGO Group. All rights reserved."
+      },
+      ru: {
+        network: "Сеть LEGO.com",
+        headerSub: "Официальный интернет-магазин LEGO® (Версия 2011 года)",
+        navProducts: "Товары",
+        navThemes: "Серии: Hero Factory",
+        navExclusives: "Эксклюзивы",
+        navSales: "Распродажа",
+        navCustomerService: "Поддержка клиентов",
+        missionSubtitle: "МИССИЯ: КВАЗОР // ЭКСПЕДИЦИЯ НА ДИКУЮ ПЛАНЕТУ",
+        bcHome: "Главная",
+        bcThemes: "Серии",
+        bcHeroFactory: "Фабрика Героев",
+        badgeAges: "Возраст",
+        btnZoom: "Увеличить фото",
+        thumbPower: "Сила Носорога",
+        thumbWeapon: "Парные Клинки",
+        thumbCore: "Ядро Кваза",
+        prodTitle: "СТОРМЕР 3.0",
+        prodTagline: "Лидер команды Альфа-1, наделённый звериной силой Носорога!",
+        ourPrice: "Наша цена:",
+        priceVal: "499 руб.",
+        inStock: "В наличии на складе",
+        vipPoints: "Баллы VIP: 8 баллов",
+        specItem: "Артикул:",
+        specPieces: "Детали:",
+        specAges: "Возраст:",
+        specYear: "Год выпуска:",
+        addToBag: "В корзину",
+        addWishlist: "В список желаний",
+        shippingPerk: "Бесплатная доставка при заказе от 2500 руб.",
+        bannerCodeTitle: "Секретный код под крышкой банки!",
+        bannerCodeSub: "Открывает 300 игровых очков в онлайн-игре HERO FACTORY!",
+        btnRedeemJump: "Ввести код",
+        tabOverview: "Описание товара",
+        tabCombiner: "Комбинированная модель",
+        tabTerminal: "Терминал Hero Pad",
+        tabSpecs: "Характеристики и данные",
+        descHeader: "Возглавьте спасательную экспедицию на планете Кватрос!",
+        descP1: "«Вызываем Стормера! Злобный Шаман лишил планету Кватрос ее драгоценного минерала Кваза, что грозит полным разрушением планеты! Ты должен повести за собой Балка, Стрингера, Некса, Фурно и Року, чтобы остановить катастрофу.»",
+        descP2: "Вооружённый новой броней с силой носорога, парными ледяными лезвиями и защитным визором, Стормер 3.0 готов пробиваться сквозь опаснейшие джунгли и противостоять свирепым зверям, находящимся под контролем злодеев.",
+        descBulletsHeader: "Особенности набора:",
+        descBullets: [
+          "Оснащён носовой пластиной носорога, белыми элементами брони и двойными ледяными лезвиями на руках.",
+          "Включает оригинальное ядро Героя с принтом силы зверя.",
+          "Высота собранной боевой фигуры превышает 17 см!",
+          "Объединяется с набором №2143 РОКА 3.0 для создания сверхмощного составного гиганта!",
+          "Содержит уникальный код под крышкой банки для получения 300 очков в онлайн-игре LEGO® Hero Factory."
+        ],
+        combinerHeadline: "Двойная звериная мощь!",
+        combinerText: "Объединив ловкость и ледяное оружие набора 2145 Стормер 3.0 с колоссальной мощью набора 2143 Рока 3.0, вы получите огромного комбинированного стража с массивными наплечниками и четырёхкратным запасом энергии для битвы против армии зверей Шамана.",
+        combinerNoteTitle: "Инструкция по сборке:",
+        combinerNoteBody: "Официальные цифровые инструкции к комбайнерам были представлены в формате PDF на сайте LEGO.com/herofactory во время премьеры линейки «Дикая планета» в 2011 году!",
+        btnDownloadInstructions: "Открыть схему сборки (PDF)",
+        termTitle: "ТЕРМИНАЛ СБОРКИ МАБАКУХЕРО v3.0",
+        termInstr: "Введите 8-значный буквенно-цифровой секретный код с внутренней стороны крышки набора 2145 для перезарядки ядра Кваза и начисления 300 баллов!",
+        btnSubmitCode: "Активировать",
+        btnSampleCode: "[Вставить код с банки]",
+        lblQuazaCore: "ЗАРЯД ЯДРА ГЕРОЯ:",
+        profileTitle: "Досье Героя",
+        powerTitle: "Боевые параметры",
+        keyName: "Имя Героя",
+        keyRank: "Звание",
+        keyPlanet: "Место операции",
+        keyArmor: "Звериная броня",
+        keyWeapon: "Основное оружие",
+        attrStrength: "Сила",
+        attrAgility: "Ловкость",
+        attrLeadership: "Тактика и лидерство",
+        attrDurability: "Прочность брони",
+        revTitle: "Отзывы и оценки покупателей",
+        revCount: "(18 отзывов)",
+        btnWriteReview: "Написать отзыв",
+        rev1Headline: "Лучшая версия Штормера!",
+        rev1Body: "Новая шарнирная система крепления брони CCBS, введённая в этом году — гигантский шаг вперед. Белые клинки и маска носорога смотрятся супер.",
+        rev2Headline: "Отличный комбайнер с Рокой 3.0",
+        rev2Body: "Собрал объединенную модель сразу же, как пришли обе банки. Очень крепкие шарниры и классный сюжет. Рекомендую брать оба набора!",
+        modalCartTitle: "Ваша корзина LEGO®",
+        emptyCart: "В вашей корзине пока нет товаров.",
+        subtotal: "Итого:",
+        cartTax: "Налоги и доставка рассчитываются при оформлении заказа.",
+        continueShopping: "Продолжить покупки",
+        checkout: "Оформить заказ",
+        toastAdded: "Набор 2145 ШТОРМЕР 3.0 добавлен в корзину LEGO!",
+        col1: "О нас",
+        col2: "Служба поддержки",
+        col3: "Фабрика Героев",
+        legal: "LEGO, логотип LEGO, Минифигурка и HERO FACTORY являются товарными знаками LEGO Group. ©2011 The LEGO Group. Все права защищены."
+      }
+    };
+
+    let currentLang = 'en';
+    let cartQuantity = 0;
+    let earnedCredits = 0;
+    let redeemedCodes = new Set();
+
+    function switchLanguage(lang) {
+      if (!translations[lang]) return;
+      currentLang = lang;
+      const t = translations[lang];
+
+      // Update text nodes
+      document.getElementById('lbl-lego-network').textContent = t.network;
+      document.getElementById('lbl-header-sub').textContent = t.headerSub;
+      document.getElementById('nav-products').textContent = t.navProducts;
+      document.getElementById('nav-themes').textContent = t.navThemes;
+      document.getElementById('nav-exclusives').textContent = t.navExclusives;
+      document.getElementById('nav-sales').textContent = t.navSales;
+      document.getElementById('nav-customer-service').textContent = t.navCustomerService;
+      document.getElementById('hf-banner-subtitle').textContent = t.missionSubtitle;
+      document.getElementById('bc-home').textContent = t.bcHome;
+      document.getElementById('bc-themes').textContent = t.bcThemes;
+      document.getElementById('bc-herofactory').textContent = t.bcHeroFactory;
+      document.getElementById('lbl-badge-ages').textContent = t.badgeAges;
+      document.getElementById('btn-zoom-text').textContent = t.btnZoom;
+      document.getElementById('thumb-power').textContent = t.thumbPower;
+      document.getElementById('thumb-weapon').textContent = t.thumbWeapon;
+      document.getElementById('thumb-core').textContent = t.thumbCore;
+      document.getElementById('prod-title').textContent = t.prodTitle;
+      document.getElementById('prod-tagline').textContent = t.prodTagline;
+      document.getElementById('lbl-our-price').textContent = t.ourPrice;
+      document.getElementById('prod-price').textContent = t.priceVal;
+      document.getElementById('lbl-in-stock').textContent = t.inStock;
+      document.getElementById('lbl-vip-points').textContent = t.vipPoints;
+      document.getElementById('lbl-spec-item').textContent = t.specItem;
+      document.getElementById('lbl-spec-pieces').textContent = t.specPieces;
+      document.getElementById('lbl-spec-ages').textContent = t.specAges;
+      document.getElementById('lbl-spec-release').textContent = t.specYear;
+      document.getElementById('btn-add-to-bag').textContent = t.addToBag;
+      document.getElementById('lbl-add-wishlist').textContent = t.addWishlist;
+      document.getElementById('lbl-shipping-perk').innerHTML = `<i class="fa-solid fa-truck-fast mr-1"></i>${t.shippingPerk}`;
+      document.getElementById('banner-code-title').textContent = t.bannerCodeTitle;
+      document.getElementById('banner-code-sub').textContent = t.bannerCodeSub;
+      document.getElementById('btn-redeem-jump').textContent = t.btnRedeemJump;
+
+      // Tabs
+      document.getElementById('tab-title-overview').textContent = t.tabOverview;
+      document.getElementById('tab-title-combiner').textContent = t.tabCombiner;
+      document.getElementById('tab-title-terminal').textContent = t.tabTerminal;
+      document.getElementById('tab-title-specs').textContent = t.tabSpecs;
+
+      // Overview
+      document.getElementById('desc-header').textContent = t.descHeader;
+      document.getElementById('desc-p1').textContent = t.descP1;
+      document.getElementById('desc-p2').textContent = t.descP2;
+      document.getElementById('desc-bullets-header').textContent = t.descBulletsHeader;
+      
+      const bulletsUl = document.getElementById('desc-bullets');
+      bulletsUl.innerHTML = '';
+      t.descBullets.forEach(b => {
+        const li = document.createElement('li');
+        li.textContent = b;
+        bulletsUl.appendChild(li);
+      });
+
+      // Combiner
+      document.getElementById('combiner-headline').textContent = t.combinerHeadline;
+      document.getElementById('combiner-text').textContent = t.combinerText;
+      document.getElementById('combiner-note-title').textContent = t.combinerNoteTitle;
+      document.getElementById('combiner-note-body').textContent = t.combinerNoteBody;
+      document.getElementById('btn-download-instructions').textContent = t.btnDownloadInstructions;
+
+      // Terminal
+      document.getElementById('term-title').textContent = t.termTitle;
+      document.getElementById('term-instr').textContent = t.termInstr;
+      document.getElementById('btn-submit-code').textContent = t.btnSubmitCode;
+      document.getElementById('btn-sample-code').textContent = t.btnSampleCode;
+      document.getElementById('lbl-quaza-core').textContent = t.lblQuazaCore;
+
+      // Specs
+      document.getElementById('specs-title-profile').textContent = t.profileTitle;
+      document.getElementById('specs-title-power').textContent = t.powerTitle;
+      document.getElementById('spec-key-name').textContent = t.keyName;
+      document.getElementById('spec-key-rank').textContent = t.keyRank;
+      document.getElementById('spec-key-planet').textContent = t.keyPlanet;
+      document.getElementById('spec-key-armor').textContent = t.keyArmor;
+      document.getElementById('spec-key-weapon').textContent = t.keyWeapon;
+      document.getElementById('attr-strength').textContent = t.attrStrength;
+      document.getElementById('attr-agility').textContent = t.attrAgility;
+      document.getElementById('attr-leadership').textContent = t.attrLeadership;
+      document.getElementById('attr-durability').textContent = t.attrDurability;
+
+      // Reviews
+      document.getElementById('rev-title').textContent = t.revTitle;
+      document.getElementById('rev-count').textContent = t.revCount;
+      document.getElementById('btn-write-review').textContent = t.btnWriteReview;
+      document.getElementById('rev-1-headline').textContent = t.rev1Headline;
+      document.getElementById('rev-1-body').textContent = t.rev1Body;
+      document.getElementById('rev-2-headline').textContent = t.rev2Headline;
+      document.getElementById('rev-2-body').textContent = t.rev2Body;
+
+      // Cart modal
+      document.getElementById('modal-cart-title').textContent = t.modalCartTitle;
+      document.getElementById('lbl-empty-cart').textContent = t.emptyCart;
+      document.getElementById('lbl-cart-subtotal').textContent = t.subtotal;
+      document.getElementById('lbl-cart-tax').textContent = t.cartTax;
+      document.getElementById('btn-continue-shopping').textContent = t.continueShopping;
+      document.getElementById('btn-checkout').textContent = t.checkout;
+
+      // Footers
+      document.getElementById('ft-col1-title').textContent = t.col1;
+      document.getElementById('ft-col2-title').textContent = t.col2;
+      document.getElementById('ft-col3-title').textContent = t.col3;
+      document.getElementById('ft-legal').textContent = t.legal;
+
+      updateCartUI();
+    }
+
+    function updateQty(delta) {
+      const input = document.getElementById('purchaseQty');
+      let val = parseInt(input.value, 10) + delta;
+      if (val < 1) val = 1;
+      if (val > 10) val = 10;
+      input.value = val;
+    }
+
+    function addToCart() {
+      const qty = parseInt(document.getElementById('purchaseQty').value, 10);
+      cartQuantity += qty;
+      updateCartUI();
+      showToast(translations[currentLang].toastAdded, 'success');
+    }
+
+    function removeCartItem() {
+      cartQuantity = 0;
+      updateCartUI();
+      showToast(currentLang === 'en' ? 'Item removed from bag.' : 'Товар удален из корзины.', 'info');
+    }
+
+    function updateCartUI() {
+      const isEn = currentLang === 'en';
+      const unitPrice = isEn ? 8.99 : 499;
+      const currency = isEn ? '$' : '';
+      const postfix = isEn ? ' USD' : ' руб.';
+
+      document.getElementById('lbl-cart-count').textContent = `${isEn ? 'Bag' : 'Корзина'} (${cartQuantity})`;
+      
+      const cartEmptyMsg = document.getElementById('cartEmptyMsg');
+      const cartFilledArea = document.getElementById('cartFilledArea');
+      
+      if (cartQuantity <= 0) {
+        cartEmptyMsg.classList.remove('hidden');
+        cartFilledArea.classList.add('hidden');
+      } else {
+        cartEmptyMsg.classList.add('hidden');
+        cartFilledArea.classList.remove('hidden');
+        document.getElementById('cartItemQty').textContent = cartQuantity;
+        const total = (unitPrice * cartQuantity).toFixed(isEn ? 2 : 0);
+        document.getElementById('cartItemPrice').textContent = `${currency}${unitPrice}${postfix}`;
+        document.getElementById('cartSubtotal').textContent = `${currency}${total}${postfix}`;
+      }
+    }
+
+    function toggleCartModal() {
+      const modal = document.getElementById('cartModal');
+      modal.classList.toggle('hidden');
+    }
+
+    function checkoutNotice() {
+      const msg = currentLang === 'en' 
+        ? "Redirecting to 2011 LEGO Shop@Home Secure Checkout (Demo Archive Mode)..." 
+        : "Перенаправление на безопасную оплату LEGO Shop@Home (Архивный режим 2011)...";
+      showToast(msg, 'info');
+      setTimeout(() => {
+        toggleCartModal();
+      }, 1400);
+    }
+
+    function handleWishlist() {
+      const msg = currentLang === 'en'
+        ? "2145 Stormer 3.0 has been saved to your LEGO Wishlist!"
+        : "Набор 2145 Штормер 3.0 сохранен в ваш список желаний!";
+      showToast(msg, 'success');
+    }
+
+    function writeReviewNotice() {
+      const msg = currentLang === 'en'
+        ? "LEGO ID sign-in required to submit product ratings."
+        : "Для отправки отзыва требуется авторизация под учётной записью LEGO ID.";
+      showToast(msg, 'info');
+    }
+
+    function switchTab(tabId) {
+      const tabs = ['overview', 'combiner', 'terminal', 'specs'];
+      tabs.forEach(t => {
+        const btn = document.getElementById(`tab-btn-${t}`);
+        const content = document.getElementById(`tab-content-${t}`);
+        if (t === tabId) {
+          btn.className = "py-3 px-5 border-b-2 border-legoRed bg-white text-legoDarkRed flex items-center space-x-2";
+          content.classList.remove('hidden');
+          content.classList.add('block');
+        } else {
+          btn.className = "py-3 px-5 border-b-2 border-transparent text-gray-600 hover:text-gray-900 flex items-center space-x-2";
+          content.classList.remove('block');
+          content.classList.add('hidden');
+        }
+      });
+    }
+
+    function scrollToTerminal() {
+      switchTab('terminal');
+      document.getElementById('tab-content-terminal').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function setPreviewImage(type) {
+      const img = document.getElementById('main-product-image');
+      img.src = "https://www.lego.com/cdn/product-assets/product.img.pri/2145_prod.jpg";
+      showToast(currentLang === 'en' ? "Viewing complete set" : "Просмотр полного набора", "info");
+    }
+
+    function showFeature(feature) {
+      if (feature === 'core') {
+        switchTab('terminal');
+        document.getElementById('tab-content-terminal').scrollIntoView({ behavior: 'smooth' });
+      } else if (feature === 'rhino' || feature === 'blaster') {
+        switchTab('specs');
+        document.getElementById('tab-content-specs').scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function openLightbox() {
+      document.getElementById('lightboxModal').classList.remove('hidden');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightboxModal').classList.add('hidden');
+    }
+
+    function fillSampleCode() {
+      document.getElementById('terminalCodeInput').value = "ST30-9945";
+    }
+
+    function verifyCanisterCode() {
+      const input = document.getElementById('terminalCodeInput');
+      const val = input.value.trim().toUpperCase();
+      const res = document.getElementById('terminalResult');
+      res.classList.remove('hidden');
+
+      if (!val || val.length < 5) {
+        res.innerHTML = `<span class="text-red-400"><i class="fa-solid fa-triangle-exclamation mr-1"></i> ${currentLang === 'en' ? 'INVALID CODE STRUCTURE. PLEASE VERIFY 8-DIGIT LID CIPHER.' : 'ОШИБКА КОДА. ПРОВЕРЬТЕ 8-ЗНАЧНЫЙ ШИФР НА КРЫШКЕ БАНКИ.'}</span>`;
+        return;
+      }
+
+      if (redeemedCodes.has(val)) {
+        res.innerHTML = `<span class="text-yellow-400"><i class="fa-solid fa-circle-exclamation mr-1"></i> ${currentLang === 'en' ? 'CODE ALREADY REDEEMED FOR MISSION REWARDS.' : 'ЭТОТ СЕКРЕТНЫЙ КОД УЖЕ БЫЛ АКТИВИРОВАН РАНЕЕ.'}</span>`;
+        return;
+      }
+
+      redeemedCodes.add(val);
+      earnedCredits += 300;
+      document.getElementById('userCredits').textContent = `${earnedCredits} pts`;
+
+      // Animate core energy gauge
+      const coreBar = document.getElementById('coreEnergyBar');
+      coreBar.style.width = '100%';
+      coreBar.classList.add('animate-pulse');
+
+      res.innerHTML = `
+        <div class="text-green-400 space-y-1">
+          <div class="font-bold flex items-center"><i class="fa-solid fa-circle-check mr-1.5"></i> ${currentLang === 'en' ? 'AUTHORIZATION CODE ACCEPTED!' : 'КОД АВТОРИЗАЦИИ УСПЕШНО ПРИНЯТ!'}</div>
+          <div class="text-[11px] text-cyan-200">${currentLang === 'en' ? '+300 HERO POINTS TRANSFERRED TO YOUR HERO PAD PROFILE.' : '+300 БОНУСНЫХ ОЧКОВ ЗАЧИСЛЕНО НА ВАШ ПРОФИЛЬ ГЕРОЯ.'}</div>
+          <div class="text-[10px] text-gray-400 font-mono">QUAZA OVERCHARGE LEVEL: NOMINAL // ARMOR SUIT COMPATIBILITY 100%</div>
+        </div>
+      `;
+      showToast(currentLang === 'en' ? "+300 Game Points Unlocked!" : "+300 игровых очков разблокировано!", 'success');
+    }
+
+    function downloadMockManual() {
+      const msg = currentLang === 'en' 
+        ? "Opening official 2011 Stormer 3.0 + Rocka 3.0 combiner manual archive..."
+        : "Открытие архива инструкции комбайнера Штормер 3.0 + Рока 3.0...";
+      showToast(msg, 'info');
+    }
+
+    function showToast(text, type = 'info') {
+      const toast = document.getElementById('actionToast');
+      const msg = document.getElementById('toastMessage');
+      const icon = document.getElementById('toastIcon');
+
+      msg.textContent = text;
+      if (type === 'success') {
+        icon.className = "fa-solid fa-circle-check text-green-400 text-lg";
+      } else {
+        icon.className = "fa-solid fa-circle-info text-legoYellow text-lg";
+      }
+
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      toast.classList.add('opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('opacity-100');
+        toast.classList.add('opacity-0', 'pointer-events-none');
+      }, 3000);
+    }
+
+    // Initialize default language
+    window.addEventListener('DOMContentLoaded', () => {
+      switchLanguage('en');
+    });
+  </script>
+</body>
+</html>
