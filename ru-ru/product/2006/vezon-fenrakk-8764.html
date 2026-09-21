@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LEGO.com Shop : 8764 Vezon & Fenrakk - BIONICLE® (2006)</title>
+  <link rel="icon" href="https://www.lego.com/favicon.ico" type="image/x-icon">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tone.js for synthesized retro audio without external audio dependencies -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.min.js"></script>
+
+  <!-- Google Fonts for 2006 BIONICLE aesthetic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Inter:wght@400;600;700;800&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'lego-red': '#D01012',
+            'lego-yellow': '#FFD500',
+            'lego-blue': '#0055BF',
+            'vezon-crimson': '#9B111E',
+            'fenrakk-silver': '#C0C0C0',
+            'lava-orange': '#FF4500',
+            'ignika-gold': '#FFD700',
+            'valmai-dark': '#0a080a',
+            'fusion-glow': '#a855f7'
+          },
+          fontFamily: {
+            bionicle: ['"Orbitron"', '"Chakra Petch"', 'sans-serif'],
+            body: ['"Inter"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* 2006 Volcanic Mount Valmai atmosphere */
+    body {
+      background-color: #080608;
+      background-image: 
+        radial-gradient(circle at 50% 10%, rgba(155, 17, 30, 0.4), transparent 50%),
+        radial-gradient(circle at 85% 65%, rgba(255, 69, 0, 0.15), transparent 45%),
+        repeating-linear-gradient(0deg, rgba(0,0,0,0.22) 0px, rgba(0,0,0,0.22) 1px, transparent 1px, transparent 2px);
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* 2006 Retro 3D Beveled Shopping Button */
+    .btn-lego-retro {
+      background: linear-gradient(180deg, #ffea47 0%, #ffc400 45%, #e6a100 100%);
+      border-top: 2px solid #fff59d;
+      border-left: 2px solid #ffe082;
+      border-right: 2px solid #b26a00;
+      border-bottom: 2px solid #8c5300;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.7);
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+      transition: all 0.1s ease-in-out;
+    }
+    .btn-lego-retro:hover {
+      background: linear-gradient(180deg, #fff066 0%, #ffd026 45%, #f5ac0a 100%);
+      transform: translateY(-1px);
+    }
+    .btn-lego-retro:active {
+      transform: translateY(1px);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.6), inset 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    /* Volcanic Titan panel */
+    .titan-panel {
+      background: linear-gradient(145deg, #181216 0%, #0d0a0e 100%);
+      border: 1px solid #3d242e;
+      box-shadow: 0 14px 35px -5px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+
+    /* Spear of Fusion Kinetic Discharge Visual FX */
+    .fusion-active {
+      filter: contrast(170%) hue-rotate(290deg) saturate(240%) drop-shadow(0 0 30px #a855f7);
+      animation: fusionJolt 0.12s infinite alternate;
+    }
+    @keyframes fusionJolt {
+      0% { transform: scale(1.015) rotate(0.4deg); }
+      100% { transform: scale(1.025) rotate(-0.4deg); }
+    }
+
+    /* Volcanic pulse border */
+    @keyframes pulseLava {
+      0%, 100% { border-color: rgba(255, 69, 0, 0.4); box-shadow: 0 0 18px rgba(255, 69, 0, 0.25); }
+      50% { border-color: rgba(168, 85, 247, 0.7); box-shadow: 0 0 28px rgba(168, 85, 247, 0.4); }
+    }
+    .glow-vezon {
+      animation: pulseLava 3.8s infinite ease-in-out;
+    }
+  </style>
+</head>
+<body class="text-gray-200 antialiased min-h-screen flex flex-col justify-between selection:bg-orange-500 selection:text-white">
+
+  <!-- 2006 LEGO Top Utility Bar -->
+  <header class="w-full bg-[#120c12] border-b border-rose-950/60 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-14">
+        
+        <!-- Classic LEGO 2006 Logo & Catalog Tag -->
+        <div class="flex items-center space-x-3">
+          <div class="bg-lego-red px-2.5 py-1 rounded shadow-md border border-white/20 flex items-center justify-center">
+            <span class="font-black text-lego-yellow text-2xl tracking-tighter drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]" style="font-family: Arial, Helvetica, sans-serif;">LEGO</span>
+          </div>
+          <div class="hidden sm:flex flex-col leading-tight">
+            <span class="text-xs font-bold uppercase tracking-wider text-yellow-400" data-i18n="shopAtHome">Shop at Home</span>
+            <span class="text-[10px] text-gray-400 font-semibold" data-i18n="officialCatalog">Official 2006 Collector's Catalog</span>
+          </div>
+        </div>
+
+        <!-- 2006 Navigation Links -->
+        <nav class="hidden md:flex items-center space-x-6 text-xs font-bold uppercase tracking-wider text-gray-300">
+          <a href="#" class="hover:text-yellow-400 transition" data-i18n="navProducts">Products</a>
+          <a href="#" class="text-yellow-400 font-extrabold border-b-2 border-yellow-400 pb-1" data-i18n="navBionicle">BIONICLE®</a>
+          <a href="#" class="hover:text-yellow-400 transition" data-i18n="navClub">LEGO Club</a>
+          <a href="#" class="hover:text-yellow-400 transition" data-i18n="navSupport">Customer Service</a>
+        </nav>
+
+        <!-- Right: Language Selector and Cart -->
+        <div class="flex items-center space-x-4">
+          <!-- Language Toggle Switch (EN <-> RU) -->
+          <div class="flex items-center bg-stone-900 border border-stone-700 rounded-lg p-1 text-xs">
+            <button id="lang-en" onclick="setLanguage('en')" class="px-2 py-1 rounded font-bold transition text-black bg-yellow-400">
+              🇺🇸 EN
+            </button>
+            <button id="lang-ru" onclick="setLanguage('ru')" class="px-2 py-1 rounded font-bold transition text-gray-400 hover:text-white">
+              🇷🇺 RU
+            </button>
+          </div>
+
+          <!-- Cart Indicator -->
+          <button onclick="openCartModal()" class="relative flex items-center space-x-1.5 bg-stone-900 hover:bg-stone-800 px-3 py-1.5 rounded border border-stone-700 text-xs font-bold text-yellow-300 shadow">
+            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.24-1a1 1 0 00-.97-.757H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/>
+            </svg>
+            <span data-i18n="cartLabel">Cart</span>
+            <span id="cart-counter" class="bg-lego-red text-white text-[10px] px-1.5 py-0.2 rounded-full font-black ml-1">0</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 2006 Sub-banner: Ignition Arc Climax -->
+    <div class="bg-gradient-to-r from-red-950 via-stone-900 to-purple-950 border-t border-b border-red-500/30 px-4 py-1.5 text-center text-xs tracking-wide">
+      <span class="text-orange-400 font-bold uppercase tracking-wider mr-2" data-i18n="bannerTag">SUMMER 2006 CLIMAX TITAN:</span>
+      <span class="text-gray-200" data-i18n="bannerText">The mad 7th Piraka and his spider beast guard the Chamber of Life! Will the Toa prevail?</span>
+    </div>
+  </header>
+
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 py-6 w-full">
+    
+    <!-- Retro Breadcrumbs -->
+    <nav class="flex text-xs font-semibold text-gray-400 space-x-2 mb-6">
+      <a href="#" class="hover:text-yellow-400 transition" data-i18n="bcHome">Home</a>
+      <span>&gt;</span>
+      <a href="#" class="hover:text-yellow-400 transition" data-i18n="bcProducts">Products</a>
+      <span>&gt;</span>
+      <a href="#" class="hover:text-yellow-400 transition">BIONICLE®</a>
+      <span>&gt;</span>
+      <a href="#" class="hover:text-yellow-400 transition" data-i18n="bcTitans">Titans</a>
+      <span>&gt;</span>
+      <span class="text-yellow-400" data-i18n="bcItem">8764 Vezon & Fenrakk</span>
+    </nav>
+
+    <!-- Main Product Showcase Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+      <!-- LEFT COLUMN: Product Stage, Controls & Gallery (7 cols) -->
+      <div class="lg:col-span-7 space-y-4">
+        
+        <!-- Main Interactive Product Display Panel -->
+        <div class="titan-panel rounded-2xl p-6 glow-vezon relative overflow-hidden">
+          
+          <!-- Badges -->
+          <div class="absolute top-4 left-4 z-20 flex items-center space-x-2">
+            <span class="bg-red-950/80 border border-red-500/50 text-red-200 text-[11px] font-extrabold uppercase px-2.5 py-1 rounded tracking-wider shadow">
+              BIONICLE® 2006
+            </span>
+            <span class="bg-black/70 border border-purple-600/50 text-purple-300 text-[11px] font-bold px-2 py-1 rounded">
+              CHAMBER OF LIFE TITAN
+            </span>
+          </div>
+
+          <!-- Spear of Fusion Interactive FX Toggle -->
+          <div class="absolute top-4 right-4 z-20">
+            <button id="fusion-toggle-btn" onclick="toggleSpearOfFusion()" class="bg-purple-950/80 hover:bg-purple-900 border border-purple-400 text-purple-200 text-xs px-2.5 py-1.5 rounded-lg flex items-center space-x-1.5 shadow-lg transition">
+              <span class="inline-block w-2.5 h-2.5 rounded-full bg-purple-400 animate-ping"></span>
+              <span data-i18n="spearButton">Spear of Fusion</span>
+            </button>
+          </div>
+
+          <!-- Product Image Stage with Fallback -->
+          <div class="w-full flex items-center justify-center p-4 min-h-[380px] sm:min-h-[440px] relative">
+            
+            <img 
+              id="main-product-img"
+              src="https://www.lego.com/cdn/product-assets/product.img.pri/8764_prod.jpg" 
+              alt="LEGO BIONICLE 8764 Vezon and Fenrakk" 
+              onerror="this.onerror=null; this.src='https://placehold.co/640x600/181216/ffd500?text=8764+Vezon+%26+Fenrakk+Titan+2006';"
+              class="max-h-[420px] w-auto object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.95)] transition duration-500 ease-in-out transform hover:scale-105"
+            >
+
+            <!-- Kinetic Fusion Discharge HUD Overlay -->
+            <div id="fusion-overlay" class="hidden absolute inset-0 bg-purple-950/30 border-2 border-purple-500/60 rounded-xl pointer-events-none flex flex-col justify-between p-6">
+              <div class="text-purple-300 font-mono text-xs uppercase tracking-widest bg-black/85 p-2 rounded max-w-fit border border-purple-500/50">
+                <span class="text-yellow-400 font-bold">● SPEAR OF FUSION DISCHARGE:</span> <span data-i18n="fusionWarning">SPLITTING & MERGING TARGET MOLECULES</span>
+              </div>
+              <div class="text-right text-orange-300 font-mono text-xs bg-black/85 p-2 rounded max-w-fit ml-auto border border-orange-500/40">
+                <span data-i18n="fenrakkStatus">FENRAKK JAWS UNLOCKED • KANOHI IGNIKA CURSE ACTIVE</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Sound Effects & View Meta Bar -->
+          <div class="flex flex-wrap items-center justify-between border-t border-rose-950/60 pt-4 mt-2 text-xs text-gray-400 gap-2">
+            <div class="flex items-center space-x-2">
+              <span class="text-yellow-400 font-bold" data-i18n="viewLabel">View:</span>
+              <span id="current-view-name" class="text-gray-200">Official Box Art & Model</span>
+            </div>
+            
+            <div class="flex items-center space-x-2">
+              <!-- Sound 1: Fenrakk Monstrous Chomp -->
+              <button onclick="playFenrakkChompSound()" class="flex items-center space-x-1.5 text-orange-300 bg-orange-950/60 hover:bg-orange-900/80 px-2.5 py-1 rounded border border-orange-700/60 transition">
+                <span>🦷</span>
+                <span data-i18n="jawChomp">Fenrakk Jaw Chomp</span>
+              </button>
+              
+              <!-- Sound 2: Spear of Fusion Laser Beam -->
+              <button onclick="playSpearBlastSound()" class="flex items-center space-x-1.5 text-purple-300 bg-purple-950/60 hover:bg-purple-900/80 px-2.5 py-1 rounded border border-purple-700/60 transition">
+                <span>⚡</span>
+                <span data-i18n="spearBlast">Spear of Fusion Blast</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Thumbnail Gallery Strip -->
+        <div class="grid grid-cols-4 gap-3">
+          
+          <button onclick="changeGalleryImage('primary', 'Official Set: Vezon Mounted on Fenrakk')" class="thumb-btn active-thumb p-2 rounded-lg bg-stone-900 border-2 border-yellow-400 hover:border-yellow-300 transition flex flex-col items-center justify-center">
+            <img src="https://www.lego.com/cdn/product-assets/product.img.pri/8764_prod.jpg" onerror="this.src='https://placehold.co/100x100/181216/ffd500?text=8764';" alt="Vezon & Fenrakk" class="h-14 w-auto object-contain">
+            <span class="text-[10px] text-gray-300 mt-1 font-semibold" data-i18n="thumbPrimary">Full Model</span>
+          </button>
+
+          <button onclick="changeGalleryImage('jaws', 'Fenrakk Massive Snap-Action Silver Jaws')" class="thumb-btn p-2 rounded-lg bg-stone-900 border border-stone-700 hover:border-yellow-400 transition flex flex-col items-center justify-center">
+            <div class="h-14 w-full flex items-center justify-center text-orange-400 font-black text-xs font-mono">
+              [ 🦷 JAWS ]
+            </div>
+            <span class="text-[10px] text-gray-300 mt-1 font-semibold" data-i18n="thumbJaws">Fenrakk Jaws</span>
+          </button>
+
+          <button onclick="changeGalleryImage('vezon', 'Vezon & Fused Kanohi Ignika Mask')" class="thumb-btn p-2 rounded-lg bg-stone-900 border border-stone-700 hover:border-yellow-400 transition flex flex-col items-center justify-center">
+            <div class="h-14 w-full flex items-center justify-center text-purple-400 font-black text-xs font-mono">
+              [ 🎭 VEZON ]
+            </div>
+            <span class="text-[10px] text-gray-300 mt-1 font-semibold" data-i18n="thumbVezon">Vezon & Mask</span>
+          </button>
+
+          <button onclick="changeGalleryImage('kardas', 'Ultimate Combiner: Kardas Dragon Form')" class="thumb-btn p-2 rounded-lg bg-stone-900 border border-stone-700 hover:border-yellow-400 transition flex flex-col items-center justify-center">
+            <div class="h-14 w-full flex items-center justify-center text-red-500 font-black text-xs font-mono">
+              [ 🐉 KARDAS ]
+            </div>
+            <span class="text-[10px] text-gray-300 mt-1 font-semibold" data-i18n="thumbKardas">Kardas Dragon</span>
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN: Pricing, Specifications, Action CTA & Lore (5 cols) -->
+      <div class="lg:col-span-5 flex flex-col space-y-4">
+        
+        <div class="titan-panel rounded-2xl p-6 relative">
+          
+          <!-- Product Title and Catalog Number -->
+          <div class="border-b border-rose-950/60 pb-4">
+            <div class="flex items-baseline justify-between">
+              <span class="text-sm font-bold text-yellow-400 uppercase tracking-widest font-bionicle">Item #8764</span>
+              <span class="text-xs text-green-400 bg-green-950/80 border border-green-800 px-2 py-0.5 rounded font-bold" data-i18n="inStock">In Stock</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-1 font-bionicle" data-i18n="productTitle">
+              Vezon & Fenrakk
+            </h1>
+            <p class="text-xs text-gray-400 font-medium mt-0.5" data-i18n="productSubtitle">
+              Guardian of the Mask of Life • Depths of Mount Valmai
+            </p>
+          </div>
+
+          <!-- Key Spec Badges Grid -->
+          <div class="grid grid-cols-3 gap-2 my-4 text-center">
+            <div class="bg-stone-900/90 border border-stone-700 p-2 rounded-lg">
+              <span class="block text-[10px] uppercase text-gray-400 font-bold" data-i18n="labelAges">Ages</span>
+              <span class="text-sm font-extrabold text-yellow-300">8 - 16</span>
+            </div>
+            <div class="bg-stone-900/90 border border-stone-700 p-2 rounded-lg">
+              <span class="block text-[10px] uppercase text-gray-400 font-bold" data-i18n="labelPieces">Pieces</span>
+              <span class="text-sm font-extrabold text-yellow-300">281</span>
+            </div>
+            <div class="bg-stone-900/90 border border-stone-700 p-2 rounded-lg">
+              <span class="block text-[10px] uppercase text-gray-400 font-bold" data-i18n="labelYear">Year</span>
+              <span class="text-sm font-extrabold text-yellow-300">2006</span>
+            </div>
+          </div>
+
+          <!-- Price & Ratings Block -->
+          <div class="bg-stone-950/80 rounded-xl p-4 border border-stone-800 my-4 flex items-center justify-between">
+            <div>
+              <span class="block text-[11px] text-gray-400 uppercase font-semibold" data-i18n="priceLabel">MSRP Price</span>
+              <div class="text-3xl font-black text-white" id="product-price">$29.99</div>
+              <span class="text-[10px] text-gray-400" data-i18n="priceTax">plus shipping & handling</span>
+            </div>
+            
+            <div class="text-right">
+              <div class="flex text-yellow-400 text-sm justify-end">
+                ★★★★★
+              </div>
+              <span class="text-[11px] text-gray-300 font-bold block mt-1" data-i18n="ratingScore">4.9 / 5.0 (2006)</span>
+              <span class="text-[10px] text-gray-400" data-i18n="reviewCount">214 Fan Reviews</span>
+            </div>
+          </div>
+
+          <!-- Quantity and Add to Bag Button -->
+          <div class="space-y-3 pt-2">
+            <div class="flex items-center space-x-3">
+              <label for="order-qty" class="text-xs font-bold text-gray-300" data-i18n="qtyLabel">Qty:</label>
+              <select id="order-qty" class="bg-stone-800 text-white font-bold text-sm rounded border border-stone-600 px-3 py-1.5 focus:outline-none focus:border-yellow-400">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4 (Max)</option>
+              </select>
+              <div class="text-[11px] text-orange-400/90 flex items-center space-x-1">
+                <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                </svg>
+                <span data-i18n="limitNotice">Limit 4 per customer</span>
+              </div>
+            </div>
+
+            <!-- Big 2006 Retro Add to Bag Button -->
+            <button onclick="addToCart()" class="w-full btn-lego-retro text-black font-black uppercase text-base tracking-wider py-3 px-6 rounded-xl flex items-center justify-center space-x-2">
+              <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.24-1a1 1 0 00-.97-.757H3z"/>
+              </svg>
+              <span data-i18n="addToBagBtn">Add to Bag</span>
+            </button>
+          </div>
+
+          <!-- Feature Bullet Highlights -->
+          <div class="mt-6 border-t border-rose-950/60 pt-4 space-y-2 text-xs text-gray-300">
+            <div class="flex items-start space-x-2">
+              <span class="text-yellow-400 font-bold">✔</span>
+              <span data-i18n="bullet1">Vezon rides atop the monstrous spider-steed Fenrakk, connected through kinetic energy.</span>
+            </div>
+            <div class="flex items-start space-x-2">
+              <span class="text-yellow-400 font-bold">✔</span>
+              <span data-i18n="bullet2">Fenrakk features snapping silver-toothed jaws and four multi-jointed articulated legs.</span>
+            </div>
+            <div class="flex items-start space-x-2">
+              <span class="text-yellow-400 font-bold">✔</span>
+              <span data-i18n="bullet3">Vezon holds the legendary Spear of Fusion and wears the Kanohi Ignika fused to his skull!</span>
+            </div>
+            <div class="flex items-start space-x-2">
+              <span class="text-yellow-400 font-bold">✔</span>
+              <span data-i18n="bullet4">Combine with 8733 Axonn and 8734 Brutaka to construct the gargantuan Kardas Dragon!</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Spear of Fusion & Ignika Lore Card -->
+        <div class="bg-gradient-to-br from-purple-950/40 via-stone-900 to-black p-4 rounded-xl border border-purple-800/50 flex items-start space-x-3">
+          <div class="p-2.5 bg-purple-900/40 rounded-lg text-purple-400 border border-purple-700/50">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-purple-300 uppercase tracking-wider" data-i18n="spearTitle">Cursed Artifact: Spear of Fusion</h4>
+            <p class="text-[11px] text-gray-300 mt-0.5 leading-relaxed" data-i18n="spearDesc">
+              Accidentally fired by Hakann, this dark weapon split Vezok into two beings, giving birth to the maniacal Vezon. The spear can fuse living creatures together or rip them apart at will!
+            </p>
+          </div>
+        </div>
+
+        <!-- Chamber of Life Titan Trinity Callout -->
+        <div class="bg-gradient-to-r from-amber-950/30 via-stone-900 to-red-950/30 p-3.5 rounded-xl border border-amber-600/40 flex items-center justify-between text-xs">
+          <div>
+            <span class="text-amber-400 font-bold block" data-i18n="trinityTitle">The Voya Nui Titan Trinity</span>
+            <span class="text-gray-400 text-[11px]" data-i18n="trinitySub">Complete the 2006 Titan trio with 8734 Brutaka and 8733 Axonn!</span>
+          </div>
+          <div class="flex space-x-1.5">
+            <a href="#8734" class="bg-amber-500/20 hover:bg-amber-500/40 border border-amber-500/60 text-yellow-300 px-2 py-1 rounded font-bold transition whitespace-nowrap text-[10px]">
+              8734 Brutaka
+            </a>
+            <a href="#8733" class="bg-red-500/20 hover:bg-red-500/40 border border-red-500/60 text-yellow-300 px-2 py-1 rounded font-bold transition whitespace-nowrap text-[10px]">
+              8733 Axonn
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Tabbed Detailed Information Section -->
+    <div class="mt-12 titan-panel rounded-2xl p-6 sm:p-8">
+      
+      <!-- Tab Headers -->
+      <div class="flex border-b border-rose-950/60 overflow-x-auto space-x-4 sm:space-x-8 pb-3">
+        <button onclick="switchTab('desc')" id="tab-btn-desc" class="tab-btn text-yellow-400 border-b-2 border-yellow-400 pb-2 text-xs sm:text-sm font-bold uppercase tracking-wider transition whitespace-nowrap">
+          <span data-i18n="tabBio">Story & The Madness</span>
+        </button>
+        <button onclick="switchTab('specs')" id="tab-btn-specs" class="tab-btn text-gray-400 hover:text-gray-200 pb-2 text-xs sm:text-sm font-bold uppercase tracking-wider transition whitespace-nowrap">
+          <span data-i18n="tabSpecs">Titan Stats & Abilities</span>
+        </button>
+        <button onclick="switchTab('combiner')" id="tab-btn-combiner" class="tab-btn text-gray-400 hover:text-gray-200 pb-2 text-xs sm:text-sm font-bold uppercase tracking-wider transition whitespace-nowrap">
+          <span data-i18n="tabCombiner">Ultimate Combiner: Kardas</span>
+        </button>
+        <button onclick="switchTab('reviews')" id="tab-btn-reviews" class="tab-btn text-gray-400 hover:text-gray-200 pb-2 text-xs sm:text-sm font-bold uppercase tracking-wider transition whitespace-nowrap">
+          <span data-i18n="tabReviews">Fan Reviews (2006)</span>
+        </button>
+      </div>
+
+      <!-- Tab Contents -->
+      <div class="mt-6 text-sm text-gray-300 leading-relaxed">
+        
+        <!-- Tab 1: Story & Madness -->
+        <div id="tab-desc" class="space-y-4">
+          <h3 class="text-xl font-bold text-white font-bionicle" data-i18n="storyHeading">
+            The Seventh Piraka & The Beast of Mount Valmai!
+          </h3>
+          <p data-i18n="storyP1">
+            Born from an accidental discharge of the Spear of Fusion upon the Piraka Vezok, Vezon is a creature of chaotic cunning, manic humor, and unpredictable ferocity. While his former brethren fought viciously among themselves, Vezon slipped deep into the heart of Mount Valmai to the sacred Chamber of Life.
+          </p>
+          <p data-i18n="storyP2">
+            When he reached for the legendary Kanohi Ignika, the Mask of Life cursed him, fusing the golden mask permanently to the back of his head and enslaving a native giant spider creature, transforming it into the titanic monster Fenrakk. Linked through the power of the mask, any damage dealt to Fenrakk is absorbed and redirected—making them the ultimate guardians of the universe’s most coveted treasure!
+          </p>
+          <div class="bg-red-950/40 border border-red-600/40 p-4 rounded-xl mt-4">
+            <h4 class="text-orange-300 font-bold text-xs uppercase" data-i18n="loreQuoteTitle">BIONICLE 2006 Ignition Canon:</h4>
+            <p class="text-xs text-orange-200/90 mt-1" data-i18n="loreQuoteDesc">
+              “We are two, yet one! And the Mask of Life belongs to me! Try and take it, Toa, and Fenrakk will chew your bones into dust!” — Vezon taunting the Toa Inika in the Chamber of Life.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tab 2: Stats & Abilities -->
+        <div id="tab-specs" class="hidden space-y-6">
+          <h3 class="text-xl font-bold text-white font-bionicle" data-i18n="statsHeading">
+            Vezon & Fenrakk Combat Matrix
+          </h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Stat Bar 1: Jaws Bite Force -->
+            <div class="bg-stone-900/70 p-3 rounded-lg border border-stone-800">
+              <div class="flex justify-between text-xs font-bold mb-1">
+                <span data-i18n="statBite">Fenrakk Jaws Bite Force</span>
+                <span class="text-orange-400">10 / 10 (Crushes Solid Protodermis)</span>
+              </div>
+              <div class="w-full bg-stone-800 rounded-full h-2.5">
+                <div class="bg-orange-500 h-2.5 rounded-full" style="width: 100%"></div>
+              </div>
+            </div>
+
+            <!-- Stat Bar 2: Fused Ignika Kinetic Feedback -->
+            <div class="bg-stone-900/70 p-3 rounded-lg border border-stone-800">
+              <div class="flex justify-between text-xs font-bold mb-1">
+                <span data-i18n="statIgnika">Fused Ignika Kinetic Feedback</span>
+                <span class="text-yellow-400">9.9 / 10 (Grows Stronger with Hits)</span>
+              </div>
+              <div class="w-full bg-stone-800 rounded-full h-2.5">
+                <div class="bg-yellow-400 h-2.5 rounded-full" style="width: 99%"></div>
+              </div>
+            </div>
+
+            <!-- Stat Bar 3: Spear of Fusion Power -->
+            <div class="bg-stone-900/70 p-3 rounded-lg border border-stone-800">
+              <div class="flex justify-between text-xs font-bold mb-1">
+                <span data-i18n="statFusion">Spear of Fusion Molecular Disruption</span>
+                <span class="text-purple-400">10 / 10 (Molecular Splitting/Merging)</span>
+              </div>
+              <div class="w-full bg-stone-800 rounded-full h-2.5">
+                <div class="bg-purple-500 h-2.5 rounded-full" style="width: 100%"></div>
+              </div>
+            </div>
+
+            <!-- Stat Bar 4: Agility & Terrain Traversing -->
+            <div class="bg-stone-900/70 p-3 rounded-lg border border-stone-800">
+              <div class="flex justify-between text-xs font-bold mb-1">
+                <span data-i18n="statAgility">Volcanic Spider Mobility</span>
+                <span class="text-emerald-400">9.4 / 10 (Scales Lava Cavern Walls)</span>
+              </div>
+              <div class="w-full bg-stone-800 rounded-full h-2.5">
+                <div class="bg-emerald-500 h-2.5 rounded-full" style="width: 94%"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Weaponry Breakdown -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+            <div class="border border-stone-700 bg-neutral-900 p-4 rounded-xl">
+              <h4 class="font-bold text-purple-300 text-sm" data-i18n="wpnSpearTitle">The Spear of Fusion</h4>
+              <p class="text-xs text-gray-400 mt-1" data-i18n="wpnSpearDesc">
+                A double-ended weapon with glowing energy prongs capable of combining distinct beings into horrific amalgamations or sundering singular targets into fragments.
+              </p>
+            </div>
+            <div class="border border-stone-700 bg-neutral-900 p-4 rounded-xl">
+              <h4 class="font-bold text-orange-400 text-sm" data-i18n="wpnJawsTitle">Fenrakk's Serrated Snap-Jaws</h4>
+              <p class="text-xs text-gray-400 mt-1" data-i18n="wpnJawsDesc">
+                Equipped with oversized silver fangs and an internal spring-lever mechanism that snaps the jaws shut with bone-shattering force.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Combiner Model: Kardas Dragon -->
+        <div id="tab-combiner" class="hidden space-y-6">
+          <div class="bg-neutral-950 p-6 rounded-xl border border-red-500/50 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center space-x-3 mb-3">
+                <span class="text-4xl">🐉</span>
+                <div>
+                  <h4 class="text-red-400 font-extrabold text-lg font-bionicle">THE KARDAS DRAGON</h4>
+                  <p class="text-[11px] text-gray-400" data-i18n="kardasParts">Combines 8764 Vezon & Fenrakk + 8734 Brutaka + 8733 Axonn</p>
+                </div>
+              </div>
+              <p class="text-xs text-gray-300 leading-relaxed" data-i18n="kardasLore">
+                When Fenrakk was driven into the boiling lava pool of Mount Valmai, the Kanohi Ignika did not let its guardian perish. Instead, the mask absorbed the magma and transformed the spider beast into the gigantic winged Kardas Dragon! Featuring a massive wingspan, heavy tail, and deadly kinetic blast breath, the Kardas Dragon represents the pinnacle of 2006 BIONICLE titan building.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-stone-800 mt-4 flex items-center justify-between">
+              <div class="text-[11px] text-yellow-400 font-bold">
+                ★ 670+ Pieces Total • Over 14 inches (35cm) Wingspan!
+              </div>
+              <span class="text-xs text-gray-400">Special Box Set #10204</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 4: Vintage 2006 Fan Reviews -->
+        <div id="tab-reviews" class="hidden space-y-4">
+          
+          <div class="border-b border-stone-800 pb-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-yellow-400">PirakaHunter_99 (August 14, 2006)</span>
+              <span class="text-yellow-400 text-xs">★★★★★</span>
+            </div>
+            <h5 class="text-sm font-bold text-white mt-1" data-i18n="rev1Title">The best titan set in BIONICLE history!</h5>
+            <p class="text-xs text-gray-400 mt-1" data-i18n="rev1Body">
+              Getting both a rider AND a giant creature in one $30 box is unmatched value. Vezon's grinning cape head mold is delightfully creepy, and the silver teeth on Fenrakk make him look like a true nightmare beast.
+            </p>
+          </div>
+
+          <div class="border-b border-stone-800 pb-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-yellow-400">MatoranLover2006 (August 29, 2006)</span>
+              <span class="text-yellow-400 text-xs">★★★★★</span>
+            </div>
+            <h5 class="text-sm font-bold text-white mt-1" data-i18n="rev2Title">Snapping jaws work smoothly and legs are sturdy</h5>
+            <p class="text-xs text-gray-400 mt-1" data-i18n="rev2Body">
+              Fenrakk's legs use dual piston supports so he never sags under Vezon's weight. The pearl gold Ignika on the back of Vezon's head was worth the purchase alone!
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- 2006 Retro Shop@Home Footer -->
+  <footer class="w-full bg-[#0a070a] border-t border-stone-800 mt-12 py-8 text-xs text-gray-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      
+      <!-- Footer Nav Columns -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+        <div>
+          <h5 class="font-bold text-gray-200 uppercase tracking-wider mb-2" data-i18n="ftProducts">BIONICLE® 2006</h5>
+          <ul class="space-y-1 text-gray-400">
+            <li><a href="#" class="hover:text-yellow-400">8764 Vezon & Fenrakk</a></li>
+            <li><a href="#" class="hover:text-yellow-400">8734 Brutaka</a></li>
+            <li><a href="#" class="hover:text-yellow-400">8733 Axonn</a></li>
+            <li><a href="#" class="hover:text-yellow-400">8761 Umbra</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="font-bold text-gray-200 uppercase tracking-wider mb-2" data-i18n="ftSupport">Customer Support</h5>
+          <ul class="space-y-1 text-gray-400">
+            <li><a href="#" class="hover:text-yellow-400" data-i18n="ftOrderTracker">Order Status</a></li>
+            <li><a href="#" class="hover:text-yellow-400" data-i18n="ftBuildingInst">Building Instructions</a></li>
+            <li><a href="#" class="hover:text-yellow-400" data-i18n="ftMissingBricks">Missing Bricks</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="font-bold text-gray-200 uppercase tracking-wider mb-2" data-i18n="ftExplore">Explore LEGO</h5>
+          <ul class="space-y-1 text-gray-400">
+            <li><a href="#" class="hover:text-yellow-400">LEGO Club Magazine</a></li>
+            <li><a href="#" class="hover:text-yellow-400">LEGO Shop at Home</a></li>
+            <li><a href="#" class="hover:text-yellow-400">BIONICLE.com Story Portal</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="font-bold text-gray-200 uppercase tracking-wider mb-2" data-i18n="ftCatalog">Direct Mail Order</h5>
+          <p class="text-[11px] text-gray-400" data-i18n="ftPhone">
+            Call 1-800-453-4652 (USA) or order through our 2006 autumn print catalog.
+          </p>
+        </div>
+      </div>
+
+      <!-- Legal & Copyright Notice -->
+      <div class="border-t border-stone-800/80 pt-6 flex flex-col md:flex-row items-center justify-between text-[11px] text-gray-400">
+        <p data-i18n="ftCopyright">
+          LEGO, the LEGO logo, and BIONICLE are registered trademarks of the LEGO Group. ©2006 The LEGO Group. All rights reserved.
+        </p>
+        <div class="flex space-x-4 mt-2 md:mt-0">
+          <a href="#" class="hover:underline" data-i18n="ftPrivacy">Privacy Policy</a>
+          <a href="#" class="hover:underline" data-i18n="ftTerms">Terms of Use</a>
+          <a href="#" class="hover:underline" data-i18n="ftLegal">Legal Notice</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Interactive Cart / Order Modal (No alert() used) -->
+  <div id="cart-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-stone-900 border-2 border-yellow-400 rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
+      <button onclick="closeCartModal()" class="absolute top-3 right-3 text-gray-400 hover:text-white text-xl font-bold">✕</button>
+      
+      <div class="flex items-center space-x-3 mb-4">
+        <div class="bg-yellow-400 p-2 rounded text-black font-black">LEGO</div>
+        <h3 class="text-lg font-bold text-white font-bionicle" data-i18n="modalCartTitle">Your 2006 LEGO Shopping Bag</h3>
+      </div>
+
+      <div class="border-t border-b border-stone-800 py-3 space-y-2">
+        <div class="flex justify-between items-center text-sm">
+          <div>
+            <span class="font-bold text-yellow-300">8764 Vezon & Fenrakk</span>
+            <span class="text-xs text-gray-400 block" id="modal-qty-text">Qty: 1</span>
+          </div>
+          <span class="font-bold text-white" id="modal-total-price">$29.99</span>
+        </div>
+        <div class="text-xs text-emerald-400 flex items-center space-x-1">
+          <span>✔</span>
+          <span data-i18n="modalPromo">2006 Ignition Comic #4 Included Free!</span>
+        </div>
+      </div>
+
+      <div class="mt-4 flex space-x-3">
+        <button onclick="closeCartModal()" class="w-1/2 py-2 text-xs font-bold text-gray-300 bg-stone-800 hover:bg-stone-700 rounded-lg border border-stone-600" data-i18n="modalContinue">
+          Keep Browsing
+        </button>
+        <button onclick="checkoutNotification()" class="w-1/2 btn-lego-retro py-2 text-xs font-bold text-black uppercase tracking-wider rounded-lg" data-i18n="modalCheckout">
+          Checkout Now
+        </button>
+      </div>
+
+      <!-- Live simulated status banner -->
+      <div id="checkout-status" class="hidden mt-3 text-center text-xs text-yellow-300 bg-black/60 p-2 rounded border border-yellow-500/50">
+        Simulated 2006 Order placed! Connecting to LEGO Direct...
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* BILINGUAL LOCALIZATION DICTIONARY (en-US <-> ru-RU) */
+    const translations = {
+      en: {
+        shopAtHome: "Shop at Home",
+        officialCatalog: "Official 2006 Collector's Catalog",
+        navProducts: "Products",
+        navBionicle: "BIONICLE®",
+        navClub: "LEGO Club",
+        navSupport: "Customer Service",
+        cartLabel: "Cart",
+        bannerTag: "SUMMER 2006 CLIMAX TITAN:",
+        bannerText: "The mad 7th Piraka and his spider beast guard the Chamber of Life! Will the Toa prevail?",
+        bcHome: "Home",
+        bcProducts: "Products",
+        bcTitans: "Titans",
+        bcItem: "8764 Vezon & Fenrakk",
+        spearButton: "Spear of Fusion",
+        viewLabel: "View:",
+        jawChomp: "Fenrakk Jaw Chomp",
+        spearBlast: "Spear of Fusion Blast",
+        thumbPrimary: "Full Model",
+        thumbJaws: "Fenrakk Jaws",
+        thumbVezon: "Vezon & Mask",
+        thumbKardas: "Kardas Dragon",
+        inStock: "In Stock",
+        productTitle: "Vezon & Fenrakk",
+        productSubtitle: "Guardian of the Mask of Life • Depths of Mount Valmai",
+        labelAges: "Ages",
+        labelPieces: "Pieces",
+        labelYear: "Year",
+        priceLabel: "MSRP Price",
+        priceValue: "$29.99",
+        priceTax: "plus shipping & handling",
+        ratingScore: "4.9 / 5.0 (2006)",
+        reviewCount: "214 Fan Reviews",
+        qtyLabel: "Qty:",
+        limitNotice: "Limit 4 per customer",
+        addToBagBtn: "Add to Bag",
+        bullet1: "Vezon rides atop the monstrous spider-steed Fenrakk, connected through kinetic energy.",
+        bullet2: "Fenrakk features snapping silver-toothed jaws and four multi-jointed articulated legs.",
+        bullet3: "Vezon holds the legendary Spear of Fusion and wears the Kanohi Ignika fused to his skull!",
+        bullet4: "Combine with 8733 Axonn and 8734 Brutaka to construct the gargantuan Kardas Dragon!",
+        spearTitle: "Cursed Artifact: Spear of Fusion",
+        spearDesc: "Accidentally fired by Hakann, this dark weapon split Vezok into two beings, giving birth to the maniacal Vezon. The spear can fuse living creatures together or rip them apart at will!",
+        trinityTitle: "The Voya Nui Titan Trinity",
+        trinitySub: "Complete the 2006 Titan trio with 8734 Brutaka and 8733 Axonn!",
+        tabBio: "Story & The Madness",
+        tabSpecs: "Titan Stats & Abilities",
+        tabCombiner: "Ultimate Combiner: Kardas",
+        tabReviews: "Fan Reviews (2006)",
+        storyHeading: "The Seventh Piraka & The Beast of Mount Valmai!",
+        storyP1: "Born from an accidental discharge of the Spear of Fusion upon the Piraka Vezok, Vezon is a creature of chaotic cunning, manic humor, and unpredictable ferocity. While his former brethren fought viciously among themselves, Vezon slipped deep into the heart of Mount Valmai to the sacred Chamber of Life.",
+        storyP2: "When he reached for the legendary Kanohi Ignika, the Mask of Life cursed him, fusing the golden mask permanently to the back of his head and enslaving a native giant spider creature, transforming it into the titanic monster Fenrakk. Linked through the power of the mask, any damage dealt to Fenrakk is absorbed and redirected—making them the ultimate guardians of the universe’s most coveted treasure!",
+        loreQuoteTitle: "BIONICLE 2006 Ignition Canon:",
+        loreQuoteDesc: "“We are two, yet one! And the Mask of Life belongs to me! Try and take it, Toa, and Fenrakk will chew your bones into dust!” — Vezon taunting the Toa Inika in the Chamber of Life.",
+        statsHeading: "Vezon & Fenrakk Combat Matrix",
+        statBite: "Fenrakk Jaws Bite Force",
+        statIgnika: "Fused Ignika Kinetic Feedback",
+        statFusion: "Spear of Fusion Molecular Disruption",
+        statAgility: "Volcanic Spider Mobility",
+        wpnSpearTitle: "The Spear of Fusion",
+        wpnSpearDesc: "A double-ended weapon with glowing energy prongs capable of combining distinct beings into horrific amalgamations or sundering singular targets into fragments.",
+        wpnJawsTitle: "Fenrakk's Serrated Snap-Jaws",
+        wpnJawsDesc: "Equipped with oversized silver fangs and an internal spring-lever mechanism that snaps the jaws shut with bone-shattering force.",
+        kardasParts: "Combines 8764 Vezon & Fenrakk + 8734 Brutaka + 8733 Axonn",
+        kardasLore: "When Fenrakk was driven into the boiling lava pool of Mount Valmai, the Kanohi Ignika did not let its guardian perish. Instead, the mask absorbed the magma and transformed the spider beast into the gigantic winged Kardas Dragon! Featuring a massive wingspan, heavy tail, and deadly kinetic blast breath, the Kardas Dragon represents the pinnacle of 2006 BIONICLE titan building.",
+        rev1Title: "The best titan set in BIONICLE® history!",
+        rev1Body: "Getting both a rider AND a giant creature in one $30 box is unmatched value. Vezon’s grinning cape head mold is delightfully creepy, and the silver teeth on Fenrakk make him look like a true nightmare beast.",
+        rev2Title: "Snapping jaws work smoothly and legs are sturdy",
+        rev2Body: "Fenrakk’s legs use dual piston supports so he never sags under Vezon’s weight. The pearl gold Ignika on the back of Vezon’s head was worth the purchase alone!",
+        ftProducts: "BIONICLE® 2006",
+        ftSupport: "Customer Support",
+        ftOrderTracker: "Order Status",
+        ftBuildingInst: "Building Instructions",
+        ftMissingBricks: "Missing Bricks",
+        ftExplore: "Explore LEGO",
+        ftCatalog: "Direct Mail Order",
+        ftPhone: "Call 1-800-453-4652 (USA) or order through our 2006 autumn print catalog.",
+        ftCopyright: "LEGO, the LEGO logo, and BIONICLE are registered trademarks of the LEGO Group. ©2006 The LEGO Group. All rights reserved.",
+        ftPrivacy: "Privacy Policy",
+        ftTerms: "Terms of Use",
+        ftLegal: "Legal Notice",
+        modalCartTitle: "Your 2006 LEGO Shopping Bag",
+        modalPromo: "2006 Ignition Comic #4 Included Free!",
+        modalContinue: "Keep Browsing",
+        modalCheckout: "Checkout Now",
+        fusionWarning: "SPLITTING & MERGING TARGET MOLECULES",
+        fenrakkStatus: "FENRAKK JAWS UNLOCKED • KANOHI IGNIKA CURSE ACTIVE"
+      },
+      ru: {
+        shopAtHome: "Заказ по каталогу (Shop at Home)",
+        officialCatalog: "Официальный каталог LEGO 2006 года",
+        navProducts: "Продукция",
+        navBionicle: "BIONICLE®",
+        navClub: "Клуб LEGO",
+        navSupport: "Служба поддержки",
+        cartLabel: "Корзина",
+        bannerTag: "ГЛАВНЫЙ ТИТАН ЛЕТА 2006:",
+        bannerText: "Безумный седьмой Пирака и паучий монстр стерегут Палату Жизни! Устоят ли Тоа?",
+        bcHome: "Главная",
+        bcProducts: "Каталог",
+        bcTitans: "Титаны",
+        bcItem: "8764 Vezon & Fenrakk (Везон и Фенракк)",
+        spearButton: "Копье Слияния",
+        viewLabel: "Режим:",
+        jawChomp: "Хлопанье Челюстей Фенракка",
+        spearBlast: "Выстрел Копья Слияния",
+        thumbPrimary: "Набор целиком",
+        thumbJaws: "Челюсти Фенракка",
+        thumbVezon: "Везон и Маска",
+        thumbKardas: "Дракон Кардас",
+        inStock: "В наличии",
+        productTitle: "Везон и Фенракк",
+        productSubtitle: "Хранители Маски Жизни • Недра вулкана Валмаи",
+        labelAges: "Возраст",
+        labelPieces: "Детали",
+        labelYear: "Год",
+        priceLabel: "Цена по каталогу",
+        priceValue: "1 199 руб.",
+        priceTax: "плюс доставка по России",
+        ratingScore: "4.9 / 5.0 (2006)",
+        reviewCount: "214 отзывов фанатов",
+        qtyLabel: "Кол-во:",
+        limitNotice: "Не более 4 шт. в одни руки",
+        addToBagBtn: "Добавить в корзину",
+        bullet1: "Везон восседает верхом на гигантском пауке Фенракке, связанном с ним ментальной силой.",
+        bullet2: "Фенракк оснащен лязгающей пастью с серебряными клыками и четырьмя мощными лапами.",
+        bullet3: "Везон держит легендарное Копье Слияния, а Канохи Игника намертво срослась с его черепом!",
+        bullet4: "Объединяется с 8733 Аксонном и 8734 Брутакой для создания исполинского Дракона Кардаса!",
+        spearTitle: "Проклятый артефакт: Копье Слияния",
+        spearDesc: "Случайный выстрел Хаканна разделил Пираку Везока надвое, породив безумца Везона. Это орудие способно насильно сплавлять существ воедино или разрывать их на атомы!",
+        trinityTitle: "Триада Титанов Войя Нуи",
+        trinitySub: "Соберите всех трех титанов 2006 года: 8734 Брутаку и 8733 Аксонна!",
+        tabBio: "История и безумие",
+        tabSpecs: "Характеристики Титана",
+        tabCombiner: "Комбайнер: Кардас",
+        tabReviews: "Отзывы фанатов (2006)",
+        storyHeading: "Седьмой Пирака и чудовище вулкана Валмаи!",
+        storyP1: "Появившийся в результате аномального выстрела из Копья Слияния по Пираке Везоку, Везон наделен безудержным коварством, сумасшедшим юмором и необузданной яростью. Пока остальные Пирака рвали друг друга на части, Везон первым проник в сердце вулкана Валмаи — священную Палату Жизни.",
+        storyP2: "Но стоило ему дотронуться до Канохи Игники, как Маска Жизни прокляла его, намертво сросшись с затылком и подчинив местного лавового паука Фенракка. Связанные магией маски, они поглощают любой урон, делая свой тандем несокрушимой преградой на пути Тоа Иника!",
+        loreQuoteTitle: "Летопись BIONICLE 2006 (Ignition):",
+        loreQuoteDesc: "«Мы двое, но мы едины! И Маска Жизни принадлежит мне! Попробуйте забрать ее, Тоа, и Фенракк сотрет ваши кости в пепел!» — Везон перед битвой в Палате Жизни.",
+        statsHeading: "Боевой потенциал Везона и Фенракка",
+        statBite: "Сила укуса челюстей Фенракка",
+        statIgnika: "Кинетическое отражение Маски Игника",
+        statFusion: "Молекулярный распад Копья Слияния",
+        statAgility: "Проходимость лавового паука",
+        wpnSpearTitle: "Копье Слияния",
+        wpnSpearDesc: "Двустороннее копье с энерго-наконечниками, позволяющее объединять разные формы жизни в чудовищные гибриды или расщеплять противников.",
+        wpnJawsTitle: "Зубчатые клацающие челюсти",
+        wpnJawsDesc: "Массивные серебряные зубы и пружинный рычажный механизм обеспечивают сокрушительное захлопывание пасти.",
+        kardasParts: "Объединяет 8764 Везона с Фенракком + 8734 Брутаку + 8733 Аксонна",
+        kardasLore: "Когда Фенракка столкнули в кипящее жерло лавы, Маска Жизни не позволила своему стражу погибнуть. Игника поглотила магму и переродила паука в гигантского огнедышащего Дракона Кардаса с колоссальным размахом крыльев!",
+        rev1Title: "Лучший набор титанов за всю историю BIONICLE®!",
+        rev1Body: "Всадник и огромное четырехлапое чудовище в одном наборе — невероятная щедрость. Улыбающаяся голова Везона с маской на затылке смотрится жутко и стильно, а пасть Фенракка — просто шедевр.",
+        rev2Title: "Механизм челюстей работает четко, ноги устойчивые",
+        rev2Body: "Двойные поршни держат ноги зверя намертво, модель не проседает. Золотая Канохи Игника в комплекте — мечта любого фаната 2006 года!",
+        ftProducts: "BIONICLE® 2006",
+        ftSupport: "Служба поддержки",
+        ftOrderTracker: "Статус заказа",
+        ftBuildingInst: "Инструкции по сборке",
+        ftMissingBricks: "Недостающие детали",
+        ftExplore: "Мир LEGO",
+        ftCatalog: "Заказ по почте",
+        ftPhone: "Контактный центр в РФ (Москва): (495) 785-0000 или через осенний фирменный каталог.",
+        ftCopyright: "LEGO, логотип LEGO и BIONICLE являются зарегистрированными товарными знаками LEGO Group. ©2006 The LEGO Group. Все права защищены.",
+        ftPrivacy: "Конфиденциальность",
+        ftTerms: "Условия использования",
+        ftLegal: "Правовая информация",
+        modalCartTitle: "Ваша корзина LEGO (Лето/Осень 2006)",
+        modalPromo: "Комикс BIONICLE Ignition #4 в подарок!",
+        modalContinue: "Продолжить выбор",
+        modalCheckout: "Оформить заказ",
+        fusionWarning: "РАСЩЕПЛЕНИЕ И СЛИЯНИЕ ЦЕЛЕВЫХ МОЛЕКУЛ",
+        fenrakkStatus: "ПАСТЬ ФЕНРАККА РАЗБЛОКИРОВАНА • СИЛА ИГНИКИ АКТИВНА"
+      }
+    };
+
+    let currentLang = 'en';
+    let cartCount = 0;
+    let isFusionActive = false;
+    let synth = null;
+    let noiseSynth = null;
+    let chompSynth = null;
+
+    function initAudio() {
+      if (!synth && window.Tone) {
+        try {
+          Tone.start();
+
+          // Spear of Fusion laser / energy pulse synth
+          synth = new Tone.PolySynth(Tone.Synth, {
+            oscillator: { type: "sawtooth" },
+            envelope: { attack: 0.005, decay: 0.15, sustain: 0.02, release: 0.2 }
+          }).toDestination();
+          synth.volume.value = -4;
+
+          // Snapping jaws crunch / metallic snap sound
+          noiseSynth = new Tone.NoiseSynth({
+            noise: { type: "brown" },
+            envelope: { attack: 0.001, decay: 0.12, sustain: 0 }
+          }).toDestination();
+          noiseSynth.volume.value = -2;
+
+          // Deep chomp sub-bass impact
+          chompSynth = new Tone.MembraneSynth({
+            pitchDecay: 0.08,
+            octaves: 4,
+            oscillator: { type: "sine" },
+            envelope: { attack: 0.001, decay: 0.3, sustain: 0.01, release: 0.4 }
+          }).toDestination();
+          chompSynth.volume.value = -2;
+        } catch (e) {
+          console.warn("Web Audio policy wait", e);
+        }
+      }
+    }
+
+    function playFenrakkChompSound() {
+      initAudio();
+      if (window.Tone && chompSynth && noiseSynth) {
+        chompSynth.triggerAttackRelease("C1", "16n");
+        noiseSynth.triggerAttackRelease("16n", "+0.01");
+      }
+    }
+
+    function playSpearBlastSound() {
+      initAudio();
+      if (window.Tone && synth && noiseSynth) {
+        synth.triggerAttackRelease(["F#4", "C5", "G#5"], "16n");
+        noiseSynth.triggerAttackRelease("32n", "+0.02");
+      }
+    }
+
+    function toggleSpearOfFusion() {
+      isFusionActive = !isFusionActive;
+      const img = document.getElementById('main-product-img');
+      const overlay = document.getElementById('fusion-overlay');
+      const btn = document.getElementById('fusion-toggle-btn');
+
+      playSpearBlastSound();
+
+      if (isFusionActive) {
+        img.classList.add('fusion-active');
+        overlay.classList.remove('hidden');
+        btn.classList.add('bg-purple-500', 'text-black', 'font-black');
+        btn.classList.remove('bg-purple-950/80', 'text-purple-200');
+      } else {
+        img.classList.remove('fusion-active');
+        overlay.classList.add('hidden');
+        btn.classList.remove('bg-purple-500', 'text-black', 'font-black');
+        btn.classList.add('bg-purple-950/80', 'text-purple-200');
+      }
+    }
+
+    function changeGalleryImage(type, label) {
+      const mainImg = document.getElementById('main-product-img');
+      const viewLabel = document.getElementById('current-view-name');
+      
+      if (viewLabel) viewLabel.innerText = label;
+
+      document.querySelectorAll('.thumb-btn').forEach(btn => {
+        btn.classList.remove('border-yellow-400');
+        btn.classList.add('border-stone-700');
+      });
+      event.currentTarget.classList.remove('border-stone-700');
+      event.currentTarget.classList.add('border-yellow-400');
+
+      if (type === 'primary') {
+        mainImg.src = "https://www.lego.com/cdn/product-assets/product.img.pri/8764_prod.jpg";
+      } else if (type === 'jaws') {
+        mainImg.src = "https://placehold.co/600x600/181216/ff4500?text=Fenrakk+Silver+Snapping+Jaws";
+      } else if (type === 'vezon') {
+        mainImg.src = "https://placehold.co/600x600/181216/a855f7?text=Vezon+%26+Fused+Kanohi+Ignika";
+      } else if (type === 'kardas') {
+        mainImg.src = "https://placehold.co/600x600/181216/d01012?text=Kardas+Dragon+Combiner+Model";
+      }
+    }
+
+    function switchTab(tabName) {
+      const tabs = ['desc', 'specs', 'combiner', 'reviews'];
+      tabs.forEach(t => {
+        const content = document.getElementById('tab-' + t);
+        const btn = document.getElementById('tab-btn-' + t);
+        if (t === tabName) {
+          content.classList.remove('hidden');
+          btn.classList.add('text-yellow-400', 'border-b-2', 'border-yellow-400');
+          btn.classList.remove('text-gray-400');
+        } else {
+          content.classList.add('hidden');
+          btn.classList.remove('text-yellow-400', 'border-b-2', 'border-yellow-400');
+          btn.classList.add('text-gray-400');
+        }
+      });
+    }
+
+    function addToCart() {
+      const qty = parseInt(document.getElementById('order-qty').value, 10) || 1;
+      cartCount += qty;
+      document.getElementById('cart-counter').innerText = cartCount;
+      
+      initAudio();
+      if (window.Tone && synth) {
+        synth.triggerAttackRelease(["C4", "E4", "G4", "C5"], "16n");
+      }
+
+      openCartModal();
+    }
+
+    function openCartModal() {
+      const qty = parseInt(document.getElementById('order-qty').value, 10) || 1;
+      const modal = document.getElementById('cart-modal');
+      const qtyLabel = document.getElementById('modal-qty-text');
+      const priceLabel = document.getElementById('modal-total-price');
+
+      qtyLabel.innerText = `${translations[currentLang].qtyLabel} ${qty}`;
+      if (currentLang === 'ru') {
+        priceLabel.innerText = `${1199 * qty} руб.`;
+      } else {
+        priceLabel.innerText = `$${(29.99 * qty).toFixed(2)}`;
+      }
+
+      modal.classList.remove('hidden');
+    }
+
+    function closeCartModal() {
+      document.getElementById('cart-modal').classList.add('hidden');
+      document.getElementById('checkout-status').classList.add('hidden');
+    }
+
+    function checkoutNotification() {
+      const status = document.getElementById('checkout-status');
+      status.classList.remove('hidden');
+      if (currentLang === 'ru') {
+        status.innerText = "Имитация заказа 2006 года! Отправка в службу доставки LEGO...";
+      } else {
+        status.innerText = "Simulated 2006 Order placed! Connecting to LEGO Direct...";
+      }
+      setTimeout(() => {
+        closeCartModal();
+      }, 2400);
+    }
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      
+      const enBtn = document.getElementById('lang-en');
+      const ruBtn = document.getElementById('lang-ru');
+      if (lang === 'ru') {
+        ruBtn.className = 'px-2 py-1 rounded font-bold transition text-black bg-yellow-400';
+        enBtn.className = 'px-2 py-1 rounded font-bold transition text-gray-400 hover:text-white';
+      } else {
+        enBtn.className = 'px-2 py-1 rounded font-bold transition text-black bg-yellow-400';
+        ruBtn.className = 'px-2 py-1 rounded font-bold transition text-gray-400 hover:text-white';
+      }
+
+      const priceElem = document.getElementById('product-price');
+      if (priceElem) {
+        priceElem.innerText = translations[lang].priceValue;
+      }
+
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          element.innerText = translations[lang][key];
+        }
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      setLanguage('en');
+    });
+  </script>
+</body>
+</html>
