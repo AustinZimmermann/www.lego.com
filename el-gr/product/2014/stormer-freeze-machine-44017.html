@@ -1,313 +1,575 @@
 <!DOCTYPE html>
-<html lang="el-GR">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ΜΗΧΑΝΗ ΠΑΓΕΤΟΥ ΤΟΥ STORMER 44017 | Hero Factory | LEGO® Shop</title>
-    <link rel="shortcut icon" href="https://www.lego.com/favicon.ico" type="image/x-icon">
-    <style>
-        :root {
-            --lego-yellow: #f2cd37;
-            --lego-blue: #006cb7;
-            --text-dark: #2c2c2c;
-            --text-muted: #6e6e6e;
-            --bg-light: #f8f8f8;
-            --border-color: #e0e0e0;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LEGO® Hero Factory - 44017 STORMER Freeze Machine</title>
+  <link rel="icon" type="image/x-icon" href="https://www.lego.com/favicon.ico" />
+  <style>
+      /* --- Base & Reset --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Helvetica, Arial, sans-serif;
-        }
+body {
+  font-family: Helvetica, sans-serif;
+  background-color: #0b111b;
+  color: #d1d7e0;
+  line-height: 1.5;
+}
 
-        body {
-            background-color: #ffffff;
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
+/* --- Header & 2014 Theme Bar --- */
+.site-header {
+  background: linear-gradient(180deg, #182233 0%, #0d1522 100%);
+  border-bottom: 2px solid #00c3ff;
+  padding: 12px 24px;
+}
 
-        /* Header Accent */
-        .lego-header {
-            background-color: var(--lego-yellow);
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            border-bottom: 4px solid var(--lego-blue);
-        }
+.top-nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-        .lego-logo {
-            width: 50px;
-            height: 50px;
-            background-color: #e60012;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: white;
-            font-size: 20px;
-            border-radius: 4px;
-            text-decoration: none;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-        }
+.brand-area {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
 
-        /* Main Layout */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-        }
+.lego-logo {
+  background-color: #d11013;
+  color: #ffe600;
+  font-weight: 900;
+  font-size: 1.4rem;
+  padding: 6px 12px;
+  text-decoration: none;
+  border-radius: 4px;
+  border: 2px solid #fff;
+  letter-spacing: 1px;
+}
 
-        @media (min-width: 768px) {
-            .container {
-                grid-template-columns: 3fr 2fr;
-            }
-        }
+.theme-logo {
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  color: #00e1ff;
+  text-shadow: 0 0 8px rgba(0, 225, 255, 0.4);
+}
 
-        /* Product Image Gallery */
-        .product-gallery {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: var(--bg-light);
-            border-radius: 8px;
-            padding: 20px;
-            border: 1px solid var(--border-color);
-        }
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
 
-        .main-image {
-            max-width: 100%;
-            height: auto;
-            object-fit: contain;
-            mix-blend-mode: multiply;
-        }
+.lang-switch select {
+  background: #142030;
+  color: #fff;
+  border: 1px solid #00c3ff;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
 
-        /* Product Info */
-        .product-details {
-            display: flex;
-            flex-direction: column;
-        }
+/* --- Breadcrumb --- */
+.breadcrumb {
+  max-width: 1100px;
+  margin: 16px auto 0;
+  padding: 0 16px;
+  font-size: 0.85rem;
+  color: #8496ad;
+}
 
-        .breadcrumbs {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 15px;
-        }
+.breadcrumb a {
+  color: #00c3ff;
+  text-decoration: none;
+}
 
-        .breadcrumbs a {
-            color: var(--text-muted);
-            text-decoration: none;
-        }
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
 
-        .breadcrumbs a:hover {
-            text-decoration: underline;
-        }
+.breadcrumb .active {
+  color: #d1d7e0;
+}
 
-        .product-title {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-        }
+/* --- Layout --- */
+.product-page {
+  max-width: 1100px;
+  margin: 20px auto 40px;
+  padding: 0 16px;
+}
 
-        .product-meta {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-            display: flex;
-            gap: 15px;
-        }
+.product-container {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+  background: #121a27;
+  border: 1px solid #1e2c40;
+  border-radius: 8px;
+  padding: 28px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
 
-        .price-tag {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: #000;
-            margin-bottom: 25px;
-        }
+@media (max-width: 768px) {
+  .product-container {
+    grid-template-columns: 1fr;
+  }
+}
 
-        /* Purchase Section */
-        .purchase-box {
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            padding: 20px 0;
-            margin-bottom: 25px;
-        }
+/* --- Product Image Section --- */
+.product-media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-        .status {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: #d11919; /* Retired Product color scheme */
-        }
+.badge-row {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 12px;
+}
 
-        .status-dot {
-            width: 10px;
-            height: 10px;
-            background-color: #d11919;
-            border-radius: 50%;
-        }
+.badge {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 3px;
+}
 
-        .btn-primary {
-            background-color: var(--text-muted);
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 1rem;
-            font-weight: 700;
-            border-radius: 4px;
-            cursor: not-allowed;
-            width: 100%;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+.new-badge {
+  background-color: #ffe600;
+  color: #111;
+}
 
-        /* Description Accordion */
-        .info-section {
-            margin-top: 30px;
-        }
+.invasion-badge {
+  background-color: #00c3ff;
+  color: #0b111b;
+}
 
-        .info-heading {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            border-bottom: 2px solid var(--text-dark);
-            padding-bottom: 5px;
-        }
+.main-image-wrapper {
+  background: radial-gradient(circle, #1a273b 0%, #0d1421 100%);
+  border: 1px solid #23354d;
+  border-radius: 6px;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-        .info-content {
-            color: #4a4a4a;
-            font-size: 0.95rem;
-            white-space: pre-line;
-        }
+.main-image-wrapper img {
+  max-width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.6));
+}
 
-        /* Specs Table */
-        .specs-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 15px;
-            background: var(--bg-light);
-            padding: 15px;
-            border-radius: 6px;
-        }
+/* --- Product Info Section --- */
+.product-info h1 {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
 
-        .spec-item {
-            display: flex;
-            flex-direction: column;
-        }
+.item-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 0.85rem;
+  color: #92a4bc;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #202d40;
+}
 
-        .spec-label {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-        }
+.price-box {
+  margin: 20px 0;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
 
-        .spec-value {
-            font-size: 0.95rem;
-            font-weight: 600;
-        }
-    </style>
+.price {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #00e1ff;
+}
+
+.availability {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #4cd964;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.qty-selector {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.qty-selector input {
+  width: 55px;
+  padding: 8px;
+  background: #0d1522;
+  border: 1px solid #283a54;
+  color: #fff;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.btn {
+  padding: 10px 18px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  font-size: 0.95rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-cart {
+  background: #ffaa00;
+  color: #111;
+}
+
+.btn-cart:hover {
+  background: #ffbb22;
+}
+
+.btn-wishlist {
+  background: #1c2a3d;
+  color: #8da4c4;
+  border: 1px solid #2b3e59;
+}
+
+.btn-wishlist:hover {
+  background: #253852;
+  color: #fff;
+}
+
+.status-message {
+  min-height: 24px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #00ffc4;
+}
+
+.key-points {
+  list-style: square inside;
+  color: #b1c1d6;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* --- Description & Details Tabs --- */
+.product-description-section {
+  margin-top: 32px;
+  background: #121a27;
+  border: 1px solid #1e2c40;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.tab-headers {
+  display: flex;
+  gap: 10px;
+  border-bottom: 2px solid #23354d;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  color: #8fa2bd;
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  bottom: -2px;
+}
+
+.tab-btn.active {
+  color: #00e1ff;
+  border-bottom: 2px solid #00e1ff;
+}
+
+.tab-body h2 {
+  font-size: 1.3rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.tab-body p {
+  font-size: 0.95rem;
+  color: #b1c1d6;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.tab-body h3 {
+  font-size: 1.1rem;
+  color: #e2e8f0;
+  margin-bottom: 10px;
+}
+
+.specs-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #8da4c4;
+}
+
+/* --- Footer --- */
+.site-footer {
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.75rem;
+  color: #5d6f85;
+  border-top: 1px solid #182233;
+}
+  </style>
 </head>
 <body>
+  <!-- Top Utility Bar -->
+  <header class="site-header">
+    <div class="top-nav">
+      <div class="brand-area">
+        <a href="#" class="lego-logo" aria-label="LEGO Home">LEGO</a>
+        <span class="theme-logo">HERO FACTORY</span>
+      </div>
+      <div class="nav-controls">
+        <!-- Language Switcher -->
+        <div class="lang-switch">
+          <label for="langSelect" data-i18n="langLabel">Language:</label>
+          <select id="langSelect">
+            <option value="en-US" selected>English (US)</option>
+            <option value="el-GR">Ελληνικά (GR)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </header>
 
-    <header class="lego-header">
-        <a href="#" class="lego-logo">LEGO</a>
-    </header>
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="#" data-i18n="bcHome">Home</a> &gt;
+    <a href="#" data-i18n="bcThemes">Themes</a> &gt;
+    <a href="#" data-i18n="bcHF">Hero Factory</a> &gt;
+    <span class="active" data-i18n="productTitle">44017 STORMER Freeze Machine</span>
+  </nav>
 
-    <main class="container">
-        <section class="product-gallery">
-            <img id="product-img" src="" alt="" class="main-image">
-        </section>
+  <!-- Main Product Container -->
+  <main class="product-page">
+    <div class="product-container">
+      
+      <!-- Product Media -->
+      <section class="product-media">
+        <div class="badge-row">
+          <span class="badge new-badge" data-i18n="badgeNew">New for 2014!</span>
+          <span class="badge invasion-badge">Invasion From Below</span>
+        </div>
+        <div class="main-image-wrapper">
+          <img 
+            id="mainImage" 
+            src="https://www.lego.com/cdn/product-assets/product.img.pri/44017_prod.jpg" 
+            alt="LEGO 44017 STORMER Freeze Machine"
+          />
+        </div>
+      </section>
 
-        <section class="product-details" id="product-details">
-            <nav class="breadcrumbs" id="breadcrumbs"></nav>
-            <h1 class="product-title" id="product-name"></h1>
-            <div class="product-meta" id="product-meta-sub"></div>
-            
-            <div class="price-tag" id="product-price"></div>
+      <!-- Product Details & Purchase Box -->
+      <section class="product-info">
+        <h1 id="prodTitle" data-i18n="productTitle">STORMER Freeze Machine</h1>
+        <div class="item-meta">
+          <span class="item-number"><strong>Item:</strong> 44017</span>
+          <span class="item-age"><strong data-i18n="agesLabel">Ages:</strong> 7-14</span>
+          <span class="item-pieces"><strong data-i18n="piecesLabel">Pieces:</strong> 88</span>
+        </div>
 
-            <div class="purchase-box">
-                <div class="status">
-                    <span class="status-dot"></span>
-                    <span id="product-status"></span>
-                </div>
-                <button class="btn-primary" id="buy-btn" disabled></button>
-            </div>
+        <div class="price-box">
+          <span class="price" id="prodPrice">$14.99</span>
+          <span class="availability" data-i18n="inStock">Available Now</span>
+        </div>
 
-            <div class="info-section">
-                <h2 class="info-heading">Περιγραφή</h2>
-                <p class="info-content" id="product-desc"></p>
-            </div>
+        <div class="actions">
+          <div class="qty-selector">
+            <label for="qty" data-i18n="qtyLabel">Qty:</label>
+            <input type="number" id="qty" min="1" max="5" value="1" />
+          </div>
+          <button class="btn btn-cart" id="addToCartBtn" data-i18n="addToCart">Add to Bag</button>
+          <button class="btn btn-wishlist" id="wishlistBtn" data-i18n="addWishlist">Add to Wishlist</button>
+        </div>
 
-            <div class="info-section">
-                <h2 class="info-heading">Χαρακτηριστικά</h2>
-                <div class="specs-grid" id="product-specs"></div>
-            </div>
-        </section>
-    </main>
+        <!-- Notification Banner -->
+        <div id="statusMessage" class="status-message" aria-live="polite"></div>
 
-    <script>
-        // Simulating the data.json payload directly inside the scripts block
-        const dataJson = {
-            "productId": "44017",
-            "name": "ΜΗΧΑΝΗ ΠΑΓΕΤΟΥ ΤΟΥ STORMER",
-            "englishName": "STORMER Freeze Machine",
-            "theme": "Hero Factory",
-            "releaseYear": 2014,
-            "price": "14.99€",
-            "availabilityText": "Παλαιότερο προϊόν - Δεν είναι διαθέσιμο",
-            "ctaText": "Εξαντλήθηκε",
-            "imageUrl": "https://www.lego.com/cdn/product-assets/product.img.pri/44017_prod.jpg",
-            "breadcrumbs": ["Αρχική", "Προϊόντα", "Hero Factory"],
-            "description": "Προετοιμαστείτε για μάχη, STORMER! Στη μάχη κατά των τεράτων που βγαίνουν από τις ρωγμές, η νέα σου Μηχανή Παγετού είναι ό,τι χρειάζεσαι για να παγώσεις την απειλή. \n\nΜην αφήσεις τα παράσιτα να πλησιάσουν τον ήρωα χάρη στον ισχυρό περιστρεφόμενο εκτοξευτή πάγου, τους πυραύλους εγκλωβισμού και τον θάλαμο κράτησης. Πάγωσε τους εχθρούς και σώσε την Αντρόπολις Σίτυ!",
-            "specifications": {
-                "Ηλικίες": "7-14",
-                "Κομμάτια": "88",
-                "Αρ. Προϊόντος": "44017",
-                "Φιγούρες": "1 mini-robot (STORMER)"
-            }
-        };
+        <!-- Quick Specs List -->
+        <ul class="key-points">
+          <li data-i18n="feat1">Includes mini robot STORMER with weapon & accessories</li>
+          <li data-i18n="feat2">Features rotating seat, ice blaster, and flick missiles</li>
+          <li data-i18n="feat3">Stands over 6” (17cm) high</li>
+        </ul>
+      </section>
+    </div>
 
-        // DOM Element Populating
-        document.addEventListener("DOMContentLoaded", () => {
-            // Render Image
-            const imgEl = document.getElementById("product-img");
-            imgEl.src = dataJson.imageUrl;
-            imgEl.alt = dataJson.name;
+    <!-- Description & Story Tab -->
+    <section class="product-description-section">
+      <div class="tab-headers">
+        <button class="tab-btn active" data-i18n="tabOverview">Overview</button>
+        <button class="tab-btn" data-i18n="tabFeatures">Features</button>
+      </div>
 
-            // Render Breadcrumbs
-            const crumbsEl = document.getElementById("breadcrumbs");
-            crumbsEl.innerHTML = dataJson.breadcrumbs.map((b, i) => 
-                i === dataJson.breadcrumbs.length - 1 ? `<span>${b}</span>` : `<a href="#">${b}</a>`
-            ).join(' > ');
+      <div class="tab-body">
+        <h2 data-i18n="descHeading">Freeze the underground invaders in their tracks!</h2>
+        <p data-i18n="descBody">
+          Prepare for battle, STORMER! As the colossal beasts tunnel beneath Antropolis City, leap into the formidable Freeze Machine. Freeze rogue jumpers with the cryo-blaster, fire the flick missiles, and lock up enemies in the secure cryo chamber!
+        </p>
 
-            // Render Headings & Core Metadata
-            document.getElementById("product-name").innerText = dataJson.name;
-            document.getElementById("product-meta-sub").innerText = `${dataJson.theme} | Κωδικός: ${dataJson.productId} | Έτος: ${dataJson.releaseYear}`;
-            document.getElementById("product-price").innerText = dataJson.price;
-            document.getElementById("product-status").innerText = dataJson.availabilityText;
-            document.getElementById("buy-btn").innerText = dataJson.ctaText;
-            document.getElementById("product-desc").innerText = dataJson.description;
+        <h3 data-i18n="specHeading">Model Specifications</h3>
+        <ul class="specs-grid">
+          <li><strong data-i18n="specTheme">Theme:</strong> Hero Factory</li>
+          <li><strong data-i18n="specWave">Sub-theme:</strong> Invasion From Below (Wave 1)</li>
+          <li><strong data-i18n="specYear">Year Released:</strong> 2014</li>
+          <li><strong data-i18n="specHeight">Height:</strong> ~17 cm (6.6 inches)</li>
+        </ul>
+      </div>
+    </section>
+  </main>
 
-            // Render Technical Specs Table
-            const specsEl = document.getElementById("product-specs");
-            let specsHTML = "";
-            for (const [key, value] of Object.entries(dataJson.specifications)) {
-                specsHTML += `
-                    <div class="spec-item">
-                        <span class="spec-label">${key}</span>
-                        <span class="spec-value">${value}</span>
-                    </div>
-                `;
-            }
-            specsEl.innerHTML = specsHTML;
-        });
-    </script>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p data-i18n="footerLegal">
+      LEGO, the LEGO logo, and HERO FACTORY are trademarks of the LEGO Group. ©2014 The LEGO Group. All rights reserved.
+    </p>
+  </footer>
+
+  <script>
+      // Localization dictionaries: en-US & el-GR
+const translations = {
+  "en-US": {
+    langLabel: "Language:",
+    bcHome: "Home",
+    bcThemes: "Themes",
+    bcHF: "Hero Factory",
+    productTitle: "44017 STORMER Freeze Machine",
+    badgeNew: "New for 2014!",
+    agesLabel: "Ages:",
+    piecesLabel: "Pieces:",
+    price: "$14.99",
+    inStock: "Available Now",
+    qtyLabel: "Qty:",
+    addToCart: "Add to Bag",
+    addWishlist: "Add to Wishlist",
+    feat1: "Includes mini robot STORMER with weapon & accessories",
+    feat2: "Features rotating seat, ice blaster, and flick missiles",
+    feat3: "Stands over 6” (17cm) high",
+    tabOverview: "Overview",
+    tabFeatures: "Features",
+    descHeading: "Freeze the underground invaders in their tracks!",
+    descBody: "Prepare for battle, STORMER! As the colossal beasts tunnel beneath Antropolis City, leap into the formidable Freeze Machine. Freeze rogue jumpers with the cryo-blaster, fire the flick missiles, and lock up enemies in the secure cryo chamber!",
+    specHeading: "Model Specifications",
+    specTheme: "Theme:",
+    specWave: "Sub-theme: Invasion From Below (Wave 1)",
+    specYear: "Year Released: 2014",
+    specHeight: "Height: ~17 cm (6.6 inches)",
+    footerLegal: "LEGO, the LEGO logo, and HERO FACTORY are trademarks of the LEGO Group. ©2014 The LEGO Group. All rights reserved.",
+    addedMessage: "Added to your LEGO Bag!"
+  },
+  "el-GR": {
+    langLabel: "Γλώσσα:",
+    bcHome: "Αρχική",
+    bcThemes: "Σειρές",
+    bcHF: "Hero Factory",
+    productTitle: "44017 ΜΗΧΑΝΗ ΠΑΓΕΤΟΥ ΤΟΥ STORMER",
+    badgeNew: "Νέο για το 2014!",
+    agesLabel: "Ηλικίες:",
+    piecesLabel: "Κομμάτια:",
+    price: "14,99 €",
+    inStock: "Άμεσα Διαθέσιμο",
+    qtyLabel: "Ποσ.:",
+    addToCart: "Προσθήκη στην Τσάντα",
+    addWishlist: "Προσθήκη στα Αγαπημένα",
+    feat1: "Περιλαμβάνει μίνι φιγούρα STORMER με όπλο και εξαρτήματα",
+    feat2: "Διαθέτει περιστρεφόμενο κάθισμα, εκτοξευτή πάγου και πυραύλους",
+    feat3: "Έχει ύψος πάνω από 17 εκ.",
+    tabOverview: "Επισκόπηση",
+    tabFeatures: "Χαρακτηριστικά",
+    descHeading: "Πάγωσε τους υπόγειους εισβολείς στη στιγμή!",
+    descBody: "Ετοιμάσου για μάχη, STORMER! Καθώς τα κολοσσιαία τέρατα ανοίγουν τούνελ κάτω από την Αντρόπολις Σίτυ, μπες στην ισχυρή Μηχανή Παγετού. Πάγωσε τα πλάσματα με τον εκτοξευτή κρυογενικής, εκτόξευσε τους πυραύλους και ασφάλισε τους εχθρούς στον θάλαμο πάγου!",
+    specHeading: "Τεχνικά Χαρακτηριστικά",
+    specTheme: "Σειρά:",
+    specWave: "Υποκατηγορία: Invasion From Below (Κύμα 1)",
+    specYear: "Έτος Κυκλοφορίας: 2014",
+    specHeight: "Ύψος: ~17 εκ. (6,6 ίντσες)",
+    footerLegal: "Το LEGO, το λογότυπο LEGO και το HERO FACTORY είναι εμπορικά σήματα του Ομίλου LEGO. ©2014 The LEGO Group. Με επιφύλαξη παντός δικαιώματος.",
+    addedMessage: "Προστέθηκε στην τσάντα αγορών σας!"
+  }
+};
+
+// Update page text content according to chosen language
+function updateLanguage(lang) {
+  const dict = translations[lang] || translations["en-US"];
+  document.documentElement.lang = lang === "el-GR" ? "el" : "en";
+
+  // Replace text for all elements with data-i18n
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.getAttribute("data-i18n");
+    if (dict[key]) {
+      el.textContent = dict[key];
+    }
+  });
+
+  // Update dynamic price
+  const priceEl = document.getElementById("prodPrice");
+  if (priceEl && dict.price) {
+    priceEl.textContent = dict.price;
+  }
+}
+
+// Event Listeners
+document.addEventListener("DOMContentLoaded", () => {
+  const langSelect = document.getElementById("langSelect");
+  const addToCartBtn = document.getElementById("addToCartBtn");
+  const statusMessage = document.getElementById("statusMessage");
+
+  // Language selector change
+  langSelect.addEventListener("change", (e) => {
+    updateLanguage(e.target.value);
+  });
+
+  // Add to Cart feedback
+  addToCartBtn.addEventListener("click", () => {
+    const currentLang = langSelect.value;
+    const msg = translations[currentLang].addedMessage;
+    const qty = document.getElementById("qty").value || 1;
+
+    statusMessage.textContent = `✔ ${msg} (${qty})`;
+    statusMessage.style.opacity = "1";
+
+    setTimeout(() => {
+      statusMessage.style.opacity = "0";
+    }, 3000);
+  });
+});
+  </script>
 </body>
 </html>
