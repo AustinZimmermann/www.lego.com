@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LEGO.com Knights' Kingdom - 8877 La Fortezza Oscura di Vladek</title>
+  <!-- Archival Recreation: http://www.lego.com/ita/knights/products/8877.aspx (Settembre 2005) -->
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #111015;
+      background-image:
+        radial-gradient(circle at 50% 0%, #2c1618 0%, #111015 65%),
+        repeating-linear-gradient(
+          45deg,
+          rgba(255, 255, 255, 0.015) 0px,
+          rgba(255, 255, 255, 0.015) 2px,
+          transparent 2px,
+          transparent 8px
+        );
+      font-family: Verdana, Tahoma, Arial, sans-serif;
+      font-size: 11px;
+      color: #e6dfd3;
+      line-height: 1.45;
+      padding-bottom: 28px;
+    }
+
+    a {
+      color: #f3c65f;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #ffe299;
+    }
+
+    /* Classic 2005 Fixed-Width Centered Container (780px) */
+    .page-wrapper {
+      width: 780px;
+      margin: 0 auto;
+      background-color: #1b1920;
+      border-left: 2px solid #443c38;
+      border-right: 2px solid #443c38;
+      border-bottom: 2px solid #443c38;
+      box-shadow: 0 0 28px rgba(0, 0, 0, 0.9);
+    }
+
+    /* ==================== GLOBAL LEGO.COM 2005 HEADER ==================== */
+    .lego-global-bar {
+      background: linear-gradient(180deg, #d91e18 0%, #a8100c 100%);
+      border-bottom: 2px solid #630806;
+      height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+    }
+
+    .lego-logo-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .lego-brick-logo {
+      width: 44px;
+      height: 44px;
+      border: 2px solid #ffffff;
+      box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.45);
+      flex-shrink: 0;
+    }
+
+    .global-nav-links {
+      display: flex;
+      list-style: none;
+      gap: 3px;
+    }
+
+    .global-nav-links li a {
+      display: block;
+      padding: 5px 9px;
+      background: linear-gradient(180deg, #f7d13b 0%, #d89f14 100%);
+      border: 1px solid #6e4c04;
+      border-radius: 3px;
+      color: #1c1404;
+      font-weight: bold;
+      font-size: 10px;
+      text-transform: uppercase;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+    }
+
+    .global-nav-links li a:hover {
+      background: linear-gradient(180deg, #ffe56b 0%, #e8b225 100%);
+      text-decoration: none;
+    }
+
+    .global-nav-links li a.active-global {
+      background: linear-gradient(180deg, #ffffff 0%, #dcdcdc 100%);
+      color: #b0100c;
+    }
+
+    .global-utility {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+    }
+
+    .locale-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10px;
+      color: #fff3d1;
+    }
+
+    .it-flag {
+      display: inline-flex;
+      width: 16px;
+      height: 11px;
+      border: 1px solid #333;
+    }
+
+    .it-flag span:nth-child(1) { flex: 1; background: #009246; }
+    .it-flag span:nth-child(2) { flex: 1; background: #ffffff; }
+    .it-flag span:nth-child(3) { flex: 1; background: #ce2b37; }
+
+    .search-form {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .search-form input {
+      width: 122px;
+      height: 19px;
+      font-family: Verdana, sans-serif;
+      font-size: 10px;
+      padding: 1px 4px;
+      border: 1px solid #590705;
+      background: #fffdf7;
+      color: #222;
+    }
+
+    .search-form button {
+      height: 19px;
+      padding: 0 7px;
+      font-family: Verdana, sans-serif;
+      font-size: 10px;
+      font-weight: bold;
+      background: linear-gradient(180deg, #efefef 0%, #bcbcbc 100%);
+      border: 1px solid #444;
+      color: #111;
+      cursor: pointer;
+    }
+
+    .search-form button:hover {
+      background: #ffffff;
+    }
+
+    /* ==================== KNIGHTS' KINGDOM II BANNER ==================== */
+    .kk-banner {
+      position: relative;
+      height: 98px;
+      background:
+        linear-gradient(90deg, #17151c 0%, #3a1216 48%, #17151c 100%);
+      border-bottom: 3px solid #8a6627;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      overflow: hidden;
+    }
+
+    .kk-banner-crest {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 2;
+    }
+
+    .kk-title-stack {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .kk-year-tag {
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #d7b163;
+      font-weight: bold;
+    }
+
+    .kk-logo-text {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 25px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: #f6d57e;
+      text-shadow: 0 2px 0 #4d100c, 0 3px 6px #000;
+    }
+
+    .kk-subtitle-it {
+      font-size: 11px;
+      color: #d6cfc2;
+      font-style: italic;
+    }
+
+    .kk-banner-right {
+      text-align: right;
+      z-index: 2;
+    }
+
+    .wishlist-pill {
+      display: inline-block;
+      background: linear-gradient(180deg, #3c3746 0%, #232029 100%);
+      border: 1px solid #967332;
+      padding: 5px 9px;
+      border-radius: 3px;
+      color: #f4d27a;
+      font-size: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .wishlist-pill:hover {
+      border-color: #ffd773;
+      background: #332e3d;
+    }
+
+    /* ==================== MICROSITE SUB-NAVIGATION ==================== */
+    .kk-subnav {
+      display: flex;
+      background: linear-gradient(180deg, #4b4754 0%, #2a2730 100%);
+      border-bottom: 2px solid #121014;
+    }
+
+    .kk-subnav a {
+      flex: 1;
+      text-align: center;
+      padding: 7px 4px;
+      font-size: 11px;
+      font-weight: bold;
+      color: #e4ddd0;
+      border-right: 1px solid #1d1b22;
+      border-top: 1px solid #6b6675;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .kk-subnav a:last-child {
+      border-right: none;
+    }
+
+    .kk-subnav a:hover {
+      background: linear-gradient(180deg, #692226 0%, #421215 100%);
+      color: #ffe396;
+      text-decoration: none;
+    }
+
+    .kk-subnav a.active-sub {
+      background: linear-gradient(180deg, #9c1f24 0%, #611014 100%);
+      color: #ffdf85;
+      border-top-color: #d95358;
+    }
+
+    /* ==================== BREADCRUMB BAR ==================== */
+    .breadcrumb-bar {
+      background-color: #141218;
+      border-bottom: 1px solid #35313d;
+      padding: 5px 12px;
+      font-size: 10px;
+      color: #9e9689;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .breadcrumb-bar span.current-crumb {
+      color: #f2cb6b;
+      font-weight: bold;
+    }
+
+    /* ==================== MAIN 2-COLUMN LAYOUT ==================== */
+    .content-grid {
+      display: flex;
+      align-items: stretch;
+    }
+
+    /* Left Sidebar (182px) */
+    .left-sidebar {
+      width: 182px;
+      flex-shrink: 0;
+      background: linear-gradient(180deg, #24212b 0%, #19171e 100%);
+      border-right: 2px solid #3c3642;
+      padding: 10px 8px;
+    }
+
+    .sidebar-box {
+      border: 1px solid #594b36;
+      background-color: #16141b;
+      margin-bottom: 12px;
+    }
+
+    .sidebar-box-header {
+      background: linear-gradient(180deg, #6b5229 0%, #423116 100%);
+      color: #ffe49e;
+      font-weight: bold;
+      font-size: 10px;
+      text-transform: uppercase;
+      padding: 5px 7px;
+      border-bottom: 1px solid #8a6b36;
+      letter-spacing: 0.4px;
+    }
+
+    .set-list {
+      list-style: none;
+    }
+
+    .set-list li a {
+      display: block;
+      padding: 6px 7px;
+      font-size: 10px;
+      color: #cfc7b8;
+      border-bottom: 1px dotted #35313d;
+      transition: background 0.15s;
+    }
+
+    .set-list li:last-child a {
+      border-bottom: none;
+    }
+
+    .set-list li a:hover {
+      background-color: #2b2633;
+      color: #ffdf85;
+      text-decoration: none;
+    }
+
+    .set-list li a.selected-set {
+      background: linear-gradient(90deg, #6e161a 0%, #3b0c0e 100%);
+      color: #ffe49c;
+      font-weight: bold;
+      border-left: 3px solid #f2b84b;
+    }
+
+    .set-num-badge {
+      display: inline-block;
+      background: #2f2b38;
+      border: 1px solid #665e73;
+      color: #f3c65f;
+      font-weight: bold;
+      padding: 0 4px;
+      margin-right: 3px;
+      font-size: 9px;
+    }
+
+    .selected-set .set-num-badge {
+      background: #a81c20;
+      border-color: #f2b84b;
+      color: #ffffff;
+    }
+
+    .sidebar-promo {
+      border: 1px solid #6e2226;
+      background: linear-gradient(180deg, #2e1215 0%, #190b0d 100%);
+      padding: 8px;
+      text-align: center;
+    }
+
+    .sidebar-promo h4 {
+      color: #f6ce6e;
+      font-size: 11px;
+      margin-bottom: 4px;
+    }
+
+    .sidebar-promo p {
+      font-size: 10px;
+      color: #d4cbc0;
+      margin-bottom: 7px;
+    }
+
+    .retro-btn-small {
+      display: inline-block;
+      padding: 4px 8px;
+      background: linear-gradient(180deg, #e0ac3b 0%, #a87518 100%);
+      border: 1px solid #ffe08c;
+      color: #1a1102;
+      font-weight: bold;
+      font-size: 10px;
+      cursor: pointer;
+    }
+
+    .retro-btn-small:hover {
+      background: linear-gradient(180deg, #f5c351 0%, #bd8620 100%);
+      text-decoration: none;
+    }
+
+    /* Main Product Detail Column */
+    .product-main {
+      flex: 1;
+      padding: 12px 14px;
+      background-color: #1f1c25;
+    }
+
+    .product-header-strip {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(180deg, #332e3d 0%, #231f29 100%);
+      border: 1px solid #595066;
+      border-left: 4px solid #c42329;
+      padding: 7px 10px;
+      margin-bottom: 10px;
+    }
+
+    .product-title-block h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      color: #ffe294;
+      text-shadow: 1px 1px 0 #000;
+    }
+
+    .product-title-block .set-code-sub {
+      font-size: 10px;
+      color: #b8b0a4;
+    }
+
+    .age-pieces-pill {
+      display: flex;
+      gap: 6px;
+    }
+
+    .spec-chip {
+      background: #141218;
+      border: 1px solid #7d6234;
+      padding: 4px 7px;
+      text-align: center;
+    }
+
+    .spec-chip .chip-label {
+      display: block;
+      font-size: 9px;
+      text-transform: uppercase;
+      color: #a89f91;
+    }
+
+    .spec-chip .chip-val {
+      font-size: 12px;
+      font-weight: bold;
+      color: #f6ce6e;
+    }
+
+    /* Product Viewer Box (2005 Flash/DHTML style) */
+    .viewer-container {
+      border: 2px solid #4e4659;
+      background-color: #121016;
+      margin-bottom: 10px;
+    }
+
+    .viewer-tabs {
+      display: flex;
+      background: #27232e;
+      border-bottom: 1px solid #4e4659;
+    }
+
+    .viewer-tab {
+      flex: 1;
+      padding: 6px 4px;
+      font-family: Verdana, sans-serif;
+      font-size: 10px;
+      font-weight: bold;
+      color: #c7bfb2;
+      background: linear-gradient(180deg, #342f3d 0%, #221e29 100%);
+      border: none;
+      border-right: 1px solid #4e4659;
+      cursor: pointer;
+    }
+
+    .viewer-tab:last-child {
+      border-right: none;
+    }
+
+    .viewer-tab:hover {
+      color: #ffe396;
+      background: #3d3747;
+    }
+
+    .viewer-tab.active-tab {
+      background: linear-gradient(180deg, #8f1d22 0%, #570f13 100%);
+      color: #ffe49c;
+    }
+
+    .viewer-stage {
+      position: relative;
+      height: 280px;
+      background: radial-gradient(circle at 50% 42%, #2e2436 0%, #100e14 85%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .viewer-stage svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .viewer-caption-bar {
+      background: #1a1721;
+      border-top: 1px solid #393342;
+      padding: 5px 9px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10px;
+      color: #cfc6b8;
+    }
+
+    .zoom-btn {
+      background: linear-gradient(180deg, #4b4557 0%, #2f2b38 100%);
+      border: 1px solid #8a7f9c;
+      color: #ffe396;
+      font-size: 10px;
+      font-weight: bold;
+      padding: 2px 7px;
+      cursor: pointer;
+    }
+
+    .zoom-btn:hover {
+      background: #5b5369;
+    }
+
+    /* Interactive Action Controls Bar */
+    .action-controls-bar {
+      background: linear-gradient(180deg, #2d1b1e 0%, #1d1214 100%);
+      border: 1px solid #753035;
+      padding: 6px 8px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .action-controls-label {
+      font-size: 10px;
+      font-weight: bold;
+      color: #f6ce6e;
+    }
+
+    .action-btn-group {
+      display: flex;
+      gap: 5px;
+    }
+
+    .action-trigger {
+      background: linear-gradient(180deg, #b8252b 0%, #7a1216 100%);
+      border: 1px solid #f0898d;
+      color: #ffffff;
+      font-family: Verdana, sans-serif;
+      font-size: 10px;
+      font-weight: bold;
+      padding: 4px 8px;
+      cursor: pointer;
+    }
+
+    .action-trigger:hover {
+      background: linear-gradient(180deg, #d42e35 0%, #91171c 100%);
+    }
+
+    /* Description & Specs Section */
+    .product-body-columns {
+      display: flex;
+      gap: 12px;
+    }
+
+    .product-description {
+      flex: 1.45;
+    }
+
+    .section-heading-2005 {
+      font-size: 12px;
+      font-weight: bold;
+      color: #f6ce6e;
+      border-bottom: 1px solid #6b542b;
+      padding-bottom: 3px;
+      margin-bottom: 7px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .product-description p {
+      margin-bottom: 8px;
+      color: #e4ddd1;
+    }
+
+    .feature-bullets {
+      margin-left: 16px;
+      margin-bottom: 10px;
+      color: #d8d0c3;
+    }
+
+    .feature-bullets li {
+      margin-bottom: 5px;
+    }
+
+    .feature-bullets li::marker {
+      color: #e0a93a;
+    }
+
+    /* Right Action / Purchase / Download Box */
+    .product-actions-box {
+      flex: 1;
+      background: #17151c;
+      border: 1px solid #4d4559;
+      padding: 9px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .shop-price-tag {
+      background: #24202b;
+      border: 1px solid #6e5832;
+      padding: 6px;
+      text-align: center;
+    }
+
+    .shop-price-tag .price-label {
+      font-size: 9px;
+      color: #b5aca0;
+      display: block;
+    }
+
+    .shop-price-tag .price-amount {
+      font-size: 16px;
+      font-weight: bold;
+      color: #ffe28a;
+    }
+
+    .shop-price-tag .stock-status {
+      display: block;
+      font-size: 9px;
+      color: #7ee081;
+      margin-top: 2px;
+    }
+
+    .cta-button-primary {
+      display: block;
+      width: 100%;
+      padding: 7px 6px;
+      text-align: center;
+      background: linear-gradient(180deg, #f5c645 0%, #c98a14 100%);
+      border: 1px solid #fff0b3;
+      color: #1c1202;
+      font-family: Verdana, sans-serif;
+      font-size: 11px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .cta-button-primary:hover {
+      background: linear-gradient(180deg, #ffd766 0%, #d9971c 100%);
+    }
+
+    .cta-button-secondary {
+      display: block;
+      width: 100%;
+      padding: 6px 6px;
+      text-align: center;
+      background: linear-gradient(180deg, #3c3747 0%, #26222e 100%);
+      border: 1px solid #79708a;
+      color: #f2e8d5;
+      font-family: Verdana, sans-serif;
+      font-size: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .cta-button-secondary:hover {
+      background: #494257;
+      color: #ffe396;
+    }
+
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10px;
+      margin-top: 2px;
+    }
+
+    .specs-table td {
+      padding: 4px 5px;
+      border-bottom: 1px dotted #3a3445;
+    }
+
+    .specs-table td:first-child {
+      color: #a89f91;
+      font-weight: bold;
+    }
+
+    .specs-table td:last-child {
+      text-align: right;
+      color: #efe8dc;
+    }
+
+    /* ==================== MINIFIGURE STRIP ==================== */
+    .minifig-strip {
+      margin-top: 12px;
+      border: 1px solid #524838;
+      background: #16141b;
+      padding: 8px 10px;
+    }
+
+    .minifig-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .minifig-card {
+      background: #211e28;
+      border: 1px solid #3c3647;
+      padding: 5px;
+      text-align: center;
+    }
+
+    .minifig-card:hover {
+      border-color: #d6a23e;
+    }
+
+    .minifig-card .mf-name {
+      display: block;
+      font-weight: bold;
+      font-size: 10px;
+      color: #f6ce6e;
+      margin-top: 3px;
+    }
+
+    .minifig-card .mf-faction {
+      display: block;
+      font-size: 9px;
+      color: #aba295;
+    }
+
+    /* ==================== GLOBAL 2005 FOOTER ==================== */
+    .lego-footer {
+      background-color: #131117;
+      border-top: 2px solid #443c38;
+      padding: 10px 14px;
+      text-align: center;
+      font-size: 10px;
+      color: #8f877b;
+    }
+
+    .footer-links {
+      margin-bottom: 5px;
+    }
+
+    .footer-links a {
+      color: #c7bdb0;
+      margin: 0 5px;
+    }
+
+    .footer-links a:hover {
+      color: #f3c65f;
+    }
+
+    /* ==================== MODAL DIALOG (2005 POPUP STYLE) ==================== */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.78);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .modal-window {
+      width: 460px;
+      max-width: 92vw;
+      background: #1f1c26;
+      border: 2px solid #d6a23e;
+      box-shadow: 0 8px 30px #000;
+    }
+
+    .modal-titlebar {
+      background: linear-gradient(180deg, #9c1f24 0%, #5c0e12 100%);
+      color: #ffe49c;
+      font-weight: bold;
+      font-size: 11px;
+      padding: 6px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #d6a23e;
+    }
+
+    .modal-close {
+      background: #f5c645;
+      border: 1px solid #3a2603;
+      color: #1a1102;
+      font-weight: bold;
+      font-size: 10px;
+      padding: 1px 6px;
+      cursor: pointer;
+    }
+
+    .modal-content {
+      padding: 12px;
+      font-size: 11px;
+      color: #eae3d7;
+    }
+
+    /* Animations for interactive fortress SVG elements */
+    @keyframes boulderFly {
+      0% { transform: translate(0, 0) scale(1); opacity: 1; }
+      50% { transform: translate(-155px, -95px) scale(1.15); opacity: 1; }
+      100% { transform: translate(-310px, 35px) scale(0.8); opacity: 0; }
+    }
+
+    .firing-boulder {
+      animation: boulderFly 0.95s ease-out forwards;
+    }
+
+    .portcullis-group {
+      transition: transform 0.6s ease-in-out;
+    }
+
+    .portcullis-open {
+      transform: translateY(-28px);
+    }
+
+    .trapdoor-flap {
+      transition: transform 0.45s ease-in;
+      transform-origin: 365px 198px;
+    }
+
+    .trapdoor-sprung {
+      transform: rotate(72deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- ==================== GLOBAL LEGO.COM HEADER (2005) ==================== -->
+    <header class="lego-global-bar">
+      <div class="lego-logo-group">
+        <!-- Classic LEGO Square Brick Logo -->
+        <svg class="lego-brick-logo" viewBox="0 0 64 64" aria-label="LEGO.com">
+          <rect width="64" height="64" fill="#d91e18" />
+          <text x="32" y="40" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-style="italic" font-size="18" fill="#ffffff" stroke="#000000" stroke-width="2.5" paint-order="stroke">LEGO</text>
+          <text x="32" y="40" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-style="italic" font-size="18" fill="#ffdf00">LEGO</text>
+        </svg>
+
+        <ul class="global-nav-links">
+          <li><a href="#prodotti" class="active-global" onclick="return false;">Prodotti</a></li>
+          <li><a href="#giochi" onclick="openModal('Giochi Online Knights\' Kingdom', 'Caricamento applet Macromedia Flash Player 7... Difendi il Castello di Morcia dall\'assedio dell\'esercito di Lord Vladek!'); return false;">Giochi</a></li>
+          <li><a href="#club" onclick="openModal('LEGO Club Italia', 'Iscriviti gratuitamente al LEGO Club per ricevere la rivista LEGO Magazine direttamente a casa tua!'); return false;">Club</a></li>
+          <li><a href="#shop" onclick="openShopModal(); return false;">Shop</a></li>
+          <li><a href="#servizio" onclick="openModal('Servizio Clienti LEGO', 'Hai perso un mattoncino? Contatta il Servizio Consumatori LEGO Italia al numero verde 800-871-540 oppure ordina i ricambi online.'); return false;">Servizio Clienti</a></li>
+        </ul>
+      </div>
+
+      <div class="global-utility">
+        <div class="locale-row">
+          <span class="it-flag" title="Italia"><span></span><span></span><span></span></span>
+          <span>LEGO.com <strong>Italia</strong></span>
+        </div>
+        <form class="search-form" onsubmit="handleSearch(event)">
+          <input type="text" id="searchInput" placeholder="Cerca nel sito..." aria-label="Cerca nel sito" />
+          <button type="submit">Cerca</button>
+        </form>
+      </div>
+    </header>
+
+    <!-- ==================== KNIGHTS' KINGDOM II THEME BANNER ==================== -->
+    <section class="kk-banner">
+      <div class="kk-banner-crest">
+        <!-- Heraldic Shield Emblem (Morcia Lion vs Vladek Scorpion) -->
+        <svg width="58" height="66" viewBox="0 0 60 68" aria-hidden="true">
+          <path d="M6 6 H54 V34 C54 50 30 63 30 63 C30 63 6 50 6 34 Z" fill="#18161d" stroke="#e2b453" stroke-width="3" />
+          <path d="M30 9 V59 C30 59 50 47 50 34 V9 Z" fill="#8f161b" />
+          <path d="M30 9 V59 C30 59 10 47 10 34 V9 Z" fill="#1e448a" />
+          <!-- Crossed Swords -->
+          <line x1="17" y1="18" x2="43" y2="46" stroke="#f5d77f" stroke-width="3" />
+          <line x1="43" y1="18" x2="17" y2="46" stroke="#f5d77f" stroke-width="3" />
+          <circle cx="30" cy="32" r="7" fill="#d9a136" stroke="#18161d" stroke-width="2" />
+        </svg>
+        <div class="kk-title-stack">
+          <span class="kk-year-tag">LEGO&reg; Knights' Kingdom &bull; Collezione 2005</span>
+          <span class="kk-logo-text">KNIGHTS' KINGDOM</span>
+          <span class="kk-subtitle-it">La battaglia per il Cuore dello Scudo ha inizio!</span>
+        </div>
+      </div>
+
+      <div class="kk-banner-right">
+        <button type="button" class="wishlist-pill" onclick="openWishlistModal()">
+          &#9733; Lista dei Desideri (<span id="wishlistCount">0</span>)
+        </button>
+      </div>
+    </section>
+
+    <!-- ==================== KNIGHTS' KINGDOM SUB-NAVIGATION ==================== -->
+    <nav class="kk-subnav" aria-label="Menu Knights Kingdom">
+      <a href="#home" onclick="openModal('Knights\' Kingdom Home', 'Benvenuto nel Regno di Morcia! Esplora la nuova collezione Autunno 2005 e affronta Lord Vladek nella sua Fortezza Oscura.'); return false;">Home</a>
+      <a href="#prodotti" class="active-sub" onclick="return false;">Prodotti</a>
+      <a href="#personaggi" onclick="document.getElementById('minifigSection').scrollIntoView({behavior:'smooth'}); return false;">Personaggi</a>
+      <a href="#storia" onclick="openModal('La Storia - Capitolo II: La Fortezza Oscura', 'Dopo aver attraversato le Terre Aride, Re Mathias e i Cavalieri di Morcia (Jayko, Santis, Rascus e Danju) assediano la fortezza dello Scorpione per impedire a Lord Vladek di impadronirsi del Cuore dello Scudo!'); return false;">La Storia</a>
+      <a href="#giochi" onclick="openModal('Arena dei Cavalieri - Gioco Flash', 'Sfida i Cavalieri Ombra nei tornei di Morcia! Richiede Macromedia Flash Player 7.'); return false;">Giochi</a>
+      <a href="#download" onclick="openInstructionsModal(); return false;">Download</a>
+    </nav>
+
+    <!-- ==================== BREADCRUMB TRAIL ==================== -->
+    <div class="breadcrumb-bar">
+      <div>
+        <a href="#lego" onclick="return false;">LEGO.com</a> &gt;
+        <a href="#ita" onclick="return false;">Italia</a> &gt;
+        <a href="#knights" onclick="return false;">Knights' Kingdom</a> &gt;
+        <a href="#products" onclick="return false;">Prodotti</a> &gt;
+        <span class="current-crumb">8877 La Fortezza Oscura di Vladek</span>
+      </div>
+      <div>Settembre 2005</div>
+    </div>
+
+    <!-- ==================== MAIN 2-COLUMN CONTENT ==================== -->
+    <div class="content-grid">
+      <!-- LEFT SIDEBAR: 2005 KNIGHTS' KINGDOM PRODUCT CATALOG -->
+      <aside class="left-sidebar">
+        <div class="sidebar-box">
+          <div class="sidebar-box-header">Set di Costruzioni 2005</div>
+          <ul class="set-list">
+            <li>
+              <a href="#8873" onclick="previewOtherSet('8873', 'Catapulta Palla di Fuoco', '7-12', '89'); return false;">
+                <span class="set-num-badge">8873</span> Catapulta Palla di Fuoco
+              </a>
+            </li>
+            <li>
+              <a href="#8874" onclick="previewOtherSet('8874', 'Carro da Battaglia', '7-12', '149'); return false;">
+                <span class="set-num-badge">8874</span> Carro da Battaglia
+              </a>
+            </li>
+            <li>
+              <a href="#8875" onclick="previewOtherSet('8875', 'Torre d\'Assedio del Re', '7-12', '240'); return false;">
+                <span class="set-num-badge">8875</span> Torre d'Assedio del Re
+              </a>
+            </li>
+            <li>
+              <a href="#8876" onclick="previewOtherSet('8876', 'Prigione dello Scorpione', '8-12', '393'); return false;">
+                <span class="set-num-badge">8876</span> Prigione dello Scorpione
+              </a>
+            </li>
+            <li>
+              <a href="#8877" class="selected-set" onclick="return false;">
+                <span class="set-num-badge">8877</span> La Fortezza Oscura di Vladek
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sidebar-box">
+          <div class="sidebar-box-header">Personaggi d'Azione</div>
+          <ul class="set-list">
+            <li><a href="#8790" onclick="previewOtherSet('8790', 'Re Mathias', '6-12', '48'); return false;"><span class="set-num-badge">8790</span> Re Mathias</a></li>
+            <li><a href="#8791" onclick="previewOtherSet('8791', 'Sir Danju', '6-12', '48'); return false;"><span class="set-num-badge">8791</span> Sir Danju</a></li>
+            <li><a href="#8792" onclick="previewOtherSet('8792', 'Sir Jayko', '6-12', '48'); return false;"><span class="set-num-badge">8792</span> Sir Jayko</a></li>
+            <li><a href="#8793" onclick="previewOtherSet('8793', 'Sir Rascus', '6-12', '48'); return false;"><span class="set-num-badge">8793</span> Sir Rascus</a></li>
+            <li><a href="#8794" onclick="previewOtherSet('8794', 'Sir Santis', '6-12', '47'); return false;"><span class="set-num-badge">8794</span> Sir Santis</a></li>
+            <li><a href="#8795" onclick="previewOtherSet('8795', 'Lord Vladek', '6-12', '50'); return false;"><span class="set-num-badge">8795</span> Lord Vladek</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-promo">
+          <h4>Istruzioni di Montaggio</h4>
+          <p>Hai bisogno dei libretti di istruzioni per il set 8877?</p>
+          <button type="button" class="retro-btn-small" onclick="openInstructionsModal()">Scarica PDF (2 File)</button>
+        </div>
+      </aside>
+
+      <!-- MAIN PRODUCT PANEL -->
+      <main class="product-main">
+        <div class="product-header-strip">
+          <div class="product-title-block">
+            <h1>8877 - La Fortezza Oscura di Vladek</h1>
+            <span class="set-code-sub">LEGO&reg; Knights' Kingdom &bull; Articolo #8877 &bull; Novità 2005</span>
+          </div>
+          <div class="age-pieces-pill">
+            <div class="spec-chip">
+              <span class="chip-label">Età</span>
+              <span class="chip-val">8-12</span>
+            </div>
+            <div class="spec-chip">
+              <span class="chip-label">Pezzi</span>
+              <span class="chip-val">972</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- INTERACTIVE PRODUCT VIEWER -->
+        <div class="viewer-container">
+          <div class="viewer-tabs" role="tablist">
+            <button type="button" class="viewer-tab active-tab" id="tab-main" onclick="switchView('main')">1. Vista Principale</button>
+            <button type="button" class="viewer-tab" id="tab-interior" onclick="switchView('interior')">2. Interni e Trappole</button>
+            <button type="button" class="viewer-tab" id="tab-siege" onclick="switchView('siege')">3. Torre d'Assedio</button>
+            <button type="button" class="viewer-tab" id="tab-box" onclick="switchView('box')">4. Scatola 2005</button>
+          </div>
+
+          <div class="viewer-stage" id="viewerStage">
+            <!-- VIEW 1: MAIN FORTRESS DIORAMA (SVG) -->
+            <svg id="svg-main" viewBox="0 0 560 280" role="img" aria-label="8877 La Fortezza Oscura di Vladek">
+              <defs>
+                <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#191024" />
+                  <stop offset="55%" stop-color="#4a161c" />
+                  <stop offset="100%" stop-color="#8a2c17" />
+                </linearGradient>
+                <linearGradient id="darkStone" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#2e2d36" />
+                  <stop offset="50%" stop-color="#1c1b22" />
+                  <stop offset="100%" stop-color="#121117" />
+                </linearGradient>
+                <linearGradient id="crimsonArmor" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#b51d24" />
+                  <stop offset="100%" stop-color="#5c0a0e" />
+                </linearGradient>
+              </defs>
+
+              <!-- Sky & Volcanic Horizon -->
+              <rect width="560" height="280" fill="url(#skyGrad)" />
+              <circle cx="430" cy="68" r="34" fill="#ff9c38" opacity="0.22" />
+              <circle cx="430" cy="68" r="21" fill="#ffcf6e" opacity="0.35" />
+
+              <!-- Rocky Crags & Ground -->
+              <polygon points="0,235 150,222 320,225 560,215 560,280 0,280" fill="#17141a" />
+              <polygon points="215,230 250,185 520,185 545,230" fill="#25222b" stroke="#3b3645" />
+
+              <!-- Central Keep & Scorpion Tail Catapult -->
+              <rect x="335" y="64" width="90" height="125" fill="url(#darkStone)" stroke="#474454" stroke-width="1.5" />
+              <!-- Battlements -->
+              <rect x="332" y="54" width="16" height="12" fill="#23222b" stroke="#555" />
+              <rect x="358" y="54" width="16" height="12" fill="#23222b" stroke="#555" />
+              <rect x="384" y="54" width="16" height="12" fill="#23222b" stroke="#555" />
+              <rect x="410" y="54" width="16" height="12" fill="#23222b" stroke="#555" />
+
+              <!-- Giant Red Scorpion Tail Catapult on Keep -->
+              <path d="M380,62 C398,25 362,14 344,32" fill="none" stroke="url(#crimsonArmor)" stroke-width="9" stroke-linecap="round" />
+              <polygon points="344,32 330,26 339,41" fill="#f0b949" />
+              <!-- Flaming Boulder Projectile -->
+              <g id="boulderObj">
+                <circle cx="342" cy="34" r="7" fill="#ff6a1a" />
+                <circle cx="342" cy="34" r="4" fill="#ffe169" />
+              </g>
+
+              <!-- Giant Scorpion Pincers Flanking the Gate -->
+              <path d="M295,120 C268,108 265,86 286,82 C278,94 285,103 298,105 Z" fill="url(#crimsonArmor)" stroke="#e09f3e" stroke-width="1" />
+              <path d="M465,120 C492,108 495,86 474,82 C482,94 475,103 462,105 Z" fill="url(#crimsonArmor)" stroke="#e09f3e" stroke-width="1" />
+
+              <!-- Left & Right Fortress Towers -->
+              <rect x="255" y="92" width="54" height="122" fill="url(#darkStone)" stroke="#4d4a5c" stroke-width="1.5" />
+              <polygon points="252,92 282,66 312,92" fill="url(#crimsonArmor)" stroke="#222" />
+              <rect x="451" y="92" width="54" height="122" fill="url(#darkStone)" stroke="#4d4a5c" stroke-width="1.5" />
+              <polygon points="448,92 478,66 508,92" fill="url(#crimsonArmor)" stroke="#222" />
+
+              <!-- Banners -->
+              <polygon points="274,104 290,104 290,136 282,144 274,136" fill="#9c161c" stroke="#e2b453" />
+              <polygon points="470,104 486,104 486,136 478,144 470,136" fill="#9c161c" stroke="#e2b453" />
+
+              <!-- Main Gate Archway & Interactive Portcullis -->
+              <rect x="309" y="128" width="142" height="86" fill="#16151c" stroke="#474454" />
+              <path d="M350,214 V162 C350,145 410,145 410,162 V214 Z" fill="#09080c" stroke="#7d1c20" stroke-width="2" />
+
+              <!-- Portcullis Bars (Animated via JS) -->
+              <g id="portcullisGroup" class="portcullis-group">
+                <rect x="353" y="156" width="54" height="54" fill="none" stroke="#a6a1b0" stroke-width="2.5" />
+                <line x1="366" y1="156" x2="366" y2="210" stroke="#a6a1b0" stroke-width="2.5" />
+                <line x1="380" y1="156" x2="380" y2="210" stroke="#a6a1b0" stroke-width="2.5" />
+                <line x1="394" y1="156" x2="394" y2="210" stroke="#a6a1b0" stroke-width="2.5" />
+                <line x1="353" y1="174" x2="407" y2="174" stroke="#a6a1b0" stroke-width="2.5" />
+                <line x1="353" y1="192" x2="407" y2="192" stroke="#a6a1b0" stroke-width="2.5" />
+              </g>
+
+              <!-- Trapdoor Bridge Platform (Animated via JS) -->
+              <rect x="342" y="198" width="76" height="6" fill="#464252" />
+              <rect id="trapdoorFlap" class="trapdoor-flap" x="365" y="198" width="32" height="6" fill="#b51d24" stroke="#f2b84b" stroke-width="0.8" />
+
+              <!-- Morcia Knights' Wheeled Siege Tower (Left) -->
+              <g transform="translate(52, 118)">
+                <rect x="18" y="14" width="54" height="92" fill="#6b4423" stroke="#36200e" stroke-width="1.5" />
+                <rect x="14" y="6" width="62" height="12" fill="#1e4b94" stroke="#e2b453" />
+                <!-- Battering Ram -->
+                <rect x="42" y="72" width="66" height="9" fill="#8c582b" stroke="#2b190a" />
+                <polygon points="108,70 120,76.5 108,83" fill="#d4af37" />
+                <!-- Wheels -->
+                <circle cx="26" cy="110" r="11" fill="#3b2410" stroke="#9c6b3b" stroke-width="2.5" />
+                <circle cx="64" cy="110" r="11" fill="#3b2410" stroke="#9c6b3b" stroke-width="2.5" />
+                <!-- Blue Morcia Pennant -->
+                <polygon points="44,6 44,-14 68,-7 44,0" fill="#1e56b5" stroke="#ffdf73" stroke-width="0.8" />
+              </g>
+
+              <!-- Minifigures Charging in Foreground -->
+              <!-- Sir Jayko (Blue) -->
+              <g transform="translate(178, 198)">
+                <rect x="3" y="10" width="12" height="13" fill="#1e56b5" />
+                <rect x="4" y="23" width="10" height="10" fill="#143a7d" />
+                <circle cx="9" cy="6" r="5" fill="#707885" />
+                <polygon points="-3,12 4,9 4,24 -3,21" fill="#42a5f5" stroke="#fff" stroke-width="0.7" />
+              </g>
+              <!-- King Mathias (Gold/Red) -->
+              <g transform="translate(206, 198)">
+                <rect x="3" y="10" width="12" height="13" fill="#a81c20" />
+                <rect x="4" y="23" width="10" height="10" fill="#243a6e" />
+                <circle cx="9" cy="6" r="5" fill="#f5c842" />
+                <line x1="17" y1="22" x2="23" y2="4" stroke="#e6e6e6" stroke-width="2" />
+              </g>
+              <!-- Lord Vladek on Wall -->
+              <g transform="translate(371, 100)">
+                <rect x="3" y="10" width="12" height="13" fill="#17161c" stroke="#b51d24" stroke-width="0.8" />
+                <circle cx="9" cy="6" r="5" fill="#222029" stroke="#b51d24" />
+                <line x1="17" y1="20" x2="22" y2="2" stroke="#ff3b3b" stroke-width="2" />
+              </g>
+            </svg>
+
+            <!-- VIEW 2: INTERIOR & TRAPDOORS (Hidden by default) -->
+            <svg id="svg-interior" viewBox="0 0 560 280" style="display:none;" role="img" aria-label="Interni e trappole della Fortezza Oscura">
+              <rect width="560" height="280" fill="#15121c" />
+              <text x="280" y="26" text-anchor="middle" fill="#ffe294" font-family="Georgia, serif" font-size="15" font-weight="bold">SPACCATO INTERNO: SALA DEL TRONO E PRIGIONE SEGRETA</text>
+              <!-- Cross-section rooms -->
+              <rect x="55" y="45" width="450" height="205" fill="#211e29" stroke="#6e5732" stroke-width="2" />
+              <!-- Upper Throne Room -->
+              <rect x="70" y="58" width="205" height="90" fill="#2d171c" stroke="#8f2429" />
+              <text x="172" y="75" text-anchor="middle" fill="#f6ce6e" font-size="10" font-weight="bold">SALA DEL TRONO DI VLADEK</text>
+              <!-- Throne & Heart of the Shield -->
+              <rect x="155" y="92" width="34" height="46" fill="#17151c" stroke="#d99b38" stroke-width="1.5" />
+              <polygon points="172,82 181,92 172,102 163,92" fill="#47d7ff" stroke="#ffffff" stroke-width="1" />
+              <text x="172" y="143" text-anchor="middle" fill="#9ae8ff" font-size="9">Cuore dello Scudo</text>
+
+              <!-- Upper Armory -->
+              <rect x="285" y="58" width="205" height="90" fill="#252230" stroke="#5b536b" />
+              <text x="387" y="75" text-anchor="middle" fill="#f6ce6e" font-size="10" font-weight="bold">ARMERIA E CATAPULTA</text>
+              <text x="387" y="102" text-anchor="middle" fill="#d6cfc2" font-size="10">Rastrelliera con spade oscure,</text>
+              <text x="387" y="116" text-anchor="middle" fill="#d6cfc2" font-size="10">scudi dello Scorpione e munizioni</text>
+              <text x="387" y="130" text-anchor="middle" fill="#d6cfc2" font-size="10">infuocate per la difesa delle mura.</text>
+
+              <!-- Lower Dungeon -->
+              <rect x="70" y="156" width="205" height="82" fill="#18161f" stroke="#5b536b" />
+              <text x="172" y="173" text-anchor="middle" fill="#f6ce6e" font-size="10" font-weight="bold">PRIGIONE SOTTERRANEA</text>
+              <!-- Prison Bars -->
+              <line x1="120" y1="180" x2="120" y2="234" stroke="#9e99ab" stroke-width="3" />
+              <line x1="145" y1="180" x2="145" y2="234" stroke="#9e99ab" stroke-width="3" />
+              <line x1="170" y1="180" x2="170" y2="234" stroke="#9e99ab" stroke-width="3" />
+              <line x1="195" y1="180" x2="195" y2="234" stroke="#9e99ab" stroke-width="3" />
+              <line x1="220" y1="180" x2="220" y2="234" stroke="#9e99ab" stroke-width="3" />
+
+              <!-- Trapdoor Corridor -->
+              <rect x="285" y="156" width="205" height="82" fill="#2b191d" stroke="#8f2429" />
+              <text x="387" y="173" text-anchor="middle" fill="#f6ce6e" font-size="10" font-weight="bold">CORRIDOIO CON BOTOLA TRAPPOLA</text>
+              <text x="387" y="198" text-anchor="middle" fill="#e0d8cb" font-size="10">Tira la leva laterale per far</text>
+              <text x="387" y="212" text-anchor="middle" fill="#e0d8cb" font-size="10">precipitare gli intrusi nelle segrete!</text>
+            </svg>
+
+            <!-- VIEW 3: SIEGE TOWER & MORCIA KNIGHTS -->
+            <svg id="svg-siege" viewBox="0 0 560 280" style="display:none;" role="img" aria-label="Torre d'assedio dei Cavalieri di Morcia">
+              <rect width="560" height="280" fill="#131c2e" />
+              <text x="280" y="28" text-anchor="middle" fill="#82c4ff" font-family="Georgia, serif" font-size="15" font-weight="bold">L'OFFENSIVA DEI CAVALIERI DI MORCIA</text>
+              <!-- Siege Tower Blueprint Diagram -->
+              <rect x="85" y="52" width="170" height="190" fill="#1b2840" stroke="#4c82c4" stroke-width="2" />
+              <rect x="125" y="75" width="90" height="135" fill="#6e4522" stroke="#e2b453" stroke-width="1.5" />
+              <polygon points="120,75 170,58 220,75" fill="#1e56b5" stroke="#fff" stroke-width="1" />
+              <rect x="160" y="160" width="95" height="12" fill="#9c6334" stroke="#291708" />
+              <polygon points="255,157 272,166 255,175" fill="#f2c44e" />
+              <circle cx="140" cy="215" r="15" fill="#3a2310" stroke="#c98e55" stroke-width="3" />
+              <circle cx="200" cy="215" r="15" fill="#3a2310" stroke="#c98e55" stroke-width="3" />
+
+              <rect x="275" y="52" width="215" height="190" fill="#192338" stroke="#4c82c4" stroke-width="1.5" />
+              <text x="382" y="78" text-anchor="middle" fill="#ffe294" font-size="11" font-weight="bold">EQUIPAGGIAMENTO D'ASSEDIO</text>
+              <text x="290" y="104" fill="#dce8fa" font-size="10">&bull; Torre mobile su 4 grandi ruote</text>
+              <text x="290" y="124" fill="#dce8fa" font-size="10">&bull; Ariete sfonda-portoni con punta dorata</text>
+              <text x="290" y="144" fill="#dce8fa" font-size="10">&bull; Passerella d'abbordaggio ribaltabile</text>
+              <text x="290" y="164" fill="#dce8fa" font-size="10">&bull; Guidata da Re Mathias e i 4 Cavalieri</text>
+              <text x="290" y="194" fill="#82c4ff" font-size="10" font-style="italic">"Per l'onore del Regno di Morcia!"</text>
+            </svg>
+
+            <!-- VIEW 4: 2005 BOX ART MOCKUP -->
+            <svg id="svg-box" viewBox="0 0 560 280" style="display:none;" role="img" aria-label="Confezione originale 8877 del 2005">
+              <rect width="560" height="280" fill="#141218" />
+              <!-- 3D Perspective Box -->
+              <polygon points="85,35 455,35 475,50 475,245 455,255 85,255" fill="#1e1924" stroke="#8a6b36" stroke-width="2.5" />
+              <rect x="85" y="35" width="370" height="44" fill="#781318" />
+              <!-- LEGO Logo on Box -->
+              <rect x="97" y="42" width="30" height="30" fill="#d91e18" stroke="#fff" stroke-width="1.5" />
+              <text x="112" y="61" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="9" fill="#ffdf00">LEGO</text>
+              <text x="275" y="62" text-anchor="middle" font-family="Georgia, serif" font-weight="bold" font-size="17" fill="#f6d57e">KNIGHTS' KINGDOM</text>
+              <text x="412" y="54" font-size="10" font-weight="bold" fill="#fff">8-12</text>
+              <text x="412" y="69" font-size="12" font-weight="bold" fill="#ffe28a">8877</text>
+
+              <!-- Box Center Illustration -->
+              <rect x="97" y="88" width="346" height="122" fill="#2c161c" stroke="#594632" />
+              <text x="270" y="142" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="bold" fill="#ffe294">LA FORTEZZA OSCURA DI VLADEK</text>
+              <text x="270" y="164" text-anchor="middle" font-size="11" fill="#e0d6c8">972 PEZZI &bull; 8 MINIFIGURE INCLUSE</text>
+
+              <!-- Minifigure Callout Strip at Bottom of Box -->
+              <rect x="97" y="216" width="346" height="28" fill="#121017" stroke="#6e5732" />
+              <text x="270" y="234" text-anchor="middle" font-size="10" fill="#f6ce6e">Re Mathias &bull; Jayko &bull; Santis &bull; Rascus &bull; Danju &bull; Vladek &bull; 2 Cavalieri Ombra</text>
+            </svg>
+          </div>
+
+          <div class="viewer-caption-bar">
+            <span id="viewerCaptionText">Vista principale del set 8877: la Fortezza dello Scorpione sotto attacco.</span>
+            <button type="button" class="zoom-btn" onclick="openZoomModal()">&#128269; Ingrandisci immagine</button>
+          </div>
+        </div>
+
+        <!-- INTERACTIVE ACTION FEATURES BAR -->
+        <div class="action-controls-bar">
+          <span class="action-controls-label">&#9876; Prova le funzioni del set:</span>
+          <div class="action-btn-group">
+            <button type="button" class="action-trigger" onclick="fireCatapult()">Lancia Catapulta!</button>
+            <button type="button" class="action-trigger" onclick="togglePortcullis()">Alza/Abbassa Saracinesca</button>
+            <button type="button" class="action-trigger" onclick="triggerTrapdoor()">Attiva Botola!</button>
+          </div>
+        </div>
+
+        <!-- DESCRIPTION & PURCHASE/SPECS COLUMNS -->
+        <div class="product-body-columns">
+          <div class="product-description">
+            <h2 class="section-heading-2005">Descrizione del Prodotto</h2>
+            <p>
+              <strong>Assalta la roccaforte del malvagio Lord Vladek!</strong> Re Mathias e i suoi valorosi cavalieri di Morcia -- Sir Jayko, Sir Santis, Sir Rascus e Sir Danju -- hanno raggiunto le mura della terribile Fortezza Oscura per recuperare il <em>Cuore dello Scudo</em> e riportare la pace nel regno.
+            </p>
+            <p>
+              Supera la saracinesca chiodata con la torre d'assedio mobile, evita la botola segreta nel cortile e schiva i massi infuocati lanciati dalla gigantesca catapulta dello Scorpione!
+            </p>
+            <ul class="feature-bullets">
+              <li><strong>Include 8 minifigure:</strong> Re Mathias, Jayko, Santis, Rascus, Danju, Lord Vladek e 2 Cavalieri Ombra con armi, scudi araldici e armature complete!</li>
+              <li><strong>Difese della fortezza:</strong> catapulta dello Scorpione funzionante, saracinesca mobile, botola trappola, prigione segreta e sala del trono.</li>
+              <li><strong>Include la torre d'assedio</strong> dei cavalieri di Morcia su ruote con ariete sfonda-portoni!</li>
+              <li><strong>Dimensioni imponenti:</strong> misura oltre 43 cm di larghezza e 38 cm di altezza.</li>
+            </ul>
+          </div>
+
+          <aside class="product-actions-box">
+            <div class="shop-price-tag">
+              <span class="price-label">Prezzo Consigliato LEGO Shop (IT)</span>
+              <span class="price-amount">&euro; 99,99</span>
+              <span class="stock-status">&#10004; Disponibile su LEGO Shop@Home</span>
+            </div>
+
+            <button type="button" class="cta-button-primary" onclick="openShopModal()">
+              Acquista su LEGO Shop &raquo;
+            </button>
+            <button type="button" class="cta-button-secondary" onclick="addToWishlist()">
+              + Aggiungi alla Lista dei Desideri
+            </button>
+            <button type="button" class="cta-button-secondary" onclick="openInstructionsModal()">
+              &#128196; Istruzioni di Montaggio (PDF)
+            </button>
+
+            <table class="specs-table" aria-label="Specifiche tecniche set 8877">
+              <tr>
+                <td>Numero Set:</td>
+                <td>8877</td>
+              </tr>
+              <tr>
+                <td>Tema:</td>
+                <td>Knights' Kingdom</td>
+              </tr>
+              <tr>
+                <td>Anno di uscita:</td>
+                <td>2005</td>
+              </tr>
+              <tr>
+                <td>Età consigliata:</td>
+                <td>8 - 12 anni</td>
+              </tr>
+              <tr>
+                <td>Numero pezzi:</td>
+                <td>972</td>
+              </tr>
+              <tr>
+                <td>Minifigure:</td>
+                <td>8</td>
+              </tr>
+            </table>
+          </aside>
+        </div>
+
+        <!-- 8 MINIFIGURES SHOWCASE -->
+        <section class="minifig-strip" id="minifigSection">
+          <h2 class="section-heading-2005">Le 8 Minifigure Incluse nel Set 8877</h2>
+          <div class="minifig-grid">
+            <div class="minifig-card">
+              <svg width="36" height="44" viewBox="0 0 36 44" aria-hidden="true">
+                <rect x="11" y="15" width="14" height="15" fill="#b51d24" stroke="#f5c842" />
+                <rect x="12" y="30" width="12" height="12" fill="#1e448a" />
+                <circle cx="18" cy="9" r="6" fill="#f5c842" />
+                <polygon points="12,5 15,1 18,5 21,1 24,5" fill="#ffe169" />
+              </svg>
+              <span class="mf-name">Re Mathias</span>
+              <span class="mf-faction">Regno di Morcia</span>
+            </div>
+
+            <div class="minifig-card">
+              <svg width="36" height="44" viewBox="0 0 36 44" aria-hidden="true">
+                <rect x="11" y="15" width="14" height="15" fill="#1e6bd6" stroke="#85c7ff" />
+                <rect x="12" y="30" width="12" height="12" fill="#164b96" />
+                <circle cx="18" cy="9" r="6" fill="#42a5f5" />
+              </svg>
+              <span class="mf-name">Sir Jayko</span>
+              <span class="mf-faction">Cavaliere del Falco</span>
+            </div>
+
+            <div class="minifig-card">
+              <svg width="36" height="44" viewBox="0 0 36 44" aria-hidden="true">
+                <rect x="11" y="15" width="14" height="15" fill="#c92424" stroke="#ff9c9c" />
+                <rect x="12" y="30" width="12" height="12" fill="#8f1818" />
+                <circle cx="18" cy="9" r="6" fill="#e03a3a" />
+              </svg>
+              <span class="mf-name">Sir Santis</span>
+              <span class="mf-faction">Cavaliere dell'Orso</span>
+            </div>
+
+            <div class="minifig-card">
+              <svg width="36" height="44" viewBox="0 0 36 44" aria-hidden="true">
+                <rect x="11" y="15" width="14" height="15" fill="#238a3b" stroke="#98f5ad" />
+                <rect x="12" y="30" width="12" height="12" fill="#176128" />
+                <circle cx="18" cy="9" r="6" fill="#32b550" />
+              </svg>
+              <span class="mf-name">Sir Rascus</span>
+              <span class="mf-faction">Cavaliere della Scimmia</span>
+            </div>
+
+            <div class="minifig-card">
+              <svg width="36" height="44" viewBox="0 0 36 44" aria-hidden="true">
+                <rect x="11" y="15" width="14" height="15" fill="#6c2fa3" stroke="#d4a6ff" />
+                <rect x="12" y="30" width="12" height="12" fill="#4b1e73" />
+                <circle cx="18" cy="9" r="6" fill="#8a42cc" />
+              </svg>
+              <span class="mf-name">Sir Danju</span>
+              <span class="mf-faction">Cavaliere del Lupo</span>
+            </div>
+
+            <div class="minifig-card">
+              <svg width="36" height="44" viewBox="0 0 36 44" aria-hidden="true">
+                <rect x="11" y="15" width="14" height="15" fill="#17161c" stroke="#c92424" />
+                <rect x="12" y="30" width="12" height="12" fill="#291216" />
+                <circle cx="18" cy="9" r="6" fill="#222029" stroke="#c92424" />
+              </svg>
+              <span class="mf-name">Lord Vladek</span>
+              <span class="mf-faction">Signore dello Scorpione</span>
+            </div>
+
+            <div class="minifig-card">
+              <svg width="36" height="44" viewBox="0 0 36 44" aria-hidden="true">
+                <rect x="11" y="15" width="14" height="15" fill="#272530" stroke="#757085" />
+                <rect x="12" y="30" width="12" height="12" fill="#1b1921" />
+                <circle cx="18" cy="9" r="6" fill="#3a3747" />
+              </svg>
+              <span class="mf-name">Cavaliere Ombra #1</span>
+              <span class="mf-faction">Guardia di Vladek</span>
+            </div>
+
+            <div class="minifig-card">
+              <svg width="36" height="44" viewBox="0 0 36 44" aria-hidden="true">
+                <rect x="11" y="15" width="14" height="15" fill="#272530" stroke="#757085" />
+                <rect x="12" y="30" width="12" height="12" fill="#1b1921" />
+                <circle cx="18" cy="9" r="6" fill="#3a3747" />
+              </svg>
+              <span class="mf-name">Cavaliere Ombra #2</span>
+              <span class="mf-faction">Guardia di Vladek</span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- ==================== GLOBAL 2005 FOOTER ==================== -->
+    <footer class="lego-footer">
+      <div class="footer-links">
+        <a href="#about" onclick="openModal('Informazioni su The LEGO Group', 'Fondato nel 1932 a Billund, Danimarca, The LEGO Group sviluppa la creatività dei bambini attraverso il gioco e l\'apprendimento.'); return false;">Informazioni su LEGO</a> |
+        <a href="#privacy" onclick="openModal('Informativa sulla Privacy (2005)', 'LEGO.com rispetta la privacy dei bambini online ed è conforme agli standard internazionali di sicurezza per i minori.'); return false;">Informativa sulla privacy</a> |
+        <a href="#legal" onclick="openModal('Note Legali', 'LEGO, il logo LEGO, la Minifigure e KNIGHTS\' KINGDOM sono marchi registrati di The LEGO Group.'); return false;">Note legali</a> |
+        <a href="#contact" onclick="openModal('Contattaci', 'LEGO S.p.A. - Lainate (MI), Italia. Servizio Consumatori LEGO.'); return false;">Contattaci</a> |
+        <a href="#sitemap" onclick="openModal('Mappa del Sito - LEGO.com/ita', '/ita/knights/products/8877.aspx &bull; Catalogo Prodotti LEGO Italia Settembre 2005.'); return false;">Mappa del sito</a>
+      </div>
+      <div>
+        &copy;2005 The LEGO Group. Tutti i diritti riservati. Utilizzando questo sito accetti i termini d'uso.
+      </div>
+    </footer>
+  </div>
+
+  <!-- ==================== 2005 RETRO MODAL POPUP ==================== -->
+  <div class="modal-overlay" id="retroModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-window">
+      <div class="modal-titlebar">
+        <span id="modalTitle">LEGO.com Italia</span>
+        <button type="button" class="modal-close" onclick="closeModal()">X</button>
+      </div>
+      <div class="modal-content" id="modalBody"></div>
+    </div>
+  </div>
+
+  <script>
+    const viewCaptions = {
+      main: "Vista principale del set 8877: la Fortezza dello Scorpione sotto attacco.",
+      interior: "Spaccato interno: Sala del Trono con il Cuore dello Scudo, armeria e segrete.",
+      siege: "Dettaglio della torre d'assedio mobile dei Cavalieri di Morcia con ariete.",
+      box: "Confezione originale 8877 LEGO Knights' Kingdom (edizione europea 2005)."
+    };
+
+    let currentView = "main";
+    let portcullisOpen = false;
+    let trapdoorSprung = false;
+    let wishlistAdded = false;
+
+    function switchView(viewName) {
+      currentView = viewName;
+      ["main", "interior", "siege", "box"].forEach((key) => {
+        document.getElementById("svg-" + key).style.display = key === viewName ? "block" : "none";
+        document.getElementById("tab-" + key).classList.toggle("active-tab", key === viewName);
+      });
+      document.getElementById("viewerCaptionText").textContent = viewCaptions[viewName];
+    }
+
+    function fireCatapult() {
+      if (currentView !== "main") {
+        switchView("main");
+      }
+      const boulder = document.getElementById("boulderObj");
+      boulder.classList.remove("firing-boulder");
+      void boulder.offsetWidth; // trigger reflow to restart animation
+      boulder.classList.add("firing-boulder");
+    }
+
+    function togglePortcullis() {
+      if (currentView !== "main") {
+        switchView("main");
+      }
+      portcullisOpen = !portcullisOpen;
+      document.getElementById("portcullisGroup").classList.toggle("portcullis-open", portcullisOpen);
+    }
+
+    function triggerTrapdoor() {
+      if (currentView !== "main") {
+        switchView("main");
+      }
+      trapdoorSprung = !trapdoorSprung;
+      document.getElementById("trapdoorFlap").classList.toggle("trapdoor-sprung", trapdoorSprung);
+    }
+
+    function openModal(title, htmlContent) {
+      document.getElementById("modalTitle").textContent = title;
+      document.getElementById("modalBody").innerHTML = htmlContent;
+      document.getElementById("retroModal").classList.add("open");
+    }
+
+    function closeModal() {
+      document.getElementById("retroModal").classList.remove("open");
+    }
+
+    function openZoomModal() {
+      const currentSvg = document.getElementById("svg-" + currentView).cloneNode(true);
+      currentSvg.style.display = "block";
+      currentSvg.style.width = "100%";
+      currentSvg.style.height = "230px";
+      currentSvg.style.border = "1px solid #594b36";
+      openModal(
+        "Ingrandimento - 8877 La Fortezza Oscura di Vladek",
+        `<div style="margin-bottom:8px;">${currentSvg.outerHTML}</div>
+         <p style="font-size:10px; color:#d8d0c3;">${viewCaptions[currentView]}</p>`
+      );
+    }
+
+    function openShopModal() {
+      openModal(
+        "LEGO Shop@Home Italia - Carrello",
+        `<p style="margin-bottom:8px;"><strong>8877 - La Fortezza Oscura di Vladek</strong></p>
+         <p style="margin-bottom:8px;">Prezzo: <strong style="color:#ffe28a;">&euro; 99,99</strong> (IVA inclusa) &bull; Spedizione standard in Italia: &euro; 6,95.</p>
+         <p style="margin-bottom:10px; color:#8ee892;">Stato: Disponibile per la spedizione immediata dal magazzino europeo LEGO.</p>
+         <button type="button" class="cta-button-primary" onclick="closeModal()">Conferma e continua la navigazione</button>`
+      );
+    }
+
+    function openInstructionsModal() {
+      openModal(
+        "Download Istruzioni di Montaggio - Set 8877",
+        `<p style="margin-bottom:8px;">Seleziona il libretto di istruzioni in formato Adobe Acrobat PDF per <strong>8877 La Fortezza Oscura di Vladek</strong>:</p>
+         <ul style="margin-left:16px; margin-bottom:10px; color:#f6ce6e;">
+           <li style="margin-bottom:4px;"><strong>8877_Book1.pdf</strong> (4,8 MB) - Torre d'Assedio e Mura Esterne</li>
+           <li><strong>8877_Book2.pdf</strong> (5,4 MB) - Mastio Centrale e Catapulta dello Scorpione</li>
+         </ul>
+         <p style="font-size:10px; color:#aba295;">Richiede Adobe Reader 6.0 o superiore.</p>`
+      );
+    }
+
+    function addToWishlist() {
+      if (!wishlistAdded) {
+        wishlistAdded = true;
+        document.getElementById("wishlistCount").textContent = "1";
+      }
+      openWishlistModal();
+    }
+
+    function openWishlistModal() {
+      const count = wishlistAdded ? 1 : 0;
+      const body = count > 0
+        ? `<p style="margin-bottom:8px;">Hai <strong>1 prodotto</strong> nella tua Lista dei Desideri LEGO.com:</p>
+           <div style="background:#141218; border:1px solid #6e5732; padding:7px; margin-bottom:8px;">
+             <strong style="color:#ffe28a;">8877 - La Fortezza Oscura di Vladek</strong><br/>
+             <span style="font-size:10px; color:#b8b0a4;">972 pezzi &bull; Età 8-12 &bull; &euro; 99,99</span>
+           </div>
+           <p style="font-size:10px; color:#cfc6b8;">Stampa questa lista e consegnala ai tuoi genitori per il tuo compleanno o per Natale!</p>`
+        : `<p>La tua Lista dei Desideri è attualmente vuota. Clicca su <strong>"+ Aggiungi alla Lista dei Desideri"</strong> nella scheda prodotto per salvare il set 8877!</p>`;
+      openModal("La Mia Lista dei Desideri - LEGO.com Italia", body);
+    }
+
+    function previewOtherSet(code, name, age, pieces) {
+      openModal(
+        `Anteprima Catalogo 2005: ${code} - ${name}`,
+        `<p style="margin-bottom:6px;"><strong>Set LEGO&reg; Knights' Kingdom #${code}</strong></p>
+         <p style="margin-bottom:8px;">Nome italiano: <strong>${name}</strong><br/>
+         Età consigliata: <strong>${age} anni</strong> &bull; Numero pezzi: <strong>${pieces}</strong></p>
+         <p style="font-size:10px; color:#cfc6b8;">Stai visualizzando la scheda completa dell'ammiraglia 2005: <strong>8877 La Fortezza Oscura di Vladek</strong>.</p>`
+      );
+    }
+
+    function handleSearch(event) {
+      event.preventDefault();
+      const q = document.getElementById("searchInput").value.trim();
+      if (!q) return;
+      openModal(
+        "Risultati Ricerca LEGO.com Italia",
+        `<p style="margin-bottom:8px;">Ricerca per: <strong>"${q.replace(/</g, "&lt;")}"</strong></p>
+         <p>1 corrispondenza trovata in <em>Knights' Kingdom (2005)</em>:<br/>
+         &raquo; <strong style="color:#ffe28a;">8877 - La Fortezza Oscura di Vladek</strong> (/ita/knights/products/8877.aspx)</p>`
+      );
+    }
+
+    document.getElementById("retroModal").addEventListener("click", function (e) {
+      if (e.target === this) closeModal();
+    });
+  </script>
+</body>
+</html>
