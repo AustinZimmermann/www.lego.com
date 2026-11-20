@@ -1,5 +1,7 @@
 # Γκάλι – Κυρίαρχος του Νερού
 
+<img src="https://www.lego.com/cdn/product-assets/product.img.pri/70786_Prod.jpg" width="350">
+
 **Αρχική** / **BIONICLE®** / **Γκάλι – Κυρίαρχος του Νερού**
 
 > **Κατάσταση προϊόντος:** Αποσυρμένο προϊόν
