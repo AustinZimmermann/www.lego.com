@@ -1,6 +1,9 @@
 > **Αρχική** / **Θεματικές ενότητες** / **Hero Factory** / **2235 ΑΡΧΟΝΤΑΣ ΤΗΣ ΦΩΤΙΑΣ**
 
 # 2235 ΑΡΧΟΝΤΑΣ ΤΗΣ ΦΩΤΙΑΣ
+
+<img src="https://www.lego.com/cdn/product-assets/product.img.pri/2235_prod.jpg" width="350">
+
 **Σειρά:** LEGO® Hero Factory  
 **Κατάσταση:** Αποσυρθέν προϊόν  
 
